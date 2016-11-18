@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Palatino+Linotype:400italic,700italic,400,700);
-@import url(https://fonts.googleapis.com/css?family=Palatino:400italic,700italic,400,700);
+@import url('http://fonts.googleapis.com/css?family=Palatino+Linotype');
+@import url('http://fonts.googleapis.com/css?family=Palatino');
 
 .reveal {
   font-size: 24px; }
