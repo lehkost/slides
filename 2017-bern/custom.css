@@ -1,3 +1,15 @@
 
 .reveal {
-  font-size: 18px; }
+  font-size: 24px; }
+
+.reveal h1 {
+  font-size: 3.1em; }
+
+.reveal h2 {
+  font-size: 1.7em; }
+
+.reveal h3 {
+  font-size: 1.2em; }
+
+.reveal h4 {
+  font-size: 1em; }
