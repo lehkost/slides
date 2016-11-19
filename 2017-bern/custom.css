@@ -13,3 +13,9 @@
 
 .reveal h4 {
   font-size: 1em; }
+
+.reveal a {
+  color: #2048a0; }
+
+.reveal a:hover {
+  color: #4068c0; }
