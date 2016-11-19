@@ -137,7 +137,7 @@ Jim Koch (Quelle: [theatlantic.com](https://www.theatlantic.com/magazine/archive
 <br />
 
 | | deutsches Korpus | englisches Korpus | russisches Korpus |
-|-|------------------|-------------------|-------------------|
+|-:|:----------------:|:-----------------:|:-----------------:|
 | Titel | »Die Zeit«	| »New York Times« | NKRJA |
 | Zeitraum | 1995–2011	| 1987–2007 | 2000–2014 |
 | Anzahl Dokumente | 126.702 | 1.854.726 | 181.175 |
@@ -148,17 +148,87 @@ Jim Koch (Quelle: [theatlantic.com](https://www.theatlantic.com/magazine/archive
 
 # 4. Methodik
 
-bla bla
+--
+
+## NYT-Korpus (1/2)
+
+<br />
+* aus XML-Daten des Korpus (Sandhaus 2008) wurde für jeden der 1.854.726 Artikel der Volltext extrahiert
+* anschließend mit Hilfe des NLTK (Bird/Loper/Klein 2009) in Sätze zerlegt, die Wörter jedes Satzes mit dem Part-of-Speech-Tagger des NLTK annotiert
+* zusätzlich wurden Named Entities (Personen, Orte, Organisationen) mit dem NLTK-eigenen Named-Entity-Extraktor annotiert
+* die annotierten Sätze wurden mit einer Liste von Vossanto-typischen Mustern (in Form von regulären Ausdrücken) abgeglichen
+* eine vereinfachte Darstellung eines solchen Musters wäre etwa (die drei Elemente einer Vossanto sind durch * gekennzeichnet):
+
+```
+\((PERSON|ORGANIZATION|GPE) *\) (is|has) (often|sometimes)? (been)? (called)?
+the \(PERSON|ORGANIZATION|GPE) *\) (of|among|from) \((PERSON|ORGANIZATION|GPE) *\)
+```<!-- .element: style="font-size:0.75em;" -->
 
 --
 
-bla bla
+## NYT-Korpus (2/2)
+
+<br />
+* wenn ein Satz auf eines der Muster passte, wurde er extrahiert und die drei Teile tabellarisch ausgegeben
+* insgesamt wurden 10.744 Kandidaten extrahiert (im Mittel 512 pro Jahr) und danach in zwei Durchgängen manuell überprüft
+* für diesen Vortrag haben wir uns auf Vossantos beschränkt, die mindestens ein Individuum (Person/Tier/Figur) beinhalten
+* Orte, Firmen und Gruppen von Personen beseite gelassen (Vossantos der Art »Algarve, the Riviera of Portugal« oder »Pepsi is the Nike of soft drinks« sind eine eigenen Untersuchung wert)
+* von den Kandidaten blieben 246 Vossantos übrig (das sind 2,3%, allerdings ist das kein Precision-Wert, da nicht alle Vossantos übernommen wurden): [Übersicht im Git-Repo](https://github.com/weltliteratur/vossanto/blob/master/vossanto-NYT-only-individuals.md)
+* insgesamt sind Vossantos, gerechnet auf ein Gesamtzeitungskorpus, ein relativ seltenes Phänomen, die Verteilung über die Jahre ist recht gleichmäßig
+
+--
+
+## *Die Zeit*-Korpus (1/2)
+
+<br />
+* zunächst wurden die Volltexte (inkl. Überschriften) aller Dokumente extrahiert
+* verarbeitet mit dem Part-of-Speech-Tagger sowie dem Named-Entity-Recognition-Tool des Stanford CoreNLP Package (für die Analyse deutschsprachiger Texte enthält Stanford CoreNLP speziell für das Deutsche trainierte Modelle, vgl. Faruqui und Pado 2010)
+* untersuchung aller Texte auf drei Ebenen: Wortebene, Part-of-Speech-Ebene, Named-Entity-Ebene
+* Suche nach Vossanto-Mustern mit Hilfe von regulären Ausdrücken, ein vereinfachtes Beispiel für eine Extraktionsregel lautet etwa:
+
+```
+eine Art PERSON (der|des) (ADJECTIVE)? NOUN
+```<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+## *Die Zeit*-Korpus (2/2)
+
+<br />
+* aus den 1.456 Vossanto-Kandidaten wurden 224 manuell als Vossantos mit den gewünschten Eigenschaften markiert (mindestens ein Individuum als source oder target), was 15.4% entspricht (wiederum kein eigentlicher Precision-Wert!)
+* zu den false positives gehören Ausdrücke wie »der Berliner Klaus Wowereit«, »der deutsche Michel« oder »der Anton aus Tirol« (also Fehlinterpretation eines Adjektivattributs bzw. einer Präposition)
+* weiteres Problem dieser Extraktionsmethode: momentan werden nur die von der Stanford-NER als Personen getaggten Phrasen erkannt
+
+--
+
+## Verteilung der Vossantos in den Korpora
+
+<br />
+### NYT-Korpus
+
+| 1987 | 1988 | 1989 | 1990 | 1991 | 1992 | 1993 | 1994 | 1995 | 1996 | 1997 | 1998 | 1999 | 2000 | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | gesamt |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:------:|
+| 4 | 9 | 6 | 10 | 8 | 12 | 14 | 15 | 7 | 15 | 11 | 17 | 12 | 14 | 14 | 15 | 19 | 11 | 16 | 12 | 5 | 246 |
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />
+### *Die Zeit*-Korpus
+
+| 1995 | 1996 | 1997 | 1998 | 1999 | 2000 | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | gesamt |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:------:|
+| 9 | 12 | 13 | 10 | 16 | 12 | 16 | 12 | 11 | 13 | 19 | 20 | 17 | 8 | 10 | 17 | 9 | 224 |
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+## Russisches Korpus
+
+<br />
+(Methodenbeschreibung fehlt noch)
 
 ---
 
 # 5. Ergebnisse
-
-bla bla
 
 --
 
@@ -167,7 +237,7 @@ bla bla
 <br />
 
 | Anzahl | Referenzierter Eigenname |
-|--------|--------------------------|
+|:------:|:------------------------:|
 | 6 | Michael Jordan |
 | 5 | Michelangelo |
 | 4 | Babe Ruth |
@@ -197,7 +267,7 @@ bla bla
 <br />
 
 | Anzahl | Referenzierter Eigenname |
-|--------|--------------------------| 
+|:------:|:------------------------:| 
 | 9 | Robin Hood |
 | 6 | Bill Gates |
 | 4 | Franz Beckenbauer |
