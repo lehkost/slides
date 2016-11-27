@@ -33,7 +33,7 @@
 
 # »Der Helmut Kohl unter den Brotaufstrichen«
 
-## Zur Extraktion Vossianischer Antonomasien aus großen Zeitungskorpora (DE, EN, RU)
+## Zur Extraktion Vossianischer Antonomasien aus großen Zeitungskorpora
 
 <br>
 [Robert Jäschke](https://www.sheffield.ac.uk/is/staff/jaeschke)¹ · [Jannik Strötgen](https://people.mpi-inf.mpg.de/~jstroetge/)² · [Elena Krotova](http://hse-ru.academia.edu/ElenaKrotova)³ · [Frank Fischer](https://www.hse.ru/en/org/persons/182492735)⁴
@@ -54,7 +54,7 @@
 <br />
 1. Intro
 2. Forschungslage
-3. Korpora: DE, EN, RU
+3. Korpora: DE, EN
 4. Methodik
 5. Ergebnisse
 6. Bibliografie
@@ -138,13 +138,13 @@ Heinrich Lausberg: *Handbuch der literarischen Rhetorik. Eine Grundlegung der Li
 
 <br />
 
-| | deutsches Korpus | englisches Korpus | russisches Korpus |
-|-:|:----------------:|:-----------------:|:-----------------:|
-| Titel | »Die Zeit«	| »New York Times« | NKRJA |
-| Zeitraum | 1995–2011	| 1987–2007 | 2000–2014 |
-| Anzahl Dokumente | 126.702 | 1.854.726 | 181.175 |
-| Durchschnittl. pro Monat | 7.453 | 7.540 | – |
-| Anzahl Tokens | – | – | 113.292.003 |
+| | deutsches Korpus | englisches Korpus |
+|-:|:----------------:|:-----------------:|
+| Titel | »Die Zeit«	| »New York Times« |
+| Typ | Wochenzeitung | Tageszeitung |
+| Zeitraum | 1995–2011	| 1987–2007 |
+| Anzahl Dokumente | 126.702 | 1.854.726 |
+| Durchschnittl. pro Monat | 621 | 7.540 |
 
 ---
 
@@ -200,8 +200,8 @@ eine Art PERSON (der|des) (ADJECTIVE)? NOUN
 ## *Die Zeit*-Korpus (2/2)
 
 <br />
-* aus den 1.456 Vossanto-Kandidaten wurden 224 manuell als Vossantos mit den gewünschten Eigenschaften markiert (mindestens ein Individuum als source oder target), was 15.4% entspricht (wiederum kein eigentlicher Precision-Wert!): [Übersicht im Git-Repo](https://github.com/weltliteratur/vossanto/blob/master/vossanto-ZEIT.md)
-* zu den false positives gehören Ausdrücke wie »der Berliner Klaus Wowereit«, »der deutsche Michel« oder »der Anton aus Tirol« (also Fehlinterpretation eines Adjektivattributs bzw. einer Präposition)
+* aus den 1.456 Vossanto-Kandidaten wurden 225 manuell als Vossantos mit den gewünschten Eigenschaften markiert (mindestens ein Individuum als source oder target), was 15.4% entspricht (wiederum kein eigentlicher Precision-Wert!): [Übersicht im Git-Repo](https://github.com/weltliteratur/vossanto/blob/master/vossanto-ZEIT.md)
+* zu den false positives gehören stehende Wendungen wie »der deutsche Michel« oder »der Anton aus Tirol« sowie Ausdrücke wie »der Berliner Klaus Wowereit«, »der Thomas Mann der Josephs-Romane« und »der Franz Müntefering des Jahres 2000«, also Wortgruppen, die grammatisch unseren definierten Vossanto-Mustern entsprechen
 * weiteres Problem dieser Extraktionsmethode: momentan werden nur die von der Stanford-NER als Personen getaggten Phrasen erkannt
 
 --
@@ -220,33 +220,26 @@ eine Art PERSON (der|des) (ADJECTIVE)? NOUN
 
 ![New York Times Korpus](images/vossantos_nyt.svg)<!-- .element width="640px" -->
 
---
-
-## Russisches Korpus
-
-<br />
-(Methodenbeschreibung fehlt noch)
-
 ---
 
 # 5. Ergebnisse
 
 --
 
-## NYT-Korpus
+## Höchstfrequente Vossantos im NYT-Korpus
 
 <br />
 
-| Anzahl | Referenzierter Eigenname |
+| Anzahl | *source* |
 |:------:|:------------------------:|
 | 6 | Michael Jordan |
 | 5 | Michelangelo |
 | 4 | Babe Ruth |
-| 3 | Zelig |
-| 3 | Rodney Dangerfield |
-| 3 | Neil Young |
-| 3 | Elvis |
 | 3 | Don Quixote |
+| 3 | Elvis |
+| 3 | Neil Young |
+| 3 | Rodney Dangerfield |
+| 3 | Zelig |
 
 --
 
@@ -269,7 +262,7 @@ Barack Obama: »There is a reason you call someone the Michael Jordan of [someth
 
 --
 
-## NYT-Korpus: Verteilung in Rubriken
+## NYT-Korpus: Vossanto-Verteilung in Rubriken
 
 <br />
 
@@ -289,19 +282,21 @@ Barack Obama: »There is a reason you call someone the Michael Jordan of [someth
 
 --
 
-## *Die Zeit*-Korpus
+## Höchstfrequente Vossantos im *Die Zeit*-Korpus
 
 <br />
 
-| Anzahl | Referenzierter Eigenname |
+| Anzahl | *source* |
 |:------:|:------------------------:| 
 | 9 | Robin Hood |
 | 6 | Bill Gates |
 | 4 | Franz Beckenbauer |
-| 3 | Jesus Christus |
-| 3 | Heinz Rühmann |
-| 3 | Willy Brandt |
 | 3 | Daniel Düsentrieb |
+| 3 | Heinz Rühmann |
+| 3 | James Dean |
+| 3 | Jesus Christus |
+| 3 | Norbert Blüm |
+| 3 | Willy Brandt |
 
 --
 
@@ -346,11 +341,11 @@ Barack Obama: »There is a reason you call someone the Michael Jordan of [someth
 ## Individuelle Person/Figur als source, Firma/Verein/Band/Ort als target
 
 <br />
-* »›Sturm, Ruger is the Benedict Arnold of the gun industry,‹ said Aaron S. Zelman, owner of the Patriot Distribution Company, a Milwaukee-based concern that sells a semiautomatic pistol as well as products such as assault vests and tear gas.« ([1989](http://www.nytimes.com/1989/07/14/us/gun-import-ban-enriches-small-us-arms-makers.html?pagewanted=all))
-* »Also on hand is Aerosmith, the Dorian Gray of rock bands, to serve the same purpose Alice Cooper did in the first film.« ([1993](http://www.nytimes.com/1993/12/10/movies/review-film-it-s-wayne-and-garth-schwinging-once-again.html))
-* »Bolt Beranek & Newman has been the Forrest Gump of high technology, […]« ([1995](http://www.nytimes.com/1995/07/17/business/innovator-is-leaving-the-shadows-for-the-limelight.html))
-* »For most of this century, the Hudson has been the John Barrymore of rivers, noble in profile but a sorry wreck.« ([1996](http://www.nytimes.com/1996/07/05/arts/happy-trails-along-the-hudson.html))
-* »the National Collegiate Athletic Association, the Kenneth Starr of sports« ([1998](http://www.nytimes.com/1998/04/05/sports/backtalk-a-few-parting-shots-for-the-rangers-brass.html))
+* »›**Sturm, Ruger** is the **Benedict Arnold** of the gun industry,‹ said Aaron S. Zelman, owner of the Patriot Distribution Company, a Milwaukee-based concern that sells a semiautomatic pistol as well as products such as assault vests and tear gas.« ([1989](http://www.nytimes.com/1989/07/14/us/gun-import-ban-enriches-small-us-arms-makers.html?pagewanted=all))
+* »Also on hand is **Aerosmith**, the **Dorian Gray** of rock bands, to serve the same purpose Alice Cooper did in the first film.« ([1993](http://www.nytimes.com/1993/12/10/movies/review-film-it-s-wayne-and-garth-schwinging-once-again.html))
+* »**Bolt Beranek & Newman** has been the **Forrest Gump** of high technology, […]« ([1995](http://www.nytimes.com/1995/07/17/business/innovator-is-leaving-the-shadows-for-the-limelight.html))
+* »For most of this century, the **Hudson** has been the **John Barrymore** of rivers, noble in profile but a sorry wreck.« ([1996](http://www.nytimes.com/1996/07/05/arts/happy-trails-along-the-hudson.html))
+* »the **National Collegiate Athletic Association**, the **Kenneth Starr** of sports« ([1998](http://www.nytimes.com/1998/04/05/sports/backtalk-a-few-parting-shots-for-the-rangers-brass.html))
 
 <br /><br />
 … und natürlich nicht zu vergessen:
@@ -390,7 +385,7 @@ Barack Obama: »There is a reason you call someone the Michael Jordan of [someth
 <br />
 ### Dank an
 
-Angelika Bergien, Arne Janning, …
+Michael Angele, Angelika Bergien, Ada Blitzkrieg, Arne Janning
 
 
 ---
@@ -404,7 +399,6 @@ Angelika Bergien, Arne Janning, …
 * Holmqvist K.; Płuciennik J.: Princess antonomasia and the truth: Two types of metonymic relations. In: Burkhardt, A.; Nerlich, B. (Hg.): Tropical Truth(s). The Epistemology of Metaphor and Other Tropes. Berlin/New York: De Gruyter 2010. S. 373–381. DOI: [10.1515/9783110230215](http://doi.org/10.1515/9783110230215).
 * Lausberg, H.: Handbuch der literarischen Rhetorik. Eine Grundlegung der Literaturwissenschaft. Band 2. München: Hueber 1960.
 * Sandhaus, E.: The New York Times Annotated Corpus LDC2008T19. DVD. Philadelphia: Linguistic Data Consortium, 2008.
-* Vasil’eva, N. V.: Antroponimičeskie stereotipy v krosskul’turnom aspekte. Vestnik Nižegorodskogo universiteta im. N. I. Lobačevskogo, 2010, № 4 (2), S. 453–456.
 * Arbeitsrepositorium: [github.com/weltliteratur/vossanto](https://github.com/weltliteratur/vossanto)
 
 
@@ -430,7 +424,7 @@ Halde: hier unbenutzter Code
 
 | 1995 | 1996 | 1997 | 1998 | 1999 | 2000 | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | gesamt |
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:------:|
-| 9 | 12 | 13 | 10 | 16 | 12 | 16 | 12 | 11 | 13 | 19 | 20 | 17 | 8 | 10 | 17 | 9 | 224 |
+| 9 | 12 | 13 | 10 | 16 | 13 | 16 | 12 | 12 | 12 | 19 | 21 | 16 | 8 | 10 | 17 | 9 | 225 |
 <!-- .element: style="font-size:0.6em;" ->
 
 --
