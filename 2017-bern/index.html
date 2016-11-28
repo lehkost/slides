@@ -188,10 +188,13 @@ the \(PERSON|ORGANIZATION|GPE) *\) (of|among|from) \((PERSON|ORGANIZATION|GPE) *
 ## *Die Zeit*-Korpus (1/2)
 
 <br />
-* zunächst wurden die Volltexte (inkl. Überschriften) aller Dokumente extrahiert
-* verarbeitet mit dem Part-of-Speech-Tagger sowie dem Named-Entity-Recognition-Tool des Stanford CoreNLP Package (für die Analyse deutschsprachiger Texte enthält Stanford CoreNLP speziell für das Deutsche trainierte Modelle, vgl. Faruqui und Pado 2010)
-* Untersuchung aller Texte auf drei Ebenen: Wortebene, Part-of-Speech-Ebene, Named-Entity-Ebene
-* Suche nach Vossanto-Mustern mit Hilfe von regulären Ausdrücken, ein vereinfachtes Beispiel für eine Extraktionsregel lautet etwa:
+* Extraktion der Volltexte (inkl. Überschriften)
+* POS/NER des Stanford CoreNLP Package (inkl. Trainingsdaten für das Deutsche, vgl. Faruqui und Pado 2010)
+* Untersuchung aller Texte auf drei Ebenen:
+** Wort
+** POS
+** NER
+* Suche nach Vossanto-Mustern mit regulären Ausdrücken, vereinfachtes Beispiel für eine Extraktionsregel:
 
 ```
 eine Art PERSON (der|des) (ADJECTIVE)? NOUN
@@ -416,7 +419,7 @@ Barack Obama: »There is a reason you call someone the Michael Jordan of [someth
 <br />
 ### Dank an
 
-Michael Angele, Angelika Bergien, Ada Blitzkrieg, Arne Janning
+Michael Angele, Angelika Bergien, Ada Blitzkrieg, Mathias Göbel, Arne Janning
 
 ---
 
