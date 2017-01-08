@@ -312,6 +312,23 @@ Franco Moretti: Distant Reading (2013)
 
 <small>Screenshot: [moviegalaxies.com](http://moviegalaxies.com/movies)</small>
 
+--
+
+## Six Degrees of Separation
+
+<br />
+- "the theory that anyone on earth can be connected to any other person on the planet through a chain of acquaintances that has no more than five intermediaries (Wikipedia)<!-- .element: class="fragment" -->
+
+--
+
+### "Who Knew Whom in Early Modern Britain?"
+
+<br />
+- [*Six Degrees of Francis Bacon* project](http://www.sixdegreesoffrancisbacon.com/)
+- more than 13.000 people, more than 200.000 relationships
+- extracted from Oxford Dictionary of National Biography
+- 5-minute introduction video by Chris Warren: [YouTube](https://www.youtube.com/watch?v=41_DQQii628)
+
 ---
 
 ## Digital Editions
@@ -526,7 +543,8 @@ geographic coordinate system: latitude, longitude
 <br />
 - latitude: specifies north–south position on the surface of the Earth
 - longitude: specifies east–west position on the surface of the Earth
-- Moscow: 55°45′N 37°37′E
+- Moscow?
+- 55°45′N 37°37′E<!-- .element: class="fragment" -->
 
 --
 
@@ -544,9 +562,66 @@ geographic coordinate system: latitude, longitude
 
 <small>Source: [nodegoat.net](https://nodegoat.net/blog.p/82.m/14/a-wikidatadbpedia-geography-of-violence)</small>
 
+--
+
+### The Gulag Mapped with Points
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/XpXPN3PS1oE?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+<small>Visualisation of the development of the Soviet Gulag camp system, done by Seth Bernstein.</small>
+
+--
+
+## GIS …
+
+<br />
+… is not just about adding points to maps,<br />but about assigning data to geographical points.
+
 ---
 
-## Bibliography
+### Last Chapter for Today (1/4)
+
+<br />
+- "hacking culture": DH is about developing a specific kind creativity
+- answering (research) questions with data
+- learning how to get from (research) question → data → numbers/visualisations → interpretation
+- especially the first and last step are what makes a digital humanist
+
+--
+
+### Last Chapter for Today (2/4)
+
+<br />
+- for illustration: we want to know how much the German National Library weighs on books (initially to learn more about the extent of the printed cultural heritage)
+- how do you go about this:
+  - find suitable data
+  - harvest/extract/convert data
+  - calculate answer using appropriate technology
+  - interpretation
+
+--
+
+### Last Chapter for Today (3/4)
+
+<br />
+![German National Library, pic from Wikimedia Commons](images/dnb-german-library-leipzig-2008.jpg)<!-- .element width="900px;" -->
+<small>German National Library; Leipzig, Saxony (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_%28German_Library%29_2008-Feb.jpg))</small>
+
+- they publicly offer a [data set](http://datendienst.dnb.de/cgi-bin/mabit.pl?userID=opendata&pass=opendata&cmd=login) with all their catalogue data (RDF format, > 21 GB)
+
+--
+
+### Last Chapter for Today (4/4)
+
+<br />
+- extracted data and fed it into Elasticsearch (so we can do all sorts of things with the data in real-time)
+- found extent info for 6 Mio. entities (books), totaling around 1 billion pages (average: 166 pages/book)
+- assuming that one page weighs 2,5 grams, multiply with number of pages and divide by two gives us: 1.25 mio. kilograms = 1,250 tons of pages (not counting book covers, etc.)
+- account of this 4-hour hackathon: ["Empirical Data on Over-Length Books"](http://weltliteratur.net/Empirical-Data-on-Over-Length-Books/)
+
+---
+
+## Bibliography (Where to Start)
 
 <br />
 * Susan Schreibman, Ray Siemens, John Unsworth (eds.): Companion to Digital Humanities. Blackwell Companions to Literature and Culture. Oxford: Blackwell. 2004. (**[online](http://www.digitalhumanities.org/companion/)**)
@@ -569,31 +644,6 @@ geographic coordinate system: latitude, longitude
 			</div>
 		</div>
 
-<!--
-Halde: hier unbenutzter Code
-
-<br />
-### *New York Times*-Korpus
-
-| 1987 | 1988 | 1989 | 1990 | 1991 | 1992 | 1993 | 1994 | 1995 | 1996 | 1997 | 1998 | 1999 | 2000 | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | gesamt |
-|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:------:|
-| 4 | 9 | 6 | 10 | 8 | 12 | 14 | 15 | 7 | 15 | 11 | 17 | 12 | 14 | 14 | 15 | 19 | 11 | 16 | 12 | 5 | 246 |
-<!-- .element: style="font-size:0.6em;" ->
-
-<br />
-### *Die Zeit*-Korpus
-
-| 1995 | 1996 | 1997 | 1998 | 1999 | 2000 | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | gesamt |
-|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:------:|
-| 9 | 12 | 13 | 10 | 16 | 13 | 16 | 12 | 12 | 12 | 19 | 21 | 16 | 8 | 10 | 17 | 9 | 225 |
-<!-- .element: style="font-size:0.6em;" ->
-
---
-
-
--->
-
-		
 		<script src="../reveal/lib/js/head.min.js"></script>
 		<script src="../reveal/js/reveal.js"></script>
 
