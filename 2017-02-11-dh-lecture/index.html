@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DH Lecture: Topic Modeling (11 February 2017)</title>
+
+		<link rel="stylesheet" href="../reveal/css/reveal.css">
+		<link rel="stylesheet" href="../reveal/css/theme/simple.css">
+
+      <!-- adjustments for serif.css -->
+      <link rel="stylesheet" href="custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Современные методы в гуманитарных науках
+
+<br />💻
+
+<br />
+Бонч-Осмоловская А. А.<br />
+Фишер Ф.<br />
+Орехов Б. В.<br />
+Скоринкин Д. А.<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br >
+(40 лекц, 40 сем)<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## Fifth Lecture
+### Distant Reading, Pt. III: Topic Modeling
+
+<br /><br />
+Frank Fischer · Danil Skorinkin
+
+(ffischer@hse.ru) · (daskorinkin@edu.hse.ru)<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br />11 February 2017</p>
+
+--
+
+### Next Saturday: First Colloquium (1/2)
+
+<br />
+- groups of 3 to 4 prepare a 10-minute presentation using one of the following methods:
+  - corpora studies
+  - stylometry
+  - topic modeling
+
+--
+
+### Next Saturday: First Colloquium (2/2)
+
+<br />
+- tasks can be divided like this:
+  1. finding or assembling a corpus (collection of texts in *.txt format)
+  2. loading the corpus into stylo or mallet and toying around with paramters to investigate the corpus
+  3. save results (numbers, tables, visualisations) and produce a presentation
+
+--
+
+### Addition to Last Week
+
+<br />
+- Roland Barthes: ["The Death of the Author"](https://ru.wikipedia.org/wiki/Смерть_автора) (1967)
+- essay (followed by an extensive discourse) according to which it is not important who wrote a text
+- the idea behind it was to fade out biographical contexts and authorial intentions as basis for interpretation
+- but: our stylometric experiments showed that there is something like an authorial signal in the text and that it can be measured
+
+--
+
+### Agenda for Today
+
+<br />
+1. Topic Modeling: Definition
+2. LDA
+3. Example (Goethe and Pushkin eat a pumpkin)
+4. …
+5. Seminar: Hands-On with MALLET
+6. Weekend 🌴
+
+--
+
+# →
+
+---
+
+### Topic Modeling and the Digital Humanities
+
+<br />"So many scholars in humanities departments are turning to [topic modeling] in their research that it is sometimes described as **part of the digital humanities in itself**."
+
+<br />
+<small>Benjamin M. Schmidt: [Words Alone: Dismantling Topic Models in the Humanities.](http://journalofdigitalhumanities.org/2-1/words-alone-by-benjamin-m-schmidt/)<br />In: Journal of Digital Humanities 2.1 (2012).</small>
+
+--
+
+## What Is a "Topic Model"?
+
+<br>
+"In machine learning and natural language processing, a **topic model** is a type of statistical model for discovering the abstract 'topics' that occur in a collection of documents. Topic modeling is a frequently used text-mining tool for discovery of hidden semantic structures in a text body." ([Wikipedia](https://en.wikipedia.org/wiki/Topic_model))
+
+--
+
+### Example: Topics of a TV Show
+
+<br />
+![HIMYM topics, by Ben Schmidt](images/how_i_met_your_mother_topics_by_ben_schmidt.png)<!-- .element width="800px;" -->
+
+<br />
+<small>Ben Schmidt: [Typical TV episodes: visualizing topics in screen time](http://sappingattention.blogspot.ch/2014/12/typical-tv-episodes-visualizing-topics.html) (Dec 11, 2014)</small>
+
+--
+
+# →
+
+---
+
+### The Emergence of Topic Modeling:<br />Latent Dirichlet Allocation (LDA)
+
+- most popular topic model in use, introduced by David M. Blei et al. (2003)
+- highly influential paper ([PDF here](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)), Google Scholar counts 17,331 citations to date
+- LDA = "a generative probabilistic model for collections of discrete data such as text corpora"
+- builds on the [Dirichlet distribution](https://ru.wikipedia.org/wiki/Распределение_Дирихле)
+- especially useful for automated text classification in larger corpora and for finding hitherto unknown texts with similar topics
+
+--
+
+## LDA: How It Works
+
+<br />
+- general assumption: each document in the corpus features a set of themes (latent topics), which can be extracted using LDA
+- the researcher has to toy around with model parameters:
+  - number of topics has to be determined beforehand
+  - the division of each text in the corpus has to be determined beforehand
+  - based on the results, parameters can be adjusted
+
+--
+
+# →
+
+---
+
+### Example
+
+<br />
+- corpus given:
+  - document 1: goethe pushkin
+  - document 2: goethe cervantes
+  - document 3: pushkin cervantes
+  - document 4: apple raspberry
+  - document 5: apple pumpkin
+  - document 6: raspberry pumpkin
+
+<br />
+<small>(This example is derived from [this video](https://www.youtube.com/watch?v=ZgyA1Q2ywbM).)</small>
+
+--
+
+### Example
+
+<br />
+
+|           | topic 1 | topic 2 | 
+|-----------|---------|---------| 
+| goethe    | 33%     | 0%      | 
+| pushkin   | 33%     | 0%      | 
+| cervantes | 33%     | 0%      | 
+| apple     | 0%      | 33%     | 
+| raspberry | 0%      | 33%     | 
+| pumpkin   | 0%      | 33%     | 
+
+--
+
+### Example
+
+<br />
+
+|                | topic 1 | topic 2 | 
+|----------------|---------|---------| 
+| document 1     | 100%    | 0%      | 
+| document 2     | 100%    | 0%      | 
+| document 3     | 100%    | 0%      | 
+| document 4     | 0%      | 100%    | 
+| document 5     | 0%      | 100%    | 
+| document 6     | 0%      | 100%    | 
+
+--
+
+### Example
+
+<br />
+
+- document 7:
+  - "**goethe** met **pushkin** at **cervantes'** mansion, where they shared a yummy **pumpkin**."
+
+--
+
+### Example
+
+<br />
+
+|                | topic 1 | topic 2 | 
+|----------------|---------|---------| 
+| document 1     | 100%    | 0%      | 
+| document 2     | 100%    | 0%      | 
+| document 3     | 100%    | 0%      | 
+| document 4     | 0%      | 100%    | 
+| document 5     | 0%      | 100%    | 
+| document 6     | 0%      | 100%    | 
+| **document 7** | **75%** | **25%** | 
+
+--
+
+# →
+
+---
+
+## Seminar
+
+<br />
+Hands-On with MALLET:
+
+- "MAchine Learning for LanguagE Toolkit"
+- Download: http://mallet.cs.umass.edu/
+
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal/plugin/markdown/marked.js' },
+					{ src: '../reveal/plugin/markdown/markdown.js' },
+					{ src: '../reveal/plugin/notes/notes.js', async: true },
+					{ src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
