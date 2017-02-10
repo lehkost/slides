@@ -77,7 +77,7 @@ Frank Fischer · Danil Skorinkin
 
 --
 
-### Addition to Last Week
+### Addition to Last Week (Stylometry)
 
 <br />
 - Roland Barthes: ["The Death of the Author"](https://ru.wikipedia.org/wiki/Смерть_автора) (1967)
@@ -93,15 +93,25 @@ Frank Fischer · Danil Skorinkin
 1. Topic Modeling: Definition
 2. LDA
 3. Example (Goethe and Pushkin eat a pumpkin)
-4. …
-5. Seminar: Hands-On with MALLET
-6. Weekend 🌴
+4. A More Realistic Example
+5. Visualisation of Topic Models
+6. Seminar: Hands-On with MALLET
+7. Weekend 🌴
 
 --
 
 # →
 
 ---
+
+## Prelude with Wordle
+
+- software for generating word clouds: [wordle.net](http://www.wordle.net/)
+- example from Wikimedia Commons ([first chapter of "Don Quijote"](https://commons.wikimedia.org/wiki/File:Nube_de_etiquetas_-_Don_Quijote_de_la_Mancha.png)):
+
+![Wordle example](images/wordle_don_quijote.jpg)<!-- .element width="600px;" -->
+
+--
 
 ### Topic Modeling and the Digital Humanities
 
@@ -114,18 +124,28 @@ Frank Fischer · Danil Skorinkin
 
 ## What Is a "Topic Model"?
 
-<br>
-"In machine learning and natural language processing, a **topic model** is a type of statistical model for discovering the abstract 'topics' that occur in a collection of documents. Topic modeling is a frequently used text-mining tool for discovery of hidden semantic structures in a text body." ([Wikipedia](https://en.wikipedia.org/wiki/Topic_model))
+<br />
+"In machine learning and natural language processing, a **topic model** is a type of statistical model for discovering the **abstract 'topics'** that occur in a **collection of documents**. Topic modeling is a frequently used text-mining tool for discovery of hidden semantic structures in a text body." ([Wikipedia](https://en.wikipedia.org/wiki/Topic_model))
 
 --
 
-### Example: Topics of a TV Show
+## "Topic models are …
 
 <br />
-![HIMYM topics, by Ben Schmidt](images/how_i_met_your_mother_topics_by_ben_schmidt.png)<!-- .element width="800px;" -->
+… the mother of all collocation tools."
 
 <br />
-<small>Ben Schmidt: [Typical TV episodes: visualizing topics in screen time](http://sappingattention.blogspot.ch/2014/12/typical-tv-episodes-visualizing-topics.html) (Dec 11, 2014)</small>
+<small>Matthew Jockers: Macroanalysis (2013), p. 123</small>
+
+--
+
+## "Topic modeling is …
+
+<br />
+… based on the idea that individual documents are made up of **one or more topics**. It uses emerging technologies in computer science to automatically cluster **topically similar documents** by determining the **groups of words** that tend to **co-occur** in them. Most importantly, topic modeling creates topical categories **without a priori subject definitions**."
+
+<br />
+<small>Sharon Block: [Doing More with Digitization](http://www.common-place-archives.org/vol-06/no-02/tales/) (2006)</small>
 
 --
 
@@ -178,14 +198,14 @@ Frank Fischer · Danil Skorinkin
 
 <br />
 
-|           | topic 1 | topic 2 | 
-|-----------|---------|---------| 
-| goethe    | 33%     | 0%      | 
-| pushkin   | 33%     | 0%      | 
-| cervantes | 33%     | 0%      | 
-| apple     | 0%      | 33%     | 
-| raspberry | 0%      | 33%     | 
-| pumpkin   | 0%      | 33%     | 
+|           | topic 1 | topic 2 |
+|-----------|---------|---------|
+| goethe    | 33%     | 0%      |
+| pushkin   | 33%     | 0%      |
+| cervantes | 33%     | 0%      |
+| apple     | 0%      | 33%     |
+| raspberry | 0%      | 33%     |
+| pumpkin   | 0%      | 33%     |
 
 --
 
@@ -193,14 +213,14 @@ Frank Fischer · Danil Skorinkin
 
 <br />
 
-|                | topic 1 | topic 2 | 
-|----------------|---------|---------| 
-| document 1     | 100%    | 0%      | 
-| document 2     | 100%    | 0%      | 
-| document 3     | 100%    | 0%      | 
-| document 4     | 0%      | 100%    | 
-| document 5     | 0%      | 100%    | 
-| document 6     | 0%      | 100%    | 
+|                | topic 1 | topic 2 |
+|----------------|---------|---------|
+| document 1     | 100%    | 0%      |
+| document 2     | 100%    | 0%      |
+| document 3     | 100%    | 0%      |
+| document 4     | 0%      | 100%    |
+| document 5     | 0%      | 100%    |
+| document 6     | 0%      | 100%    |
 
 --
 
@@ -217,15 +237,115 @@ Frank Fischer · Danil Skorinkin
 
 <br />
 
-|                | topic 1 | topic 2 | 
-|----------------|---------|---------| 
-| document 1     | 100%    | 0%      | 
-| document 2     | 100%    | 0%      | 
-| document 3     | 100%    | 0%      | 
-| document 4     | 0%      | 100%    | 
-| document 5     | 0%      | 100%    | 
-| document 6     | 0%      | 100%    | 
-| **document 7** | **75%** | **25%** | 
+|                | topic 1 | topic 2 |
+|----------------|---------|---------|
+| document 1     | 100%    | 0%      |
+| document 2     | 100%    | 0%      |
+| document 3     | 100%    | 0%      |
+| document 4     | 0%      | 100%    |
+| document 5     | 0%      | 100%    |
+| document 6     | 0%      | 100%    |
+| **document 7** | **75%** | **25%** |
+
+--
+
+## Pre-Processing
+
+<br />
+- **tokenizing**: breaking a text up into words, symbols, etc.
+- **stemming**: reducing inflected words to their stem
+- elimination of **stop words**: unlike in stylometry, frequent function words are often a hindrance in topic modeling
+- **chunking**: splitting a text into smaller portions (chunks)
+  - two words appearing together in a small chunk (paragraph, a scene in a play) says more about their relationship than spotting them in larger chunks (like an entire book)
+
+--
+
+# →
+
+---
+
+### A More Realistic Example (1/2)
+
+![example from Blei's article](images/blei_figure_1.png)<!-- .element width="860px;" -->
+
+<small>from David M. Blei: [Probabilistic Topic Models](https://www.cs.princeton.edu/~blei/papers/Blei2012.pdf) (2012)<br />("topics and topic assignments in this figure are illustrative")</small>
+
+--
+
+### A More Realistic Example (2/2)
+
+![example from Blei's article](images/blei_figure_2.png)<!-- .element width="860px;" -->
+
+<small>from David M. Blei: [Probabilistic Topic Models](https://www.cs.princeton.edu/~blei/papers/Blei2012.pdf) (2012)<br />(100-topic LDA model; 17,000 articles from *Science*; left: topic proportions for example article in previous figure; right: top 15 MFWs from most frequent topics in this article)</small>
+
+--
+
+## How to Read Topics (1/2)
+
+<br >
+- example taken from ["Text Analysis with Topic Models for the Humanities and Social Sciences"](https://de.dariah.eu/tatom/index.html) by Allen Riddell:
+  - six novels by Jane Austen and Charlotte Brontë, 20&nbsp;topics
+
+--
+
+## How to Read Topics (2/2)
+
+![example from Riddel's tutorial](images/austen-bronte-6-novels-20-topics.png)<!-- .element width="845px;" -->
+
+<small>taken from Allen Riddell: [Topic modeling with MALLET](https://de.dariah.eu/tatom/topic_model_mallet.html#inspecting-the-topic-model)</small>
+
+--
+
+# →
+
+---
+
+## Visualisation of Topic Models
+
+<br />
+- example: Stanford Literary Lab corpus (3,346 US-American, British and Irish novels from 19th century)
+- examples drawn from Matthew Jockers' "Macroanalysis" (2013)
+- 500 topics (overview [here](http://www.matthewjockers.net/macroanalysisbook/macro-themes/)), one of which is: [Clerks and Offices](http://www.matthewjockers.net/macroanalysisbook/macro-themes/?topic=CLERKS_AND_OFFICES)
+
+--
+
+## Clerks and Offices (1/3)
+
+<br />
+![Clerks and Offices, word cloud](images/clerks_and_offices_1.png)<!-- .element width="400px;" -->
+
+<br />
+<small>Cloud visualisations (source: [matthewjockers.net](http://www.matthewjockers.net/macroanalysisbook/macro-themes/?topic=CLERKS_AND_OFFICES)).</small>
+
+--
+
+## Clerks and Offices (2/3)
+
+<br />
+![Clerks and Offices, topics by gender](images/clerks_and_offices_2.png)<!-- .element width="400px;" -->
+
+<br />
+<small>Topics by gender (source: [matthewjockers.net](http://www.matthewjockers.net/macroanalysisbook/macro-themes/?topic=CLERKS_AND_OFFICES)).</small>
+
+--
+
+## Clerks and Offices (3/3)
+
+<br />
+![Clerks and Offices, topic distribution over time](images/clerks_and_offices_3.png)<!-- .element width="400px;" -->
+
+<br />
+<small>Topic distribution over time (source: [matthewjockers.net](http://www.matthewjockers.net/macroanalysisbook/macro-themes/?topic=CLERKS_AND_OFFICES)).</small>
+
+--
+
+### Another Example (Streamgraph):<br />Topics of a TV Show
+
+<br />
+![HIMYM topics, by Ben Schmidt](images/how_i_met_your_mother_topics_by_ben_schmidt.png)<!-- .element width="800px;" -->
+
+<br />
+<small>Ben Schmidt: [Typical TV episodes: visualizing topics in screen time](http://sappingattention.blogspot.ch/2014/12/typical-tv-episodes-visualizing-topics.html) (Dec 11, 2014)</small>
 
 --
 
@@ -238,8 +358,10 @@ Frank Fischer · Danil Skorinkin
 <br />
 Hands-On with MALLET:
 
-- "MAchine Learning for LanguagE Toolkit"
-- Download: http://mallet.cs.umass.edu/
+- "MAchine Learning for LanguagE Toolkit":
+  - http://mallet.cs.umass.edu/
+- follow the instructions here:
+  - http://slides.com/danilsko/mallet/
 
 
 </script>
