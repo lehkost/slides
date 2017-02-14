@@ -65,7 +65,15 @@
 
 # 1. Intro
 
-## Was ist eine Vossianische Antonomasie?
+## Was ist eine Vossianische Antonomasie? (1/2)
+
+![portrait of Gerhard Johannes Vossius; source: Wikimedia Commons](images/vossius.jpg)<!-- .element width="250px" -->
+
+* Bezeichnung geht auf den niederländischen Humanisten Gerhard Johannes Vossius zurück, der diesen Spezialfall der Antonomasie in seinen lateinischen Rhetoriklehrbüchern beschrieben hat (vgl. [ein entsprechendes Kapitel](https://books.google.com/books?id=q2OvgoX6ar8C&pg=PA193) im *Tractatus philologici de rhetorica, de poëtica, de artium et scientiarum […]*, 1697 [zuerst 1606]) – Bildquelle: <a href="https://commons.wikimedia.org/wiki/File:Gerardus_Johannes_Vossius_(1577-1649),_by_Anonymous.jpg">Wikimedia Commons</a>
+
+--
+
+## Was ist eine Vossianische Antonomasie? (2/2)
 
 <br />
 »Die ›Vossianische Antonomasie‹ ist […] die Setzung eines Eigennamens für ein Appellativ: der Träger des Eigennamens ist eine Person oder Sache, die in Geschichte oder Mythologie eine hervorragende Realisierung der mit dem Appellativ bezeichneten Eigenschaft war. Die hervorragende Person oder Sache ist der Typus […], der sich in der bezeichneten neuen Realisierung wiederfindet. Meist wird der Typus durch <u>ein untypologisches, aktualisierendes Signal</u> (Pronomen, Adjektiv, Genitiv), in jedem Falle durch den (sprachlichen oder situationsmäßigen) Kontext aus der typologischen Ferne in die zu bezeichnende Gegenwart geholt […].«
@@ -120,8 +128,7 @@ Heinrich Lausberg: *Handbuch der literarischen Rhetorik. Eine Grundlegung der Li
 <br />
 ## Begriffliche Einordnung
 
-* Subphänomen des vielgestaltigen Stilmittels ›Antonomasie‹
-* Bezeichnung geht auf den niederländischen Humanisten Gerhard Johannes Vossius zurück, der diesen Spezialfall in seinen lateinischen Rhetoriklehrbüchern beschrieben hat (vgl. [ein entsprechendes Kapitel](https://books.google.com/books?id=q2OvgoX6ar8C&pg=PA193) im *Tractatus philologici de rhetorica, de poëtica, de artium et scientiarum […]*, 1697 [zuerst 1606])
+* Subphänomen der klassischen ›Antonomasie‹
 * Begriff ›Voss. Antonomasie‹ wird international kaum verwendet, stattdessen wird etwa zwischen Antonomasia1 und Antonomasia2 unterschieden: metonymic vs. metaphorical antonomasia (hier wäre unsere Vossanto ein Spezialfall von Antonomasia2, nämlich wenn es um »comparisons with paragons from other spheres of culture« geht: »Lyotard is a pope of postmodernism, Bush is no Demosthenes; and we can buy the Cadillac of vacuum cleaners.«, vgl. Holmqvist/Płuciennik 2010)
 
 --
@@ -159,9 +166,9 @@ Heinrich Lausberg: *Handbuch der literarischen Rhetorik. Eine Grundlegung der Li
 <br />
 * Extraktion des Volltextes im XML-Format (Sandhaus 2008)
 * Verarbeitung mit NLTK (Bird/Loper/Klein 2009):
-  * Zerlegung in Sätze, POS
-  * NER (Personen, Orte, Organisationen)
-* Suche nach Vossanto-typischen Mustern (reguläre Ausdrücke)
+ 	* Zerlegung in Sätze, POS
+ 	* NER (Personen, Orte, Organisationen)
+* Suche nach Vossanto-typischen Mustern
 * vereinfachtes Beispiel (die drei Elemente einer Vossanto sind durch * gekennzeichnet):
 
 ```
@@ -174,10 +181,8 @@ the \(PERSON|ORGANIZATION|GPE) *\) (of|among|from) \((PERSON|ORGANIZATION|GPE) *
 ## NYT-Korpus (2/2)
 
 <br />
-* Extraktion eines Satzes, wenn er auf eines der Muster passte und
-  tabellarische Ausgabe der drei Teile
 * Extraktion von insgesamt 10.744 Kandidaten (im Mittel 512 pro Jahr)
-* anschließende manuelle Überprüfung in zwei Durchgängen
+* manuelle Überprüfung in zwei Durchgängen
 * Beschränkung auf Vossantos mit mindestens einem Individuum (Person/Tier/Figur)
 * Auslassung von Orten, Firmen und Gruppen von Personen (Vossantos der Art »Algarve, the Riviera of Portugal« oder »Pepsi is the Nike of soft drinks« sind eigene Untersuchung wert)
 * Ergebnis: 246 Vossantos (2,3%; kein Precision-Wert, da nicht alle Vossantos übernommen wurden): [Übersicht im Git-Repo](https://github.com/weltliteratur/vossanto/blob/master/vossanto-NYT-only-individuals.md)
