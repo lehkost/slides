@@ -128,8 +128,8 @@ Heinrich Lausberg: *Handbuch der literarischen Rhetorik. Eine Grundlegung der Li
 
 ## Wesen und Funktion der Vossanto
 
-* die Vossanto stellt über einen modifier einen Zusammenhang zwischen source und target her (source → modifier/metaphor → target), vgl. Bergien 2013
-* Entitäten können sowohl als source als auch als target auftreten, siehe das Beispiel Obama (ebd.): bis 2011 war er vor allem target und wurde danach immer mehr source
+* source → modifier/metaphor → target (vgl. Bergien 2013)
+* Entitäten können sowohl als source als auch als target auftreten, z.&nbsp;B. Obama (ebd.): bis 2011 war er vor allem target und wurde danach immer mehr source
 * eine Funktion der Vossanto ist die Inkulturation, d. h. wir erhöhen das target-Objekt durch eine Referenz auf das source-Objekt und das aktualisierendes Signal: »If we refer to Leonard Cohen as the Lord Byron of rock music, we treat a popular singer as a famous romantic poet elevating him and popular songs to a higher level of culture.« (Holmqvist/Płuciennik 2010)
 * ebd. heißt es aber auch: **»Antonomasia is essentially humanistic and anti-computational.«** – d.&nbsp;h., ohne kulturelles Hintergrundwissen könne man eine Vossanto nicht verstehen
 * insgesamt oszilliert die Vossanto zwischen Erläuterungshilfe und ironischem Kommentar; die Erläuterungsfunktion kann aber auch negative Effekte haben: »Nichts ist banaler als dieses ewige ›Ute Lemper ist die Marlene Dietrich von heute‹, ›Hansjörg Felmy war der deutsche Humphrey Bogart‹. Das stimmt nie.« (Fritz J. Raddatz, [*Die Zeit* 44/2007](http://www.zeit.de/2007/44/L-Augustin/komplettansicht))
@@ -157,12 +157,12 @@ Heinrich Lausberg: *Handbuch der literarischen Rhetorik. Eine Grundlegung der Li
 ## NYT-Korpus (1/2)
 
 <br />
-* Extraktion des Volltextes aus den 1.854.726 Artikeln im XML-Format (Sandhaus 2008)
-* Zerlegung in Sätze mittels NLTK (Bird/Loper/Klein 2009)
-* Annotation der Wörter jedes Satzes mit dem Part-of-Speech-Tagger des NLTK
-* Annotation von Named Entities (Personen, Orte, Organisationen) mit dem NLTK-eigenen Named-Entity-Extraktor
-* Abgleich der annotierten Sätze  mit einer Liste von Vossanto-typischen Mustern (in Form von regulären Ausdrücken)
-* Beispiel eines Musters (vereinfacht; die drei Elemente einer Vossanto sind durch * gekennzeichnet):
+* Extraktion des Volltextes im XML-Format (Sandhaus 2008)
+* Verarbeitung mit NLTK (Bird/Loper/Klein 2009):
+  * Zerlegung in Sätze, POS
+  * NER (Personen, Orte, Organisationen)
+* Suche nach Vossanto-typischen Mustern (reguläre Ausdrücke)
+* vereinfachtes Beispiel (die drei Elemente einer Vossanto sind durch * gekennzeichnet):
 
 ```
 \((PERSON|ORGANIZATION|GPE) *\) (is|has) (often|sometimes)? (been)? (called)?
