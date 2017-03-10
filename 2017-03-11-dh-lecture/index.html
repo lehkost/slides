@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>DH Lecture: Network Analysis, pt. I (4 March 2017)</title>
+		<title>DH Lecture: Network Analysis, pt. I (11 March 2017)</title>
 
 		<link rel="stylesheet" href="../reveal/css/reveal.css">
 		<link rel="stylesheet" href="../reveal/css/theme/simple.css">
@@ -49,44 +49,57 @@
 ### Network Analysis, Pt. I (of III)
 
 <br /><br />
-Frank Fischer
+Frank Fischer · Danil Skorinkin
 
-(ffischer@hse.ru)<!-- .element: style="font-size:0.75em;" -->
+(ffischer@hse.ru) · (daskorinkin@edu.hse.ru)<!-- .element: style="font-size:0.75em;" -->
 
-<br /><br />4 March 2017</p>
+<br /><br />11 March 2017</p>
 
 --
 
 ### Recap of Last Session
 
 <br />
-- …
+- Introduction to Visual Analytics
 
 --
 
-### The Path to the Second Colloquium
+### Path to Second Colloquium
 
 <br />
 
 | Date | Topic |
 |:-|:-|
-| 25 февр | Visual Analytics |
-| **4 март** | **Network Analysis 1** |
-| 11 март | Network Analysis 2 |
-| 18 март | Network Analysis 3 |
-| 25 март | Colloquium – Presentations |
-<!-- .element: style="font-size:0.6em;" -->
+| 4 март | Visual Analytics |
+| **11 март** | **Network Analysis 1** |
+| 18 март | Network Analysis 2 |
+| 25 март | Network Analysis 3 |
+| 8 апрель | Colloquium – Presentations |
 
 --
 
 ### Agenda for Today
 
 <br />
-1. Network Theory
-2. Social Network Analysis
-3. …
-4. Seminar: …?
-5. Weekend 🌴
+1. Moretti's Intuitive "Network Theory"
+2. History of Network Theory
+3. Weighted and Directed Graphs
+3. Social Network Analysis
+4. Graph- and Node-Related Measures
+5. Formalisation of Interactions
+5. Seminar: Introduction to Gephi
+6. Weekend 🌴
+
+--
+
+# →
+
+---
+
+### Moretti's Intuitive Network Theory
+
+<br />
+- Presentation by Artem Kolganov / Maxim Konyaev
 
 --
 
@@ -101,6 +114,16 @@ Frank Fischer
 
 --
 
+#### Small example network graph with<br />8 vertices (nodes) and 10 edges:
+
+<br>
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="434px;" -->
+
+<br>
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)</small>
+
+--
+
 ### The Emergence of Graph Theory …
 
 <br>
@@ -112,11 +135,11 @@ Frank Fischer
 
 --
 
-### Abstraction from …
+#### Abstraction from …
 
 ![Map of Königsberg (from Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
 
-… to …
+<small>… to …</small>
 
 ![Map of Königsberg (from Wikimedia Commons)](images/kenig-3.png)<!-- .element height="160px;" -->
 
@@ -124,28 +147,330 @@ Frank Fischer
 
 --
 
+### Features of Euler's Abstraction
+
+<br />
+- landmasses: nodes, bridges: edges
+- precise location of bridges is irrelevant
+- number of bridges and their endpoints are key for the solution of the problem:
+  - all four landmasses are reached by an odd number of bridges, when there should be a maximum of two landmasses (nodes) with an odd number of bridges (edges); these two landmasses could then serve as starting and end point, whereas the other two banks would have to feature an even number of bridges leading to them
+
+--
+
+### Skit: Anecdote from Wikipedia
+
+<br />
+"В 1905 году был построен Императорский мост, (…). Существует легенда о том, что этот мост был построен по приказу самого кайзера, который не смог решить задачу мостов Кёнигсберга (…) (если добавить восьмой мост, то задача становится разрешимой)."
+
+<br />
+<small>Source: ["Задача о семи кёнигсбергских мостах"](https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D0%BE_%D1%81%D0%B5%D0%BC%D0%B8_%D0%BA%D1%91%D0%BD%D0%B8%D0%B3%D1%81%D0%B1%D0%B5%D1%80%D0%B3%D1%81%D0%BA%D0%B8%D1%85_%D0%BC%D0%BE%D1%81%D1%82%D0%B0%D1%85) (Wikipedia article, last updated 23 Nov 2016‎)</small>
+
+--
+
+# →
+
+---
+
+## Weighted and Directed Graphs
+
+<br />
+- Euler's graph of the Königsberg bridges was unweighted and undirected
+
+--
+
+### Directed Graph
+
+<br />
+![simple directed graph (from Wikimedia Commons)](images/directed-graph-from-wikimedia-commons.png)<!-- .element height="180px;" -->
+
+<br />
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Directed.svg)</small>
+
+--
+
+### Weighted Graph
+
+<br />
+![simple weighted graph (from Wikimedia Commons)](images/weighted-graph-from-wikimedia-commons.png)<!-- .element height="227px;" -->
+
+<br />
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Weighted_network.svg)</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (1/4)
+
+![Moscow Metro 2010 (from Wikimedia Commons)](images/moscow_metro_map_2010.jpg)<!-- .element height="500px;" -->
+
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Moscow_metro_map_2010-mhr.png)</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (2/4)
+
+![Yandex.Metro App (screenshot)](images/metro-app-1.jpg)<!-- .element height="500px;" -->
+
+<small>Screenshot: Яндекс.Метро App</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (3/4)
+
+![Yandex.Metro App (screenshot)](images/metro-app-1.jpg)<!-- .element height="500px;" -->
+
+<small>Screenshot: Яндекс.Метро App</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (4/4)
+
+![Yandex.Metro App (screenshot)](images/metro-app-1.jpg)<!-- .element height="500px;" -->
+
+<small>Screenshot: Яндекс.Метро App</small>
+
+--
+
+# →
+
+---
+
 ## Social Network Analysis …
 
 <br>"… is the process of investigating social structures through the use of network and graph theories." (Wikipedia)
 
 --
 
-### Small example network<br>with 8 vertices and 10 edges:
+### Social Network Analysis (SNA)
 
-<br>
-![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element height="266px;" -->
-
-<br>
-<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)</small>
+<br />
+- SNA started as a bundle of approaches developed in the Social Sciences since the 1930s
+- 'Harvard Breakthrough' in the 1960s (centered around sociologist [Harrison White](https://en.wikipedia.org/wiki/Harrison_White)): sociologists, mathematicians and programmers flesh out a distinct structural-analytical perspective on social phenomena
+- 1990s: new perspectives on network structures with the advent of the internet, applications in Physics and Bioinformatics; Literary Studies started to focus on SNA around half a decade ago
 
 --
 
-1736 Bridge Problem
-1852 Map Coloring Problem
-1936 Book "Graph Theory"
-1969 Map Problem Partly Solved
-1994 Map Probem Solved
+### One of the First Sociograms
 
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+<small>"Class structure, 4th grade". Work by Jacob L. Moreno (1889–1974).<br />(First published in NYT, [3 April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Source for this PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)</small>
+
+--
+
+### Basic Bibliography
+
+<br />
+- [Stanley Wasserman](https://www.hse.ru/en/org/persons/120496236), Katherine Faust: [*Social Network Analysis: Methods and Applications*](https://books.google.com/books?id=CAm2DpIqRUIC&printsec=frontcover), 1994
+  - still the standard reference for the foundations of Social (!) Network Analysis, published long before SNA hype
+- Alain Degenne, Michel Forsé: [*Introducing Social Networks*](https://books.google.com/books?id=1mSHqydgrYcC&printsec=frontcover), orig. 1994, transl. 1999
+- John Scott: *Social Network Analysis: A Handbook*, 2nd ed. 2000.
+- John Scott, Peter J. Carrington (eds.): [*The SAGE Handbook of Social Network Analysis*](https://books.google.com/books?id=mWlsKkIuFNgC&printsec=frontcover), 2011
+
+--
+
+# →
+
+---
+
+## Graph-Related Measures
+
+<br />
+- Network Size
+- Maximum Degree
+- Average Degree
+- Density
+- Average Path Length
+- Average Clustering Coefficient
+- …
+
+--
+
+## Node-Related Measures
+
+--
+
+### Degree
+
+<br>
+![Degree](images/moretti-hamlet-degree.jpg)<!-- .element height="432px;" -->
+
+<br>
+<small>Source: Дальнее чтение, p. 294</small>
+
+--
+
+### Average Distance
+
+--
+
+### Betweenness Centrality
+
+<br />
+- "a measure of centrality in a graph based on shortest paths"
+- "For every pair of vertices in a graph, there exists a shortest path between the vertices such that either the number of edges that the path passes through (for undirected graphs) or the sum of the weights of the edges (for directed graphs) is minimized. The betweenness centrality for each node is the number of these shortest paths that pass through the node." (Wikipedia)
+
+--
+
+## Closeness Centrality
+
+<br />
+- "the sum of the length of the shortest paths between the node and all other nodes in the graph"
+
+--
+
+## PageRank
+
+<br />
+- "PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is. The underlying assumption is that more important websites are likely to receive more links from other websites." (quotes in Wikipedia)
+
+--
+
+### Periodic Table of Network Centrality
+
+<br />
+- http://schochastics.net/sna/periodic.html
+
+--
+
+### Node-Degree Distribution
+
+<br>
+![Node-Degree Distribution](images/moretti-hamlet-node-degree-distribution.jpg)<!-- .element height="432px;" -->
+
+<br>
+<small>Source: Дальнее чтение, p. 298</small>
+
+--
+
+### Power-law regression for Goethe's "Götz"
+
+![Goethe, Götz](images/goethe-goetz-node-degree-distrib.png)<!-- .element height="500px;" -->
+
+<small>plenty of "lower" characters – few "average" characters – very few "upper" characters</small>
+
+--
+
+### Reversed (!) power-law regression
+
+![Mühsam, Judas](images/muehsam-judas-node-degree-distrib.png)<!-- .element height="500px;" -->
+
+<small>plenty of "upper" characters</small>
+
+--
+
+### Different Network Types
+
+<table>
+  <tbody>
+    <tr>
+      <td style="font-size:0.6em;text-align:left;">J. W. v. Goethe, *Götz* (1773) <br><b>Drama of the ›great individual‹</b> </td>
+      <td style="font-size:0.6em;text-align:right;">Erich Mühsam, *Judas* (1921) <br><b>Drama of the crowds</b></td>
+    </tr>
+    <tr>
+      <td><div style="text-align:left;"><img alt="Götz, spring" src="images/goethe-goetz-network.png" height="300"></div></td>
+      <td><div style="text-align:right;"><img alt="Mühsam, spring" src="images/muehsam-judas-network.png" height="300"></div></td>
+    </tr>
+    <tr>
+      <td style="font-size:0.7em;text-align:left;"><b>Aristocratic model?</b></td>
+      <td style="font-size:0.7em;text-align:right;"><b>Communist model?</b></td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+<small>Cf. [our talk at DH2016](https://dlina.github.io/presentations/2016-krakow/).</small>
+
+--
+
+# →
+
+---
+
+### Formalisation of Interactions
+
+<br />
+<pre><code class="hljs" data-trim contenteditable>
+Source,Target,Weight
+Барыня,Варвара,2
+Барыня,Кабанов,1
+Барыня,Кабанова,1
+Барыня,Катерина,2
+Борис,Варвара,4
+Борис,Глаша,1
+Борис,Дикой,1
+Борис,Женщина,1
+Борис,Кабанов,1
+Борис,Кабанова,1
+Борис,Катерина,3
+Борис,Кудряш,4
+Борис,Кулигин,3
+Борис,Первый,1
+Борис,Феклуша,1
+...
+</code></pre>
+
+<br />
+<small>Ostrovsky's "Groza", interactions encoded in a CSV list (comma-separated values).</small>
+
+--
+
+### Network Graph for Ostrovsky's "Groza"
+
+![Network graph for Groza](images/rusplay-groza.png)<!-- .element height="500px;" -->
+
+<small>Source: DS/FF.</small>
+
+--
+
+### Pushkin, Boris Godunov
+
+![Network graph for Boris Godunov](images/rusplay-boris-godunov.png)<!-- .element height="500px;" -->
+
+<small>Source: DS/FF. Visualisation with Python library igraph.</small>
+
+--
+
+### Pushkin, Boris Godunov
+
+![Network graph for Boris Godunov, using Gephi](images/rusplay-godunov-gephi.png)<!-- .element height="500px;" -->
+
+<small>Source: DS/FF. Visualisation with Gephi.</small>
+
+--
+
+### Character values for "Boris Godunov"
+
+<br />
+
+| Character                      | Degree | Betweenness Centrality | Average Distance | Closeness Centrality |
+|--------------------------------|--------|------------------------|------------------|----------------------|
+| Григорий Отрепьев (Самозванец) | 18     | 537.0                  | 16.61            | 0.06                 |
+| Феодор                         | 17     | 276.28                 | 16.47            | 0.06                 |
+| Ксения                         | 15     | 187.81                 | 16.51            | 0.06                 |
+| **Народ**                      | 11     | 606.93                 | 16.39            | 0.06                 |
+| Гаврила Пушкин                 | 11     | **976.12**             | 16.14            | 0.06                 |
+| Басманов                       | 11     | 862.69                 | 16.1             | 0.06                 |
+| Борис (Царь)                   | 11     | 484.57                 | 16.27            | 0.06                 |
+| Шуйский                        | 10     | 282.14                 | 16.35            | 0.06                 |
+
+<br />
+<small>Just two observations: **1.** The high betweenness centrality of Г. Пушкин (given the considerably lesser degree compared to other characters) suggests his significance in the network. – **2.** The important role of undissolvable multitudes in a network. ("Народ безмолвствует.")</small>
+
+--
+
+### Comparison of 4 Russian Plays
+
+<br />
+
+| Play                 | Characters | Max Degree | Avg Degree | Density | Avg Path Length |
+|----------------------|------------|------------|------------|---------|-----------------|
+| Борис Годунов (1825) | 80         | 18         | 5.37       | 0.07    | 3.4             |
+| Горе от ума (1825)   | 29         | 19         | 9.45       | 0.34    | 1.94            |
+| Ревизор (1836)       | 26         | 23         | 11.0       | 0.44    | 1.62            |
+| Гроза (1859)         | 19         | 16         | 8.21       | 0.46    | 1.57            |
+
+<br />
+<small>Well, there is not much you can read into these only four plays, other than to factualise that "Борис Годунов" can be rightly called a closet drama. Much more data is needed to calculate and observe general changes over time.</small>
 
 --
 
@@ -156,12 +481,7 @@ Frank Fischer
 ## Seminar
 
 <br />
-…
-
-by …
-
-<br />
-→ **Slides**
+Introduction to Gephi
 
 </script>
 			    </section>
