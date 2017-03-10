@@ -280,8 +280,15 @@ Frank Fischer · Danil Skorinkin
 - Average Degree
 - Density
 - Average Path Length
-- Average Clustering Coefficient
 - …
+
+--
+
+### Example
+
+![three nodes](images/three-nodes.png)<!-- .element height="400px;" -->
+
+What is the (a) network size, (b) maximum degree, (c) average degree, (d) density, (e) average path length of this network?
 
 --
 
@@ -295,11 +302,16 @@ Frank Fischer · Danil Skorinkin
 ![Degree](images/moretti-hamlet-degree.jpg)<!-- .element height="432px;" -->
 
 <br>
-<small>Source: Дальнее чтение, p. 294</small>
+<small>In Moretti's formalisation, Hamlet has direct relations to 16 characters (= his degree).<br />(Source: *Дальнее чтение*, p. 294.)</small>
 
 --
 
 ### Average Distance
+
+<br />
+- in Moretti's formalisation, Hamlet has an average distance (from all other characters) of 1.45
+- average distance from Claudius: 1.62
+- Horatio: 1.69
 
 --
 
@@ -329,6 +341,14 @@ Frank Fischer · Danil Skorinkin
 
 <br />
 - http://schochastics.net/sna/periodic.html
+
+--
+
+### Social Networks Extracted from Movies
+
+![Screenshot from website](images/moviegalaxies-screenshot.png)<!-- .element width="642px;" -->
+
+<small>[moviegalaxies.com](http://moviegalaxies.com/movies): presents network metrics for every movie and<br />degree + betweenness centrality values for every character in the network.</small>
 
 --
 
@@ -418,27 +438,36 @@ Source,Target,Weight
 
 ![Network graph for Groza](images/rusplay-groza.png)<!-- .element height="500px;" -->
 
-<small>Source: DS/FF.</small>
-
---
-
-### Pushkin, Boris Godunov
-
-![Network graph for Boris Godunov](images/rusplay-boris-godunov.png)<!-- .element height="500px;" -->
-
 <small>Source: DS/FF. Visualisation with Python library igraph.</small>
 
 --
 
-### Pushkin, Boris Godunov
+### Pushkin, Boris Godunov (1/4)
 
-![Network graph for Boris Godunov, using Gephi](images/rusplay-godunov-gephi.png)<!-- .element height="500px;" -->
+![Network graph for Boris Godunov](images/rusplay-boris-godunov.png)<!-- .element height="500px;" -->
 
-<small>Source: DS/FF. Visualisation with Gephi.</small>
+<small>Source: DS/FF.</small>
 
 --
 
-### Character values for "Boris Godunov"
+### Pushkin, Boris Godunov (2/4)
+
+![Network graph for Boris Godunov, using Gephi](images/rusplay-godunov-gephi.png)<!-- .element height="500px;" -->
+
+<small>Node size corresponding to degree.<br />(Source: DS/FF. Visualisation with Gephi.)</small>
+
+
+--
+
+### Pushkin, Boris Godunov (3/4)
+
+![Network graph for Boris Godunov](images/rusplay-boris-godunov-betweenness.jpg)<!-- .element height="500px;" -->
+
+<small>Node size corresponding to betweenness centrality.<br />(Source: DS/FF. Visualisation with Python library igraph.)</small>
+
+--
+
+### Character values for "Boris Godunov" (4/4)
 
 <br />
 
