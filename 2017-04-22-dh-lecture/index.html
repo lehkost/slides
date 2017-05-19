@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+	<head>	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DH Lecture: Geographical Information Systems – A Practical Introduction for the Humanities (22 April 2017)</title>
+
+		<link rel="stylesheet" href="../reveal/css/reveal.css">
+		<link rel="stylesheet" href="../reveal/css/theme/simple.css">
+
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Geographical Information Systems:
+
+A Practical Introduction for the Humanities
+
+<br /><br /><br />
+Seth Bernstein<br />
+April 22, 2017
+
+---
+
+## What is GIS?
+
+<br />
+A geographic information system (GIS) is a system designed to capture, store, manipulate, analyze, manage, and present spatial or geographic data.
+
+--
+
+## How is GIS different from Geography?
+
+--
+
+#### Example: The Treptower Soviet War Memorial
+
+<br />
+![Soviet War Memorial (Treptower Park)](https://media-cdn.tripadvisor.com/media/photo-s/01/ef/fa/a1/treptower-park.jpg)<!-- .element height="528px;" -->
+
+--
+
+## Cultural Geography:
+
+<br />
+### Is this space Soviet? Is it German? Answer does not require GIS.
+
+--
+
+## How would GIS answer these questions?
+
+---
+
+## What does GIS look like?
+
+--
+
+### Basic: A Spreadsheet with Some GeoData
+
+<br />
+date,<b>y,x</b>,flight,degree,r,g,b
+
+1948-05-01 08:55,<b>49.806406,73.085485</b>,Flight 440: Karaganda-Kostanay,-70.1747994417,170,0,0
+
+--
+## Turns into:
+
+<br />
+<iframe src="https://player.vimeo.com/video/145366151" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+--
+
+### Let's look further:
+
+<br />
+x,y = longitude and latitude
+
+--
+
+date = timestamp (allows time sorting)
+
+--
+
+degree = direction for plane to point
+
+--
+
+## Power of GIS:
+
+<br />
+Connect GeoData with Other Information
+
+---
+
+## Types of Electronic Maps
+
+--
+
+Raster:
+
+![Карта Москвы (1678) – Source: WM Commons](https://upload.wikimedia.org/wikipedia/commons/5/5e/Tanner_Moscow_map.jpg)<!-- .element height="500px;" -->
+
+<small>Map of Moscow, 1678</small>
+
+--
+
+## Raster: Only Pixels
+
+--
+
+## Vector:
+
+Numerically Generated Maps
+
+--
+
+## Points
+
+![Source: depositphotos.com](http://st2.depositphotos.com/2723391/5209/v/950/depositphotos_52096437-stock-illustration-world-map-with-points.jpg)<!-- .element height="500px;" -->
+
+--
+
+### What can you represent with points?
+
+--
+
+## Lines
+
+![Source: newsmetro.ru](http://newsmetro.ru/metroproba27e.jpg)<!-- .element height="500px;" -->
+
+--
+
+### What can you represent with lines?
+
+--
+
+## Polygons
+
+![Source: gvlt.wordpress.com](https://gvlt.files.wordpress.com/2008/05/picture-11.png)<!-- .element height="500px;" -->
+
+--
+
+## Combined Raster/Vector Maps
+
+--
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1355.3376362765378!2d37.66349815434641!3d55.76680331623171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sru!4v1492570570324" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+--
+
+## Slippy Map
+
+--
+
+## Choropleth Map
+
+--
+
+![Source: gvlt.wordpress.com](https://gvlt.files.wordpress.com/2008/05/picture-11.png)<!-- .element height="500px;" -->
+
+--
+
+![Source: preview.ibb.co](https://preview.ibb.co/nORFBQ/Picture1.png)
+
+<br />
+<small>Number of Returnees to the USSR after World War II</small>
+
+--
+
+#### Coloring within boundaries to display data. <br>Note that a good practice is to use a scale of white to one other color (e.g., White-Blue)
+
+--
+
+## Heat Map
+
+--
+
+<iframe src='http://staticsites.abstractualized.com/monuments.html'width="700" height="550" frameborder="0"></iframe>
+
+#### Monuments on the Site Pomnite-Nas.ru (2014)
+
+---
+
+## Formats for GIS
+
+--
+
+### Shapefile<br><br>A proprietary but fairly open geoformat created by a company called ESRI (ArcGIS). Most commonly used format in heavy-duty GIS.
+
+--
+
+### Keyhole Markup Language (KML)<br><br>Open source language developed for use in Google Earth. Advantage is incorporation of altitude.
+
+--
+
+### GeoJSON
+
+<br />
+Popular open source language. Used very commonly on the internet.
+
+--
+
+### TopoJSON
+
+<br />
+Lightweight alternative to GeoJSON.<br />Compresses by repeating 'arcs'.
+
+![Core elements of Topojson shapes drawing system: point, line, polygon (Source: WM Commons)](https://upload.wikimedia.org/wikipedia/commons/1/18/Topojson_shapes-en.svg)
+
+---
+
+## Tools for GIS
+
+--
+
+### ArcGIS by ESRI (<a href="http://arcgis.com">arcgis.com</a>)
+
+<br />
+#### Advantages –<br />Powerful<br />Make open source maps free online<br />Relatively easy to use
+
+<br />
+#### Disadvantages –<br />Commercial version is expensive<br />Free version has limited features<br />Not flexible
+
+--
+
+## StoryMaps by ESRI
+
+### (<a href="http://storymaps.arcgis.com">storymaps.arcgis.com</a>)
+
+<br />
+#### Platform for creating online GIS presentations<br>
+
+<br />
+#### See, for example, on world battery production: <a href="http://arcg.is/2n7sdJL">http://arcg.is/2n7sdJL</a>
+
+--
+
+## QGIS (<a href="http://qgis.org">qgis.org</a>)
+
+<br />
+#### Advantages –<br />Powerful and full featured<br />Open source with community support<br />FREE!
+
+<br />
+#### Disadvantages –<br />Not online, or not without a lot of work<br />Difficult to learn
+
+--
+
+## For Historians: QGIS with TimeManager
+
+--
+
+## Google
+
+<br />
+- Earth
+- Maps
+- GeoMaps
+- Fusion Tables
+
+<br />
+Generally you need to get an API
+
+--
+
+## GoogleEarth
+
+<br />
+#### Advantages –<br />Three-dimensional data<br />Good satelite images<br />Free
+
+<br />
+#### Disadvantages –<br />Prefers Keyhole Markup Language<br />Not many features<br />Lots of data<br />Not flexible
+
+--
+
+## GoogleMaps
+
+<br />
+#### Advantages –<br />Address data is useful<br />Easy to share, esp. on mobile<br />Easy to use, even with Javascript
+
+<br />
+#### Disadvantages –<br />Not flexible<br />Few features
+
+--
+
+## GeoChart
+
+<br />
+#### Advantages –<br />Good for choropleth maps<br />Make open source maps free online
+
+<br />
+#### Disadvantages –<br />Limited<br />World borders are world borders
+
+--
+
+## Fusion Tables
+
+<br />
+#### Advantages –<br />Easy to use<br />Geocodes on its own<br />Great for heat Maps
+
+<br />
+#### Disadvantages –<br />Limited applications
+
+--
+
+## <a href="http://geojson.io">GeoJSON.io</a>
+
+<br />
+#### Advantages – <br />Easy way to make and save vector maps
+
+<br />
+#### Disadvantages –<br />That's all it does!
+
+--
+
+## Other Tools
+
+<br />
+- CartoDB <a href="https://carto.com">carto.com</a><br>
+- Mapbox <a href="https://mapbox.com">mapbox.com</a><br><br>
+
+#### Advantages –<br />Made for managing geodata<br />Make open source maps free online
+
+<br />
+#### Disadvantages –<br />Commercial version is expensive<br />Limitations on free version
+
+---
+
+## GIS for the Humanities <br> Why?
+
+--
+
+## Tell Stories<br>
+
+![Source: petersburg.berkeley.edu](http://petersburg.berkeley.edu/victoria/images/map_ph.jpg)<!-- .element height="400px;" -->
+
+##### <a href="http://petersburg.berkeley.edu/victoria/vic_1_1a_new.html">From Voices of Silence: The Funeral of Alexander Blok</a>
+
+--
+
+## Present and Discover Data
+
+<iframe src='geomap.html' width='480' height="380" ></iframe>
+
+--
+
+## Visualize Change
+
+<br />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XpXPN3PS1oE" frameborder="0" allowfullscreen></iframe>
+
+---
+
+## After the Break
+
+<br />
+
+- Play with <a href="http://geojson.io">GeoJSON.io</a>
+- Make a Choroplet Map with GeoChart
+- Make a Heat Map with Fusion Tables
+
+---
+
+## GeoJSON
+
+<br />
+- Place points everywhere you have lived
+- Draw your path this weekend
+- Draw the borders of the Russian Empire in 1913
+- Save and upload to GitHub
+- Put on a Google Map by editing geojson.html at <a href="https://bit.ly/2oMIUaX">https://bit.ly/2oMIUaX</a>
+
+--
+
+## GeoChart
+
+<br />
+- See geomap.html at <a href="https://bit.ly/2oMIUaX">https://bit.ly/2oMIUaX</a>
+- Go to Census Data at Demoscope.ru <a href="http://demoscope.ru/weekly/ssp/census.php?cy=8">http://demoscope.ru/weekly/ssp/census.php?cy=8</a>
+- Make your own map!
+- More info at <a href="https://developers.google.com/chart/interactive/docs/gallery/geochart">Google developer page</a>
+
+--
+
+## Fusion Tables
+
+<br />
+- Go to <a href="https://fusiontables.google.com">fusiontables.google.com</a>
+- Look at randomuk.xls in the drive folder
+- Upload to Fusion Tables
+- Edit fusiontable.html to include your table's information
+
+--
+
+## Note on Geocoding
+
+<br />
+—
+
+--
+
+## Closing Thoughts
+
+<br />
+- For most, GIS is a tool and not the central focus
+- Most important is to be aware of goals
+- Who is audience?
+- How much data?
+- Will my tool be useful for others?
+- How much work would it take to produce the perfect option?
+- In most instances, better to use the best available option
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal/plugin/markdown/marked.js' },
+					{ src: '../reveal/plugin/markdown/markdown.js' },
+					{ src: '../reveal/plugin/notes/notes.js', async: true },
+					{ src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
