@@ -1,0 +1,40 @@
+<html>
+  <head>
+  <title>Random Data!</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+	  
+        var data = google.visualization.arrayToDataTable([
+		
+//HEY GUYS: LOOK HERE FOR THE DATA!
+          ['Province', 'Popularity'],
+['RU-BEL',660],	// Belgorodskaya oblast'
+['RU-BRY',632],	// Bryanskaya oblast'
+['RU-VLA',644],	// Vladimirskaya oblast'
+['RU-VOR',638],	// Voronezhskaya oblast'
+]);
+
+        var options = {//HEY GUYS: 'region' CHANGES THE MAP!
+						region: 'world', 
+						displayMode:'regions', 
+						//HEY GUYS: 'resolution' CHANGES THE RESOLUTION!
+						resolution:'world',
+						//HEY GUYS: CHANGE THE COLOR
+						colorAxis: {colors:['white','red'],},
+						legend: {textStyle: {color: 'blue', fontSize: 16}}};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+	<h1>Random Numbers in Russian Federation Territories</h1>
+    <div id="regions_div" style="width: 450px; height: 250px;"></div>
+  </body>
+</html>
