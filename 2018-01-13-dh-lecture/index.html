@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DH Lecture, 13 Jan 2018</title>
+
+		<link rel="stylesheet" href="../reveal/css/reveal.css">
+		<link rel="stylesheet" href="../reveal/css/theme/simple.css">
+
+      <!-- adjustments for serif.css -->
+      <link rel="stylesheet" href="custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Современные методы<br />в гуманитарных науках
+
+<br /><br />💻 &nbsp; 📚 &nbsp; 🗺 &nbsp; 🎨 &nbsp; 🏛
+
+<br /><br /><br >
+(40 лекц, 40 сем)<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## First Lecture
+### Introduction to the Digital Humanities
+
+<br /><br />
+Frank Fischer
+
+(ffischer@hse.ru)<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br />13 January 2018</p>
+
+--
+
+### Agenda for Today
+
+<br />
+1. Digital Humanities: Definition
+2. Overview over this semester
+3. Short introduction to all topics, with examples
+4. Weekend 🌴
+
+--
+
+# →
+
+---
+
+## Digital Humanities, or, …
+
+<br />
+
+- <small>{ru1}</small> Цифровые гуманитарные науки
+- <small>{ru2}</small> Цифровая гуманитаристика
+- <small>{fr}</small> Humanités numériques
+- <small>{es}</small> Humanidades digitales
+- <small>{he}</small> מדעי הרוח הדיגיטליים
+- <small>{it}</small> Informatica umanistica
+- <small>{de}</small> Digitale Geistes- und Sozialwissenschaften
+
+--
+
+### "What Is Digital Humanities?"
+
+<br />
+The website …
+
+http://whatisdigitalhumanities.com/
+
+… presents <u>817 definitions</u> of the term 'Digital Humanities'.
+
+--
+
+### Digital Humanities According to Wikipedia
+
+<br />
+"Digital humanities (DH) is an area of scholarly activity at the intersection of computing or information technologies and the disciplines of the humanities."
+
+<small>Source: https://en.wikipedia.org/wiki/Digital_humanities</small>
+
+<br />
+"Цифровые гуманитарные науки – это область исследований, обучения и созидания, созданная на стыке компьютерных и гуманитарных наук."
+
+<small>Source: https://ru.wikipedia.org/wiki/Цифровые_гуманитарные_науки</small>
+
+--
+
+### Quantitative Analyses
+
+<br />
+- Quantitative analyses are at the core of the Digital Humanities.
+- This kind of analyses is an addition (not a replacement!) to traditional/qualitative research in the Humanities.
+- The crucial part now is to find a formalisation: How do we turn culture into digits? And to what end?
+- Forerunners of this research direction: B. Yarkho, M. Gasparov (verse studies), …
+
+--
+
+### Mapping DH
+
+![Mapping DH (Patrick Sahle)](images/Patrick_Sahle_-_Mapping_DH_en.png)<!-- .element width="500px;" -->
+
+<small>Chart by Patrick Sahle, University of Cologne. – DH are "radically interdisciplinary" (Stephen Ramsay 2011). </small>
+
+--
+
+### The DH Community
+
+<br />
+- team work rather than solitary work
+- the *project* as basic unit:
+  - "a kind of scholarship that requires design, manage&shy;ment, negotiation, and collaboration" (Jeffrey Schnapp)
+- emphasis on building/crafting
+- alternative teaching formats:
+  - hackathons, workshops, summer/winter/spring schools
+- virtual research environments
+- social-network platforms not only as research objects, but as environments for collaboration and dissemination
+
+--
+
+### Tentative Semester Overview (1/2)
+
+| Date | Topic |
+|:-|:-|
+| 13 янв | Introduction to DH |
+| 20 янв | Distant Reading 1: Introduction |
+| 27 янв | Corpora Studies |
+| 3 февр | Distant Reading 2: Stylometry |
+| 10 февр | Distant Reading 3: Topic Modeling |
+| 17 февр | Colloquium – Presentations |
+| 3 март | Visual Analytics: "Beautiful Evidence" |
+| 10 март | Network Analysis 1: Introduction, History, Literature 
+| 17 март | Network Analysis 2: Interpretation
+| 24 март | Network Analysis 3: Visual Analysis with Gephi
+| 7 апрель | Colloquium – Presentations |
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Tentative Semester Overview (2/2)
+
+| Date | Topic |
+|:-|:-|
+| 14 апрель | GIS/Cartography 1 |
+| 21 апрель | GIS/Cartography 2 |
+| 28 апрель | Digital Editions 1 |
+| 12 май | Digital Editions 2 |
+| 19 май | Wiki Software and Interface 1 |
+| 26 май | Wiki Software and Interface 2 |
+| 2 июнь | Twitter Analysis |
+| 9 июнь | Big Data and Culturomics |
+| 16 июнь | Big Final Colloquium |
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Bibliography (Where to Start)
+
+<br />
+* Susan Schreibman, Ray Siemens, John Unsworth (eds.): Companion to Digital Humanities. Blackwell Companions to Literature and Culture. Oxford: Blackwell. 2004. (**[online](http://www.digitalhumanities.org/companion/)**)
+  * ***New*** Companion to Digital Humanities. 2016.
+* Debates in the Digital Humanities. 2012 Edition. (**[online](http://dhdebates.gc.cuny.edu/debates/1)**)
+  * 2016 Edition. (**[online](http://dhdebates.gc.cuny.edu/debates/2)**)
+* Melissa Terras, Julianne Nyhan, Edward Vanhoutte (eds.): Defining Digital Humanities. A Reader. Routledge. 2014.
+  * Russian translation (2017), **[full-text available online](http://discovery.ucl.ac.uk/1447358/)**.
+* Doing Digital Humanities. A DARIAH Bibliography. (**[online](https://www.zotero.org/groups/doing_digital_humanities_-_a_dariah_bibliography/items)**, 1,115 items to date)
+
+--
+
+# →
+
+---
+
+## Distant Reading (1/2)
+
+![no info](images/Distant_Reading_cover_en.jpg)<!-- .element height="300px;" -->
+![no info](images/Distant_Reading_cover_ru.jpg)<!-- .element height="300px;" -->
+
+Franco Moretti: Distant Reading (2013)
+
+<small>(Russian Translation:)</small><br />Франко Моретти: Дальнее чтение (2016)
+
+--
+
+## Distant Reading, or, …
+
+- Scalable Reading (Martin Mueller)
+- Macroanalysis (Matthew Jockers)
+- …
+
+--
+
+## "Anecdotal Evidence"
+
+<br />
+"The literary scholar of the twenty-first century can no longer be content with <u>anecdotal evidence</u>, with random 'things' gathered from a few, even 'representative', texts. We must strive to understand these things we find interesting in the <u>context</u> of everything else, including a mass of possibly 'uninteresting' texts."
+
+<br />
+<small>Matthew L. Jockers: Macroanalysis. Digital Methods &amp; Literary History.<br />University of Illinois Press, 2013, p. 8. ([Google Books](https://books.google.com/books?id=mPOdxQgpOSUC&pg=PA8))</small>
+
+--
+
+### The Infamous Quote (1/2)
+
+<br />
+"[…] if you want to look beyond the canon […], close reading will not do it. It’s not designed to do it, it’s designed to do the opposite. […] we know how to read texts, now let’s learn how *not* to read them. Distant reading: where distance […] *is a condition of knowledge* […]."
+
+<br />
+<small>Franco Moretti: *Conjectures on World Literature*. In: *New Left Review* 1 (2000).</small>
+
+--
+
+### The Infamous Quote (2/2)
+
+<br />
+"Если же мы хотим выйти за пределы канона […], то пристальное чтение нам не подходит. Оно не создано для таких задач, оно создано для решения задач противоположных. […] мы умеем читать тексты, теперь нужно научиться *не читать* их. Дальнее чтение, для которого расстояние […] является *условием получения знаний* […]."
+
+<br />
+<small>Франко Моретти: Гипотезы о мировой литературе (2000; пер. с англ. Олега Собчука).<br />B: Ф. М.: Дальнее чтение. Москва, 2016, стр. 83.</small>
+
+--
+
+### Scalable Reading
+
+<br />
+"The charms of Google Earth led me to the term Scalable Reading as a happy synthesis of 'close' and 'distant' reading. With Google Earth you can <u>zoom in and out</u> of things and discover that different properties of phenomena are revealed by looking at them from different distances."
+
+<br />
+<small>Martin Mueller: [Scalable Reading](https://scalablereading.northwestern.edu/?page_id=22). In: Scalable Reading (Research Blog), 29 May 2012.</small>
+
+--
+
+# →
+
+---
+
+### Moretti's Analysis of "Hamlet" (2011)
+
+![Network of Hamlet](images/moretti-hamlet.gif)<!-- .element width="640px;" -->
+
+<small>Source: [newleftreview.org](https://newleftreview.org/II/68/franco-moretti-network-theory-plot-analysis)</small>
+
+--
+
+### Social Network Analysis (SNA)
+
+<br />
+- SNA started as a bundle of approaches developed in the Social Sciences since the 1930s
+- 'Harvard Breakthrough' in the 1960s: sociologists, mathematicians and programmers flesh out a distinct structural-analytical perspective on social phenomena
+- 1990s: new perspectives on network structures with the advent of the internet, applications in Physics and Bioinformatics; Literary Studies started to focus on SNA around half a decade ago
+
+--
+
+### One of the First Sociograms
+
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+<small>"Class structure, 4th grade". Work by Jacob L. Moreno (1889–1974).<br />(First published in NYT, [3 April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Source for this PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)</small>
+
+--
+
+#### Déjà-vu: Moretti's Analysis of "Hamlet" (2011)
+
+![Network of Hamlet](images/moretti-hamlet.gif)<!-- .element width="640px;" -->
+
+<small>Source: [newleftreview.org](https://newleftreview.org/II/68/franco-moretti-network-theory-plot-analysis)</small>
+
+--
+
+### "Mapping Shakespeare’s Tragedies"
+
+![6 (out of 11) Shakespeare tragedies](images/grandjean-shakespeare-2015.png)<!-- .element width="640px;" -->
+
+<small>Martin Grandjean's network visualisation of 6 (out of 11) Shakespearean tragedies (Dec., 2015).<br />Full poster and explanations [on Grandjean's website](http://www.martingrandjean.ch/network-visualization-shakespeare/).</small>
+
+--
+
+### "Distant-Reading Showcase"
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+<small>"Distant-Reading Showcase", poster presented at #DHd2016 in Leipzig (9 Mar 2016).<br />Download in full-res (28.88 MB) via Figshare. DOI: [10.6084/m9.figshare.3101203.v1](https://dx.doi.org/10.6084/m9.figshare.3101203.v1).</small>
+
+--
+
+### Poster Detail
+
+![Poster detail](images/poster-detail-1.jpg)<!-- .element width="680px;" -->
+
+<small>Zooming in to Goethe's pivotal play "Götz von Berlichingen" (1773).</small>
+
+--
+
+### Structural Deviations
+
+![Aristocratic vs Communist Model](images/goethe-vs-muehsam.gif)<!-- .element width="600px;" -->
+
+<small>Cf. Trilcke, Fischer, Göbel, Kampkaspar: Theatre Plays as 'Small Worlds'? Network Data on the History and Typology of German Drama, 1730–1930. DH2016, Conference Proceedings.</small>
+
+--
+
+### Pushkin's "Boris Godunov" (1825)
+
+![Network graph for Boris Godunov](images/rusplay-godunov-gephi.png)<!-- .element width="740px;" -->
+
+--
+
+### "Boris Godunov", Some Metrics per Character
+
+<br />
+
+| Character                      | Degree  | Betweenness Centrality |
+|--------------------------------|---------|------------------------|
+| Григорий Отрепьев (Самозванец) | 18      | 537.0                  |
+| Феодор                         | 17      | 276.28                 |
+| Ксения                         | 15      | 187.81                 |
+| Народ                          | 11      | 606.93                 |
+| Гаврила Пушкин                 | 11      | 976.12                 |
+| Басманов                       | 11      | 862.69                 |
+| Борис (Царь)                   | 11      | 484.57                 |
+| Шуйский                        | 10      | 282.14                 |
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+--
+
+### Social Networks Extracted from Movies
+
+![Screenshot from website](images/moviegalaxies-screenshot.png)<!-- .element width="642px;" -->
+
+<small>Screenshot: [moviegalaxies.com](http://moviegalaxies.com/movies)</small>
+
+--
+
+## Six Degrees of Separation
+
+<br />
+- "the theory that anyone on earth can be connected to any other person on the planet through a chain of acquaintances that has no more than five intermediaries" (Wikipedia)<!-- .element: class="fragment" -->
+
+--
+
+### "Who Knew Whom in Early Modern Britain?"
+
+<br />
+- [*Six Degrees of Francis Bacon* project](http://www.sixdegreesoffrancisbacon.com/)
+- inspired by the parlour game *[Six Degrees of Kevin Bacon](https://ru.wikipedia.org/wiki/Шесть_шагов_до_Кевина_Бэйкона)*
+- more than 13.000 people, more than 200.000 relationships
+- extracted from Oxford Dictionary of National Biography
+- 5-minute introduction video by Chris Warren: [YouTube](https://www.youtube.com/watch?v=41_DQQii628)
+
+--
+
+# →
+
+---
+
+## Digital Editions
+
+<br />
+- ongoing digitisation efforts (university libraries, companies like Google)
+  - scans, OCR (optical character recognition)
+- in the Digital Humanities, a digital edition almost automatically involves the acronym TEI
+  - Text Incoding Initiative: responsible for TEI Guidelines ([tei-c.org/Guidelines/](http://www.tei-c.org/Guidelines/))
+  - basically developing/prodividing a stable, versatile XML schema (~&nbsp;550 elements at the moment)
+
+--
+
+### Example 1
+
+<br />
+```xml
+<div type="sonnet">
+ <lg type="quatrain">
+  <l>Les amoureux fervents et les savants austères</l>
+  <l> Aiment également, dans leur mûre saison,</l>
+  <l> Les chats puissants et doux, orgueil de la maison,</l>
+  <l> Qui comme eux sont frileux et comme eux sédentaires.</l>
+ </lg>
+ <lg type="quatrain">
+  <l>Amis de la science et de la volupté</l>
+  <l> Ils cherchent le silence et l'horreur des ténèbres ;</l>
+  <l> L'Érèbe les eût pris pour ses coursiers funèbres,</l>
+  <l> S'ils pouvaient au servage incliner leur fierté.</l>
+ </lg>
+ <lg type="tercet">
+  <l>Ils prennent en songeant les nobles attitudes</l>
+  <l>Des grands sphinx allongés au fond des solitudes,</l>
+  <l>Qui semblent s'endormir dans un rêve sans fin ;</l>
+ </lg>
+ <lg type="tercet">
+  <l>Leurs reins féconds sont pleins d'étincelles magiques,</l>
+  <l> Et des parcelles d'or, ainsi qu'un sable fin,</l>
+  <l>Étoilent vaguement leurs prunelles mystiques.</l>
+ </lg>
+</div>
+```
+
+<br />
+<small>Charles Baudelaire's *Les chats* in TEI Format.</small>
+
+--
+
+### Example 2
+
+<br />
+```xml
+<sp who="#FAU">
+  <speaker>
+    <hi rendition="#g">Faust</hi>.
+  </speaker><lb/>
+  <p>
+    Habe nun, ach! Philosophie,<lb/>
+    Juristerey und Medicin,<lb/>
+    Und leider auch Theologie!<lb/>
+    Durchaus studirt, mit heißem Bemühn.<lb/>
+    Da steh' ich nun, ich armer Thor!</lb>
+    Und bin ſo klug als wie zuvor;</lb>
+    […]
+  </p>
+</sp>
+```
+
+<br />
+<small>First six lines of Goethe's tragedy "Faust" (1808) in TEI.</small>
+
+--
+
+### Example 3
+
+![Digital evolution of the text/corpus](images/tolstoy-digital.jpg)<!-- .element width="640px;" -->
+
+<small>Tolstoy Digital. Digital evolution of the text/corpus (source: [tolstoy.ru](http://tolstoy.ru/projects/tolstoy-digital/)).</small>
+
+--
+
+# →
+
+---
+
+### What Is Data? (1/2)
+
+<br />
+- data = "a set of values of qualitative or quantitative variables" (Wikipedia)
+
+<br />
+![Mapping DH (Patrick Sahle)](images/data-types.gif)
+
+<small>Source: https://www.mathsisfun.com/data/data.html</small>
+
+--
+
+### What Is Data? (2/2)
+
+<br />
+- in the context of scientific research (research data)
+- examples: temperature, velocity of a car or train, surveys, crime rates, unemployment rates, …
+- data is generated and collected by all kinds of organisations, institutions, companies, governments
+- data in the humanities: books or corpora, files, lists, …
+- raw data/primary data: unaltered, unsorted, uncategorised – data before starting to work with it
+
+<br />
+Is a novel or a poem data? (What could be measured?)
+
+--
+
+### Data/File Formats
+
+<br />
+BMP – JPEG/JPG – PNG – TIF/TIFF – GIF
+
+PPT/PPTX – XLS/XLSX – DOC/DOCX – RTF – ODT
+
+TXT – CSV – HTML – XML – PDF – …
+
+<br />
+Proprietary vs. Open Standards
+
+--
+
+### Data in the Humanities
+
+<br />
+- "a digital, selectively constructed, machine-actionable abstraction representing some aspects of a given object of humanistic inquiry" ([Schöch 2013](http://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/))
+- two main types of data in the humanities: big data vs. smart data
+
+--
+
+### Big Data
+
+<br />
+- 3V paradigm:
+ - volume (amount of data)
+ - velocity (speed of data, in-/output, real time)
+ - variety (text, images, audio, video)
+- "messy and implicit, relatively large in volume, and varied in form" (Schöch 2013)
+
+--
+
+### Big Data in Action
+
+<br />
+- Google Ngram Viewer: https://books.google.com/ngrams
+- released in 2010
+- Erez Aiden, Jean-Baptiste Michel: *Uncharted: Big Data as a Lens on Human Culture*. Riverhead Books, 2013.
+
+--
+
+### Smart Data
+
+<br />
+- usually contains markup, annotations, metadata
+- "involves human agency and demands time"
+- "semi-structured or structured, clean and explicit, as well as relatively small in volume and of limited heterogeneity" (Schöch 2013)
+
+--
+
+### Linked Open Data
+
+<br />
+- part of the Semantic Web
+- identified by URI (Uniform Resource Identifier), conveniently available via HTTP
+- RDF (Resource Description Framework): subject – predicate – object
+- direct querying via SPARQL endpoints
+- example: Wikidata ([wikidata.org](https://www.wikidata.org/wiki/Wikidata:Main_Page))
+
+--
+
+### Querying Wikipedia (Via Wikidata)
+
+<br />Go to https://goo.gl/5MZt8q and hit "Run".
+
+Results?
+
+Now let's refine our query.
+
+Go to https://goo.gl/Qm9Hvj and hit "Run" again.
+
+Results?
+
+--
+
+### "Charting Culture"
+
+<br />
+- Maximilian Schich et al.: A network framework of cultural history. *Science*, Vol. 345, Issue 6196, pp. 558–562. DOI: 10.1126/science.1240064.
+- "Schich, an art historian at the University of Texas at Dallas, and his colleagues used the Google-owned knowledge base, Freebase, to find 120,000 individuals who were notable enough in their life-times that the dates and locations of their births and deaths were recorded."
+- … and what did they do with it?
+
+--
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+<small>*Charting culture*, YouTube ("nature video" channel), 31 July 2014<br />
+(births are blue, deaths are red)</small>
+
+--
+
+# →
+
+---
+
+### GIS (Geographic Information System)
+
+<br />
+geographic coordinate system: latitude, longitude
+
+![no info](images/geographic_coordinates_sphere.png)<!-- .element width="300px;" -->
+
+<br />
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Geographic_coordinates_sphere.svg)</small>
+
+--
+
+### Latitude, Longitude
+
+<br />
+- latitude: specifies north–south position on the surface of the Earth
+- longitude: specifies east–west position on the surface of the Earth
+- Moscow?
+- 55°45′N 37°37′E<!-- .element: class="fragment" -->
+
+--
+
+### Geo Coordinates of Historical Events
+
+![no info](images/trafalgar-wikipedia.jpg)<!-- .element width="600px;" -->
+
+<small>Screenshot: [Wikipedia](https://en.wikipedia.org/wiki/Battle_of_Trafalgar)</small>
+
+--
+
+### A Geography of Violence
+
+![no info](images/nodegoat-geography-of-violence.jpg)<!-- .element width="740px;" -->
+
+<small>Source: [nodegoat.net](https://nodegoat.net/blog.p/82.m/14/a-wikidatadbpedia-geography-of-violence)</small>
+
+--
+
+### The Gulag Mapped with Points
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/XpXPN3PS1oE?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+<small>Visualisation of the development of the Soviet Gulag camp system, done by Seth Bernstein.</small>
+
+--
+
+## GIS …
+
+<br />
+… is not just about adding points to maps,<br />but about assigning data to geographical points.
+
+--
+
+# →
+
+---
+
+### Last Chapter for Today (1/4)
+
+<br />
+- "hacking culture": DH is about developing a specific kind of creativity
+- answering (research) questions with data
+- learning how to get from (research) question → data → numbers/visualisations → interpretation
+- especially the first and last step are what makes a digital humanist
+
+--
+
+### Last Chapter for Today (2/4)
+
+<br />
+- for illustration: we want to know how much the German National Library weighs on books (initially to learn more about the extent of the printed cultural heritage)
+- how do you go about this:
+  - find suitable data
+  - harvest/extract/convert data
+  - calculate answer using appropriate technology
+  - interpretation
+
+--
+
+### Last Chapter for Today (3/4)
+
+<br />
+![German National Library, pic from Wikimedia Commons](images/dnb-german-library-leipzig-2008.jpg)<!-- .element width="900px;" -->
+<small>German National Library; Leipzig, Saxony (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_%28German_Library%29_2008-Feb.jpg))</small>
+
+- they publicly offer a [data set](http://datendienst.dnb.de/cgi-bin/mabit.pl?userID=opendata&pass=opendata&cmd=login) with all their catalogue data (RDF format, > 21 GB)
+
+--
+
+### Last Chapter for Today (4/4)
+
+<br />
+- extracted data and fed it into Elasticsearch (so we can do all sorts of things with the data in real-time)
+- found extent info for 6 Mio. entities (books), totaling around 1 billion pages (average: 166 pages/book)
+- assuming that one page weighs 2,5 grams, multiply with number of pages and divide by two gives us: 1.25 mio. kilograms = 1,250 tons of pages (not counting book covers, etc.)
+- account of this 4-hour hackathon: ["Empirical Data on Over-Length Books"](http://weltliteratur.net/Empirical-Data-on-Over-Length-Books/)
+
+--
+
+# →
+
+---
+
+## Preparation for Next Week
+
+<br />
+* Franco Moretti: Conjectures on World Literature. In: New Left Review 1 (2000). (**[online](https://newleftreview.org/II/1/franco-moretti-conjectures-on-world-literature)**)
+  * Франко Моретти: Гипотезы о мировой литературе. Пер. с англ. Олега Собчука. B: Ф. М.: Дальнее чтение. Москва, 2016.
+* Martin Mueller: Scalable Reading. In: Scalable Reading (Research Blog), 29 May 2012. (**[online](https://scalablereading.northwestern.edu/?page_id=22)**)
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal/plugin/markdown/marked.js' },
+					{ src: '../reveal/plugin/markdown/markdown.js' },
+					{ src: '../reveal/plugin/notes/notes.js', async: true },
+					{ src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
