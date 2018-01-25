@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DH Lecture: Distant Reading, pt. I (27 Jan 2018)</title>
+
+		<link rel="stylesheet" href="../reveal/css/reveal.css">
+		<link rel="stylesheet" href="../reveal/css/theme/simple.css">
+
+      <!-- adjustments for serif.css -->
+      <link rel="stylesheet" href="custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Современные методы<br />в гуманитарных науках
+
+<br /><br /><br />📚 &nbsp; &nbsp; 🎼 &nbsp; &nbsp; 🗺 &nbsp; &nbsp; <font style="font-size:5rem;width:100%;">💻</font> &nbsp; &nbsp; 🏛 &nbsp; &nbsp; 🎨 &nbsp; &nbsp; 🎮
+
+<br /><br /><br /><br /><br >
+(40 лекц, 40 сем)<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+Course Registry: Studying Digital Humanities Abroad
+
+![DH Course Registry](images/dh-course-registry-screenshot.png)<!-- .element width="700px;" -->
+
+<small>https://registries.clarin-dariah.eu/courses/</small>
+
+--
+
+## Second Lecture
+### Distant Reading, Pt. I
+
+<br /><br />
+Frank Fischer
+
+(ffischer@hse.ru)<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br />27 January 2018</p>
+
+--
+
+### Recap of Last Session
+
+<br />
+- Definition of 'Digital Humanities'
+- Distant Reading
+- Network Analysis
+- Digital Editions
+- What Is Data?
+- GIS
+- Creative Thinking
+
+--
+
+### The Path to the First Colloquium
+
+<br />
+
+| Date | Topic |
+|:-|:-|
+| 13 янв | Introduction to DH |
+| 20 янв | Corpora Studies |
+| 27 янв | Distant Reading 1 |
+| 3 февр | Distant Reading 2:<br />Stylometry |
+| 10 февр | Distant Reading 3:<br />Topic Modeling |
+| 17 февр | **Colloquium – Presentations** |
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Agenda for Today
+
+<br />
+1. Presentation &amp; Discussion of Moretti's Article
+2. Distant Reading: Motivation
+3. Distant Reading: Definition
+4. Distant Reading in Practice
+5. Epistemology of Distant Reading
+6. Seminar: Presentation &amp; Discussion
+7. Weekend 🌴
+
+--
+
+# →
+
+---
+
+## "Distant Reading"
+
+<br >
+Introducing and discussing<br />Franco Moretti's "Conjectures<br />on World Literature" (2000)
+
+by Ksenia Samokhvalova and Maria Shub
+
+<br />
+→ **[Google Slides](https://???/)**
+
+--
+
+# →
+
+---
+
+## Motivation: "The Great Unread"
+
+<br />
+- coined by Margret Cohen in "The Sentimental Education of the Novel" (1999), p. 23 ([see Google Books](https://books.google.com/books?id=tOgLRyVa4DYC&pg=PA23))
+- quoted by Moretti in "Conjectures" (2000)
+- the last 1,5 decades have seen many attempts to turn this diagnosis into a practice, cf. workshop titles like: "Text Mining the Great Unread: Data-Intensive Methods and Digital Tools for Analysis of Texts in the Humanities and Social Sciences" ([Aarhus University, 2016](http://www.au.dk/en/summeruniversity/courses/text-mining-the-great-unread-data-intensive-methods-and-digital-tools-for-analysis-of-texts-in-the-humanities-and-social-sciences/))
+
+--
+
+### Arno Schmidt on the Limits of Reading
+
+<br />
+"Life is so short! Even if you are a bookworm and only need five days to read a book twice, you will not manage to read more than 70 per annum. And for the 45 years of receptive&shy;ness, from age 15 to age 60, they sum up to only 3,150 books: these have to be chosen wisely!"
+
+<br />
+<small>Arno Schmidt: *Ich bin erst sechzig* (1955). In: Bargfelder Ausgabe, Werkgruppe I, Vol. 4.<br />Zurich: Haffmans 1987, pp. 30. (My trans.)</small></p>
+
+--
+
+## Pierre Bayard
+
+<br />
+"Comment parler des livres que l'on n'a pas lus ?"<br />(Éditions de Minuit, 2007)
+
+{ru} translation: ["Искусство рассуждать<br />о книгах, которых вы не читали"](http://www.textpubl.ru/books/123/71126) (2012)
+
+<br />
+- "the very ancient art of somehow gathering just as much knowledge about a book to say something clever about it even if you have not read all or even most of it" ([Martin Mueller](https://scalablereading.northwestern.edu/?page_id=22))
+
+--
+
+## Heinz Schlaffer
+
+<br />
+- describes 17 ways to read a book: paralecture (reading reviews instead of the actual book), potential lecture, deferred lecture, avoided lecture, pretended lecture, substituted lecture, partial lecture, interrupted lecture, complete lecture (!), repeated lecture (!), …
+- cf. Heinz Schlaffer: *Der Umgang mit Literatur. Diesseits und jenseits der Lektüre.* In: Poetica 31 (1999), pp. 1–25.
+
+--
+
+## Close Reading
+
+<br />
+- emerged in the middle of the 20th century (New Criticism)
+- thorough reading and interpretation of all nuances of a (literary) text, as opposed to putting all emphasis on historical, philological, biographical contexts
+- example: Derrida dedicating &#62; 50 pages to the word "yes" in Joyce's "Ulysses" (*Ulysses Gramophone: Hear Say Yes in Joyce*, 1984)
+- close reading does *not* stand in opposition to close reading, but is supposed *to complement* the shortcomings of it (especially regarding the extent of the object examined)
+
+--
+
+## Distant Reading, or, …
+
+<br />
+- Scalable Reading (Martin Mueller)
+- Macroanalysis (Matthew Jockers)
+- quantitative analysis of texts
+- Cultural Analytics
+- …
+
+--
+
+# →
+
+---
+
+## Macroanalysis (1/3)
+
+<!-- .element style="text-align: left;" -->"I prefer the term *analysis* over *reading*. […] This is no longer reading that we are talking about – even if programmers have come to use the term *read* as a way of naming functions that load a text file into computer memory. Broad attempts to generalize about a period or about a genre by reading and synthesizing a series of texts are just another sort of microanalysis. This is simply close reading, selective sampling, of multiple 'cases'; individual texts are digested, and then generalizations are drawn. It remains a largely qualitative approach."
+
+<!-- .element style="text-align: left;" --><small>Matthew L. Jockers: Macroanalysis. Digital Methods &amp; Literary History. Urbana, Chicago, Springfield: University of Illinois Press 2013, p. 25. ([Google Books](https://books.google.com/books?id=mPOdxQgpOSUC&pg=PA25))</small>
+
+--
+
+## Macroanalysis (2/3)
+
+<br />
+- size of Jockers's corpus: 3,346 novels (of British, Irish, US-American authors)
+- Is this 'big data'?
+- size of corpus is pretty close to Arno Schmidt's calculation of how many books/novels can be read in a lifetime by a single person (~ 3,150 novels)
+
+--
+
+## Macroanalysis (3/3)
+
+<br />
+- conclusion: you can still somehow 'read' this corpus (so 'distant reading' is still the better term for what Jockers did in "Macroanalysis")
+- momentarily, mid-size corpora yield much better results in Digital Humanities research, because scholars can still be "extraordinarily familiar" with this kind of corpus ([Thomas Weitin, Katharina Herget 2016](http://www.digitalhumanitiescooperation.de/pamphlete/pamphlet-4-falkentopics/))
+
+--
+
+# →
+
+---
+
+### Not-Reading As a Method
+
+<br />
+- "The importance of not reading" was the title of a review of Bayard's book, publ. in [*The Economist*, 2007](http://www.economist.com/node/10130740)
+- adapted by Martin Mueller in a 2008 speech (["Morgen&shy;stern’s Spectacles or the Importance of Not-Reading"](https://scalablereading.northwestern.edu/?p=229))
+- Mueller later replaced "Not-Reading" by the better fitting term "Scalable Reading", which acts as synonym for "Distant Reading"
+
+--
+
+### Scalable Reading
+
+<br />
+<!-- .element style="text-align: left;" -->"The charms of Google Earth led me to the term Scalable Reading as a happy synthesis of 'close' and 'distant' reading. With Google Earth you can <u>zoom in and out</u> of things and discover that different properties of phenomena are revealed by looking at them from different distances."
+
+<br />
+<!-- .element style="text-align: left;" --><small>Martin Mueller: [Scalable Reading](https://scalablereading.northwestern.edu/?page_id=22). In: Scalable Reading (Research Blog), 29 May 2012.</small>
+
+--
+
+### Powers of 10 (1/2)
+
+<br />
+- short clip by Charles and Ray Eames for IBM (1977)
+- zooming through 40 powers of ten (степень десяти), first macro, then micro level
+
+--
+
+### Powers of 10 (2/2)
+
+<br />
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/0fKBhvDjuy0?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+--
+
+### Example from Last Lecture
+
+<br />
+character networks from 1 play → 6 (11) plays → 465 plays (recap on next three slides)
+
+--
+
+### Moretti's Analysis of "Hamlet" (2011)
+
+![Network of Hamlet](images/moretti-hamlet.gif)<!-- .element width="640px;" -->
+
+<small>Source: [newleftreview.org](https://newleftreview.org/II/68/franco-moretti-network-theory-plot-analysis)</small>
+
+--
+
+### "Mapping Shakespeare’s Tragedies"
+
+![6 (out of 11) Shakespeare tragedies](images/grandjean-shakespeare-2015.png)<!-- .element width="640px;" -->
+
+<small>Martin Grandjean's network visualisation of 6 (out of 11) Shakespearean tragedies (Dec., 2015).<br />Full poster and explanations [on Grandjean's website](http://www.martingrandjean.ch/network-visualization-shakespeare/).</small>
+
+--
+
+### "Distant-Reading Showcase"
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+<small>"Distant-Reading Showcase", poster presented at #DHd2016 in Leipzig (9 Mar 2016).<br />Download in full-res (28.88 MB) via Figshare. DOI: [10.6084/m9.figshare.3101203.v1](https://dx.doi.org/10.6084/m9.figshare.3101203.v1).</small>
+
+--
+
+### Russian Superposter
+
+![around 80 drama networks at a glance](images/russian-superposter.jpg)<!-- .element width="800px;" -->
+
+<small>Social networks extracted from around 80 Russian plays (1740–1930). – *Thanks to Danya!*</small>
+
+--
+
+# →
+
+---
+
+## Now, Distant Reading, …
+
+--
+
+### Invention of the Term
+
+<br />
+"[…] if you want to look beyond the canon […], close reading will not do it. It’s not designed to do it, it’s designed to do the opposite. […] we know how to read texts, now let’s learn how *not* to read them. Distant reading: where distance […] *is a condition of knowledge* […]."
+
+<br />
+<small>Franco Moretti: *Conjectures on World Literature*. In: *New Left Review* 1 (2000).</small>
+
+--
+
+## Distant Reading – The Book
+
+![no info](images/Distant_Reading_cover_en.jpg)<!-- .element height="300px;" -->
+![no info](images/Distant_Reading_cover_ru.jpg)<!-- .element height="300px;" -->
+
+Franco Moretti: Distant Reading (2013)
+
+<small>(Russian Translation:)</small><br />Франко Моретти: Дальнее чтение (2016)
+
+--
+
+## The Term 'Distant Reading' …
+
+<br />
+- "a joke"?
+- a polemical term, a buzzword?
+- a computer-based method for the analysis of literature?
+- Moretti’s attempt towards a 'canon-critical' large-scale literary historiography?
+- a failed or at least terminated project?
+
+<br />
+<small>Questions assembled in Peer Trilcke and Frank Fischer: Fernlesen mit Foucault? Überlegungen zur Praxis des *distant reading* und zur Operationalisierung von Foucaults Diskursanalyse. In: Le foucaldien, 2(1), 6. DOI: [10.16995/lefou.15](http://doi.org/10.16995/lefou.15).<br />(short recap in English appeared [on weltliteratur.net](http://weltliteratur.net/Distant-Reading-with-Foucault/))</small>
+
+--
+
+## Theory or Practice?
+
+<br />
+- "distant reading is less a theory than a method" (Kathryn Schulz: [What Is Distant Reading?](http://www.nytimes.com/2011/06/26/books/review/the-mechanic-muse-what-is-distant-reading.html) In: NYT, June 24, 2011)
+- But how does it work in practice?
+- "You define a unit of analysis […], and then follow its metamorphoses in a variety of environments" (Moretti)
+- "the very object of analysis shifts from looking at the individual occurrences of a feature in context to looking at the trends and patterns of that feature aggregated over an entire corpus" (Jockers)
+
+--
+
+# →
+
+---
+
+## Distant Reading, Examples<br />(1st of 4)
+
+--
+
+### The Quieting Down of the British Novel
+
+![Literary Lab, Pamhplet 7, figure 7](images/pamphlet7-figure7.png)<!-- .element width="500px;" -->
+
+<small>Holst Katsma: *Loudness in the Novel.* Literary Lab Pamphlet 7 (Sept. 2014), p. 20. ([**PDF**](https://litlab.stanford.edu/LiteraryLabPamphlet7.pdf))</small>
+
+--
+
+# →
+
+---
+
+## Distant Reading, Examples<br />(2nd of 4)
+
+--
+
+### Seasons of Literature –<br />Temporal Expressions in Fiction
+
+<br />
+- inspiration: "The majority of Finnish novels takes place in summer." (radio interview with translator Stefan Moster; Oct 8, 2014)
+- we wanted to reproduce this for a corpus of German fiction from 1510 to 1940 ([2,735 texts by 549 authors, derived from Gutenberg-DE, 937,8 MB of text](https://dx.doi.org/10.6084/m9.figshare.4524680.v1))
+
+--
+
+### Workflow
+
+<br />
+![UIMA Pipeline](images/uima-pipeline.png)<!-- .element height="395x;" -->
+
+<br />
+<small>Homepage of the project: [http://dbs.ifi.uni-heidelberg.de/index.php?id=jahrestage](http://dbs.ifi.uni-heidelberg.de/index.php?id=jahrestage).</small>
+
+--
+
+### Output (1/3)
+
+<br />
+Example: Novels by Theodor Fontane
+
+<br />
+![Analysis, thumbnail 1](images/fontane-explicit-sentences.jpg)<!-- .element width="275x;" -->
+![Analysis, thumbnail 2](images/fontane-heatmap.jpg)<!-- .element width="275x;" -->
+![Analysis, thumbnail 3](images/fontane-diagram.jpg)<!-- .element width="275x;" -->
+
+<br />
+<small>Output types: Months vs. Days, Days heatmaps, Days in context</small>
+
+--
+
+### Output (2/3)
+
+<br />
+![Results for entire German corpus](images/gesamtkorpus-dt.png)<!-- .element height="395x;" -->
+
+<br />
+<small>Results for entire German corpus.</small>
+
+--
+
+### Output (3/3)
+
+<br />
+![Results for Tolstoi novels](images/international-tolstoi.png)<!-- .element height="395x;" -->
+
+<br />
+<small>Results for Tolstoi novels.</small>
+
+--
+
+### Tiwoli App (1/2)
+
+![Tiwoli introscreen](images/tiwoli-introscreen.png)<!-- .element height="480x;" -->
+
+<small>Tiwoli app (Today in World Literature) for [Android](https://play.google.com/store/apps/details?id=de.wannauchimmer.apps.tiwoli) and [iOS](https://appsto.re/de/I69sfb.i).</small>
+
+--
+
+### Tiwoli App (2/2)
+
+![Tiwoli, example Turgenev](images/tiwoli-turgenev.png)<!-- .element height="480x;" -->
+![Tiwoli, example Borges](images/tiwoli-borges.png)<!-- .element height="480x;" -->
+
+<small>Screenshots with quotes from Turgenev and Borges.</small>
+
+--
+
+# →
+
+---
+
+## Distant Reading, Examples<br />(3rd of 4)
+
+--
+
+### World Literature According to Wikipedia
+
+<br />
+Measures of Importance for Wikipedia:
+- Wikidata approach: [weltliteratur.net/Wikidata-Meets-World-Literature/](http://weltliteratur.net/Wikidata-Meets-World-Literature/) (cf. [last lecture](../2018-01-13-dh-lecture/index.html#/5/8))
+- DBpedia approach: [data.weltliteratur.net](http://data.weltliteratur.net/)
+- Christoph Hube, Frank Fischer, Robert Jäschke, Gerhard Lauer, Mads Rosendahl Thomsen: *World Literature According to Wikipedia: Introduction to a DBpedia-Based Framework*. In: Digital Literary Studies (forthcoming 2017). Pre-print (33 pages): [arXiv.org](https://arxiv.org/abs/1701.00991).
+
+--
+
+### Influence Graph (English Wikipedia)
+
+![Network of Hamlet](images/wikipedia_gephi_graph_influence_filter.png)<!-- .element height="477x;" -->
+
+<small>A writer *a* is connected to a writer *b*, if the article on *a* contains a link to the article on *b*.<br />Node and label size indicate the PageRank.</small>
+
+--
+
+# →
+
+---
+
+## Distant Reading, Examples<br />(4th of 4)
+
+--
+
+### A Flowchart of Foreign Influences (1/2)
+#### (Spanning 12 Centuries)
+
+![Flaischlen's Flowchart](images/flaischlen-litteratur-tafel-small.jpg)<!-- .element height="420x;" -->
+
+<small>Cäsar Flaischlen's "Graphic Literature Table", publ. in 1890, in the heyday of positivism.<br />Description and access to hi-res version here: [weltliteratur.net (Nov 3rd, 2016)](http://weltliteratur.net/A-Giant-1890-Flowchart-of-Foreign-Influences-on-German-Literature/).</small>
+
+--
+
+### A Flowchart of Foreign Influences (2/2)
+
+<br />
+- Flaischlen's river of foreign influences on German literature is a reaction to Scherer's wave theory
+- Moretti in *Conjectures*: "division of labour between national and world literature: national literature, for people who see trees; world literature, for people who see waves"
+
+--
+
+# →
+
+---
+
+## Epistemology of Distant Reading
+
+<br />
+### ("The Last-Mile Problem")
+
+--
+
+### Distant Reading in Practice (Summary)
+
+<br />
+- finding and describing a suitable corpus/suitable data for your research question
+- pre-processing, feed into software, write code, adapt existing code or software
+- numbers, tables, visualisations – then what?
+
+--
+
+### From Numbers to Meaning (1/2)
+
+<br />
+<!-- .element style="text-align: left;" -->"The general methodological problem of the digital humanities can be bluntly stated: How do we get from numbers to meaning? The objects being tracked, the evidence collected, the ways they're analyzed – all of these are quantitative. How to move from this kind of evidence and object to qualitative arguments and insights about humanistic subjects – culture, literature, art, etc. – is not clear."
+
+<br />
+<!-- .element style="text-align: left;" --><small>Ryan Heuser / Long Le-Khac: *A Quantitative Literary History of 2,958 Nineteenth-Century British Novels: The Semantic Cohort Method*. (= Pamphlets of the Stanford Literary Lab, N° 4.) May, 2012, p. 46. ([**PDF**](https://litlab.stanford.edu/LiteraryLabPamphlet4.pdf))</small>
+
+--
+
+### From Numbers to Meaning (2/2)
+
+<br />
+<!-- .element style="text-align: left;" -->"But when it comes to finding 'das geistige Band' or, in modern parlance, 'connecting the dots' modern readers are pretty much in the same situation as medieval monks, even (or especially) when the machine uses algorithms to construct statistically based patterns. No machine can tell you whether a pattern 'makes sense.' Call this the 'last mile problem' of human understanding."<!-- .element style="text-align: left;" -->
+
+<br />
+<!-- .element style="text-align: left;" --><small>Martin Mueller: *Scalable Reading*. In: Scalable Reading (Research Blog), 29 May 2012. ([**online**](https://scalablereading.northwestern.edu/?page_id=22))</small>
+
+--
+
+# →
+
+---
+
+### All-in-One Course Wiki:
+
+<br />
+https://wiki.dh-minor.org/
+
+<br />
+<small>schedule · slides · announcements · space for questions and discussions</small>
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal/plugin/markdown/marked.js' },
+					{ src: '../reveal/plugin/markdown/markdown.js' },
+					{ src: '../reveal/plugin/notes/notes.js', async: true },
+					{ src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
