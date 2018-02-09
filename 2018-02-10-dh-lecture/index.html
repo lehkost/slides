@@ -54,10 +54,11 @@ ffischer@hse.ru &nbsp;·&nbsp; dskorinkin@hse.ru<!-- .element: style="font-size:
 ### Next Saturday: First Colloquium (1/2)
 
 <br />
-- groups of 3 to 4 prepare a 10-minute presentation using one of the following methods:
+- groups of 2 to 4 prepare a 10-minute presentation using one of the following methods:
   - corpora studies
   - stylometry
   - topic modeling
+- for inspiration: last year, students presented research on: *Downton Abbey* – Tarantino movies – *The Diary of a Young Girl* – Facebook – *Beauty and the Beast* – Brezhnev memoirs – Plato, Aristotle and their translations – Contemporary Russian literature – …
 
 --
 
@@ -66,18 +67,9 @@ ffischer@hse.ru &nbsp;·&nbsp; dskorinkin@hse.ru<!-- .element: style="font-size:
 <br />
 - tasks can be divided like this:
   1. finding or assembling a corpus (collection of texts in *.txt format)
-  2. loading the corpus into stylo or mallet and toying around with paramters to investigate the corpus
-  3. save results (numbers, tables, visualisations) and produce a presentation
-
---
-
-### Addition to Last Week (Stylometry)
-
-<br />
-- Roland Barthes: ["The Death of the Author"](https://ru.wikipedia.org/wiki/Смерть_автора) (1967)
-- essay (followed by an extensive discourse) according to which it is not important who wrote a text
-- the idea behind it was to fade out biographical contexts and authorial intentions as basis for interpretation
-- but: our stylometric experiments showed that there is something like an authorial signal in the text and that it can be measured
+  2. loading the corpus into stylo or MALLET and experimenting with parameters
+  3. save results (numbers, tables, visualisations) and make sense of them
+  4. presentation
 
 --
 
@@ -150,7 +142,7 @@ ffischer@hse.ru &nbsp;·&nbsp; dskorinkin@hse.ru<!-- .element: style="font-size:
 ### The Emergence of Topic Modeling:<br />Latent Dirichlet Allocation (LDA)
 
 - most popular topic model in use, introduced by David M. Blei et al. (2003)
-- highly influential paper ([PDF here](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)), Google Scholar counts 21,703 citations to date
+- highly influential paper ([PDF here](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)), Google Scholar counts 21,717 citations to date
 - LDA = "a generative probabilistic model for collections of discrete data such as text corpora"
 - builds on the [Dirichlet distribution](https://ru.wikipedia.org/wiki/Распределение_Дирихле)
 - especially useful for automated text classification in larger corpora and for finding hitherto unknown texts with similar topics
@@ -190,6 +182,8 @@ ffischer@hse.ru &nbsp;·&nbsp; dskorinkin@hse.ru<!-- .element: style="font-size:
 
 ### Example
 
+<br />
+<small>LDA (K = 2)</small>
 <br />
 
 |           | topic 1 | topic 2 |
@@ -246,7 +240,7 @@ ffischer@hse.ru &nbsp;·&nbsp; dskorinkin@hse.ru<!-- .element: style="font-size:
 ## Pre-Processing
 
 <br />
-- **tokenizing**: breaking a text up into words, symbols, etc.
+- **tokenising**: breaking a text up into words, symbols, etc.
 - **stemming**: reducing inflected words to their stem
 - elimination of **stop words**: unlike in stylometry, frequent function words are often a hindrance in topic modeling
 - **chunking**: splitting a text into smaller portions (chunks)
@@ -262,7 +256,7 @@ ffischer@hse.ru &nbsp;·&nbsp; dskorinkin@hse.ru<!-- .element: style="font-size:
 
 ![example from Blei's article](images/blei_figure_1.png)<!-- .element width="860px;" -->
 
-<small>from David M. Blei: [Probabilistic Topic Models](https://www.cs.princeton.edu/~blei/papers/Blei2012.pdf) (2012)<br />("topics and topic assignments in this figure are illustrative")</small>
+<small>from David M. Blei: [Probabilistic Topic Models](https://dl.acm.org/citation.cfm?id=2133826) (2012)<br />("topics and topic assignments in this figure are illustrative")</small>
 
 --
 
@@ -270,7 +264,7 @@ ffischer@hse.ru &nbsp;·&nbsp; dskorinkin@hse.ru<!-- .element: style="font-size:
 
 ![example from Blei's article](images/blei_figure_2.png)<!-- .element width="860px;" -->
 
-<small>from David M. Blei: [Probabilistic Topic Models](https://www.cs.princeton.edu/~blei/papers/Blei2012.pdf) (2012)<br />(100-topic LDA model; 17,000 articles from *Science*; left: topic proportions for example article in previous figure; right: top 15 MFWs from most frequent topics in this article)</small>
+<small>from David M. Blei: [Probabilistic Topic Models](https://dl.acm.org/citation.cfm?id=2133826) (2012)<br />(100-topic LDA model; 17,000 articles from *Science*; left: topic proportions for example article in previous figure;<br />right: top 15 MFWs from most frequent topics in this article)</small>
 
 --
 
@@ -355,7 +349,7 @@ Hands-On with MALLET:
 - "MAchine Learning for LanguagE Toolkit":
   - http://mallet.cs.umass.edu/
 - follow the instructions here:
-  - http://slides.com/danilsko/mallet/
+  - http://slides.com/danilsko/mallet-install-2018/
 
 
 </script>
