@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DH Lecture: Visual Analytics (24 February 2018)</title>
+
+		<link rel="stylesheet" href="../reveal/css/reveal.css">
+		<link rel="stylesheet" href="../reveal/css/theme/simple.css">
+
+      <!-- adjustments for serif.css -->
+      <link rel="stylesheet" href="custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Современные методы<br />в гуманитарных науках
+
+<br /><br /><br />📚 &nbsp; &nbsp; 🎼 &nbsp; &nbsp; 🗺 &nbsp; &nbsp; <font style="font-size:5rem;width:100%;">💻</font> &nbsp; &nbsp; 🏛 &nbsp; &nbsp; 🎨 &nbsp; &nbsp; 🎮
+
+<br /><br /><br /><br /><br >
+(40 лекц, 40 сем)<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## Sixth Lecture
+### Introduction to Visual Analytics
+
+<br /><br />
+Frank Fischer
+
+(ffischer@hse.ru)<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br />24 February 2018</p>
+
+--
+
+### Path to Second Colloquium
+
+<br />
+
+| Date | Topic |
+|:-|:-|
+| **24 февр** | **Visual Analytics** |
+| 3 март | Network Analysis 1 |
+| 10 март | Network Analysis 2 |
+| 17 март | Network Analysis 3 |
+| 24 март | Colloquium – Presentations |
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Agenda for Today
+
+<br />
+1. M&amp;M's: Prelude with Manovich &amp; Minard
+2. Edward Tufte's Principles
+3. Interlude with Hans Rosling 🎦
+3. Historicity of Visualisation Methods
+4. Trees
+5. Networks
+6. Tools
+7. Homework (preparation for next session)
+8. Weekend 🌴
+
+--
+
+# →
+
+---
+
+## M&amp;M's
+
+<br />
+![Minard](images/minard-from-wikimedia-commons.jpg)<!-- .element height="380px;" -->
+![Manovich](images/manovich-from-wikimedia-commons.jpg)<!-- .element height="380px;" -->
+
+<small>[Charles Joseph Minard](https://commons.wikimedia.org/wiki/File:Charles_Joseph_Minard.png) and [Lev Manovich](https://commons.wikimedia.org/wiki/File:Lev_Manovich_—_How_to_analyze_culture_using_social_networks.jpg).<br />(Image sources: Wikimedia Commons.)</small>
+
+--
+
+### Information Visualisation (Infovis)
+
+<br />
+"Although scientists had already been making graphs and charts of their data since the early nineteenth century, the ubiquity of computers, the growing programming literacy, and the wealth of data unleashed by networks at the turn of the twenty-first century democratized information visualization, making it a rapidly expanding new area of art and culture. […] Visualization of complex data is well on its way to becoming as important to the twenty-first century as photography and film were to the twentieth century."
+
+<br />
+<small>Lev Manovich, Preface to Manuel Lima's *Visual Complexity*, 2011</small>
+
+--
+
+### The Language of Infovis
+
+<br />
+- graphic primitives still the same: points, lines, curves, simple shapes
+- visualisation always a combination of three things: science, design, art
+- goal: understand data (patterns, relations, structures)
+- infovis is a (new) method among others
+
+<small>cf. Lev Manovich, ibid.</small>
+
+- "visualizations are a craft, not a science"
+
+<small>Jeffrey Schnapp: [*Knowledge Design*](https://www.volkswagenstiftung.de/uploads/media/HH_lectures_Schnapp_01.pdf), 2013</small>
+
+--
+
+### Charles Joseph Minard: "Carte figurative …
+
+#### … des pertes successives en hommes de l’armée française dans la campagne de Russie 1812–1813" (1869)
+
+![Minard's 'Carte figurative'.](images/minard-carte-figurative-from-wikimedia-commons.jpg)<!-- .element height="381px;" -->
+
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Minard.png)</small>
+
+--
+
+### Dimensions of "Carte figurative"
+
+<br />
+- geography: map showing invasion and retreat of the Deuxième Grande Armée (beige and black), including furcation and fusion of troops
+- diameter as indicator for decreasing troop strength (from 400.000 down to around 10.000)
+- temporal course
+- temperature curve during retreat
+
+--
+
+# →
+
+---
+
+### Edward Tufte's Principles
+
+<br />
+![Edward Tufte, from Wikimedia Commons](images/edward-tufte-from-wikimedia-commons.jpg)<!-- .element height="450px;" -->
+
+<small>Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Edware_Tufte_giving_a_class.jpg)</small>
+
+--
+
+#### "What makes a data visualization memorable?"
+
+<br />
+![symbolic pic](images/what-makes-data-visualization-memorable.jpg)<!-- .element height="388px;" -->
+
+<small>Source: [seas.harvard.edu](https://www.seas.harvard.edu/news/2013/10/what-makes-data-visualization-memorable)</small>
+
+--
+
+### Tufte's Visualisation Compendiums
+
+<br />
+- *The Visual Display of Quantitative Information* (1983, 2nd edition 2001)
+- *Envisioning Information* (1990)
+- *Visual Explanations* (1997)
+- *Beautiful Evidence* (2006)
+
+--
+
+### Graphical Excellence
+
+<br />
+<!-- .element: style="font-size:0.8em;" -->Graphical excellence is the well-designed presentation of interesting data – a matter of *substance*, of *statistics*, and of *design*.<br /><br />
+Graphical excellence consists of complex ideas communicated with clarity, precision, and efficiency.<br /><br />
+Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space.<br /><br />
+Graphical excellence is nearly always multivariate.<br /><br />
+And graphical excellence requires telling the truth about the data.
+
+<br />
+<small>Cf. *The Visual Display of Quantitative Information*, 2nd edition [2001], p. 51.</small>
+
+--
+
+## Tufte's Principles
+
+<br />
+- "induce the viewer to think about the substance rather than about methodology, graphic design, the technology of graphic production, or something else"
+- "present many numbers in a small space"
+- "encourage the eye to compare different pieces of data"
+- maximise data-ink ratio
+  - data-ink ratio = (data ink) / (total ink used in the chart)
+- "Above all else, show the data."
+
+<br />
+<!-- .element: style="font-size:0.8em;" -->
+Cf. *The Visual Display of Quantitative Information*, 2nd edition [2001], p. 13.
+
+--
+
+## "Chartjunk"
+
+<br />
+- coined by Tufte in 1983 (cf. *The Visual Display of Quantitative Information*, [pp.&nbsp;106](https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=00040Z))
+- chartjunk = "non-data-ink" or redundant data-ink
+- describes three kinds:
+  - unintentional optical art
+  - "the dreaded grid"
+  - "the self-promoting graphical duck"
+
+--
+
+### "The Friendly Data Graphic"
+
+![friendly v unfriendly, table from Ed Tufte's book](images/friendly-vs-unfriendly-tufte.jpg)<!-- .element width="508px;" -->
+
+<small>(Tufte 1983, p.&nbsp;183)</small>
+
+--
+
+### A Grammar of Graphic Presentation
+
+<br />
+"The principles for a grammar of graphic presentation are so simple that a remarkably small number of rules would be sufficient to give a universal language. It is interesting to note, also, that there are possibilities of the graphic presentation becoming an international language, like music which is now written by such standard methods that sheet music may be played in any country."
+
+<br />
+<small>Willard C. Brinton: *Graphic methods for presenting facts*, 1914, p.&nbsp;3</small>
+
+--
+
+### Visualisation as Analysis
+
+<br />
+"The graphic is no longer only the 'representation' of a final simplification, it is a point of departure for the discovery of these simplifications and the means for their justification. The graphic has become, by its manageability, an instrument for information processing."
+
+<br />
+<small>Jacques Bertin: *Semiology of Graphics* [French orig. 1967], 1983, p.&nbsp;4</small>
+
+--
+
+### Reading Diagrams and Graphs
+
+<br />
+"How to weave together forms of visual and verbal (and – why not? – acoustical, tactile, and olfactory) evidence?"
+
+<small>Jeffrey Schnapp: [*Knowledge Design*](https://www.volkswagenstiftung.de/uploads/media/HH_lectures_Schnapp_01.pdf), 2013</small>
+
+"Whereas for Augustine reading began with wonder, for digital humanists reading ends in wonder: The object of interest and wonder is less a particular literary text than a visual or diagrammatic unity produced through a method. […] These new diagrams and graphs […] are themselves texts to be read, interpreted, and marveled at."
+
+<small>Chad Wellmon: [*Sacred Reading: From Augustine to the Digital Humanists.*](http://iasc-culture.org/THR/THR_article_2015_Fall_Wellmon.php)<br />In: The Hedgehog Review. Vol. 17, No. 3 (Herbst 2015).</small>
+
+--
+
+# →
+
+---
+
+### Interlude with Hans Rosling (1948–2017), ["the World's Greatest Data-Storyteller"](http://www.informationisbeautiful.net/2017/hans-rosling-the-worlds-greatest-data-storyteller/)
+
+--
+
+### "200 Countries, 200 Years, 4 Minutes"
+
+<br />
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/jbkSRLYSojo?rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+<small>(watch directly [on YouTube](https://www.youtube.com/watch?v=jbkSRLYSojo))</small>
+
+--
+
+# →
+
+---
+
+### Historicity of Data Visualisations
+
+--
+
+### Bar Charts (1/2)
+
+<br />
+![meaningless bar chart](images/meaningless-bar-chart.png)<!-- .element height="372px;" -->
+
+<small>(done in a jiffy with RStudio)</small>
+
+--
+
+### Bar Charts (2/2)
+
+<br />
+- invented by Scottish engineer and economist William Playfair (1759–1823)
+- first used in 1786
+- also inventor of the pie chart (1801)
+
+--
+
+### Treemap: Invention
+
+<br />
+- early 1990s: computer scientist Ben Shneiderman (U&nbsp;Maryland) was looking for an intuitive solution to display the biggest space wasters on his hard disk (folders, files)
+- emergence of a new visualisation method: "space-constrained visualisation of hierarchies"
+- different tiling algorithms have been developed since
+- history of treemap research: [cs.umd.edu](http://www.cs.umd.edu/hcil/treemap-history/index.shtml)
+
+--
+
+### Treemap: Example
+
+![treemap example](images/treemap-from-wikimedia-commons.png)<!-- .element height="450px;" -->
+
+- <!-- .element: style="font-size:0.6em;" -->source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tree_Map.png) = screenshot via TreeSize Professional (Win)
+- <!-- .element: style="font-size:0.6em;" -->alternative programs: WinDirStat, Disk Inventory X (Mac), GrandPerspective (Mac), Baobab (Linux/Gnome), KDirStat (Linux/KDE), …
+
+--
+
+### Another Example: [newsmap.jp](http://newsmap.jp/)
+
+<br />
+- developed by Marcos Weskamp 2004–2010
+- news headlines via Google News
+- importance denoted by size
+- colour-divided news categories
+- the older the news, the darker
+
+--
+
+# →
+
+---
+
+## Trees
+
+--
+
+### Porphyrian Tree (3rd century AD)
+
+![Porphyrian tree, from Wikipedia](images/porphyrian-tree-from-wikimedia-commons.png)<!-- .element height="456px;" -->
+
+<small>Aristotle's classification of categories put into a tree-like diagram of<br />dichotomous divisions. (Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Porphyrian_Tree.png).)</small>
+
+--
+
+### High Middle Ages (~ 1000–1300)
+
+<br />
+- genealogical trees (noble families and religious kinship)
+- Ramon Llull (1232–1316) worked with diagrams and graphics as exegetical and didactical means
+- his *Arbor Scientiae* (1296) contained 16 tree visualisations, categorising different branches of knowledge
+
+--
+
+### Example from *Arbor Scientiae* (1296)
+
+![Arbor Scientiae, from Wikimedia](images/arbor-scientiae-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+<small>Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ArborLulle.jpg).</small>
+
+--
+
+#### "Système figuré des connaissances humaines" (1751)
+
+![Tree of knowledge, Encyclopédie, from Wikimedia](images/systeme-figure-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+<small>From vol. I of the "Encyclopédie" (1751). – Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ENC_SYSTEME_FIGURE.jpeg).</small>
+
+--
+
+### Darwin's Tree of Life (1837)
+
+![Tree of knowledge, Encyclopédie, from Wikimedia](images/darwin-tree-of-life-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+<small>Darwin's first sketch of an evolutionary tree, 1837. – Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Darwin_Tree_1837.png).</small>
+
+--
+
+### (New) Types of Trees
+
+<br />
+- Figurative Trees<!-- .element: style="font-size:0.8em;" -->
+- Vertical Trees<!-- .element: style="font-size:0.8em;" -->
+- Horizontal Trees<!-- .element: style="font-size:0.8em;" -->
+- Multidirectional Trees<!-- .element: style="font-size:0.8em;" -->
+- Radial Trees<!-- .element: style="font-size:0.8em;" -->
+- Hyperbolic Trees<!-- .element: style="font-size:0.8em;" -->
+- Rectangular Treemaps<!-- .element: style="font-size:0.8em;" -->
+- Voronoi Treemaps<!-- .element: style="font-size:0.8em;" -->
+- Circular Treemaps<!-- .element: style="font-size:0.8em;" -->
+- Sunbursts<!-- .element: style="font-size:0.8em;" -->
+- Icicle Trees<!-- .element: style="font-size:0.8em;" -->
+
+<br />
+<small>Cf. Manuel Lima, *The Book of Trees*, 2014</small>
+
+--
+
+# →
+
+---
+
+## Networks
+
+--
+
+### From Trees to Networks
+
+<br />
+- criticism towards hierarchical world views and the tree metaphor (and its inclination to dichotomies and finalism)
+- Deleuze and Guattari's idea of the rhizome "aimed at acknowledging multiplicities and multilinearities" (multiple roots, manifold interrelations, not dissolvable into simple dichotomies) (cf. *A Thousand Plateaus*, 1987)
+- nevertheless, tree and network diagrams "are not necessarily conflicting" (Lima 2011, p.&nbsp;69)
+
+--
+
+## **AND**
+## **NOW**
+
+## |
+## |
+
+## **THIS**<!-- .element: class="fragment" -->
+
+--
+
+### (A Lookahead to Next Saturday's Lecture:)
+
+--
+
+## Network Theory …
+
+<br>
+"… is the study of graphs as a representation of (…) relations between discrete objects." (Wikipedia)
+
+--
+
+### The Emergence of Graph Theory …
+
+<br>
+… was Euler's solution of the Königsberg bridge problem.
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-1.png)<!-- .element width="440px;" -->
+
+<small>Historical map of Königsberg, highlighting river Pregel<br>and the seven bridges. (Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png))</small>
+
+--
+
+### Abstraction from …
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
+
+… to …
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-3.png)<!-- .element height="160px;" -->
+
+<small>From the seven bridges (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg))<br>to an abstract graph (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).</small>
+
+--
+
+## Social Network Analysis …
+
+<br>"… is the process of investigating social structures through the use of network and graph theories." (Wikipedia)
+
+--
+
+### One of the First Sociograms
+
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+<small>"Class structure, 4th grade". Work by Jacob L. Moreno (1889–1974).<br />(First published in NYT, [3 April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Source for this PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)</small>
+
+--
+
+### (End of
+
+#### Lookahead to Next Saturday's Lecture.)
+
+--
+
+## [visualcomplexity.com](http://www.visualcomplexity.com/vc/)
+
+<br />
+- database with 1000 visualisation projects
+- founded in 2005 by Manuel Lima
+- book: *Visual Complexity. Mapping Patterns of Information*, 2011
+
+--
+
+### Lima's 8 Principles (ibid., pp.&nbsp;82–95)
+
+<br />
+1. Start with a Question
+2. Look for Relevancy
+  - content and visualisation method as relevant as possible
+3. Enable Multivariate Analysis
+  - avoid binary semantics and embrace qualitative richness
+4. Embrace Time
+  - "networks are evolving systems", but mapping time into network visualisations is difficult and remains one of the important tasks for the future
+
+--
+
+### Lima's 8 Principles Cont'd (ibid., pp.&nbsp;82–95)
+
+<br />
+5. Enrich Your Vocabulary<!-- .element value="5" -->
+  - not just circles for nodes and lines for edges (use colour, shape, size, orientation, texture, value, position)
+6. Expose Grouping
+  - criteria: by time, by location, by a particular continuum, or by a specified category
+7. Maximize Scaling
+  - Macro vs. Relationship vs. Micro Analysis
+8. Manage Intricacy
+  - Shneiderman's mantra: "Overview first, zoom and filter, then details on demand."
+
+--
+
+## "The Syntax of a New Language"
+
+<br />
+- new visualisation techniques of the last 15 years: Arc Diagram, Area Grouping, Centralized Burst, Centralized Ring, Circled Globe, Circular Ties, Elliptical Implosion, Flow Chart, Organic Rhizome, Radial Convergence, Radial Implosion, Ramifications, Scaling Circles, Segmented Radial Convergence, Sphere (cf. Lima 2011, pp.&nbsp;160–219)
+
+<br />
+→ &nbsp;*jump to book, browse*
+
+--
+
+# →
+
+---
+
+## Tools
+
+--
+
+### "The 38 best tools for data visualization"
+
+<br />
+- according to [Creative Bloq](http://www.creativebloq.com/design-tools/data-visualization-712402), 2017:
+  - Plotly · DataHero · Chart.js · Tableau · Raw · Dygraphs · ZingChart · InstantAtlas · Timeline · Exhibit · Modest Maps · Leaflet · WolframAlpha · Visual.ly · Visualize Free · Better World Flux · FusionCharts · jqPlot · D3.js · JavaScript InfoVis Toolkit · jpGraph · Highcharts · Google Charts · Excel · CSV/JSON · Crossfilter · Tangle · Polymaps · OpenLayers · Kartograph · CartoDB · Processing · NodeBox · R · Weka · Gephi · iCharts · Flot
+
+--
+
+### dataviz.tools
+
+<br />
+![dataviz.tools screenshot](images/dataviz-tools-screenshot.png)<!-- .element height="445px;" -->
+
+<small>(go [to their website](http://dataviz.tools/))</small>
+
+--
+
+## Some More Videos
+
+<br />
+- David McCandless: ["The beauty of data visualization"](https://www.youtube.com/watch?v=5Zg-C8AAIGg), 2012</small>
+- Manuel Lima: ["A Visual History of Human Knowledge"](https://www.youtube.com/watch?v=BQZKs75RMqM), 2015
+- Jeffrey Heer: ["The Future of Data Visualization"](https://www.youtube.com/watch?v=vc1bq0qIKoA), 2015
+
+---
+
+## Preparation for Next Week
+
+<br />
+* Franco Moretti: Network Theory, Plot Analysis. In: Stanford Literary Lab Pamphlets, n° 2 (1&nbsp;May 2011). (**[online](https://litlab.stanford.edu/LiteraryLabPamphlet2.pdf)**)
+  * Франко Моретти: Теория сетей, анализ сюжета. Пер. с англ. Артема Шели. B: Ф. М.: Дальнее чтение. Москва, 2016.
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal/plugin/markdown/marked.js' },
+					{ src: '../reveal/plugin/markdown/markdown.js' },
+					{ src: '../reveal/plugin/notes/notes.js', async: true },
+					{ src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
