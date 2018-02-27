@@ -69,7 +69,7 @@
 ## DNB FTW!
 
 <br />
-![no caption](images/dnb-german-library-leipzig-2008.jpg)<!-- .element width="1040px" -->
+![DNB-Gebäude am Deutschen Platz in Leipzig](images/dnb-german-library-leipzig-2008.jpg)<!-- .element width="1040px" -->
 
 <br />
 <small>DNB-Gebäude am Deutschen Platz in Leipzig (2008). (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_(German_Library%29_2008-Feb.jpg))</small>
@@ -118,12 +118,15 @@
 
 ## Art und Umfang der DNB-Daten
 
-- Titeldaten der DNB: typische Linked-Data-Formate (RDF/XML, JSON-LD usw.)
-- üblicher Ansatz: geeignete Datenbank (Triple-Store), Anfragen mit Hilfe der entsprechenden Anfragesprache (i.A. SPARQL)
-- flexible Anfragen möglich, leichte Einbindung weiterer Datenquellen
+- Titeldaten der DNB: typische Linked-Data-Formate (RDF/XML, JSON-LD, usw.)
+- üblicher Ansatz:
+ - geeignete Datenbank (Triple-Store)
+ - Anfragen mit Hilfe der entsprechenden Anfragesprache (i.A. SPARQL)
+ - flexible Anfragen möglich, leichte Einbindung weiterer Datenquellen
 - Größe der Daten (unkomprimiert ca. 21 GB): hohe Anforderungen an die Hardware, Konfiguration und Optimierung der Datenbank aufwendig
-- kompakte und leichter nachzuvollziehende Lösung
-- langfristiges Ziel: Bereitstellung einer fertig konfigurierten Arbeitsumgebung in Form eines Docker-Containers, in der die Daten in einer Datenbank verfüg- und analysierbar sind
+- Ziele:
+ - kompakte und leichter nachzuvollziehende Lösung
+ - langristig: Bereitstellung einer fertig konfigurierten Arbeitsumgebung in Form eines Docker-Containers, in der die Daten in einer Datenbank verfüg- und analysierbar sind
 - Frage @DNB: ist ein SPARQL-Endpunkt geplant?
 
 --
@@ -132,52 +135,112 @@
 
 - Titeldatensatz: 14 102 309 Datensätze und 227 212 707 Tripel (»Fakten«)
 - neben Angaben zu Büchern auch Angaben zu weiteren Medientypen wie etwa Zeitschriften
-- Titel, Erscheinungsjahr, bei Buchobjekten meist auch die Seitenanzahl sowie das Format
-- im Sinne von Linked Data werden viele Angaben mit Hilfe von standardisierten Vokabularien (z. B. Dublin Core oder Bibo) beschrieben und ermöglichen so die Verlinkung mit weiteren Datensätzen
+- Titel, Erscheinungsjahr, bei Buchobjekten meist auch Seitenanzahl und Format
+- Linked Data → Beschreibung mittels standardisierter Vokabularien (z. B. Dublin Core oder Bibo) ermöglicht Verlinkung mit weiteren Datensätzen
+
+```xml
+<rdf:Description rdf:about="http://d-nb.info/977225631">
+	<rdf:type rdf:resource="http://purl.org/ontology/bibo/Document"/>
+	<dcterms:medium rdf:resource="http://rdaregistry.info/termList/RDACarrierType/1044"/>
+	<owl:sameAs rdf:resource="http://hub.culturegraph.org/resource/DNB-977225631"/>
+	<dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(DE-101)977225631</dc:identifier>
+	<bibo:isbn13 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9783828979253</bibo:isbn13>
+	<rdau:P60521 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pp. : EUR 99.90 (Gesamtw. in 50 Bd.)</rdau:P60521>
+	<bibo:isbn10 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3828979254</bibo:isbn10>
+	<rdau:P60521 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pp. : EUR 99.90 (Gesamtw. in 50 Bd.)</rdau:P60521>
+	<dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(OCoLC)163100976</dc:identifier>
+	<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Die Leiden des jungen Werther</dc:title>
+	<dcterms:creator rdf:resource="http://d-nb.info/gnd/118540238"/>
+	<marcRole:ctb rdf:resource="http://d-nb.info/gnd/104746246"/>
+	<dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weltbild</dc:publisher>
+	<rdau:P60163 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Augsburg</rdau:P60163>
+	<rdau:P60333 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Augsburg : Weltbild</rdau:P60333>
+	<isbd:P1053 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">174 S.</isbd:P1053>
+	<dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2005</dcterms:issued>
+	<rdau:P60493 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roman</rdau:P60493>
+	<dcterms:isPartOf rdf:resource="http://d-nb.info/977245608"/>
+</rdf:Description>
+```
 
 --
 
 ## Linked Data
 
 - Angabe zu Autor&#42;innen durch die numerische GND-Kennung ermöglicht Verknüpfung der Daten mit u. a. Wikidata
+  ```xml
+	<dcterms:creator rdf:resource="http://d-nb.info/gnd/118540238"/>
+  ```
 - Wikidata: auf Linked Data basierendes Datenmodell
 - enthält u. a. Daten zu zahlreichen Persönlichkeiten, etwa Namen, Geburtsdaten, Berufe, Werke und, falls vorhanden, GND-Kennung
 - Beispiel: https://www.wikidata.org/wiki/Q5879 (J. W. Goethe)
 
 --
 
-## 1. Schritt: <br />Vorverarbeitung und Konvertierung der Daten von RDF/XML zu JSON (rdf2json.py)
+## Framework
 
-- RDF/XML wird von den üblichen Softwaretools im Allgemeinen nicht als Datenstrom verarbeitet, sondern im Hauptspeicher abgelegt und dann weiterverarbeitet
-- Aufgrund der Größe der Daten scheidet diese Möglichkeit aus. Da jedoch alle wesentlichen Daten zu einem Medium typischerweise innerhalb eines XML-Tags "rdf:Description" abgelegt sind, können wir die Daten auch mit Hilfe eines SAX-Parsers als XML verarbeiten
-- Wir extrahieren die für die Analyse wesentlichen Metadaten (z. B. dcterms:contributor, dcterms:language, dc:title, dcterms:extent, rdau:P60493) und speichern diese als JSON ab
-- JSON ist im Allgemeinen platzsparender als RDF/XML und kann leicht in Elasticsearch eingeladen werden, was ein geplanter nächster Schritt ist.
+![Überblick über das Framework](images/framework.svg)<!-- .element width="1040px" -->
 
---
-
-## 2. Schritt: <br />Extraktion von Daten zu Autoren aus Wikidata (WKD-Toolkit)
-
-- Ziel: Anreicherung der Autorenangaben im DNB-Datensatz mit Informationen aus Wikidata, beispielsweise Geburtsdatum- und ‑ort, Beruf und Verweis auf einen etwa vorhandenen Artikel in Wikipedia
-- Python-Softwarebibliothek zur Verarbeitung von Wikidata-Datensätzen veraltet, Rückgriff auf Java-basiertes Wikidata Toolkit
-- Nach Herunterladen des aktuell (14.08.2017) 16 GB großen komprimierten Wikidata-Datensatzes extrahieren wir in zwei Durchgängen zunächst alle Elemente mit einer GND-Kennung einschließlich ausgewählter Merkmale und ergänzen im zweiten Durchlauf die Werte der Merkmale
-- Ergebnis speichern im JSON-Format
+alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokumentiert
 
 --
 
-## 3. Schritt: <br />Normalisierung und Anreicherung der Daten (json2json.py)
+## 1. Schritt: <br />Vorverarbeitung und Konvertierung von RDF/XML zu JSON (rdf2json.py)
 
-- Python-Skript implementiert eine Pipeline, die alle in den vorherigen Schritten extrahierten Daten einliest und mit Hilfe der GND-Kennung verknüpft, Metadatenangaben (wie z. B. die Seitenanzahlangabe) extrahiert, vereinfacht und normalisiert, Datensätze mit fehlenden Angaben filtert und schließlich die gewünschten Datenfelder spaltenbasiert ausgibt
-- Vereinfachung umfasst vor Allem das Entfernen von Namespace-Präfixen (etwa http://id.loc.gov/vocabulary/iso639-2/ bei der Angabe der Sprache)
-- Seitenanzahlen werden mit Hilfe eines regulären Ausdrucks extrahiert, der die häufigsten Fälle abdeckt; Jahreszahlen ebenso
-- Verlagsnamen können mit Hilfe einer Normtabelle normiert werden (dies ist nötig, da die Schreibung dieser Namen innerhalb des Katalogs nicht standardisiert ist)
+- RDF/XML: i. A. Verarbeitung im Hauptspeicher, nicht als Datenstrom
+  - unpraktikabel aufgrund der Größe der Daten
+- alle wesentlichen Daten zu einem Medium innerhalb `<rdf:Description>`
+- Verarbeitung mittels SAX-Parser als XML
+  - Extraktion der Metadaten (z. B. `dcterms:contributor`, `dcterms:language`, `dc:title`, `dcterms:extent`, `rdau:P60493`)
+  - Speicherung als JSON
+- JSON: i. A. platzsparender als RDF/XML
+  - kann leicht in Elasticsearch eingeladen werden – ein geplanter nächster Schritt
 
 --
 
-## 4. Schritt: <br />Analyse der Daten (Shell-Skripte und -Tools wie awk, sort, datamash, gnuplot, ...)
+## 2. Schritt: <br />Extraktion von Daten zu Autor*innen aus Wikidata (Wikidata-Toolkit)
 
-- entstandene Dateien im TSV-Format können mit den üblichen Unix-Kommandozeilen-Werkzeugen wie awk, sort, uniq etc. leicht verarbeitet und analysiert werden
+- Ziel: Anreicherung des DNB-Datensatzes mit Informationen aus Wikidata
+  - beispielsweise Geburtsdatum/‑ort, Beruf, Verweis auf vorhandene Artikel in Wikipedia
+- Python-Bibliothek für Wikidata veraltet → Rückgriff auf Java-basiertes [Wikidata-Toolkit](https://github.com/Wikidata/Wikidata-Toolkit)
+- Herunterladen des aktuell (14.08.2017) 1,6 GB großen komprimierten Wikidata-Datensatzes 
+- zwei Durchgänge:
+  1. Extraktion aller Elemente mit einer GND-Kennung einschließlich ausgewählter Merkmale
+  2. Ergänzung der Werte der Merkmale (z. B. Sprache, Ort)
+- Ergebnis als JSON
+
+--
+
+## 3. Schritt: <br />Normalisierung und Anreicherung <br/> (json2json.py)
+
+- Python-Skript implementiert Pipeline:
+  - Einlesen aller Daten aus den vorherigen Schritten
+  - Verknüpfung mittels GND-Kennung
+  - Extraktion von Metadatenangaben (z. B. Seitenanzahlangabe)
+  - Vereinfachung und Normalisierung
+  - Filterung von Datensätzen mit fehlenden Angaben
+  - spaltenbasierte Ausgabe als TSV
+- Vereinfachung: v. A. Entfernen von Namespace-Präfixen 
+  - etwa `http://id.loc.gov/vocabulary/iso639-2/` bei der Angabe der Sprache
+- Extraktion von Seitenanzahlen/Jahreszahlen mit Hilfe eines regulären Ausdrucks
+- Normierung von Verlagsnamen mit Hilfe einer Normtabelle möglich 
+  - notwendig, da keine standardisierte Schreibung innerhalb des Katalogs
+
+--
+
+## 4. Schritt: <br />Analyse<br/> (awk, sort, datamash, gnuplot, ...)
+
+- TSV-Dateien können mit den üblichen Unix-Kommandozeilen-Werkzeugen
+  wie `awk`, `sort`, `uniq`, etc. leicht verarbeitet und analysiert
+  werden
+  
+  ```sh
+  datamash -g1 median 2 mean 2 min 2 max 2 count 2 q1 2 q3 2 \
+    < items_per_year-novel_page_author.tsv \
+	> issued_pages_stats.tsv
+  ```
+
 - Visualisierungen mit gnuplot
-- alle Schritte im GitHub-Repository dokumentiert
+
 
 ---
 
@@ -242,10 +305,16 @@
 
 ## Visualisierung von Subdatensätzen (1/2)
 
+
 <br />
-- von den etwa **14,1 Mio.** Objekten im DNB-Datensatz weisen etwa **8,3 Mio.** extrahierbare Seitenanzahlen auf (59 %)
-- laut Datenfeld "rdau:P60493" sind insgesamt **353 498** der Medien ›Romane‹ (davon weider wiederum **316 518** Umfangsangaben auf und **180 219** eine&#42;n Verfasser&#42;in, die/der mindestens einen Wikipedia-Eintrag (in egal welcher Sprache) besitzt
+
+- von den <span style="color:#ff7c00">etwa **14,1 Mio.** Objekten im DNB-Datensatz</span> weisen <span style="color:#4fb767">etwa **8,3 Mio.** extrahierbare Seitenanzahlen auf (59 %)</span>
+- laut Datenfeld "rdau:P60493" sind insgesamt <span style="color:#ff00ff">**353 498** der Medien ›Romane‹</span>,  davon weisen wiederum <span style="color:#4f80a0">**316 518** Umfangsangaben</span> auf und <span style="color:#0000a8">**180 219** eine&#42;n Verfasser&#42;in, die/der mindestens einen Wikipedia-Eintrag (in egal welcher Sprache) besitzt</span>
 - Verschränkung mit Wikipedia als bedeutungsgebende Instanz, um *vanity works*, selbstverlegte Books on Demand usw. herauszufiltern (für andere Forschungsfragen wären diese durchaus interessant)
+
+<img src="images/subdatensaetze.svg"/>
+
+
 
 --
 
