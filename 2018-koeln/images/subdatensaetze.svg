@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.7708053"
-     inkscape:cx="70.960628"
-     inkscape:cy="70.960634"
+     inkscape:cx="31.018196"
+     inkscape:cy="70.614062"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,35 +58,35 @@
      id="layer1"
      transform="translate(-12.851191,-60.634525)">
     <rect
-       style="fill:#ff7c00;fill-opacity:1;stroke:none;stroke-width:0.1096546;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#030dcc;fill-opacity:1;stroke:none;stroke-width:0.1096546;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4485"
        width="37.549999"
        height="37.549999"
        x="12.851191"
        y="60.634525" />
     <rect
-       style="fill:#4fb767;fill-opacity:1;stroke:none;stroke-width:0.18172663;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#feb24c;fill-opacity:1;stroke:none;stroke-width:0.18172663;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4491"
        width="28.809999"
        height="28.809999"
        x="12.851191"
        y="69.374527" />
     <rect
-       style="fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:0.03766298;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#fc4e2a;fill-opacity:1;stroke:none;stroke-width:0.03766298;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4493"
        width="5.9499998"
        height="5.9499998"
        x="12.851191"
        y="92.234528" />
     <rect
-       style="fill:#4f80a0;fill-opacity:1;stroke:none;stroke-width:0.10277665;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#bc0026;fill-opacity:1;stroke:none;stroke-width:0.10277665;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4489"
        width="5.6199999"
        height="5.6199999"
        x="12.851191"
        y="92.564522" />
     <rect
-       style="fill:#0000a8;fill-opacity:1;stroke:none;stroke-width:0.11008023;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#59001a;fill-opacity:1;stroke:none;stroke-width:0.11008023;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4487"
        width="4.2399998"
        height="4.2399998"
