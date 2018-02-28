@@ -1,34 +1,34 @@
 <!doctype html>
 <html lang="de">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>Fischer &amp; Jäschke: Liebe und Tod in der Deutschen Nationalbibliothek @ DHd 2018</title>
+    <title>Fischer/Jäschke: Liebe und Tod in der Deutschen Nationalbibliothek @ DHd 2018</title>
 
-		<link rel="stylesheet" href="../reveal/css/reveal.css">
-		<link rel="stylesheet" href="../reveal/css/theme/white.css">
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/white.css" />
 
-      <!-- adjustments for serif.css -->
-      <link rel="stylesheet" href="custom.css">
+    <!-- Adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
-<script type="text/template">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+          <script type="text/template">
 
 # Liebe und Tod in der Deutschen Nationalbibliothek
 
@@ -104,11 +104,11 @@
 ## Romane in der DNB
 
 <br />
-- **~ 180 000** Romane in der DNB (laut ["rdau:P60493"](http://www.rdaregistry.info/Elements/u/#P60493), Label: "has other title information")
+- **~ 180 000** Romane in der DNB (laut [»rdau:P60493«](http://www.rdaregistry.info/Elements/u/#P60493), Label: »has other title information«)
 - Achtung: das ist nicht die Gesamtanzahl an tatsächlichen Romanen
  - Grund: Nachauflagen und Übersetzungen zählen mit hinein, außerdem ist die Befüllung des Feldes teils inkonsistent
 - Größenordnung zum Vergleich:
- - Franco Morettis Untersuchung zur Länge von Romantiteln von 2009 ("Style Inc. Reflections on **Seven Thousand** Titles (British Novels, 1740–1850)")
+ - Franco Morettis Untersuchung zur Länge von Romantiteln von 2009 (»Style Inc. Reflections on **Seven Thousand** Titles (British Novels, 1740–1850)«)
 
 ---
 
@@ -203,7 +203,7 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 - Ziel: Anreicherung des DNB-Datensatzes mit Informationen aus Wikidata
   - beispielsweise Geburtsdatum/‑ort, Beruf, Verweis auf vorhandene Artikel in Wikipedia
 - Python-Bibliothek für Wikidata veraltet → Rückgriff auf Java-basiertes [Wikidata-Toolkit](https://github.com/Wikidata/Wikidata-Toolkit)
-- Herunterladen des aktuell (14.08.2017) 1,6 GB großen komprimierten Wikidata-Datensatzes 
+- Herunterladen des aktuell (14.08.2017) 1,6 GB großen komprimierten Wikidata-Datensatzes
 - zwei Durchgänge:
   1. Extraktion aller Elemente mit einer GND-Kennung einschließlich ausgewählter Merkmale
   2. Ergänzung der Werte der Merkmale (z. B. Sprache, Ort)
@@ -220,10 +220,10 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
   - Vereinfachung und Normalisierung
   - Filterung von Datensätzen mit fehlenden Angaben
   - spaltenbasierte Ausgabe als TSV
-- Vereinfachung: v. A. Entfernen von Namespace-Präfixen 
+- Vereinfachung: v. A. Entfernen von Namespace-Präfixen
   - etwa `http://id.loc.gov/vocabulary/iso639-2/` bei der Angabe der Sprache
 - Extraktion von Seitenanzahlen/Jahreszahlen mit Hilfe eines regulären Ausdrucks
-- Normierung von Verlagsnamen mit Hilfe einer Normtabelle möglich 
+- Normierung von Verlagsnamen mit Hilfe einer Normtabelle möglich
   - notwendig, da keine standardisierte Schreibung innerhalb des Katalogs
 
 --
@@ -232,7 +232,7 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 
 - TSV-Dateien können mit den üblichen Unix-Werkzeugen wie `awk`,
   `sort`, `uniq`, etc. leicht verarbeitet und analysiert werden
-  
+
   ```sh
   datamash -g1 median 2 mean 2 min 2 max 2 count 2 q1 2 q3 2 \
     < items_per_year-novel_page_author.tsv \
@@ -309,7 +309,7 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 <br />
 
 - von den <span style="color:#030dcc">etwa **14,1 Mio.** Objekten im DNB-Datensatz</span> weisen <span style="color:#feb24c">etwa **8,3 Mio.** extrahierbare Seitenanzahlen auf (59 %)</span>
-- laut Datenfeld "rdau:P60493" sind insgesamt <span style="color:#fc4e2aff">**353 498** der Medien ›Romane‹</span>,  davon weisen wiederum <span style="color:#bc0026">**316 518** Umfangsangaben</span> auf und <span style="color:#59001a">**180 219** eine&#42;n Verfasser&#42;in, die/der mindestens einen Wikipedia-Eintrag (in egal welcher Sprache) besitzt</span>
+- laut Datenfeld »rdau:P60493« sind insgesamt <span style="color:#fc4e2aff">**353 498** der Medien ›Romane‹</span>, davon weisen wiederum <span style="color:#bc0026">**316 518** Umfangsangaben</span> auf und <span style="color:#59001a">**180 219** eine&#42;n Verfasser&#42;in, die/der mindestens einen Wikipedia-Eintrag (in egal welcher Sprache) besitzt</span>
 - Verschränkung mit Wikipedia als bedeutungsgebende Instanz, um *vanity works*, selbstverlegte Books on Demand usw. herauszufiltern (für andere Forschungsfragen wären diese durchaus interessant)
 
 <img src="images/subdatensaetze.svg"/><!-- .element width="200px" -->
@@ -468,28 +468,24 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 * Schmidt, Ben (2017): [A brief visual history of MARC cataloging at the Library of Congress](http://sappingattention.blogspot.de/2017/05/a-brief-visual-history-of-marc.html) [Blogpost]. In: Sapping Attention, 16.&nbsp;Mai 2017.
 * Arbeitsrepositorium: [github.com/weltliteratur/dnb](https://github.com/weltliteratur/dnb)
 
-</script>
-			    </section>
-			</div>
-		</div>
-
-		
-		<script src="../reveal/lib/js/head.min.js"></script>
-		<script src="../reveal/js/reveal.js"></script>
-
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: '../reveal/plugin/markdown/marked.js' },
-					{ src: '../reveal/plugin/markdown/markdown.js' },
-					{ src: '../reveal/plugin/notes/notes.js', async: true },
-					{ src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+          </script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: '../reveal/plugin/markdown/marked.js' },
+          { src: '../reveal/plugin/markdown/markdown.js' },
+          { src: '../reveal/plugin/notes/notes.js', async: true },
+          { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
 </html>
