@@ -52,13 +52,13 @@
 ## Inhalt
 
 <br />
-1. [Intro](#/2)
-2. [Beschreibung des Frameworks](#/3)
-3. [Output](#/4)
-4. [Anwendungsfall 1: Romantitel](#/5)
-5. [Anwendungsfall 2: Romanumfänge](#/6)
-6. [Fazit](#/7)
-7. [Bibliografie](#/8)
+1. [Intro](#/1)
+2. [Beschreibung des Frameworks](#/2)
+3. [Output](#/3)
+4. [Anwendungsfall 1: Romantitel](#/4)
+5. [Anwendungsfall 2: Romanumfänge](#/5)
+6. [Fazit](#/6)
+7. [Bibliografie](#/7)
 
 ---
 
@@ -118,7 +118,7 @@
 
 ## Art und Umfang der DNB-Daten
 
-- Titeldaten der DNB: typische Linked-Data-Formate (RDF/XML, JSON-LD, usw.)
+- typische Linked-Data-Formate (RDF/XML, JSON-LD, usw.)
 - üblicher Ansatz:
  - geeignete Datenbank (Triple-Store)
  - Anfragen mit Hilfe der entsprechenden Anfragesprache (i.A. SPARQL)
@@ -133,10 +133,9 @@
 
 ## Datensatz
 
-- Titeldatensatz: 14 102 309 Datensätze und 227 212 707 Tripel (»Fakten«)
+- »Titeldaten der DNB«: 14 102 309 Datensätze und 227 212 707 Tripel (»Fakten«)
 - neben Angaben zu Büchern auch Angaben zu weiteren Medientypen wie etwa Zeitschriften
 - Titel, Erscheinungsjahr, bei Buchobjekten meist auch Seitenanzahl und Format
-- Linked Data → Beschreibung mittels standardisierter Vokabularien (z. B. Dublin Core oder Bibo) ermöglicht Verlinkung mit weiteren Datensätzen
 
 ```xml
 <rdf:Description rdf:about="http://d-nb.info/977225631">
@@ -166,13 +165,15 @@
 
 ## Linked Data
 
+
+- Beschreibung mittels standardisierter Vokabularien (z. B. Dublin Core oder Bibo) ermöglicht Verlinkung mit weiteren Datensätzen
 - Angabe zu Autor&#42;innen durch die numerische GND-Kennung ermöglicht Verknüpfung der Daten mit u. a. Wikidata
   ```xml
 	<dcterms:creator rdf:resource="http://d-nb.info/gnd/118540238"/>
   ```
 - Wikidata: auf Linked Data basierendes Datenmodell
-- enthält u. a. Daten zu zahlreichen Persönlichkeiten, etwa Namen, Geburtsdaten, Berufe, Werke und, falls vorhanden, GND-Kennung
-- Beispiel: https://www.wikidata.org/wiki/Q5879 (J. W. Goethe)
+  - enthält u. a. Daten zu zahlreichen Persönlichkeiten, etwa Namen, Geburtsdaten, Berufe, Werke und, falls vorhanden, GND-Kennung
+  - Beispiel: https://www.wikidata.org/wiki/Q5879 (J. W. Goethe)
 
 --
 
@@ -229,9 +230,8 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 
 ## 4. Schritt: <br />Analyse<br/> (awk, sort, datamash, gnuplot, ...)
 
-- TSV-Dateien können mit den üblichen Unix-Kommandozeilen-Werkzeugen
-  wie `awk`, `sort`, `uniq`, etc. leicht verarbeitet und analysiert
-  werden
+- TSV-Dateien können mit den üblichen Unix-Werkzeugen wie `awk`,
+  `sort`, `uniq`, etc. leicht verarbeitet und analysiert werden
   
   ```sh
   datamash -g1 median 2 mean 2 min 2 max 2 count 2 q1 2 q3 2 \
@@ -239,7 +239,7 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 	> issued_pages_stats.tsv
   ```
 
-- Visualisierungen mit gnuplot
+- Visualisierung mit gnuplot
 
 
 ---
@@ -264,10 +264,10 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 <br />
 
 | Autor&#42;in | Romane |
-|:-:|:-:|
-| Heinz G. Konsalik | 2232 |
-| Marie Louise Fischer | 1264 |
-| Gert Fritz Unger | 1013 |
+|:-:|--: |
+| Heinz G. Konsalik | 2 232 |
+| Marie Louise Fischer | 1 264 |
+| Gert Fritz Unger | 1 013 |
 | Georges Simenon | 783 |
 | Utta Danella | 778 |
 | Edgar Wallace | 654 |
@@ -286,7 +286,7 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 <br />
 
 | Autor&#42;in | Romane |
-|:-:|:-:|
+|:-:|--: |
 | Stephen King | 577 |
 | Georgette Heyer | 576 |
 | Agatha Christie | 574 |
@@ -308,11 +308,11 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 
 <br />
 
-- von den <span style="color:#ff7c00">etwa **14,1 Mio.** Objekten im DNB-Datensatz</span> weisen <span style="color:#4fb767">etwa **8,3 Mio.** extrahierbare Seitenanzahlen auf (59 %)</span>
-- laut Datenfeld "rdau:P60493" sind insgesamt <span style="color:#ff00ff">**353 498** der Medien ›Romane‹</span>,  davon weisen wiederum <span style="color:#4f80a0">**316 518** Umfangsangaben</span> auf und <span style="color:#0000a8">**180 219** eine&#42;n Verfasser&#42;in, die/der mindestens einen Wikipedia-Eintrag (in egal welcher Sprache) besitzt</span>
+- von den <span style="color:#030dcc">etwa **14,1 Mio.** Objekten im DNB-Datensatz</span> weisen <span style="color:#feb24c">etwa **8,3 Mio.** extrahierbare Seitenanzahlen auf (59 %)</span>
+- laut Datenfeld "rdau:P60493" sind insgesamt <span style="color:#fc4e2aff">**353 498** der Medien ›Romane‹</span>,  davon weisen wiederum <span style="color:#bc0026">**316 518** Umfangsangaben</span> auf und <span style="color:#59001a">**180 219** eine&#42;n Verfasser&#42;in, die/der mindestens einen Wikipedia-Eintrag (in egal welcher Sprache) besitzt</span>
 - Verschränkung mit Wikipedia als bedeutungsgebende Instanz, um *vanity works*, selbstverlegte Books on Demand usw. herauszufiltern (für andere Forschungsfragen wären diese durchaus interessant)
 
-<img src="images/subdatensaetze.svg"/>
+<img src="images/subdatensaetze.svg"/><!-- .element width="200px" -->
 
 
 
@@ -345,16 +345,16 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 
 | Substantiv | Frequenz |
 |:-:|:-:|
-| Liebe | 3117 |
-| Mann | 1906 |
-| Frau | 1686 |
-| Tod | 1537 |
-| Nacht | 1505 |
-| Leben | 1496 |
-| Welt | 1188 |
-| Haus | 1158 |
-| Zeit | 1037 |
-| Schatten | 1029 |
+| Liebe | 3 117 |
+| Mann | 1 906 |
+| Frau | 1 686 |
+| Tod | 1 537 |
+| Nacht | 1 505 |
+| Leben | 1 496 |
+| Welt | 1 188 |
+| Haus | 1 158 |
+| Zeit | 1 037 |
+| Schatten | 1 029 |
 
 <br />
 <small>Häufigste Substantive in Romantiteln im gesamten DNB-Katalog.</small>
