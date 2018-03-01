@@ -118,6 +118,7 @@
 
 ## Art und Umfang der DNB-Daten
 
+<br />
 - typische Linked-Data-Formate (RDF/XML, JSON-LD, usw.)
 - üblicher Ansatz:
  - geeignete Datenbank (Triple-Store)
@@ -125,9 +126,8 @@
  - flexible Anfragen möglich, leichte Einbindung weiterer Datenquellen
 - Größe der Daten (unkomprimiert ca. 21 GB): hohe Anforderungen an die Hardware, Konfiguration und Optimierung der Datenbank aufwendig
 - Ziele:
- - kompakte und leichter nachzuvollziehende Lösung
+ - kompakte und leicht nachzuvollziehende Lösung
  - langristig: Bereitstellung einer fertig konfigurierten Arbeitsumgebung in Form eines Docker-Containers, in der die Daten in einer Datenbank verfüg- und analysierbar sind
-- Frage @DNB: ist ein SPARQL-Endpunkt geplant?
 
 --
 
@@ -191,7 +191,7 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
   - unpraktikabel aufgrund der Größe der Daten
 - alle wesentlichen Daten zu einem Medium innerhalb `<rdf:Description>`
 - Verarbeitung mittels SAX-Parser als XML
-  - Extraktion der Metadaten (z. B. `dcterms:contributor`, `dcterms:language`, `dc:title`, `dcterms:extent`, `rdau:P60493`)
+  - Extraktion der Metadaten (z. B. »dcterms:contributor«, »dcterms:language«, »dc:title«, »dcterms:extent«, »rdau:P60493«)
   - Speicherung als JSON
 - JSON: i. A. platzsparender als RDF/XML
   - kann leicht in Elasticsearch eingeladen werden – ein geplanter nächster Schritt
@@ -255,7 +255,8 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 - entsprechende Zahlen sagen etwas über vergangene Realitäten auf dem deutschsprachigen Buchmarkt aus (vgl. Häntzschel et al. 2009)
 - die Tabelle auf der nächsten Folie rankt Autor&#42;innen nach Anzahl der verzeichneten Romane in der DNB
 - Verfasser&#42;innen aus dem Unterhaltungsbereich ganz oben
-- Achtung: die Anzahl der verzeichneten Medien umfasst Neuauflagen, Konsalik hat also nicht über 2 000 Romane geschrieben
+- Achtung: die Anzahl der verzeichneten Medien umfasst Neuauflagen
+  - Konsalik hat also nicht über 2 000 Romane geschrieben
 
 --
 
@@ -309,7 +310,7 @@ alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokum
 <br />
 
 - von den <span style="color:#030dcc">etwa **14,1 Mio.** Objekten im DNB-Datensatz</span> weisen <span style="color:#feb24c">etwa **8,3 Mio.** extrahierbare Seitenanzahlen auf (59 %)</span>
-- laut Datenfeld »rdau:P60493« sind insgesamt <span style="color:#fc4e2aff">**353 498** der Medien ›Romane‹</span>, davon weisen wiederum <span style="color:#bc0026">**316 518** Umfangsangaben</span> auf und <span style="color:#59001a">**180 219** eine&#42;n Verfasser&#42;in, die/der mindestens einen Wikipedia-Eintrag (in egal welcher Sprache) besitzt</span>
+- laut Datenfeld »rdau:P60493« sind insgesamt <span style="color:#fc4e2a">**353 498** der Medien ›Romane‹</span>, davon weisen wiederum <span style="color:#bc0026">**316 518** Umfangsangaben</span> auf und <span style="color:#59001a">**180 219** eine&#42;n Verfasser&#42;in, die/der mindestens einen Wikipedia-Eintrag (in egal welcher Sprache) besitzt</span>
 - Verschränkung mit Wikipedia als bedeutungsgebende Instanz, um *vanity works*, selbstverlegte Books on Demand usw. herauszufiltern (für andere Forschungsfragen wären diese durchaus interessant)
 
 <img src="images/subdatensaetze.svg"/><!-- .element width="200px" -->
