@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Fischer/Skorinkin: Network Analysis of Literary Texts – Workshop @ DHN2018</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/white.css" />
+
+    <!-- Adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+          <script type="text/template">
+
+# Network Analysis of <br />Literary Texts
+
+## DHN2018 Workshop
+
+<br /><br />
+[Frank Fischer](https://www.hse.ru/en/org/persons/182492735)¹⁺² · [Danil Skorinkin](https://www.hse.ru/en/staff/skorinkin)¹
+
+<br />
+¹ Higher School of Economics, Moscow<br />
+² DARIAH-EU<!-- .element: style="font-size:0.8em;" -->
+
+<br /><br />
+<!-- .element: style="font-size:0.75em;" -->This presentation: [lehkost.github.io/slides/2018-helsinki/](https://lehkost.github.io/slides/2018-helsinki/)
+
+<!-- .element: style="font-size:0.75em;" -->Announcement page (for the record): [helsinki.fi/…](https://www.helsinki.fi/en/helsinki-centre-for-digital-humanities/dhn-2018-workshop-network-analysis-of-literary-texts-operationalisation-visualisation-interpretation)
+
+<br /><br />
+[DHN2018](https://www.helsinki.fi/en/helsinki-centre-for-digital-humanities/dhn-2018) · Helsinki · 7 March 2018, 9:00–12:30 · Porthania P722
+
+--
+
+## Schedule for Today
+
+<br />
+- 09:00 &nbsp;Kick-off lecture
+  - basic concepts of the network analysis of literary texts<!-- .element: style="font-size:0.8em;" -->
+- 09:45 &nbsp;Formalisation
+  - extracting network data from literary texts<!-- .element: style="font-size:0.8em;" -->
+- 10:30 &nbsp;Coffee break ☕
+- 10:45 &nbsp;Visualisation and analysis with Gephi
+  - calculating with nodes and edges: local and global measures (centralities, distances, densities, clusters)<!-- .element: style="font-size:0.8em;" -->
+- 12:15 &nbsp;Outlook &amp; discussion
+
+--
+
+## Kick-Off Lecture
+
+<br />
+1. [Network Theory](#/1)
+2. [Weighted and Directed Graphs](#/2)
+3. [Social Network Analysis](#/3)
+4. [Network Analysis as Distant Reading](#/4)
+5. [Node- and Graph-Related Measures](#/5)
+6. [Extraction of Network Data](#/6)
+7. [Perspectives](#/7)
+
+---
+
+# Network Theory …
+
+<br>
+"… is the study of graphs as a representation of (…) relations between discrete objects." (Wikipedia)
+
+--
+
+#### Small example network graph with<br />8 vertices (nodes) and 10 edges:
+
+<br>
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="360px;" -->
+
+<br>
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)</small>
+
+--
+
+### The Emergence of Graph Theory …
+
+<br>
+… was Euler's solution of the Königsberg bridge problem.
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-1.png)<!-- .element width="440px;" -->
+
+<small>Historical map of Königsberg, highlighting river Pregel<br>and the seven bridges. (Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png))</small>
+
+--
+
+#### Abstraction from …
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
+
+#### … to …
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-3.png)<!-- .element height="160px;" -->
+
+<small>Turning the seven bridges (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg)) …<br>… into an abstract graph (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).</small>
+
+--
+
+### Features of Euler's Abstraction
+
+<br />
+- landmasses: nodes, bridges: edges
+- precise location of bridges is irrelevant
+- number of bridges and their endpoints are key for the solution of the problem:
+  - all four landmasses are reached by an odd number of bridges, when there should be a maximum of two landmasses (nodes) with an odd number of bridges (edges); these two landmasses could then serve as starting and end point, whereas the other two banks would have to feature an even number of bridges leading to them
+
+---
+
+# Weighted and Directed Graphs
+
+<br />
+- Euler's graph of the Königsberg bridges was unweighted and undirected
+
+--
+
+### Directed Graph
+
+<br />
+![simple directed graph (from Wikimedia Commons)](images/directed-graph-from-wikimedia-commons.png)<!-- .element height="180px;" -->
+
+<br />
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Directed.svg)</small>
+
+--
+
+### Weighted Graph
+
+<br />
+![simple weighted graph (from Wikimedia Commons)](images/weighted-graph-from-wikimedia-commons.png)<!-- .element height="227px;" -->
+
+<br />
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Weighted_network.svg)</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (1/4)
+
+![Moscow Metro 2010 (from Wikimedia Commons)](images/moscow_metro_map_2010.jpg)<!-- .element height="500px;" -->
+
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Moscow_metro_map_2010-mhr.png)</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (2/4)
+
+![Yandex.Metro App (screenshot)](images/metro-app-1.jpg)<!-- .element height="500px;" -->
+
+<small>Screenshot: Яндекс.Метро App</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (3/4)
+
+![Yandex.Metro App (screenshot)](images/metro-app-2.jpg)<!-- .element height="500px;" -->
+
+<small>Screenshot: Яндекс.Метро App</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (4/4)
+
+![Yandex.Metro App (screenshot)](images/metro-app-3.jpg)<!-- .element height="500px;" -->
+
+<small>Screenshot: Яндекс.Метро App</small>
+
+---
+
+# Social Network Analysis …
+
+<br>"… is the process of investigating social structures through the use of network and graph theories." (Wikipedia)
+
+--
+
+## Social Network Analysis (SNA)
+
+<br />
+- SNA started as a bundle of approaches developed in the Social Sciences since the 1930s
+- 'Harvard Breakthrough' in the 1960s (centered around sociologist [Harrison White](https://en.wikipedia.org/wiki/Harrison_White)): sociologists, mathematicians and programmers flesh out a distinct structural-analytical perspective on social phenomena
+- 1990s: new perspectives on network structures with the advent of the internet, applications in Physics and Bioinformatics; Literary Studies started to focus on SNA around half a decade ago
+
+--
+
+## Basic SNA Bibliography
+
+<br />
+- [Stanley Wasserman](https://www.hse.ru/en/org/persons/120496236), Katherine Faust: [*Social Network Analysis: Methods and Applications*](https://books.google.com/books?id=CAm2DpIqRUIC&printsec=frontcover), 1994
+  - still the standard reference for the foundations of Social (!) Network Analysis, published long before SNA hype<!-- .element: style="font-size:0.8em;" -->
+- Alain Degenne, Michel Forsé: [*Introducing Social Networks*](https://books.google.com/books?id=1mSHqydgrYcC&printsec=frontcover), orig. 1994, transl. 1999
+- John Scott: *Social Network Analysis: A Handbook*, 2nd ed. 2000.
+- John Scott, Peter J. Carrington (eds.): [*The SAGE Handbook of Social Network Analysis*](https://books.google.com/books?id=mWlsKkIuFNgC&printsec=frontcover), 2011
+
+--
+
+### One of the First Sociograms (1933)
+
+<br />
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="340px;" -->
+
+<br />
+<small>"Class structure, 4th grade". Work by Jacob L. Moreno (1889–1974).<br />(First published in NYT, [3 April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Source for this PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)</small>
+
+--
+
+### One of the First Literary Network Analyses (1998)
+
+<br />
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-stories-1.png)<!-- .element width="400px;" -->
+
+<br />
+<small>Thomas Schweizer, Michael Schnegg: *Die soziale Struktur der "Simple Storys". Eine Netzwerkanalyse.* 1998. ([PDF](https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf)) <br />Network extracted from [Ingo Schulze's](https://en.wikipedia.org/wiki/Ingo_Schulze) novel "Simple Storys", done by ethnologists. <br />38 nodes (characters). Edges: positive, negative or exchange relationships. <br />Visualisation with [Pajek](http://vlado.fmf.uni-lj.si/pub/networks/pajek/).</small>
+
+---
+
+# Network Analysis as <br />Distant Reading
+
+--
+
+### Moretti's Analysis of "Hamlet" (2011)
+
+![Network of Hamlet](images/moretti-hamlet.gif)<!-- .element width="640px;" -->
+
+<small>Source: [newleftreview.org](https://newleftreview.org/II/68/franco-moretti-network-theory-plot-analysis)</small>
+
+--
+
+### "Mapping Shakespeare’s Tragedies"
+
+![6 (out of 11) Shakespeare tragedies](images/grandjean-shakespeare-2015.png)<!-- .element width="640px;" -->
+
+<small>Martin Grandjean's network visualisation of 6 (out of 11) Shakespearean tragedies (Dec., 2015).<br />Full poster and explanations [on Grandjean's website](http://www.martingrandjean.ch/network-visualization-shakespeare/).</small>
+
+--
+
+### "Distant-Reading Showcase"
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+<small>"Distant-Reading Showcase", poster presented at #DHd2016 in Leipzig (9 Mar 2016).<br />Download in full-res (28.88 MB) via Figshare. DOI: [10.6084/m9.figshare.3101203.v1](https://dx.doi.org/10.6084/m9.figshare.3101203.v1).</small>
+
+--
+
+### Poster Detail
+
+![Poster detail](images/poster-detail-1.jpg)<!-- .element width="680px;" -->
+
+<small>Zooming in to Goethe's pivotal play "Götz von Berlichingen" (1773).</small>
+
+---
+
+# Node- and Graph-Related Measures
+
+--
+
+## Some Node-Related Measures
+
+### Degree
+
+![Degree](images/moretti-hamlet-degree.jpg)<!-- .element height="432px;" -->
+
+<small>In Moretti's formalisation, Hamlet has direct relations to 16 characters (= his degree).<br />(Source: *Дальнее чтение*, p. 294.)</small>
+
+--
+
+### Average Distance
+
+<br />
+- in Moretti's formalisation, Hamlet has an average distance (from all other characters) of 1.45
+- average distance of Claudius: 1.62
+- Horatio: 1.69
+
+--
+
+## Graph-Related Measures
+
+<br />
+- Network Size
+- Maximum Degree
+- Average Degree
+- Density
+- Average Path Length
+- …
+
+--
+
+### Example
+
+![three nodes](images/three-nodes.png)<!-- .element height="400px;" -->
+
+What is the (a) network size, (b) maximum degree, (c) average degree, (d) density, (e)&nbsp;average path length of this network?
+
+--
+
+## More Node-Related Measures
+
+--
+
+### Betweenness Centrality
+
+<br />
+- "a measure of centrality in a graph based on shortest paths"
+- "For every pair of vertices in a graph, there exists a shortest path between the vertices such that either the number of edges that the path passes through (for undirected graphs) or the sum of the weights of the edges (for directed graphs) is minimized. The betweenness centrality for each node is the number of these shortest paths that pass through the node." (Wikipedia)
+
+--
+
+## Closeness Centrality
+
+<br />
+- "the sum of the length of the shortest paths between the node and all other nodes in the graph"
+
+--
+
+## PageRank
+
+<br />
+- "PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is. The underlying assumption is that more important websites are likely to receive more links from other websites." (quotes in Wikipedia)
+
+--
+
+### Periodic Table of Network Centrality
+
+<br />
+- http://schochastics.net/sna/periodic.html
+
+--
+
+### Example
+
+<br />
+https://shiny.dracor.org/
+
+---
+
+# Extraction of Network Data
+
+<br />
+## A "Digital Spectator"
+
+- following formalist and structuralist approaches in literary studies, but automatisation of data collection
+- network data = interactions between characters
+- operationalisation of 'interaction': "Two characters interact with one another if they perform a speech act within the same segment of a drama (usually a 'scene')." (following an idea of Solomon Marcus, "Poetica matematică", 1970)
+- 'epistemic thing' of literary network analysis different from that of text analysis
+
+--
+
+### Formalisation of Interactions
+
+<br />
+<pre><code class="hljs" data-trim contenteditable>
+Source,Target,Weight
+Барыня,Варвара,2
+Барыня,Кабанов,1
+Барыня,Кабанова,1
+Барыня,Катерина,2
+Борис,Варвара,4
+Борис,Глаша,1
+Борис,Дикой,1
+Борис,Женщина,1
+Борис,Кабанов,1
+Борис,Кабанова,1
+Борис,Катерина,3
+Борис,Кудряш,4
+Борис,Кулигин,3
+Борис,Первый,1
+Борис,Феклуша,1
+...
+</code></pre>
+
+<br />
+Ostrovsky's "Groza" ("The Storm"): <br />interactions encoded in a CSV list (comma-separated values).
+
+--
+
+### Network Graph for Ostrovsky's "Groza"
+
+![Network graph for Groza](images/rusplay-groza.png)<!-- .element height="500px;" -->
+
+<small>Source: DS/FF. Visualisation with Python library igraph.</small>
+
+--
+
+### Example: Comparison of 4 Russian Plays
+
+<br />
+
+| Play                 | Characters | Max Degree | Avg Degree | Density | Avg Path Length |
+|----------------------|------------|------------|------------|---------|-----------------|
+| Борис Годунов (1825) | 80         | 18         | 5.37       | 0.07    | 3.4             |
+| Горе от ума (1825)   | 29         | 19         | 9.45       | 0.34    | 1.94            |
+| Ревизор (1836)       | 26         | 23         | 11.0       | 0.44    | 1.62            |
+| Гроза (1859)         | 19         | 16         | 8.21       | 0.46    | 1.57            |
+
+<br />
+There is not much we can learn from just four plays and a handful of measures. Much more data is needed to calculate and observe general changes over time.</small>
+
+--
+
+### Network Densities (German Drama Corpus)
+
+<br />
+![Development of network sizes (plays with 3 and more acts)](images/figure_5_-_densite_moyenne_par_genre.png)<!-- .element width="600px;" -->
+
+<br />
+Cf. ["Comedy vs. Tragedy: Network Values by Genre"](https://dlina.github.io/Network-Values-by-Genre/) (31 Jul 2015).
+
+---
+
+# Perspectives
+
+--
+
+## Teaching
+
+<br />
+#### A Gamification Approach:
+
+![card game](images/dramenquartett-four-cards.jpg)<!-- .element width="450px;" -->
+
+"Dramenquartett – Eine didaktische Intervention" (released 6 days ago at #DHd2018 in Cologne). Full-res version here: https://doi.org/10.6084/m9.figshare.5926363.v1
+
+
+--
+
+## Drama Corpora in TEI
+
+(facilitating the automated extraction of network data)
+
+<br />
+- [Théâtre Classique](http://www.theatre-classique.fr/): 1080 plays from the 17th and 18th century
+- [Shakespeare His Contemporaries](https://drama.earlyprint.org/): 860 plays written between 1550 and 1700
+- [German Drama Corpus](https://ger.dracor.org/): 466 German-language plays from 1730 till 1930
+- [Letteratura teatrale nella Biblioteca italiana](http://www.bibliotecaitaliana.it/): 171 Italian plays
+- [Russian Drama Corpus](https://rus.dracor.org/): 85 Russian-language plays from 1740 till 1930
+- [Dramawebben](http://www.dramawebben.se/): 62 Swedish plays
+
+--
+
+## SNA and Novels
+
+<br />
+- "Nation, Genre &amp; Gender – A Comparative Social Network Analysis of Irish and British Fiction, 1800–1922" (project): http://www.nggprojectucd.ie/
+- Isabella Reger: ["Figurennetzwerke als Ähnlichkeitsmaß"](https://nbn-resolving.org/urn:nbn:de:bvb:20-opus-149106) ("Character networks as a measure of similarity", master thesis). University of Würzburg, 2016/2017.
+- …
+
+--
+
+## Our Toolchain
+
+<br />
+- HTML to TEI converter (Beautiful Soup, etc.)
+- Oxygen XML Editor for correction and maintenance
+- ezlinavis (Easy Linavis) for simple formalisations: https://ezlinavis.dracor.org/
+- dramavis (Python script collection): https://github.com/lehkost/dramavis
+- dracor.org (drama corpora maintained by ourselves, incl. API): https://dracor.org/
+- Shiny App: https://shiny.dracor.org/
+- Play(s): Android crowd-sourcing app for enriching TEI-encoded plays ([Google Play Store](https://play.google.com/store/apps/details?id=com.phonegap.plays))
+
+---
+
+## Hands-On
+
+<br />
+ezlinavis and Gephi
+
+          </script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: '../reveal/plugin/markdown/marked.js' },
+          { src: '../reveal/plugin/markdown/markdown.js' },
+          { src: '../reveal/plugin/notes/notes.js', async: true },
+          { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
