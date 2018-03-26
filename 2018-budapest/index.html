@@ -51,6 +51,16 @@ CEU, Budapest 🇭🇺 · 26 March 2018, 17:30 · Nádor 15, Quantum 101
 
 --
 
+## À Propos Digital Humanities
+
+<br />
+"The digital humanities have made a decisive contribution to our now having a more uniform view of 'the humanities' again."
+
+<br />
+Patrick Sahle, 18 March 2018, [dhd-blog.org](http://dhd-blog.org/?p=9547)
+
+--
+
 ## Schedule
 
 <br />
@@ -68,23 +78,25 @@ CEU, Budapest 🇭🇺 · 26 March 2018, 17:30 · Nádor 15, Quantum 101
 ## Today
 
 <br />
-1. [Distant Reading, a New Perspective on Literary History](#/1)
-2. [SNA in the Literary Studies: a Bit of History](#/2)
-3. [Extraction of Literary Network Data](#/3)
-4. [Network Analysis as Distant Reading](#/4)
-5. [Now, Really, … (Three Examples)](#/5)
-6. [Perspectives](#/6)
+- **I.** [Distant Reading, a New Perspective on Literary History](#/1)
+- **II.** [SNA in the Literary Studies: a Bit of History](#/2)
+- **III.** [Extraction of Literary Network Data](#/3)
+- **IV.** [Network Analysis as Distant Reading](#/4)
+- **V.** [Now, Really, … (Three Examples)](#/5)
 
 ---
 
-# Distant Reading, <br />a New Perspective on <br />Literary History
+# Chapter I
+
+<br />
+## Distant Reading, <br />a New Perspective on <br />Literary History
 
 --
 
 ## Motivation: The Limits of Reading
 
 <br />
-"Life is so short! Even if you are a bookworm and only need five days to read a book twice, you will not manage to read more than 70 per annum. And for the 45 years of receptive&shy;ness, from age 15 to age 60, they sum up to only 3,150 books: these have to be chosen wisely!"
+"Life is so short! Even if you are a book eater and only need five days to read a book twice, you only manage to read 70 a year. For the 45 years of receptiveness, from age 15 to age 60, that makes only 3,150 books: they want to be wisely chosen!"
 
 <br />
 <small>[**Arno Schmidt**](https://en.wikipedia.org/wiki/Arno_Schmidt): *Ich bin erst sechzig* (1955). In: Bargfelder Ausgabe, Werkgruppe I, Vol. 4.<br />Zurich: Haffmans 1987, pp. 30. (My trans.)</small></p>
@@ -96,16 +108,6 @@ CEU, Budapest 🇭🇺 · 26 March 2018, 17:30 · Nádor 15, Quantum 101
 <br />
 - coined by Margret Cohen in "The Sentimental Education of the Novel" (1999), p. 23 ([see Google Books](https://books.google.com/books?id=tOgLRyVa4DYC&pg=PA23))
 - many attempts in the past two decades to turn this diagnosis into a practice, cf. workshop titles like: "Text Mining the Great Unread: Data-Intensive Methods and Digital Tools for Analysis of Texts in the Humanities and Social Sciences" ([Aarhus University, 2016](http://www.au.dk/en/summeruniversity/courses/text-mining-the-great-unread-data-intensive-methods-and-digital-tools-for-analysis-of-texts-in-the-humanities-and-social-sciences/))
-
---
-
-## Pierre Bayard
-
-<br />
-"Comment parler des livres que l'on n'a pas lus ?"<br />(Éditions de Minuit, 2007)
-
-<br />
-- "the very ancient art of somehow gathering just as much knowledge about a book to say something clever about it even if you have not read all or even most of it" ([Martin Mueller](https://scalablereading.northwestern.edu/?page_id=22))
 
 --
 
@@ -125,42 +127,37 @@ CEU, Budapest 🇭🇺 · 26 March 2018, 17:30 · Nádor 15, Quantum 101
 - emerged in the middle of the 20th century (New Criticism)
 - thorough reading and interpretation of all nuances of a (literary) text, as opposed to putting all emphasis on historical, philological, biographical contexts
 - example: Derrida dedicating &#62; 50 pages to the word "yes" in Joyce's "Ulysses" (*Ulysses Gramophone: Hear Say Yes in Joyce*, 1984)
-- **IMPORTANT:** close reading does ***not*** stand in opposition to close reading, but is supposed *to complement* the shortcomings of it (especially regarding the extent of the object examined)
+- **IMPORTANT:** distant reading does ***not*** stand in opposition to close reading, but is supposed *to complement* the shortcomings of it (especially regarding the extent of the object examined)
 
 --
 
-## Macroanalysis
+## Distant Reading: Example 1
 
-<br />
-<!-- .element style="text-align: left;" -->"I prefer the term *analysis* over *reading*. […] This is no longer reading that we are talking about – even if programmers have come to use the term *read* as a way of naming functions that load a text file into computer memory. Broad attempts to generalize about a period or about a genre by reading and synthesizing a series of texts are just another sort of microanalysis. This is simply close reading, selective sampling, of multiple 'cases'; individual texts are digested, and then generalizations are drawn. It remains a largely qualitative approach."
+![stylometry, example](images/jannidis-lauer-dendrogram-kleist.jpg)<!-- .element width="580px;" -->
 
-<br />
-<!-- .element style="text-align: left;" --><small>Matthew L. Jockers: Macroanalysis. Digital Methods &amp; Literary History. Urbana, Chicago, Springfield: University of Illinois Press 2013, p. 25. ([Google Books](https://books.google.com/books?id=mPOdxQgpOSUC&pg=PA25))</small>
+<small>Taken from Jannidis/Lauer: [Burrow's Delta and Its Use in German Literary History](http://gerhardlauer.de/files/6013/9637/9784/Jannidis-Lauer_Burrowss-Delta.pdf) (2014).</small>
 
 --
 
-## So, Distant Reading, or, …
+## Distant Reading: Example 2
 
-<br />
-- Macroanalysis (Matthew Jockers)
-- [Scalable Reading](https://scalablereading.northwestern.edu/?page_id=22) (Martin Mueller)
-- quantitative analysis of texts
-- Cultural Analytics
-- …
+![topic modeling, example](images/jockers-topic-modeling-moby-dick.jpg)<!-- .element width="640px;" -->
+
+<small>Topic Modeling (co-occurrence of meaningful words and their distribution in a text corpus) with "Moby Dick" as an example, <br />against the backdrop of 3.345 other novels in Matthew Jockers' working corpus (*Macroanalysis*, p.&nbsp;132).</small>
 
 --
 
-## Distant Reading: Examples
+## Distant Reading: Example 3
 
-<br />
-- Stylometry (quantifying function words; use cases: authorship attribution, stylistic similarities in corpora, etc.)
-- Topic Modeling (co-occurrence of meaningful words and their distribution in corpora)
-- …
-- Network Analysis!
+<br /><br />
+# Network Analysis!
 
 ---
 
-# Social Network Analysis (SNA) <br />in the Literary Studies: <br />A Bit of History
+# Chapter II
+
+<br />
+## Social Network Analysis (SNA) <br />in the Literary Studies: <br />A Bit of History
 
 --
 
@@ -203,16 +200,6 @@ CEU, Budapest 🇭🇺 · 26 March 2018, 17:30 · Nádor 15, Quantum 101
 
 --
 
-### One of the First Literary Network Analyses (1998)
-
-<br />
-![Simple Storys, Network Graph, with Pajek (1998)](images/simple-stories-1.png)<!-- .element width="400px;" -->
-
-<br />
-<small>Thomas Schweizer, Michael Schnegg: *Die soziale Struktur der "Simple Storys". Eine Netzwerkanalyse.* 1998. ([PDF](https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf)) <br />Network extracted from [Ingo Schulze's](https://en.wikipedia.org/wiki/Ingo_Schulze) novel "Simple Storys", done by ethnologists. <br />38 nodes (characters). Edges: positive, negative or exchange relationships. <br />Visualisation with [Pajek](http://vlado.fmf.uni-lj.si/pub/networks/pajek/).</small>
-
---
-
 ### Moretti's Analysis of "Hamlet" (2011)
 
 ![Network of Hamlet](images/moretti-hamlet.gif)<!-- .element width="640px;" -->
@@ -221,11 +208,16 @@ CEU, Budapest 🇭🇺 · 26 March 2018, 17:30 · Nádor 15, Quantum 101
 
 ---
 
-## Extraction of LiteraryNetwork Data
+# Chapter III
 
 <br />
+## Extraction of Literary Network Data
+
+--
+
 ## A "Digital Spectator"
 
+<br />
 - following formalist and structuralist approaches in literary studies, but automatisation of data collection
 - network data = interactions between characters
 - operationalisation of 'interaction': "Two characters interact with one another if they perform a speech act within the same segment of a drama (usually a 'scene')." (following an idea of Solomon Marcus, "Poetica matematică", 1970)
@@ -269,7 +261,7 @@ Imre Madách's "The Tragedy of Man": interactions (co-occurrences) encoded <br /
 
 ![Imre Madách, Die Tragödie des Menschen, network graph](images/madach-tragoedie-des-menschen-graph.png)<!-- .element width="512px;" -->
 
-<small>Social network graph of Imre Madách’s play "The Tragedy of Man" (1862), extracted from [the German translation](http://mek.oszk.hu/00900/00920/html/) in the Hungarian Electronic Library.</small>
+<small>Social network graph of Imre Madách’s play "The Tragedy of Man" (1862), extracted from [the German translation](http://mek.oszk.hu/00900/00920/html/) in the Hungarian Electronic Library. <br />(Image licensed under CC-BY 4.0.)</small>
 
 --
 
@@ -303,7 +295,10 @@ Imre Madách's "The Tragedy of Man": interactions (co-occurrences) encoded <br /
 
 ---
 
-# Network Analysis as <br />Distant Reading
+# Chapter IV
+
+<br />
+## Network Analysis as <br />Distant Reading
 
 --
 
@@ -337,11 +332,86 @@ Imre Madách's "The Tragedy of Man": interactions (co-occurrences) encoded <br /
 
 <small>Zooming in to Goethe's pivotal Storm-and-Stress play "Götz von Berlichingen" (1773).</small>
 
----
+--
 
-# Now, Really, …
+## But How to Extract Bulk Network Data from Thousands of Plays Automatically?
+
+<br /><br />
+# TEI<!-- .element: class="fragment" -->
+
+<br /><br />
+## Text Encoding Initiative<!-- .element: class="fragment" -->
+
+--
+
+### Extract from TEI-Encoded Play
 
 <br />
+```xml
+(…)
+<text>
+ <front>
+  <docTitle>
+   <titlePart type="main">Борис Годунов</titlePart>
+  </docTitle>
+  <div type="dedication">
+   <p>Драгоценной для россиян памяти Николая Михайловича
+     Карамзина сей труд, гением его вдохновенный, с
+     благоговением и благодарностию посвящает</p>
+   <p>Александр Пушкин</p>
+  </div>
+ </front>
+ <body>
+  <div type="scene">
+   <head>КРЕМЛЕВСКИЕ ПАЛАТЫ</head>
+   <stage>(1598 года, 20 февраля)</stage>
+   <stage>Князья Шуйский и Воротынский. </stage>
+   <sp who="#vorotynskij">
+    <speaker>Воротынский</speaker>
+    <l>Наряжены мы вместе город ведать,</l>
+    <l>Но, кажется, нам не за кем смотреть:</l>
+    <l>Москва пуста; вослед за патриархом</l>
+    <l>К монастырю пошел и весь народ.</l>
+    <l>Как думаешь, чем кончится тревога?</l>
+   </sp>
+   <sp who="#shujskij">
+    <speaker>Шуйский</speaker>
+    <l>Чем кончится? Узнать немудрено:</l>
+    <l>Народ еще повоет да поплачет,</l>
+    <l>Борис еще поморщится немного,</l>
+    <l>Что пьяница пред чаркою вина,</l>
+    <l>И наконец по милости своей</l>
+    <l>Принять венец смиренно согласится,</l>
+    <l>А там — а там он будет нами править</l>
+    <l part="I">По-прежнему.</l>
+   </sp>
+(…)
+```
+
+<br />
+<small>(TEI-encoded drama has ```<sp>``` and ```<speaker>``` tags and machine-readable act/scene segmentation.)</small>
+
+--
+
+## Drama Corpora in TEI
+
+(facilitating the automated extraction of network data)
+
+<br />
+- [Théâtre Classique](http://www.theatre-classique.fr/): 1090 plays from the 17th and 18th century
+- [Shakespeare His Contemporaries](https://drama.earlyprint.org/): 860 plays written between 1550 and 1700
+- [German Drama Corpus](https://ger.dracor.org/): 466 German-language plays from 1730 till 1930
+- [Letteratura teatrale nella Biblioteca italiana](http://www.bibliotecaitaliana.it/): 171 Italian plays
+- [Russian Drama Corpus](https://rus.dracor.org/): 87 Russian-language plays from 1740s till 1930s
+- [Dramawebben](http://www.dramawebben.se/): 62 Swedish plays
+
+---
+
+# Chapter V
+
+<br />
+## Now, Really, …
+
 ## What Do You Do with Thousands of Networks?
 
 --
@@ -475,74 +545,6 @@ Aleksey Tolstoy's "Death of Ivan the Terrible" (1866)
 <br />
 https://shiny.dracor.org/
 
----
-
-# Perspectives
-
---
-
-### Extract from TEI-Encoded Play
-
-<br />
-```xml
-(…)
-<text>
- <front>
-  <docTitle>
-   <titlePart type="main">Борис Годунов</titlePart>
-  </docTitle>
-  <div type="dedication">
-   <p>Драгоценной для россиян памяти Николая Михайловича
-     Карамзина сей труд, гением его вдохновенный, с
-     благоговением и благодарностию посвящает</p>
-   <p>Александр Пушкин</p>
-  </div>
- </front>
- <body>
-  <div type="scene">
-   <head>КРЕМЛЕВСКИЕ ПАЛАТЫ</head>
-   <stage>(1598 года, 20 февраля)</stage>
-   <stage>Князья Шуйский и Воротынский. </stage>
-   <sp who="#Vorotynskij">
-    <speaker>Воротынский</speaker>
-    <l>Наряжены мы вместе город ведать,</l>
-    <l>Но, кажется, нам не за кем смотреть:</l>
-    <l>Москва пуста; вослед за патриархом</l>
-    <l>К монастырю пошел и весь народ.</l>
-    <l>Как думаешь, чем кончится тревога?</l>
-   </sp>
-   <sp who="#Shujskij">
-    <speaker>Шуйский</speaker>
-    <l>Чем кончится? Узнать немудрено:</l>
-    <l>Народ еще повоет да поплачет,</l>
-    <l>Борис еще поморщится немного,</l>
-    <l>Что пьяница пред чаркою вина,</l>
-    <l>И наконец по милости своей</l>
-    <l>Принять венец смиренно согласится,</l>
-    <l>А там — а там он будет нами править</l>
-    <l part="I">По-прежнему.</l>
-   </sp>
-(…)
-```
-
-<br />
-<small>(TEI-encoded drama has ```<sp>``` and ```<speaker>``` tags and machine-readable act/scene segmentation.)</small>
-
-
---
-
-## Drama Corpora in TEI
-
-(facilitating the automated extraction of network data)
-
-<br />
-- [Théâtre Classique](http://www.theatre-classique.fr/): 1090 plays from the 17th and 18th century
-- [Shakespeare His Contemporaries](https://drama.earlyprint.org/): 860 plays written between 1550 and 1700
-- [German Drama Corpus](https://ger.dracor.org/): 466 German-language plays from 1730 till 1930
-- [Letteratura teatrale nella Biblioteca italiana](http://www.bibliotecaitaliana.it/): 171 Italian plays
-- [Russian Drama Corpus](https://rus.dracor.org/): 87 Russian-language plays from 1740 till 1930
-- [Dramawebben](http://www.dramawebben.se/): 62 Swedish plays
-
 --
 
 ## Our Toolchain
@@ -557,7 +559,7 @@ https://shiny.dracor.org/
 - Play(s): Android crowd-sourcing app for enriching TEI-encoded plays ([Google Play Store](https://play.google.com/store/apps/details?id=com.phonegap.plays))
 - Dramenquartett card-game, "a didactical intervention": https://doi.org/10.6084/m9.figshare.5926363.v1
 
---
+---
 
 ## Thx
 
