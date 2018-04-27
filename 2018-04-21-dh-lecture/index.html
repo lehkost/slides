@@ -1,0 +1,649 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DH Lecture: Geographical Information Systems – A Practical Introduction for the Humanities (21 April 2018)</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+          <script type="text/template">
+
+### Geographical Information Systems:
+
+A Practical Introduction for the Humanities
+
+<br /><br /><br />
+Seth Bernstein<br />
+April 21, 2018
+
+---
+
+## What is Geography?
+
+--
+
+### Physical Geography
+
+![image](https://yissgeobee.wikispaces.com/file/view/features2a.jpg/167301815/359x210/features2a.jpg)<!-- .element height="400px;" -->
+
+<small>(From [YISS Geography Bee](https://yissgeobee.wikispaces.com/file/detail/features2a.jpg))</small>
+
+--
+
+Study of the earth as terrain, climate, shape (and otherwise).
+
+<br />
+Geography as a hard science.
+
+--
+
+## Examples?
+
+--
+
+## Human Geography
+
+--
+
+### How space affects various aspects of human society.
+
+<br />
+![image](http://www.jamesborrell.com/wp-content/uploads/2014/10/world-maps-informational-7.jpg)<!-- .element height="400px;" -->
+
+<small>source: [jamesborrell.com](http://www.jamesborrell.com/maps-world-conservation-perspective/)</small>
+
+--
+
+### Geography is not Cartography
+
+<br />
+What is the difference?
+
+--
+
+### Geography:
+
+<br />
+The study of how space works
+
+--
+
+### Cartography:
+
+<br />
+The product of spatial understandings (the art of mapmaking)
+
+--
+
+![image](https://upload.wikimedia.org/wikipedia/commons/e/e6/Octopus_in_Europe._Humoristische-oorlogskaart_by_J.J._van_Brederode%2C_1870.jpg)<!-- .element height="400px;" -->
+
+<br />
+(The Octopus in Europe: 1870 Humorous Map produced by J.J. van Brederode in Haarlem, the Netherlands)
+
+--
+
+### Projections
+
+<br />
+def. transformation of latitudes and longitudes to a map based on a coordinate system.
+
+<br />
+All projections are representations and distort.
+
+--
+
+### Mercator projection
+
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Mercator_projection_SW.jpg/1024px-Mercator_projection_SW.jpg)<!-- .element height="500px;" -->
+
+--
+
+Stretches map so that longer distances at equator are represented as shorter distances. Poles are infinitely large.
+
+--
+
+### For example:
+
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Australia-Greenland_size_comparison.svg/220px-Australia-Greenland_size_comparison.svg.png)<!-- .element height="300px;" -->
+
+(Mercator images from [wikipedia](https://en.wikipedia.org/wiki/Mercator_projection))
+
+--
+
+## Other projections
+
+--
+
+### Dymaxion Projection (Fuller Projection)
+
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dymaxion_projection.png/1920px-Dymaxion_projection.png)<!-- .element height="400px;" -->
+
+from [wikipedia](https://en.wikipedia.org/wiki/Dymaxion_map)
+
+--
+
+### Lee Conformal Tetrahedric Projection
+
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Lee_Conformal_World_in_a_Tetrahedron_projection.png/1024px-Lee_Conformal_World_in_a_Tetrahedron_projection.png)<!-- .element height="400px;" -->
+
+from [wikipedia](https://en.wikipedia.org/wiki/Lee_conformal_world_in_a_tetrahedron)
+
+--
+
+## Why different projections?
+
+--
+
+## Thinking Geography without Maps
+
+--
+
+### The Treptower Soviet War Memorial
+
+![image](https://media-cdn.tripadvisor.com/media/photo-s/01/ef/fa/a1/treptower-park.jpg)<!-- .element height="480px;" -->
+
+<small>source: [Lottemoeller @ tripadvisor.com](https://www.tripadvisor.com/ShowUserReviews-g187323-d590899-r115452520-Treptower_Park-Berlin.html#photos;aggregationId=&albumid=&filter=2&ff=32504481) (July, 2011)</small>
+
+--
+
+## Cultural Geography:
+
+<br />
+Is this space Soviet? Is it German? Answer does not require a map.
+
+---
+
+## What is GIS?
+
+<br />
+A geographic information system (GIS) is a system designed to capture, store, manipulate, analyze, manage, and present spatial or geographic data.
+
+--
+
+### Can GIS be different from Cartography? *Yes!*
+
+<br />
+For big explanation see ["Spatial Unmapped"](https://www.gislounge.com/spatial-unmapped/)
+
+--
+
+### Example: Quantifying proximity
+
+![image](https://imgs.xkcd.com/comics/movie_narrative_charts.png)
+
+<small>source: [xkcd](https://xkcd.com/657/)</small>
+
+--
+
+### Example: Quantifying living spaces
+
+<br />
+![image](https://36qxd1l7f7y2pa9s2h6gbwi1-wpengine.netdna-ssl.com/wp-content/uploads/2012/05/Bill-Rankin-Population-Histogram.jpg)<!-- .element height="440px;" -->
+
+<small>source: [radicalcartography.net](http://www.radicalcartography.net/index.html?histpop)</small>
+
+--
+
+### Do GIS maps need to describe the earth? *No!*
+
+--
+
+### My idea: AirBNB... For Bars
+
+![image](https://www.telegraph.co.uk/content/dam/Food%20and%20drink/2015-08/28aug/busy-bar.jpg)<!-- .element width="700px;" -->
+
+<small>photo credit: [ALAMY](https://www.telegraph.co.uk/food-and-drink/pubs-and-bars/want-to-get-served-first-at-the-bar-dont-get-your-cash-out/)</small>
+
+--
+
+![image](http://sondos.me/download/8703/9e3aa41eca0ea1c3f1aa16fcf9d8afd2--outdoor-restaurant-design-restaurant-kitchen.jpg)<!-- .element width="680px;" -->
+
+<small>credit: [sondos.me](http://sondos.me/bar-layout-and-design-ideas.html)</small>
+
+---
+
+## What does GIS look like?
+
+--
+
+### Basic: A Spreadsheet with Some GeoData
+
+<br />
+date,**y,x**,flight,degree,r,g,b<br />
+1948-05-01 08:55,**49.806406,73.085485**,Flight 440: Karaganda-Kostanay,-70.1747994417,170,0,0
+
+--
+
+### Turns into:
+
+<br />
+<iframe src="https://player.vimeo.com/video/145366151" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+--
+
+### Let's look further:
+
+<br />
+x,y = longitude and latitude
+
+--
+
+date = timestamp (allows time sorting)
+
+--
+
+degree = direction for plane to point
+
+--
+
+### Power of GIS:
+
+<br />
+Connect GeoData with Other Information
+
+---
+
+## Types of Electronic Maps
+
+--
+
+Raster:
+
+![image](https://upload.wikimedia.org/wikipedia/commons/5/5e/Tanner_Moscow_map.jpg)<!-- .element height="460px;" -->
+
+Map of Moscow, 1678
+
+--
+
+## Raster: Only Pixels
+
+--
+
+## Vector:
+
+### Numerically Generated Maps
+
+--
+
+### Points
+
+![image](http://st2.depositphotos.com/2723391/5209/v/950/depositphotos_52096437-stock-illustration-world-map-with-points.jpg)<!-- .element height="500px;" -->
+
+<small>credit: [depositphotos](https://de.depositphotos.com/52096437/stock-illustration-world-map-with-points.html)</small>
+
+--
+
+## What can you represent with points?
+
+--
+
+### Lines
+
+![image](http://newsmetro.ru/metroproba27e.jpg)<!-- .element height="500px;" -->
+
+<small>credit: [newsmetro.ru](http://news.metro.ru/sc_lat2016.html)</small>
+
+--
+
+### What can you represent with lines?
+
+--
+
+### Polygons
+
+![image](https://gvlt.files.wordpress.com/2008/05/picture-11.png)<!-- .element height="500px;" -->
+
+<small>credit: [gvlt.wordpress.com](https://gvlt.wordpress.com/2008/05/17/tutorial-thematic-mapping-with-the-google-maps-flash-api/)</small>
+
+--
+
+## Combined Raster/Vector Maps
+
+--
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1355.3376362765378!2d37.66349815434641!3d55.76680331623171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sru!4v1492570570324" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+--
+
+## Slippy Map
+
+--
+
+## Choropleth Map
+
+--
+
+![image](https://preview.ibb.co/nORFBQ/Picture1.png)
+
+<br />
+Number of Returnees to the USSR after World War II
+
+--
+
+Coloring within boundaries to display data.
+
+<br />
+Note that a good practice is to use a scale of white to one other color (e.g., White-Blue)
+
+--
+
+## Heat Map
+
+--
+
+<iframe src='http://staticsites.abstractualized.com/monuments.html'width="700" height="550" frameborder="0"></iframe>
+
+Monuments on the Site Pomnite-Nas.ru (2014)
+
+---
+
+## Formats for GIS
+
+--
+
+### Shapefile
+
+<br /><br />
+A proprietary but fairly open geoformat created by a company called ESRI (ArcGIS). Most commonly used format in heavy-duty GIS.
+
+--
+
+### Keyhole Markup Language (KML)
+
+<br /><br />
+Open source language developed for use in Google Earth. Advantage is incorporation of altitude.
+
+--
+
+### GeoJSON
+
+<br /><br />
+Popular open source language. Used very commonly on the internet.
+
+--
+### TopoJSON
+
+<br />
+Lightweight alternative to GeoJSON. Compresses by repeating 'arcs'.
+
+![image](https://upload.wikimedia.org/wikipedia/commons/1/18/Topojson_shapes-en.svg)
+
+---
+
+## Tools for GIS
+
+--
+
+## ArcGIS by ESRI
+
+### [arcgis.com](https://www.arcgis.com/)
+
+<br />
+Advantages -
+- Powerful
+- Make open source maps free online
+- Relatively easy to use
+
+<br />
+Disadvantages -
+- Commercial version is expensive
+- Free version has limited features
+- Not flexible
+
+--
+
+## StoryMaps by ESRI
+
+### [storymaps.arcgis.com](https://storymaps.arcgis.com/)<br /><br />
+
+Platform for creating online GIS presentations
+
+See, for example, on world battery production: http://arcg.is/2n7sdJL
+
+--
+
+## QGIS
+
+### [qgis.org](https://qgis.org/)
+
+<br />
+Advantages -
+- Powerful and full featured
+- Open source with community support
+- FREE!
+
+<br />
+Disadvantages -
+- Not online, or not without a lot of work
+- Difficult to learn
+
+--
+
+## For Historians: QGIS with TimeManager
+
+--
+
+### Google
+
+<br />
+* Earth
+* Maps
+* GeoMaps
+* Fusion Tables
+
+<br />
+Generally you need to get an API
+
+--
+
+### GoogleEarth
+
+<br />
+Advantages -
+- Three-dimensional data
+- Good satelite images
+- Free
+
+<br />
+Disadvantages -
+- Prefers Keyhole Markup Language
+- Not many features
+- Lots of data
+- Not flexible
+
+--
+
+### GoogleMaps
+
+<br />
+Advantages -
+- Address data is useful
+- Easy to share, esp. on mobile
+- Easy to use, even with Javascript
+
+<br />
+Disadvantages -
+- Not flexible
+- Few features
+
+--
+
+### GeoChart
+
+<br />
+Advantages -
+- Good for choropleth maps
+- Make open source maps free online
+
+<br />
+Disadvantages -
+- Limited
+- World borders are world borders
+
+--
+
+### Fusion Tables
+
+<br />
+Advantages -
+- Easy to use
+- Geocodes on its own
+- Great for heat Maps
+
+<br />
+Disadvantages -
+- Limited applications
+
+--
+
+### [GeoJSON.io](http://geojson.io)
+
+<br />
+Advantages -<br />
+- Easy way to make and save vector maps
+
+<br />
+Disadvantages -
+- That's all it does!
+
+--
+
+### Other Tools<br />
+
+<br />
+CartoDB: [carto.com](https://carto.com)
+
+Mapbox: [mapbox.com](https://mapbox.com)
+
+<br />
+Advantages -
+- Made for managing geodata
+- Make open source maps free online
+
+<br />
+Disadvantages -
+- Commercial version is expensive
+- Limitations on free version
+
+---
+
+## GIS for the Humanities
+
+<br />
+### Why?
+
+--
+
+### Tell Stories
+
+![image](http://petersburg.berkeley.edu/victoria/images/map_ph.jpg)<!-- .element height="400px;" -->
+
+<small>source: [From Voices of Silence: The Funeral of Alexander Blok](http://petersburg.berkeley.edu/victoria/vic_1_1a_new.html)</small>
+
+--
+
+### Present and Discover Data
+
+<br />
+<iframe src="geomap.html" width="560" height="380"/>
+
+--
+
+### Visualize Change
+
+<br />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XpXPN3PS1oE" frameborder="0" allowfullscreen/>
+
+---
+
+### After the Break
+
+<br />
+- Make a Choroplet Map with GeoChart
+- Make a Heat Map with Fusion Tables
+
+---
+
+### GeoChart
+
+<br />
+- See geomap.html at http://bit.ly/2oMIUaX
+- Go to Census Data at Demoscope.ru: http://demoscope.ru/weekly/ssp/census.php?cy=8
+- Make your own map!
+- More info at [Google developer page](https://developers.google.com/chart/interactive/docs/gallery/geochart)
+
+--
+
+### Fusion Tables
+
+<br />
+- Go to https://fusiontables.google.com
+- Look at randomuk.xls in the drive folder
+- Upload to Fusion Tables
+- Edit fusiontable.html to include your table's information
+
+--
+
+### Note on Geocoding
+
+<br />
+—
+
+--
+
+### Closing Thoughts
+
+<br />
+- For most, GIS is a tool and not the central focus
+- Most important is to be aware of goals
+- Who is audience?
+- How much data?
+- Will my tool be useful for others?
+- How much work would it take to produce the perfect option?
+- In most instances, better to use the best available option
+
+          </script>
+        </section>
+      </div>
+    </div>
+
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: '../reveal/plugin/markdown/marked.js' },
+          { src: '../reveal/plugin/markdown/markdown.js' },
+          { src: '../reveal/plugin/notes/notes.js', async: true },
+          { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
