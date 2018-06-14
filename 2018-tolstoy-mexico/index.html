@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Orekhov/Fischer: Tolstoy @ DH2018</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/white.css" />
+
+    <!-- Adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+          <script type="text/template">
+
+# The 91st Volume
+### How the Digitised Index for the Collected Works <br />of Leo Tolstoy Adds A New Angle for Research
+
+[Boris Orekhov](https://www.hse.ru/en/staff/borekhov)¹ · [Frank Fischer](https://www.hse.ru/en/org/persons/182492735)¹⁺²
+
+¹ Higher School of Economics, Moscow<br />
+² DARIAH-EU<!-- .element: style="font-size:0.8em;" -->
+
+![Tolstoy icon](images/tolstoy-icon.jpg)<!-- .element width="240px;" -->
+
+<!-- .element: style="font-size:0.75em;" -->This presentation: [lehkost.github.io/slides/2018-tolstoy-mexico/](https://lehkost.github.io/slides/2018-tolstoy-mexico/)
+
+[DH2018](https://dh2018.adho.org/) · Ciudad de México 🇲🇽 · 29 June 2018
+
+--
+
+## The Tolstoy Project
+
+<br />
+- cooperation between [Tolstoy Museum](http://tolstoymuseum.ru/) and Higher School of Economics, Moscow
+- digital edition of collected works in 90 volumes, published between 1928 and 1958: novels, short stories, plays, letters, diaries, … (~ 46,000 pages)
+- ["All of Tolstoy in One Click"](http://tolstoy.ru/projects/tolstoy-in-one-click/): all volumes scanned and OCRed (supported by ABBYY)
+- corrections were crowdsourced
+- abundant media coverage: [New Yorker](https://www.newyorker.com/books/page-turner/crowdsourcing-tolstoy), [The Guardian](https://www.theguardian.com/books/2013/oct/16/all-leo-tolstoy-one-click-project-digitisation), etc.
+- texts available in PDF, EPUB, FB2, MOBI and XHTML (see http://tolstoy.ru/creativity/90-volume-collection-of-the-works/)
+- also converted to basic TEI
+- next stage: rich semantic edition (onthologies, linked open data, etc.)
+
+---
+
+## The 91st Volume – A New Perspective
+
+![91st volume (cover)](images/91st-volume-cover.jpg)<!-- .element width="160px;" -->
+
+- supplement volume containing indexes of works and proper names (fiction and non-fiction works like diaries, letters)
+- 16,000 registered entries
+- web app: http://index.tolstoy.ru/
+- target audience: specialists as well as enthusiasts
+- general question: even with digitised full texts at hand, how can we benefit from the structuring and registration efforts of the past?
+
+--
+
+## The Web App
+
+![web app statistics](images/webapp-statistics.png)<!-- .element width="800px;" -->
+
+<small>brown: number of references in the text – beige: number of mentions in the comments</small>
+
+---
+
+## Level 1: <br />Enhanced Searches (1/2)
+
+<br />
+- original index functionality retained: mapping proper names to volumes and pages
+- one-click direct jumps to pages
+- added functionality:
+  - fuzzy searches: entering "ava" will list results like "Poltava", "Bavariâ", "Abdulla-al'-Mamun Zuravardi"
+  - word-cloud representation conveys a first idea about most frequent words in the corpus
+
+--
+
+## Level 1: <br />Enhanced Searches (2/2)
+
+<br />
+![Victor Hugo co-occurrence network](images/screenshot-victor-hugo.png)<!-- .element width="480px;" -->
+
+<br />
+<small>word-cloud representation for entry 'Victor Hugo' showing co-occurring named entities – URL: http://index.tolstoy.ru/person/4079/</small>
+
+---
+
+## Level 2: <br />Studying Life and Works of Leo Tolstoy by Means of Network Analysis (1/2)
+
+![whole graph](images/general-graph.jpg)<!-- .element width="800px;" -->
+
+<small>co-occurence graph for all 90 volumes – network is downloadable and can be customised – URL: http://index.tolstoy.ru/general/graph/</small>
+
+--
+
+## Level 2: <br />Studying Life and Works of Leo Tolstoy by Means of Network Analysis (2/2)
+
+<br />
+- studying co-occurrences of proper names in the same environment (in our case, on the same page) help to understand larger contexts
+- example:
+  - the Hindu scripture "Bhagavad Gita" is found on 5 pages in Tolstoy's Complete Works, see http://index.tolstoy.ru/person/2138/
+  - it shares these five pages with a total of 43 other names mentioned
+  - the proximity of these mentionings is not accidental, in our case they form a kind of "Indian cluster" containing works like "Hitopadesha", "Dhammapada", "Vamana Purana", or names like Sri Ramakrishna Paramahansa
+  - for Tolstoy, these titles and names are part of a set of carriers of philosophical knowledge, and are associated with names like Xenophon, Montaigne, Montesquieu, Pascal, Skovoroda, Socrates
+  - these networks provide great opportunities for understanding the whole range of Tolstoy's interests and ideas
+
+---
+
+## Level 3: <br />Editorial Evolution of the "Complete Works"
+
+<br />
+- a quantification of index properties also gives us insights in the editorial process that lasted more than 3 decades
+- the "91st Volume" can show how editorial principles have changed over time, especially in regard of the depth of commenting
+- e.g., the 13th volume with draft editions of "War and Peace" has a weak commentary, while the 47th volume (diaries and notebooks) has the most detailed commentary among all 90 volumes
+
+---
+
+## Summary
+
+<br />
+- making indexes machine-readable is an additional way to research the Collected Works of single authors or similar printed text collections that come with rich and detailed indexes
+- functionalities of traditional indexes are not only retained, but also enhanced (fuzzy searches, visualisations of co-occurrences, etc.)
+- the Tolstoy web app can serve as a suggestion to apply this method to the Collected Works of other authors
+
+--
+
+## ¡Muchas gracias!
+
+<br /><br />
+## ✴️
+
+<br /><br />
+
+## ¿Preguntas?
+
+
+          </script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: '../reveal/plugin/markdown/marked.js' },
+          { src: '../reveal/plugin/markdown/markdown.js' },
+          { src: '../reveal/plugin/notes/notes.js', async: true },
+          { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
