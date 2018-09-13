@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Working Group 'Text and Data Analytics' (StanfordU, 13 Sep 2018)</title>
+
+		<link rel="stylesheet" href="../reveal/css/reveal.css">
+		<link rel="stylesheet" href="../reveal/css/theme/simple.css">
+
+      <!-- adjustments for serif.css -->
+      <link rel="stylesheet" href="custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+## Working Group: Text and Data Analytics
+### A Programming Library and GUI Tool for Topic Modeling
+
+<br /><br />
+Steffen Pielström &nbsp;·&nbsp; Frank Fischer
+
+pielstroem@biozentrum.uni-wuerzburg.de &nbsp;·&nbsp; ffischer@hse.ru<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br />
+<!-- .element: style="font-size:0.7em;" -->[DARIAH beyond Europe](https://dbe.hypotheses.org/workshops/stanford) &nbsp;·&nbsp; Stanford University &nbsp;·&nbsp; 13 Sep 2018
+
+--
+
+## Chapters
+
+<br />
+1. Introduction
+2. What Is Topic Modeling?
+3. How DARIAH Wants to Help with Topic Modeling
+4. Sustainable Development in Project-Based Structures?
+
+---
+
+### Infrastructures for Text Analysis <!-- FF's part -->
+
+<br />
+- corpora
+  - encoded [e.g., in TEI] or not
+  - full text vs. page-level data
+  - access open or restricted
+  - if open: DOI or not?, downloadable for local use?, APIs?
+- methods
+  - distant/scalable-reading practices (i.e., implemented algorithms, operationalisation of research ideas)
+  - tools for end-users vs. free development
+
+--
+
+### A Working Group for <br />"Text and Data Analytics" <!-- SP's part -->
+
+<br /><br />
+- TDA, as DARIAH working group, is part of our backbone <br />(cf. [our other talk](https://…))
+
+<br /><br />
+**<small>https://dariah-tda.github.io/</small>**
+
+--
+
+## Our Goals
+
+<br />
+- bringing together like-minded people
+- providing information and training for interested newcomers<!-- .element: class="fragment" -->
+- WG meetings at DARIAH events<!-- .element: class="fragment" -->
+- research workshops, e.g., on "Topic Modeling" or "Word Embeddings"<!-- .element: class="fragment" -->
+- instructional workshops<!-- .element: class="fragment" -->
+- development of tools and resources (national level)<!-- .element: class="fragment" -->
+
+<br /><br />
+**<small>https://dariah-tda.github.io/</small>**
+
+---
+
+## What is Topic Modeling? (1/3) <!-- FF's slides, SP talking -->
+
+<br />
+"In machine learning and natural language processing, a **topic model** is a type of statistical model for discovering the **abstract 'topics'** that occur in a **collection of documents**. Topic modeling is a frequently used text-mining tool for discovery of hidden semantic structures in a text body." ([Wikipedia](https://en.wikipedia.org/wiki/Topic_model))
+
+--
+
+## What is Topic Modeling? (2/3)
+
+![example from Blei's article](images/blei_figure_1.png)<!-- .element width="860px;" -->
+
+<small>from David M. Blei: [Probabilistic Topic Models](https://dl.acm.org/citation.cfm?id=2133826) (2012)<br />("topics and topic assignments in this figure are illustrative")</small>
+
+--
+
+## What is Topic Modeling? (3/3)
+
+![example from Blei's article](images/blei_figure_2.png)<!-- .element width="860px;" -->
+
+<small>from David M. Blei: [Probabilistic Topic Models](https://dl.acm.org/citation.cfm?id=2133826) (2012)<br />(100-topic LDA model; 17,000 articles from *Science*; left: topic proportions for example article in previous figure;<br />right: top 15 MFWs from most frequent topics in this article)</small>
+
+--
+
+## "Topic models are …
+
+<br />
+… the mother of all collocation tools."
+
+<br />
+<small>Matthew Jockers: Macroanalysis (2013), p. 123</small>
+
+---
+
+## How DARIAH Wants to Help <br />with Topic Modeling <!-- SP's part -->
+
+--
+
+### The Python Library
+
+<br /><br />
+- complete workflow in Python
+- functions for preprocessing and visualisation<!-- .element: class="fragment" -->
+- didactical concept based on Jupyter notebooks<!-- .element: class="fragment" -->
+
+<br /><br /><br />
+**<small>https://github.com/DARIAH-DE/Topics</small>**
+
+--
+
+### Example Recipes
+
+![Jupyter Notebook](images/DARIAHTopics.png)<!-- .element width="440px;" -->
+
+**<small>https://github.com/DARIAH-DE/Topics</small>**
+
+--
+
+## But …
+
+<br />
+### … Jupyter Notebooks don't <br />necessarily please everyone …
+
+--
+
+## The Topics Explorer (1/2)
+
+![Topics Explorer Input Interface](images/1_interface.png)<!-- .element width="800px;" -->
+
+**<small>https://github.com/DARIAH-DE/Topics</small>**
+
+--
+
+## The Topics Explorer (2/2)
+
+![TopicsExplorer Output](images/2_heatmap.png)<!-- .element width="800px;" -->
+
+**<small>https://github.com/DARIAH-DE/Topics</small>**
+
+---
+
+## Sustainable Development in <br />Project-Based Structures? <!-- SP's part -->
+
+<br />
+- the spectrum of users is wide
+- requirements are different on both ends<!-- .element: class="fragment" -->
+- resources have to be allocated …<!-- .element: class="fragment" -->
+- … but they are not available forever<!-- .element: class="fragment" -->
+
+--
+
+## Possible Solution: <br />Community Engagement
+
+<br />
+- problem: potential contributors concentrate on one end of the user spectrum<!-- .element: class="fragment" -->
+- sustainability means creating tools that help turning users into developers<!-- .element: class="fragment" -->
+
+--
+
+### Thanks for listening.
+
+<br /><br />
+### Questions?
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal/plugin/markdown/marked.js' },
+					{ src: '../reveal/plugin/markdown/markdown.js' },
+					{ src: '../reveal/plugin/notes/notes.js', async: true },
+					{ src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
