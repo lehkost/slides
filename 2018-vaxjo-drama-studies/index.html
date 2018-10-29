@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Masks and Interfaces: Digital Drama Studies · Växjö · 30 Oct 2018</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Masks 🎭 and Interfaces 🔌
+#### Digital Perspectives for the Study of European Drama
+
+<br /><br />
+Frank Fischer<!-- .element: style="font-size:0.7em;" -->
+<br />**@umblaetterer**<!-- .element: style="font-size:0.6em;" -->
+
+<br />
+<!-- .element: style="font-size:0.6em;" -->Higher School of Economics &nbsp;·&nbsp; Moscow<br />
+DARIAH-EU &nbsp; 🇪🇺 &nbsp; Board of Directors<br />
+
+<!-- .element: style="font-size:0.5em;" -->ffis&#99;her&#64;hse.ru &nbsp;·&nbsp; [homepage](https://www.hse.ru/en/org/persons/182492735)
+
+<br /><br /><br />
+<!-- .element: style="font-size:0.6em;" -->**This presentation:** [lehkost.github.io/slides/2018-vaxjo-drama-studies/](https://lehkost.github.io/slides/2018-vaxjo-drama-studies/)
+
+<br /><br /><br />
+<!-- .element: style="font-size:0.6em;" -->[Digital Humanities Day](https://lnu.se/en/meet-linnaeus-university/current/events/2018/Digital-Humanities-Day/) &nbsp;·&nbsp; Linnéuniversitetet, Växjö &nbsp;🇸🇪 &nbsp;·&nbsp; 30 Oct 2018
+
+--
+
+### Chapters
+
+<br />
+1. Literary Network Analysis (Introduction)
+2. Scaling Up
+3. Towards a Drama Research Infrastructure
+
+---
+
+# Chapter 1.
+
+<br />
+### Literary Network Analysis
+
+--
+
+## Social Network Analysis (SNA) <br />and Literary Studies: <br /><br />A Bit of History
+
+--
+
+### The Emergence of Graph Theory …
+
+<br>
+… was Euler's solution of the Königsberg bridge problem.
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-1.png)<!-- .element width="440px;" -->
+
+<small>Historical map of Königsberg, highlighting river Pregel<br>and the seven bridges (img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png)).</small>
+
+--
+
+#### Abstraction from …
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
+
+<small>… to …</small>
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-3.png)<!-- .element height="160px;" -->
+
+<small>From the seven bridges (img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg))<br>to an abstract graph (img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).</small>
+
+--
+
+## SNA – How It All Started
+
+<br />
+- based on network-theoretical foundations, SNA starts as a bundle of approaches developed in the Social Sciences since the 1930s
+- 'Harvard Breakthrough' in the 1960s (centered around sociologist [Harrison White](https://en.wikipedia.org/wiki/Harrison_White)): sociologists, mathematicians, programmers work on a distinct structural-analytical perspective on social phenomena
+- 1990s: new perspectives on network structures with the advent of the internet
+- first literary networks/graphs can be spotted around the same time
+
+--
+
+## One of the First Sociograms (1933)
+
+<br />
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="340px;" -->
+
+<br />
+<small>"Class structure, 4th grade". Work by Jacob L. Moreno (1889–1974).<br />(First published in NYT, [3 April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Source for this PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)</small>
+
+--
+
+## Literary Network Data as Example Files (1993)
+
+<iframe width="900" height="450" src="https://people.sc.fsu.edu/~jburkardt/datasets/sgb/sgb.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<small>Donald Knuth: The Stanford Graph Base: A Platform for Combinatorial Computing. ACM Press, 1993. <br />Networks extracted from fiction ("Anna Karenina", "Les Misérables", etc.) are based on co-occurrences.</small>
+
+--
+
+### One of the First Literary Network Analyses (1998)
+
+<br />
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-stories-1.png)<!-- .element width="400px;" -->
+
+<small>Thomas Schweizer, Michael Schnegg: *Die soziale Struktur der "Simple Storys". Eine Netzwerkanalyse.* 1998. ([PDF](https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf)) <br />Network extracted from [Ingo Schulze's](https://en.wikipedia.org/wiki/Ingo_Schulze) novel "Simple Storys", done by ethnologists. 38 nodes (characters). <br />Edges: positive, negative or exchange relationships. Visualisation with [Pajek](http://vlado.fmf.uni-lj.si/pub/networks/pajek/).</small>
+
+--
+
+### "Les Misérables" as Example File in Gephi (2008)
+
+![Gephi Screenshot, CC](images/gephi-les-miserables.png)<!-- .element width="800px;" -->
+
+<small>(Screenshot taken from [workshop material](https://jasonheppler.org/courses/csu-workshop/gephi.html) by Jason Heppler, 2016. Licensed under CC BY-NC-SA 4.0.)</small>
+
+--
+
+### Moretti's Analysis of "Hamlet" (2011)
+
+![Network of Hamlet](images/moretti-hamlet.gif)<!-- .element width="640px;" -->
+
+<small>(Source: [newleftreview.org](https://newleftreview.org/II/68/franco-moretti-network-theory-plot-analysis).)</small>
+
+--
+
+### Extraction of Literary Network Data: <br />A "Digital Spectator"
+
+<br />
+- following formalist and structuralist approaches in literary studies, but automatisation of data collection
+- network data = interactions between characters
+- operationalisation of 'interaction': "Two characters interact with one another if they perform a speech act within the same segment of a drama (usually a 'scene')." (following an idea of Solomon Marcus, "Poetica matematică", 1970)
+- 'epistemic thing' of literary network analysis different from that of traditional text analysis
+
+--
+
+### Let's Take This Book …
+
+![Az ember tragédiája (book cover)](images/az-ember-tragediaja-cover.jpg)<!-- .element width="300px;" -->
+
+<small>Imre Madách's ["The Tragedy of Man"](https://en.wikipedia.org/wiki/The_Tragedy_of_Man) (1862) (img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Az_ember_trag%C3%A9di%C3%A1ja_(els%C5%91_kiad%C3%A1s%29_1861.jpg).)</small>
+
+--
+
+### Formalisation of Interactions
+
+<br />
+<pre><code class="hljs" data-trim contenteditable>
+Source,Target,Weight
+Ádám,Az Úr,2
+Ádám,Éva,13
+Ádám,Lucifer,13
+Ádám,A föld szellemének szava,3
+Angyalok kara,Az Úr,2
+Angyalok kara,Lucifer,2
+Az Úr,Éva,2
+Az Úr,Lucifer,3
+Éva,Lucifer,12
+Éva,A föld szellemének szava,2
+Lucifer,A föld szellemének szava,3
+…
+</code></pre>
+
+<br />
+<small>"The Tragedy of Man": interactions (co-occurrences) <br />encoded in a CSV list (comma-separated values, excerpt).</small>
+
+--
+
+### Extracted Network
+
+![Imre Madách, Die Tragödie des Menschen, network graph](images/madach-tragoedie-des-menschen-graph.png)<!-- .element width="480px;" -->
+
+<small>Social network graph of Imre Madách’s play "The Tragedy of Man" (1862), extracted from <br />a [German translation](http://mek.oszk.hu/00900/00920/html/) in the Hungarian Electronic Library. (Image licensed under CC-BY 4.0.)</small>
+
+--
+
+## Some Graph-Related Measures
+
+<br />
+- Network Size
+- Maximum Degree
+- Average Degree
+- Density
+- Average Path Length
+- …
+
+--
+
+### Example
+
+![three nodes](images/three-nodes.png)<!-- .element height="400px;" -->
+
+What is the (a) network size, (b) maximum degree, (c) average degree, (d) density, (e) average path length of this network?
+
+--
+
+## Network Data of "The Tragedy of Man": Conclusions (1)
+
+<br />
+- date of origin of "The Tragedy of Man":
+  - network size: 103 nodes ("characters", i.e., identifiable speech actors)
+  - takeaway: clearly a **product of the 19th century** (not earlier)
+
+<br />
+- protagonists:
+  - highest weighted degree, betweenness centrality, PageRank (by far): Ádám, Éva, Lucifer
+  - takeaway: **protagonists easily detectable**
+
+--
+
+## Network Data of "The Tragedy of Man": Conclusions (2)
+
+<br />
+- genre:
+  - network diameter: 3 (almost star-like)
+  - average path length: 1,78
+  - network density: 0,23
+  - clustering coefficient: 0,97
+  - takeaway: typical ***Stationendrama***, or, ***vandringsdrama***
+
+--
+
+## Some Node-Related Measures
+
+--
+
+### Degree
+
+<br>
+![Degree](images/moretti-hamlet-degree.jpg)<!-- .element height="432px;" -->
+
+<small>Hamlet has direct relations to 16 characters (= his degree).<br />(Source: *Дальнее чтение*, p. 294.)</small>
+
+--
+
+### Average Distance
+
+<br />
+- in *this* formalisation, Hamlet has an average distance (from all other characters) of 1.45
+- average distance of Claudius: 1.62
+- Horatio: 1.69
+
+--
+
+### Betweenness Centrality (1/2)
+
+<br />
+- "a measure of centrality in a graph based on shortest paths"
+- "For every pair of vertices in a graph, there exists a shortest path between the vertices such that either the number of edges that the path passes through (for undirected graphs) or the sum of the weights of the edges (for directed graphs) is minimized. The betweenness centrality for each node is the number of these shortest paths that pass through the node." (Wikipedia)
+
+--
+
+### Betweenness Centrality (2/2)
+
+<br />
+![betweenness](images/betweenness.png)<!-- .element height="400px;" -->
+
+Example: degree does not correlate with betweenness centrality.
+
+--
+
+Alexander Pushkin's "Boris Godunov" (1825)
+
+![betweenness](images/betweenness-pushkin-boris-godunov.png)<!-- .element width="800px;" -->
+
+<small>Label size correlates with betweenness centrality. Gavrila Pushkin – a side character – in the middle.</small>
+
+--
+
+Aleksey Tolstoy's "Death of Ivan the Terrible" (1866)
+
+![betweenness](images/betweenness-tolstoy-smert-ioanna-groznogo.png)<!-- .element width="800px;" -->
+
+<small>Again, label size correlates with betweenness centrality. Bityagovsky spreading fake news.</small>
+
+---
+
+# Chapter 2.
+
+<br />
+### Scaling Up
+
+--
+
+### "Mapping Shakespeare’s Tragedies" (Dec 2015)
+
+![6 (out of 11) Shakespeare tragedies](images/grandjean-shakespeare-2015.png)<!-- .element width="640px;" -->
+
+<small>Martin Grandjean's network visualisation of 6 (out of 11) Shakespearean tragedies (Dec., 2015).<br />Full poster and explanations [on Grandjean's website](http://www.martingrandjean.ch/network-visualization-shakespeare/).</small>
+
+--
+
+### Drama Networks Superposter (June 2015)
+
+![465 (Cleaned) Graphs Extracted from DLINA Corpus](images/dlina-corpus-465-cleaned-drama-networks-superposter-900px.jpg)<!-- .element width="680px;" -->
+
+<small>Poster mit Netzwerkgraphen von 465 deutschsprachigen Dramen (1730–1930).<br />Vorstudie zur finalen Version (DOI: [10.6084/m9.figshare.1461761.v1](https://doi.org/10.6084/m9.figshare.1461761.v1)).</small>
+
+--
+
+### "Distant-Reading Showcase"
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+<small>"Distant-Reading Showcase", poster presented at #DHd2016 in Leipzig (9 Mar 2016).<br />Download in full-res (28.88 MB) via Figshare. DOI: [10.6084/m9.figshare.3101203.v1](https://dx.doi.org/10.6084/m9.figshare.3101203.v1).</small>
+
+--
+
+### Poster Detail
+
+![Poster detail](images/poster-detail-1.jpg)<!-- .element width="680px;" -->
+
+<small>Zooming in to Goethe's pivotal Storm-and-Stress play "Götz von Berlichingen" (1773).</small>
+
+---
+
+# Chapter 3.
+
+<br />
+## Towards a Drama Research Infrastructure
+
+--
+
+## **DraCor**
+
+<br />
+- research projects also need infrastructure!
+- example: https://dracor.org/
+- two in-house corpora:
+  - Russian drama corpus, RusDraCor (1740s–1930s)
+  - German drama corpus, GerDraCor (1730s–1930s)
+
+--
+
+## Frontend dracor.org
+
+![DraCor Frontend](images/dracor-org-frontend.png)<!-- .element width="900px;" -->
+
+https://dracor.org/ (still in publica beta!)
+
+--
+
+## Some DraCor Research Papers <br />(SNA and Quantitative Approaches)
+
+<br />
+- small-world phenomenon in German- and Russian-language drama
+- agents and spies in literary networks
+- quantitative dominance relations in drama
+- topic modelling: boom of certain 'topics' in drama history
+- evolution of stage directions
+- overview: https://dlina.github.io/talks/
+
+--
+
+### TEI-Encoded Plays
+
+<br />
+```xml
+(…)
+<text>
+ <front>
+  <docTitle>
+   <titlePart type="main">Борис Годунов</titlePart>
+  </docTitle>
+  <div type="dedication">
+   <p>Драгоценной для россиян памяти Николая Михайловича
+     Карамзина сей труд, гением его вдохновенный, с
+     благоговением и благодарностию посвящает</p>
+   <p>Александр Пушкин</p>
+  </div>
+ </front>
+ <body>
+  <div type="scene">
+   <head>КРЕМЛЕВСКИЕ ПАЛАТЫ</head>
+   <stage>(1598 года, 20 февраля)</stage>
+   <stage>Князья Шуйский и Воротынский. </stage>
+   <sp who="#vorotynskij">
+    <speaker>Воротынский</speaker>
+    <l>Наряжены мы вместе город ведать,</l>
+    <l>Но, кажется, нам не за кем смотреть:</l>
+    <l>Москва пуста; вослед за патриархом</l>
+    <l>К монастырю пошел и весь народ.</l>
+    <l>Как думаешь, чем кончится тревога?</l>
+   </sp>
+   <sp who="#shujskij">
+    <speaker>Шуйский</speaker>
+    <l>Чем кончится? Узнать немудрено:</l>
+    <l>Народ еще повоет да поплачет,</l>
+    <l>Борис еще поморщится немного,</l>
+    <l>Что пьяница пред чаркою вина,</l>
+    <l>И наконец по милости своей</l>
+    <l>Принять венец смиренно согласится,</l>
+    <l>А там — а там он будет нами править</l>
+    <l part="I">По-прежнему.</l>
+   </sp>
+(…)
+```
+
+<br />
+<small>(TEI = Text Encoding Initiative)</small>
+
+--
+
+## Drama Corpora in TEI
+
+<br />
+- <!-- .element: style="font-size:0.85em;" -->[Shakespeare Folger Library](https://www.folgerdigitaltexts.org/): all (37) Shakespeare plays, very high encoding-depth
+- <!-- .element: style="font-size:0.85em;" -->[Théâtre Classique](http://www.theatre-classique.fr/): 1180 plays (… and counting) from 17th and 18th century
+- <!-- .element: style="font-size:0.85em;" -->[Shakespeare His Contemporaries](https://drama.earlyprint.org/): 860 plays written between 1550 and 1700
+- <!-- .element: style="font-size:0.85em;" -->[German Drama Corpus](https://ger.dracor.org/): 468 German-language plays from 1730 till 1930
+- <!-- .element: style="font-size:0.85em;" -->[Letteratura teatrale nella Biblioteca italiana](http://www.bibliotecaitaliana.it/): 171 Italian plays
+- <!-- .element: style="font-size:0.85em;" -->[Russian Drama Corpus](https://rus.dracor.org/): 105 Russian-language plays from 1740s till 1930s
+- <!-- .element: style="font-size:0.85em;" -->[Dramawebben](http://www.dramawebben.se/): 62 Swedish plays
+- <!-- .element: style="font-size:0.85em;" -->[Ludvig Holbergs skrifter](http://holbergsskrifter.dk/holberg-public/view?docId=adm/HolbergsWritings.xml&sort=category): 36 comedies
+- <!-- .element: style="font-size:0.85em;" -->[Biblioteca Electrónica Textual del Teatro en Español de 1868–1936 (BETTE)](https://github.com/GHEDI/BETTE): 25 Spanish plays
+
+--
+
+## Working Directly with the TEI-XML
+
+<br />
+
+- XML libraries
+- XML databases like eXist-db
+- query corpus with XQuery language
+
+--
+
+## DraCor API
+
+<br />
+- provide metrics and implement research ideas via easyle accessible interface
+- documentation: https://dracor.org/documentation/api/
+- easy to use from Python or R without having to meddle with XML
+
+--
+
+## Shiny App
+
+<br />
+https://shiny.dracor.org/
+
+--
+
+## Didactics (1): *Gamification!*
+
+![card game](images/card-game-dh2018.jpg)<!-- .element width="600px;" -->
+
+<small>"Brecht Beats Shakespeare" (released 2018, img source: [@angelikah](https://twitter.com/angelikah/status/1012100869301702657)). <br />Full-res version here: https://doi.org/10.6084/m9.figshare.6667424.v1</small>
+
+--
+
+![a card](images/card-andromaque.jpg)<!-- .element height="440px;" -->
+![a card](images/card-nora.jpg)<!-- .element height="440px;" --><!-- .element: class="fragment" -->
+![a card](images/card-miss-julie.jpg)<!-- .element height="440px;" --><!-- .element: class="fragment" -->
+
+--
+
+![a card](images/card-hamlet.jpg)<!-- .element height="440px;" -->
+![a card](images/card-faust.jpg)<!-- .element height="440px;" --><!-- .element: class="fragment" -->
+![a card](images/card-grabbe.jpg)<!-- .element height="440px;" --><!-- .element: class="fragment" -->
+
+--
+
+###  Didactics (2): *ezlinavis*
+
+![ezlinavis screenshot](images/ezlinavis-screenshot-tolstoy.png)<!-- .element height="450px;" -->
+
+<small>**ezlinavis** in action: https://ezlinavis.dracor.org/</small>
+
+--
+
+## Linked Open Data
+
+<br />
+- connect a corpus to the world (i.e., the Linked Open Data cloud)
+- example: Gogol's "Женитьба"/"Marriage" (1842)
+- has [Wikipedia article](https://en.wikipedia.org/wiki/Marriage_(play))
+- has Wikidata article with facts: https://www.wikidata.org/wiki/Q4179360
+- first performances of Russian plays: http://tinyurl.com/y8r337pa
+- first performances of German plays: http://tinyurl.com/y9vga68j
+
+---
+
+## So, moving towards a <br />European Drama Research Infrastructure:
+
+<br />
+- multi-lingual *open* corpora
+- standard encoding format (still TEI)
+- easy and simple referencibility and reproducibility
+- APIs
+- Linked Open Data
+- facilitate embedding in teaching and learning
+- …
+
+--
+
+Tack så mycket.
+
+<br /><br /><br />
+
+– https://dracor.org/ –
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      history: true,
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: '../reveal/plugin/markdown/marked.js' },
+        { src: '../reveal/plugin/markdown/markdown.js' },
+        { src: '../reveal/plugin/notes/notes.js', async: true },
+        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+    </script>
+  </body>
+</html>
