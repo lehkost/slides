@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Programmable Corpora · DHD2019 · Frankfurt/M. · 27. März 2019</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### **Programmable Corpora**
+#### Die digitale Literaturwissenschaft zwischen Forschung <br />und Infrastruktur am Beispiel von **DraCor**
+
+<br /><br /><br /><br />
+Frank Fischer &nbsp;·&nbsp;
+Ingo Börner &nbsp;·&nbsp;
+Mathias Göbel &nbsp;·&nbsp;
+Angelika Hechtl<br />
+Christopher Kittel &nbsp;·&nbsp;
+Carsten Milling &nbsp;·&nbsp;
+Peer Trilcke <!-- .element: style="font-size:0.7em;" -->
+
+<br /><br /><br /><br /><br /><br />
+<!-- .element: style="font-size:0.6em;" -->**Diese Präsentation:** [lehkost.github.io/slides/2019-03-27-frankfurt-dhd/](https://lehkost.github.io/slides/2019-03-27-frankfurt-dhd/)
+
+<br />
+<!-- .element: style="font-size:0.6em;" -->[DHd2019](https://dhd2019.org/programm/mi/900-1030/session-korpora/) &nbsp;·&nbsp; Frankfurt/M. &nbsp;🇩🇪 &nbsp;·&nbsp; 27. März 2019
+
+--
+
+### Inhaltsverzeichnis
+
+<br />
+1. Was bisher geschah
+2. TEI-Korpusarbeit
+3. LiterAPIrwissenschaft
+4. Programmable Corpora
+5. Linked Open Data
+6. Laufende DraCor-Forschungsprojekte
+
+---
+
+# Kapitel 1.
+
+<br />
+### Was bisher geschah
+
+--
+
+## Aus aktuellem Anlass
+
+<br />
+* Nan Z. Da: The Computational Case against Computational Literary Studies. In: *Critical Inquiry* 45, No. 3 (Frühjahr 2019), S.&nbsp;601–639. DOI:[10.1086/702594](https://doi.org/10.1086/702594).
+* Replikationskrise: »the process of requesting complete, runnable codes and quantitative results […] took me **nearly two years**«
+
+--
+
+## Was bisher geschah: DLINA und *dramavis*
+
+<br />
+- Forschungsgruppe [DLINA](https://dlina.github.io/)
+- Python-Scriptsammlung [***dramavis***](https://github.com/lehkost/dramavis) (2014–2018)
+  - All-in-one-Ansatz: mittlerweile zu hoher Maintenance-Aufwand
+
+--
+
+## Distant-Reading Showcase (dank *dramavis*)
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+<small>*Distant-Reading Showcase* (DHd2016 in Leipzig, 9. März 2016).<br />Download via Figshare. DOI: [10.6084/m9.figshare.3101203.v2](https://dx.doi.org/10.6084/m9.figshare.3101203.v2).</small>
+
+--
+
+## Dramenquartett (dank *dramavis*)
+
+![Dramenquartett](images/dramenquartett-poster-dhd2018.jpg)<!-- .element height="470px;" -->
+
+<small>*Dramenquartett* (DHd2018 in Köln, 1. März 2018).<br />Download via Figshare. DOI: [10.6084/m9.figshare.5926363.v1](https://doi.org/10.6084/m9.figshare.5926363.v1).</small>
+
+--
+
+### Adaptionen?
+
+![Phèdre](images/phedre-it-works.png)<!-- .element height="500px;" -->
+
+<small>https://twitter.com/christof77/status/772370040016568320</small>
+
+---
+
+# Kapitel 2.
+
+<br />
+### TEI-Korpusarbeit
+
+--
+
+## **DraCor**
+
+<br />
+- nachhaltige Forschungsprojekte benötigen (und erzeugen) dedizierte Infrastruktur
+- DraCor: Drama Corpora Platform (https://dracor.org/)
+- zwei Hauskorpora:
+  - German Drama Corpus, GerDraCor (1730er–1930er)
+  - Russian Drama Corpus, RusDraCor (1740er–1940er)
+
+--
+
+## Frontend dracor.org
+
+![DraCor-Frontpage)](images/dracor-frontpage.png)
+
+<small>https://dracor.org/ (public beta!)</small>
+
+--
+
+## GerDraCor
+
+<br />
+- bisher (DLINA): 465 Stücke aus dem TextGrid Repository (TEI-Konversionen der zeno.org-Dateien)
+- GerDraCor: Übernahme des TextGrid-Korpus, aber generelle Korrekturphase seit 2017:
+  - Ergänzung verschwundener Textteile 😱
+  - korrekte Auszeichnungen von Versen ```<l>``` und Absätzen ```<p>```
+  - ggf. Umwandlung von ```<hi>``` zu ```<stage>``` (auf Fall-für-Fall-Basis)
+  - Sammlung aller ```<speaker>```-IDs in ```<particDesc>```
+  - Wikidata-IDs zu Autor*innen und Stücken
+- mittlerweile 471 Stücke (Ergänzungen aus Wikisource, Gutenberg-DE, …)
+
+--
+
+## RusDraCor
+
+<br />
+- basierend auf verlässlichen Quellen wie lib.ru, rvb.ru, ilibrary.ru
+- Konvertierung zu TEI-P5
+- per Seitenzahlen Mapping auf die direkte Scanvorlage
+- ```<particDesc>```, Wikidata
+
+--
+
+## ShakeDraCor
+
+<br />
+- abgeleitet von der [Shakespeare Folger Library](https://www.folgerdigitaltexts.org/)
+- Beispiel: [*Hamlet*](https://dracor.org/shake/hamlet)
+
+--
+
+## In Planung
+
+<br />
+- IbsDraCor
+- HolDraCor (aus der digitalen Edition [*Ludvig Holbergs skrifter*](http://holbergsskrifter.dk/holberg-public/view?docId=adm/HolbergsWritings.xml&sort=category))
+- SweDraCor (von [*Dramawebben*](https://litteraturbanken.se/dramawebben))
+- BashDraCor
+- ItaDraCor (aus der Sammlung [*Letteratura teatrale nella Biblioteca italiana*](http://www.bibliotecaitaliana.it/))
+- …?
+
+---
+
+# Kapitel 3.
+
+<br />
+## LiterAPIrwissenschaft ¹ ²
+
+<br /><br />
+<small>¹ API: Application Programming Interface (Anwendungsschnittstelle)<br /><br />
+² Peter-Handke-Gesetz: [»Ein Wortspiel pro Text ist erlaubt.«](https://www.welt.de/119569452)</small>
+
+--
+
+## DraCor Technology Stack
+
+<br />
+- XML-TEI-P5-Korpora
+- eXist-db (Jetty, Java)
+- DraCor Metrics Service: Node.js, Express.js, JSNetworkX
+- OpenAPI / Swagger
+- SPARQL-Endpunkt
+- Frontend: React, Bootstrap, SigmaJS
+- R, Shiny, Python
+- alle Repos: https://github.com/dracor-org
+
+--
+
+## DraCor-API (1/2)
+
+<br />
+- liefert Metadaten, maßgeschneiderte Auszüge sowie verschiedene Metriken
+- Live-Dokumentation: https://dracor.org/documentation/api/
+
+--
+
+## DraCor-API (2/2)
+
+<br />
+- Liste erhältlicher Korpora und deren Inhalt (Liste aller Stücke)
+- Metadaten und Netzwerkdaten zu allen Stücken als CSV oder GEXF
+- Laden des TEI-Dokuments eines Stücks
+- Liste sprechender Figuren pro Stück (oft bedeutend umfangreicher als die *dramatis personae*!)
+- Figuren pro Segment eines Stücks (dynamische Graphen!)
+- gesprochener Text (gesamt/weibl./männl. oder pro Figur)
+- Regieanweisungen
+- SPARQL-Endpunkt
+- …
+
+--
+
+## Beispiel
+#### Anzahl von Figuren pro Stück in chronologischer Folge (1/2)
+
+<br />
+```R
+library(data.table)
+library(ggplot2)
+library(httr)
+resp <- GET("https://dracor.org/api/corpora/ger/metadata", accept("text/csv"))
+metadata <- fread(content(resp, as = "text"), fill = T)
+ggplot(metadata[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+<small>Einfaches R-Script.</small>
+
+--
+
+#### Anzahl von Figuren pro Stück in chronologischer Folge (2/2)
+
+<br />
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+<br />
+<small>Ausgabe in RStudio.</small>
+
+---
+
+# Kapitel 4.
+
+<br />
+## Programmable Corpora
+
+--
+
+## Zum Begriff
+
+<br />
+- Analogie zur IT-News-Plattform *ProgrammableWeb* (Slogan: »APIs, Mashups and the Web as Platform«)
+- Korpora als vergleichbare Objekte, die selbst Funktionen anbieten und mit anderen Datenquellen verbunden sind (via LOD)
+- FAIR-Prinzipien, bessere Reproduzierbarkeit
+- Andockbarkeit auf allen Ebenen (TEI, API, R, Python, …)
+- Überschneidungen mit [»sustainable editions«](https://twitter.com/ThWuebbena/status/1041639186326069248) (Thomas Stäcker)
+- [RIDE](http://ride.i-d-e.de/data/charts-text-collections/) sammelt Metadaten zu besprochenen Editionen: »Are there technical interfaces which allow the reuse of the data of the text collection in other contexts?«
+
+--
+
+### Lessings *Emilia Galotti*
+
+![Emilia Galotti (dynamic graph)](images/lessing-emilia-galotti-coloured.gif)
+
+<small>**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Die Daten kommen direkt aus der **DraCor-API**. <br />Script von Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
+
+--
+
+## Shiny App
+
+![Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (von Ivan Pozdniakov).</small>
+
+--
+
+## Boris Yarkho (1889–1942)
+
+<br />
+![Boris Yarkho (cropped)](images/boris-yarkho.jpg)
+
+<small>(Bildquelle: http://urokiistorii.ru/article/52560)</small>
+
+--
+
+Boris Yarkho: ***Speech Distribution in Five-Act Tragedies (A Question of Classicism and Romanticism)*** (geschrieben 1935–1938).
+
+<br />
+Hrsg. von Frank Fischer, Marina Akimova und Boris Orekhov. <br />In: *Journal of Literary Theory*. [Vol. 13. No. 1: *»**Moscow Formalism and Literary History**«*](https://www.degruyter.com/view/j/jlt.2019.13.issue-1/issue-files/jlt.2019.13.issue-1.xml). De Gruyter 2019, S. 13–76.
+
+<br />
+DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
+
+--
+
+## Redeverteilung nach Yarkho
+
+<br />
+![Emilia Galotti, speech distribution](images/speech-distribution-lessing-emilia-galotti.png)
+
+<br >
+<small>Implementiert in **DraCor** (hier für Lessings *Emilia Galotti*): <br />https://dracor.org/ger/lessing-emilia-galotti#speech</small>
+
+---
+
+# Kapitel 5.
+
+<br />
+## Linked Open Data
+
+--
+
+## Anbindung an die <br />Linked-Open-Data-Cloud
+
+<br />
+- Beispiel: Lessings *Emilia Galotti* (1772)
+- hat einen [Wikipedia-Artikel](https://de.wikipedia.org/wiki/Emilia_Galotti)
+- hat einen Wikidata-Artikel mit Fakten: <br />https://www.wikidata.org/wiki/Q782653
+- DraCor-SPARQL-Endpunkt: https://dracor.org/sparql
+
+--
+
+## Repräsentativität eines Korpus
+
+<br />
+
+| Stück | Anzahl Wikipedia-Links |
+|:-----:|:----------------------:|
+| Anton Tschechow: Der Kirschgarten | 35	|
+| Anton Tschechow: Drei Schwestern | 34	|
+| Nikolai Gogol: Der Revisor | 34 |
+| Anton Tschechow: Die Möwe | 33 |
+| Anton Tschechow: Onkel Wanja | 31 |
+| Maxim Gorki: Nachtasyl | 12 |
+| Alexander Puschkin: Boris Godunow | 12 |
+| Alexander Gribojedow: Verstand schafft Leiden | 11 |
+| Anton Tschechow: Iwanow | 10 |
+| Nikolai Gogol: Die Hochzeit | 10 |
+
+<br />
+<small>Die 10 international populärsten Stücke laut Wikipedia (RusDraCor umfasst momentan 144 Stücke).
+
+--
+
+## Uraufführungsorte in GerDraCor
+
+![ezlinavis screenshot](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+--
+
+## Urauführungsort Berlin in GerDraCor
+
+![ezlinavis screenshot](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+---
+
+# Kapitel 6.
+
+<br />
+## Laufende DraCor-Forschungsprojekte
+
+--
+
+Beispiel 1: Small-World-Phänomen in russischen Dramen
+
+![Small-World-Phänomen in russischen Dramen)](images/rusdracor-small-world-preview.png)
+
+<small>Arbeit von Evgeniya Ustinova (Publikation in Vorbereitung).</small>
+
+--
+
+Beispiel 2: Topics im gesprochenen Text russischer Dramen
+
+![Topics)](images/rusdracor-topics-per-author.png)<!-- .element width="520px;" -->
+
+<small>Arbeit von Irina Pavlova ([Abstract](https://eadh2018.exordo.com/files/papers/158/final_draft/Pavlova___Fischer_-_Topic_Modeling_-_EADH_conference.pdf)).</small>
+
+--
+
+Beispiel 3: Regieanweisungen
+
+![Regieanweisungen)](images/rusdracor-didascalie-all-pos.png)
+
+<small>Arbeit von Daria Maximova ([Abstract](https://eadh2018.exordo.com/files/papers/79/final_draft/Stage_Directions_for_EADH_Conference.pdf)).</small>
+
+--
+
+Beispiel 4: Female/Male Character Word Usage
+
+![Female/Male Character Word Usage)](images/rusdracor-craigs-zeta.jpg)<!-- .element width="480px;" -->
+
+<small>Arbeit von Skorinkin/Fischer/Palchikov ([Artikel](http://www.dialog-21.ru/media/4332/skorinkind.pdf)).</small>
+
+---
+
+## Zusammenfassung
+
+<br />allgemein:
+- Konzept der **Programmable Corpora** für Forschung und Lehre
+
+<br>speziell:
+- **dracor.org**: Forschungsinfrastruktur zum europäischen Drama:
+  - verlässliche, erweiterbare Korpora in mehreren Sprachen (→&nbsp;komparatistische Ansätze)
+  - Open-Source-Projekt: lurken, forken, pull requests
+
+--
+
+Vielen Dank.
+
+<br /><br />
+https://dracor.org/
+
+<br />
+#LiterAPIrwissenschaft
+
+#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      history: true,
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: '../reveal/plugin/markdown/marked.js' },
+        { src: '../reveal/plugin/markdown/markdown.js' },
+        { src: '../reveal/plugin/notes/notes.js', async: true },
+        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+    </script>
+  </body>
+</html>
