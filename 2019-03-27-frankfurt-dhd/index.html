@@ -77,10 +77,11 @@ Peer Trilcke <!-- .element: style="font-size:0.7em;" -->
 
 --
 
-## Was bisher geschah: DLINA und *dramavis*
+## DLINA und *dramavis*
 
 <br />
 - Forschungsgruppe [DLINA](https://dlina.github.io/)
+- digitale Dramenanalyse
 - Python-Scriptsammlung [***dramavis***](https://github.com/lehkost/dramavis) (2014–2018)
   - All-in-one-Ansatz: mittlerweile zu hoher Maintenance-Aufwand
 
@@ -193,15 +194,9 @@ Peer Trilcke <!-- .element: style="font-size:0.7em;" -->
 
 ## DraCor Technology Stack
 
-<br />
-- XML-TEI-P5-Korpora
-- eXist-db (Jetty, Java)
-- DraCor Metrics Service: Node.js, Express.js, JSNetworkX
-- OpenAPI / Swagger
-- SPARQL-Endpunkt
-- Frontend: React, Bootstrap, SigmaJS
-- R, Shiny, Python
-- alle Repos: https://github.com/dracor-org
+![Anzahl Figuren](images/dracor-drawio.svg)
+
+<small>Alle Repos sind Open Source: https://github.com/dracor-org</small>
 
 --
 
@@ -218,7 +213,6 @@ Peer Trilcke <!-- .element: style="font-size:0.7em;" -->
 <br />
 - Liste erhältlicher Korpora und deren Inhalt (Liste aller Stücke)
 - Metadaten und Netzwerkdaten zu allen Stücken als CSV oder GEXF
-- Laden des TEI-Dokuments eines Stücks
 - Liste sprechender Figuren pro Stück (oft bedeutend umfangreicher als die *dramatis personae*!)
 - Figuren pro Segment eines Stücks (dynamische Graphen!)
 - gesprochener Text (gesamt/weibl./männl. oder pro Figur)
@@ -333,7 +327,22 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 - Beispiel: Lessings *Emilia Galotti* (1772)
 - hat einen [Wikipedia-Artikel](https://de.wikipedia.org/wiki/Emilia_Galotti)
 - hat einen Wikidata-Artikel mit Fakten: <br />https://www.wikidata.org/wiki/Q782653
-- DraCor-SPARQL-Endpunkt: https://dracor.org/sparql
+
+--
+
+## Uraufführungsorte in GerDraCor
+
+![ezlinavis screenshot](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+--
+
+## Urauführungsort Berlin in GerDraCor
+
+![ezlinavis screenshot](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
 
 --
 
@@ -356,22 +365,6 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 <br />
 <small>Die 10 international populärsten Stücke laut Wikipedia (RusDraCor umfasst momentan 144 Stücke).
-
---
-
-## Uraufführungsorte in GerDraCor
-
-![ezlinavis screenshot](images/first-performances-overall.png)<!-- .element height="450px;" -->
-
-<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
-
---
-
-## Urauführungsort Berlin in GerDraCor
-
-![ezlinavis screenshot](images/first-performances-berlin.png)<!-- .element height="450px;" -->
-
-<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
 
 ---
 
