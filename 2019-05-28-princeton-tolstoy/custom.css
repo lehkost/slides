@@ -1,0 +1,9 @@
+.reveal section img {
+  border: none;
+}
+.reveal {
+  font-size: 32px;
+}
+.reveal h2 {
+	font-size: 1.4em;
+}
