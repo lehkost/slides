@@ -30,97 +30,483 @@
         <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
 <script type="text/template">
 
+![workshop logo cropped](images/workshop-logo-cropped.png)<!-- .element width="140px;" -->
+
 ### Programmable Corpora
-## A New Infrastructural Concept for <br />Digital Literary Studies
+A New Infrastructural Concept for <br />Digital Literary Studies
 
-<br /><br /><br />
-Frank Fischer ¹ ² &nbsp;·&nbsp; Boris Orekhov ¹<!-- .element: style="font-size:0.7em;" -->
+<br />
+<!-- .element: style="font-size:0.7em;" -->[Frank Fischer](https://www.hse.ru/en/org/persons/182492735) ¹ ² &nbsp;·&nbsp; [Boris Orekhov](http://nevmenandr.net/bo.php) ¹
 
-<br /><br />
 <!-- .element: style="font-size:0.5em;" -->¹ Higher School of Economics, Moscow<br />
 ² DARIAH-EU
 
-<br /><br /><br /><br />
-<!-- .element: style="font-size:0.6em;" -->[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 10:45 a.m.–12:15 p.m.
+<br /><br />
+<!-- .element: style="font-size:0.6em;" -->[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton University &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 10:45 a.m.–12:15 p.m.
 
 --
 
-### **Chapters**
+### TOC
 
 <br />
-1. xxx
-2. yyy
-3. zzz
-4. Summary
+1. TEI Corpus Work
+2. This is going to be APIc!
+3. Programmable Corpora
+4. Linked Open Data
+5. Research
+6. Didactics
+
+---
+
+# Prologue.
+
+--
+
+## In Light of Current Events
+
+<br />
+* Nan Z. Da: The Computational Case against Computational Literary Studies. *Critical Inquiry* 45:3 (Spring 2019), pp.&nbsp;601–639. DOI:[10.1086/702594](https://doi.org/10.1086/702594).
+* controversial debate to say the least; one bigger shortcoming is the total neglect of non-American scholarship in the field, cf. [statement of ADHO’s SIG-DLS](https://culturalanalytics.org/2019/05/response-by-the-special-interest-group-on-digital-literary-stylistics-to-nan-z-das-study/)
+* a point well made and generally accepted regards the replication crisis: „the process of requesting complete, runnable codes and quantitative results […] took me **nearly two years**“
+
+--
+
+## Previously on …
+### Drama Studies (2014–2018)
+
+<br />
+- objective: digital analysis of corpora of dramatic texts
+- Python super script [***dramavis***](https://github.com/lehkost/dramavis) (2014–2018)
+  - all-in-one approach: maintenance costs too high
+- although script and corpora are openly accessible, it was still hard to reproduce our findings or use our code for own experiments
+
+--
+
+### Adaptations?
+
+![Phèdre](images/phedre-it-works.png)<!-- .element height="500px;" -->
+
+<small>https://twitter.com/christof77/status/772370040016568320</small>
 
 ---
 
 # Chapter 1.
 
 <br />
-### xxx
+### TEI Corpus Work
 
 --
 
-### Headline
+## **DraCor**
 
-- text
+<br />
+- sustainable research projects require (and generate) a dedicated infrastructure
+- DraCor: Drama Corpora Platform (https://dracor.org/)
+- two in-house corpora:
+  - German Drama Corpus, GerDraCor (1730s–1930s)
+  - Russian Drama Corpus, RusDraCor (1740s–1940s)
+
+--
+
+## Frontend dracor.org
+
+![DraCor-Frontpage)](images/dracor-frontpage.png)<!-- .element width="840px;" -->
+
+<small>https://dracor.org/ (public beta!)</small>
+
+--
+
+## GerDraCor
+
+<br />
+- 472 plays to date
+- sources: TextGrid Repository, Wikisource, Gutenberg-DE, …
+  - assembling all ```<speaker>``` IDs in a ```<particDesc>```
+  - add Wikidata IDs for authors and plays
+
+--
+
+## RusDraCor
+
+<br />
+- based on reliable sources such as lib.ru, rvb.ru, ilibrary.ru
+- converted to TEI-P5
+- page numbers map to the scans of the corresponding pages of the used edition
+- ```<particDesc>```, Wikidata
+
+--
+
+## ShakeDraCor
+
+<br />
+- derived from [Shakespeare Folger Library](https://www.folgerdigitaltexts.org/)
+- simple XQuery script to adapt the corpus to the platform
+- example: [*Hamlet*](https://dracor.org/shake/hamlet)
+
+--
+
+## SpanDraCor
+
+<br />
+- „Biblioteca Electrónica Textual del Teatro en Español de 1868–1936“ (BETTE)
+- 25 plays by 8 authors
+- forked from their [GitHub repo](https://github.com/GHEDI/BETTE), minimal adaptations to work on DraCor
+- our visualisations and API-fication led to correction of hitherto unknown (structural) bugs
+- example: Valle Inclán’s [*Águila de blasón*](https://dracor.org/span/valle-aguila)
+
+--
+
+## GreekDraCor
+
+<br />
+- derived from [Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)
+- 39 plays of Greek antiquity downloaded from [their website](http://www.perseus.tufts.edu/hopper/opensource/download) (licenced under CC BY-SA 3.0)
+- convert Betacode to Unicode (using Python package [betacode 0.2](https://pypi.org/project/betacode/))
+- example: Aristophanes’s [*Frogs*](https://dracor.org/greek/aristophanes-frogs)
+
+--
+
+## Coming Soon
+
+<br />
+- IbsDraCor
+- HolDraCor (derived from the digital edition of [*Ludvig Holbergs skrifter*](http://holbergsskrifter.dk/holberg-public/view?docId=adm/HolbergsWritings.xml&sort=category))
+- SweDraCor (derived from [*Dramawebben*](https://litteraturbanken.se/dramawebben))
+- BashDraCor
+- ItaDraCor (derived from the [*Letteratura teatrale nella Biblioteca italiana*](http://www.bibliotecaitaliana.it/))
+- …?
 
 ---
 
 # Chapter 2.
 
 <br />
-### xxx
+## This is going to be APIc! ¹ ²
+
+<br /><br />
+<small>¹ API: Application Programming Interface<br /><br />
+² Peter Handke’s Law: [„One pun per text is permitted.“](https://www.welt.de/119569452)</small>
 
 --
 
-### Headline
+## DraCor Technology Stack
 
-- text
+![Anzahl Figuren](images/dracor-drawio.svg)
+
+<small>All repos are open source: https://github.com/dracor-org</small>
+
+--
+
+## DraCor API (1/2)
+
+<br />
+- provides metadata, bespoke excerpts and various metrics
+- live documentation via Swagger: https://dracor.org/documentation/api/
+
+--
+
+## DraCor API (2/2)
+
+<br />
+- list of available corpora and their content (list of all plays)
+- metadata and network data for all plays in CSV or GEXF format
+- list of speaking characters per play (usually much more comprehensive than the *dramatis personae*!)
+- characters per segment of a play (*dynamic graphs*!)
+- spoken text (total/female/male, or per character)
+- stage directions
+- SPARQL endpoint
+- …
+
+--
+
+## Example
+#### Number of characters per play in chronological order (1/2)
+
+<br />
+```R
+library(data.table)
+library(ggplot2)
+library(httr)
+resp <- GET("https://dracor.org/api/corpora/ger/metadata", accept("text/csv"))
+metadata <- fread(content(resp, as = "text"), fill = T)
+ggplot(metadata[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+<small>Very simple R script.</small>
+
+--
+
+#### Number of characters per play in chronological order (2/2)
+
+<br />
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+<br />
+<small>Output in RStudio.</small>
 
 ---
 
 # Chapter 3.
 
 <br />
-### xxx
+## Programmable Corpora
 
 --
 
-### Headline
+## The Concept
 
-- text
+<br />
+- analogy to the IT news platform *ProgrammableWeb* (slogan: „APIs, Mashups and the Web as Platform“)
+- corpora as comparable objects that offer functions themselves and are linked to other data sources (via LOD)
+- FAIR principles, better reproducibility
+- you can connect to the platform at any level (TEI, API, R, Python, SPARQL, …)
+
+--
+
+### Pushkin’s „Boris Godunov“ (1/2)
+
+![betweenness](images/betweenness-pushkin-boris-godunov.png)<!-- .element width="720px;" -->
+
+<small>Label size correlates with betweenness centrality. Gavrila Pushkin – a side character – in the middle.<br /><br />(Data source: GEXF file from https://dracor.org/rus/pushkin-boris-godunov.)</small>
+
+
+--
+
+### Pushkin’s *Boris Godunov* (2/2)
+
+![Boris Godunov (dynamic graph)](images/pushkin-boris-godunov.gif)
+
+<small>**Dynamic graph**, generated with [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html) package. Data coms directly from the **DraCor API**. <br />Script by Ivan Pozdniakov ([source code auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
+
+--
+
+## Shiny App
+
+![Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (by Ivan Pozdniakov).</small>
+
+--
+
+## Boris Yarkho (1889–1942)
+
+<br />
+![Boris Yarkho (cropped)](images/boris-yarkho.jpg)
+
+<small>(img source: http://urokiistorii.ru/article/52560)</small>
+
+--
+
+Boris Yarkho: ***Speech Distribution in Five-Act Tragedies (A Question of Classicism and Romanticism)*** (written 1935–1938).
+
+<br />
+Ed. by Frank Fischer, Marina Akimova and Boris Orekhov. <br />In: *Journal of Literary Theory* 13:1 ([*„**Moscow Formalism and Literary History**“*](https://www.degruyter.com/view/j/jlt.2019.13.issue-1/issue-files/jlt.2019.13.issue-1.xml)). De Gruyter 2019, pp. 13–76.
+
+<br />
+DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
+
+--
+
+## Speech Distribution According to Yarkho
+
+<br />
+![Emilia Galotti, speech distribution](images/speech-distribution-ozerov-dmitrij-donskoj.png)
+
+<br >
+<small>Implemented in **DraCor** (example: Ozerov’s *Dmitry Donskoy*): <br />https://dracor.org/rus/ozerov-dmitrij-donskoj#speech</small>
 
 ---
 
 # Chapter 4.
 
 <br />
-### xxx
+## Linked Open Data
 
 --
 
-### Headline
+![LOD cup](images/lod-cup.jpg)
 
-- text
+<br />
+<br /><small>(img source: https://www.w3.org/DesignIssues/LinkedData.html)</small>
+
+--
+
+## Connected to the <br />Linked-Open-Data Cloud
+
+<br />
+- example: Gogol’s „Женитьба“/„Marriage“ (1842)
+- has [Wikipedia article](https://en.wikipedia.org/wiki/Marriage_%28play%29)
+- has Wikidata article with facts: https://www.wikidata.org/wiki/Q4179360
+- first performances of Russian plays: http://tinyurl.com/y8r337pa
+- first performances of German plays: http://tinyurl.com/y9vga68j
+
+--
+
+## Location of first performances in GerDraCor
+
+![ezlinavis screenshot](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) („location of first performance“).</small>
+
+--
+
+## Berlin as location of first performances
+
+![ezlinavis screenshot](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) („location of first performance“).</small>
+
+--
+
+## Representativity of a Corpus
+
+<br />
+
+| Play | Number of Wikipedia version |
+|:-----:|:----------------------:|
+| Chekhov: The Cherry Orchard | 35	|
+| Gogol: The Government Inspector | 35 |
+| Chekhov: The Seagull | 34 |
+| Chekhov: Three Sisters | 34	|
+| Chekhov: Uncle Vanya | 31 |
+| Pushkin: Boris Godunov | 13 |
+| Gorki: The Lower Depths | 12 |
+| Griboyedov: Woe from Wit | 11 |
+| Chekhov: Ivanov | 10 |
+| Gogol: Marriage | 10 |
+
+<br />
+<small>The 10 most popular plays world-wide according to Wikipedia (RusDraCor currently includes 161 plays).
+
+--
+
+## Little Hands-On with Metadata
+
+<br /><br />
+```https://dracor.org/api/corpora/rus/metadata```
+
 
 ---
 
-# Summary
+# Chapter 5.
+
+<br />
+## Research
 
 --
 
-### Headline
+## Distant-Reading Showcase
 
-- text
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+<small>*Distant-Reading Showcase* (DHd2016, Leipzig 🏆).<br />Download via Figshare. DOI: [10.6084/m9.figshare.3101203.v2](https://dx.doi.org/10.6084/m9.figshare.3101203.v2).</small>
+
+--
+
+### Small-World Phenomenon in Russian Drama
+
+![Small-World-Phänomen in russischen Dramen)](images/rusdracor-small-world-preview.png)
+
+<small>Work by Evgeniya Ustinova.</small>
+
+--
+
+### Topics in Spoken Text of Russian Drama
+
+![Topics)](images/rusdracor-topics-per-author.png)<!-- .element width="520px;" -->
+
+<small>Work by Irina Pavlova ([abstract](https://eadh2018.exordo.com/files/papers/158/final_draft/Pavlova___Fischer_-_Topic_Modeling_-_EADH_conference.pdf)).</small>
+
+--
+
+### Stage directions
+
+![Regieanweisungen)](images/rusdracor-didascalie-all-pos.png)
+
+<small>Work by Daria Maximova ([abstract](https://eadh2018.exordo.com/files/papers/79/final_draft/Stage_Directions_for_EADH_Conference.pdf)).</small>
+
+--
+
+### Female/Male Character Word Usage
+
+![Female/Male Character Word Usage)](images/rusdracor-craigs-zeta.jpg)<!-- .element width="480px;" -->
+
+<small>Work by Skorinkin/Fischer/Palchikov ([article](http://www.dialog-21.ru/media/4332/skorinkind.pdf)).</small>
+
+---
+
+# Chapter 6.
+
+<br />
+## Didactics
+
+--
+
+## Brecht Beats Shakespeare!
+
+![Dramenquartett](images/brecht-shakespeare.jpg)<!-- .element height="470px;" -->
+
+<small>*Brecht Beats Shakespeare* (DHd2018, Cologne 🏆, and DH2018, México).<br />Download via Figshare. DOI: [10.6084/m9.figshare.5926363.v1](https://doi.org/10.6084/m9.figshare.6667424.v1).</small>
+
+--
+
+## Gamification!
+
+![card game](images/card-game-dh2018.jpg)<!-- .element width="600px;" -->
+
+<small>„Brecht Beats Shakespeare“ (released 2018, img source: [@angelikah](https://twitter.com/angelikah/status/1012100869301702657)). <br />Full-res version here: https://doi.org/10.6084/m9.figshare.6667424.v1</small>
+
+--
+
+What to do in case of …<br />
+
+… a power outage at data-analysis bootcamp?
+
+![card game](images/boot-camp-card-game.jpg)<!-- .element width="600px;" -->
+
+--
+
+![a card](images/card-andromaque.jpg)<!-- .element height="440px;" -->
+![a card](images/card-nora.jpg)<!-- .element height="440px;" --><!-- .element: class="fragment" -->
+![a card](images/card-miss-julie.jpg)<!-- .element height="440px;" --><!-- .element: class="fragment" -->
+
+--
+
+![a card](images/card-hamlet.jpg)<!-- .element height="440px;" -->
+![a card](images/card-faust.jpg)<!-- .element height="440px;" --><!-- .element: class="fragment" -->
+![a card](images/card-grabbe.jpg)<!-- .element height="440px;" --><!-- .element: class="fragment" -->
+
+--
+
+###  *ezlinavis*
+
+![ezlinavis screenshot](images/ezlinavis-screenshot-tolstoy.png)<!-- .element height="450px;" -->
+
+<small>**ezlinavis** in action: https://ezlinavis.dracor.org/</small>
+
+---
+
+## Summary
+
+<br />in general:
+- **Programmable Corpora** as a concept for research and teaching
+
+<br>in particular:
+- **dracor.org**: research infrastructure for European drama:
+  - reliable, expandable corpora in multiple languages (→&nbsp;comparative approaches)
+  - open-source project: lurk, fork, send pull requests
 
 --
 
 Thanks.
 
-<br /><br /><br />
-– https://hum.hse.ru/digital/ –
+<br /><br />
+https://dracor.org/
+
+<br /><br />
+
+#ProgrammableCorpora
 
 </script>
         </section>
