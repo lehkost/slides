@@ -100,7 +100,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 ## **DraCor**
 
 <br />
-- sustainable research projects require (and generate) a dedicated infrastructure
+- sustainable research projects require (and generate) infrastructure
 - DraCor: Drama Corpora Platform (https://dracor.org/)
 - two in-house corpora:
   - German Drama Corpus, GerDraCor (1730s–1930s)
@@ -116,23 +116,15 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 
 --
 
-## GerDraCor
+## GerDraCor + RusDraCor
 
 <br />
-- 472 plays to date
-- sources: TextGrid Repository, Wikisource, Gutenberg-DE, …
-  - assembling all ```<speaker>``` IDs in a ```<particDesc>```
-  - add Wikidata IDs for authors and plays
-
---
-
-## RusDraCor
-
-<br />
-- based on reliable sources such as lib.ru, rvb.ru, ilibrary.ru
-- converted to TEI-P5
+- based on reliable sources (for Russian plays: lib.ru, rvb.ru, ilibrary.ru, …)
 - page numbers map to the scans of the corresponding pages of the used edition
-- ```<particDesc>```, Wikidata
+- converted to TEI-P5
+- added ```<particDesc>``` to assemble all speakers, even the functional or ephemeral characters not featured in cast lists
+- added Wikidata IDs for authors and plays
+- example: Pushkin's [*Boris Godunov*](https://dracor.org/rus/pushkin-boris-godunov)
 
 --
 
@@ -150,7 +142,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 <br />
 - „Biblioteca Electrónica Textual del Teatro en Español de 1868–1936“ (BETTE)
 - 25 plays by 8 authors
-- forked from their [GitHub repo](https://github.com/GHEDI/BETTE), minimal adaptations to work on DraCor
+- forked from their [GitHub repo](https://github.com/GHEDI/BETTE), minimal adaptations to connect to DraCor
 - our visualisations and API-fication led to correction of hitherto unknown (structural) bugs
 - example: Valle Inclán’s [*Águila de blasón*](https://dracor.org/span/valle-aguila)
 
@@ -341,7 +333,37 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 --
 
-## Connected to the <br />Linked-Open-Data Cloud
+### Example for an RDF Representation
+
+<br />
+- taken from the website *The Programming Historian*:
+  - Matthew Lincoln: [Using SPARQL to access Linked Open Data](https://programminghistorian.org/lessons/graph-databases-and-SPARQL) (publ. 2015, released under CC-BY 4.0)
+
+--
+
+![Rembrandt: De Nachtwacht](https://upload.wikimedia.org/wikipedia/commons/0/0b/Rembrandt_van_Rijn-De_Nachtwacht-1642.jpg)<!-- .element height="480px;" -->
+
+- Rembrandt: De Nachtwacht (The Nightwatch), 1642<!-- .element: class="fragment" -->
+
+<small>(img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn-De_Nachtwacht-1642.jpg))</small>
+
+--
+
+![Vermeer: A Woman Holding a Balance](https://upload.wikimedia.org/wikipedia/commons/7/72/Woman-with-a-balance-by-Vermeer.jpg)<!-- .element height="480px;" -->
+
+- Vermeer: A Woman Holding a Balance, 1662/1663<!-- .element: class="fragment" -->
+
+<small>(img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Woman-with-a-balance-by-Vermeer.jpg))</small>
+
+--
+
+![graph visualisation of RDF-encoded information](https://programminghistorian.org/images/graph-databases-and-SPARQL/sparql01.svg)<!-- .element height="440px;" -->
+
+<small>graph visualisation of RDF-encoded information: <br />arrows indicate the direction of the predicate, *The Nightwatch* <br />was created by Rembrandt and not the other way around <br />(img source: [*The Programming Historian*](https://programminghistorian.org/lessons/graph-databases-and-SPARQL))</small>
+
+--
+
+## Connecting to the <br />Linked-Open-Data Cloud
 
 <br />
 - example: Gogol’s „Женитьба“/„Marriage“ (1842)
@@ -373,7 +395,7 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 <br />
 
 | Play | Number of Wikipedia version |
-|:-----:|:----------------------:|
+|:----:|:---------------------------:|
 | Chekhov: The Cherry Orchard | 35	|
 | Gogol: The Government Inspector | 35 |
 | Chekhov: The Seagull | 34 |
