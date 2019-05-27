@@ -29,6 +29,8 @@
       <div class="slides">
         <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
 <script type="text/template">
+  
+![workshop logo cropped](images/workshop-logo-cropped.png)<!-- .element width="200px;" -->
 
 ### Tolstoy Everywhere
 ## Unleashing the Information Hidden in the <br />90-Volume Collected Works
@@ -48,9 +50,9 @@ Boris Orekhov ¹ &nbsp;·&nbsp; Frank Fischer ¹ ²<!-- .element: style="font-si
 ### **Chapters**
 
 <br />
-1. xxx
-2. yyy
-3. zzz
+1. The Tolstoy Project
+2. The 91st Volume – An exceptional index
+3. The Web App
 4. Summary
 
 ---
@@ -58,52 +60,221 @@ Boris Orekhov ¹ &nbsp;·&nbsp; Frank Fischer ¹ ²<!-- .element: style="font-si
 # Chapter 1.
 
 <br />
-### xxx
+### The Tolstoy Project
 
 --
 
-### Headline
+### Digital edition
 
-- text
+- digital edition of collected works in 90 volumes, published between 1928 and 1958: novels, short stories, plays, letters, diaries, … (~ 46,000 pages)
+- cooperation between [Tolstoy Museum](http://tolstoymuseum.ru/) and Higher School of Economics, Moscow
+
+--
+
+### Digitizing Tolstoy
+
+![movie](images/startup.jpg)<!-- .element width="800px;" -->
+
+- movie *Startup* (2014) the artistic transformation of history of Yandex
+- 0:32:46: “The complete works of Leo Tolstoy is now uploaded to the system.”
+- in the conditions of  90s that are shown in the film, it was is impossible!
+
+--
+
+### Digitizing Tolstoy
+
+- it started with ["All of Tolstoy in One Click"](http://tolstoy.ru/projects/tolstoy-in-one-click/): all volumes scanned and OCRed (supported by ABBYY)
+- corrections were crowdsourced
+- abundant media coverage: [New Yorker](https://www.newyorker.com/books/page-turner/crowdsourcing-tolstoy), [The Guardian](https://www.theguardian.com/books/2013/oct/16/all-leo-tolstoy-one-click-project-digitisation), etc.
+- texts available in PDF, EPUB, FB2, MOBI and XHTML (see http://tolstoy.ru/creativity/90-volume-collection-of-the-works/)
+
+
+--
+
+### Our contribution
+
+- texts converted to [basic TEI](https://github.com/tolstoydigital/TEI)
+- [search web interface](http://search.effits.ru/)
+- richer markup
+- onthologies
+- linked open data
+- where do we start? index!
+
 
 ---
 
 # Chapter 2.
 
 <br />
-### xxx
+### The 91st Volume – An exceptional index
 
 --
 
-### Headline
+### Index
 
-- text
+- indexes for a long time and not by chance accompany academic editions
+- the book is not always read, sometimes it is worked with (looking for references and quotes)
+- index makes this work efficient
+- proper names in a fiction text are special function
+
+--
+
+### Proper names
+
+- draw attention to themselves (including capitalization);
+- heavily loaded associatively;
+- often have a special phonetics (especially borrowing);
+- special aspects are devoted to this aspect of the structure of the text.
+
+
+--
+
+### 91st volume
+
+![91st volume (cover)](images/91st-volume-cover.jpg)<!-- .element width="160px;" -->
+
+- supplement volume containing indexes of works and proper names (fiction and non-fiction works like diaries, letters)
+- 16,256 registered entries
+- that is a good starting point to make an onthology
+
+--
+
+### Onthology
+
+| entity                                         | ID    | wikidata  | comment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | geo                  |
+|------------------------------------------------|-------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|
+| Лао-Цзы (Лао-тзе)                              | 7627  | Q24446595 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |                      |
+| Яшвиль Лев Владимирович                        | 16253 | Q16723584 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |                      |
+| Алексеева Ксения Николаевна, рожд. Боратынская | 271   |           | Ксения Николаевна Боратынская (впоследствии по мужу Алексеева), родная внучка поэта Боратынского, учительница в земской школе Казанской губ., приезжала к Толстому, как она писала ему позднее (13 февраля 1908 г.), «для того, чтобы укрепиться и устоять против желанья выйти замуж и найти сил, чтобы итти по той дороге, которую я хотела выбрать». Но, возвратившись домой, она всё-таки вышла замуж. «Теперь я понимаю, — писала она, — что ничто извне не могло помочь мне, раз дом мой, должно быть, был построен на песке» |                      |
+| Алексеева Мария Васильевна                     | 272   |           | Мария Васильевна Алексеева [?], дочь В. И. Алексеева.                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                      |
+| Алексеева Надежда Васильевна                   | 273   |           | Нет сведений                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |                      |
+| Алексеевка Тульской губ.                       | 274   |           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | 53.590620, 38.093302 |
+| Алексеевка Самарской губ.                      | 275   |           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | 52.580285, 51.275200 |
+
+--
+
+
+
+### Next step: web app
+
+- web app: http://index.tolstoy.ru/
+- target audience: specialists as well as enthusiasts
+- general question: even with digitised full texts at hand, how can we benefit from the structuring and registration efforts of the past?
 
 ---
 
 # Chapter 3.
 
 <br />
-### xxx
+### The Web App
 
 --
 
-### Headline
 
-- text
+![web app statistics](images/webapp-statistics.png)<!-- .element width="800px;" -->
 
----
+<small>brown: number of references in the text – beige: number of mentions in the comments</small>
 
-# Chapter 4.
+--
+
+### Search for entities
 
 <br />
-### xxx
+- original index functionality retained: mapping proper names to volumes and pages
+- one-click direct jumps to pages
+- added functionality:
+  - fuzzy searches: entering "ava" will list results like "Poltava", "Bavariâ", "Abdulla-al'-Mamun Zuravardi"
+  - word-cloud representation conveys a first idea about most frequent words in the corpus
 
 --
 
-### Headline
+### Flexible search
 
-- text
+![search](images/001.png)<!-- .element width="800px;" -->
+
+--
+
+### Search with tag
+
+![tag](images/003.png)<!-- .element width="800px;" -->
+
+--
+
+### Simple but useful list
+
+![tag](images/002.png)<!-- .element width="800px;" -->
+
+--
+
+### Coocurence calculator
+
+![calculator](images/008.png)<!-- .element width="800px;" -->
+
+--
+
+### Entities network
+
+<br />
+![Victor Hugo co-occurrence network](images/screenshot-victor-hugo.png)<!-- .element width="480px;" -->
+
+<br />
+<small>word-cloud representation for entry 'Victor Hugo' showing co-occurring named entities – URL: http://index.tolstoy.ru/person/4079/</small>
+
+--
+
+
+### Person card
+
+![card](images/009.png)<!-- .element width="800px;" -->
+
+--
+
+
+### Studying Life and Works of Leo Tolstoy by Means of Network Analysis (1/3)
+
+![whole graph](images/general-graph.jpg)<!-- .element width="800px;" -->
+
+<small>co-occurence graph for all 90 volumes – network is downloadable and can be customised – URL: http://index.tolstoy.ru/general/graph/</small>
+
+--
+
+### Studying Life and Works of Leo Tolstoy by Means of Network Analysis (2/3)
+
+<br />
+- studying co-occurrences of proper names in the same environment (in our case, on the same page) help to understand larger contexts
+- example:
+  - the Hindu scripture "Bhagavad Gita" is found on 5 pages in Tolstoy's Complete Works, see http://index.tolstoy.ru/person/2138/
+  - it shares these five pages with a total of 43 other names mentioned
+  - the proximity of these mentionings is not accidental, in our case they form a kind of "Indian cluster" containing works like "Hitopadesha", "Dhammapada", "Vamana Purana", or names like Sri Ramakrishna Paramahansa
+  - for Tolstoy, these titles and names are part of a set of carriers of philosophical knowledge, and are associated with names like Xenophon, Montaigne, Montesquieu, Pascal, Skovoroda, Socrates
+  - these networks provide great opportunities for understanding the whole range of Tolstoy's interests and ideas
+
+--
+
+### Studying Life and Works of Leo Tolstoy by Means of Network Analysis (3/3)
+
+Nodes ranked by weighted degree in the fictional network (vols. 1–45):<sup>*</sup>
+
+1. Россия/Русь (2778)
+2. Наполеон I Бонапарт (2712)
+3. Москва (2689)
+4. Александр I Павлович (1873)
+5. Петербург (1830)
+6. Кутузов Михаил Илларионович/Голенищев-Кутузов (1515)
+7. Франция (1390)
+8. Европа (1212)
+9. Англия (938)
+10. Германия (789)
+
+Cf. Woody Allen: "I took a speed reading course where you run your finger down the middle of the page and was able to read 'War and Peace' in twenty minutes. **It's about Russia.**"
+
+<small><sup>* </sup>Many thanks to Daniil Skorinkin for providing this data.</small>
+
+--
+
+### Text structure exploring
+
+![heatmap](images/007.png)<!-- .element width="800px;" -->
 
 ---
 
@@ -111,9 +282,12 @@ Boris Orekhov ¹ &nbsp;·&nbsp; Frank Fischer ¹ ²<!-- .element: style="font-si
 
 --
 
-### Headline
-
-- text
+- the work of the editors of Tolstoy's complete works is exceptional
+- it allows you to systematize the entities in the texts of Tolstoy and build an ontology without NLP
+- entities allow you to reconstruct the way Tolstoy thinks
+- entities allow you to see the whole picture of the text
+- making indexes machine-readable is an additional way to research the Collected Works of single authors or similar printed text collections that come with rich and detailed indexes
+- functionalities of traditional indexes are not only retained, but also enhanced (fuzzy searches, visualisations of co-occurrences, etc.)
 
 --
 
