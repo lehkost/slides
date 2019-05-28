@@ -124,7 +124,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 - converted to TEI-P5
 - added ```<particDesc>``` to assemble all speakers, even the functional or ephemeral characters not featured in cast lists
 - added Wikidata IDs for authors and plays
-- example: Pushkin's [*Boris Godunov*](https://dracor.org/rus/pushkin-boris-godunov)
+- example: Pushkin’s [*Boris Godunov*](https://dracor.org/rus/pushkin-boris-godunov)
 
 --
 
@@ -218,10 +218,8 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 ```R
 library(data.table)
 library(ggplot2)
-library(httr)
-resp <- GET("https://dracor.org/api/corpora/ger/metadata", accept("text/csv"))
-metadata <- fread(content(resp, as = "text"), fill = T)
-ggplot(metadata[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+rusdracor <- fread("https://dracor.org/api/corpora/rus/metadata.csv")
+ggplot(rusdracor[], aes(x = year, y = numOfSpeakers)) + geom_point()
 ```
 
 <br />
@@ -415,7 +413,7 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 ## Little Hands-On with Metadata
 
 <br /><br />
-```https://dracor.org/api/corpora/rus/metadata```
+```https://dracor.org/api/corpora/rus/metadata.csv```
 
 
 ---
