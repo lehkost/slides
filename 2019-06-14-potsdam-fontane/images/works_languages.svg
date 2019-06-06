@@ -528,7 +528,7 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='black'  d='M384.0,12.7 L384.0,436.8 L621.0,436.8 L621.0,12.7 L384.0,12.7 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(75.6,224.8) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="13.00"  text-anchor="middle">
+	<g transform="translate(18.0,224.8) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="13.00"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Fontanes Werk</tspan></text>
 	</g>
 </g>
