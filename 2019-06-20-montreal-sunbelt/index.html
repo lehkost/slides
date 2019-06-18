@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Programmable Corpora: Towards a Combined Words/Networks Analysis of Literary Texts · SUNBELT (Montréal) · 20 June 2019</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Programmable Corpora:
+Towards a Combined Words/Networks <br />Analysis of Literary Texts
+
+<br /><br />
+<!-- .element: style="font-size:0.7em;" -->[Frank Fischer](https://www.hse.ru/en/org/persons/182492735) ¹ ² &nbsp;·&nbsp; Eugenia Ustinova ¹
+
+<!-- .element: style="font-size:0.5em;" -->¹ Higher School of Economics, Moscow<br />
+² DARIAH-EU
+
+<br /><br /><br />
+<!-- .element: style="font-size:0.5em;" -->This presentation:
+
+<!-- .element: style="font-size:0.9em;" -->**bit.ly/XXXXXXX**
+
+<br /><br /><br />
+<!-- .element: style="font-size:0.6em;" -->[SUNBELT 2019](https://www.fourwav.es/view/717/info/) &nbsp;·&nbsp; Montréal &nbsp;🇨🇦 &nbsp;·&nbsp; 20 June 2019
+
+--
+
+### TOC
+
+<br />
+1. Network Research on Drama
+2. Programmable Corpora: Networks for Literary Studies
+3. Catching Protagonists: Quantitative Dominance Relations
+
+---
+
+## Chapter 1.
+
+<br />
+## Network Research on Drama
+
+--
+
+## Literary Network Data as Example Files (1993)
+
+<iframe width="900" height="450" src="https://people.sc.fsu.edu/~jburkardt/datasets/sgb/sgb.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<small>Donald Knuth: The Stanford Graph Base: A Platform for Combinatorial Computing. ACM Press, 1993. <br />Networks extracted from fiction („Anna Karenina“, „Les Misérables“, etc.) are based on co-occurrences.</small>
+
+--
+
+### One of the First Literary Network Analyses (1998)
+
+<br />
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-stories-network.png)<!-- .element width="400px;" -->
+
+<small>Thomas Schweizer, Michael Schnegg: *Die soziale Struktur der „Simple Storys“. Eine Netzwerkanalyse.* 1998. ([PDF](https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf)) <br />Network extracted from [Ingo Schulze’s](https://en.wikipedia.org/wiki/Ingo_Schulze) novel „Simple Storys“, done by ethnologists. 38 nodes (characters). <br />Edges: positive, negative or exchange relationships. Visualisation with [Pajek](http://vlado.fmf.uni-lj.si/pub/networks/pajek/).</small>
+
+--
+
+### „Les Misérables“ as Example File in Gephi (2008)
+
+![Gephi Screenshot, CC](images/gephi-les-miserables.png)<!-- .element width="800px;" -->
+
+<small>(Screenshot taken from [workshop material](https://jasonheppler.org/courses/csu-workshop/gephi.html) by Jason Heppler, 2016. Licensed under CC BY-NC-SA 4.0.)</small>
+
+--
+
+### Franco Moretti’s Analysis of „Hamlet“ (2011)
+
+![Network of Hamlet selon Moretti](images/moretti-hamlet.gif)<!-- .element width="640px;" -->
+
+<small>(Source: [newleftreview.org](https://newleftreview.org/II/68/franco-moretti-network-theory-plot-analysis).)</small>
+
+--
+
+## Distant-Reading Showcase (2016)
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+<small>*Distant-Reading Showcase* (released at DHd2016, Leipzig).<br />Download via Figshare. DOI: [10.6084/m9.figshare.3101203.v2](https://dx.doi.org/10.6084/m9.figshare.3101203.v2).</small>
+
+--
+
+### Extraction of Literary Network Data: <br />A „Digital Spectator“
+
+<br />
+- following an idea of Solomon Marcus, „Poetica matematică“, 1970
+- operationalisation of ‘interaction’: <br />„Two characters interact with one another if they perform a speech act within the same segment of a drama (usually a ‘scene’).“
+
+---
+
+## Chapter 2.
+
+<br />
+## Programmable Corpora: <br />Networks for Literary Studies
+
+--
+
+## **DraCor**
+
+<br />
+- DraCor: Drama Corpora Platform (https://dracor.org/)
+- DraCor is a showcase for the concept of „Programmable Corpora“
+- Programmable Corpora: collection of full-text literary corpora with an API and Linked Open Data
+
+--
+
+## Frontend dracor.org
+
+![DraCor-Frontpage)](images/dracor-frontpage.png)<!-- .element width="840px;" -->
+
+<small>https://dracor.org/ (public beta!)</small>
+
+--
+
+## Connected Corpora
+
+<br />
+- German, Russian, Spanish, Swedish, Italian, Shakespeare, Ancient Greek, Roman, …
+- full texts encoded in TEI (XML standard format in the Humanities, ~ 550 elements for the encoding of documents)
+- example: [Shakespeare’s „Hamlet“](https://dracor.org/shake/hamlet)
+
+--
+
+## DraCor Technology Stack
+
+![DraCor Technology Stack](images/dracor-drawio.svg)
+
+<small>All repos are open source: https://github.com/dracor-org</small>
+
+--
+
+## DraCor API
+
+<br />
+- provides metadata and network data for all plays in CSV or GEXF format
+- character constellations per segment (*dynamic graphs!*)
+- spoken text (all characters, only female/male, or per character)
+- live documentation via Swagger: https://dracor.org/documentation/api/
+
+--
+
+### Pushkin’s „Boris Godunov“ (1/2)
+
+![betweenness](images/boris-godunov-gephi.png)<!-- .element width="720px;" -->
+
+<small>Correlations: Label size = betweenness centrality; heat of nodes = word-based measures.<br /><br />(Data source: GEXF file from https://dracor.org/rus/pushkin-boris-godunov.)</small>
+
+--
+
+### Pushkin’s „Boris Godunov“ (2/2)
+
+![Boris Godunov (dynamic graph)](images/pushkin-boris-godunov.gif)
+
+<small>**Dynamic graph**, generated with [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html) package. Data coms directly from the **DraCor API**. <br />Script by Ivan Pozdniakov ([source code auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
+
+--
+
+## DraCor Shiny App
+
+![Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (by Ivan Pozdniakov, based entirely on DraCor API).</small>
+
+--
+
+## Small-World Phenomenon in Russian Drama
+
+![Small-World Phenomenon in Russian Drama)](images/sw_size_v2.svg)<!-- .element height="490px;" -->
+
+<small>Testing all plays against the criteria in Watts/Strogatz 1998. <br />Repo: https://github.com/pixelmagenta/rusdracor-small-worlds.</small>
+
+--
+
+## Gamification: „Brecht Beats Shakespeare!“
+
+![card game](images/card-game-dh2018.jpg)<!-- .element width="600px;" -->
+
+<small>„Brecht Beats Shakespeare!“ (released at DH2018, México).<br />Download via Figshare. DOI: [10.6084/m9.figshare.5926363.v1](https://doi.org/10.6084/m9.figshare.6667424.v1).</small>
+
+---
+
+## Chapter 3.
+
+<br />
+## Catching Protagonists: <br />Quantitative Dominance Relations
+
+--
+
+## What Are „Quantitative Dominance Relations“?
+
+<br />
+- term coined by Manfred Pfister (1977)
+- modelled by us as multi-dimensional vector of network- and word-based features
+
+--
+
+## Calculation of Rankings for 8 Measures
+
+**5 network-based**:
+- Degree
+- Weighted degree
+- Closeness centrality
+- Betweenness centrality
+- Eigenvector centrality
+
+<br>
+**3 word-based**:
+- Number of words
+- Number of speech acts
+- Number of appearances
+
+--
+
+## Ranking Results
+
+<br />
+- for &gt; 50% of plays, a definite *quantitative* main character is identified, ranking first in at least 7 of the 8 measures (in Russian and German Drama Corpus)
+- yet literary texts can have more than one definite protagonist
+
+--
+
+## Correlation of Word- &amp; Network-Based Rankings
+
+![Spearman’s rank correlation coefficient](images/cor_coeff.svg)<!-- .element width="480px;" -->
+
+<small>Distribution of **Spearman’s rank correlation coefficient** for <br />word- vs. network-based measures in Russian Drama Corpus.</small>
+
+--
+
+## Major and Minor Characters
+
+<br />
+- division into **four groups** (following „Reallexikon der deutschen Literaturwissenschaft“, 2003):
+  - I. main characters
+  - II. secondary characters
+  - III. marginal characters
+  - IV. functional characters
+- using ```cut``` function (in R)
+
+--
+
+## Groups of Importance
+
+![Groups of importance](images/percentages_five.svg)<!-- .element width="720px;" -->
+
+<small>Shares for each group of characters in the entire Russian Drama Corpus.</small>
+
+--
+
+## The „Chekhov Effect“
+
+![Chekhov effect](images/first_group_degree.svg)
+
+<small>Percentages of first-group characters divided <br />by **degree** in the entire corpus **by decade**.</small>
+
+---
+
+Thanks.
+
+<br /><br />
+https://dracor.org/
+
+<br /><br />
+
+#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      history: true,
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: '../reveal/plugin/markdown/marked.js' },
+        { src: '../reveal/plugin/markdown/markdown.js' },
+        { src: '../reveal/plugin/notes/notes.js', async: true },
+        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+    </script>
+  </body>
+</html>
