@@ -220,20 +220,39 @@ Towards a Combined Words/Networks <br />Analysis of Literary Texts
 
 --
 
-## Calculation of Rankings for 8 Measures
+## Calculation of Rankings for 8 Measures <br />(For Every Character in Every Play)
 
-**5 network-based**:
-- Degree
-- Weighted degree
-- Closeness centrality
-- Betweenness centrality
-- Eigenvector centrality
+**5 network-based**:<!-- .element: style="font-size:0.9em;" -->
+- <!-- .element: style="font-size:0.9em;" -->Degree
+- <!-- .element: style="font-size:0.9em;" -->Weighted degree
+- <!-- .element: style="font-size:0.9em;" -->Closeness centrality
+- <!-- .element: style="font-size:0.9em;" -->Betweenness centrality
+- <!-- .element: style="font-size:0.9em;" -->Eigenvector centrality
 
-<br>
-**3 word-based**:
-- Number of words
-- Number of speech acts
-- Number of appearances
+**3 word-based**:<!-- .element: style="font-size:0.9em;" -->
+- <!-- .element: style="font-size:0.9em;" -->Number of words
+- <!-- .element: style="font-size:0.9em;" -->Number of speech acts
+- <!-- .element: style="font-size:0.9em;" -->Number of appearances
+
+--
+
+## Example: Character Rankings for „Hamlet“ (Excerpt)
+
+<br />
+
+|Character |Words|Speech <br />Acts|Appea-<br />rances|Between-<br />ness|Close-<br />ness|Weighted <br/>Degree|Degree|Eigenvector|TEXT <br />(total)|NETWORK <br />(total)|
+|----------|-----|-----------------|------------------|------------------|----------------|--------------------|------|-----------|------------------|---------------------|
+|Horatio   |4    |4                |4                 |1                 |1               |4                   |1     |3          |4                 |1                    |
+|Gertrude  |7    |6                |3                 |3                 |2               |3                   |2     |1          |5                 |2                    |
+|Claudius  |2    |2                |2                 |4                 |3               |2                   |3     |2          |2                 |3                    |
+|Hamlet    |**1**|1                |1                 |2                 |4               |1                   |**4** |4          |1                 |4                    |
+|Laertes   |5    |5                |7                 |5                 |5               |6                   |5     |6          |6                 |5                    |
+|Polonius  |3    |3                |5                 |6                 |6               |5                   |6     |5          |3                 |6                    |
+|Ophelia   |6    |7                |8                 |7                 |7               |9                   |7     |7          |7                 |7                    |
+|…         |…    |…                |…                 |…                 |…               |…                   |…     |…          |…                 |…                    |
+
+<br />
+<small>Top-7 characters of the play regarding their degree values (out of 38 characters in total).<br /><br />Hamlet ranks 1st for the number of words, but only 4th for degree (too many monologues? 🤔).</small>
 
 --
 
