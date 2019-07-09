@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Programmable Corpora: A New Infrastructural Concept · DH2019, Utrecht · 10 July 2019</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Programmable Corpora
+A New Infrastructural Concept for <br />Digital Literary Studies
+
+<br /><br /><br />
+Frank Fischer &nbsp;·&nbsp;
+Ingo Börner &nbsp;·&nbsp;
+Mathias Göbel &nbsp;·&nbsp;
+Angelika Hechtl<br />
+Christopher Kittel &nbsp;·&nbsp;
+Carsten Milling &nbsp;·&nbsp;
+Peer Trilcke<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+<!-- .element: style="font-size:0.5em;" -->(Moscow · Vienna · Göttingen · Berlin · Potsdam)
+
+<br /><br /><br /><br />
+<!-- .element: style="font-size:0.6em;" -->**This presentation:** [bit.ly/2xEPupe](https://bit.ly/2xEPupe)
+
+<br /><br />
+<!-- .element: style="font-size:0.6em;" -->[DH2019](https://dh2019.adho.org/) &nbsp;·&nbsp; Utrecht &nbsp;🇳🇱 &nbsp;·&nbsp; 10 July 2019
+
+--
+
+### Chapters
+
+<br />
+1. TEI Corpus Work
+2. This is going to be APIc!
+3. Programmable Corpora
+4. Linked Open Data
+
+---
+
+# Prologue.
+
+--
+
+## Previously on …
+### Drama Studies (2014–2018)
+
+<br />
+- objective: digital analysis of corpora of dramatic texts
+- Python super script [***dramavis***](https://github.com/lehkost/dramavis)
+
+--
+
+## Distant-Reading Showcase
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+<small>*Distant-Reading Showcase* (DHd2016, Leipzig 🏆).<br />Download via Figshare. DOI: [10.6084/m9.figshare.3101203.v2](https://dx.doi.org/10.6084/m9.figshare.3101203.v2).</small>
+
+--
+
+## Gamification!
+
+![card game](images/card-game-dh2018.jpg)<!-- .element width="600px;" -->
+
+<small>„Brecht Beats Shakespeare“ (released 2018, img source: [@angelikah](https://twitter.com/angelikah/status/1012100869301702657)). <br />Full-res version here: https://doi.org/10.6084/m9.figshare.6667424.v1</small>
+
+--
+
+What to do in case of …<br />
+
+… a power outage at data-analysis bootcamp?
+
+![card game](images/boot-camp-card-game.jpg)<!-- .element width="560px;" -->
+
+<small>(Photo courtesy of Daniil Skorinkin.)</small>
+
+--
+
+### Some of Our Research <br />Presented at DH Conferences
+
+<br />
+- conditions for a network analysis of dramatic texts (DH2015)
+- small-world phenomenon in drama (DH2016)
+- progressive structuration of drama networks/„plot“ (DH2017)
+- catching protagonists: typology of characters (DH2018)
+
+--
+
+### Problems?
+
+<br />
+- all-in-one-script approach: maintenance costs too high over the years
+- although script and corpora are openly accessible, it was still hard to reproduce our findings or use our code for experiments
+
+--
+
+### This Talk Will Introduce …
+
+<br /><br /><br />
+**#ProgrammableCorpora**
+
+<small>= the concept</small>
+
+<br /><br />
+**dracor.org**<br />
+
+<small>= an application and <br />showcase for the concept</small>
+
+---
+
+# Chapter 1.
+
+<br />
+### TEI Corpus Work
+
+--
+
+## How &nbsp;**DraCor**&nbsp; Came About
+
+<br />
+- sustainable research projects require (and generate) infrastructure
+- DraCor: Drama Corpora Platform (https://dracor.org/)
+- two in-house corpora:
+  - German Drama Corpus, GerDraCor (1730s–1930s)
+  - Russian Drama Corpus, RusDraCor (1740s–1940s)
+
+--
+
+## Frontend dracor.org
+
+![DraCor-Frontpage)](images/dracor-frontpage.png)<!-- .element width="840px;" -->
+
+<small>https://dracor.org/ (public beta!)</small>
+
+--
+
+## GerDraCor + RusDraCor
+
+<br />
+- TEI-P5
+- added ```<particDesc>``` to assemble all speakers, even functional or ephemeral characters not featured in cast lists
+- added Wikidata IDs for authors and plays (connecting DraCor to the LOD cloud)
+
+--
+
+## ShakeDraCor
+
+<br />
+- derived from [Shakespeare Folger Library](https://www.folgerdigitaltexts.org/)
+- simple XQuery script to adapt the corpus to the platform
+- example: [„Hamlet“](https://dracor.org/shake/hamlet)
+
+--
+
+## SpanDraCor
+
+<br />
+- „Biblioteca Electrónica Textual del Teatro en Español de 1868–1936“ (BETTE)
+- 25 plays by 8 authors
+- forked from their [GitHub repo](https://github.com/GHEDI/BETTE), minimal adaptations to connect to DraCor
+- example: Valle Inclán’s [„Águila de blasón“](https://dracor.org/span/valle-aguila)
+
+--
+
+## GreekDraCor + RomDraCor
+
+<br />
+- derived from [Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)
+- 39 plays of Greek antiquity downloaded from [their website](http://www.perseus.tufts.edu/hopper/opensource/download) (licenced under CC BY-SA 3.0)
+- 36 Roman plays (Plautus, Seneca, Terence)
+- convert Betacode to Unicode (using Python package [betacode 0.2](https://pypi.org/project/betacode/))
+- example: Aristophanes’s [„Frogs“](https://dracor.org/greek/aristophanes-frogs)
+
+--
+
+## Coming Soon
+
+<br />
+- IbsDraCor
+- HolDraCor (derived from the digital edition of [*Ludvig Holbergs skrifter*](http://holbergsskrifter.dk/holberg-public/view?docId=adm/HolbergsWritings.xml&sort=category))
+- SweDraCor (derived from [*Dramawebben*](https://litteraturbanken.se/dramawebben))
+- BashDraCor
+- ItaDraCor (derived from the [*Letteratura teatrale nella Biblioteca italiana*](http://www.bibliotecaitaliana.it/))
+- …?
+
+---
+
+# Chapter 2.
+
+<br />
+## This is going to be APIc! ¹ ²
+
+<br /><br />
+<small>¹ API: Application Programming Interface<br /><br />
+² Peter Handke’s Law: [„One pun per text is permitted.“](https://www.welt.de/119569452)</small>
+
+--
+
+## DraCor Technology Stack
+
+![Anzahl Figuren](images/dracor-drawio.svg)
+
+<small>All repos are open source: https://github.com/dracor-org</small>
+
+--
+
+## DraCor API (1/2)
+
+<br />
+- provides metadata, bespoke excerpts of the actual text (stage directions, spoken text per character, etc.) and various metrics
+- e.g., network data for all plays in CSV and GEXF format
+- SPARQL endpoint
+- live documentation via Swagger: https://dracor.org/documentation/api/
+
+--
+
+## DraCor API (2/2): Example Queries
+
+<br />
+
+<!-- .element: style="font-size:0.7em;" -->https://dracor.org/api/corpora/ger/play/goethe-faust-eine-tragoedie/spoken-text?gender=FEMALE
+
+<small>Spoken text by female characters in Goethe’s „Faust“.</small>
+
+<!-- .element: style="font-size:0.7em;" -->https://dracor.org/api/corpora/shake/play/hamlet/metrics
+
+<small>Basic network metrics for Shakeseare’s „Hamlet“.</small>
+
+<!-- .element: style="font-size:0.7em;" -->https://dracor.org/api/corpora/rus/play/chekhov-vishnevyi-sad/stage-directions
+
+<small>All stage directions of Chekhov’s „Cherry Orchard“.</small>
+
+<!-- .element: style="font-size:0.7em;" -->https://dracor.org/api/corpora/rus/metadata
+
+<small>Metadata for all plays of the Russian corpus.</small>
+
+--
+
+## Simple Use Case
+#### Number of characters per play in chronological order (1/3)
+
+<br />
+```R
+library(data.table)
+library(ggplot2)
+rusdracor <- fread("https://dracor.org/api/corpora/rus/metadata.csv")
+ggplot(rusdracor[], aes(x = year, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+<small>Very simple R script.</small>
+
+--
+
+#### Number of characters per play in chronological order (2/3)
+
+<br />
+![number of characters per play](images/num-of-speakers-rusdracor.png)
+
+<br />
+<small>Output in RStudio.</small>
+
+--
+
+#### Number of characters per play in chronological order (3/3)
+
+<br />
+![number of characters per play (LibreOffice Calc)](images/num-of-speakers-rusdracor-libreoffice-calc.jpg)
+
+<br />
+<small>Output in LibreOffice Calc (Microsoft Excel is similar).</small>
+
+---
+
+# Chapter 3.
+
+<br />
+## Programmable Corpora
+
+--
+
+## The Concept
+
+<br />
+- analogy to the IT news platform *ProgrammableWeb* (slogan: „APIs, Mashups and the Web as Platform“)
+- corpora as comparable objects that offer functions themselves and are linked to other data sources (via LOD)
+- FAIR principles, better reproducibility
+- you can connect to the platform at any level (TEI, API, R, Python, SPARQL, Excel, …)
+
+--
+
+### Pushkin’s „Boris Godunov“ (1/2)
+
+![betweenness](images/betweenness-pushkin-boris-godunov.png)<!-- .element width="720px;" -->
+
+<small>Label size correlates with betweenness centrality. Gavrila Pushkin – a side character – in the middle.<br /><br />(Data source: GEXF file from https://dracor.org/rus/pushkin-boris-godunov.)</small>
+
+
+--
+
+### Pushkin’s *Boris Godunov* (2/2)
+
+![Boris Godunov (dynamic graph)](images/pushkin-boris-godunov.gif)
+
+<small>**Dynamic graph**, generated with [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html) package. Data coms directly from the **DraCor API**. <br />Script by Ivan Pozdniakov ([source code auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
+
+--
+
+## Shiny App
+
+![Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (by Ivan Pozdniakov).</small>
+
+---
+
+# Chapter 4.
+
+<br />
+## Linked Open Data
+
+--
+
+![LOD cup](images/lod-cup.jpg)
+
+<br />
+<br /><small>(img source: https://www.w3.org/DesignIssues/LinkedData.html)</small>
+
+--
+
+## Connecting to the <br />Linked-Open-Data Cloud
+
+<br />
+- example: Gogol’s „Женитьба“/„Marriage“ (1842)
+- has [Wikipedia article](https://en.wikipedia.org/wiki/Marriage_%28play%29)
+- has Wikidata article with facts: https://www.wikidata.org/wiki/Q4179360
+- first performances of Russian plays: http://tinyurl.com/y8r337pa
+- first performances of German plays: http://tinyurl.com/y9vga68j
+
+--
+
+## Location of first performances in GerDraCor
+
+![ezlinavis screenshot](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) („location of first performance“).</small>
+
+--
+
+## Berlin as location of first performances
+
+![ezlinavis screenshot](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) („location of first performance“).</small>
+
+---
+
+## Summary
+
+<br />in general:
+- **Programmable Corpora** as a concept for research and teaching
+- applicable to other cases ([ELTeC](https://www.distant-reading.net/eltec/)?)
+
+<br>in particular:
+- **dracor.org**: research infrastructure for European drama:
+  - reliable, expandable corpora in multiple languages (→&nbsp;comparative approaches)
+  - open-source project: lurk, fork, send pull requests
+
+--
+
+Thanks.
+
+<br /><br />
+https://dracor.org/
+
+<br /><br />
+
+#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      history: true,
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: '../reveal/plugin/markdown/marked.js' },
+        { src: '../reveal/plugin/markdown/markdown.js' },
+        { src: '../reveal/plugin/notes/notes.js', async: true },
+        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+    </script>
+  </body>
+</html>
