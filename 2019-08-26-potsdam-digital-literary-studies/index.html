@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Fischer/Trilcke: Introduction to the Digital Literary Studies – Kick-off Lecture – Potsdam, 26 August 2019</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/white.css" />
+
+    <!-- Adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+          <script type="text/template">
+
+# Introduction to the <br />Digital Literary Studies
+
+📚 &nbsp; &nbsp; <font style="font-size:4rem;width:100%;">💻</font> &nbsp; &nbsp; 🎮
+
+<br />
+[Frank Fischer](https://www.hse.ru/en/org/persons/182492735)¹ · [Peer Trilcke](https://www.uni-potsdam.de/lit-19-jhd/peertrilcke.html)²
+
+¹Higher School of Economics, Moscow &nbsp;·&nbsp; DARIAH-EU 🇪🇺<!-- .element: style="font-size:0.8em;" --><br />
+²University of Potsdam &nbsp;·&nbsp; Theodor-Fontane-Archiv
+
+<small>(Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**, **[@peertrilcke](https://twitter.com/peertrilcke)**)</small>
+
+<br /><br />
+<!-- .element: style="font-size:0.7em;" -->This presentation: [lehkost.github.io/slides/2019-08-26-potsdam-digital-literary-studies/](https://lehkost.github.io/slides/2019-08-26-potsdam-digital-literary-studies/)
+
+<br /><br />
+[Summer School "Debating Data"](https://www.uni-potsdam.de/de/isc/kurse/summerschool/dd.html) · University of Potsdam · 26 August 2018
+
+--
+
+## Study Group "Digital Literary Studies" · Schedule
+
+- Session 1: 26.08., Monday – 11:15 to 12:15
+  - <!-- .element: style="font-size:0.7em;" -->Introduction to **Digital Literary Studies** & Introduction to DraCor (Drama Corpora Project – https://dracor.org/) and APIs (Frank)
+  - Installing software (R, RStudio, Gephi)<!-- .element: style="font-size:0.7em;" -->
+
+- Session 2: 27.08., Tuesday – 11:15 to 12:15
+  - <!-- .element: style="font-size:0.7em;" -->Introduction to **Literary Network Analysis** (Peer)
+
+- Session 3, 27.08., Tuesday – 14:30 to 16:30
+  - Hands-on: Network Analysis (DraCor network data [or available network data from novels] + Gephi)<!-- .element: style="font-size:0.7em;" -->
+
+- Session 4, 28.08., Wednesday – 11:15 to 12:15
+  - <!-- .element: style="font-size:0.7em;" -->Introduction to **Stylometry** (Frank)
+
+- Session 5, 28.08., Wednesday – 14:30 to 16:30
+  - Hands-on: Stylometry with RStudio (data via DraCor API or other)<!-- .element: style="font-size:0.7em;" -->
+
+- Session 6, 30.08., Friday – 11:15 to 12:15
+  - More hands-on, preparation for project presentations<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+## Today
+
+<br />
+- **I.** [Digital Humanities and Digital Literary Studies](#/1)
+- **II.** [Distant Reading, a New Perspective on Literary History](#/2)
+- **III.** [Data in the Humanities](#/3)
+- **IV.** [Digital Corpora](#/4)
+- **V.** [Cultural Hacking](#/5)
+- **VI.** [The DraCor API](#/6)
+
+---
+
+# Chapter I
+
+<br />
+## Digital Humanities <br />and <br />Digital Literary Studies
+
+--
+
+### "What Is Digital Humanities?"
+
+<br />
+The website …
+
+http://whatisdigitalhumanities.com/
+
+… presents <u>817 definitions</u> of the term 'Digital Humanities'.
+
+--
+
+## Digital Humanities According to Wikipedia
+
+<br /><br />
+"Digital humanities (DH) is an area of scholarly activity at the intersection of computing or information technologies and the disciplines of the humanities."
+
+<small>Source: https://en.wikipedia.org/wiki/Digital_humanities</small>
+
+--
+
+## Mapping the Digital Humanities (DH)
+
+![Mapping DH (Patrick Sahle)](images/Patrick_Sahle_-_Mapping_DH_en.png)<!-- .element width="500px;" -->
+
+Chart by Patrick Sahle, University of Cologne. – DH are "radically interdisciplinary" (Stephen Ramsay 2011).<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+## The DH Community
+
+<br />
+- team work rather than solitary work
+- *projects* as basic units of research:
+- emphasis on building/crafting
+- alternative teaching formats:
+  - hackathons, workshops, summer/winter/spring schools
+- virtual research environments
+- social-network platforms not only as research objects, but as environments for collaboration and dissemination
+
+---
+
+# Chapter II
+
+<br />
+## Distant Reading, <br />a New Perspective on <br />Literary History
+
+--
+
+## Motivation: The Limits of Reading
+
+<br />
+"Life is so short! Even if you are a book eater and only need five days to read a book twice, you only manage to read 70 a year. For the 45 years of receptiveness, from age 15 to age 60, that makes only 3,150 books: they want to be wisely chosen!"
+
+<br />
+<small>[**Arno Schmidt**](https://en.wikipedia.org/wiki/Arno_Schmidt): *Ich bin erst sechzig* (1955). In: Bargfelder Ausgabe, Werkgruppe I, Vol. 4.<br />Zurich: Haffmans 1987, pp. 30. (My trans.)</small></p>
+
+--
+
+## "The Great Unread"
+
+<br />
+- coined by Margret Cohen in "The Sentimental Education of the Novel" (1999), p. 23 ([see Google Books](https://books.google.com/books?id=tOgLRyVa4DYC&pg=PA23))
+- many attempts in the past two decades to turn this diagnosis into a practice, cf. workshop titles like: "Text Mining the Great Unread: Data-Intensive Methods and Digital Tools for Analysis of Texts in the Humanities and Social Sciences" ([Aarhus University, 2016](https://kursuskatalog.au.dk/da/course/64216))
+
+--
+
+## "Anecdotal Evidence"
+
+<br />
+"The literary scholar of the twenty-first century can no longer be content with <u>anecdotal evidence</u>, with random 'things' gathered from a few, even 'representative', texts. We must strive to understand these things we find interesting in the <u>context</u> of everything else, including a mass of possibly 'uninteresting' texts."
+
+<br />
+<small>Matthew L. Jockers: Macroanalysis. Digital Methods &amp; Literary History.<br />University of Illinois Press, 2013, p. 8. ([Google Books](https://books.google.com/books?id=mPOdxQgpOSUC&pg=PA8))</small>
+
+--
+
+## Distant Reading
+
+<br />
+<!-- .element style="text-align: left;" -->"[…] if you want to look beyond the canon […], close reading will not do it. It’s not designed to do it, it’s designed to do the opposite. […] we know how to read texts, now let’s learn how *not* to read them. Distant reading: where distance […] *is a condition of knowledge* […]."
+
+<br />
+<small>Franco Moretti: *Conjectures on World Literature*. In: *New Left Review* 1 (2000).</small>
+
+--
+
+
+## Distant Reading, or, …
+
+- Scalable Reading (Martin Mueller)
+- Macroanalysis (Matthew Jockers)
+- …
+
+--
+
+## Close Reading
+
+<br />
+- emerged in the middle of the 20th century (New Criticism)
+- thorough reading and interpretation of all nuances of a (literary) text, as opposed to putting all emphasis on historical, philological, biographical contexts
+- example: Derrida dedicating &#62; 50 pages to the word "yes" in Joyce's "Ulysses" (*Ulysses Gramophone: Hear Say Yes in Joyce*, 1984)
+- **IMPORTANT:** distant reading does ***not*** stand in opposition to close reading, but is supposed *to complement* the shortcomings of it (especially regarding the extent of the object examined)
+
+--
+
+## Distant Reading: Example 1
+### Moretti's Analysis of "Hamlet" (2011)
+
+![Network of Hamlet](images/moretti-hamlet.gif)<!-- .element width="640px;" -->
+
+<small>(Source: [newleftreview.org](https://newleftreview.org/II/68/franco-moretti-network-theory-plot-analysis).)</small>
+
+--
+
+## Distant Reading: Example 1
+### "Mapping Shakespeare’s Tragedies"
+
+![6 (out of 11) Shakespeare tragedies](images/grandjean-shakespeare-2015.png)<!-- .element width="640px;" -->
+
+<small>Martin Grandjean's network visualisation of 6 (out of 11) Shakespearean tragedies (Dec., 2015).<br />Full poster and explanations [on Grandjean's website](http://www.martingrandjean.ch/network-visualization-shakespeare/).</small>
+
+--
+
+## Distant Reading: Example 1
+### "Distant-Reading Showcase"
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+<small>"Distant-Reading Showcase", poster presented at #DHd2016 in Leipzig (9 Mar 2016).<br />Download in full-res (28.88 MB) via Figshare. DOI: [10.6084/m9.figshare.3101203.v1](https://dx.doi.org/10.6084/m9.figshare.3101203.v1).</small>
+
+--
+
+## Distant Reading: Example 1
+### Poster Detail
+
+![Poster detail](images/poster-detail-1.jpg)<!-- .element width="680px;" -->
+
+<small>Zooming in to Goethe's pivotal Storm-and-Stress play "Götz von Berlichingen" (1773).</small>
+
+--
+
+## Distant Reading: Example 2
+### Stylometry
+
+![stylometry, example](images/jannidis-lauer-dendrogram-kleist.jpg)<!-- .element width="540px;" -->
+
+<small>Taken from Jannidis/Lauer: [Burrow's Delta and Its Use in German Literary History](http://gerhardlauer.de/files/6013/9637/9784/Jannidis-Lauer_Burrowss-Delta.pdf) (2014).</small>
+
+--
+
+## Distant Reading: Example 3
+### Topic Modeling
+
+![topic modeling, example](images/jockers-topic-modeling-moby-dick.jpg)<!-- .element width="620px;" -->
+
+<small>Topic Modeling (co-occurrence of meaningful words and their distribution in a text corpus) with "Moby Dick" as an example, <br />against the backdrop of 3.345 other novels in Matthew Jockers' working corpus (*Macroanalysis*, p.&nbsp;132).</small>
+
+--
+
+## Distant Reading: Example 4
+### "Between the Words"
+
+![Alice, punctuation](images/alice-punctuation.jpg)<!-- .element width="860px;" -->
+
+<small>Nicholas Rougeux: [Between the Words. Exploring the punctuation in literary classics](https://www.c82.net/work/?id=347) (Jan., 2016).</small>
+
+--
+
+### Quantitative Analyses
+
+<br />
+- Quantitative analyses are at the core of the Digital Humanities.
+- This kind of analyses is an addition (not a replacement!) to traditional/qualitative research in the Humanities.
+- The crucial part now is to find a formalisation: How do we turn culture into digits? And to what end?
+- What is data in the Humanities?
+
+---
+
+# Chapter III
+
+<br />
+### Data in the Humanities
+
+--
+
+### What Is Data? (1/2)
+
+<br />
+- data = "a set of values of qualitative or quantitative variables" (Wikipedia)
+
+<br />
+![Mapping DH (Patrick Sahle)](images/data-types.gif)
+
+<small>Source: https://www.mathsisfun.com/data/data.html</small>
+
+--
+
+### What Is Data? (2/2)
+
+<br />
+- in the context of scientific research (research data)
+- examples: temperature, velocity of a car or train, surveys, crime rates, unemployment rates, …
+- data is generated and collected by all kinds of organisations, institutions, companies, governments
+- data in the humanities: books or corpora, files, lists, …
+- raw data/primary data: unaltered, unsorted, uncategorised – data before starting to work with it
+
+<br />
+Is a novel or a poem data? (What could be measured?)
+
+--
+
+### Data/File Formats
+
+<br />
+BMP – JPEG/JPG – PNG – TIF/TIFF – GIF
+
+PPT/PPTX – XLS/XLSX – DOC/DOCX – RTF – ODT
+
+TXT – CSV – HTML – XML – PDF – …
+
+<br />
+Proprietary vs. Open Standards
+
+--
+
+### Data in the Humanities
+
+<br />
+- "a digital, selectively constructed, machine-actionable abstraction representing some aspects of a given object of humanistic inquiry" ([Schöch 2013](http://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/))
+- two main types of data in the humanities: big data vs. smart data
+
+--
+
+### Big Data
+
+<br />
+- 3V paradigm:
+ - volume (amount of data)
+ - velocity (speed of data, in-/output, real time)
+ - variety (text, images, audio, video)
+- "messy and implicit, relatively large in volume, and varied in form" (Schöch 2013)
+
+--
+
+### Big Data in Action
+
+<br />
+- Google Ngram Viewer: https://books.google.com/ngrams
+- released in 2010
+- Erez Aiden, Jean-Baptiste Michel: *Uncharted: Big Data as a Lens on Human Culture*. Riverhead Books, 2013.
+
+--
+
+### Smart Data
+
+<br />
+- usually contains markup, annotations, metadata
+- "involves human agency and demands time"
+- "semi-structured or structured, clean and explicit, as well as relatively small in volume and of limited heterogeneity" (Schöch 2013)
+
+--
+
+### Linked Open Data
+
+<br />
+- part of the Semantic Web
+- identified by URI (Uniform Resource Identifier), conveniently available via HTTP
+- RDF (Resource Description Framework): subject – predicate – object
+- direct querying via SPARQL endpoints
+- example: Wikidata ([wikidata.org](https://www.wikidata.org/wiki/Wikidata:Main_Page))
+
+--
+
+### Querying Wikipedia (Via Wikidata)
+
+<br />Go to https://goo.gl/5MZt8q and hit "Run".
+
+Results?
+
+Now let's refine our query.
+
+Go to https://goo.gl/Qm9Hvj and hit "Run" again.
+
+Results?
+
+--
+
+### "Charting Culture"
+
+<br />
+- Maximilian Schich et al.: A network framework of cultural history. *Science*, Vol. 345, Issue 6196, pp. 558–562. DOI: 10.1126/science.1240064.
+- "Schich, an art historian at the University of Texas at Dallas, and his colleagues used the Google-owned [and now extinct] knowledge base, [Freebase](https://en.wikipedia.org/wiki/Freebase), to find 120,000 individuals who were notable enough in their life-times that the dates and locations of their births and deaths were recorded."
+- … and what did they do with it?
+
+--
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+<small>*Charting culture*, YouTube ("nature video" channel), 31 July 2014<br />
+(births are blue, deaths are red)</small>
+
+---
+
+# Chapter IV
+
+<br />
+## Digital Corpora
+
+--
+
+## Digital Editions
+
+<br />
+- ongoing digitisation efforts (university libraries, companies like Google)
+  - scans, OCR (optical character recognition)
+- in the Digital Humanities, a digital edition almost automatically involves the acronym TEI
+  - Text Incoding Initiative: responsible for TEI Guidelines ([tei-c.org/Guidelines/](http://www.tei-c.org/Guidelines/))
+  - basically developing/prodividing a stable, versatile XML schema (~&nbsp;550 elements at the moment)
+
+--
+
+### Example 1
+
+<br />
+```xml
+<div type="sonnet">
+ <lg type="quatrain">
+  <l>Les amoureux fervents et les savants austères</l>
+  <l>Aiment également, dans leur mûre saison,</l>
+  <l>Les chats puissants et doux, orgueil de la maison,</l>
+  <l>Qui comme eux sont frileux et comme eux sédentaires.</l>
+ </lg>
+ <lg type="quatrain">
+  <l>Amis de la science et de la volupté</l>
+  <l>Ils cherchent le silence et l'horreur des ténèbres ;</l>
+  <l>L'Érèbe les eût pris pour ses coursiers funèbres,</l>
+  <l>S'ils pouvaient au servage incliner leur fierté.</l>
+ </lg>
+ <lg type="tercet">
+  <l>Ils prennent en songeant les nobles attitudes</l>
+  <l>Des grands sphinx allongés au fond des solitudes,</l>
+  <l>Qui semblent s'endormir dans un rêve sans fin ;</l>
+ </lg>
+ <lg type="tercet">
+  <l>Leurs reins féconds sont pleins d'étincelles magiques,</l>
+  <l>Et des parcelles d'or, ainsi qu'un sable fin,</l>
+  <l>Étoilent vaguement leurs prunelles mystiques.</l>
+ </lg>
+</div>
+```
+
+<br />
+Charles Baudelaire's sonnet *Les chats* in TEI format.
+
+--
+
+### Example 2
+
+<br />
+```xml
+<sp who="#FAU">
+  <speaker>
+    <hi rendition="#g">Faust</hi>.
+  </speaker><lb/>
+  <p>
+    Habe nun, ach! Philosophie,<lb/>
+    Juristerey und Medicin,<lb/>
+    Und leider auch Theologie!<lb/>
+    Durchaus studirt, mit heißem Bemühn.<lb/>
+    Da steh' ich nun, ich armer Thor!</lb>
+    Und bin ſo klug als wie zuvor;</lb>
+    […]
+  </p>
+</sp>
+```
+
+<br />
+First six lines of Goethe's tragedy "Faust" (1808) in TEI.
+
+--
+
+### Example 2 (cont'd)
+
+Frontend dracor.org
+
+![DraCor frontpage)](images/dracor-frontpage.png)<!-- .element width="800px;" -->
+
+https://dracor.org/
+
+--
+
+### Example 3
+
+![Digital evolution of the text/corpus](images/tolstoy-digital.jpg)<!-- .element width="640px;" -->
+
+<small>Tolstoy Digital. Digital evolution of the text/corpus (source: [tolstoy.ru](http://tolstoy.ru/projects/tolstoy-digital/)).</small>
+
+--
+
+### Full-Text Sources <br />(with and without markup)
+
+<br />
+* Project Gutenberg
+* Wikisource
+* Deutsches Textarchiv
+* zeno.org
+* lib.ru
+* rvb.ru
+* ilibrary.ru
+* feb-web.ru
+* …
+
+---
+
+# Chapter V
+
+<br />
+## Cultural Hacking
+
+--
+
+### Last Chapter for Today (1/4)
+
+<br />
+- "hacking culture": DH is about developing a specific kind of creativity
+- answering (research) questions with data
+- learning how to get from (research) question → data → numbers/visualisations → interpretation
+- especially the first and last step are what makes a digital humanist
+
+--
+
+### Last Chapter for Today (2/4)
+
+<br />
+- for illustration: we want to know how much the German National Library weighs on books (initially to learn more about the extent of the printed cultural heritage)
+- how do you go about this:
+  - find suitable data
+  - harvest/extract/convert data
+  - calculate answer using appropriate technology
+  - interpretation
+
+--
+
+### Last Chapter for Today (3/4)
+
+<br />
+![German National Library, pic from Wikimedia Commons](images/dnb-german-library-leipzig-2008.jpg)<!-- .element width="900px;" -->
+<small>German National Library; Leipzig, Saxony (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_%28German_Library%29_2008-Feb.jpg))</small>
+
+- they publicly offer a [data set](https://www.dnb.de/metadatendienste) with all their catalogue data (RDF format, > 21 GB)
+
+--
+
+### Last Chapter for Today (4/4)
+
+<br />
+- extracted data and fed it into Elasticsearch (so we can do all sorts of things with the data in real-time)
+- found extent info for 6 Mio. entities (books), totaling around 1 billion pages (average: 166 pages/book)
+- assuming that one page weighs 2,5 grams, multiply with number of pages and divide by two gives us: 1.25 mio. kilograms = 1,250 tons of pages (not counting book covers, etc.)
+- account of this 4-hour hackathon: ["Empirical Data on Over-Length Books"](http://weltliteratur.net/Empirical-Data-on-Over-Length-Books/)
+
+---
+
+# Chapter VI
+
+<br />
+## The DraCor API¹
+
+<br /><br />
+<small>¹ API: Application Programming Interface<br /><br />
+
+--
+
+## DraCor Technology Stack
+
+![DraCor technology stack](images/dracor-drawio.svg)
+
+All repos are open source: https://github.com/dracor-org
+
+--
+
+## DraCor API (1/2)
+
+<br />
+- provides metadata, bespoke excerpts of the actual text (stage directions, spoken text per character, etc.) and various metrics
+- e.g., network data for all plays in CSV and GEXF format
+- live documentation via Swagger: https://dracor.org/documentation/api/
+
+--
+
+## DraCor API (2/2): Example Queries
+
+<br />
+
+<!-- .element: style="font-size:0.7em;" -->https://dracor.org/api/corpora/ger/play/goethe-faust-eine-tragoedie/spoken-text?gender=FEMALE
+
+<small>Spoken text by female characters in Goethe’s „Faust“.</small>
+
+<!-- .element: style="font-size:0.7em;" -->https://dracor.org/api/corpora/shake/play/hamlet/metrics
+
+<small>Basic network metrics for Shakeseare’s „Hamlet“.</small>
+
+<!-- .element: style="font-size:0.7em;" -->https://dracor.org/api/corpora/rus/play/chekhov-vishnevyi-sad/stage-directions
+
+<small>All stage directions of Chekhov’s „Cherry Orchard“.</small>
+
+<!-- .element: style="font-size:0.7em;" -->https://dracor.org/api/corpora/rus/metadata
+
+<small>Metadata for all plays of the Russian corpus.</small>
+
+--
+
+## Simple Use Case
+#### Number of characters per play in chronological order (1/3)
+
+<br />
+```R
+library(data.table)
+library(ggplot2)
+rusdracor <- fread("https://dracor.org/api/corpora/rus/metadata.csv")
+ggplot(rusdracor[], aes(x = year, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+Very simple R script.
+
+--
+
+#### Number of characters per play in chronological order (2/3)
+
+<br />
+![number of characters per play](images/num-of-speakers-rusdracor.png)
+
+<br />
+Output in RStudio.
+
+--
+
+#### Number of characters per play in chronological order (3/3)
+
+<br />
+![number of characters per play (LibreOffice Calc)](images/num-of-speakers-rusdracor-libreoffice-calc.jpg)
+
+<br />
+Output in LibreOffice Calc (Microsoft Excel is similar).
+
+---
+
+## Preparations
+
+<br />
+* install R, RStudio, Gephi
+
+<br /><br />
+See you tomorrow!
+
+          </script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: '../reveal/plugin/markdown/marked.js' },
+          { src: '../reveal/plugin/markdown/markdown.js' },
+          { src: '../reveal/plugin/notes/notes.js', async: true },
+          { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
