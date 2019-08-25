@@ -43,9 +43,9 @@
 <small>(Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**, **[@peertrilcke](https://twitter.com/peertrilcke)**)</small>
 
 <br /><br />
-<!-- .element: style="font-size:0.7em;" -->This presentation: [lehkost.github.io/slides/2019-08-26-potsdam-digital-literary-studies/](https://lehkost.github.io/slides/2019-08-26-potsdam-digital-literary-studies/)
+<!-- .element: style="font-size:0.9em;" -->This presentation: [**bit.ly/2Zl9MDL**](https://bit.ly/2Zl9MDL)
 
-<br /><br />
+<br />
 [Summer School "Debating Data"](https://www.uni-potsdam.de/de/isc/kurse/summerschool/dd.html) · University of Potsdam · 26 August 2018
 
 --
@@ -80,8 +80,8 @@
 - **II.** [Distant Reading, a New Perspective on Literary History](#/2)
 - **III.** [Data in the Humanities](#/3)
 - **IV.** [Digital Corpora](#/4)
-- **V.** [Cultural Hacking](#/5)
-- **VI.** [The DraCor API](#/6)
+- **V.** [The DraCor API](#/5)
+- **VI.** [Cultural Hacking](#/6)
 
 ---
 
@@ -108,6 +108,7 @@ http://whatisdigitalhumanities.com/
 <br /><br />
 "Digital humanities (DH) is an area of scholarly activity at the intersection of computing or information technologies and the disciplines of the humanities."
 
+<br />
 <small>Source: https://en.wikipedia.org/wiki/Digital_humanities</small>
 
 --
@@ -116,7 +117,7 @@ http://whatisdigitalhumanities.com/
 
 ![Mapping DH (Patrick Sahle)](images/Patrick_Sahle_-_Mapping_DH_en.png)<!-- .element width="500px;" -->
 
-Chart by Patrick Sahle, University of Cologne. – DH are "radically interdisciplinary" (Stephen Ramsay 2011).<!-- .element: style="font-size:0.8em;" -->
+Chart by Patrick Sahle, University of Wuppertal. – DH are "radically interdisciplinary" (Stephen Ramsay 2011).<!-- .element: style="font-size:0.8em;" -->
 
 --
 
@@ -124,7 +125,7 @@ Chart by Patrick Sahle, University of Cologne. – DH are "radically interdiscip
 
 <br />
 - team work rather than solitary work
-- *projects* as basic units of research:
+- *projects* as basic units of research
 - emphasis on building/crafting
 - alternative teaching formats:
   - hackathons, workshops, summer/winter/spring schools
@@ -150,14 +151,6 @@ Chart by Patrick Sahle, University of Cologne. – DH are "radically interdiscip
 
 --
 
-## "The Great Unread"
-
-<br />
-- coined by Margret Cohen in "The Sentimental Education of the Novel" (1999), p. 23 ([see Google Books](https://books.google.com/books?id=tOgLRyVa4DYC&pg=PA23))
-- many attempts in the past two decades to turn this diagnosis into a practice, cf. workshop titles like: "Text Mining the Great Unread: Data-Intensive Methods and Digital Tools for Analysis of Texts in the Humanities and Social Sciences" ([Aarhus University, 2016](https://kursuskatalog.au.dk/da/course/64216))
-
---
-
 ## "Anecdotal Evidence"
 
 <br />
@@ -168,19 +161,27 @@ Chart by Patrick Sahle, University of Cologne. – DH are "radically interdiscip
 
 --
 
+## "The Great Unread"
+
+<br />
+- coined by Margret Cohen in "The Sentimental Education of the Novel" (1999), p. 23 ([see Google Books](https://books.google.com/books?id=tOgLRyVa4DYC&pg=PA23))
+- many attempts in the past two decades to turn this diagnosis into a practice, cf. workshop titles like: "Text Mining the Great Unread: Data-Intensive Methods and Digital Tools for Analysis of Texts in the Humanities and Social Sciences" ([Aarhus University, 2016](https://kursuskatalog.au.dk/da/course/64216))
+
+--
+
 ## Distant Reading
 
 <br />
-<!-- .element style="text-align: left;" -->"[…] if you want to look beyond the canon […], close reading will not do it. It’s not designed to do it, it’s designed to do the opposite. […] we know how to read texts, now let’s learn how *not* to read them. Distant reading: where distance […] *is a condition of knowledge* […]."
+<!-- .element style="text-align: left;" -->"[…] if you want to look beyond the canon […], close reading will not do it. It’s not designed to do it, it’s designed to do the opposite. […] we know how to read texts, now let’s learn how *not* to read them. **Distant reading**: where distance […] *is a condition of knowledge* […]."
 
 <br />
 <small>Franco Moretti: *Conjectures on World Literature*. In: *New Left Review* 1 (2000).</small>
 
 --
 
-
 ## Distant Reading, or, …
 
+<br />
 - Scalable Reading (Martin Mueller)
 - Macroanalysis (Matthew Jockers)
 - …
@@ -220,7 +221,7 @@ Chart by Patrick Sahle, University of Cologne. – DH are "radically interdiscip
 
 ![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
 
-<small>"Distant-Reading Showcase", poster presented at #DHd2016 in Leipzig (9 Mar 2016).<br />Download in full-res (28.88 MB) via Figshare. DOI: [10.6084/m9.figshare.3101203.v1](https://dx.doi.org/10.6084/m9.figshare.3101203.v1).</small>
+<small>"Distant-Reading Showcase", poster presented at #DHd2016 in Leipzig (9 Mar 2016).<br />Download in full-res (28.88 MB) via Figshare. DOI: [10.6084/m9.figshare.3101203.v2](https://doi.org/10.6084/m9.figshare.3101203.v2).</small>
 
 --
 
@@ -310,7 +311,7 @@ BMP – JPEG/JPG – PNG – TIF/TIFF – GIF
 
 PPT/PPTX – XLS/XLSX – DOC/DOCX – RTF – ODT
 
-TXT – CSV – HTML – XML – PDF – …
+TXT – CSV – JSON – HTML – XML – PDF – …
 
 <br />
 Proprietary vs. Open Standards
@@ -473,16 +474,6 @@ First six lines of Goethe's tragedy "Faust" (1808) in TEI.
 
 --
 
-### Example 2 (cont'd)
-
-Frontend dracor.org
-
-![DraCor frontpage)](images/dracor-frontpage.png)<!-- .element width="800px;" -->
-
-https://dracor.org/
-
---
-
 ### Example 3
 
 ![Digital evolution of the text/corpus](images/tolstoy-digital.jpg)<!-- .element width="640px;" -->
@@ -509,59 +500,18 @@ https://dracor.org/
 # Chapter V
 
 <br />
-## Cultural Hacking
-
---
-
-### Last Chapter for Today (1/4)
-
-<br />
-- "hacking culture": DH is about developing a specific kind of creativity
-- answering (research) questions with data
-- learning how to get from (research) question → data → numbers/visualisations → interpretation
-- especially the first and last step are what makes a digital humanist
-
---
-
-### Last Chapter for Today (2/4)
-
-<br />
-- for illustration: we want to know how much the German National Library weighs on books (initially to learn more about the extent of the printed cultural heritage)
-- how do you go about this:
-  - find suitable data
-  - harvest/extract/convert data
-  - calculate answer using appropriate technology
-  - interpretation
-
---
-
-### Last Chapter for Today (3/4)
-
-<br />
-![German National Library, pic from Wikimedia Commons](images/dnb-german-library-leipzig-2008.jpg)<!-- .element width="900px;" -->
-<small>German National Library; Leipzig, Saxony (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_%28German_Library%29_2008-Feb.jpg))</small>
-
-- they publicly offer a [data set](https://www.dnb.de/metadatendienste) with all their catalogue data (RDF format, > 21 GB)
-
---
-
-### Last Chapter for Today (4/4)
-
-<br />
-- extracted data and fed it into Elasticsearch (so we can do all sorts of things with the data in real-time)
-- found extent info for 6 Mio. entities (books), totaling around 1 billion pages (average: 166 pages/book)
-- assuming that one page weighs 2,5 grams, multiply with number of pages and divide by two gives us: 1.25 mio. kilograms = 1,250 tons of pages (not counting book covers, etc.)
-- account of this 4-hour hackathon: ["Empirical Data on Over-Length Books"](http://weltliteratur.net/Empirical-Data-on-Over-Length-Books/)
-
----
-
-# Chapter VI
-
-<br />
 ## The DraCor API¹
 
 <br /><br />
 <small>¹ API: Application Programming Interface<br /><br />
+
+--
+
+### Drama Corpora Project (DraCor)
+
+![DraCor frontpage)](images/dracor-frontpage.png)<!-- .element width="800px;" -->
+
+https://dracor.org/
 
 --
 
@@ -640,7 +590,9 @@ Output in LibreOffice Calc (Microsoft Excel is similar).
 
 --
 
-### Ready-Made Files
+## Ready-Made Files
+
+(Preparation for the Coming Two Days)
 
 <br />
 
@@ -648,6 +600,55 @@ Output in LibreOffice Calc (Microsoft Excel is similar).
   * RusDraCor: https://owncloud.gwdg.de/index.php/s/0rJVhnD6pfZDjCf (179 plays)
   * GerDraCor: https://owncloud.gwdg.de/index.php/s/4gIu6Kz1fpbPmx0 (473 plays)
 * Corpus of German-Language Fiction (txt): https://doi.org/10.6084/m9.figshare.4524680.v1 (2,735 files)
+
+---
+
+# Chapter VI
+
+<br />
+## Cultural Hacking
+
+--
+
+### Last Chapter for Today (1/4)
+
+<br />
+- "hacking culture": DH is about developing a specific kind of creativity
+- answering (research) questions with data
+- learning how to get from (research) question → data → numbers/visualisations → interpretation
+- especially the first and last step are what makes a digital humanist
+
+--
+
+### Last Chapter for Today (2/4)
+
+<br />
+- for illustration: we want to know how much the German National Library weighs on books (initially to learn more about the extent of the printed cultural heritage)
+- how do you go about this:
+  - find suitable data
+  - harvest/extract/convert data
+  - calculate answer using appropriate technology
+  - interpretation
+
+--
+
+### Last Chapter for Today (3/4)
+
+<br />
+![German National Library, pic from Wikimedia Commons](images/dnb-german-library-leipzig-2008.jpg)<!-- .element width="900px;" -->
+<small>German National Library; Leipzig, Saxony (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_%28German_Library%29_2008-Feb.jpg))</small>
+
+- they publicly offer a [data set](https://www.dnb.de/metadatendienste) with all their catalogue data (RDF format, > 21 GB)
+
+--
+
+### Last Chapter for Today (4/4)
+
+<br />
+- extracted data and fed it into Elasticsearch (so we can do all sorts of things with the data in real-time)
+- found extent info for 6 Mio. entities (books), totaling around 1 billion pages (average: 166 pages/book)
+- assuming that one page weighs 2,5 grams, multiply with number of pages and divide by two gives us: 1.25 mio. kilograms = 1,250 tons of pages (not counting book covers, etc.)
+- account of this 4-hour hackathon: ["Empirical Data on Over-Length Books"](http://weltliteratur.net/Empirical-Data-on-Over-Length-Books/)
 
 ---
 
