@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Fischer/Trilcke: Introduction to Stylometry – Potsdam, 28 August 2019</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/white.css" />
+
+    <!-- Adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+          <script type="text/template">
+
+# Introduction to Stylometry
+
+📚 &nbsp; &nbsp; <font style="font-size:4rem;width:100%;">💻</font> &nbsp; &nbsp; 🎮
+
+<br />
+[Frank Fischer](https://www.hse.ru/en/org/persons/182492735)¹ · [Peer Trilcke](https://www.uni-potsdam.de/lit-19-jhd/peertrilcke.html)²
+
+¹Higher School of Economics, Moscow &nbsp;·&nbsp; DARIAH-EU 🇪🇺<!-- .element: style="font-size:0.8em;" --><br />
+²University of Potsdam &nbsp;·&nbsp; Theodor-Fontane-Archiv
+
+<small>(Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**, **[@peertrilcke](https://twitter.com/peertrilcke)**)</small>
+
+<br />
+<br />
+<!-- .element: style="font-size:0.7em;" -->This presentation: [lehkost.github.io/slides/2019-08-28-potsdam-stylometry/](https://lehkost.github.io/slides/2019-08-28-potsdam-stylometry/)
+
+<!-- .element: style="font-size:0.7em;" -->Big thanks to Daniil Skorinkin for letting us reuse his material!
+
+<br /><br />
+[Summer School "Debating Data"](https://www.uni-potsdam.de/de/isc/kurse/summerschool/dd.html) · University of Potsdam · 28 August 2018
+
+--
+
+## TOC
+
+<br />
+1. The Philological Detective
+2. So, what is Stylometry?
+3. Stylometry, State of the Art
+4. Beyond Authorship
+5. Stylo Package
+
+---
+
+# 1. The Philological Detective
+
+--
+
+## Who wrote "To Kill a Mockingbird"?
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4831405/HarperLeeToKill.jpg)<!-- .element width="640px;" -->
+
+--
+
+## Dispute broke out in 2015
+### over this book
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4861573/watchman.png)<!-- .element height="460px;" -->
+
+--
+
+## Two Books
+
+![caption](http://www.vothouse.ru/img/books/ubit-peresmeshnika-harper-lee.jpg)<!-- .element height="500px;" -->
+![caption](https://images.gr-assets.com/books/1455621546l/26889280.jpg)<!-- .element height="500px;" -->
+
+--
+
+## Stylometry to the Rescue!
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4861629/wallstreet.png)<!-- .element height="500px;" -->
+
+Source: https://www.wsj.com/articles/data-miners-dig-into-go-set-a-watchman-1437096631
+
+--
+
+## Harper Lee and selected authors of the American South
+
+![caption](https://web.archive.org/web/20181122213129if_/http://dh2016.adho.org/static/data/169/100000000000096000000960D9FF05DB80EB7F5B.png)<!-- .element height="500px;" -->
+
+<!-- .element: style="font-size:0.75em;" -->Source: Eder/Rybicki: [Go Set A Watchman while we Kill the Mockingbird in Cold Blood, with Cats and Other People](https://web.archive.org/web/20180907193820/http://dh2016.adho.org/abstracts/70) (2016)
+
+--
+
+## Network analysis of the same collection of novels
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4239240/100002010000080000000400EB1E59515603655E.png)<!-- .element height="500px;" -->
+
+<!-- .element: style="font-size:0.75em;" -->Source: Eder/Rybicki: [Go Set A Watchman while we Kill the Mockingbird in Cold Blood, with Cats and Other People](https://web.archive.org/web/20180907193820/http://dh2016.adho.org/abstracts/70) (2016)
+
+---
+
+# 2. So, what is Stylometry?
+
+--
+
+## Stylometry is …
+
+<br />
+… "the analytic study of literary styles, especially as applied to questions of authorship"
+
+<br />
+Source: https://www.dictionary.com/browse/stylometry
+
+--
+
+## Stylometry is …
+
+<br />
+… based on "main assumption underlying stylometric studies is that authors have an unconscious as well as a conscious aspect to their style"
+
+<br />
+Source: [Encyclopaedia of Statistical Sciences](https://onlinelibrary.wiley.com/doi/10.1002/0471667196.ess1174.pub2)
+
+--
+
+## "Stylometric studies …
+
+<br />
+… in all their variety of material and method, have two features in common: the electronic texts they study have to be coaxed to yield numbers, and the numbers themselves have to be processed via statistics."
+
+<br />
+Maciej Eder, Jan Rybicki, Mike Kestemont: [‘Stylo’: a package for stylometric analyses](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxjb21wdXRhdGlvbmFsc3R5bGlzdGljc3xneDpmM2U3OGUzZTM2YjkyYzM) (2017)
+
+--
+
+## What to Count
+
+<br />
+- word frequencies
+- n-grams of characters
+  - 'ics', 'bere', 'ntise'
+- headwords
+  - (animal/animals)
+- parts of speech
+- syntactic structures
+- meter (in verse)
+- …
+
+--
+
+## What else?
+
+<br />
+- total size of an author's dictionary per text
+- hapax legomena (see A.&nbsp;Q. Morton: ["Once. A Test of Authorship Based on Words which are not Repeated in the Sample"](https://doi.org/10.1093/llc/1.1.1), 1986)
+- sentence length
+- punctuation marks
+- errors and peculiarities of punctuation (in unedited text)
+
+--
+
+## But why would you do that, <br />"measure" a text like this?
+
+<br />
+- disputes over authorship
+- comparison of genres
+- comparison of male and female voices
+- comparison of originals and translations
+- studies of the human "stylome" (idiostyle); early vs. late texts
+- forensic linguistics, security, anonymity
+
+--
+
+It all started, of course, with the question of authorship.
+
+<br />
+Which cases of do you remember?
+
+--
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3448263/homer.png)<!-- .element height="250px;" -->
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3448265/pushkin.png)<!-- .element height="250px;" -->
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3448269/Shakespeare.png)<!-- .element height="250px;" -->
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3448272/_______-735x1024.jpg)<!-- .element height="250px;" -->
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3448275/JKRowling.jpg)<!-- .element height="250px;" -->
+![caption](https://upload.wikimedia.org/wikipedia/ru/f/f5/M_Ageev.jpeg)<!-- .element height="250px;" -->
+
+--
+
+## Disputes Over Authorship
+
+<br />
+"Presumably, each national literature has its own famous unsolved attribution case, such as the Shakespearean canon, a collection of Polish erotic poems of the 16th century ascribed to Mikołaj Sęp Szarzyński, the Russian epic poem *The Tale of Igor’s Campaign*, and many other."
+
+<br />
+Maciej Eder: [Style-Markers in Authorship Attribution: <br />A Cross-Language Study of the Authorial Fingerprint](https://www.wuj.pl/UserFiles/File/SPL%206/6-SPL-Vol-6.pdf) (2011)
+
+--
+
+## Text Attribution Through Word Count
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3446480/De_falso_credita_et_ementita_Constantini_Donatione_declamatio__1_.png)<!-- .element height="300px;" -->
+
+- [Lorenzo Valla](https://en.wikipedia.org/wiki/Lorenzo_Valla) (c. 1407–1457), Italian humanist, rhetorician and priest
+- around 1439/1440 he wrote "Discourse on the Forgery of the Alleged Donation of Constantine"
+- showed that the "Donation of Constantine" could not have been written in the 4th century – wrong kind of Latin!
+
+--
+
+## First Ventures
+
+- 1851: English mathematician Augustus de Morgan suggests the length of words as an indicator of individual style
+- 1873: New Shakespeare Society promoting the use of quantitative methods to resolve cases of disputed authorship and chronology around the Shakespearean Canon (F.&nbsp;J. Furnivall, F.&nbsp;G. Fleay)
+- 1887: T. C. Mendenhall, ["The Characteristic Curves of Composition"](https://www.jstor.org/stable/1764604), first known work on the quantification of authorship
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3447460/De_falso_credita_et_ementita_Constantini_Donatione_declamatio__1_.jpeg)<!-- .element height="300px;" -->
+
+--
+
+## Dawn of Stylometry
+
+<br />
+- 1867: L. Campbell, "The Sophisties and Polilicus of Plato"
+- 1880: W. Dittenberger, "Sprachliche Kriterien für die Chronologie der Platonischen Dialoge"
+- 1890: W. Lutosławski, "Principes de stylométrie"
+- 1915: N.&nbsp;A. Morozov: "Linguistic spectra" (inspired by Lutosławski)
+- 1916: A.&nbsp;A. Markov: "Ob odnom primenenii statističeskogo metoda" – apparently, the first one to realise the importance of function words
+
+--
+
+## Stylometric Progress
+
+<br />
+- 1937: G.&nbsp;M. Bolling, "The past Tense of 'To Be' in Homer"
+- 1938: J.&nbsp;B. Carroll: "Diversity of vocabulary and the harmonic series law of word-frequency distribution"
+
+--
+
+## Breakthrough in the '60s
+### The Federalist Papers
+
+<br />
+- a series of landmark articles from the American Revolution
+- 12 of them controversial (written by Hamilton or Madison?)
+- Frederick Mosteller, David L. Wallace: "Inference in an Authorship Problem" (1963)
+- determination of the authorship of the disputed papers, proposition a standard method for solving authorship problems
+
+--
+
+## Mosteller & Wallace, 1963
+
+<br />
+- "The function words of the language appear to be a fertile source of discriminators, and luckily the high-frequency words are the strongest."
+- "it is important to have a variety of sources of material, to allow 'between writings' variability to emerge"
+- "In summary, the following points are clear:"
+  - "Madison is the principal author. These data make it possible to say far more than ever before that the odds are enormously high that Madison wrote the 12 disputed papers."
+  - "While choice of under­lying constants (choice of prior distributions) matters, it doesn’t matter very much, once one is in the neighborhood of a distribution suggested by a fair body of data."
+
+--
+
+## Pauline Epistles
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4861933/morton.gif)<!-- .element height="450px;" -->
+
+A. Q. Morton: The Authorship of the Pauline Epistles: A Scientific Solution (1965)
+
+--
+
+## J.&nbsp;F. Burrows (1/2)
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3448099/BurrowsCompToCrit.jpg)<!-- .element height="500px;" -->
+
+--
+
+## J.&nbsp;F. Burrows (2/2)
+
+<br />
+"Most readers and critics behave as though common prepositions, conjunctions, personal pronouns, and articles – the parts of speech which make up at least a third of fictional works in English – do not really exist. But far from being a largely inert linguistic mass which has a simple but uninteresting function, these words and their frequency of use can tell us a great deal about the characters who speak them."
+
+<br />
+Preface to "Computation into Criticism", 1987
+
+--
+
+## Delta Method
+
+<br />
+- standard measure in stylometry since 2002
+- based on the frequency of words (or character strings)
+- very simple math
+
+--
+
+## Z-Score
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3459445/Zscore.png)
+
+(calculated for each word in each text)
+
+where
+
+- x: frequency of the word in a text
+- µ: general word frequency in the corpus
+- σ: standard deviation of the word frequency in the corpus
+
+--
+
+## And for each text we get 100/300/500/1000 <br />of those numbers:
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4861918/zscores.png)
+
+--
+
+## Now, the "proximity" of authors can simply be <br />measured by measuring a line, like this:
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4861949/evklidovo-rasstoyanie-primer.jpg)
+
+--
+
+## Only in 100/300/1000-dimensional space
+
+<br />
+![caption](https://1.bp.blogspot.com/-pgMAHiIWvuw/Tql5HIXNdRI/AAAAAAAABLI/I2zPF5cLRwQ/s1600/clust.gif)
+
+--
+
+## Admittedly, that sounds … a little far-fetched.
+
+<br />
+## Yes. But it works.<!-- .element: class="fragment" -->
+
+--
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4571508/1_CA_100_MFWs_Culled_0__Classic_Delta__001.png)<!-- .element height="580px;" -->
+
+---
+
+# 3. Stylometry, State of the Art
+
+--
+
+## Stylometry Beyond Authorship Attribution:
+
+<br />
+- genres
+- influence of editors
+- putting a date on writings
+- evolution of an author's style
+- gender, age
+- influence of translators
+
+--
+
+## J. K. Rowling or Robert Galbraith?
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4862881/galbraith_mds.png)<!-- .element height="500px;" -->
+
+--
+
+## Shakespeare or Marlowe?
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4239325/Rollingshakespeare.png)<!-- .element height="350px;" -->
+
+<br />
+"Henry VI": sequential analysis.
+
+--
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3448899/ShakespeareGuardian.png)<!-- .element height="520px;" -->
+
+Source: [The Guardian](https://www.theguardian.com/culture/2016/oct/23/christopher-marlowe-credited-as-one-of-shakespeares-co-writers) (2016)
+
+--
+
+## Elena Ferrante
+
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4239252/Ferrante.png)<!-- .element height="520px;" -->
+
+---
+
+# 4. Beyond Authorship
+
+--
+
+"But the study of literature and authorship is not only who wrote what, and who didn’t: it can be also about similarities and differences between texts by different authors."
+
+<br />
+<!-- .element: style="font-size:0.8em;" -->Eder/Rybicki: [Go Set A Watchman while we Kill the Mockingbird in Cold Blood, with Cats and Other People](https://sites.google.com/site/computationalstylistics/projects/lee_vs_capote) (2016)
+
+--
+
+## Genres: Shakespeare
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4239772/shake_genres.png)<!-- .element height="500px;" -->
+
+
+--
+
+## Date: Dickens
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4241193/Screen_Shot_2017-10-19_at_09.25.08.png)<!-- .element height="500px;" -->
+
+--
+
+## Date: Tolstoy
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4241191/Screen_Shot_2017-10-19_at_09.25.15.png)<!-- .element height="500px;" -->
+
+--
+
+## Date: 1000 Novels
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4241176/Screen_Shot_2017-10-19_at_09.21.55.png)<!-- .element height="500px;" -->
+
+--
+
+## Virginia Woolf: "Night and Day" (Polish translation)
+
+<br />
+- change of translator: Anna Kołyszko → Magda Heydel
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/4270253/Screen_Shot_2017-10-27_at_12.46.45.png)<!-- .element height="300px;" -->
+
+<br />
+Source: Maciej Eder, Jan Rybicki.
+
+--
+
+## Outside of Literature (1/2)
+
+<br />
+![caption](https://s3.amazonaws.com/media-p.slid.es/uploads/641147/images/3448190/Unabomber.jpg)<!-- .element height="460px;" -->
+
+--
+
+## Outside of Literature (2/2)
+
+<br />
+- "Unabomber" Ted Kaczynski perpetrated a number of bomb attacks on universities and airlines between 1978 and 1995
+- promised to stop if his 35,000-word anti-industrialist "manifesto" was published in major newspapers
+- distinctive writing style and turns of phrase enabled him to be identified
+
+--
+
+### Adversarial stylometry
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/-b0Ta9h62_E?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+Michael Brennan and Rachel Greenstadt: Deceiving Authorship Detection (2011)
+
+---
+
+# 5. Stylo Package
+
+--
+
+## Stylo
+
+<br />
+- package for stylometry written for R
+- built-in Delta function
+- many other metrics
+- graphical interface!
+
+--
+
+## Stylo
+
+<br />
+- about the program: [developers' website](http://sites.google.com/site/computationalstylistics/stylo)
+- [how-to document](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxjb21wdXRhdGlvbmFsc3R5bGlzdGljc3xneDpmM2U3OGUzZTM2YjkyYzM) from the developers
+- M. Eder, M. Kestemont, J. Rybicki: [Stylometry with R: A Package for Computational Text Analysis](https://journal.r-project.org/archive/2016-1/eder-rybicki-kestemont.pdf) (2016)
+
+--
+
+## Stylo: Main Functions
+
+<br />
+- stylo ()
+- classify ()
+- rolling.delta (), rolling.classify ()
+- oppose ()
+
+--
+
+## stylo()
+
+<br />
+- calculation and visualisation of stylistic proximity
+- different ways of clustering (grouping) texts by proximity
+- display of multidimensional "stylistic space" of texts on a 2D plane (PCA, MDS, t-SNE)
+- lists of most frequently used words, frequency tables, etc.
+
+--
+
+## classify()
+
+<br />
+- text classification with stylometry features
+- main tool for actual authorship attribution
+- employs standard machine-learning algorithms
+- requires two sets of documents
+  - training (primary_set)
+  - test (secondary_set)
+
+--
+
+## rolling.delta()
+
+<br />
+- dynamic changes in a text
+- text window of adjustable size
+
+--
+
+## oppose()
+
+<br />
+- contrastive analysis
+- words significantly preferred/avoided
+- comparative studies (e.g., male vs. female voices)
+
+---
+
+## Preparations
+
+<br /><br />
+Install R, RStudio, Gephi.
+
+<br /><br />
+Hands-on!
+
+          </script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: '../reveal/plugin/markdown/marked.js' },
+          { src: '../reveal/plugin/markdown/markdown.js' },
+          { src: '../reveal/plugin/notes/notes.js', async: true },
+          { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
