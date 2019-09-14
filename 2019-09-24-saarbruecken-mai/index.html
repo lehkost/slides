@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>(Der Mai im Roman) · Vortragsfolien · 26. Germanistentag · Saarbrücken · 24. September 2019</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### „Als einst am 1. Mai die Welt begann“
+
+## Berechnung und Interpretation der Überpräsenz des Wonnemonats im deutschsprachigen Roman
+
+<br />
+🌿<!-- .element: style="font-size:1.4em;" -->
+
+<br />
+[Frank Fischer](https://www.hse.ru/en/org/persons/182492735)
+
+<br />
+<!-- .element: style="font-size:0.8em;" -->Higher School of Economics, Moskau &nbsp;·&nbsp; DARIAH-EU
+
+<br /><br /><br />
+<!-- .element: style="font-size:0.6em;" -->[26. Germanistentag](http://www.germanistentag2019.de/) &nbsp;·&nbsp; Saarbrücken &nbsp;·&nbsp; 24. September 2019
+
+--
+
+„Die meisten finnischen Romane <br />spielen im Sommer.“
+
+<br /><br />
+<!-- .element: style="font-size:0.8em;" -->Stefan Moster, *Im Gespräch*, <br />Deutschlandradio Kultur, 8. 10. 2014
+
+--
+
+![Logo von Gutenberg-DE](images/gutenberg-de-logo.jpg)
+
+https://gutenberg.spiegel.de/
+
+--
+
+### Gutenberg-DE Edition 13 DVD-ROM (2013)
+
+<br />
+* Teilkorpus mit deutschsprachigen fiktionalen Texten (891 MB reiner Text)
+  * extrahiert wurden alle Texte der Typen: ```<meta name="type" content="{fiction,narrative,novelette}"/>```
+  * daraus eliminiert wurden Übersetzungen (in den Metadaten sind zum Teil Übersetzer angegeben: ```<meta name="translator" content="[...]"/>```)
+  * wegen fehlender oder falscher Metadaten war eine manuelle Nachbearbeitung nötig
+* insgesamt 549 Autoren und 2735 Werke von ca. 1510 bis in die 1940er-Jahre (Schwerpunkt liegt zwischen 1840–1930)
+
+--
+
+### Gefangen im Fiktionsfeld?
+
+<br />
+„Das Datum spielt keine andere Rolle als jede andere Charakterisierung eines Romantages auch, es ist nichts als ein Stück des Wirklichkeitsstoffes und ist in der Fiktion ebenso fiktiv wie Haus und Straße, Feld und Wald, wie die Städte Mannheim und Köln, [...]. Denn sobald Zeit und Ort das Erlebnisfeld fiktiver Personen, d. h. ein Fiktionsfeld abgeben, ist es um ihre ’Wirklichkeit‘ getan, mag auch das Fiktionsfeld Bestandteile aufweisen, die einer mehr oder weniger allgemein bekannten Wirklichkeit entstammen.“
+
+<br />
+<!-- .element: style="font-size:0.8em;" -->Käte Hamburger: *Die Logik der Dichtung*, Stuttgart 1957, S. 57
+
+--
+
+### Fünf Beispieltage
+
+<br />
+* Georg Büchner: *Lenz* (20. Jänner)
+* Arthur Schnitzler: *Leutnant Gustl* (4. April)
+* Stefan Zweig: *Schachnovelle*  (27. Juli)
+* Theodor Fontane: *Effi Briest* (3. Oktober)
+* J. W. Goethe: *Die Leiden des jungen Werthers* (21.&nbsp;Dezember)
+
+--
+
+### Ergebnisse fürs Gesamtkorpus
+
+![Ergebnisse für Gesamtkorpus](images/gesamtkorpus-dt.png)<!-- .element width="800px;" -->
+
+<small>Datums- (rot) und Monatsnennungen (grau).</small>
+
+--
+
+![gesamtkorpus-dt-crop](images/per-genre.png)
+
+<small>Anzahl an Datumsnennungen pro Werk.</small>
+
+--
+
+### TIWOLI-App
+
+![TIWOLI-App](images/tiwoli-app.png)
+
+Für **[Android](https://play.google.com/store/apps/details?id=de.wannauchimmer.apps.tiwoli)** und **[iOS](https://appsto.re/de/I69sfb.i)**.
+
+--
+
+Vielen Dank.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      history: true,
+
+    // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: '../reveal/plugin/markdown/marked.js' },
+        { src: '../reveal/plugin/markdown/markdown.js' },
+        { src: '../reveal/plugin/notes/notes.js', async: true },
+        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+    </script>
+  </body>
+</html>
