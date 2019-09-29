@@ -1,0 +1,26 @@
+
+.reveal {
+  font-size: 24px; }
+
+.reveal h1 {
+  font-size: 2.2em; }
+
+.reveal h2 {
+  font-size: 1.4em; }
+
+.reveal h3 {
+  font-size: 1.2em; }
+
+.reveal h4 {
+  font-size: 1em; }
+
+.reveal a {
+  color: #2048a0; }
+
+.reveal a:hover {
+  color: #4068c0; }
+
+.reveal section img {
+  border: 4px none #000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}

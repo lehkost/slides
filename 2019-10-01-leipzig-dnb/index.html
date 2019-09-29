@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Frank Fischer: Liebe &amp; Tod in der DNB (Update des Kölner Vortrags) · Leipzig · 01.10.2019</title>
+
+    <link rel="stylesheet" href="../reveal/css/reveal.css" />
+    <link rel="stylesheet" href="../reveal/css/theme/white.css" />
+
+    <!-- Adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<textarea data-template>
+
+# Liebe &amp; Tod in der <br />Deutschen Nationalbibliothek
+
+## Der DNB-Katalog als Forschungsobjekt der <br />digitalen Literaturwissenschaft
+
+<br />
+<!-- .element: style="font-size:1.2em;" -->[**Frank Fischer**](https://www.hse.ru/en/org/persons/182492735)
+
+Higher School of Economics, Moskau &nbsp;·&nbsp; DARIAH-EU<!-- .element: style="font-size:0.9em;" -->
+
+<!-- .element: style="font-size:0.8em;" -->Twitter: [**@umblaetterer**](https://twitter.com/umblaetterer)
+
+<br />
+<!-- .element: style="font-size:0.8em;" -->(= aktualisierte Version des Vortrags mit Robert Jäschke [HU Berlin] am 1. März 2018 in Köln)
+
+<br />
+<!-- .element: style="font-size:0.8em;" -->Diese Präsentation: [**bit.ly/2m5gAna**](https://bit.ly/2m5gAna)
+
+<br />
+[IBG-Forum Wissenschafts- und Buchgeschichte 2019](https://www.dnb.de/DE/Kulturell/Veranstaltungskalender/Fachveranstaltungen/wissenschaftsUndBuchgeschichte.html) &nbsp;·&nbsp; Leipzig &nbsp;·&nbsp; 1. Oktober 2019
+
+--
+
+## Inhalt
+
+<br />
+1. [Intro](#/1)
+2. [Beschreibung des Frameworks](#/2)
+3. [Output](#/3)
+4. [Anwendungsfall 1: Romantitel](#/4)
+5. [Anwendungsfall 2: Romanumfänge](#/5)
+6. [Fazit](#/6)
+7. [Bibliografie](#/7)
+
+---
+
+# 1. Intro
+
+--
+
+## DNB FTW!
+
+<br />
+![DNB-Gebäude am Deutschen Platz in Leipzig](images/dnb-german-library-leipzig-2008.jpg)<!-- .element width="1040px" -->
+
+<br />
+DNB-Gebäude am Deutschen Platz in Leipzig (2008). (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_(German_Library%29_2008-Feb.jpg))
+
+--
+
+## Ausgangslage
+
+<br />
+- Sammelauftrag der Deutschen Nationalbibliothek (DNB) beginnt 1913 und bezieht sich auf »lückenlos alle deutschen und deutschsprachigen Publikationen« ([»Wir über uns«](http://www.dnb.de/DE/Wir/wir_node.html), 16.&nbsp;März 2017)
+- Datendienst der DNB: https://data.dnb.de/opendata/ – dritteljährlicher Komplettabzug der Katalogdaten im RDF-Format (CC0-Lizenz 😊)
+- Stand 23.&nbsp;Juni 2017: 14 102 309 Datensätze (Stand 10.&nbsp;Juli 2019: 15 340 604 Datensätze)
+- **bisher kaum Versuche der Nutzbarmachung für geisteswissenschaftliche Studien**
+- eine überzeugende Ausnahme:
+ - Häntzschel, Günter; Hummel, Adrian; Zedler, Jörg (2009): *Deutschsprachige Buchkultur der 1950er Jahre. Fiktionale Literatur in Quellen, Analysen und Interpretationen.* Wiesbaden: Harrassowitz 2009. ([Google Books](https://books.google.com/books?id=t88xc3CzK60C))
+
+--
+
+## Ziele dieses Vortrags
+
+<br />
+- allgemein formuliert:
+ - Nutzbarmachung von Katalogmetadaten zur Bearbeitung konkreter literaturwissenschaftlicher Forschungsfragen
+- technisch formuliert:
+ - einfaches Framework, um verschiedene Aspekte des DNB-Katalogs zu untersuchen
+- zwei Anwendungsszenarien aus der Praxis der digitalen Literaturwissenschaft:
+ - Romantitel
+ - Romanumfänge
+
+--
+
+## Romane in der DNB
+
+<br />
+- **~ 180 000** Romane in der DNB (laut [»rdau:P60493«](http://www.rdaregistry.info/Elements/u/#P60493), Label: »has other title information«)
+- Achtung: das ist nicht die Gesamtanzahl an tatsächlichen Romanen
+ - Grund: Nachauflagen und Übersetzungen zählen mit hinein, außerdem ist die Befüllung des Feldes teils inkonsistent
+- Größenordnung zum Vergleich:
+ - Franco Morettis Untersuchung zur Länge von Romantiteln von 2009 (»Style Inc. Reflections on **Seven Thousand** Titles (British Novels, 1740–1850)«)
+
+---
+
+# 2. Beschreibung des Frameworks
+
+--
+
+## Art und Umfang der DNB-Daten
+
+<br />
+- typische Linked-Data-Formate (RDF/XML, JSON-LD, usw.)
+- üblicher Ansatz:
+ - geeignete Datenbank (Triple-Store)
+ - Anfragen mit Hilfe der entsprechenden Anfragesprache (i.&nbsp;A. SPARQL)
+ - flexible Anfragen möglich, leichte Einbindung weiterer Datenquellen
+- Größe der Daten (unkomprimiert ca. 21 GB): hohe Anforderungen an die Hardware, Konfiguration und Optimierung der Datenbank aufwendig
+- Ziele:
+ - kompakte und leicht nachzuvollziehende Lösung
+ - was schön wäre: Bereitstellung einer fertig konfigurierten Arbeitsumgebung in Form eines Docker-Containers, in der die Daten in einer Datenbank verfüg- und analysierbar sind
+
+--
+
+## Datensatz
+
+- »Titeldaten der DNB«: 14 102 309 Datensätze und 227 212 707 Tripel (»Fakten«)
+- neben Angaben zu Büchern auch Angaben zu weiteren Medientypen wie etwa Zeitschriften
+- Titel, Erscheinungsjahr, bei Buchobjekten meist auch Seitenanzahl und Format
+
+```xml
+<rdf:Description rdf:about="http://d-nb.info/977225631">
+	<rdf:type rdf:resource="http://purl.org/ontology/bibo/Document"/>
+	<dcterms:medium rdf:resource="http://rdaregistry.info/termList/RDACarrierType/1044"/>
+	<owl:sameAs rdf:resource="http://hub.culturegraph.org/resource/DNB-977225631"/>
+	<dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(DE-101)977225631</dc:identifier>
+	<bibo:isbn13 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9783828979253</bibo:isbn13>
+	<rdau:P60521 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pp. : EUR 99.90 (Gesamtw. in 50 Bd.)</rdau:P60521>
+	<bibo:isbn10 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3828979254</bibo:isbn10>
+	<rdau:P60521 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pp. : EUR 99.90 (Gesamtw. in 50 Bd.)</rdau:P60521>
+	<dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(OCoLC)163100976</dc:identifier>
+	<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Die Leiden des jungen Werther</dc:title>
+	<dcterms:creator rdf:resource="http://d-nb.info/gnd/118540238"/>
+	<marcRole:ctb rdf:resource="http://d-nb.info/gnd/104746246"/>
+	<dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weltbild</dc:publisher>
+	<rdau:P60163 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Augsburg</rdau:P60163>
+	<rdau:P60333 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Augsburg : Weltbild</rdau:P60333>
+	<isbd:P1053 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">174 S.</isbd:P1053>
+	<dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2005</dcterms:issued>
+	<rdau:P60493 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roman</rdau:P60493>
+	<dcterms:isPartOf rdf:resource="http://d-nb.info/977245608"/>
+</rdf:Description>
+```
+
+--
+
+## Linked Data
+
+
+- Beschreibung mittels standardisierter Vokabularien (z. B. Dublin Core oder Bibo) ermöglicht Verlinkung mit weiteren Datensätzen
+- Angabe zu Autor&#42;innen durch die numerische GND-Kennung ermöglicht Verknüpfung der Daten mit u. a. Wikidata
+  ```xml
+	<dcterms:creator rdf:resource="http://d-nb.info/gnd/118540238"/>
+  ```
+- Wikidata: auf Linked Data basierendes Datenmodell
+  - enthält u. a. Daten zu zahlreichen Persönlichkeiten, etwa Namen, Geburtsdaten, Berufe, Werke und, falls vorhanden, GND-Kennung
+  - Beispiel: https://www.wikidata.org/wiki/Q5879 (J. W. Goethe)
+
+--
+
+## Framework
+
+![Überblick über das Framework](images/framework.svg)<!-- .element width="1040px" -->
+
+alle Schritte im [GitHub-Repository](https://github.com/weltliteratur/dnb) dokumentiert
+
+--
+
+## 1. Schritt: <br />Vorverarbeitung und Konvertierung von RDF/XML zu JSON (rdf2json.py)
+
+- RDF/XML: i. A. Verarbeitung im Hauptspeicher, nicht als Datenstrom
+  - unpraktikabel aufgrund der Größe der Daten
+- alle wesentlichen Daten zu einem Medium innerhalb `<rdf:Description>`
+- Verarbeitung mittels SAX-Parser als XML
+  - Extraktion der Metadaten (z. B. »dcterms:contributor«, »dcterms:language«, »dc:title«, »dcterms:extent«, »rdau:P60493«)
+  - Speicherung als JSON
+- JSON: i. A. platzsparender als RDF/XML
+  - kann leicht in Elasticsearch eingeladen werden – ein geplanter nächster Schritt
+
+--
+
+## 2. Schritt: <br />Extraktion von Daten zu Autor*innen aus Wikidata (Wikidata-Toolkit)
+
+- Ziel: Anreicherung des DNB-Datensatzes mit Informationen aus Wikidata
+  - beispielsweise Geburtsdatum/‑ort, Beruf, Verweis auf vorhandene Artikel in Wikipedia
+- Python-Bibliothek für Wikidata veraltet → Rückgriff auf Java-basiertes [Wikidata-Toolkit](https://github.com/Wikidata/Wikidata-Toolkit)
+- Herunterladen des aktuell (14.08.2017) 16 GB großen komprimierten Wikidata-Datensatzes
+- zwei Durchgänge:
+  1. Extraktion aller Elemente mit einer GND-Kennung einschließlich ausgewählter Merkmale
+  2. Ergänzung der Werte der Merkmale (z. B. Sprache, Ort)
+- Ergebnis als JSON
+
+--
+
+## 3. Schritt: <br />Normalisierung und Anreicherung <br/> (json2json.py)
+
+- Python-Skript implementiert Pipeline:
+  - Einlesen aller Daten aus den vorherigen Schritten
+  - Verknüpfung mittels GND-Kennung
+  - Extraktion von Metadatenangaben (z. B. Seitenanzahlangabe)
+  - Vereinfachung und Normalisierung
+  - Filterung von Datensätzen mit fehlenden Angaben
+  - spaltenbasierte Ausgabe als TSV
+- Vereinfachung: v. A. Entfernen von Namespace-Präfixen
+  - etwa `http://id.loc.gov/vocabulary/iso639-2/` bei der Angabe der Sprache
+- Extraktion von Seitenanzahlen/Jahreszahlen mit Hilfe eines regulären Ausdrucks
+- Normierung von Verlagsnamen mit Hilfe einer Normtabelle möglich
+  - notwendig, da keine standardisierte Schreibung innerhalb des Katalogs
+
+--
+
+## 4. Schritt: <br />Analyse<br/> (awk, sort, datamash, gnuplot, ...)
+
+- TSV-Dateien können mit den üblichen Unix-Werkzeugen wie `awk`,
+  `sort`, `uniq`, etc. leicht verarbeitet und analysiert werden
+
+  ```sh
+  datamash -g1 median 2 mean 2 min 2 max 2 count 2 q1 2 q3 2 \
+    < items_per_year-novel_page_author.tsv \
+	> issued_pages_stats.tsv
+  ```
+
+- Visualisierung mit gnuplot
+
+
+---
+
+# 3. Output
+
+--
+
+## Repräsentativität
+
+<br />
+- DNB strebt Vollständigkeit an, kein Sammelgebietsbias wie andere Bibliotheken
+- entsprechende Zahlen sagen etwas über vergangene Realitäten auf dem deutschsprachigen Buchmarkt aus (vgl. Häntzschel et al. 2009)
+- die Tabelle auf der nächsten Folie rankt Autor&#42;innen nach Anzahl der verzeichneten Romane in der DNB
+- Verfasser&#42;innen aus dem Unterhaltungsbereich ganz oben
+- Achtung: die Anzahl der verzeichneten Medien umfasst Neuauflagen
+  - Konsalik hat also nicht über 2 000 Romane geschrieben
+
+--
+
+## Plätze 1–10
+
+<br />
+
+| Autor&#42;in | Romane |
+|:-:|--: |
+| Heinz G. Konsalik | 2 232 |
+| Marie Louise Fischer | 1 264 |
+| Gert Fritz Unger | 1 013 |
+| Georges Simenon | 783 |
+| Utta Danella | 778 |
+| Edgar Wallace | 654 |
+| Hedwig Courths-Mahler | 647 |
+| Eleanor Hibbert | 635 |
+| Pearl S. Buck | 596 |
+| Alistair MacLean | 582 |
+
+<br />
+<small>Romanautor&#42;innen geordnet nach Anzahl der Werke (inkl. Nachauflagen) im DNB-Katalog.</small>
+
+--
+
+## Plätze 11–20
+
+<br />
+
+| Autor&#42;in | Romane |
+|:-:|--: |
+| Stephen King | 577 |
+| Georgette Heyer | 576 |
+| Agatha Christie | 574 |
+| Theodor Fontane | 565 |
+| Hans Ernst | 563 |
+| Lion Feuchtwanger | 501 |
+| Erich Maria Remarque | 419 |
+| Hans Hellmut Kirst | 411 |
+| Johannes Mario Simmel | 403 |
+| Hans Fallada | 396 |
+
+<br />
+<small>Romanautor&#42;innen geordnet nach Anzahl der Werke (inkl. Nachauflagen) im DNB-Katalog.</small>
+
+--
+
+## Visualisierung von Subdatensätzen (1/2)
+
+
+<br />
+
+- von den <span style="color:#030dcc">etwa **14,1 Mio.** Objekten im DNB-Datensatz</span> weisen <span style="color:#feb24c">etwa **8,3 Mio.** extrahierbare Seitenanzahlen auf (59 %)</span>
+- laut Datenfeld »rdau:P60493« sind insgesamt <span style="color:#fc4e2a">**353 498** der Medien ›Romane‹</span>, davon weisen wiederum <span style="color:#bc0026">**316 518** Umfangsangaben</span> auf und <span style="color:#59001a">**180 219** eine&#42;n Verfasser&#42;in, die/der mindestens einen Wikipedia-Eintrag (in egal welcher Sprache) besitzt</span>
+- Verschränkung mit Wikipedia als bedeutungsgebender Instanz, um *vanity works*, selbstverlegte Books on Demand usw. herauszufiltern (für andere Forschungsfragen wären diese aber durchaus interessant)
+
+<img src="images/subdatensaetze.svg"/><!-- .element width="200px" -->
+
+
+
+--
+
+## Visualisierung von Subdatensätzen (2/2)
+
+![zeitliche Verteilung fünf verschiedener Subdatensätze](images/items_per_year_de.svg)<!-- .element width="640px" -->
+
+<small> Fünf verschieden qualifizierte Subdatensätze des DNB-Katalogs in zeitlicher Verteilung.</small>
+
+---
+
+# 4. Anwendungsfall 1: <br />Romantitel
+
+--
+
+## Vorläufer der Romantitelforschung
+
+<br />
+- Large-Scale-Analysen bibliografischer Metadaten, etwa die Entwicklung von Romantiteln
+- Vorläufer: Werner Bergengruens Bibliothekarsfantasie »Titulus« von 1960 (manuelle Sammlung und Systematisierung von Romantiteln)
+- weiterer Vorläufer: Morettis erwähnte Studie »Style Inc.« (2009), hier schon datengestützt
+
+--
+
+## Häufigste Substantive in Romantiteln
+
+<br />
+
+| Substantiv | Frequenz |
+|:-:|:-:|
+| Liebe | 3 117 |
+| Mann | 1 906 |
+| Frau | 1 686 |
+| Tod | 1 537 |
+| Nacht | 1 505 |
+| Leben | 1 496 |
+| Welt | 1 188 |
+| Haus | 1 158 |
+| Zeit | 1 037 |
+| Schatten | 1 029 |
+
+<br />
+<small>Häufigste Substantive in Romantiteln im gesamten DNB-Katalog.</small>
+
+--
+
+## Aus dem Schlagwortbaukasten, siehe auch:
+
+<br />
+<iframe width="800" height="450" src="https://www.youtube.com/embed/h8MVXC_hqNY?rel=0&amp;controls=0&amp;start=39" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<br />
+
+<small>Jim Pandzko feat. Jan Böhmermann: »Menschen Leben Tanzen Welt«. (Neo Magazin Royale, 5. April 2017, [YouTube-Direktlink](https://www.youtube.com/watch?v=h8MVXC_hqNY))</small>
+
+--
+
+## Häufigste Trigramme in Titeln
+
+<br />
+
+| Trigramm | Frequenz |
+|:-:|:-:|
+| Das Geheimnis der | 238
+| Das Haus der | 224
+| Der Mann der | 189
+| Das Geheimnis des | 175
+| Die Tochter des | 160
+| Im Schatten des | 128
+| Der Mann im | 128
+| Das Lied der | 125
+| Die Frau des | 124
+| Die Reise nach | 108
+
+<br />
+<small>Häufigste Trigramme in Romantiteln im DNB-Katalog.</small>
+
+--
+
+## DNB Goes Ngram Viewer (1/2)
+
+![zeitlicher Verlauf ausgewählter Wörter in Romantiteln (absolut)](images/year_title.svg)<!-- .element width="640px" -->
+
+<small>Vorkommen ausgewählter Wörter in Romantiteln im zeitlichen Verlauf (**absolut**).</small>
+
+--
+
+## DNB Goes Ngram Viewer (2/2)
+
+![zeitlicher Verlauf ausgewählter Wörter in Romantiteln (relativ)](images/year_title_rel.svg)<!-- .element width="640px" -->
+
+<small>Vorkommen ausgewählter Wörter in Romantiteln im zeitlichen Verlauf (**relativ**). · OMNIA VINCIT AMOR.</small>
+
+---
+
+# 5. Anwendungsfall 2: Romanumfänge
+
+--
+
+## Romanumfangsforschung
+
+<br />
+- Erforschung des Einflusses von Textlängen auf Rezeptions-, Interpretations- und Kanonisierungsprozesse
+- quantitative Beschreibung des literarischen Erbes
+- empirische Zuarbeit zu einer entstehenden Theorie des literarischen Textumfangs
+- mehr dazu:
+ - Fischer/Jäschke: *Ein Quantum Literatur. Empirische Daten zu einer Theorie des literarischen Textumfangs.* DFG-Symposium »Digitale Literaturwissenschaft«. Villa Vigoni, 9.–13. Oktober 2017. (entsprechender Sammelband demnächst bei Metzler)
+
+--
+
+## Realitätsabgleich
+
+![Bücher pro Seitenanzahl](images/pages_200-400_de.svg)<!-- .element width="640px" -->
+
+<small>Anzahl der Bücher pro Seitenanzahl im Umfangsbereich 200 bis 400 Seiten.
+<br/><br/>
+**Publikumsfrage:** Es gibt einen Peak aller 16 Seiten, weil …</small>
+
+--
+
+## Entwicklung des Romanumfangs seit 1913
+
+![mittlere Seitenanzahl pro Jahr](images/issued_pages_1913_de.svg)<!-- .element width="640px" -->
+
+<small>Entwicklung der mittleren Seitenanzahl pro Jahr seit 1913. – Scheint eine Vermutung von Helge Malchow zu bestätigen: »Mit dem Einzug des Computers in den Schreibprozess sind die Romane nach meinem Eindruck im Durchschnitt um zehn Prozent länger geworden.« ([*Die Zeit* 47/2012](http://www.zeit.de/2012/47/Buecher-Internet-Literatur-Verleger/komplettansicht))</small>
+
+---
+
+# 6. Fazit
+
+--
+
+## Zusammenfassung und Ausblick
+
+<br />
+- Katalogdaten/Metadaten sind ein sinnvolles Untersuchungsobjekt der Literaturwissenschaft
+- vorgestelltes Framework soll einfacher Explorier- und Kontrollierbarkeit der Daten dienen
+- zwei Anwendungsfälle als Inspiration
+- in Zukunft: Austausch/Interaktion zwischen Wissenschaftler&#42;innen und DNB?
+- Frage an DNB: ist ein SPARQL-Endpunkt geplant?
+- Frage an alle: Workshop zur *literaturwissenschaftlichen* Beschäftigung mit Katalogdaten?
+
+---
+
+## 7. Bibliografie 📚
+
+* Bergengruen, Werner (1960): Titulus. Das ist: Miszellen, Kollektaneen u. fragmentar., mit gelegentl. Irrtümern durchsetzte Gedanken zur Naturgeschichte d. dt. Buchtitels oder unbetitelter Lebensroman e. Bibliotheksbeamten. Zürich: Verlag der Arche.
+* DNB (2017): [»Wir über uns«](http://www.dnb.de/DE/Wir/wir_node.html), Stand 16.&nbsp;März 2017.
+* Fischer, Frank; Jäschke, Robert (2017): Ein Quantum Literatur. Empirische Daten zu einer Theorie des literarischen Textumfangs. DFG-Symposium »Digitale Literaturwissenschaft«. Villa Vigoni, 9.–13. Oktober 2017. (Entsprechender Sammelband erscheint demnächst.)
+* Häntzschel, Günter; Hummel, Adrian; Zedler, Jörg (2009): [Deutschsprachige Buchkultur der 1950er Jahre. Fiktionale Literatur in Quellen, Analysen und Interpretationen.](https://books.google.com/books?id=t88xc3CzK60C) Wiesbaden: Harrassowitz 2009.
+* Moretti, Franco (2009): Style Inc. Reflections on Seven Thousand Titles (British Novels, 1740–1850). In: Critical Inquiry, Vol. 36, No. 1 (Autumn 2009), S. 134–158.
+* Pandzko, Jim; Böhmermann, Jan (2017): [Menschen Leben Tanzen Welt](https://youtu.be/h8MVXC_hqNY) [Musikvideo]. In: Neo Magazin Royale, 5.&nbsp;April 2017.
+* Schmidt, Ben (2017): [A brief visual history of MARC cataloging at the Library of Congress](http://sappingattention.blogspot.de/2017/05/a-brief-visual-history-of-marc.html) [Blogpost]. In: Sapping Attention, 16.&nbsp;Mai 2017.
+* Arbeitsrepositorium: [github.com/weltliteratur/dnb](https://github.com/weltliteratur/dnb)
+
+</textarea>
+        </section>
+      </div>
+    </div>
+    <script src="../reveal/lib/js/head.min.js"></script>
+    <script src="../reveal/js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: '../reveal/plugin/markdown/marked.js' },
+          { src: '../reveal/plugin/markdown/markdown.js' },
+          { src: '../reveal/plugin/notes/notes.js', async: true },
+          { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
