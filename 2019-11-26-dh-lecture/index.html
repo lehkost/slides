@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DH Lecture: Schema Technologies (26 Nov 2019)</title>
+
+		<link rel="stylesheet" href="../reveal/css/reveal.css">
+		<link rel="stylesheet" href="../reveal/css/theme/simple.css">
+
+      <!-- adjustments for serif.css -->
+      <link rel="stylesheet" href="custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Магистерская программа<!-- .element: style="font-size:1em;" -->
+## [Цифровые методы в гуманитарных науках](https://www.hse.ru/ma/dh/)<!-- .element: style="font-size:0.65em;" -->
+
+<br /><br /><br />📚 &nbsp; &nbsp; 🎼 &nbsp; &nbsp; 🗺 &nbsp; &nbsp; <font style="font-size:5rem;width:100%;">💻</font> &nbsp; &nbsp; 🏛 &nbsp; &nbsp; 🎨 &nbsp; &nbsp; 🎮
+
+--
+
+## Lecture
+### Schema Technologies
+
+<br /><br />
+[Frank Fischer](https://lehkost.github.io/)
+
+(ffischer@hse.ru)<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br />26 November 2019 &nbsp;·&nbsp; 18:10 &nbsp;·&nbsp; ауд. 509</p>
+
+--
+
+![Michael Sperberg-McQueen](images/Michael_Sperberg-McQueen_2007.jpg)
+
+Michael Sperberg-McQueen, 2007<!-- .element: class="fragment" -->
+
+<small>(img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:XML_2007-_Michael_Sperberg-McQueen.jpg))</small>
+
+--
+
+### Michael Sperberg-McQueen
+
+<br />
+- PhD in comparative literature from Stanford University (1985)
+- editor-in-chief of the TEI (1988–2000)
+- co-editor of the Extensible Markup Language (XML) 1.0 spec (1998)
+- chair of the XML Schema working group (–2009)
+- → The specification of XML has a Humanities background!
+
+<br />
+<small>(sources: [Wikipedia](https://en.wikipedia.org/wiki/Michael_Sperberg-McQueen) and [an interview with Julianne Nyhan](https://link.springer.com/chapter/10.1007/978-3-319-20170-2_12))</small>
+
+--
+
+### well-formed vs. valid
+
+--
+
+Is this a well-formed document?
+
+<br />
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "Note.dtd">
+<note>
+<to>Olga</to>
+<from>Sergey</from>
+<heading>Reminder
+<body>Hello!</body>
+```
+
+--
+
+Is this also a valid document?
+
+<br />
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "Note.dtd">
+<note>
+<to>Olga</to>
+<from>Sergey</from>
+<heading>Reminder</heading>
+<body>Hello!</body>
+</note>
+```
+
+<br />
+<small>(example taken from https://www.w3schools.com/xml/xml_dtd.asp)</small>
+
+--
+
+### DTD
+
+<br />
+```dtd
+<!DOCTYPE note
+[
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+```
+
+<br />
+<small>**DTD** = document type definition <br />**#PCDATA** = parseable character data</small>
+
+<small>(example taken from https://www.w3schools.com/xml/xml_dtd.asp)</small>
+
+--
+
+### DTD
+
+<br />
+- shortcomings of DTD:
+  - no XML syntax
+  - no data types for elements and attributes
+  - no compability to namespaces
+
+--
+
+### XML Schema
+
+<br />
+- filename extension: .xsd (XML Schema Definition)
+- XML Schema spec (2001) = XML-based alternative to DTD
+
+--
+
+### Structure of an XML Schema Document
+
+<br />
+- XML Schema files start with a normal XML declaration (```<?xml version="1.0"?>```), followed by a root element (always ```xs:schema```)
+- can be very long, many lines of code
+
+--
+
+### XML Schema
+
+<br />
+```xml
+<xs:element name="note">
+
+<xs:complexType>
+  <xs:sequence>
+    <xs:element name="to" type="xs:string"/>
+    <xs:element name="from" type="xs:string"/>
+    <xs:element name="heading" type="xs:string"/>
+    <xs:element name="body" type="xs:string"/>
+  </xs:sequence>
+</xs:complexType>
+
+</xs:element>
+```
+
+<br />
+<small>(example taken from https://www.w3schools.com/xml/xml_schema.asp)</small>
+
+--
+
+### RelaxNG
+
+<br />
+- REgular LAnguage for XML Next Generation
+- another schema language for XML
+- RelaxNG code can still be easily hand-crafted: "easy to learn and easy to use"
+
+--
+
+### Schematron
+
+<br />
+- rule-based validation language (path expressions instead of grammars)
+- defines validation rules using the XPath query language
+- regular expressions
+
+--
+
+### ODD
+
+<br />
+- "One Document Does it all"
+- TEI customisation (which [modules](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA), which [elements](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html), adjustment of attributes)
+- implemented by Lou Burnard and Michael Sperberg-McQueen
+- combines schema and prose documentation
+- can be compiled into a DTD, RelaxNG or XML Schema (along with documentation) using [Roma](https://roma2.tei-c.org/)
+- [TEI Guidelines](https://tei-c.org/guidelines/) themselves also produced from an ODD
+
+--
+
+### Hands-on
+
+<br />
+- how to test well-formedness
+- how to test validity
+- how to generate a schema
+
+--
+
+## F·I·N·I·S
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../reveal/plugin/markdown/marked.js' },
+					{ src: '../reveal/plugin/markdown/markdown.js' },
+					{ src: '../reveal/plugin/notes/notes.js', async: true },
+					{ src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
