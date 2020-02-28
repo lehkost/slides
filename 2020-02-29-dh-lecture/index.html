@@ -74,9 +74,10 @@ short link to presentation: [bit.ly/**39TEjds**](https://bit.ly/39TEjds)
 2. Recap Node-Related Measures
 3. Recap Formalisation of Interactions
 4. Some More Examples for Networks
-5. Suggestion for the Structuring of Your Presentation
-6. Zachary’s Karate Club 🥋
-7. Hands-On!
+5. Handling Network Data in R and Python
+6. Suggestion for the Structuring of Your Presentation
+7. Zachary’s Karate Club 🥋
+8. Hands-On!
 
 --
 
@@ -317,6 +318,74 @@ Source,Target,Weight
 - http://www.visualcomplexity.com/vc/
 - website run by Manuel Lima
 - 1.000 indexed network visualisation projects
+
+---
+
+### Handling Network Data in R and Python
+
+--
+
+![Huey, Dewey, and Louie (from Wikipedia)](images/louie_dewey_huey_from_wikipedia.png)
+
+<br />
+
+Huey, Dewey, and Louie
+<!-- .element: class="fragment" -->
+
+<br />
+
+<small>(Image source: [English Wikipedia](https://en.wikipedia.org/wiki/File:Louie_Dewey_and_Huey.png).)</small>
+
+--
+
+### Building and Plotting a Network in R
+
+<br />
+
+```R
+library(igraph)
+mygraph <- graph_from_literal('Huey'-'Donald', 'Dewey'-'Donald', 'Louie'-'Donald')
+mygraph
+plot(mygraph)
+rglplot(mygraph)
+rglplot(mygraph, vertex.color = 'red')
+```
+
+<br />
+
+<small>(Needs igraph and rgl libraries installed.)</small>
+
+--
+
+### Building and Plotting a Network in Python
+
+<br />
+
+```Python
+>>> import networkx
+>>> my_network = networkx.Graph()
+>>> my_network.add_node ('Donald')
+>>> my_network.nodes
+NodeView(('Donald',))
+>>> my_network.edges
+EdgeView([])
+>>> my_network.add_edge ('Donald', 'Huey')
+>>> my_network.nodes
+NodeView(('Donald', 'Huey'))
+>>> my_network.add_edge ('Donald', 'Dewey')
+>>> my_network.add_edge ('Donald', 'Louie')
+>>> my_network.nodes
+NodeView(('Donald', 'Huey', 'Dewey', 'Louie'))
+>>> my_network.edges
+EdgeView([('Donald', 'Huey'), ('Donald', 'Dewey'), ('Donald', 'Louie')])
+>>> import matplotlib.pyplot as plt
+>>> networkx.draw(my_network)
+>>> plt.show()
+```
+
+<br />
+
+<small>(Needs networkx and matplotlib libraries installed.)</small>
 
 ---
 
