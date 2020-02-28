@@ -74,10 +74,11 @@ short link to presentation: [bit.ly/**39TEjds**](https://bit.ly/39TEjds)
 2. Recap Node-Related Measures
 3. Recap Formalisation of Interactions
 4. Some More Examples for Networks
-5. Handling Network Data in R and Python
-6. Suggestion for the Structuring of Your Presentation
-7. Zachary’s Karate Club 🥋
-8. Hands-On!
+5. Alternatives to Gephi
+6. Handling Network Data in R and Python
+7. Suggestion for the Structuring of Your Presentation
+8. Zachary’s Karate Club 🥋
+9. Hands-On!
 
 --
 
@@ -321,6 +322,27 @@ Source,Target,Weight
 
 ---
 
+### Alternatives to Gephi
+
+--
+
+### Cytoscape
+
+![Cytoscape Screenshot (from WM Commons)](images/cytoscape_screenshot.png)
+
+<small>Download: [**cytoscape.org**](https://cytoscape.org/). (Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cytoscape3.7.0.png).)</small>
+
+--
+
+### Cytoscape
+
+<br />
+
+- does not read GEXF format, but can read other formats
+- for testing purposes, GraphML version of co-occurrence graph for [Prutkov’s](https://ru.wikipedia.org/wiki/Козьма_Прутков) "Фантазия" (1851): "[prutkov-fantaziya.graphml](data/prutkov-fantaziya.graphml)"
+
+---
+
 ### Handling Network Data in R and Python
 
 --
@@ -381,6 +403,10 @@ EdgeView([('Donald', 'Huey'), ('Donald', 'Dewey'), ('Donald', 'Louie')])
 >>> import matplotlib.pyplot as plt
 >>> networkx.draw(my_network)
 >>> plt.show()
+
+>>> networkx.degree_centrality (my_network)
+>>> networkx.betweenness_centrality (my_network)
+>>> networkx.eigenvector_centrality (my_network)
 ```
 
 <br />
