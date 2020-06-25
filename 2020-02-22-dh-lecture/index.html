@@ -6,23 +6,15 @@
 
     <title>DH Lecture: Сетевой анализ (лекция, начало практики в Gephi) (22 Feb 2020)</title>
 
-    <link rel="stylesheet" href="../revealjs/css/reveal.css" />
-    <link rel="stylesheet" href="../revealjs/css/theme/serif.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
 
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../revealjs/lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../revealjs/css/print/pdf.css' : '../revealjs/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
@@ -662,21 +654,15 @@ https://rus.dracor.org/
         </section>
       </div>
     </div>
-    <script src="../revealjs/lib/js/head.min.js"></script>
-    <script src="../revealjs/js/reveal.js"></script>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
     <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-      history: true,
-
-    // More info https://github.com/hakimel/reveal.js#dependencies
-      dependencies: [
-        { src: '../revealjs/plugin/markdown/marked.js' },
-        { src: '../revealjs/plugin/markdown/markdown.js' },
-        { src: '../revealjs/plugin/notes/notes.js', async: true },
-        { src: '../revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-      ]
-    });
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
     </script>
   </body>
 </html>
