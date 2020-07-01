@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Namen als Signal (2. Juli 2020)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+### Namen als Signale
+#### Geisteswissenschaftliche Daten in der Praxis
+
+![Vossian Antonomasia: gallery of 39 most frequent sources](images/gallery-top-39-sources-vossian-antonomasia.jpg)<!-- .element width="400px;" -->
+
+Ass. Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+Higher School of Economics &nbsp;·&nbsp; Moskau<br />
+DARIAH-EU &nbsp; 🇪🇺 &nbsp; Board of Directors<!-- .element: style="font-size:0.7em;" -->
+
+<br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> [lehkost.github.io/slides/2020-07-02-darmstadt/](https://lehkost.github.io/slides/2020-07-02-darmstadt/)
+
+<br />Technische Universität Darmstadt &nbsp;·&nbsp; 2. Juli 2020<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Zur Einführung](#/1)
+2. [Ein Beispiel](#/2)
+3. [Vossianische Antonomasien](#/3)
+4. [Daten nutzen, Daten erzeugen](#/4)
+5. [Auswertungen](#/5)
+6. [Nächste Schritte](#/6)
+7. [Zusammenfassung](#/7)
+
+---
+
+## 1. Zur Einführung
+
+<br />
+
+### Besonderheiten von Humanities Data (1/2)
+
+<br />
+
+- »Begriff der ›Forschungsdaten‹ in den Geisteswissenschaften ein Fremdkörper«? ([Thomas Stäcker, DHd-Blog, 2015](https://dhd-blog.org/?p=5995))
+- Arbeitshypothese für diesen Vortrag:
+  - Humanities Data Science = Humanities (Data) + Data Science + X
+
+--
+
+### Besonderheiten von Humanities Data (2/2)
+
+<br />
+
+- Formalisierung mehrdeutiger (bedeutungsoffener) Sachverhalte
+- oft liegen nur Bruchteile einer Grundgesamtheit maschinenlesbar vor
+- Überlieferungslücken
+- ethische und rechtliche Überlegungen
+- FAIR-Prinzipien (**F**indable, **A**ccessible, **I**nteroperable, **R**eusable)
+
+--
+
+#### Allgemeiner Lebenszyklus von Forschungsdaten
+
+![Data Curation Life Cycle (DE)](images/data-curation-life-cycle-de.png)<!-- .element width="550px;" -->
+
+<small>(Quelle: [»Was ist Forschungsdatenmanagement?« – TU Darmstadt](https://www.tu-darmstadt.de/tudata/tudata/forschungsdatenmanagement/index.de.jsp))</small>
+
+---
+
+## 2. Gesucht: Ein Beispiel, das …
+
+<br />
+
+- … historische, linguistische, informations- und datentechnische Dimensionen aufweist
+- … die spezielle Kreativität von Digital-Humanities-Ansätzen herausfordert
+- … den Einsatz aktueller Infrastrukturen und Technologien bedingt (Wikidata, Machine Learning, interaktive Visualisierungen)
+
+<br /><br />
+
+### → Vossianische Antonomasien (VA)
+<!-- .element: class="fragment" -->
+
+--
+
+### Vier Beispiele für eine VA (1/4)
+
+![Vittorio Hösle, der Boris Becker der Philosophie](images/der-boris-becker-der-philosophie_welt-de.jpg)<!-- .element width="640px" -->
+
+= Vittorio Hösle (Quelle: [welt.de](https://www.welt.de/politik/ausland/article120037085/Papst-ehrt-den-Boris-Becker-der-Philosophie.html), 2013)
+
+--
+
+### Vier Beispiele für eine VA (2/4)
+
+![Alice Schwarzer, der Erich Honecker des Feminismus](images/der-erich-honecker-des-feminismus_cicero-de.jpg)<!-- .element width="640px" -->
+
+= Alice Schwarzer (Quelle: [cicero.de](http://www.cicero.de/berliner-republik/alice-schwarzer-der-erich-honecker-des-feminismus/56963), 2014)
+
+--
+
+### Vier Beispiele für eine VA (3/4)
+
+![Magnus Carlsen, der Mozart des Schachs](images/der-mozart-des-schachs_dw-com.jpg)<!-- .element width="480px" -->
+
+= Magnus Carlsen (Quelle: [dw.com](https://www.dw.com/de/der-mozart-des-schachs/a-36500634), 2016)
+
+--
+
+### Vier Beispiele für eine VA (4/4)
+
+![Jim Koch, the Steve Jobs of beer](images/the-steve-jobs-of-beer_theatlantic-com.jpg)<!-- .element width="640px" -->
+
+= Jim Koch (Quelle: [theatlantic.com](https://www.theatlantic.com/magazine/archive/2014/11/the-steve-jobs-of-beer/380790/), 2014)
+
+---
+
+## 3. Vossianische Antonomasien
+### Definition (1/3)
+
+![Porträt von Gerhard Johannes Vossius; Quelle: Wikimedia Commons](images/vossius.jpg)<!-- .element width="240px" -->
+
+* Erstbeschreibung <!-- .element: style="font-size:0.7em;" --> als eigenes Phänomen durch Gerhard Johannes Vossius (1577–1649) <br />(Bildquelle: <a href="https://commons.wikimedia.org/wiki/File:Gerardus_Johannes_Vossius_(1577-1649),_by_Anonymous.jpg">Wikimedia Commons</a>)
+* vgl. <!-- .element: style="font-size:0.7em;" --> [ein entsprechendes Kapitel](https://books.google.com/books?id=q2OvgoX6ar8C&pg=PA193) im *Tractatus philologici de rhetorica, de poëtica, de artium et scientiarum […]*, 1697 (zuerst 1606)
+
+--
+
+### Definition (2/3)
+
+»Die ›Vossianische Antonomasie‹ ist […] die Setzung eines Eigennamens für ein Appellativ: der Träger des Eigennamens ist eine Person oder Sache, die in Geschichte oder Mythologie eine hervorragende Realisierung der mit dem Appellativ bezeichneten Eigenschaft war. Die hervorragende Person oder Sache ist der Typus […], der sich in der bezeichneten neuen Realisierung wiederfindet. Meist wird der Typus durch <u>ein untypologisches, aktualisierendes Signal</u> (Pronomen, Adjektiv, Genitiv), in jedem Falle durch den (sprachlichen oder situationsmäßigen) Kontext aus der typologischen Ferne in die zu bezeichnende Gegenwart geholt […].«
+
+<small>Heinrich Lausberg: *Handbuch der literarischen Rhetorik. Eine Grundlegung der Literaturwissenschaft.* Band 2. München: Hueber 1960. §581, S. 301. [[diese Seite in der 3. Auflage 1990 bei Google Books](https://books.google.com/books?id=IR8ru0joFKcC&pg=PA301); Hervorhebung von mir]</small>
+
+--
+
+### Definition (3/3)
+
+<br />
+
+* source → modifier → target
+* »Wilhelm Busch [ist] der Homer des 19. Jahrhunderts« ([NZZ, 30.05.2014](https://www.nzz.ch/schwellen-und-inseln-im-zeitfluss-1.18312462))
+  * source: Homer
+  * target: Wilhelm Busch
+  * modifier: das 19. Jahrhundert
+
+
+--
+
+### Einige Forschungsfragen
+
+<br />
+
+- Welche Namen verankern sich besonders häufig als Signale, als Prototypen in unseren Köpfen?
+- Welche Funktionen haben vossianische Antonomasien?
+- Gibt es für deren Benutzung genrebasierte, kulturelle Unterschiede?
+
+--
+
+### Beschränkungen der nicht-digitalen Erforschung dieses Phänomens
+
+<br />
+
+- Forschung bisher nicht korpusbasiert
+- Problem: vossianische Antonomasien sind ein seltenes Phänomen
+- keine Goldannotationen (entsprechend auch keine Recall-Scores ermittelbar)
+- d.&nbsp;h., bisher keine zuverlässigen Kenntnisse über die Frequenz, die Funktion, die Verbreitung des Phänomens
+
+---
+
+## 4. Daten nutzen, Daten erzeugen
+
+<br />
+
+### Beispielkorpus: »The New York Times«
+
+<br />
+
+- Korpus mit allen NYT-Artikeln der Jahre 1987–2007 steht der Forschung zur Verfügung (1,8 Millionen Artikel)
+- entsprechende Veröffentlichung: [Sandhaus 2008](https://catalog.ldc.upenn.edu/LDC2008T19)
+
+--
+
+### Annäherungen
+
+<br />
+
+- grammatische Formalisierung (»der/die … des …«, »the … of …«) plus Named-Entity Recognition (via NLTK)
+  - Problem 1: Leistung des NER-Moduls nicht zufriedenstellend
+  - Problem 2: Sprachen mit komplexerer Grammatik (Genitiv manifestiert sich nicht in Artikeln, sondern nur in Wortendungen)
+  - Problem 3: »the Church of England« usw. (grammatisch entsprechen diese Wendungen dem Muster, semantisch aber nicht)
+- Durchbruch: Namen von Persönlichkeiten via Wikidata als Positivliste
+  - Grundannahme: Source-Namen für vossianische Antonomasien sollten einen gewissen Bekanntheitsgrad haben und damit auch von der Enzyklopädie erfasst sein
+
+--
+
+### Workflow
+
+<br />
+
+- Wikidata Toolkit zum Download des Wikidata-Dumps
+- Beschränkung auf die *instance of*-Eigenschaft ›human‹ (~ 2,8 Mio. Namen)
+- Satzsegmentierung (NLTK) sowie Extraktion von Sätzen, die das Muster »the … of …« enthalten
+- Abgleich mit der Wikidata-Liste
+- Ergebnis: 3.753 Kandidaten, von denen nach manuellem Überprüfen 2.646 übrigblieben (73,9% Precision)
+- Paper: [DSH 2020](https://www.doi.org/10.1093/llc/fqy087)
+
+---
+
+## 5. Auswertungen
+
+![Gallery of 39 most frequent sources](images/gallery-top-39-sources-vossian-antonomasia.jpg)
+
+Die 39 häufigsten Quellen für vossianische Antonomasien in der NYT 1987–2007. <br />Bildquellen: Wikimedia Commons (Property:P18 in Wikidata).<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Ranking (1/2)
+
+| Frequenz | Quelle |
+|----------|--------|
+| 68 | Michael Jordan |
+| 58 | Rodney Dangerfield |
+| 36 | Babe Ruth |
+| 32 | Elvis Presley |
+| 31 | Johnny Appleseed |
+| 23 | Bill Gates |
+| 21 | Pablo Picasso |
+| 21 | Michelangelo |
+| 21 | Donald Trump |
+| 21 | Jackie Robinson |
+| 21 | Madonna |
+
+<small>Personen mit &#62; 20 Nennungen als Quellen für vossianische Antonomasien in der NYT 1987–2007.</small>
+
+--
+
+### Ranking (2/2)
+
+| Frequenz | Quelle |
+|----------|--------|
+| 21 | Madonna |
+| 18 | Martha Stewart |
+| 14 | Greta Garbo |
+| 14 | Mother Teresa |
+| 12 | Oprah Winfrey |
+| 12 | Rosa Parks |
+| 12 | Susan Lucci |
+| 10 | Julia Child |
+
+<small>Frauen mit &#62;= 10 Nennungen als Quellen für vossianische Antonomasien in der NYT 1987–2007.</small>
+
+--
+
+### The X of …
+
+| Frequenz | Land |
+|----------|------|
+| 29 | Japan |
+| 15 | China |
+| 10 | Brazil |
+| 8 | Israel |
+| 7 | Iran |
+| 7 | India |
+| 4 | South Africa |
+| 4 | Mexico |
+| 3 | Spain |
+| 3 | South Korea |
+| 3 | Russia |
+| 3 | Poland |
+| 3 | Pakistan |
+
+<small>Hochfrequenteste Länder als Modifier einer vossianischen Antonomasien.</small>
+
+--
+
+## Interaktive Datenvisualisierung
+
+![interaktive Visualisierung](images/vossanto-timeline-screenshot.png)
+
+<small>Zeitstrahl, Zeitungsressort, Metadaten, Bilder via Wikidata, Suche mit KWIC-Funktion, Link zum Volltext.</small>
+
+<small>URL: https://vossanto.weltliteratur.net/timeline</small>
+
+--
+
+## Ergebnisse und Dissemination
+
+<br />
+
+- Ergebnisse:
+  - beantwortete Forschungsfragen: neue Erkenntnisse über die Frequenz, die Funktion, die Verbreitung des Phänomens
+  - neue Daten und Tools zur Erforschung (open source)
+- Disseminationsstrategien:
+  - peer-reviewte Paper und Posterbeiträge
+  - [Projektwebsite](https://vossanto.weltliteratur.net/)
+  - Code und Daten auf GitHub und Figshare
+  - [Blogpost](https://weltliteratur.net/vossian-antonomasia-new-york-times/)
+  - [Twitter-Thread](https://twitter.com/umblaetterer/status/1097865223564869635)
+
+--
+
+### Realitätsabgleich
+
+![Data Curation Life Cycle (DE)](images/data-curation-life-cycle-de.png)<!-- .element width="550px;" -->
+
+<small>(Quelle: [»Was ist Forschungsdatenmanagement?« – TU Darmstadt](https://www.tu-darmstadt.de/tudata/tudata/forschungsdatenmanagement/index.de.jsp))</small>
+
+---
+
+## 6. Nächste Schritte
+
+### Deep Learning zur Evaluation
+
+<br />
+
+- handkorrigierte Daten als Input für einen binären Classifier (BLSTM: Bidirectional Long Short-Term Memory)
+- trainiert auf ganzen Sätzen (0 oder 1, enthält eine VA oder nicht), 5-Fold Cross Validation
+- BLSTM performt mit 86,9% Precision, 85,3% Recall (F1-Score: 86,1%)
+- Paper: [EMNLP 2019](https://dx.doi.org/10.18653/v1/D19-1647)
+- zusammen mit einigen neuen Pattern nun 3.066 VA-Ausdrücke
+  - Seltenheit des Phänomens: ~ 58,5 Mio. Sätze im NYT-Korpus, d.&nbsp;h., nur aller ca. 19.000 Sätze wurde eine voss. Antonomasie gefunden
+
+--
+
+### Vollautomatisierte Ende-zu-Ende-Erkennung
+
+<br />
+
+- Ziel: Modell trainieren, das auf komplett neuen Daten funktioniert
+- Google **[BERT](https://github.com/google-research/bert)**: auf großen Textmengen vortrainiertes Sprachmodell
+- Finetuning: zusätzlicher Layer, der nur noch darauf trainiert wird, ob ein Satz eine vossianische Antonomasie enthält oder nicht (0 oder 1)
+- semantisch hochwertigerer Input: Source, Target und Modifier nun explizit als Markup ausgezeichnet
+- BERT werden nicht nur Satz und Label (0 oder 1) übergeben, sondern ein Vektor aus sieben Labels (Source, Target, Modifier plus jeweils der Information, ob ein Wort am Beginn einer Entität steht oder diese fortsetzt [B oder I])
+- Steigerung des F1-Score auf 97,4% (Paper in Vorbereitung, Veröffentlichung unseres Modells in Planung)
+
+---
+
+## 7. Zusammenfassung
+
+### Zum Umgang mit Humanities Data
+
+<br />
+
+- Ausgangsdaten: Volltextkorpus, Metadaten, Bilddaten via Wissensdatenbank (Wikidata)
+- erzeugte Daten: bisher größtes Korpus an VA-Ausdrücken
+- Technologiestack: Python, Bash-Skripte, Visualisierungsbibliotheken, Deep-Learning-Bibliotheken
+- Erforsch- und Nachnutzbarkeit: interaktive Visualisierung, Veröffentlichung aller Daten, verschiedene Disseminationsstrategien
+- Ergebnis: geisteswissenschaftliche Fragestellung mit Mitteln der Digital Humanities auf eine neue Ebene gestellt
+- der »X-Faktor«: eine bestimmte Kreativität in der Kombination von Methoden der Humanities und der Data Science
+
+--
+
+### Zugrundeliegende Artikel
+
+- Fischer/Jäschke/Strötgen/Krotova @ [DHd 2017](http://www.dhd2017.ch/wp-content/uploads/2017/02/Abstractband_ergaenzt.pdf#page=122)
+- Schwab/Jäschke/Fischer/Strötgen @ [EMNLP 2019](https://dx.doi.org/10.18653/v1/D19-1647)
+- Fischer/Jäschke @ [DSH 2020](https://www.doi.org/10.1093/llc/fqy087)
+- Schwab/Jäschke/Fischer (in Vorbereitung)<br /><br /><br />
+
+### Projektwebsite
+
+https://vossanto.weltliteratur.net/
+
+--
+
+### Vielen Dank!
+
+<br />
+
+### * * *
+
+<br />
+
+### Fragen?
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
