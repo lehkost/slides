@@ -96,6 +96,7 @@ Wie verändern sich die Figurenkonstellationen im deutschen Drama?
 
 <br />
 
+- obligatorische Datenmanagementpläne
 - FAIR-Prinzipien
   - Findability · Accessibility · Interoperability · Reusability
 
@@ -131,7 +132,7 @@ Exemplarischer Anwendungsfall für diesen Vortrag:
 
 - nachhaltige Forschungsprojekte benötigen (und erzeugen) dedizierte Infrastruktur
 - DraCor: *Drama Corpora*-Portal (https://dracor.org/)
-- Beginn mit zwei Hauskorpora:
+- begonnen mit zwei Hauskorpora:
   - German Drama Corpus, GerDraCor (1730er–1940er)
   - Russian Drama Corpus, RusDraCor (1740er–1940er)
 
@@ -276,14 +277,13 @@ Exemplarischer Anwendungsfall für diesen Vortrag:
 <br />
 
 - Liste erhältlicher Korpora und deren Inhalt (Liste aller Stücke)
-- Metadaten und Netzwerkdaten zu allen Stücken als CSV oder GEXF
+- Metadaten und Netzwerkdaten zu allen Stücken als CSV, GEXF und GraphML
 - Liste sprechender Figuren pro Stück (oft bedeutend umfangreicher als die *dramatis personae*!)
 - Figuren pro Segment eines Stücks (dynamische Graphen!)
 - gesprochener Text (gesamt/weibl./männl. oder pro Figur)
 - Regieanweisungen
 - SPARQL-Endpunkt (Linked Open Data!)
 - Live-Dokumentation (via Swagger): https://dracor.org/documentation/api/
-- …
 
 --
 
@@ -494,37 +494,6 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 --
 
-### Beispiel für eine RDF-Repräsentation
-
-<br />
-
-- Quelle: *The Programming Historian*:
-  - Matthew Lincoln: [Using SPARQL to access Linked Open Data](https://programminghistorian.org/lessons/graph-databases-and-SPARQL) (publ. 2015, veröffentlicht unter CC BY 4.0)
-
---
-
-![Rembrandt: De Nachtwacht](https://upload.wikimedia.org/wikipedia/commons/0/0b/Rembrandt_van_Rijn-De_Nachtwacht-1642.jpg)<!-- .element height="480px;" -->
-
-- Rembrandt: De Nachtwacht (Die Nachtwache), 1642<!-- .element: class="fragment" -->
-
-<small>(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn-De_Nachtwacht-1642.jpg))</small>
-
---
-
-![Vermeer: Frau mit Waage](https://upload.wikimedia.org/wikipedia/commons/7/72/Woman-with-a-balance-by-Vermeer.jpg)<!-- .element height="480px;" -->
-
-- Vermeer: Vrouw met weegschaal (Frau mit Waage), 1662/1663<!-- .element: class="fragment" -->
-
-<small>(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Woman-with-a-balance-by-Vermeer.jpg))</small>
-
---
-
-![graph visualisation of RDF-encoded information](https://programminghistorian.org/images/graph-databases-and-SPARQL/sparql01.svg)<!-- .element height="440px;" -->
-
-<small>Graphenvisualisierung RDF-kodierter Informationen: <br />Pfeile zeigen die Richtung des Prädikats an, *The Nightwatch* <br />wurde von Rembrandt gemalt und nicht umgekehrt <br />(Bildquelle: [*The Programming Historian*](https://programminghistorian.org/lessons/graph-databases-and-SPARQL))</small>
-
---
-
 ### Anbindung an die <br />Linked Open Data-Cloud
 
 <br />
@@ -539,7 +508,7 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ### Uraufführungsorte in GerDraCor
 
-![ezlinavis screenshot](images/first-performances-overall.png)<!-- .element height="450px;" -->
+![Uraufführungen insgesamt](images/first-performances-overall.png)<!-- .element height="450px;" -->
 
 <small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
 
@@ -547,7 +516,7 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ### Urauführungsort Berlin in GerDraCor
 
-![ezlinavis screenshot](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+![Uraufführungen Berlin](images/first-performances-berlin.png)<!-- .element height="450px;" -->
 
 <small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
 
@@ -642,14 +611,6 @@ Was tut man, wenn im Datenanalyse-Bootcamp …<br />
 
 <small>Frank Fischer und Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** Unter Mitarbeit von Christopher Kittel, Carsten Milling, Peer Trilcke und Jana Wolf. Bern: edition taberna kritika 2019. 32 Blatt in Kartonbox, Farbdruck. ISBN: 978-3-905846-55-3. Preis: €14 / 17 SFr. – Spielregeln: https://dramenquartett.github.io/</small>
 
---
-
-###  *ezlinavis*
-
-![ezlinavis screenshot](images/ezlinavis-screenshot-tolstoy.png)<!-- .element height="450px;" -->
-
-<small>**ezlinavis** in Aktion: https://ezlinavis.dracor.org/</small>
-
 ---
 
 ### Zusammenfassung
@@ -657,10 +618,11 @@ Was tut man, wenn im Datenanalyse-Bootcamp …<br />
 <br />allgemein:
 - Konzept der **Programmierbaren Korpora** für Forschung und Lehre
 - forschungsnahe DH-Infrastruktur, die ein eigenes Ökosystem schafft
+- Schnittstelle zwischen analoger und digitaler Philologie
 
 <br>speziell:
 - **dracor.org**: Forschungsinfrastruktur zum europäischen Drama:
-  - verlässliche, erweiterbare Korpora in mehreren Sprachen (→&nbsp;komparatistische Ansätze)
+  - verlässliche, erweiterbare Korpora in mehreren Sprachen, gepaart mit hochfunktionalen Schnittstellen (→&nbsp;komparatistische Ansätze)
   - Open-Source-Projekt: lurken, forken, pull requests
 
 --
