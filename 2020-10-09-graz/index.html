@@ -61,23 +61,13 @@ DARIAH-EU 🇪🇺 (Board of Directors)<!-- .element: style="font-size:0.7em;" -
 
 --
 
-### Verortung
-
-innerhalb des 3-Sphären-Modells von Patrick Sahle
-
-![Mapping DH (Patrick Sahle)](images/mapping-dh-engl-sahle.png)<!-- .element width="400px;" -->
-
-<!-- .element: style="font-size:0.8em;" -->
-
---
-
 ### Minimalanforderungen für digitale <br />Forschung in den Geisteswissenschaften?
 
 <br />
 
 1. Forschungsfragen<!-- .element: class="fragment" -->
 2. digital vorliegende Daten<!-- .element: class="fragment" -->
-  - u.&nbsp;a. Textdaten (digitale Editionen bzw. Korpora)
+  - z.&nbsp;B. Textdaten (digitale Editionen bzw. Korpora)
 3. Tools, Services, Programmcode<!-- .element: class="fragment" -->
 
 --
@@ -264,42 +254,11 @@ Exemplarischer Anwendungsfall für diesen Vortrag:
 
 --
 
-### Funktionen der DraCor-API (1/2)
+### Funktionen der DraCor-API
 
 ![DraCor-API)](images/dracor-api.png)
 
 <small>https://dracor.org/documentation/api/</small>
-
---
-
-### Funktionen der DraCor-API (2/2)
-
-<br />
-
-- Liste erhältlicher Korpora und deren Inhalt (Liste aller Stücke)
-- Metadaten und Netzwerkdaten zu allen Stücken als CSV, GEXF und GraphML
-- Liste sprechender Figuren pro Stück (oft bedeutend umfangreicher als die *dramatis personae*!)
-- Figuren pro Segment eines Stücks (dynamische Graphen!)
-- gesprochener Text (gesamt/weibl./männl. oder pro Figur)
-- Regieanweisungen
-- SPARQL-Endpunkt (Linked Open Data!)
-- Live-Dokumentation (via Swagger): https://dracor.org/documentation/api/
-
---
-
-### SPARQL-Endpunkt von DraCor
-
-![DraCor-API)](images/dracor-sparql.png)
-
-<small>https://dracor.org/sparql</small>
-
---
-
-### DraCor Technology Stack
-
-![DraCor Technology Stack](images/dracor-drawio.svg)
-
-<small>Alle Repos (Code, Daten) sind *open source*: https://github.com/dracor-org</small>
 
 --
 
@@ -413,10 +372,25 @@ plot(hermann)
 
 <br />
 
-- Analogie zur IT-News-Plattform *ProgrammableWeb* (Verzeichnis mit über 23.000 APIs)
 - Korpora als vergleichbare Objekte, die selbst Funktionen anbieten und mit anderen Datenquellen verbunden sind (via LOD)
-- [FAIR-Prinzipien](https://www.go-fair.org/fair-principles/), bessere Reproduzierbarkeit
+- [FAIR-Prinzipien](https://www.go-fair.org/fair-principles/)
 - Programmable Corpora erschöpfen sich aber nicht in der angebotenen API, Andockbarkeit auf allen Ebenen gegeben (TEI, API, R, Python, LOD, …)
+
+--
+
+### DraCor Technology Stack
+
+![DraCor Technology Stack](images/dracor-drawio.svg)
+
+<small>Alle Repos (Code, Daten) sind *open source*: https://github.com/dracor-org</small>
+
+--
+
+### Shiny App
+
+![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (von Ivan Pozdniakov). Datenbezug komplett über die API.</small>
 
 --
 
@@ -434,50 +408,6 @@ plot(hermann)
 
 <small>**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script von Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
 
---
-
-### Shiny App
-
-![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
-
-<small>https://shiny.dracor.org/ (von Ivan Pozdniakov). Datenbezug komplett über die API.</small>
-
---
-
-### Boris Yarkho (1889–1942)
-
-![Boris Yarkho (cropped)](images/boris-yarkho.jpg)
-
-<small>(Bildquelle: http://urokiistorii.ru/article/52560)</small>
-
---
-
-Boris Yarkho: ***Speech Distribution in Five-Act Tragedies (A Question of Classicism and Romanticism)*** (verfasst 1935–1938)
-
-<br />
-
-Hrsg. von Frank Fischer, Marina Akimova und Boris Orekhov. <br />In: *Journal of Literary Theory.* [Vol. 13. No. 1: *»Moscow Formalism and Literary History«.*](https://www.degruyter.com/view/journals/jlt/13/1/jlt.13.issue-1.xml) De Gruyter 2019, S. 13–76.
-
-<br />
-
-DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
-
---
-
-### Redeverteilung nach Yarkho
-
-![Shakespeare vs Romantiker 2, Redeverteilung im Durchschnitt](images/yarkho-shakespeare-vs-romanticists-2.png)
-
-<small>Shakespeare im Vergleich mit dem romantischen Drama (im Durchschnitt): <br />»romantic drama is a return to Shakespeare«.</small>
-
---
-
-### Redeverteilung nach Yarkho
-
-![Emilia Galotti, speech distribution](images/speech-distribution-lessing-emilia-galotti.png)<!-- .element width="800px;" -->
-
-<small>Implementiert in **DraCor** (hier für Lessings »Emilia Galotti«): <br />https://dracor.org/id/ger000088#speech</small>
-
 ---
 
 # Kapitel 5.
@@ -491,6 +421,14 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 ![LOD cup](images/lod-cup.jpg)
 
 <br /><small>(Bildquelle: https://www.w3.org/DesignIssues/LinkedData.html)</small>
+
+--
+
+### SPARQL-Endpunkt von DraCor
+
+![DraCor-API)](images/dracor-sparql.png)
+
+<small>https://dracor.org/sparql</small>
 
 --
 
