@@ -1,0 +1,12 @@
+.reveal section img {
+  border: none;
+}
+.reveal table th {
+  font-size: 0.75em;
+}
+.reveal table td {
+  font-size: 0.75em;
+}
+.reveal {
+  font-size: 30px;
+}

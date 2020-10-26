@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Extraktion und Analyse von Netzwerkdaten aus literarischen Texten (27. Oktober 2020)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+### Extraktion und Analyse von <br />Netzwerkdaten aus literarischen Texten
+
+<!-- .element width="150px;" -->
+![Simple network (from Wikimedia Commons)](images/graph-symbolbild-wm-commons.png)
+<!-- source: https://commons.wikimedia.org/wiki/File:Graph_betweenness.svg -->
+
+Ass. Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+Higher School of Economics, Moskau<br />
+DARIAH-EU (Board of Directors)<!-- .element: style="font-size:0.7em;" -->
+
+<br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/fubsna](http://bit.ly/fubsna)**
+
+<br />Freie Universität Berlin &nbsp;·&nbsp; 27. Oktober 2020<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Grundlegende Terminologie](#/1)
+2. [Knoten- und graphbasierte Werte](#/2)
+4. [Extraktion von Netzwerkdaten](#/4)
+5. [Übungsaufgabe](#/5)
+6. [Ausblick](#/6)
+
+---
+
+### Grundlegende Terminologie
+
+![Bild von einfachem Netzwerk (Quelle: Wikimedia Commons)](images/small_network.png)<!-- .element width="434px;" -->
+
+- Netzwerk = Graph
+- Knoten (nodes, vertices)
+- Kanten (edges)
+
+<small><br /><br />(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png))</small>
+
+--
+
+Wenn sich ein Datensatz sinnvoll mit Knoten und Kanten <br />beschreiben lässt, haben wir es mit Netzwerkdaten zu tun.
+
+--
+
+### Beispiele für Netzwerke
+
+<br />
+
+- Eisenbahnnetz (Bahnhöfe und Schienennetz)
+- Flugverkehr (Flughäfen und Flugrouten)
+- Internet (Endgeräte und Netzverbindungen)
+- soziale Netze<!-- .element: class="fragment" -->
+
+--
+
+### Visualisierte Facebook-Freundschaften
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+<small>(Quelle: [Paul Butler, 2010](https://www.facebook.com/notes/facebook-engineering/visualizing-friendships/469716398919))
+
+--
+
+### Cluster (Communities)
+
+![Graph, nodes, edges, communities](images/graph-nodes-edges-communities.png)<!-- .element width="425px;" -->
+
+<br />
+
+<small>(Bildquelle: [10.3390/a9010008](https://doi.org/10.3390/a9010008))</small>
+
+--
+
+### Soziale Netzwerke
+
+![Graph, nodes, edges, communities](images/jill-rettberg-annotated-social-network.png)<!-- .element width="400px;" -->
+
+<small>Persönliches Facebook-Netzwerk mit annotierten Clustern/Communities. <br />(Quelle: [Jill Rettberg, 2013](http://jilltxt.net/?p=3447))
+
+--
+
+#### Beispiel für ein literarisches Netzwerk: <br />Goethes »Faust I«
+
+![Goethe, Faust I](images/goethe-faust-eine-tragoedie.png)<!-- .element width="480px;" -->
+
+<small>Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/ger/goethe-faust-eine-tragoedie))
+
+---
+
+### Knotenbasierte Werte
+
+- Grad
+- Pfadlänge
+- […]
+
+### <br />Graphbasierte Werte
+
+- Netzwerkgröße
+- […]
+
+--
+
+### Ein Beispielgraph
+
+![Vier Knoten](images/four_nodes.png)<!-- .element height="400px;" -->
+
+Geben Sie an: (a) Grad des mittleren Knotens, (b) Grad der äußeren Knoten, (c) Pfadlänge zwischen zwei äußeren Knoten, (d)&nbsp;Netzwerkgröße?
+
+---
+
+### Netzwerke extrahieren mit »ezlinavis«
+
+<small>(= Simple Network Visualization for Literary Texts)</small>
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-brecht.png)<!-- .element height="380px;" -->
+
+Linke Spalte: Eingabefenster. – Mittlere Spalte: Automatisch generierte Kantendaten. – Rechte Spalte: Interaktive Visualisierung.
+
+---
+
+#### Übungsbeispiel
+### Ingo Schulze: »Simple Storys« (1998)
+
+![Simple Storys, Cover (1998)](images/simple-storys-cover.jpg)<!-- .element width="250px;" -->
+
+<small>(Bildquelle: [piper.de](https://www.piper.de/buecher/simple-storys-isbn-978-3-8270-7768-4-ebook))</small>
+
+--
+
+### Übungsaufgabe
+
+* Kennen sich **Marianne** und **Raffael** über Ecken? Falls ja, über wieviele Ecken? Erstellen Sie zur Beantwortung der Frage ein Netzwerk mit ezlinavis!
+
+### Was bekannt ist
+
+* Barbara und Frank sind verheiratet.
+* Marianne und Hanni kennen sich von der gemeinsamen Turngruppe.
+* Barbara und Hanni kennen sich seit 18 Jahren.
+* Frank und Barbara haben Enrico besucht.
+* Orlando hat als Taxifahrer bei Raffael gearbeitet.
+* Frank besucht Orlando im Krankenhaus.
+* Ernst wird von Barbara in der Psychiatrie behandelt.
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Lösung (zum Copy & Pasten)
+
+<br />
+
+```
+# 1
+Barbara
+Frank
+# 2
+Marianne
+Hanni
+# 3
+Barbara
+Hanni
+# 4
+Frank
+Barbara
+Enrico
+# 5
+Orlando
+Raffael
+# 6
+Frank
+Orlando
+# 7
+Ernst
+Barbara
+```
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Auswertung
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-beispiel.png)<!-- .element height="450px;" -->
+
+(a) Sind Marianne und Raffael über Ecken bekannt? (b) Über wieviele? <br />(c) Welche ist die Person mit dem maximalen Grad?
+
+--
+
+#### Vollständige Modellierung des Romans »Simple Storys«
+
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-storys-netzwerk.png)<!-- .element width="450px;" -->
+
+<small>Thomas Schweizer, Michael Schnegg: [»Die soziale Struktur der ›Simple Storys‹. Eine Netzwerkanalyse«](https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf) (1998). <br />38 Knoten (Romanfiguren). Kanten: positive, negative oder Tauschbeziehungen.</small>
+
+--
+
+### Diskussion
+
+<br />
+
+* Welche Schwierigkeiten gab es bei der Formalisierung?
+* Wieso sieht der visualisierte Graph jedes Mal anders aus?
+* Wo stößt die Methode an ihre Grenzen?
+
+---
+
+### Ausblick
+
+--
+
+Alexei Tolstois »Der Tod Iwans des Schrecklichen« (1866)
+
+![betweenness](images/betweenness-tolstoy-smert-ioanna-groznogo.png)<!-- .element width="780px;" -->
+
+<small>Identifikation von Agenten/Spionen mithilfe der Netzwerktheorie, vgl. die Figur Битяговский (Bitjagovskij). <br />Netzwerkdaten: https://dracor.org/rus/tolstoy-smert-ioanna-groznogo</small>
+
+--
+
+Ludwig Anzengrubers »Das vierte Gebot« (1877)
+
+![Anzengruber-Drama, Netzwerk mit Figurenbeziehungen](images/anzengruber-list-relations.jpg)<!-- .element width="580px;" -->
+
+<small>**Modellierung und Auswertung verschiedenartiger Figurenrelationen.** <br />Netzwerkdaten: https://dracor.org/ger/anzengruber-das-vierte-gebot#relations</small>
+
+--
+
+### Vielen Dank!
+
+<br />
+
+### * * *
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
