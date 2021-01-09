@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DraCor: Dramenanalyse digital (Leipzig, 9. Januar 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+### DraCor: Dramenanalyse digital
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+Ass. Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+Higher School of Economics, Moskau<br />
+DARIAH-EU 🇪🇺 (Board of Directors)<!-- .element: style="font-size:0.7em;" -->
+
+Website: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io](https://lehkost.github.io/)** · Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**
+
+<br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/unileicor](https://bit.ly/unileicor)**
+
+<br />[Workshop »Perspektiven der Digital Humanities in der Tanz- und Theaterforschung«](https://www.gko.uni-leipzig.de/institut-fuer-theaterwissenschaft/praxis/szenische-projekte-workshops/#c384167) <br />Universität Leipzig, Institut für Theaterwissenschaft &nbsp;·&nbsp; 9. Januar 2021
+<!-- .element: style="font-size:0.8em;" -->
+
+---
+
+![DraCor-Frontpage am 09.01.2021](images/dracor-frontpage-2021-01-09.png)
+
+https://dracor.org/
+
+--
+
+![DraCor-Frontpage am 02.12.2020](images/iphone-11-pro-max-and-ipad-pro-mockup.jpg)
+
+https://dracor.org/
+
+--
+
+### **DraCor**
+
+<br />
+
+- nachhaltige Forschungsprojekte benötigen (und erzeugen) dedizierte Infrastruktur
+- DraCor: *Drama Corpora*-Portal (https://dracor.org/)
+- [Credits](https://dracor.org/doc/credits)-Seite: &gt; 50 Namen
+- Beginn mit zwei Hauskorpora:
+  - German Drama Corpus, GerDraCor (1730er–1940er)
+  - Russian Drama Corpus, RusDraCor (1740er–1940er)
+
+--
+
+#### Wachsende Liste von Korpora aus der Community:
+
+<br />
+
+- GerDraCor
+- RusDraCor
+- ItaDraCor
+- SweDraCor
+- CalDraCor
+- GreekDraCor
+- ShakeDraCor
+- RomDraCor
+- SpanDraCor
+- AlsDraCor
+- TatDraCor
+- BashDraCor
+- …
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI
+
+<br />
+
+```xml
+<sp who="#gretchen">
+  <speaker>MARGARETE.</speaker>
+  <lg>
+    <l>Nun sag, wie hast du’s mit der Religion?</l>
+    <l>Du bist ein herzlich guter Mann,</l>
+    <l>Allein ich glaub’, du hältst nicht viel davon.</l>
+  </lg>
+</sp>
+<sp who="#faust">
+  <speaker>FAUST.</speaker>
+  <lg>
+    <l>Laß das, mein Kind! Du fühlst, ich bin dir gut;</l>
+    <l>Für meine Lieben ließ’ ich Leib und Blut,</l>
+    <l>Will niemand sein Gefühl und seine Kirche rauben.</l>
+  </lg>
+</sp>
+```
+
+<br />
+
+<small>Dialog aus Goethes »Faust I« (1808) in TEI (Text Encoding Initiative). Momentan <br />sind im Standard 582 verschiedene Elemente definiert ([Stand August 2020](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).</small>
+
+--
+
+### Frontpage GerDraCor
+
+![GerDraCor)](images/dracor-gerdracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/ger
+
+--
+
+### GerDraCor: »Die Räuber« (1781)
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/ger000008
+
+--
+
+### GerDraCor: »Das Testament« (1745)
+
+![GerDraCor: Das Testament)](images/dracor-das-testament.png)
+
+https://dracor.org/id/ger000220#speech
+
+--
+
+### DraCor-API (Schnittstelle): Regieanweisungen
+
+https://dracor.org/api/corpora/ger/play/goethe-faust-eine-tragoedie/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Alle Regieanweisungen aus Goethes »Faust«.</small>
+
+https://dracor.org/api/corpora/ger/play/schiller-die-raeuber/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Alle Regieanweisungen aus Schillers »Räubern«.</small>
+
+https://dracor.org/api/corpora/ger/play/lasker-schueler-die-wupper/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Alle Regieanweisungen aus Lasker-Schülers »Die Wupper«.</small>
+
+https://dracor.org/api/corpora/shake/play/hamlet/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Alle Regieanweisungen aus Shakespeares »Hamlet«.</small>
+
+https://dracor.org/api/corpora/rus/play/chekhov-vishnevyi-sad/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Alle Regieanweisungen aus Tschechows »Kirschgarten«.</small>
+
+--
+
+### Forschungsbeispiel:
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+<small>Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.</small>
+
+--
+
+### Einfache Visualisierung von Strukturdaten
+#### Anzahl von Figuren pro Stück in chronologischer Folge (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+gerdracor <- fread("https://dracor.org/api/corpora/ger/metadata.csv")
+ggplot(gerdracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+<small>Beispiel für einfaches R-Skript, das die Daten über die API bezieht.</small>
+
+--
+
+#### Anzahl von Figuren pro Stück in chronologischer Folge (2/2)
+
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+<small>Ausgabe in RStudio.</small>
+
+<small>(Der Punkt rechts oben: Karl Kraus’ »Die letzten Tage der Menschheit«, 925 Sprechinstanzen.)</small>
+
+--
+
+#### R-Bibliothek »rdracor«:
+
+```R
+library(rdracor)
+library(igraph)
+hermann <- play_igraph(corpus="ger", play="kleist-die-hermannsschlacht")
+plot(hermann)
+```
+#### Ergebnis:
+
+![Hermannsschlacht, Netzwerkgraph mit rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element height="400px;" -->
+
+--
+
+### Shiny App
+
+![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (von Ivan Pozdniakov). Datenbezug komplett über die API.</small>
+
+--
+
+### Distant-Reading Showcase
+
+Wie verändern sich die Figurenkonstellationen im deutschen Drama?
+
+![465 Dramennetzwerke auf einen Blick](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+<small>Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)</small>
+
+--
+
+#### »Besuch im Marstheater«
+
+![Besuch im Marstheater (Poster)](images/besuch-im-marstheater-poster.jpg)<!-- .element height="500px;" -->
+
+<small>Eine Netzwerkmodellierung von Karl Kraus’ Riesendrama »Die letzten Tage der Menschheit«. <br />Veröffentlicht auf der DHd2020 in Paderborn. – DOI:[10.6084/m9.figshare.11917902](https://doi.org/10.6084/m9.figshare.11917902).</small>
+
+--
+
+### Lessings »Emilia Galotti«
+
+![Boris Godunow (dynamischer Graph)](images/lessing-emilia-galotti.gif)
+
+<small>**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script von Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
+
+--
+
+### Experimentelle Interfaces
+
+<br />
+
+- 3D-Kookkurrenz-Netzwerk für Hamlet (mit [VisNow](https://visnow.icm.edu.pl/)):
+  - https://twitter.com/umblaetterer/status/1024689131509739520
+- AR-Experiment (mit Adobe Aero, von Mark Schwindt):
+  - https://twitter.com/MarkSchwindt/status/1335936166571466753
+
+--
+
+### DraCor als Progressive Web App
+
+![DraCor App](images/realistic-iphone-7-plus-mockup.jpg)
+
+<small>Läuft auf iOS und Android.</small>
+
+--
+
+### Anbindung an die <br />Linked Open Data-Cloud
+
+<br />
+
+- Beispiel: Lessings *Emilia Galotti* (1772)
+- hat einen [Wikipedia-Artikel](https://de.wikipedia.org/wiki/Emilia_Galotti)
+- hat einen Wikidata-Artikel mit Fakten: <br />https://www.wikidata.org/wiki/Q782653
+- Uraufführungen deutscher Stücke: http://tinyurl.com/y9vga68j
+- Uraufführungen russischer Stücke: http://tinyurl.com/y8r337pa
+
+--
+
+### Uraufführungsorte in GerDraCor
+
+![Uraufführungen insgesamt](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+--
+
+### Urauführungsort Berlin in GerDraCor
+
+![Uraufführungen Berlin](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+--
+
+### Ermittlung der Forschungsintensität
+
+<small>Anzahl wissenschaftlicher Artikel zu einem Stück im German Drama Corpus (Top-20),<br />via [**BDSL** – Bibliographie der deutschen Sprach- und Literaturwissenschaft](https://www.bdsl-online.de/):</small>
+
+<small>
+
+1. Goethe: Faust (2032)
+2. Kleist: Penthesilea (303)
+3. Lessing: Nathan der Weise (303)
+4. Goethe: Iphigenie auf Tauris (242)
+5. Lessing: Emilia Galotti (191)
+6. Kleist: Prinz Friedrich von Homburg (172)
+7. Schiller: Wilhelm Tell (145)
+8. Schiller: Maria Stuart (123)
+9. Schiller: Die Jungfrau von Orleans (115)
+10. Kleist: Die Hermannsschlacht (114)
+11. Hofmannsthal: Elektra (109)
+12. Goethe: Torquato Tasso (108)
+13. Schiller: Kabale und Liebe (101)
+14. Kraus: Die letzten Tage der Menschheit (100)
+15. Kleist: Amphitryon (97)
+16. Schnitzler: Reigen (85)
+17. Hofmannsthal: Der Schwierige (76)
+18. Goethe: Egmont (65)
+19. Kleist: Die Familie Schroffenstein (57)
+20. Lenz: Die Soldaten (48)
+
+</small>
+
+--
+
+### Repräsentativität eines Korpus
+
+<small>(via https://dracor.org/api/corpus/rus/metadata.csv)</small>
+<br />
+
+| Stück | Anzahl Wikipedia-Links |
+|:-----:|:----------------------:|
+| Anton Tschechow: Der Kirschgarten | 36 |
+| Anton Tschechow: Drei Schwestern | 36 |
+| Nikolai Gogol: Der Revisor | 35 |
+| Anton Tschechow: Die Möwe | 35 |
+| Anton Tschechow: Onkel Wanja | 33 |
+| Alexander Gribojedow: Verstand schafft Leiden | 14 |
+| Alexander Puschkin: Boris Godunow | 14 |
+| Maxim Gorki: Nachtasyl | 13 |
+| Anton Tschechow: Iwanow | 11 |
+| Nikolai Gogol: Die Hochzeit | 10 |
+
+<br />
+<small>Die 10 international populärsten Stücke laut Wikipedia (RusDraCor umfasst momentan 211 Stücke).
+
+--
+
+### Didaktik & Gamification
+
+![Quartettspiel](images/dramenquartett_back.jpg)<!-- .element width="300px;" -->
+![Quartettspiel](images/dramenquartett_front.png)<!-- .element width="300px;" -->
+
+<small>Frank Fischer und Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** Unter Mitarbeit von Christopher Kittel, Carsten Milling, Peer Trilcke und Jana Wolf. Bern: edition taberna kritika 2019. <br />Spielregeln: https://dramenquartett.github.io/</small>
+
+--
+
+![Dramenquartett, Vortrag](images/dramenquartett-vortrag.png)
+
+<small>Jan Horstmann, Marie Flüh, Mareike Schumacher, Frank Fischer, Peer Trilcke, Jan Christoph Meister: Netzwerkanalyse spielerisch vermitteln mit DraCor und forTEXT: Zur nicht-digitalen Dissemination einer digitalen Methode in Form des Kartenspiels »Dramenquartett«. In: DHd2020: »Spielräume«. 2.–6. März 2020. Book of Abstracts. <br />Universität Paderborn, S. 167–171. (Vortrag: [10.5281/zenodo.3697240](https://doi.org/10.5281/zenodo.3697240))</small>
+
+---
+
+### Zusammenfassung
+
+<br />
+
+- DraCor: eine digitale Forschungsinfrastruktur zum europäischen Drama
+- verlässliche, erweiterbare Korpora in mehreren Sprachen, gepaart mit hochfunktionalen Schnittstellen (→&nbsp;komparatistische Ansätze)
+- DraCor als Teil eines digitalen Ökosystems zur internationalen Dramenforschung
+- Open Data, Open Source, Community
+- (Weiter-)Entwicklung in kritischer Auseinandersetzung mit digitalen Forschungsmöglichkeiten
+- Schnittstelle zwischen analoger und digitaler Philologie
+
+--
+
+Vielen Dank.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
