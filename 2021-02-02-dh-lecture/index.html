@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DH Lecture: Working with XML/TEI (2 Feb 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+### Магистерская программа<!-- .element: style="font-size:1em;" -->
+## [Цифровые методы в гуманитарных науках](https://www.hse.ru/ma/dh/)<!-- .element: style="font-size:0.65em;" -->
+
+<br /><br /><br />📚 &nbsp; &nbsp; 🎼 &nbsp; &nbsp; 🗺 &nbsp; &nbsp; <font style="font-size:5rem;width:100%;">💻</font> &nbsp; &nbsp; 🏛 &nbsp; &nbsp; 🎨 &nbsp; &nbsp; 🎮
+
+--
+
+## Lecture
+### Working with XML/TEI
+
+<br /><br />
+[Frank Fischer](https://lehkost.github.io/)
+
+(ffischer@hse.ru)<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br />
+<!-- .element: style="font-size:0.85em;" -->This presentation: <br />https://bit.ly/36wPv02
+
+<br /><br />2 February 2021 &nbsp;·&nbsp; 18:10</p>
+
+--
+
+## Schedule
+
+<br />
+
+1. Round of Introduction
+2. Poll
+3. Lecture
+  - TEI: The Origins
+  - Example of a TEI-Driven Project
+  - Working With XML Documents
+  - XML Schema
+4. Hands-On With jEdit
+
+---
+
+## 1. TEI: The Origins
+
+--
+
+# TEI?
+
+<br /><br /> <br />
+
+## Text Encoding Initiative<!-- .element: class="fragment" -->
+
+--
+
+![Michael Sperberg-McQueen](images/Michael_Sperberg-McQueen_2007.jpg)
+
+Michael Sperberg-McQueen, 2007<!-- .element: class="fragment" -->
+
+<small>(img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:XML_2007-_Michael_Sperberg-McQueen.jpg))</small>
+
+--
+
+### Michael Sperberg-McQueen
+
+<br />
+
+- PhD in comparative literature from Stanford University (1985)
+- editor-in-chief of the TEI (1988–2000)
+- co-editor of the Extensible Markup Language (XML) 1.0 spec (1998)
+- chair of the XML Schema working group (–2009)
+- → The specification of XML has a Humanities background!
+
+<small><br /><br />(sources: [Wikipedia](https://en.wikipedia.org/wiki/Michael_Sperberg-McQueen) and [an interview with Julianne Nyhan](https://link.springer.com/chapter/10.1007/978-3-319-20170-2_12))</small>
+
+--
+
+### Refreshing Our Knowledge of TEI: A Dialogue
+
+<br />
+
+```xml
+<sp who="#margarita">
+  <speaker>Маргарита</speaker>
+  <lg>
+    <l>Скажи ты мне прямей:</l>
+    <l>Как дело обстоит с религией твоей?</l>
+    <l>Ты славный, добрый человек, но к ней</l>
+    <l>Относишься как будто беззаботно.</l>
+  </lg>
+</sp>
+<sp who="#faust">
+  <speaker>Фауст</speaker>
+  <lg>
+    <l>Оставь, дитя! Мою узнала ты любовь;</l>
+    <l>За близких сердцу рад свою пролить я кровь;</l>
+    <l>Не против веры я, кому в ней есть отрада.</l>
+  </lg>
+</sp>
+```
+
+<br />
+
+<small>Dialogue from Goethe's »Faust, Part One« (1808, [transl. by N. A. Kholodkovsky](https://ru.wikisource.org/wiki/Фауст_(Гёте;_Холодковский)/Часть_первая/Сцена_16._Сад_Марты)) in TEI. <br />To date, the standard defines 582 elements ([last revision in August 2020](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).</small>
+
+---
+
+## 2. Example of a TEI-Driven Project
+
+--
+
+![DraCor hexagon logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+<br />
+
+## DraCor
+
+(**Dra**ma **Cor**pora project)
+
+--
+
+![DraCor frontpage on 09.01.2021](images/dracor-frontpage-2021-01-09.png)
+
+https://dracor.org/
+
+--
+
+![DraCor on different devices](images/iphone-11-pro-max-and-ipad-pro-mockup.jpg)
+
+Responsive web design.
+
+--
+
+![DraCor App](images/realistic-iphone-7-plus-mockup.jpg)
+
+DraCor as Progressive Web App.
+
+<small>Runs on iOS and Android.</small>
+
+--
+
+### Shiny App
+
+![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (by Ivan Pozdniakov).</small>
+
+--
+
+### DraCor Technology Stack
+
+![DraCor technology stack](images/dracor-drawio.svg)
+
+<small>All repos (code, data) are *open source*: https://github.com/dracor-org</small>
+
+--
+
+### DraCor-API: Some Functions
+
+https://dracor.org/api/corpora/rus/play/gogol-revizor/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Spoken text of all female characters in Gogol's »Revizor«.</small>
+
+https://dracor.org/api/corpora/rus/play/tolstoy-vlast-tmy/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Spoken text of all 'sons' in Tolstoy's »Vlast' t'my«.</small>
+
+https://dracor.org/api/corpora/rus/play/pushkin-boris-godunov/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Calculated network metrics for characters in Pushkin's »Boris Godunov« (in JSON format).</small>
+
+https://dracor.org/api/corpora/rus/play/chekhov-vishnevyi-sad/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Stage directions extracted from Chekhov's »Vishnevy sad«.</small>
+
+https://dracor.org/api/corpora/rus/metadata<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadata on all plays in the Russian drama corpus (in JSON or CSV format).</small>
+
+--
+
+### Gamification: Card-Game Approach
+
+![Pikovaya drama](images/pikovaya_drama.jpg)<!-- .element width="700px;" -->
+
+https://dracor.org/doc/merch
+
+--
+
+## All this is based on the use <br />of the TEI standard.
+
+---
+
+## 3. Working With XML Documents
+
+<br />
+
+Editing, Parsing, Validating, Transforming, Extracting, …
+
+--
+
+### Some Ways of Handling XML
+
+<br />
+
+- XQuery (XML Query language)
+- XPath (query language for selecting XML nodes)
+- ```libxml2``` (software library for parsing XML documents)
+  - implemented in Python: ```lxml``` library
+- Beautiful Soup (Python package for parsing HTML and XML)
+- XMLStarlet (set of command line utilities)
+- XSLT (eXtensible Stylesheet Language Transformation language for transforming XML docs)
+- XML databases
+  - BaseX, eXist
+- XML editors
+  - Oxygen XML Editor, XML Notepad, jEdit with XML/TEI plugins
+- …
+
+---
+
+## 4. XML Schema
+
+--
+
+### well-formed vs. valid
+
+--
+
+Is this a well-formed document?
+
+<br />
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "Note.dtd">
+<note>
+<to>Olga</to>
+<from>Sergey</from>
+<heading>Reminder
+<body>Hello!</body>
+```
+
+--
+
+Is this also a valid document?
+
+<br />
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "Note.dtd">
+<note>
+<to>Olga</to>
+<from>Sergey</from>
+<heading>Reminder</heading>
+<body>Hello!</body>
+</note>
+```
+
+<br />
+
+<small>(example taken from https://www.w3schools.com/xml/xml_dtd.asp)</small>
+
+--
+
+### DTD
+
+<br />
+
+```dtd
+<!DOCTYPE note
+[
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+```
+
+<br />
+
+<small>**DTD** = document type definition <br />**#PCDATA** = parseable character data</small>
+
+<small>(example taken from https://www.w3schools.com/xml/xml_dtd.asp)</small>
+
+--
+
+### DTD
+
+<br />
+
+- shortcomings of DTD:
+  - no XML syntax
+  - no data types for elements and attributes
+  - no compability to namespaces
+
+--
+
+### XML Schema (XSD)
+
+<br />
+
+- filename extension: .xsd (XML Schema Definition)
+- XML Schema spec (2001) = XML-based alternative to DTD
+
+--
+
+### Structure of an XML Schema Document
+
+<br />
+
+- XML Schema files start with a normal XML declaration (```<?xml version="1.0"?>```), followed by a root element (always ```xs:schema```)
+- can be very long, many lines of code
+
+--
+
+### XML Schema (XSD)
+
+<br />
+
+```xsd
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="note">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="to" type="xs:string"/>
+        <xs:element name="from" type="xs:string"/>
+        <xs:element name="heading" type="xs:string"/>
+        <xs:element name="body" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+```
+
+<br />
+
+<small>(example taken from https://www.w3schools.com/xml/xml_schema.asp)</small>
+
+--
+
+### RelaxNG
+
+<br />
+
+- REgular LAnguage for XML Next Generation
+- another schema language for XML
+- RelaxNG code can still be easily hand-crafted: "easy to learn and easy to use"
+
+--
+
+### RelaxNG
+
+<br />
+
+```rng
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+  <start>
+    <element name="note">
+      <element name="to">
+        <text/>
+      </element>
+      <element name="from">
+        <text/>
+      </element>
+      <element name="heading">
+        <text/>
+      </element>
+      <element name="body">
+        <text/>
+      </element>
+    </element>
+  </start>
+</grammar>
+
+```
+
+--
+
+### Schematron
+
+<br />
+
+- rule-based validation language (path expressions instead of grammars)
+- defines validation rules using the XPath query language
+- regular expressions
+
+--
+
+### A Simple Schematron Rule
+
+<br />
+
+```xml
+<rule context="note">
+  <assert test="from">A name is required.</assert>
+</rule>
+```
+
+--
+
+### ODD
+
+<br />
+
+- "One Document Does it all"
+- TEI customisation (which [modules](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STMA), which [elements](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html), adjustment of attributes)
+- implemented by Lou Burnard and Michael Sperberg-McQueen
+- combines schema and prose documentation
+- can be compiled into a DTD, RelaxNG or XML Schema (along with documentation) using [Roma](https://roma2.tei-c.org/)
+- [TEI Guidelines](https://tei-c.org/guidelines/) themselves also produced from an ODD
+
+---
+
+### Hands-On With jEdit
+
+<br />
+
+![jEdit with TEI plugin (screenshot)](images/jedit-faust.png)<!-- .element width="600px;" -->
+
+<br />
+
+http://www.jedit.org/
+
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
