@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Korpus und Umwelt – Perspektiven der digitalen Kulturwissenschaften (Vechta, 15. Februar 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+### Korpus und Umwelt
+#### Perspektiven der digitalen Kulturwissenschaften
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+Ass. Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+Higher School of Economics, Moskau<br />
+DARIAH-EU 🇪🇺 (Board of Directors)<!-- .element: style="font-size:0.7em;" -->
+
+Website: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io](https://lehkost.github.io/)** · Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**
+
+<br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/korpumw](https://bit.ly/korpumw)**
+
+<br />Universität Vechta &nbsp;·&nbsp; 15. Februar 2021
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+## Ablauf
+
+<br />
+
+1. [Intro](#/1)
+2. [Zwei Beispiele für Korpus-Umwelt-Relationen](#/2)
+3. [Korpus und Umwelt am Beispiel von DraCor](#/3)
+4. [Perspektiven](#/4)
+
+---
+
+# 1. Intro
+
+--
+
+## Korpora
+
+(i.e.S. Textkorpora; Spannbreite zwischen <br />Referenz- und Arbeitskorpora)
+
+<br />
+
+- Zeitungen
+- Romane, Dramen, Lyrik
+- historische Protokolle
+- Social-Media-Korpora
+- weitere born-digital-Quellen
+- …
+
+--
+
+## Umwelt
+
+<br />
+
+- andere Korpora
+- Datensets
+- Authority Files (etwa Nationalbibliotheken)
+- Linked Open Data-Cloud
+- …
+
+<br />
+
+--
+
+## Korpora
+
+## ⮃
+
+## extrahierbare <br />Features (Daten)<!-- .element: class="fragment" -->
+
+## ⮃
+
+## Umwelt
+
+--
+
+### Konzept der ›Programmable Corpora‹
+
+<br />
+
+<small>Publikation: <br />Frank Fischer et al.: **Programmable Corpora: Introducing DraCor, an Infrastructure for the Research on <br />European Drama.** Proceedings of DH2019: »Complexities«, Utrecht, [doi:10.5281/zenodo.4284002](https://doi.org/10.5281/zenodo.4284002).</small>
+
+<br />
+
+- programmierbare Korpora sind nicht nur (computer-)linguistisch von Interesse: sie sind Aktanten in einem digitalen Ökosytem, sie bieten über eine Schnittstelle (API) selbst Funktionen an und sind mit anderen semantisch reichen Datenquellen verbunden (z.&nbsp;B. über die Linked Open Data-Cloud)
+
+---
+
+# 2. Zwei Beispiele für <br />Korpus-Umwelt-Relationen
+
+--
+
+## Erstes Beispiel: Wann findet die <br />deutsche Literatur statt?
+
+<br />
+
+- Drei Beispieltage:
+  - Georg Büchner: *Lenz* (20. Jänner)
+  - Theodor Fontane: *Effi Briest* (3. Oktober)
+  - J. W. Goethe: *Die Leiden des jungen Werthers* (21.&nbsp;Dezember)
+
+<br />»Die meisten finnischen Romane spielen im Sommer.« <br />(Stefan Moster, *Im Gespräch*, Deutschlandradio Kultur, 8. Oktober 2014)
+
+--
+
+### Korpus: Projekt Gutenberg-DE
+
+![Logo von Gutenberg-DE](images/gutenberg-de-logo.jpg)
+
+<small>Arbeitskorpus (2.735 deutschsprachige Prosatexte, v. a. Romane, 16.–20. Jahrhundert) veröffentlicht <br />als *Corpus of German-Language Fiction* ([doi:10.6084/m9.figshare.4524680](https://doi.org/10.6084/m9.figshare.4524680)).</small>
+
+--
+
+## Workflow
+
+![UIMA-Pipeline](images/uima-pipeline.png)
+
+<small>Hauptwerkzeug zur Extraktion temporaler Angaben: [HeidelTime](https://dbs.ifi.uni-heidelberg.de/research/heideltime/).</small>
+
+--
+
+### Ergebnisse fürs Gesamtkorpus
+
+![Ergebnisse für Gesamtkorpus](images/gesamtkorpus-dt.png)<!-- .element width="800px;" -->
+
+<small>Datums- (rot) und Monatsnennungen (grau). – Vgl. auch Frank Fischer: [»Als einst am 1. Mai die Welt begann«. Warum der Wonnemonat in der deutschen Literatur überpräsent ist. Eine datenphilologische Analyse.](https://www.welt.de/192916211) In: Die Literarische Welt, 4. Mai 2019.</small>
+
+--
+
+## Zweitverwertung der Ergebnisse
+
+Apps [für iOS](https://apps.apple.com/de/app/tiwoli/id1162600098) und Android & Twitter-Bot
+
+![TIWOLI-App auf Android](images/tiwoli-en-02-01-dahl-charlie.png)<!-- .element height="300px" -->
+&nbsp; &nbsp;
+![TiwoliChirp-Beispiel](images/tiwolichirp-example.png)<!-- .element height="300px" -->
+
+<small>Twitter-Bot: [@TiwoliChirp](https://twitter.com/tiwolichirp).</small>
+
+--
+
+## Zweites Beispiel: Vossianische Antonomasien
+
+<br />
+
+- typische Varianten:
+  - »der Boris Becker der Philosophie« (= Vittorio Hösle)
+  - »the Steve Jobs of Beer« (= Jim Koch)
+- Muster: source → modifier → target
+- Forschungsziel: breitere Erkenntnisse zur Verteilung von ›paragons‹ (Lakoff), also beispielhaften, antonomasiegeeigneten Persönlichkeiten
+- Korpus: »New York Times« 1987–2007 (ca. 1,8 Mio. Artikel)
+- NLP-Ansätze gescheitert (Named Entity Recognition zu unzuverlässig)
+- Blick in die Umwelt: Wikidata
+- vgl. [Fischer/Jäschke 2019](https://doi.org/10.1093/llc/fqy087)
+
+--
+
+## Ergebnis u. a.: Die 15 häufigsten Sources
+
+![Top-Sources](images/top-sources.jpg)<!-- .element: style="float:right; width:120px; box-shadow:none; " -->
+
+| Anzahl | Source |
+|-------:|:-------|
+| 72 | [Michael Jordan](https://www.wikidata.org/wiki/Q41421) |
+| 62 | [Rodney Dangerfield](https://www.wikidata.org/wiki/Q436386) |
+| 40 | [Johnny Appleseed](https://www.wikidata.org/wiki/Q369675) |
+| 36 | [Elvis Presley](https://www.wikidata.org/wiki/Q303) |
+| 36 | [Babe Ruth](https://www.wikidata.org/wiki/Q213812) |
+| 25 | [Michelangelo](https://www.wikidata.org/wiki/Q5592) |
+| 25 | [Donald Trump](https://www.wikidata.org/wiki/Q22686) |
+| 23 | [Pablo Picasso](https://www.wikidata.org/wiki/Q5593) |
+| 23 | [Bill Gates](https://www.wikidata.org/wiki/Q5284) |
+| 23 | [Madonna](https://www.wikidata.org/wiki/Q1744) |
+| 21 | [Jackie Robinson](https://www.wikidata.org/wiki/Q221048) |
+| 20 | [P. T. Barnum](https://www.wikidata.org/wiki/Q223766) |
+| 20 | [Tiger Woods](https://www.wikidata.org/wiki/Q10993) |
+| 19 | [Martha Stewart](https://www.wikidata.org/wiki/Q234606) |
+| 17 | [William Shakespeare](https://www.wikidata.org/wiki/Q692) |
+
+--
+
+## Interaktiv explorierbare Daten
+
+![interaktive Vossanto-Timeline](images/timeline.png)<!-- .element width="70%" -->
+
+https://vossanto.weltliteratur.net/timeline/
+
+---
+
+## 3. Korpus und Umwelt <br />am Beispiel von DraCor
+
+(*Drama Corpora*-Portal)
+
+<br />
+
+### (Infrastruktur zur Erforschung <br />des europäischen Dramas)
+
+--
+
+### Distant-Reading Showcase
+
+Wie verändern sich die Figurenkonstellationen im deutschen Drama?
+
+![465 Dramennetzwerke auf einen Blick](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+<small>Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)</small>
+
+--
+
+## Probleme zu stark formalisierter Korpora
+
+<br />
+
+- nicht standardisiertes Format: Korpus nicht geeignet für anders geartete Forschungsfragen
+- keine vergleichbaren Korpora (etwa für komparatistische Ansätze)
+- FAIR-Prinzipien? (findable, accessible, interoperable, reusable?)
+- Linked Open Data? Community-Aspekte?
+
+<br />→ Erkenntnis: nachhaltige Forschungsprojekte benötigen <br />(und erzeugen) dedizierte Infrastruktur
+
+--
+
+![DraCor-Startseite am 11.02.2021](images/dracor-frontpage-2021-02-11.png)
+
+https://dracor.org/
+
+--
+
+### **DraCor**
+
+- [Credits](https://dracor.org/doc/credits)-Seite: &gt; 50 Namen
+- mittlerweile 13 Korpora:
+  - FreDraCor
+  - GerDraCor
+  - RusDraCor
+  - ItaDraCor
+  - SweDraCor
+  - CalDraCor
+  - GreekDraCor
+  - ShakeDraCor
+  - RomDraCor
+  - SpanDraCor
+  - AlsDraCor
+  - TatDraCor
+  - BashDraCor
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI
+
+<br />
+
+```xml
+<sp who="#gretchen">
+  <speaker>MARGARETE.</speaker>
+  <lg>
+    <l>Nun sag, wie hast du’s mit der Religion?</l>
+    <l>Du bist ein herzlich guter Mann,</l>
+    <l>Allein ich glaub’, du hältst nicht viel davon.</l>
+  </lg>
+</sp>
+<sp who="#faust">
+  <speaker>FAUST.</speaker>
+  <lg>
+    <l>Laß das, mein Kind! Du fühlst, ich bin dir gut;</l>
+    <l>Für meine Lieben ließ’ ich Leib und Blut,</l>
+    <l>Will niemand sein Gefühl und seine Kirche rauben.</l>
+  </lg>
+</sp>
+```
+
+<br />
+
+<small>Dialog aus Goethes »Faust I« (1808) in TEI (Text Encoding Initiative). Momentan <br />sind im Standard 582 verschiedene Elemente definiert ([Stand August 2020](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).</small>
+
+--
+
+### Startseite GerDraCor
+
+![GerDraCor)](images/dracor-gerdracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/ger
+
+--
+
+### GerDraCor: »Die Räuber« (1781)
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/ger000008
+
+--
+
+### Eigenständige App zur Netzwerkanalyse (DraCor Shiny)
+
+![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (von Ivan Pozdniakov). Datenbezug komplett über die DraCor-Schnittstelle.</small>
+
+--
+
+#### DraCor-Download-Tab
+
+![DraCor-Download-Tab](images/anzengruber-download-tab.png)
+
+<small>https://dracor.org/id/ger000129#downloads</small>
+
+--
+
+### Forschungsbeispiel:
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+<small>Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.</small>
+
+--
+
+### Biodiversität im Drama
+
+Häufigkeit von »Texttieren« (R. Borgards) in den Sprechtexten <br />des German Drama Corpus (Nomenklatur via Wikidata):<!-- .element: style="font-size:0.8em;" -->
+
+<small>
+
+- Hund (1.464)
+- Pferd (1.058)
+- Schaf (572)
+- Schlange (495)
+- Katze (479)
+- Löwe (468)
+- Esel (399)
+- Wolf (399)
+- Adler (353)
+- Bär (352)
+- Fuchs (255)
+- Hase (234)
+- Taube (225)
+- Gans (206)
+- Hirsch (172)
+- Tiger (164)
+- Fliege (156)
+- Reh (138)
+- Maus (112)
+- Eule (110)
+
+</small>
+
+--
+
+### Ermittlung der Forschungsintensität via BDSL
+
+(Korpus und Kanon)
+
+<small>Anzahl wissenschaftlicher Artikel zu einem Stück im German Drama Corpus (Top-20),<br />via [**BDSL** – Bibliographie der deutschen Sprach- und Literaturwissenschaft](https://www.bdsl-online.de/):</small>
+
+<small>
+
+1. Goethe: Faust (2.032)
+2. Kleist: Penthesilea (303)
+3. Lessing: Nathan der Weise (303)
+4. Goethe: Iphigenie auf Tauris (242)
+5. Lessing: Emilia Galotti (191)
+6. Kleist: Prinz Friedrich von Homburg (172)
+7. Schiller: Wilhelm Tell (145)
+8. Schiller: Maria Stuart (123)
+9. Schiller: Die Jungfrau von Orleans (115)
+10. Kleist: Die Hermannsschlacht (114)
+11. Hofmannsthal: Elektra (109)
+12. Goethe: Torquato Tasso (108)
+13. Schiller: Kabale und Liebe (101)
+14. Kraus: Die letzten Tage der Menschheit (100)
+15. Kleist: Amphitryon (97)
+16. Schnitzler: Reigen (85)
+17. Hofmannsthal: Der Schwierige (76)
+18. Goethe: Egmont (65)
+19. Kleist: Die Familie Schroffenstein (57)
+20. Lenz: Die Soldaten (48)
+
+</small>
+
+--
+
+### Anbindung an die <br />Linked Open Data-Cloud
+
+<br />
+
+- Beispiel: Lessings *Emilia Galotti* (1772)
+- hat einen [Wikipedia-Artikel](https://de.wikipedia.org/wiki/Emilia_Galotti)
+- hat einen Wikidata-Artikel mit Fakten: <br />https://www.wikidata.org/wiki/Q782653
+- Uraufführungen deutscher Stücke: http://tinyurl.com/y9vga68j
+
+--
+
+### Uraufführungsorte in GerDraCor
+
+![Uraufführungen insgesamt](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+---
+
+## Perspektiven
+
+<br />
+
+- Programmable Corpora: stabile, hochsemantische Korpora in mehreren Sprachen, gepaart mit hochfunktionalen Schnittstellen, die Teil eines digitalen Ökosystems sind
+- Open Data, Open Source, Community
+- (Weiter-)Entwicklung in kritischer Auseinandersetzung mit den Möglichkeiten und Grenzen digitaler Forschungsmöglichkeiten
+- Programmable Corpora als interdisziplinäre Schnittstellen zwischen analogen und digitalen Ansätzen
+
+--
+
+### Vielen Dank.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
