@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die soziale Netzwerkanalyse (15. Februar 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+### Einführung in die soziale <br />Netzwerkanalyse (SNA)
+
+![Simple network (from Wikimedia Commons)](images/graph-symbolbild-wm-commons.png)<!-- .element width="150px;" -->
+<!-- source: https://commons.wikimedia.org/wiki/File:Graph_betweenness.svg -->
+
+Ass. Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+Higher School of Economics, Moskau<br />
+DARIAH-EU 🇪🇺 (Board of Directors)<!-- .element: style="font-size:0.7em;" -->
+
+Website: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io](https://lehkost.github.io/)** · Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**
+
+<br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/snavech](https://bit.ly/snavech)**
+
+<br />Universität Vechta &nbsp;·&nbsp; 15. Februar 2021<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Beginn der Netzwerktheorie](#/1)
+2. [Soziale Netzwerkanalyse](#/2)
+3. [Knoten- und graphbasierte Werte](#/3)
+4. [Extraktion von Netzwerkdaten](#/4)
+5. [Übungsaufgabe](#/5)
+6. [Ausblick](#/6)
+
+---
+
+## Netzwerktheorie …
+
+<br />
+
+»… ist die Untersuchung von Graphen als Darstellung [von] Beziehungen zwischen diskreten Objekten.« ([engl. Wikipedia](https://en.wikipedia.org/wiki/Network_theory))
+
+--
+
+### Beispielgraph mit <br />8 Knoten und 10 Kanten:
+
+![Bild von einfachem Netzwerk (Quelle: Wikimedia Commons)](images/small_network.png)<!-- .element width="434px;" -->
+
+* Knoten (nodes, vertices)
+* Kanten (edges, links)
+
+<small><br />Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)</small>
+
+--
+
+### Am Beginn der Netzwerktheorie …
+
+
+… stand Leonhard Eulers Lösung des <br />[Königsberger Brückenproblems](https://de.wikipedia.org/wiki/Königsberger_Brückenproblem) (1736).
+
+![Historische Karte von Königsberg (Quelle: Wikimedia Commons)](images/kenig-1.png)<!-- .element width="440px;" -->
+
+<small>Historische Karte von Königsberg mit den sieben Brücken <br />über den Pregel. (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png).)</small>
+
+--
+
+#### Abstraktion von …
+
+![Karte von Königsberg (Quelle: Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
+
+<small>… zu …</small>
+
+![Abstraktion als Graph](images/kenig-3.png)<!-- .element height="160px;" -->
+
+<small>Von den sieben Brücken (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg)) <br />zum abstrahierten Graph (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).</small>
+
+--
+
+### Merkmale der Euler’schen Abstraktion
+
+<br />
+
+- Landmassen = Knoten; Brücken = Kanten
+- genaue Lage der Brücken für die Lösung irrelevant!
+- Anzahl der Brücken und ihrer Endpunkte ist entscheidend:
+  - es sollte maximal zwei Landmassen (Knoten) mit einer ungeraden Anzahl von Brücken (Kanten) geben, die als Anfangs- und Endpunkt dienen
+  - die beiden anderen Ufer müssten eine gerade Anzahl von Brücken aufweisen, die zu ihnen führen
+
+---
+
+### Die Soziale Netzwerkanalyse (SNA) …
+
+<br />
+
+»… untersucht soziale Strukturen mit Hilfe der Netzwerk- und Graphentheorie.« ([engl. Wikipedia](https://en.wikipedia.org/wiki/Social_network_analysis))
+
+--
+
+### Ein frühes Soziogramm
+
+![Sociogram von Jacob L. Moreno](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+<small>»Class structure, 4th grade«. Arbeit von Jacob L. Moreno (1889–1974). <br />(aus: New York Times, [3. April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html); Bildquelle: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/))</small>
+
+--
+
+### Visualisierung von Facebook-Friendships
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+<small>(Quelle: [Paul Butler, 2010](https://www.facebook.com/notes/facebook-engineering/visualizing-friendships/469716398919))
+
+--
+
+### Beispiel eines persönlichen <br />sozialen Netzwerks
+
+![Graph, nodes, edges, communities](images/jill-rettberg-annotated-social-network.png)<!-- .element width="400px;" -->
+
+<small>Mit annotierten Communitys. (Quelle: [jill/txt](http://jilltxt.net/?p=3447))
+
+--
+
+### Enron-E-Mail-Korpus
+
+![Enron-Korpus](images/enron-network-visualisation.jpg)<!-- .element width="600px;" -->
+
+<small>(Quelle: [cambridge-intelligence.com](https://cambridge-intelligence.com/using-social-network-analysis-measures/); das Datenset ist öffentlich zugänglich)</small>
+
+---
+
+### Knotenbasierte Werte
+
+- Grad
+- Pfadlänge
+- […]
+
+### <br />Graphbasierte Werte
+
+- Netzwerkgröße
+- […]
+
+--
+
+### Ein Beispielgraph
+
+![Vier Knoten](images/four_nodes.png)<!-- .element height="400px;" -->
+
+Geben Sie an: (a) Grad des mittleren Knotens, (b) Grad der äußeren Knoten, (c)&nbsp;Pfadlänge zwischen zwei äußeren Knoten, (d)&nbsp;Netzwerkgröße?
+
+---
+
+### Netzwerke extrahieren mit »ezlinavis«
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-brecht.png)<!-- .element height="400px;" -->
+
+Linke Spalte: Eingabefenster. – Mittlere Spalte: Automatisch generierte Kantendaten. – Rechte Spalte: Interaktive Visualisierung.
+
+---
+
+### Übungsaufgabe
+
+* Kennen sich **Ella** und **Aline** über Ecken? Falls ja, über wieviele Ecken? Erstellen Sie zur Beantwortung der Frage ein Netzwerk mit ezlinavis!
+
+### <br />Was bekannt ist:
+
+* **Aline** und Ben haben zusammen studiert.
+* Ben, Carl und Dana sind im selben Sportverein.
+* **Ella** und Fanny haben in derselben WG gewohnt.
+* Ben ist der Patenonkel von Hanna.
+* Gina und Carl sind verheiratet.
+* Gina und Fanny sind Arbeitskolleginnen.
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Lösung (zum Copy &amp; Pasten)
+
+<br />
+
+```
+# 1
+Aline
+Ben
+# 2
+Ben
+Carl
+Dana
+# 3
+Ella
+Fanny
+# 4
+Ben
+Hanna
+# 5
+Gina
+Carl
+# 6
+Gina
+Fanny
+```
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Auswertung
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-beispiel.png)<!-- .element height="450px;" -->
+
+(a) Sind Ella und Aline über Ecken bekannt? (b) Über wieviele? <br />(c)&nbsp;Netzwerkgröße? (d) Welche ist die Person mit dem maximalen Grad?
+
+--
+
+## Diskussion
+
+<br />
+
+* Welche Schwierigkeiten gab es bei der Formalisierung?
+* Wieso sieht der visualisierte Graph jedes Mal anders aus?
+* Was kann man mithilfe der Netzwerkanalyse sichtbar machen? Wo stößt die Methode an ihre Grenzen?
+
+---
+
+### Weitere historische Beispiele
+
+<br />
+
+- [Zacharys Karateklub](https://en.wikipedia.org/wiki/Zachary's_karate_club)
+- [Hochzeitspolitik der Medici](https://www.wolfram.com/mathematica/new-in-9/social-network-analysis/centrality-and-prestige-of-florentine-families.html)
+
+--
+
+### Gamification!
+
+![Dramenquartett](images/dramenquartett-vier-karten.jpg)<!-- .element height="450px;" -->
+
+<small>Frank Fischer/Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** <br />Bern: edition taberna kritika 2019. Spielregeln: https://dramenquartett.github.io/</small>
+
+--
+
+### Vielen Dank.
+
+<br />
+
+### * * *
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
