@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Pecha Kucha: #autoChirp-Night bei der #vDHd2021 (12. Mai 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+#### PechaKucha
+
+## TiwoliChirp
+
+**¡¡ in statu nascendi !!**<!-- .element: style="background-color: lightgrey; color: red;" -->
+
+🌱 &nbsp; 🌞 &nbsp; 🍂 &nbsp; ❄️<!-- .element: style="font-size:1.4em;" -->
+
+<br />
+
+Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+Higher School of Economics, Moskau<br />
+DARIAH-EU 🇪🇺 (Board of Directors)<!-- .element: style="font-size:0.7em;" -->
+
+Website: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io](https://lehkost.github.io/)** · Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**
+
+<br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/tiwochi](https://bit.ly/tiwochi)**
+
+<br />[#autoChirp-Night auf der #vDHd2021](https://texperimentales.hypotheses.org/4531) &nbsp;·&nbsp; 12. Mai 2021, ab 17:45 Uhr<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+„Die meisten finnischen Romane <br />spielen im Sommer.“
+
+<br /><br />
+
+<!-- .element: style="font-size:0.8em;" -->
+Stefan Moster, *Im Gespräch*, <br />Deutschlandradio Kultur, 8. 10. 2014
+
+--
+
+### Korpus: Projekt Gutenberg-DE
+
+![Logo von Gutenberg-DE](images/gutenberg-de-logo.jpg)
+
+<small>Arbeitskorpus (2.735 deutschsprachige Prosatexte, v. a. Romane, 16.–20. Jahrhundert) veröffentlicht <br />als *Corpus of German-Language Fiction* ([doi:10.6084/m9.figshare.4524680](https://doi.org/10.6084/m9.figshare.4524680)).</small>
+
+--
+
+### Gutenberg-DE Edition 13 DVD-ROM (2013)
+
+<br />
+
+* Teilkorpus mit deutschsprachigen fiktionalen Texten (891 MB reiner Text)
+  * extrahiert wurden alle Texte der Typen: ```<meta name="type" content="{fiction,narrative,novelette}"/>```
+  * daraus eliminiert wurden Übersetzungen
+  * manuelle Nachbearbeitung nötig wegen fehlender oder falscher Metadaten
+* insgesamt 549 Autoren und 2735 Werke von ca. 1510 bis in die 1940er-Jahre (Schwerpunkt liegt zwischen 1840–1930)
+* Download: [Corpus of German-Language Fiction (txt)](https://doi.org/10.6084/m9.figshare.4524680)
+
+--
+
+## Workflow
+
+![UIMA-Pipeline](images/uima-pipeline.png)
+
+<small>Hauptwerkzeug zur Extraktion temporaler Angaben: [HeidelTime](https://dbs.ifi.uni-heidelberg.de/research/heideltime/).</small>
+
+--
+
+### Gefangen im Fiktionsfeld?
+
+<br />
+
+„Das Datum spielt keine andere Rolle als jede andere Charakterisierung eines Romantages auch, es ist nichts als ein Stück des Wirklichkeitsstoffes und ist in der Fiktion ebenso fiktiv wie Haus und Straße, Feld und Wald, wie die Städte Mannheim und Köln, [...]. Denn sobald Zeit und Ort das Erlebnisfeld fiktiver Personen, d. h. ein Fiktionsfeld abgeben, ist es um ihre ’Wirklichkeit‘ getan, mag auch das Fiktionsfeld Bestandteile aufweisen, die einer mehr oder weniger allgemein bekannten Wirklichkeit entstammen.“
+
+<br />
+
+<!-- .element: style="font-size:0.8em;" -->
+Käte Hamburger: *Die Logik der Dichtung*, Stuttgart 1957, S. 57
+
+--
+
+### Fünf Beispieltage
+
+<br />
+
+* Georg Büchner: *Lenz* (20. Jänner)
+* Arthur Schnitzler: *Leutnant Gustl* (4. April)
+* Stefan Zweig: *Schachnovelle*  (27. Juli)
+* Theodor Fontane: *Effi Briest* (3. Oktober)
+* J. W. Goethe: *Die Leiden des jungen Werthers* (21.&nbsp;Dezember)
+
+--
+
+### Ergebnisse fürs Gesamtkorpus
+
+![Ergebnisse für Gesamtkorpus](images/gesamtkorpus-dt.png)<!-- .element width="800px;" -->
+
+<small>Datums- (rot) und Monatsnennungen (grau). – Vgl. auch Frank Fischer: [»Als einst am 1. Mai die Welt begann«. Warum der Wonnemonat in der deutschen Literatur überpräsent ist. Eine datenphilologische Analyse.](https://www.welt.de/192916211) In: Die Literarische Welt, 4. Mai 2019.</small>
+
+--
+
+![gesamtkorpus-dt-crop](images/per-genre.png)
+
+<small>Anzahl an Datumsnennungen pro Werk.</small>
+
+--
+
+## Zweitverwertung der Ergebnisse
+
+Apps [für iOS](https://apps.apple.com/de/app/tiwoli/id1162600098) und Android & Twitter-Bot
+
+![TIWOLI-App auf Android](images/tiwoli-en-02-01-dahl-charlie.png)<!-- .element height="300px" -->
+&nbsp; &nbsp;
+![TiwoliChirp-Beispiel](images/tiwolichirp-example.png)<!-- .element height="300px" -->
+
+<small>Twitter-Bot: [@TiwoliChirp](https://twitter.com/tiwolichirp).</small>
+
+--
+
+### TIWOLI-App
+
+![TIWOLI-App](images/tiwoli-app.png)
+
+Für **[Android](https://play.google.com/store/apps/details?id=de.wannauchimmer.apps.tiwoli)** und **[iOS](https://appsto.re/de/I69sfb.i)**.
+
+--
+
+(to be continued)
+
+--
+
+Vielen Dank.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        autoSlide: 20000,
+        transition: 'fade',
+        slideNumber: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
