@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DH Lecture: Сетевой анализ в гуманитарных науках (лекция, начало практики в Gephi) (13 Mar 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+### Современные методы<br />в гуманитарных науках
+
+<br /><br /><br />📚 &nbsp; &nbsp; 🎼 &nbsp; &nbsp; 🗺 &nbsp; &nbsp; <font style="font-size:5rem;width:100%;">💻</font> &nbsp; &nbsp; 🏛 &nbsp; &nbsp; 🎨 &nbsp; &nbsp; 🎮
+
+<br /><br /><br /><br /><br />
+(40 лекц, 40 сем)<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## Fifth Lecture
+### **Сетевой анализ в гуманитарных науках** <br />(лекция, начало практики в Gephi)
+
+<!-- .element width="150px;" -->
+![Simple network (from Wikimedia Commons)](images/graph-symbolbild-wm-commons.png)
+<!-- source: https://commons.wikimedia.org/wiki/File:Graph_betweenness.svg -->
+
+[Frank Fischer](https://www.hse.ru/en/org/persons/182492735)
+<!-- .element: style="font-size:0.8em;" -->
+
+short link to presentation: [bit.ly/**38APGZt**](https://bit.ly/38APGZt)
+<!-- .element: style="font-size:0.75em;" -->
+
+<br />13 March 2021
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Agenda for Today
+
+<br />
+
+1. Intro: Information Visualisation
+2. History of Network Theory
+3. Weighted and Directed Graphs
+4. Social Network Analysis
+5. How to Generate Network Data?
+6. Graph-Related Measures
+7. Extracting Networks with “ezlinavis”
+8. Node-Related Measures
+9. Examples: Literary Texts, TV Series, Movies
+
+---
+
+### Information Visualisation (Infovis)
+
+<br />
+
+“**Visualization of complex data** is well on its way to becoming as important to the twenty-first century as photography and film were to the twentieth century.”
+
+![Manovich](images/manovich-from-wikimedia-commons.jpg)<!-- .element height="280px;" -->
+
+<small>Lev Manovich, Preface to Manuel Lima’s *Visual Complexity*, 2011 <br />(Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lev_Manovich_%E2%80%94_How_to_analyze_culture_using_social_networks.jpg).)</small>
+
+--
+
+### The Language of Infovis
+
+<br /><br />
+
+“Visualizations are a craft, not a science.”
+
+<small>Jeffrey Schnapp: [*Knowledge Design*](http://jeffreyschnapp.com/wp-content/uploads/2011/06/HH_lectures_Schnapp_01.pdf), 2013</small>
+
+--
+
+### Historicity of Data Visualisations:
+
+<br />
+
+## Charts, Trees, Networks
+
+--
+
+### Bar Charts (1/2)
+
+<br />
+
+![meaningless bar chart](images/meaningless-bar-chart.png)<!-- .element height="372px;" -->
+
+<small>(some random data visualised in RStudio)</small>
+
+--
+
+### Question:
+
+<br />
+
+### When was the bar chart invented?
+
+--
+
+### Bar Charts (2/2)
+
+<br />
+
+- invented by Scottish engineer and economist William Playfair (1759–1823)
+- first used in 1786
+- also inventor of the pie chart (1801)
+
+--
+
+## Trees
+
+--
+
+### Porphyrian Tree (3rd century AD)
+
+![Porphyrian tree, from Wikipedia](images/porphyrian-tree-from-wikimedia-commons.png)<!-- .element height="456px;" -->
+
+<small>Aristotle’s classification of categories put into a tree-like diagram of <br />dichotomous divisions. (Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Porphyrian_Tree.png).)</small>
+
+--
+
+### High Middle Ages (~ 1000–1300)
+
+<br />
+
+- genealogical trees (noble families and religious kinship)
+- Ramon Llull (1232–1316) worked with diagrams and graphics as exegetical and didactical means
+- his *Arbor Scientiae* (1296) contained 16 tree visualisations, categorising different branches of knowledge
+
+--
+
+### Example from *Arbor Scientiae* (1296)
+
+![Arbor Scientiae, from Wikimedia](images/arbor-scientiae-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ArborLulle.jpg).</small>
+
+--
+
+#### “Système figuré des connaissances humaines” (1751)
+
+![Tree of knowledge, Encyclopédie, from Wikimedia](images/systeme-figure-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+<small>From vol. I of the “Encyclopédie” (1751). – Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ENC_SYSTEME_FIGURE.jpeg).</small>
+
+--
+
+### Darwin’s Tree of Life (1837)
+
+![Tree of knowledge, Encyclopédie, from Wikimedia](images/darwin-tree-of-life-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+<small>Darwin’s first sketch of an evolutionary tree, 1837. – Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Darwin_Tree_1837.png).</small>
+
+--
+
+## Networks
+
+--
+
+### From Trees to Networks
+
+<br />
+
+- criticism towards hierarchical world views and the tree metaphor (and its inclination to dichotomies and finalism)
+- Deleuze and Guattari’s idea of the rhizome “aimed at acknowledging multiplicities and multilinearities” (multiple roots, manifold interrelations, not dissolvable into simple dichotomies) (cf. *A Thousand Plateaus*, 1987)
+
+---
+
+## Network Theory …
+
+<br />
+
+“… is the study of graphs as a representation of (…) <br />relations between discrete objects.” (Wikipedia)
+
+--
+
+#### Small example network graph with <br />8 vertices (nodes) and 10 edges:
+
+<br />
+
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="434px;" -->
+
+<br />
+
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)</small>
+
+--
+
+### The Emergence of Graph Theory …
+
+<br />
+
+… was Euler’s solution of the Königsberg bridge problem.
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-1.png)<!-- .element width="440px;" -->
+
+<small>Historical map of Königsberg, highlighting river Pregel <br />and the seven bridges. (Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png).)</small>
+
+--
+
+#### Abstraction from …
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
+
+<small>… to …</small>
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-3.png)<!-- .element height="160px;" -->
+
+<small>From the seven bridges (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg)) <br />to an abstract graph (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).</small>
+
+--
+
+### Features of Euler’s Abstraction
+
+<br />
+
+- landmasses: nodes, bridges: edges
+- precise location of bridges is irrelevant
+- number of bridges and their endpoints are key for the solution of the problem:
+  - all four landmasses are reached by an odd number of bridges, when there should be a maximum of two landmasses (nodes) with an odd number of bridges (edges); these two landmasses could then serve as starting and end point, whereas the other two banks would have to feature an even number of bridges leading to them
+
+--
+
+### Skit: Anecdote from Wikipedia
+
+<br />
+
+“В 1905 году был построен Императорский мост, (…). Существует легенда о том, что этот мост был построен по приказу самого кайзера, который не смог решить задачу мостов Кёнигсберга (…) (если добавить восьмой мост, то задача становится разрешимой).”
+
+<br />
+
+<small>Source: [“Задача о семи кёнигсбергских мостах”](https://ru.wikipedia.org/wiki/Задача_о_семи_кёнигсбергских_мостах) (Wikipedia article)</small>
+
+---
+
+## Weighted and Directed Graphs
+
+<br />
+
+- Euler’s graph of the Königsberg bridges was unweighted and undirected
+
+--
+
+### Directed Graph
+
+<br />
+
+![simple directed graph (from Wikimedia Commons)](images/directed-graph-from-wikimedia-commons.png)<!-- .element height="180px;" -->
+
+<br />
+
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Directed.svg)</small>
+
+--
+
+### Weighted Graph
+
+<br />
+
+![simple weighted graph (from Wikimedia Commons)](images/weighted-graph-from-wikimedia-commons.png)<!-- .element height="227px;" -->
+
+<br />
+
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Weighted_network.svg)</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (1/4)
+
+![Moscow Metro 2010 (from Wikimedia Commons)](images/moscow_metro_map_2010.jpg)<!-- .element height="500px;" -->
+
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Moscow_metro_map_2010-mhr.png)</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (2/4)
+
+![Yandex.Metro App (screenshot)](images/metro-app-1.jpg)<!-- .element height="500px;" -->
+
+<small>Screenshot: Яндекс.Метро App</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (3/4)
+
+![Yandex.Metro App (screenshot)](images/metro-app-2.jpg)<!-- .element height="500px;" -->
+
+<small>Screenshot: Яндекс.Метро App</small>
+
+--
+
+### A Weighted Graph: Moscow Metro (4/4)
+
+![Yandex.Metro App (screenshot)](images/metro-app-3.jpg)<!-- .element height="500px;" -->
+
+<small>Screenshot: Яндекс.Метро App</small>
+
+---
+
+## Social Network Analysis …
+
+<br />
+
+“… is the process of investigating social structures through <br />the use of network and graph theories.” (Wikipedia)
+
+--
+
+### Social Network Analysis (SNA)
+
+<br />
+
+- SNA started as a bundle of approaches developed in the Social Sciences since the 1930s
+- ‘Harvard Breakthrough’ in the 1960s (centered around sociologist [Harrison White](https://en.wikipedia.org/wiki/Harrison_White)): sociologists, mathematicians and programmers flesh out a distinct structural-analytical perspective on social phenomena
+- 1990s: new perspectives on network structures with the advent of the internet, applications in Physics and Bioinformatics; Literary Studies started to focus on SNA around half a decade ago
+
+--
+
+### One of the First Sociograms
+
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+<small>“Class structure, 4th grade”. Work by Jacob L. Moreno (1889–1974). <br />(First published in NYT, [3 April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Source for this PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)</small>
+
+--
+
+### Basic SNA Bibliography
+
+<br />
+
+- Stanley Wasserman, Katherine Faust: [*Social Network Analysis: Methods and Applications*](https://books.google.com/books?id=CAm2DpIqRUIC&printsec=frontcover), 1994
+  - still the standard reference for the foundations of Social (!) Network Analysis, published long before SNA hype
+- Alain Degenne, Michel Forsé: [*Introducing Social Networks*](https://books.google.com/books?id=1mSHqydgrYcC&printsec=frontcover), orig. 1994, transl. 1999
+- John Scott: *Social Network Analysis: A Handbook*, 2nd ed. 2000.
+- John Scott, Peter J. Carrington (eds.): [*The SAGE Handbook of Social Network Analysis*](https://books.google.com/books?id=mWlsKkIuFNgC&printsec=frontcover), 2011
+- Frank Fischer, Daniil Skorinkin: [*Social Network Analysis in Russian Literary Studies*](https://doi.org/10.1007/978-3-030-42855-6_29), in: The Palgrave Handbook of Digital Russia Studies, 2021, pp.&nbsp;517–536.
+
+---
+
+### Как сделать сеть понятной для компьютера
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/Cic5NT4szdQ?rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+<small>https://www.youtube.com/watch?v=Cic5NT4szdQ</small>
+
+--
+
+## Operationalisation
+
+<br />
+
+- social network data = **interactions** between social entities
+- network data: nodes + edges (**important**: you have to be able to describe what the relation between nodes is, i.e., what’s the meaning of the edges)
+- e.g., in dramatic texts: “Two characters interact with one another if they perform a speech act within the same segment of a drama (usually a ‘scene’).”
+
+--
+
+### Formalisation of Interactions
+
+<br />
+
+<pre><code class="hljs" data-trim contenteditable>
+Source,Target,Weight
+Барыня,Варвара,2
+Барыня,Кабанов,1
+Барыня,Кабанова,1
+Барыня,Катерина,2
+Борис,Варвара,4
+Борис,Глаша,1
+Борис,Дикой,1
+Борис,Женщина,1
+Борис,Кабанов,1
+Борис,Кабанова,1
+Борис,Катерина,3
+Борис,Кудряш,4
+Борис,Кулигин,3
+Борис,Первый,1
+Борис,Феклуша,1
+...
+</code></pre>
+
+<br />
+
+<small>Ostrovsky’s “Groza”, interactions encoded in a CSV list (comma-separated values).</small>
+
+--
+
+### Network Graph for Ostrovsky’s “Groza”
+
+![Network graph for Groza](images/rusplay-groza.png)<!-- .element height="500px;" -->
+
+<small>Source: DS/FF. Visualisation with Python library igraph.</small>
+
+--
+
+### A Much More Versatile Kind of Formalisation
+
+<pre><code class="hljs" data-trim contenteditable>
+# ДЕЙСТВИЕ ПЕРВОЕ
+## ЯВЛЕНИЕ ПЕРВОЕ
+Петр
+Анисья
+Акулина
+Никита
+## ЯВЛЕНИЕ ВТОРОЕ
+Петр
+Анисья
+## ЯВЛЕНИЕ ТРЕТЬЕ
+Петр
+Анисья
+Акулина
+## ЯВЛЕНИЕ ЧЕТВЕРТОЕ
+Петр
+Анисья
+Акулина
+Анютка
+## ЯВЛЕНИЕ ПЯТОЕ
+Анисья
+Петр
+Акулина
+...
+</code></pre>
+
+<br />
+
+<small>Tolstoy’s “Vlast’ t’my”, a line-by-line listing of characters per scene.</small>
+
+--
+
+### ezlinavis
+
+![ezlinavis screenshot](images/ezlinavis-screenshot-tolstoy.png)<!-- .element height="450px;" -->
+
+<small>**ezlinavis** in action.</small>
+
+--
+
+### Try It Out!
+
+<br /><br />
+
+**[https://ezlinavis.dracor.org/](https://ezlinavis.dracor.org/)**
+
+---
+
+## Graph-Related Measures
+
+<br />
+
+- Network Size
+- Maximum Degree
+- Average Degree
+- Density
+- Average Path Length
+- …
+
+--
+
+### Example
+
+![four nodes](images/four_nodes.png)<!-- .element height="400px;" -->
+
+Please specify: (a) the **degree** of the node in the middle, <br />(b) the **degree** of outer nodes, (c) the **path length** between two outer nodes, <br />(d) the **network size**, (e) the **density** of this graph.
+
+--
+
+### Comparison of 5 Russian Plays
+
+<br /><br />
+
+| Play                                                                                | Characters | Max Degree             | Avg Degree | Density | Avg Path Length |
+|-------------------------------------------------------------------------------------|------------|------------------------|------------|---------|-----------------|
+| [Димитрий Самозванец](https://dracor.org/rus/sumarokov-dimitrij-samozvanets) (1771) | 6          | 5 &nbsp; (Димитрий)    | 3.67       | 0.73    | 1.27            |
+| [Борис Годунов](https://dracor.org/rus/pushkin-boris-godunov) (1825)                | 79         | 29 &nbsp; (Борис)      | 8.28       | 0.11    | 3.03            |
+| [Горе от ума](https://dracor.org/rus/griboyedov-gore-ot-uma) (1825)                 | 31         | 23 &nbsp; (Чацкий)     | 13.1       | 0.44    | 1.57            |
+| [Ревизор](https://dracor.org/rus/gogol-revizor) (1836)                              | 31         | 26 &nbsp; (Городничий) | 14.84      | 0.49    | 1.52            |
+| [Гроза](https://dracor.org/rus/ostrovsky-groza) (1859)                              | 29         | 23 &nbsp; (Кабанова)   | 7.79       | 0.28    | 1.93            |
+
+--
+
+#### Structural Evolution of Russian Drama
+
+![90 Russian drama networks at a glance](images/russian-superposter.jpg)<!-- .element width="925px;" -->
+
+<small>Social networks extracted from 89 Russian plays (1740–1940), thanks to DS.</small>
+
+---
+
+### Extracting Networks with “ezlinavis”
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-tolstoy.png)<!-- .element height="450px;" -->
+
+Left column: input window. – Middle column: edge data, generated automatically. – Right column: interactive visualisation.
+
+--
+
+### Exercise (1/2)
+
+<br />
+
+Meet …<br />
+
+Алена, Борис, Владимир, Георгий, Дмитрий, Егор, Женя, Зоя <br />(Alena, Boris, Vladimir, Georgiy, Dmitriy, Egor, Zhenya, Zoya)
+
+<br />
+
+* Question/task: <br /> Do **Alena** and **Dmitriy** have mutual acquaintances through whom they are somehow connected? If so, what is the degree of their separation? Create a network with “ezlinavis” to answer the question!
+
+--
+
+### Exercise (2/2)
+
+<br />
+
+What we know:
+
+1. **Alena** and Boris studied together.
+2. Boris, Vladimir and Georgiy are in the same sports club.
+3. **Dmitriy** and Egor lived in the same flat share.
+4. Boris is the godfather of Zoya.
+5. Zhenya and Vladimir are married.
+6. Zhenya and Egor are work colleagues.
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Solution (for copy & paste)
+
+<br />
+
+```
+# 1
+Alena
+Boris
+# 2
+Boris
+Vladimir
+Georgiy
+# 3
+Dmitriy
+Egor
+# 4
+Boris
+Zoya
+# 5
+Zhenya
+Vladimir
+# 6
+Zhenya
+Egor
+```
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Results
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-exercise.png)<!-- .element height="400px;" -->
+
+(a) Do **Alena** and **Dmitriy** have mutual acquaintances through whom they are somehow connected? (b) If so, what is the degree of their separation? (c) Who is the person with the maximum degree?
+
+--
+
+### Discussion
+
+<br />
+
+* What difficulties did you encounter in the formalisation process?
+* Why does the visualised graph look different every time?
+* What can be made visible with network analysis?
+* Where does the method reach its limits?
+
+---
+
+## Node-Related Measures
+
+--
+
+### Degree
+
+<br />
+
+![Degree](images/moretti-hamlet-degree.jpg)<!-- .element height="432px;" -->
+
+<small>In Moretti’s formalisation, Hamlet has direct relations to 16 characters (= his degree). <br />(Source: *Дальнее чтение*, p. 294.)</small>
+
+--
+
+### Average Distance
+
+<br />
+
+- in Moretti’s formalisation, Hamlet has an average distance (from all other characters) of 1.45
+- average distance of Claudius: 1.62
+- Horatio: 1.69
+
+--
+
+## Closeness Centrality
+
+<br />
+
+- “the sum of the length of the shortest paths between the node and all other nodes in the graph”
+
+--
+
+## PageRank
+
+<br />
+
+- “PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is. The underlying assumption is that more important websites are likely to receive more links from other important websites.” (Wikipedia)
+
+--
+
+### Betweenness Centrality (1/2)
+
+<br />
+
+- “a measure of centrality in a graph based on shortest paths”
+- “For every pair of vertices in a graph, there exists a shortest path between the vertices such that either the number of edges that the path passes through (for undirected graphs) or the sum of the weights of the edges (for directed graphs) is minimized. The betweenness centrality for each node is the number of these shortest paths that pass through the node.” (Wikipedia)
+
+--
+
+### Betweenness Centrality (2/2)
+
+<br />
+
+![betweenness](images/betweenness.png)<!-- .element height="400px;" -->
+
+Example: degree does not correlate with betweenness centrality.
+
+--
+
+Alexander Pushkin’s “Boris Godunov” (1825)
+
+![betweenness](images/betweenness-pushkin-boris-godunov.png)<!-- .element width="800px;" -->
+
+<small>Label size correlates with betweenness centrality. Gavrila Pushkin – a side character – in the middle.</small>
+
+--
+
+Aleksey Tolstoy’s “Death of Ivan the Terrible” (1866)
+
+![betweenness](images/betweenness-tolstoy-smert-ioanna-groznogo.png)<!-- .element width="800px;" -->
+
+<small>Again, label size correlates with betweenness centrality. Bityagovsky spreading fake news.</small>
+
+--
+
+### Network Metrics and What to Do with Them
+
+<br />
+
+* Евгения Устинова:
+  * Соцсети русской драмы, часть I: основы сетевого анализа ([SysBlok 04.10.2019](https://sysblok.ru/philology/socseti-russkoj-dramy-chast-i-osnovy-setevogo-analiza/))
+  * Соцсети русской драмы, часть II: Ревизор vs. Городничий: кто же главный герой? ([SysBlok 30.10.2019](https://sysblok.ru/philology/socseti-russkoj-dramy-chast-ii-revizor-vs-gorodnichij-kto-zhe-glavnyj-geroj/))
+
+--
+
+### Studying Character Values <br />in Russian Drama
+
+<br />
+
+https://shiny.dracor.org/
+
+--
+
+### Periodic Table of Network Centrality
+
+<br />
+
+- http://schochastics.net/sna/periodic.html
+
+---
+
+### Russian Drama Corpus
+
+<br />
+
+https://rus.dracor.org/
+
+--
+
+### Some Popular Examples
+
+<br />
+
+- [Downton Abbey](http://letstalkdata.com/2013/08/a-social-network-of-downton-abbey/)
+- [Game of Thrones](https://www.macalester.edu/~abeverid/thrones.html)
+- [Star Wars (the 6 first movies)](http://evelinag.com/blog/2015/12-15-star-wars-social-network/index.html)
+- [Star Wars: The Force Awakens](http://evelinag.com/blog/2016/01-25-social-network-force-awakens/index.html)
+- [Sherlock](http://obotligtnyfiken.se/sherlock/sherlock-statistics/who-meets-whom-in-which-episode/)
+
+--
+
+### Social Networks Extracted from Movies
+
+![Screenshot from website](images/moviegalaxies-screenshot.png)<!-- .element width="642px;" -->
+
+<small>[moviegalaxies.com](http://www.moviegalaxies.com/): presents network metrics for movies and <br />degree + betweenness centrality values for every character in the network.</small>
+
+--
+
+### How to Teach the Meaning of Network <br />Metrics … Gamification Approach
+
+![Pikovaya drama](images/pikovaya_drama.jpg)<!-- .element width="620px;" -->
+
+https://dracor.org/doc/merch
+
+---
+
+## Summary
+
+<br />
+
+- information visualisation
+- historicity of visualisation techniques
+- history of network theory and social network analysis
+- weighted and unweighted graphs
+- graph-related measures (comparison of different types of networks)
+- node-related measures (character analysis)
+
+--
+
+## Hands-On
+
+<br />
+
+- [Gephi](https://gephi.org/)
+- [Netzschleuder – network catalogue, repository and centrifuge](https://networks.skewed.de/)
+- [Export friends graph](https://vk.com/app3861133) (app for VK)
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
