@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DH Lecture: Сетевой анализ: продолжение практики в Gephi, продвинутые возможности, щепотка программирования (для желающих) (20 Mar 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+### Современные методы<br />в гуманитарных науках
+
+<br /><br /><br />📚 &nbsp; &nbsp; 🎼 &nbsp; &nbsp; 🗺 &nbsp; &nbsp; <font style="font-size:5rem;width:100%;">💻</font> &nbsp; &nbsp; 🏛 &nbsp; &nbsp; 🎨 &nbsp; &nbsp; 🎮
+
+<br /><br /><br /><br /><br />
+(40 лекц, 40 сем)<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## Sixth Lecture
+#### **Сетевой анализ**: продолжение практики в Gephi, продвинутые возможности, щепотка программирования (для желающих)
+
+<!-- .element width="150px;" -->
+![Simple network (from Wikimedia Commons)](images/graph-symbolbild-wm-commons.png)
+<!-- source: https://commons.wikimedia.org/wiki/File:Graph_betweenness.svg -->
+
+[Frank Fischer](https://www.hse.ru/en/org/persons/182492735)
+<!-- .element: style="font-size:0.8em;" -->
+
+short link to presentation: [bit.ly/**3s40d7i**](https://bit.ly/3s40d7i)
+<!-- .element: style="font-size:0.75em;" -->
+
+<br />20 March 2021
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Motto
+
+<br /><br />
+
+Повторение – мать учения.
+
+--
+
+### Today’s Agenda
+
+<br />
+
+1. Recap Graph-Related Measures
+2. Recap Node-Related Measures
+3. Recap Formalisation of Interactions
+4. Some More Examples for Networks
+5. Alternatives to Gephi
+6. Handling Network Data in R and Python
+7. Interpretation of Network Data
+7. Suggestion for the Structuring of Your Presentation
+8. Zachary’s Karate Club 🥋
+9. Hands-On!
+
+--
+
+### Hint: Danya’s Lectures (March 2017)
+
+<br /><br />
+
+* Lecture 1: https://www.youtube.com/watch?v=vwcMldy1v1E
+* Lecture 2: https://www.youtube.com/watch?v=UpK5ioaLK8s
+
+--
+
+### Basic Terminology
+
+![Graph, nodes, edges, communities](images/graph-nodes-edges-communities.png)<!-- .element width="425px;" -->
+
+- network = graph
+- nodes = vertices
+- edges = links, relations
+- clusters = communities
+
+<br />
+
+<small>(image source: [10.3390/a9010008](https://doi.org/10.3390/a9010008))</small>
+
+---
+
+## Recap Graph-Related Measures
+
+<br />
+
+- Network Size
+- Maximum Degree
+- Average Degree
+- Density
+- Average Path Length
+- …
+
+--
+
+### Example
+
+![four nodes](images/four_nodes.png)<!-- .element height="400px;" -->
+
+Please specify: (a) the **degree** of the node in the middle, <br />(b) the **degree** of outer nodes, (c) the **path length** between two outer nodes, <br />(d) the **network size**, (e) the **density** of this graph, <br />(f) the **average path length** of this network.
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Comparison of 5 Russian Plays
+
+<br /><br />
+
+| Play                                                                                | Characters | Max Degree             | Avg Degree | Density | Avg Path Length |
+|-------------------------------------------------------------------------------------|------------|------------------------|------------|---------|-----------------|
+| [Димитрий Самозванец](https://dracor.org/rus/sumarokov-dimitrij-samozvanets) (1771) | 6          | 5 &nbsp; (Димитрий)    | 3.67       | 0.73    | 1.27            |
+| [Борис Годунов](https://dracor.org/rus/pushkin-boris-godunov) (1825)                | 79         | 29 &nbsp; (Борис)      | 8.28       | 0.11    | 3.03            |
+| [Горе от ума](https://dracor.org/rus/griboyedov-gore-ot-uma) (1825)                 | 31         | 23 &nbsp; (Чацкий)     | 13.1       | 0.44    | 1.57            |
+| [Ревизор](https://dracor.org/rus/gogol-revizor) (1836)                              | 31         | 26 &nbsp; (Городничий) | 14.84      | 0.49    | 1.52            |
+| [Гроза](https://dracor.org/rus/ostrovsky-groza) (1859)                              | 29         | 23 &nbsp; (Кабанова)   | 7.79       | 0.28    | 1.93            |
+
+---
+
+## Recap Node-Related Measures
+
+--
+
+### Degree
+
+![Degree](images/moretti-hamlet-degree.jpg)<!-- .element height="432px;" -->
+
+<small>In Moretti’s formalisation, Hamlet has direct relations to 16 characters (= his degree).<br />(Source: *Дальнее чтение*, p. 294.)</small>
+
+--
+
+### Average Distance
+
+<br />
+
+- in Moretti’s formalisation, Hamlet has an average distance (from all other characters) of 1.45
+- average distance of Claudius: 1.62
+- Horatio: 1.69
+
+--
+
+## PageRank
+
+<br />
+
+- “PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is. The underlying assumption is that more important websites are likely to receive more links from other important websites.” (Wikipedia)
+
+--
+
+### Betweenness Centrality (1/2)
+
+<br />
+
+- “a measure of centrality in a graph based on shortest paths”
+- “For every pair of vertices in a graph, there exists a shortest path between the vertices such that either the number of edges that the path passes through (for undirected graphs) or the sum of the weights of the edges (for directed graphs) is minimized. The betweenness centrality for each node is the number of these shortest paths that pass through the node.” (Wikipedia)
+
+--
+
+### Betweenness Centrality (2/2)
+
+<br />
+
+![betweenness](images/betweenness.png)<!-- .element height="400px;" -->
+
+In this example, degree does not correlate with betweenness centrality.
+
+--
+
+Alexander Pushkin’s “Boris Godunov” (1825)
+
+![betweenness](images/betweenness-pushkin-boris-godunov.png)<!-- .element width="800px;" -->
+
+<small>Label size correlates with betweenness centrality. Gavrila Pushkin – a side character – in the middle.</small>
+
+--
+
+Aleksey Tolstoy’s “Death of Ivan the Terrible” (1866)
+
+![betweenness](images/betweenness-tolstoy-smert-ioanna-groznogo.png)<!-- .element width="800px;" -->
+
+<small>Again, label size correlates with betweenness centrality. Bityagovsky spreading fake news.</small>
+
+---
+
+### Recap Formalisation of Interactions
+
+<br />
+
+<pre><code class="hljs" data-trim contenteditable>
+Source,Target,Weight
+Барыня,Варвара,2
+Барыня,Кабанов,1
+Барыня,Кабанова,1
+Барыня,Катерина,2
+Борис,Варвара,4
+Борис,Глаша,1
+Борис,Дикой,1
+Борис,Женщина,1
+Борис,Кабанов,1
+Борис,Кабанова,1
+Борис,Катерина,3
+Борис,Кудряш,4
+Борис,Кулигин,3
+Борис,Первый,1
+Борис,Феклуша,1
+...
+</code></pre>
+
+<br />
+
+<small>Ostrovsky’s “Groza”, interactions encoded in a CSV list (comma-separated values).</small>
+
+--
+
+### Network Graph for Ostrovsky’s “Groza”
+
+![Network graph for Groza](images/rusplay-groza.png)<!-- .element height="500px;" -->
+
+<small>Source: DS/FF. Visualisation with Python library igraph.</small>
+
+--
+
+### A Much More Versatile Kind of Formalisation
+
+<pre><code class="hljs" data-trim contenteditable>
+# ДЕЙСТВИЕ ПЕРВОЕ
+## ЯВЛЕНИЕ ПЕРВОЕ
+Петр
+Анисья
+Акулина
+Никита
+## ЯВЛЕНИЕ ВТОРОЕ
+Петр
+Анисья
+## ЯВЛЕНИЕ ТРЕТЬЕ
+Петр
+Анисья
+Акулина
+## ЯВЛЕНИЕ ЧЕТВЕРТОЕ
+Петр
+Анисья
+Акулина
+Анютка
+## ЯВЛЕНИЕ ПЯТОЕ
+Анисья
+Петр
+Акулина
+...
+</code></pre>
+
+<small>Tolstoy’s “Vlast’ t’my”, a line-by-line listing of characters per scene.</small>
+
+--
+
+### ezlinavis
+
+![ezlinavis screenshot](images/ezlinavis-screenshot-tolstoy.png)<!-- .element height="450px;" -->
+
+<small>**ezlinavis** in action.</small>
+
+---
+
+## Some More Examples for Networks
+
+--
+
+### Visualising Facebook Friendships
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+<small>(source: [Paul Butler, 2010](https://www.facebook.com/notes/facebook-engineering/visualizing-friendships/469716398919))
+
+--
+
+### Example of an Annotated Social Network
+
+![Graph, nodes, edges, communities](images/jill-rettberg-annotated-social-network.png)<!-- .element width="404px;" -->
+
+<small>Annotated communities. (source: [jill/txt](http://jilltxt.net/?p=3447))
+
+--
+
+### Enron E-Mail Corpus
+
+![Enron corpus](images/enron-network-visualisation.jpg)<!-- .element width="600px;" -->
+
+<small>(source: [cambridge-intelligence.com](https://cambridge-intelligence.com/using-social-network-analysis-measures/); data set publicly available)</small>
+
+--
+
+### More Networks!
+
+<br />
+
+- http://www.visualcomplexity.com/vc/
+- website run by Manuel Lima
+- 1.000 indexed network visualisation projects
+
+---
+
+### Alternatives to Gephi
+
+--
+
+### Cytoscape
+
+![Cytoscape Screenshot (from WM Commons)](images/cytoscape_screenshot.png)
+
+<small>Download: [**cytoscape.org**](https://cytoscape.org/). (Image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cytoscape3.7.0.png).)</small>
+
+--
+
+### Cytoscape
+
+<br />
+
+- does not read GEXF format, but can read other formats
+- for testing purposes, GraphML version of co-occurrence graph for [Prutkov’s](https://ru.wikipedia.org/wiki/Козьма_Прутков) “Фантазия” (1851): "[prutkov-fantaziya.graphml](data/prutkov-fantaziya.graphml)"
+
+---
+
+### Handling Network Data in R and Python
+
+--
+
+![Huey, Dewey, and Louie (from Wikipedia)](images/louie_dewey_huey_from_wikipedia.png)
+
+<br />
+
+Huey, Dewey, and Louie
+<!-- .element: class="fragment" -->
+
+<br />
+
+<small>(Image source: [English Wikipedia](https://en.wikipedia.org/wiki/File:Louie_Dewey_and_Huey.png).)</small>
+
+--
+
+#### By the way …
+
+![Huey, Dewey, and Louie (from Wikipedia)](images/donald-duck-nephews.jpg)<!-- .element width="660px;" -->
+
+<small>(Source: [reddit, 10 March 2021](https://www.reddit.com/r/ducktales/comments/m1urvy/huey_dewey_louie_in_other_languages_oc/))</small>
+
+--
+
+### Building and Plotting a Network in R
+
+<br />
+
+```R
+library(igraph)
+mygraph <- graph_from_literal('Huey'-'Donald', 'Dewey'-'Donald', 'Louie'-'Donald')
+mygraph
+plot(mygraph)
+rglplot(mygraph)
+rglplot(mygraph, vertex.color = 'red')
+```
+
+<br />
+
+<small>(Needs igraph and rgl libraries installed.)</small>
+
+--
+
+### Building and Plotting a Network in Python
+
+<br />
+
+```Python
+>>> import networkx
+>>> my_network = networkx.Graph()
+>>> my_network.add_node ('Donald')
+>>> my_network.nodes
+NodeView(('Donald',))
+>>> my_network.edges
+EdgeView([])
+>>> my_network.add_edge ('Donald', 'Huey')
+>>> my_network.nodes
+NodeView(('Donald', 'Huey'))
+>>> my_network.add_edge ('Donald', 'Dewey')
+>>> my_network.add_edge ('Donald', 'Louie')
+>>> my_network.nodes
+NodeView(('Donald', 'Huey', 'Dewey', 'Louie'))
+>>> my_network.edges
+EdgeView([('Donald', 'Huey'), ('Donald', 'Dewey'), ('Donald', 'Louie')])
+>>> import matplotlib.pyplot as plt
+>>> networkx.draw(my_network)
+>>> plt.show()
+
+>>> networkx.degree_centrality (my_network)
+>>> networkx.betweenness_centrality (my_network)
+>>> networkx.eigenvector_centrality (my_network)
+```
+
+<br />
+
+<small>(Needs networkx and matplotlib libraries installed.)</small>
+
+---
+
+### Interpretation of Network Data
+
+![Translating Networks](images/translating-networks-grandjean.png)<!-- .element width="660px;" -->
+
+<small>Three levels of interpretation: visual analysis (top left), global metrics (bottom right), use of local metrics. <br />(source: Martin Grandjean/Mathieu Jacomy: [Translating networks: linking visualization to statistics](https://reticular.hypotheses.org/1745), 18 June 2020)</small>
+
+--
+
+### The Visualisation Trap
+
+![Translating Networks](images/gephi-mem.jpg)<!-- .element width="600px;" -->
+
+<small>(source: Mathieu Jacomy: [As a technical mediation, Gephi shifts your goals (and vice-versa)](https://reticular.hypotheses.org/1866), 16 March 2021)</small>
+
+---
+
+### Suggestion for Structuring Your Presentations
+
+<br />
+
+1. short **introduction** of the research idea
+2. explanation of **data sources** – where is the data from, or how did you create it?
+3. explanation of the **visualisation** – what do we see and what does it mean? (what are the **nodes**, what are the **edges**?)
+4. **interpretation** – what did you learn from your data set?
+5. brownie points: give the **source for any image** you didn’t create yourself, even for animated GIFs/memes
+
+--
+
+### Exemplary Presentation (1/5)
+
+<br />
+
+- research idea:
+  1. prove that Ostrovsky’s “Snegurochka” has traits of a ‘station drama’ (change of location corresponds to change of characters, except for the protagonists)
+  2. find out how protagonists are positioned in the network
+
+--
+
+### Exemplary Presentation (2a/5)
+
+![Ostrovsky’s Snegurochka on dracor.org, network view](images/snegurochka-dracor-network.png)
+
+<small>data source: https://dracor.org/id/rus000029</small>
+
+--
+
+### Exemplary Presentation (2b/5)
+
+![Ostrovsky’s Snegurochka on dracor.org, download tab](images/snegurochka-dracor-download-tab.png)
+
+<small>download co-occurrence network data in GEXF format for use in Gephi</small>
+
+--
+
+### Exemplary Presentation (3/5)
+
+![Ostrovsky’s Snegurochka, network graph, made in Gephi by Frank Fischer](images/ostrovsky-snegurochka-dracor-graph-gephi.png)<!-- .element width="800px;" -->
+
+<small>Explanation: This is a communicaton graph extracted from the play, nodes are characters or groups, edges are shared conversations, different colours are different communities, node and label size are aligned with degree values.</small>
+
+--
+
+### Exemplary Presentation (4a/5):
+
+<br />
+
+Results:
+
+- two strong protagonists, Snegurochka and the Tsar:<br /><br />
+
+| Character  | Degree | Betweenness Centrality |
+|------------|--------|------------------------|
+| Снегурочка | 31     | 261.88                 |
+| Царь       | 26     | 186.09                 |
+| Бобылиха   | 22     | 60.39                  |
+| Мизгирь    | 22     | 52.53                  |
+| Лель       | 22     | 37.91                  |
+
+--
+
+### Exemplary Presentation (4b/5):
+
+<br />
+
+Results:
+
+- 42 nodes altogether; the 40 other characters/groups perfectly group around Snegurochka and the Tsar, communities represent the different locations
+- problematic: what do we do with entities like “Все” in I/8? – my solution: treat them as ‘nodes’
+
+--
+
+### Exemplary Presentation (5/5)
+
+<br />
+
+### Thank You!
+
+![Snegurochka, animated GIF](images/snegurochka-animated-gif.gif)
+
+<small>(animated GIF: [tenor.com](https://tenor.com/es/ver/noviygod-ded-moroz-snegurochka-gif-7391693))</small>
+
+---
+
+### Zachary’s Karate Club 🥋
+
+<br />
+
+- social network of a karate club studied by Wayne W. Zachary from 1970 to 1972
+- links capture interactions between the club members *outside the club*
+- during the study a conflict arose between the administrator “John A” and instructor “Mr. Hi” (pseudonyms), which led to the split of the club into two
+
+--
+
+### Zachary’s Karate Club 🥋
+
+<br />
+
+- half of the members formed a new club around Mr. Hi
+- members from the other part found a new instructor or gave up karate
+- basing on collected data Zachary assigned correctly all but one member of the club to the groups they actually joined after the split
+- [link to the paper from 1977](http://www1.ind.ku.dk/complexLearning/zachary1977.pdf)
+
+--
+
+### Zachary’s Matrix
+
+![Zachary’s matrix](images/zachary-matrix.png)<!-- .element width="500px;" -->
+
+--
+
+### Let’s Try This in Gephi
+
+<br />
+
+- download data set: http://networkdata.ics.uci.edu/data/karate/
+- GML format (Graph Modelling Language), ready for use in Gephi
+- a lot of hits and one miss: “Like Zachary’s original network, this network accurately predicts the division for 33 of 34 of the members (number 9 was predicted to ally with John A but in actuality opted for Mr. Hi).” <!-- .element: class="fragment" --> ([http://studentwork.prattsi.org](http://studentwork.prattsi.org/infovis/2018/07/17/zacharys-karate-club/))
+
+---
+
+## Hands-On!
+
+<br />
+
+- [Gephi](https://gephi.org/)
+- [ezlinavis](https://ezlinavis.dracor.org/)
+- [Netzschleuder – network catalogue, repository and centrifuge](https://networks.skewed.de/)
+- [Export friends graph](https://vk.com/app3861133) (app for VK)
+- …
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>

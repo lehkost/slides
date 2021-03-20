@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+<key attr.name="label" attr.type="string" for="node" id="label"/>
+<key attr.name="Edge Label" attr.type="string" for="edge" id="edgelabel"/>
+<key attr.name="weight" attr.type="double" for="edge" id="weight"/>
+<key attr.name="Gender" attr.type="string" for="node" id="gender"/>
+<key attr.name="Person group" attr.type="boolean" for="node" id="person-group"/>
+<key attr.name="Number of spoken words" attr.type="int" for="node" id="number-of-words"/>
+<graph edgedefault="undirected">
+<node id="kutilo-zavaldajskij">
+<data key="label">Кутило-Завалдайский</data>
+<data key="gender">MALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">756</data>
+</node>
+<node id="razorvaki">
+<data key="label">Разорваки</data>
+<data key="gender">MALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">728</data>
+</node>
+<node id="knyaz_batog-batyev">
+<data key="label">Кн. Батог-Батыев</data>
+<data key="gender">MALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">313</data>
+</node>
+<node id="milovidov">
+<data key="label">Миловидов</data>
+<data key="gender">MALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">402</data>
+</node>
+<node id="bespardonnyj">
+<data key="label">Беспардонный</data>
+<data key="gender">MALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">331</data>
+</node>
+<node id="libental">
+<data key="label">Либенталь</data>
+<data key="gender">MALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">452</data>
+</node>
+<node id="chupurlina">
+<data key="label">Чупурлина</data>
+<data key="gender">FEMALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">1013</data>
+</node>
+<node id="lizaveta_platonovna">
+<data key="label">Лизавета Платоновна</data>
+<data key="gender">FEMALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">128</data>
+</node>
+<node id="lakej">
+<data key="label">Лакей</data>
+<data key="gender">MALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">13</data>
+</node>
+<node id="gornichnaya">
+<data key="label">Горничная</data>
+<data key="gender">FEMALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">9</data>
+</node>
+<node id="akulina">
+<data key="label">Акулина</data>
+<data key="gender">FEMALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">38</data>
+</node>
+<node id="povar">
+<data key="label">Повар</data>
+<data key="gender">MALE</data>
+<data key="person-group">false</data>
+<data key="number-of-words">19</data>
+</node>
+<node id="dvornya">
+<data key="label">Дворня</data>
+<data key="gender">UNKNOWN</data>
+<data key="person-group">true</data>
+<data key="number-of-words">16</data>
+</node>
+<edge id="kutilo-zavaldajskij|razorvaki" source="kutilo-zavaldajskij" target="razorvaki">
+<data key="weight">8.0</data>
+</edge>
+<edge id="kutilo-zavaldajskij|knyaz_batog-batyev" source="kutilo-zavaldajskij" target="knyaz_batog-batyev">
+<data key="weight">8.0</data>
+</edge>
+<edge id="kutilo-zavaldajskij|milovidov" source="kutilo-zavaldajskij" target="milovidov">
+<data key="weight">8.0</data>
+</edge>
+<edge id="kutilo-zavaldajskij|bespardonnyj" source="kutilo-zavaldajskij" target="bespardonnyj">
+<data key="weight">8.0</data>
+</edge>
+<edge id="kutilo-zavaldajskij|libental" source="kutilo-zavaldajskij" target="libental">
+<data key="weight">4.0</data>
+</edge>
+<edge id="kutilo-zavaldajskij|chupurlina" source="kutilo-zavaldajskij" target="chupurlina">
+<data key="weight">4.0</data>
+</edge>
+<edge id="kutilo-zavaldajskij|dvornya" source="kutilo-zavaldajskij" target="dvornya">
+<data key="weight">1.0</data>
+</edge>
+<edge id="kutilo-zavaldajskij|lizaveta_platonovna" source="kutilo-zavaldajskij" target="lizaveta_platonovna">
+<data key="weight">2.0</data>
+</edge>
+<edge id="razorvaki|knyaz_batog-batyev" source="razorvaki" target="knyaz_batog-batyev">
+<data key="weight">8.0</data>
+</edge>
+<edge id="razorvaki|milovidov" source="razorvaki" target="milovidov">
+<data key="weight">8.0</data>
+</edge>
+<edge id="razorvaki|bespardonnyj" source="razorvaki" target="bespardonnyj">
+<data key="weight">8.0</data>
+</edge>
+<edge id="razorvaki|libental" source="razorvaki" target="libental">
+<data key="weight">4.0</data>
+</edge>
+<edge id="razorvaki|chupurlina" source="razorvaki" target="chupurlina">
+<data key="weight">4.0</data>
+</edge>
+<edge id="razorvaki|dvornya" source="razorvaki" target="dvornya">
+<data key="weight">1.0</data>
+</edge>
+<edge id="razorvaki|lizaveta_platonovna" source="razorvaki" target="lizaveta_platonovna">
+<data key="weight">2.0</data>
+</edge>
+<edge id="knyaz_batog-batyev|milovidov" source="knyaz_batog-batyev" target="milovidov">
+<data key="weight">8.0</data>
+</edge>
+<edge id="knyaz_batog-batyev|bespardonnyj" source="knyaz_batog-batyev" target="bespardonnyj">
+<data key="weight">8.0</data>
+</edge>
+<edge id="knyaz_batog-batyev|libental" source="knyaz_batog-batyev" target="libental">
+<data key="weight">4.0</data>
+</edge>
+<edge id="knyaz_batog-batyev|chupurlina" source="knyaz_batog-batyev" target="chupurlina">
+<data key="weight">4.0</data>
+</edge>
+<edge id="knyaz_batog-batyev|dvornya" source="knyaz_batog-batyev" target="dvornya">
+<data key="weight">1.0</data>
+</edge>
+<edge id="knyaz_batog-batyev|lizaveta_platonovna" source="knyaz_batog-batyev" target="lizaveta_platonovna">
+<data key="weight">2.0</data>
+</edge>
+<edge id="milovidov|bespardonnyj" source="milovidov" target="bespardonnyj">
+<data key="weight">8.0</data>
+</edge>
+<edge id="milovidov|libental" source="milovidov" target="libental">
+<data key="weight">4.0</data>
+</edge>
+<edge id="milovidov|chupurlina" source="milovidov" target="chupurlina">
+<data key="weight">4.0</data>
+</edge>
+<edge id="milovidov|dvornya" source="milovidov" target="dvornya">
+<data key="weight">1.0</data>
+</edge>
+<edge id="milovidov|lizaveta_platonovna" source="milovidov" target="lizaveta_platonovna">
+<data key="weight">2.0</data>
+</edge>
+<edge id="bespardonnyj|libental" source="bespardonnyj" target="libental">
+<data key="weight">4.0</data>
+</edge>
+<edge id="bespardonnyj|chupurlina" source="bespardonnyj" target="chupurlina">
+<data key="weight">4.0</data>
+</edge>
+<edge id="bespardonnyj|dvornya" source="bespardonnyj" target="dvornya">
+<data key="weight">1.0</data>
+</edge>
+<edge id="bespardonnyj|lizaveta_platonovna" source="bespardonnyj" target="lizaveta_platonovna">
+<data key="weight">2.0</data>
+</edge>
+<edge id="libental|chupurlina" source="libental" target="chupurlina">
+<data key="weight">4.0</data>
+</edge>
+<edge id="libental|lizaveta_platonovna" source="libental" target="lizaveta_platonovna">
+<data key="weight">3.0</data>
+</edge>
+<edge id="libental|lakej" source="libental" target="lakej">
+<data key="weight">1.0</data>
+</edge>
+<edge id="libental|gornichnaya" source="libental" target="gornichnaya">
+<data key="weight">1.0</data>
+</edge>
+<edge id="libental|akulina" source="libental" target="akulina">
+<data key="weight">1.0</data>
+</edge>
+<edge id="libental|povar" source="libental" target="povar">
+<data key="weight">1.0</data>
+</edge>
+<edge id="chupurlina|dvornya" source="chupurlina" target="dvornya">
+<data key="weight">1.0</data>
+</edge>
+<edge id="chupurlina|lizaveta_platonovna" source="chupurlina" target="lizaveta_platonovna">
+<data key="weight">3.0</data>
+</edge>
+<edge id="lizaveta_platonovna|lakej" source="lizaveta_platonovna" target="lakej">
+<data key="weight">1.0</data>
+</edge>
+<edge id="lizaveta_platonovna|gornichnaya" source="lizaveta_platonovna" target="gornichnaya">
+<data key="weight">1.0</data>
+</edge>
+<edge id="lizaveta_platonovna|akulina" source="lizaveta_platonovna" target="akulina">
+<data key="weight">1.0</data>
+</edge>
+<edge id="lizaveta_platonovna|povar" source="lizaveta_platonovna" target="povar">
+<data key="weight">1.0</data>
+</edge>
+<edge id="lakej|gornichnaya" source="lakej" target="gornichnaya">
+<data key="weight">1.0</data>
+</edge>
+<edge id="lakej|akulina" source="lakej" target="akulina">
+<data key="weight">1.0</data>
+</edge>
+<edge id="lakej|povar" source="lakej" target="povar">
+<data key="weight">1.0</data>
+</edge>
+<edge id="gornichnaya|akulina" source="gornichnaya" target="akulina">
+<data key="weight">1.0</data>
+</edge>
+<edge id="gornichnaya|povar" source="gornichnaya" target="povar">
+<data key="weight">1.0</data>
+</edge>
+<edge id="akulina|povar" source="akulina" target="povar">
+<data key="weight">1.0</data>
+</edge>
+</graph>
+</graphml>
