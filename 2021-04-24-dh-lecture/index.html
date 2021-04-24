@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DH Lecture: Hands-On With jEdit (24 April 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+## Seminar
+### Hands-On With **jEdit**
+
+<br /><br />
+
+💻
+<!-- .element: style="font-size:4em;" -->
+<br /><br /><br />
+24 April 2021
+
+--
+
+### A Dialogue in TEI Format
+
+<br />
+
+```xml
+<sp who="#margarita">
+  <speaker>Маргарита</speaker>
+  <lg>
+    <l>Скажи ты мне прямей:</l>
+    <l>Как дело обстоит с религией твоей?</l>
+    <l>Ты славный, добрый человек, но к ней</l>
+    <l>Относишься как будто беззаботно.</l>
+  </lg>
+</sp>
+<sp who="#faust">
+  <speaker>Фауст</speaker>
+  <lg>
+    <l>Оставь, дитя! Мою узнала ты любовь;</l>
+    <l>За близких сердцу рад свою пролить я кровь;</l>
+    <l>Не против веры я, кому в ней есть отрада.</l>
+  </lg>
+</sp>
+```
+
+<br />
+
+<small>Dialogue from Goethe’s »Faust, Part One« (1808, [transl. by N. A. Kholodkovsky](https://ru.wikisource.org/wiki/Фауст_(Гёте;_Холодковский)/Часть_первая/Сцена_16._Сад_Марты)) in TEI. <br />To date, the standard defines 589 elements ([last revision in April 2021](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).</small>
+
+--
+
+### Is this a **well-formed** document?
+
+<br />
+
+```xml
+<sp>
+  <speaker>Маргарита</speaker>
+  <lg>
+    <l>Привет, Фауст!
+  </lg>
+</sp>
+```
+
+<br />
+
+<small>(Syntax highlighting provides better readability.)</small>
+
+--
+
+### Some Ways of Editing <br />XML/TEI Documents
+
+<br />
+
+- Oxygen XML Editor
+- XML Notepad
+- **jEdit** (with XML/TEI plugins)
+- …
+
+--
+
+### Hands-On With jEdit
+
+<br />
+
+![jEdit with TEI plugin (screenshot)](images/jedit-faust.png)<!-- .element width="600px;" -->
+
+<br />
+
+http://www.jedit.org/
+
+--
+
+### Task
+
+<br />
+
+1. Install the TEI plugin from jEdit’s plugin manager.
+
+2. Start a new document.
+
+3. Take an excerpt from a text of your choice and transform it into TEI.
+
+<br />* Proposition: Goethe’s »Faust, Part One« <br />(1808, [transl. by N. A. Kholodkovsky](https://ru.wikisource.org/wiki/Фауст_(Гёте;_Холодковский)/Часть_первая/Сцена_16._Сад_Марты))
+
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
