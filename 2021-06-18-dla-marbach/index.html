@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Neural Reading (Vortrag) · DLA Marbach · 18. Juni 2021</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/simple.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+# Neural Reading
+
+Zur Analyse computergenerierter Poesie<!-- .element: style="font-size:0.8em;" -->
+
+<br /><br /><br />Ein Vortrag von<!-- .element: style="font-size:0.5em;" -->
+
+Ass. Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+Higher School of Economics, Moskau<br />
+DARIAH-EU 🇪🇺 (Board of Directors)<!-- .element: style="font-size:0.7em;" -->
+
+Website: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io](https://lehkost.github.io/)** · Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**
+
+<br /><br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/neuradla](http://bit.ly/neuradla)**
+
+<br /><br />
+[»Poesie-Hackathon«: Schiller, Hölderlin, Mörike, Celan](https://www.fontanearchiv.de/forschung/tfalab/ein-poesie-hackathon-schiller-hoelderlin-moerike-celan) &nbsp;·&nbsp; DLA Marbach &nbsp;·&nbsp; 18. Juni 2021, 12:10–12:45
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+## Motto
+
+<br />*[Машину] обвиняют в разрушении эстетики. На самом деле она разрушает лишь эстетическую мистику.*
+
+<br />— Лев Троцкий: [Поэзия, машина и поэзия машины](https://ru.wikisource.org/wiki/Поэзия,_машина_и_поэзия_машины_(Троцкий%29) (1901)
+<!-- .element: style="font-size:0.8em;" -->
+
+<br /><br />[Der Maschine] wird vorgeworfen, die Ästhetik zu zerstören. Tatsächlich zerstört sie nur ästhetischen Mystizismus.
+
+<br />— Leo Trotzki: Die Poesie, die Maschine und die Poesie der Maschine (1901)
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### **Kapitelübersicht**
+
+<br />
+
+1. Poesie und künstliche neuronale Netze
+2. Computerpoesie vor der Ära neuronaler Netze
+3. Generierung russischer Hexameter mit KNNs
+4. HÖL 9000
+5. Zusammenfassung
+
+---
+
+# Kapitel 1.
+
+<br />
+
+### Poesie und künstliche neuronale Netze
+
+--
+
+### Etwas Kontext
+
+<br />
+
+- künstliche neuronale Netze (KNNs) sind nicht mehr nur ein Spezialisten bekanntes Konzept, sondern haben Einzug in den Alltag gehalten
+- populärer Berührungspunkt für automatische Textgenerierung sind etwa Chatbots und persönliche Assistenten:
+  - Apple iOS (Siri, 2011)
+  - Microsoft (Cortana, 2014)
+  - Amazon (Alexa, 2014)
+  - Google (Assistant, 2016)
+  - Yandex (Alisa, 2017)
+
+--
+
+### TensorFlow
+
+<br />
+
+- im November 2015 wurde Googles TensorFlow, eine Bibliothek für Deep Learning, öffentlich verfügbar
+- Erstellung neuronaler Netzwerke stark vereinfacht
+
+--
+
+### Gedichte als Testbed
+
+<br />
+
+- um mit der neuen Technologie zu experimentieren, boten sich Gedichte an, da online in großem Umfang frei verfügbar
+- auf GitHub zahlreiche Beispiele für die automatische Erstellung poetischer Texte
+
+--
+
+### Was sehen die Algorithmen?
+
+<br />
+
+- Lyrik als Kette in sich geschlossener Aussagen, die keine ganzheitliche Geschichte erzählen müssen
+- als Beispiel eine Strophe aus Joseph Brodskys Gedichtzyklus »Часть речи« (1975/76, Übersetzung: Elisabeth Markstein):
+
+<p align="left">
+<!-- .element: style="font-size:0.9em; padding-left:15%;" -->Beobachtungen dies … Ein warmer Winkel.<br />
+Der Blick lässt auf den Dingen Spuren.<br />
+Das Wasser stellt sich dar als Glas.<br />
+Der Mensch ist schauriger als sein Skelett.
+</p>
+
+--
+
+### Grammatik und Semantik
+
+<br />
+
+- neuronale Netze schaffen es nicht immer, grammatikalische und interpretatorisch durchsichtige Strukturen zu erzeugen
+- Lyrik des 20. Jahrhunderts ist voller experimenteller Texte, die grammatikalische Regeln und Konventionen der semantischen Konnektivität unterlaufen
+- aus nicht-professioneller Sicht: Lyrik muss nicht »sinnvoll« sein
+- Poesie muss auch »dämlich sein«, wie Puschkin 1826 in einem Brief an Pjotr Wjasemski schrieb ([»поэзия […] должна быть глуповата«](http://feb-web.ru/feb/pushkin/texts/push17/vol13/y132278-.htm))
+
+--
+
+### Postulate von H. P. Grice
+
+<br />
+
+- poetische Texte und KNN-generierte Texte ähneln sich darin, dass sie die meisten der Postulate von H. P. Grice verletzen:
+  - Aussagen liefern weniger Informationen als nötig
+  - sind nicht notwendigerweise wahr
+  - sind unverständlich und mehrdeutig
+
+---
+
+# Kapitel 2.
+
+<br />
+
+### Computerpoesie vor der Ära neuronaler Netze
+
+--
+
+### Vorgeschichte
+
+<br />
+
+- die Geschichte der Computerpoesie begann lange vor dem aktuellen Boom neuronaler Netze
+- erste Computer bereits in den frühen 1940er-Jahren (Konrad Zuses »Z3« und Howard Aikens »Mark I«)
+- in den späten 1950er-Jahren begannen Dichter, sich ihrer zu bedienen
+
+--
+
+### Opus Primum
+
+<br />
+
+- der deutsche Mathematiker Theo Lutz programmierte 1959 einen Computer (einen Zuse Z22) so, dass er Passagen aus den 16 Kapiteln von Kafkas unvollendetem Roman »Das Schloss« zufällig rekombinierte, er nannte die resultierenden Texte »stochastisch«:
+
+<p align="left">
+NICHT JEDER BLICK IST NAH. KEIN DORF IST SPAET.<br />
+EIN SCHLOSS IST FREI UND JEDER BAUER IST FERN.<br />
+JEDER FREMDE IST FERN. EIN TAG IST SPAET.<br />
+JEDES HAUS IST DUNKEL. EIN AUGE IST TIEF.<br />
+NICHT JEDES SCHLOSS IST ALT. JEDER TAG IST ALT<br />
+NICHT JEDER GAST IST WUETEND. EINE KIRCHE IST SCHMAL<br />
+KEIN HAUS IST OFFEN UND NICHT JEDE KIRCHE IST STILL.<br />
+NICHT JEDES AUGE IST WUETEND. KEIN BLICK IST NEU.
+</p>
+<!-- .element: style="font-size:0.8em; padding-left:10%;" -->
+
+--
+
+### 1960er-Jahre
+
+- in den 1960er-Jahren wurden noch mehrere solcher poetischen Experimente durchgeführt
+- Brion Gysin ließ 1960 den Computer nach dem Zufallsprinzip die Wörter des Satzes »I AM THAT I AM« durchtauschen
+- Nanni Balestrini erstellte 1961 auf dem IBM 7070-Computer das Gedicht »Tape Mark I«, das aus Teilen von Werken wie dem »Hiroshima Diary« von Michihiko Hachiya und dem »Daodejing« besteht:
+
+<p align="left">
+<!-- .element: style="font-size:0.8em;padding-left:15%;" -->l’accecante / globo / di fuoco<br />
+si espande / rapidamente<br />
+trenta volte / più luminoso / del sole<br />
+quando raggiunge / la stratosfera<br />
+la sommità / della nuvola<br />
+assume / la ben nota forma / di fungo
+</p>
+
+--
+
+### Zwischenbemerkung
+
+<br />
+
+- »Il mistero dell’ascensore« eines Paul Goldwin gehört auch zu den angegebenen Quellen Balestrinis
+- es findet sich aber keinerlei Spur eines solchen Werks
+- »Non sappiamo niente su Paul Goldwin!« ([Alessandro Giammei 2018](https://www.giammei.com/s/Il_contenuto_della_poesia_informale_Nell.pdf))
+- vgl. https://twitter.com/umblaetterer/status/1201430189722525696
+
+--
+
+- ebenfalls 1961 erschien Rul Gunzenhäusers »Weihnachtsgedicht«
+- zehn Substantive und Adjektive des Weihnachtsthemas wurden vom Computer zufallsbasiert zu einem grammatisch korrekten Gedicht verbunden:
+
+<p align="left">
+<!-- .element: style="font-size:0.9em; padding-left:15%;" -->Der Schnee ist kalt<br />
+und jeder Friede ist tief<br />
+und kein Christbaum ist leise<br />
+oder jede Kerze ist weiss<br />
+oder ein Friede ist kalt<br />
+oder nicht jede Kerze ist rein<br />
+und ein Engel ist rein<br />
+und jeder Friede ist still<br />
+oder jeder Friede ist weiss<br />
+oder das Kind ist still<br />
+ein Engel ist überall
+</p>
+
+--
+
+### Zwei Grundprinzipien
+
+<br />
+
+1. Rekombination von Wörtern oder Phrasen eines bereits existierenden Textes (in den Anfängen der Computerpoesie eher an Prosawerken orientiert)
+2. zufällige Auswahl von Wörtern (Einschränkungen der Anordnung vom Programmierer festgelegt)
+
+--
+
+### Permutationskunst
+
+<br />
+
+- frühe Computerpoesie basiert auf der Kombinatorik vorgegebener Elemente (Wörter oder vorgefertigte Phrasen)
+- Abraham Moles: »Erstes Manifest der permutationellen Kunst« (1962)
+- Permutationskunst zerlege die Welt in Atome, aus denen sich dann beliebige Strukturen konstituieren lassen
+- Permutationskunst ist nicht nur Spiel, sondern eine Methode der ästhetischen Forschung, die einen konkreten Weg zur Analyse und Synthese eines Kunstwerkes eröffne
+
+--
+
+### Zufälligkeit
+
+<br />
+
+- Zufall als zentrale Kategorie des Prozesses
+- Marc Adrian: »For me, the neutrality of the machine is very important. It makes it much easier for the reader to find their own meanings associated with words, since their choice, size, and composition are randomised.«
+- dieses künstlerische Prinzip ist aber in Wirklichkeit ein nicht-triviales technisches Problem für einen Computer
+- äußerst schwierig, Quellen für wirklich zufällige Werte zu finden, daher sollte man, um terminologisch genau zu sein, entsprechende Funktionen eher **»pseudo-random«** nennen ([von Neumann, 1951](https://mcnp.lanl.gov/pdf_files/nbs_vonneumann.pdf))
+
+---
+
+# Kapitel 3.
+
+<br />
+
+### Generierung russischer Hexameter mit KNNs
+
+--
+
+### Computerpoesie mit KNNs
+
+<br />
+
+- »ein prinzipieller, nicht nur ein gradueller Fortschritt« (Hannes Bajohr: [»Die ›Gestalt‹ der KI«](https://doi.org/10.25969/mediarep/14824), 2020)
+- Bajohr unterscheidet das alte vom neuen Paradigma terminologisch als *sequential* vs. *connectionist* ([»Algorithmic Empathy«](https://studip.tu-braunschweig.de/plugins.php/coreforum/index/index/aa8dc43d4fe28a8d6d234bd8fa50bdd2?cid=6a4c969e34c005476f21a8fa4800ded4#aa8dc43d4fe28a8d6d234bd8fa50bdd2), 2020)
+- der Zufall im Prozess der Texterzeugung ist in den Hintergrund getreten
+- algorithmische Beschreibung komplexer Sprach- und Poetikregeln nicht mehr nötig
+- Hauptfaktoren sind nicht Kombinatorik und Zufall, sondern, im Gegenteil, Konsistenz, nicht Beliebigkeit der Struktur, sondern strukturelle Abhängigkeiten der Elemente
+
+--
+
+### KNNs als Echokammern der Literaturgeschichte
+
+<br />
+
+- ein KNN kann die Poesie von Autor*innen, von Genres oder einer Epoche konzentriert einfangen und reproduzieren
+- ein Beispiel, das von einem zweischichtigen neuronalen Netz mit 512 Neuronen erzeugt wurde, trainiert auf einem Korpus russischer Übersetzungen antiker Hexameter (Homer, Hesiod, Ovid, Virgil usw.), 5.351.336 Zeichen (106.321 Verszeilen):
+
+<p align="left">
+<!-- .element: style="font-size:0.8em; padding-left:8%;" -->Силу, к голубке хитон отличась, Гиоклей благородный.<br />
+На Ликеи веселие слово кружает другого,<br />
+Слишком попал бы и все повреждает она одиноко<br />
+И возливаешь они рассудить — городские, проделать<br />
+Кровью вкусили два дочь. На корабль он твухте твоей силы!
+</p>
+
+--
+
+<p align="left">
+<!-- .element: style="font-size:0.8em; padding-left:10%;" -->Sílu, k golúbke khitón otlichás’, Giokléy blagoródnyy.<br />
+Ná Likéi veséliye slóvo kruzháyet drugógo,<br />
+Slíshkom popál by i vsé povrezhdáyet oná odinóko<br />
+Í vozliváyesh’ oní rassudít’ — gorodskíye, prodélat’<br />
+Króv’yu vkusíli dva dóch’. Na korábl’ on tvukhté tvoyey síly!
+</p>
+
+<br />
+<p align="left">
+<!-- .element: style="font-size:0.8em; padding-left:10%;" -->Power, to the dove the chiton is different, Giocleus the noble.<br />
+To the Lyceum, the amusement, a word spins the other,<br />
+Too much you would hit and she damages everything lonely.<br />
+And you drink they to decide — urbanic, to do.<br />
+With blood tasted, two daughter. To the ship he tbay your strength!
+</p>
+
+<br />
+
+(Übertragungsversuch laut [Orekhov/Fischer 2019](https://doi.org/10.1111/oli.12274).)
+<!-- .element: style="font-size:0.8em; padding-left:10%; text-align:left;" -->
+
+--
+
+### Beobachtungen
+
+<br />
+
+- korrekte Wiedergabe des Metrums
+- das Epitheton »blagorodnyy« (»edel«) in Postposition eines Eigennamens, wie es in der Übersetzung griechischer Hexameter üblich ist
+- nicht existierende Wörter generiert (»kruzhat’«, »tvukhta«), die es aus Sicht des Modells geben könnte
+- der neu erzeugte Name »Giokley« (»Giokleus«) ähnelt antiken Helden: Diokley (Diokles), Gippodam (Hippodamus), Egiokh (Aegiochos), Peley (Peleus)
+- grammatikalische Inkonsistenzen (»dva doch’«, »oni rassudit’«) sind auf die Größe des Korpus zurückzuführen
+
+---
+
+# Kapitel 4.
+
+<br /><br />
+
+### HÖL 9000
+
+![HAL 9000 (Wikimedia Commons)](images/HAL9000.svg)<!-- .element height="150px" style="border:none; box-shadow:none;" -->
+
+<br />
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:HAL9000.svg))
+<!-- .element: style="font-size:0.5em;" -->
+
+--
+
+- das Trainingskorpus für Hölderlin bestand aus 415.516 Zeichen (10.676 Verszeilen)
+- Kleine Stuttgarter Ausgabe, Bände 1 (1946) und 2 (1953)
+- via Zeno.org: http://www.zeno.org/nid/20005102944
+- Gedichte nach 1806 (»Turmphase«) nicht berücksichtigt
+- zweischichtiges neuronales Netz mit 512 Neuronen
+
+--
+
+## Neuro-Hölderlin 1<!-- .element align="left" -->
+
+<br />
+
+<p align="left">
+Daß ich die Väter im Schlafe mir den Höhen auch,<br />
+Der dunkle Seele mir das treue Gestade fallen,<br />
+Wenn die Krone des Hains oft zur Pfade des Geschlechts,<br />
+Dem Jimmersang* den deinen Höhen des Himmels.<br />
+Es scheinen mit deinen Hallen unter den Liebenden zu beben,<br />
+Schattig bedenk der Weisheit zu der Wilde<br />
+Gestalten, im geschiedenen Strahle<br />
+Schon entflohen umsonst ferne sie in Stunden,<br />
+Da stürzte die schöne Lust mich in den stillen Brust,<br />
+Und das Auge blickte dein Strahl die Menschen hinauf.
+</p>
+
+--
+
+## Beobachtungen
+
+<br />
+
+- Substantive: durchaus hölderlintypisches Vokabular, neu kontextualisiert
+- grammatikalisch korrekte Formulierungen, die aber bei Hölderlin fehlen:
+  - »Da stürzte die schöne Lust mich«
+  - »Krone des Hains«
+
+--
+
+- vergleichsweise wenige Verben
+- besondere Anordnung der Syntagmen (spiegelt besonders Hölderlins reifere Lyrik wider)
+- im Vergleich zu den russischen Hexametern mehr grammatikalische Ungereimtheiten, was mit der Korpusgröße zusammenhängt (ca. ⅒ des russischen Korpus)
+- Präpositionen, Artikel, Adjektive und Substantive passen oft nicht zusammen, obwohl meist nur ein einziger Buchstabe fehlt oder falsch ist
+
+--
+
+- »Jimmersang«: Jammer + immer + Schlummersang?
+- heterogene Versmaße im Arbeitskorpus (anders als beim Korpus russischer Hexameter), daher keine eindeutige Wiedergabe eines spezifischen lyrischen Metrums
+- allerdings finden sich Elemente antiker Metren, die Hölderlin für seine Dichtung adaptierte, insbesondere der alkäischen, der asklepiadischen und sapphischen Strophe
+- Zeile 4 etwa entspricht den ersten beiden Zeilen der alkäischen Strophe, wie sie Hölderlin verwendet: <br/>»Dem <u>Jim</u>mer<u>sang*</u> den <u>dei</u>nen <u>Hö</u>hen des <u>Him</u>mels«
+
+--
+
+## Neuro-Hölderlin 2<!-- .element align="left" -->
+
+<br />
+
+<p align="left">
+Daß ich das Kind der Jugend,<br />
+Wie die Liebe das geschweigende Land,<br />
+Und der Strom und kühner Freudentage,<br />
+So schien der Gesang der Morgen ihm auf,<br />
+Mich liebend der Tränen,<br />
+Mit uns ihr mich nicht!
+</p>
+
+--
+
+## Neuro-Hölderlin 3<!-- .element align="left" -->
+
+<br />
+
+<p align="left">
+Mich schweigen, der Sterne sich bewinnen,<br />
+Daß sie die blühende Liebe streun,<br />
+Schöner Gestalt, wie der Tage sich,<br />
+Voll Engelsauge du,<br />
+Da war ich die Winke der Liebe der Seele,<br />
+Und der Himmlischen erste Natur.
+</p>
+
+<br />
+
+(Rezitiert von Arno Orzessek <br />im [Deutschlandfunk Kultur](https://www.deutschlandfunkkultur.de/aus-den-feuilletons-von-beethoven-lernen.1059.de.html?dram:article_id=472525), <br />13. März 2020.)
+<!-- .element align="left" style="font-size:0.8em;" -->
+
+--
+
+## Neuro-Hölderlin 4 (Zugabe)<!-- .element align="left" -->
+
+<br />
+
+<p align="left">
+Ein Lieb in den Augen dir,<br />
+Dort auch das sterbliche Gewiß<br />
+Viel ist ergrüptet,<br />
+Und die Welt der Menschen Einsamkeit.
+</p>
+
+---
+
+# Zusammenfassung
+
+--
+
+- Texte, die mit Hilfe von künstlichen neuronalen Netzen generiert werden, reproduzieren einen Teil der stilistischen Merkmale der Trainingsdaten
+- hauptsächlich diejenigen, die in kleinen Segmenten sichtbar sind:
+  - Morphologie
+  - Wortschatz
+  - Syntax
+  - Prosodie
+- Plot und größere narrative Einheiten bleiben bisher noch außerhalb des Reproduzierbaren
+
+--
+
+## Literatur
+
+<br />
+
+* Boris Orekhov, Frank Fischer: **Neural Reading: Insights from the Analysis of Poetry Generated by Artificial Neural Networks.** In: Orbis Litterarum. Vol. 75, Heft 5. Wiley Online Library 2020, S. 230–246. ([doi:10.1111/oli.12274](https://doi.org/10.1111/oli.12274))
+* Frank Fischer, Boris Orekhov: **[Der digitale Superdichter. Vor 250 Jahren wurde Friedrich Hölderlin geboren. Heute kann Computertechnik neue Gedichte im Hölderlin-Sound generieren. Ein Werkstattbericht.](http://nevmenandr.net/personalia/holderlin.pdf)** In: Die Literarische Welt, 14. März 2020, S. 29.
+
+--
+
+Danke.
+
+<br /><br /><br />
+– https://lehkost.github.io/ –
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
