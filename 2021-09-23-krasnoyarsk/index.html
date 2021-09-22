@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Parents and Children in Russian Drama: Research Scenarios Based on the Annotation of Kinship and Social Relations (EADH, 23 September 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Parents and Children in Russian Drama
+#### Research Scenarios Based on the Annotation of Kinship and Social Relations
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+Margarita Berseneva, Aleksandr Dyuldenko, <br />Frank Fischer, Anna Oskina
+
+Higher School of Economics, Moscow<!-- .element: style="font-size:0.7em;" -->
+
+<br />This presentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/krasdra](https://bit.ly/krasdra)**
+
+<br />[EADH2021](https://eadh2020-2021.org/) &nbsp;·&nbsp; Krasnoyarsk 🇷🇺 &nbsp;·&nbsp; 23 September 2021
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+## Inhalt
+
+<br />
+
+1. [DraCor](#/1)
+2. [RusDraCor](#/2)
+3. [Annotating Character Relations](#/3)
+4. [Experiments with stylo()](#/4)
+5. [Summary](#/5)
+
+---
+
+### Chapter 1.
+
+<br /><br />
+
+# DraCor,
+
+## an infrastructure for the <br />Research on European Drama
+
+--
+
+![DraCor frontpage on 12 Sep 2021](images/dracor-frontpage-2021-09-12.png)
+
+https://dracor.org/
+
+--
+
+![DraCor, mobile mockup 2021](images/dracor-2021-mobile-mockup.jpg)
+
+--
+
+#### Growing list of corpora from the community:
+
+<br />
+
+- FreDraCor
+- GerDraCor
+- RusDraCor
+- ItaDraCor
+- SweDraCor
+- CalDraCor
+- GreekDraCor
+- ShakeDraCor
+- RomDraCor
+- SpanDraCor
+- AlsDraCor
+- TatDraCor
+- BashDraCor
+- …
+
+---
+
+### Chapter 2.
+
+<br /><br />
+
+# RusDraCor
+
+--
+
+## Objectives
+
+<br />
+
+- create and maintain a corpus of Russian-language drama from 1740s–1940s
+- multi-sourcing: Wikisource, Russian Virtual Library (rvb.ru), Online Library Alexei Komarov (ilibrary.ru), Maksim Moshkow’s Library (az.lib.ru)
+- all plays converted to TEI (P5), corrected and enriched in various ways
+- digitised texts were mapped to the page of the corresponding book edition
+- repo: https://github.com/dracor-org/rusdracor
+
+--
+
+### Frontpage RusDraCor
+
+![GerDraCor)](images/dracor-rusdracor.png)<!-- .element width="800px;" -->
+
+https://dracor.org/rus
+
+--
+
+## Some RusDraCor Corpus Metrics
+
+<br />
+
+- number of plays to date: **212**
+- number of characters: **3,707**
+- male characters: **2,608**
+- female characters: **871**
+
+---
+
+### Chapter 3.
+
+<br /><br />
+
+# Annotating Character Relations
+
+--
+
+### Annotations from the Community
+
+<br />
+
+- DraCor as community project: pull request by Stuttgart-based QuaDramA group (Quantitative Drama Analytics)
+- Nathalie Wiedmer et al.: *Romeo, Freund des Mercutio: Semi-Automatische Extraktion von Beziehungen zwischen dramatischen Figuren*, Proceedings of DHd2020, Paderborn ([doi:10.5281/zenodo.4621778](https://doi.org/10.5281/zenodo.4621778))
+- annotation of relationships between characters (family and love relationships, dependencies) for the German Drama Corpus
+- caveat: relying on the information in cast lists only (»father of«, »lover of«, »servant of«, etc.), no further plot-related investigation
+
+--
+
+### Annotation Scheme
+
+<br />
+
+| Relation label  | Directed/Undirected | Description |
+|-----------------|---------------------|------------------------|
+| parent_of       | directed            | One character is a parent of the other |
+| lover_of        | directed            | For lovers |
+| related_with    | directed            | Other **family** relations (e.g., uncles) |
+| associated_with | directed            | For clearly associated characters (e.g., butlers) |
+| siblings        | undirected          | Characters that have at least one parent in common |
+| spouses         | undirected          | Characters in marriage (or engaged) |
+| friends         | undirected          | Characters marked as being friends |
+
+--
+
+### RusDraCor++ Task Force
+
+<br />
+
+- project of our Digital Humanities Master students at HSE, Moscow: Margarita Berseneva, Aleksandr Dyuldenko, Anna Oskina
+- joint annotations and correction rounds
+- research question: family relations in Russian drama, e.g. canonised plays like Gogol’s »Ревизор« (»The Government Inspector«), Griboyedov’s »Горе от ума« (»Woe from Wit«), Chekhov’s »Три сестры« (»Three Sisters«), Fonvizin’s family comedies and the wide range of family dramas of the 19th century (think Ostrovsky)
+- plots revolving around family constellations, especially problematising relations between parents and their children
+
+--
+
+### Annotation Process
+
+<br />
+
+- only 28 out of 212 Russian plays did not feature a cast list
+- relations stored in TEI element <listRelation> within the <listPerson> node
+- directed relations encoded with »active« or »passive« attributes
+- undirected relations marked with the »mutual« attribute
+- entire annotation is now a standard offering of the RusDraCor corpus
+
+--
+
+### Cast List of Fonvizin’s Comedy <br />»Недоросль« (»The Minor«, 1872)
+
+<br />
+
+* Простаков.
+* Г-жа Простакова, жена его.
+* Митрофан, сын их, недоросль.
+* Еремеевна, мама Митрофанова.
+* Софья, племянница Стародума.
+* Скотинин, брат г-жи Простаковой.
+* Слуга Простакова.
+* Камердинер Стародума.
+
+--
+
+### As Annotated in TEI:
+
+<br />
+
+```xml
+<listPerson>
+[…]
+  <listRelation type="personal">
+    <relation name="spouses" mutual="#prostakov #gospozha_prostakova"/>
+    <relation name="parent_of" active="#gospozha_prostakova #prostakov" passive="#mitrofan"/>
+    <relation name="associated_with" active="#eremeevna" passive="#mitrofan"/>
+    <relation name="related_with" active="#sofja" passive="#starodum"/>
+    <relation name="associated_with" active="#sluga" passive="#prostakov"/>
+    <relation name="siblings" mutual="#skotinin #gospozha_prostakova"/>
+    <relation name="associated_with" active="#kamerdiner" passive="#starodum"/>
+  </listRelation>
+</listPerson>
+```
+
+--
+
+## DraCor API
+
+<br />
+
+- in parallel: a new »relation« parameter was implemented in the »spoken-text« API call (https://dracor.org/doc/api)
+
+### <br />Text spoken by mothers:
+
+```url
+https://dracor.org/api/corpora/rus/play/fonvizin-nedorosl/
+spoken-text?gender=FEMALE&relation=parent_of_active
+```
+
+### <br />Text spoken by sons:
+
+```url
+https://dracor.org/api/corpora/rus/play/fonvizin-nedorosl/
+spoken-text?gender=MALE&relation=parent_of_passive
+```
+
+--
+
+### RusDraCor: »The Minor«, Network
+
+![The Minor](images/fonvizin-minor-network.png)<!-- .element width="800px;" -->
+
+https://dracor.org/id/rus000057
+
+--
+
+### RusDraCor: »The Minor«, Relations
+
+![The Minor](images/fonvizin-minor-relations.png)<!-- .element width="800px;" -->
+
+https://dracor.org/id/rus000057#relations
+
+--
+
+### RusDraCor: »The Minor«, Download Tab
+
+![The Minor](images/fonvizin-the-minor-download-tab.png)<!-- .element width="800px;" -->
+
+https://dracor.org/id/rus000057#downloads
+
+--
+
+#### »The Minor«, Visalised with Gephi
+
+![Fonvizin, network with annotated relations](images/fonvizin-the-minor-relational-graph.jpg)<!-- .element width="580px;" -->
+
+---
+
+### Chapter 4.
+
+<br /><br />
+
+# Experiments <br />with stylo()
+
+--
+
+## Skit
+
+<br /><br />
+
+»We do stylometry here, we don’t need markup.«<!-- .element: style="font-size:1.35em;" -->
+
+<br />
+
+(Jan Rybicki in his keynote at TEI2019, quoted freely from memory)
+
+--
+
+### Fathers and Sons in Russian Drama
+
+<br />
+
+- download all spoken text of fathers and sons for all plays in the corpus in one go
+- lemmatisation step (MyStem)
+- Craig’s Zeta function as implemented in stylo()
+
+--
+
+### Fathers and Sons in Russian Drama
+
+![stylo](images/fathers_sons_craig_001.png)<!-- .element width="580px;" -->
+
+--
+
+### Contrastive Vocabulary
+
+<br />
+
+- most distinctive word that fathers use in comparison to sons is »дочь« (»daughter«)
+- most distinctive noun for sons is »маменька« (»mom«)
+- sons express feelings more than their fatherly counterparts (i.e. »полюбить« = »to fall in love«, »страдать« = »to suffer«, »страсть« = »passion«)
+- fathers talk more about family members, marriage, service and ranks
+- sons more concerned with love, fate, beauty, happiness
+- this simple example is more of a proof of concept than providing deep insights
+- room for improvements:
+  - divide corpora more meaningfully (by authors, time periods, genre)
+  - parts-of-speech
+  - parametrisation
+
+---
+
+### Chapter 5.
+
+<br /><br />
+
+# Summary
+
+--
+
+### Summary
+
+<br />
+
+- enrichment of an existing corpus of Russian plays with data on kinship and social relations of characters
+- results integrated into mainstream RusDraCor (ready to use for others)
+- new functions for the DraCor API (to facilitate access to the new annotations)
+- workflow repeatable for corpora in other languages
+
+--
+
+Thanks.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
