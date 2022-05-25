@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Il corpus del dramma italiano (ItaDraCor) come parte di un ecosistema digitale (Ca’ Foscari Venezia, 26 maggio 2022)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Il corpus del dramma italiano (**ItaDraCor**) <br />come parte di un ecosistema digitale
+
+![Logo di DraCor](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.75em;" -->
+
+(Università libera di Berlino)<!-- .element: style="font-size:0.65em;" -->
+
+<br/>Web: [lehkost.github.io](https://lehkost.github.io/) <br />E-mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+<br />Questa presentazione: **[lehkost.github.io/slides/2022-05-26-venezia/](https://lehkost.github.io/slides/2022-05-26-venezia/index.html)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />Dramma europeo nell’età moderna &nbsp;·&nbsp; Ca’ Foscari Venezia &nbsp;🇮🇹 &nbsp;·&nbsp; 26 maggio 2022 ore 17:00–17:40
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+![Frontpage di DraCor](images/dracor-frontpage-2022-05-24.png)
+
+https://dracor.org/
+
+(versione desktop)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+![Frontpage di DraCor](images/iphone-11-pro-max-and-ipad-pro-mockup.jpg)
+
+https://dracor.org/
+
+(versione mobile per smartphone e tablet)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+## Indice
+
+<br />
+
+1. [Storia digitale della letteratura](#/1)
+2. [Corpora testuali](#/2)
+3. [API DraCor](#/3)
+4. [DraCor nella ricerca](#/4)
+5. [DraCor come parte di un ecosistema](#/5)
+6. [Sommario](#/6)
+
+---
+
+# Capitolo 1.
+
+<br />
+
+### Storia digitale della letteratura
+
+--
+
+## Ted Underwood: Distant Horizons (2018)
+
+<br />
+
+- »[…] we can find other ways to narrate literary history« (p. 108)
+- »But turning those models into fully satisfying stories could take several more decades.« (p. 109)
+
+--
+
+## Limiti della lettura
+### Esempi
+
+<br />
+
+* Cornelia Mönch: [»Abschrecken oder Mitleiden. Das deutsche bürgerliche Trauerspiel im 18. Jahrhundert. Versuch einer Typologie«](https://doi.org/10.1515/9783110910612) (1993)
+  * 242 opere
+* Benjamin Herbst: [»Die Dramaturgie des Sterbens. Der Tod im deutschsprachigen Drama von 1768 bis 1849«](https://doi.org/10.18452/18921) (2018)
+  * 509 opere
+* Altri esempi?
+
+--
+
+### »Distant-Reading Showcase«
+
+Come sono cambiate le costellazioni di personaggi nel dramma tedesco?
+
+![Distant-Reading Showcase](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+<small>Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)</small>
+
+--
+
+### Va bene, ma che dire …
+
+<br />
+
+- degli approcci comparatistici?
+- dei principi FAIR per i dati? (findable, accessible, interoperable, reusable?)
+- degli aspetti comunitari?
+- del training?
+
+---
+
+# Capitolo 2.
+
+<br />
+
+### Corpora testuali
+
+--
+
+### **DraCor**
+
+<br />
+
+- DraCor: *Drama Corpora* Portal (https://dracor.org/)
+- [Comunità](https://dracor.org/doc/credits): oltre 50 persone hanno contribuito
+- Inizio con due corpora propri:
+  - Corpus del dramma tedesco, GerDraCor (dal 1650 al 1940)
+  - Corpus del dramma russo, RusDraCor (dal 1740 al 1940)
+
+--
+
+#### Elenco crescente di corpora testuali <br />provenienti dalla comunità:
+
+- FreDraCor
+- GerDraCor
+- RusDraCor
+- **ItaDraCor** 💫
+- SweDraCor
+- CalDraCor
+- HunDraCor
+- GreekDraCor
+- ShakeDraCor
+- RomDraCor
+- SpanDraCor
+- AlsDraCor
+- TatDraCor
+- BashDraCor
+- UDraCor
+- …
+
+<!-- .element: style="font-size:0.9em;" -->
+
+--
+
+### Prerequisito: lo standard di codifica TEI (1/2)
+
+<br />
+
+![Il servitore (snippet))](images/eccovi.png)<!-- .element height="300px;" -->
+
+<br />
+
+<small>*Il servitore di due padroni. Commedia.* Collezione completa delle commedie del signor Carlo Goldoni. <br />Tomo XII. Piacenza: Del Maino 1829, p. 193. ([via Google Books](https://books.google.com/books?id=O-hReW1pbnEC&pg=PA193))</small>
+
+--
+
+### Prerequisito: lo standard di codifica TEI (2/2)
+
+<br />
+
+```xml
+<sp who="#silvio">
+  <speaker>Sil.</speaker>
+    <p>
+      Eccovi la mia destra, e con questa vi dono tutto il mio cuore.
+      <stage>(a Clarice, porgendole la mano.</stage>
+    </p>
+</sp>
+<sp who="#pantalone">
+  <speaker>Pan.</speaker>
+    <p>
+      Via, no ve vergognè; deghe la man anca vu. Cusi sarè promessi,
+      e presto presto sarè maridai.
+      <stage>(a Clarice.</stage>
+    </p>
+</sp>
+
+[etc.]
+```
+
+<br />
+
+<small>Dialogo dalla commedia di Goldoni in formato TEI (Text Encoding Initiative). <br />Attualmente, lo standard definisce 584 elementi diversi ([ad aprile 2022](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).</small>
+
+--
+
+### Frontpage di dracor.org
+
+![Frontpage di DraCor](images/dracor-frontpage-2022-05-24.png)
+
+https://dracor.org/
+
+--
+
+### Frontpage di ItaDraCor
+
+![ItaDraCor)](images/dracor-itadracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/ita
+
+--
+
+### ItaDraCor: »Il servitore di due padroni« (1746)
+
+![Il servitore)](images/dracor-servitore.png)<!-- .element width="720px;" -->
+
+https://dracor.org/id/ita000080
+
+--
+
+### ItaDraCor: »Il servitore di due padroni« (1746)
+
+![Il servitore)](images/dracor-servitore-dialogues.png)<!-- .element width="720px;" -->
+
+https://dracor.org/id/ita000080#speech
+
+--
+
+### ItaDraCor: »Il servitore di due padroni« (1746)
+
+![Il servitore](images/dracor-servitore-relations.png)<!-- .element width="720px;" -->
+
+<small>**Modellazione di relazioni specifiche tra personaggi.** <br />Dati del network: https://dracor.org/id/ita000080#relations</small>
+
+--
+
+### Scheda di download
+
+![Scheda di download](images/dracor-servitore-download-tab.png)<!-- .element width="720px;" -->
+
+<small>https://dracor.org/id/ita000080#downloads</small>
+
+--
+
+### ItaDraCor
+
+<br />
+
+- 139 opere teatrali italiane, recuperate dalla [Biblioteca Italiana](http://www.bibliotecaitaliana.it/)
+- »Questa risorsa digitale è liberamente accessibile per uso personale o scientifico.«
+- originariamente codificati in TEI P4, aggiornati in TEI P5
+- conversione dei dati: Frank Fischer e Carsten Milling
+- annotazioni: Michael Sonkin e Frank Fischer
+  - ID di Wikidata sia per gli autori che per le opere
+  - la data di composizione, l’anno di prima pubblicazione e la data della prima
+  - correzioni di errori OCR nei nomi
+  - informazioni sul genere per tutti i personaggi
+  - tutte le modifiche documentate su GitHub: https://github.com/dracor-org/itadracor
+
+---
+
+# Capitolo 3.
+
+<br />
+
+## API DraCor
+
+<br /><br />
+<small>API: Application Programming Interface <br />(Interfaccia di programmazione di una applicazione)<br /><br />
+
+--
+
+### Che cos’è un’API?
+
+<br />
+
+- scambio standardizzato di informazioni tra un’applicazione e le singole parti del programma
+- programmazione modulare
+- trasferimento di dati strutturati secondo una sintassi definita
+
+--
+
+### Funzioni dell’API DraCor
+
+![API DraCor)](images/dracor-api.png)
+
+<small>https://dracor.org/doc/api</small>
+
+--
+
+### API DraCor: Richieste di esempio
+
+https://dracor.org/api/corpora/ita/play/goldoni-il-servitore-di-due-padroni/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Battute di tutti i personaggi femminili nel »Servitore« di Goldoni (cioè Clarice, Smeraldina e Beatrice).</small>
+
+https://dracor.org/api/corpora/ita/play/goldoni-il-servitore-di-due-padroni/spoken-text?gender=MALE&relation=parent_of_active<!-- .element: style="font-size:0.7em;" -->
+
+<small>Testo del discorso di tutte le figure paterne (cioè Pantalone e Dottore Lombardi).</small>
+
+https://dracor.org/api/corpora/ita/play/goldoni-il-servitore-di-due-padroni/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Dati del network.</small>
+
+https://dracor.org/api/corpora/ita/play/goldoni-il-servitore-di-due-padroni/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Tutte le indicazioni di regia.</small>
+
+https://dracor.org/api/corpora/ita/metadata/csv<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadati per tutte le opere del corpus italiano (in formato JSON o CSV).</small>
+
+---
+
+# Capitolo 4.
+
+<br />
+
+## DraCor nella ricerca
+
+--
+
+### Esempio di ricerca:
+
+#### Tendenze all’epificazione nel dramma tedesco, <br />esaminate sulla base delle indicazioni sceniche
+
+![Tendenze all’epificazione nel dramma tedesco](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+<small>Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.</small>
+
+--
+
+### Visualizzazione semplice dei dati strutturali
+#### Numero di personaggi per opera in ordine cronologico (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+itadracor <- fread("https://dracor.org/api/corpora/ita/metadata/csv")
+ggplot(itadracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+<small>Esempio di semplice script che ottiene i dati tramite l’API.</small>
+
+--
+
+### Numero di personaggi per opera in ordine cronologico (2/2)
+
+![Numero di personaggi](images/num-of-speakers-itadracor.png)<!-- .element width="520px;" -->
+
+<small>Visualizzazione in RStudio.</small>
+
+<small>(Il punto in alto a destra: »Adelchi« di Manzoni, 36 personaggi.).</small>
+
+--
+
+### Wrapper API
+
+<br />
+
+= ulteriore semplificazione: <br />le funzioni API ricevono i propri comandi
+
+<br />
+
+- R: rdracor
+- Python: PyDraCor
+- Haskell: HDraCor
+
+--
+
+### Esempio (con rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+servitore <- play_igraph(corpus="ita", play="goldoni-il-servitore-di-due-padroni")
+plot(servitore)
+```
+
+<br />
+
+#### Risultato:
+
+![Network](images/servitore-rdracor-graph.png)<!-- .element height="250px;" -->
+
+---
+
+# Capitolo 5.
+
+<br />
+
+## DraCor come parte di un ecosistema
+
+--
+
+### Concetto di ›Programmable Corpora‹ (›Corpora programmabili‹)
+
+<br />
+
+<small>Frank Fischer et al.: **Programmable Corpora: Introducing DraCor, an Infrastructure for the Research on <br />European Drama.** Proceedings of DH2019: »Complexities«, Utrecht, [doi:10.5281/zenodo.4284002](https://doi.org/10.5281/zenodo.4284002).</small>
+
+<br />
+
+- Corpora come oggetti comparabili che offrono funzioni e sono collegati ad altre fonti di dati (tra l’altro tramite LOD).
+
+--
+
+### Stack tecnologico di DraCor
+
+![Stack tecnologico di DraCor](images/dracor-drawio.svg)
+
+<small>Tutti i repository (codice, dati) sono *open source*: https://github.com/dracor-org</small>
+
+--
+
+### Shiny App
+
+![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (scritto da Ivan Pozdniakov). Recupero dei dati completamente tramite API.</small>
+
+--
+
+### Endpoint SPARQL di DraCor
+
+![Endpoint SPARQL di DraCor)](images/dracor-sparql.png)
+
+<small>https://dracor.org/sparql</small>
+
+--
+
+### Ontologia DraCor
+
+![WebVOWL](images/webvowl-dracor-ontology.png)<!-- .element height="500px;" -->
+
+https://vowl.acdh.oeaw.ac.at/#iri=https://raw.githubusercontent.com/dracor-org/dracor-schema/ontology/ontology/dracor-ontology.xml
+<!-- .element: style="font-size:0.5em;" -->
+
+--
+
+### Connessione al cloud Linked Open Data
+
+<br />
+
+- esempio: *Il servitore* di Goldoni (1746)
+- [articolo su Wikipedia](https://it.wikipedia.org/wiki/Il_servitore_di_due_padroni)
+- pagina su Wikidata con i fatti: <br />https://www.wikidata.org/wiki/Q769831
+- luoghi delle prime rappresentazioni del dramma italiano: https://w.wiki/5Ccg
+
+--
+
+### Luoghi delle prime rappresentazioni del dramma italiano
+
+![Luoghi delle prime rappresentazioni](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+---
+
+# Sommario
+
+<br />
+
+- DraCor: un’infrastruttura di ricerca digitale sul dramma europeo
+- parte di un ecosistema digitale
+- interfaccia tra filologia analogica e digitale
+- il corpus del dramma italiano è a disposizione della comunità di ricerca❗
+
+--
+
+Grazie mille.
+
+![Logo di DraCor](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
