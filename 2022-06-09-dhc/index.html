@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DraCor – Ein Forschungsprojekt zur Analyse des europäischen Dramas und seine digitale Umgebung (DHC-Vortrag, 9. Juni 2022)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### **DraCor** – Ein Forschungsprojekt zur Analyse des europäischen Dramas und seine digitale Umgebung
+
+![DraCor-Logo](images/dracor-app-icon.jpg)<!-- .element width="200px;" -->
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.75em;" -->
+
+(Freie Universität Berlin)<!-- .element: style="font-size:0.65em;" -->
+
+<br/>Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Twitter: [@umblaetterer](https://twitter.com/umblaetterer) <br />E-Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+<br />Diese Präsentation: **[lehkost.github.io/slides/2022-06-09-dhc/](https://lehkost.github.io/slides/2022-06-09-dhc/index.html)**
+<!-- .element: style="font-size:0.55em;" -->
+
+<br />[Digital\*Humanities im Gespräch #25](https://www.fu-berlin.de/sites/dhc/programme/termine/dh-gespraech-sose-22-2.html) 🎂 &nbsp;·&nbsp; Dahlem Humanities Center &nbsp;·&nbsp; 9. Juni 2022, 14:15 Uhr
+<!-- .element: style="font-size:0.7em;" -->
+
+---
+
+![DraCor-Frontpage am 09.06.2022](images/dracor-frontpage-2022-06-09.png)
+
+https://dracor.org/
+
+--
+
+## Inhalt
+
+<br />
+
+1. [Digitale Umgebung](#/1)
+2. [Daten und Korpusarbeit](#/2)
+3. [Schnittstellen und programmierbare Korpora](#/3)
+4. [Cross-Korpora-Analysen](#/4)
+5. [DraCor als Teil eines digitalen Ökosystems](#/5)
+6. [Zusammenfassung und Ausblick](#/6)
+
+---
+
+# Kapitel 1.
+
+<br />
+
+## Digitale Umgebung
+
+--
+
+### Vorgeschichte: TextGrid Repository
+
+![TextGrid Repository](images/textgrid-repository.png)<!-- .element width="760px;" -->
+
+<small>https://textgridrep.org/browse/nm2b.0</small>
+
+--
+
+### Discovery Platforms
+
+<br />
+
+- einerseits: »Directory Paradox« (Quinn Dombrowski)
+
+- andererseits:
+  - <s>DiRT Directory</s>
+  - <s>TERESAH</s>
+  - (TAPoR)
+  - SSH Open Marketplace
+
+--
+
+### SSH Open Marketplace (1/3)
+
+![ssh open marketplace](images/ssh-open-marketplace.png)
+
+<small>https://marketplace.sshopencloud.eu/</small>
+
+--
+
+### SSH Open Marketplace (2/3)
+
+<br />
+
+- Discovery-Portal für SSH-Ressourcen
+  - Tools & Services
+  - Trainingsmaterialien
+  - Workflows
+  - Datensets
+  - Publikationen
+
+- Zentrale Konzepte:
+  - Kontextualisierung
+  - Kuratierung
+  - Community
+
+--
+
+### SSH Open Marketplace (3/3)
+
+<br />
+
+- TaDiRAH (Taxonomy of Digital Research Activities in the Humanities) ist eingebunden
+  - Beispiel-Aktivitäten: [Concordance](https://vocabs.dariah.eu/tadirah/concordance) und [Stylistic Analysis](https://vocabs.dariah.eu/tadirah/stylisticAnalysis)
+  - im Marketplace:
+    - https://marketplace.sshopencloud.eu/search?f.activity=Concordance
+    - https://marketplace.sshopencloud.eu/search?f.activity=Stylistic+Analysis
+
+---
+
+# Kapitel 2.
+
+<br />
+
+## Daten und Korpusarbeit
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI
+
+<br />
+
+![Faust (jEdit))](images/jedit-faust.png)<!-- .element height="340px;" -->
+
+<br />
+
+<small>Goethes »Faust I« im TEI-Format (in jEdit mit TEI-Plugin).</small>
+
+--
+
+### Frontend dracor.org
+
+![DraCor-Frontpage am 09.06.2022](images/dracor-frontpage-2022-06-09.png)
+
+https://dracor.org/
+
+--
+
+#### Wachsende Liste von Korpora aus der Community:
+
+- FreDraCor
+- EPDraCor
+- GerDraCor
+- RusDraCor
+- ItaDraCor
+- SweDraCor
+- CalDraCor
+- HunDraCor
+- GreekDraCor
+- ShakeDraCor
+- RomDraCor
+- SpanDraCor
+- AlsDraCor
+- TatDraCor
+- BashDraCor
+- …
+
+--
+
+### Frontpage GerDraCor
+
+![GerDraCor)](images/dracor-gerdracor.png)<!-- .element width="720px;" -->
+
+https://dracor.org/ger
+
+--
+
+### GerDraCor: Netzwerk-Tab
+
+![GerDraCor: Die Räuber)](images/dracor-die-pietisterey.png)<!-- .element width="720px;" -->
+
+https://dracor.org/id/ger000462
+
+--
+
+### GerDraCor: Speech-Distribution-Tab
+
+![GerDraCor: Das Testament)](images/dracor-die-pietisterey-speech-distribution.png)<!-- .element width="720px;" -->
+
+https://dracor.org/id/ger000462#speech
+
+<small>Scene V/7: »Frau Glaubeleichtin, Jungfer Luischen, Herr Wackermann, Herr Scheinfromm, <br />Herr von Muckersdorff, Cathrine und der Advocat.«</small>
+
+--
+
+### GerDraCor: Download-Tab
+
+![DraCor-Download-Tab](images/dracor-die-pietisterey-download-tab.png)<!-- .element width="720px;" -->
+
+<small>https://dracor.org/id/ger000462#downloads</small>
+
+--
+
+#### GerDraCor: Relations-Tab-Daten, visualisiert mit Gephi
+
+![Anzengruber-Drama, Netzwerk mit Figurenbeziehungen](images/dracor-die-pietisterey-relations.png)<!-- .element width="560px;" -->
+
+<small>**Modellierung spezifischer Figurenrelationen.** <br />Netzwerkdaten: https://dracor.org/id/ger000462#relations</small>
+
+--
+
+### GerDraCor
+
+<br />
+
+- mittlerweile 569 Stücke (Ergänzungen aus DTA, Wikisource, Gutenberg-DE, Google Books, …)
+- Community-Projekt: Beschreibung und Anwendungsbeispiele [bei forTEXT](https://fortext.net/ressourcen/textsammlungen/dracor-drama-corpora-project) (Hamburg/Darmstadt)
+- [Nathalie Wiedmer et al.](https://quadrama.github.io/publications/Wiedmer2020aa): Annotation von Beziehungen der Figuren untereinander (Familien- und Liebesverhältnisse, dienstliche Abhängigkeiten)
+
+--
+
+### Annotation mythologischer und <br />historischer Figuren
+
+![dracor-wikidata-button](images/dracor-wikidata-button.png)<!-- .element height="80" -->
+
+<small>Dazu gleich mehr…</small>
+
+---
+
+# Kapitel 3.
+
+<br />
+
+## Schnittstellen und programmierbare Korpora
+
+<br /><br />
+
+<small>API: Application Programming Interface (Anwendungsschnittstelle)<br /><br />
+
+--
+
+### Qu’est-ce qu’une API ?
+
+<br />
+
+- standardisierter Austausch von Informationen zwischen einer Anwendung und einzelnen Programmteilen
+- modularisierte, vereinfachte Programmierung
+- Übergabe von Daten erfolgt strukturiert nach einer definierten Syntax
+- speziell: REST API (für Webservices)
+
+--
+
+### Funktionen der DraCor-API
+
+![DraCor-API)](images/dracor-api.png)<!-- .element height="520" -->
+
+<small>https://dracor.org/doc/api</small>
+
+--
+
+### DraCor-API: Beispielanfragen
+
+https://dracor.org/api/corpora/ita/play/goldoni-il-servitore-di-due-padroni/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Sprechtext aller weiblicher Figuren in Goldonis »Il servitore di due padroni« (cioè Clarice, Smeraldina e Beatrice).</small>
+
+https://dracor.org/api/corpora/ger/play/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Sprechtext aller Sohn-Figuren in Schillers »Räubern«.</small>
+
+https://dracor.org/api/corpora/shake/play/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Netzwerkdaten zu Shakespeares »Hamlet« (im JSON-Format).</small>
+
+https://dracor.org/api/corpora/ger/play/gottschedin-die-pietisterey-im-fischbein-rocke/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Alle Regieanweisungen aus »Die Pietisterey im Fischbein-Rocke« von Luise Gottsched.</small>
+
+https://dracor.org/api/corpora/ita/metadata<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadaten zu allen Stücken des italienischen Korpus (als JSON oder CSV).</small>
+
+--
+
+### DraCor Technology Stack
+
+![DraCor Technology Stack](images/dracor-drawio.svg)
+
+<small>Alle Repos (Code, Daten) sind *open source*: https://github.com/dracor-org</small>
+
+--
+
+### Shiny App
+
+![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (von Ivan Pozdniakov). Datenbezug komplett über die API.</small>
+
+--
+
+### Forschungsbeispiel:
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+<small>Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.</small>
+
+--
+
+### Einfache Visualisierung von Strukturdaten
+#### Anzahl von Figuren pro Stück in chronologischer Folge (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+gerdracor <- fread("https://dracor.org/api/corpora/ger/metadata.csv")
+ggplot(gerdracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+<small>Beispiel für einfaches R-Script, das die Daten über die API bezieht.</small>
+
+--
+
+#### Anzahl von Figuren pro Stück in chronologischer Folge (2/2)
+
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+<small>Ausgabe in RStudio.</small>
+
+<small>(Der Punkt rechts oben: Karl Kraus’ »Die letzten Tage der Menschheit«, 925 Sprechinstanzen).</small>
+
+--
+
+### API-Wrapper
+
+<br />
+
+= weitere Vereinfachung: <br />API-Funktionen bekommen eigene Befehle
+
+<br />
+
+- für R: rdracor
+- für Python: PyDraCor
+- für Haskell: HDraCor
+
+--
+
+#### Beispiel (mit rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+hermann <- play_igraph(corpus="ger", play="kleist-die-hermannsschlacht")
+plot(hermann)
+```
+#### Ergebnis:
+
+![Hermannsschlacht, Netzwerkgraph mit rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element height="400px;" -->
+
+--
+
+### Konzept der ›Programmable Corpora‹
+
+<br />
+
+<small>Publikation: <br />Frank Fischer et al.: **Programmable Corpora: Introducing DraCor, an Infrastructure for the Research on <br />European Drama.** Proceedings of DH2019: »Complexities«, Utrecht, [doi:10.5281/zenodo.4284002](https://doi.org/10.5281/zenodo.4284002).</small>
+
+<br />
+
+- Korpora als vergleichbare Objekte, die selbst Funktionen anbieten und mit anderen Datenquellen verbunden sind (u.&nbsp;a. via LOD)
+
+---
+
+# Kapitel 4.
+
+<br />
+
+## Cross-Korpora-Analysen
+
+--
+
+### Cross-Korpora-Analysen mythologischer <br />und historischer Figuren
+
+![dracor-wikidata-button](images/dracor-wikidata-button.png)<!-- .element height="80" -->
+
+(Quelle: https://dracor.org/id/ger000532)
+<!-- .element: style="font-size:0.45em;" -->
+
+<br />
+
+- API-Funktion: /character/{id}
+- Beschreibung: »List plays having a character identified by Wikidata ID«
+- Beispiele:
+  - https://dracor.org/api/character/Q131412 (Maria Stuart)
+  - https://dracor.org/api/character/Q192673 (Iphigenie)
+  - https://dracor.org/api/character/Q76918 (Johann Georg Faust)
+
+--
+
+### »Kennst du den Faust?«
+
+<small>(<span style="font-variant:small-caps;">Der Herr</span> zu <span style="font-variant:small-caps;">Mephistopheles</span> im *Prolog im Himmel*.)</small>
+
+![Rembrandt, Faust](images/rembrandt-faust.jpg)<!-- .element height="460px;" -->
+
+<small>(Rembrandt: Gelehrter im Studierzimmer/»Faust«, um 1652. Digitalisat: [Hamburger Kunsthalle](https://www.hamburger-kunsthalle.de/sammlung-online/rembrandt-harmensz-van-rijn/gelehrter-im-studierzimmer-faust-0).)</small>
+
+--
+
+### Alle Faust-Dramen im GerDraCor
+
+| Autor | Titel und Untertitel | Jahr |
+|-|-|-|
+| Goethe, Johann Wolfgang | Faust [in ursprünglicher Gestalt] | 1775 |
+| Weidmann, Paul | Johann Faust. Ein Allegorisches Drama von fünf Aufzügen | 1775 |
+| Maler Müller | Fausts Leben dramatisiert | 1778 |
+| Schink, Johann Friedrich | Der neue Doktor Faust. Eine Plaisanterie mit Gesang, in zwei Aufzügen | 1782 |
+| Soden, Julius von | Doktor Faust. Volks-Schauspiel in fünf Akten | 1797 |
+| Benkowitz, Karl Friedrich | Die Jubelfeier der Hölle, oder Faust der jüngere. Ein Drama zum Anfang des neunzehnten Jahrhunderts | 1801 |
+| Baggesen, Jens | Der vollendete Faust oder Romanien in Jauer. Ein dramatisches Gedicht in drei Abtheilungen | 1808 |
+| Goethe, Johann Wolfgang | Faust. Eine Tragödie | 1808 |
+| Klingemann, August | Faust. Ein Trauerspiel in fünf Acten | 1812 |
+| Bernard, Josef Carl | Faust. Große romantische Oper in drei Akten | 1816 |
+| Voß, Julius von | Faust. Trauerspiel mit Gesang und Tanz | 1823 |
+| Grabbe, Christian Dietrich | Don Juan und Faust. Eine Tragödie in vier Akten | 1829 |
+| Goethe, Johann Wolfgang | Faust. Der Tragödie zweiter Teil. In fünf Akten | 1832 |
+| Braun von Braunthal, Karl Johann | Faust. Eine Tragödie | 1835 |
+| Wolfram, Hermann Ludwig | Faust. Ein dramatisches Gedicht in drei Abschnitten | 1839 |
+| Simrock, Karl | Doctor Johannes Faust. Puppenspiel in vier Aufzügen | 1846 |
+| Vischer, Friedrich Theodor | Faust. Der Tragödie dritter Teil | 1862 |
+| Schaefer, Wilhelm | Faustine, der weibliche Faust. Tragödie in sechs Aufzügen nebst Vorspiel und Prolog | 1898 |
+| Avenarius, Ferdinand | Faust. Ein Spiel | 1919 |
+| Busoni, Ferruccio | Doktor Faust | 1920 |
+| Ertler, Bruno | Das Spiel von Doktor Faust. Ein deutsches Stück im Volkston in einem Vorspiel und drei Akten | 1923 |
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Faust und seine Netzwerke
+
+<br />
+
+- Graphvisualisierungen jeweils mit [Gephi](https://marketplace.sshopencloud.eu/tool-or-service/87wJWo) auf Basis der GEXF-Dateien von DraCor erstellt
+- Layoutalgorithmus: Force Atlas 2
+- Labelgröße entspricht der Anzahl gesprochener Wörter
+- Kantendicke entspricht Anzahl von Kopräsenzen zweier Figuren
+- verschiedene Communitys im Farbverlauf von blau nach rot
+
+--
+
+#### Goethe: Urfaust (1775)
+
+![network](images/ger000539-goethe-faust-in-urspruenglicher-gestalt.png)<!-- .element height="500px;" -->
+
+<small>Urfaust. (Permalink: https://dracor.org/id/ger000539)<small>
+
+--
+
+#### Paul Weidmann: Johann Faust. Ein Allegorisches <br />Drama von fünf Aufzügen (1775)
+
+![network](images/ger000014-weidmann-johann-faust.png)<!-- .element height="500px;" -->
+
+<small>Theodor und Elisabeth: Fausts Eltern. (Permalink: https://dracor.org/id/ger000014)<small>
+
+--
+
+#### Maler Müller: Fausts Leben dramatisiert (1778)
+
+![network](images/ger000561-maler-mueller-fausts-leben-dramatisiert.png)<!-- .element height="500px;" -->
+
+<small>Fausts Vater und Mutter (Hanne). (Permalink: https://dracor.org/id/ger000561)<small>
+
+--
+
+#### Klingemann: Faust. Ein Trauerspiel in fünf Acten (1812)
+
+![network](images/ger000110-klingemann-faust.png)<!-- .element height="500px;" -->
+
+<small>Diether: Fausts Vater. Käthe: Faust Ehefrau. (Permalink: https://dracor.org/id/ger000110)<small>
+
+--
+
+#### Wilhelm Schaefer: Faustine, der weibliche Faust. Tragödie in <br />sechs Aufzügen nebst Vorspiel und Prolog (1898)
+
+![network](images/ger000302-schaefer-faustine-der-weibliche-faust.png)
+
+<small>(Permalink: https://dracor.org/id/ger000302)<small>
+
+--
+
+#### Goethe: Faust. Der Tragödie zweiter Teil. In fünf Akten (1832)
+
+![network](images/ger000201-goethe-faust-der-tragoedie-zweiter-teil.png)<!-- .element height="520px;" -->
+
+<small>(Permalink: https://dracor.org/id/ger000201)<small>
+
+--
+
+### Goethes »Faust I«
+
+![Faust I (dynamischer Graph)](images/goethe-faust.gif)
+
+<small>**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script: Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/napoleon)).</small>
+
+--
+
+### Weiterverwendung
+
+<br />
+
+- die Faust-Netzwerke sind keine Endprodukte, sondern erleichtern, ermöglichen oder kontextualisieren den Zugriff auf weitere Datenschichten (Figuren, Figurengruppen und -typen, Sprechtexte, Regieanweisungen)
+
+--
+
+### Labor: Quantitative Textanalysen
+
+--
+
+### Keyness-Analyse mit AntConc
+
+![Oppose](images/faust-antconc.png)<!-- .element height="480px;" -->
+
+<small>Drei Goethe’sche Fäuste als Referenzkorpus vs. 18 andere Fäuste, <br />jeweils nur der gesamte Sprechtext der Stücke, ohne Sprecher\*innenangaben.</small>
+
+--
+
+### stylo oppose() – Parametrisierung
+
+![Oppose](images/stylo-oppose-window.png)<!-- .element height="500px;" -->
+
+<small>Experiment mit voreingestellten Parametern, Ergebnis siehe nächste Seite.</small>
+
+--
+
+### stylo oppose() – Ergebnis
+
+![Oppose](images/oppose-goethe-faust-vs-alle-anderen-faust.png)<!-- .element height="500px;" -->
+
+<small>Gegenüberstellung mit ```oppose()```: Drei Goethe’sche Fäuste (rechts) vs. 18 andere Fäuste (links), jeweils nur der gesamte Sprechtext der Stücke, ohne Sprecher\*innenangaben.</small>
+
+--
+
+### Concordance Plot mit AntConc
+
+![Oppose](images/faust-antconc-concordance-plot.png)
+
+<small>Vorkommen des Wortes »Ewigkeit« in fünf ausgewählten Faust-Dramen.</small>
+
+---
+
+# Kapitel 5.
+
+<br />
+
+## DraCor als Teil eines digitalen Ökosystems
+
+--
+
+### SPARQL-Endpunkt von DraCor
+
+![DraCor-API)](images/dracor-sparql.png)
+
+<small>https://dracor.org/sparql</small>
+
+--
+
+### Anbindung an die <br />Linked Open Data-Cloud
+
+<br />
+
+- Beispiel: Goethes »Faust I« (gedr. 1808)
+- hat einen [Wikipedia-Artikel](https://www.wikidata.org/wiki/Q13221881)
+- hat einen Wikidata-Artikel mit Fakten: <br />https://www.wikidata.org/wiki/Q782653
+- Uraufführungen deutschsprachiger Stücke: https://w.wiki/559m
+
+--
+
+### Uraufführungsorte in GerDraCor
+
+![Uraufführungen insgesamt](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+--
+
+### Urauführungsort Berlin in GerDraCor
+
+![Uraufführungen Berlin](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+--
+
+### Ermittlung der Forschungsintensität
+
+<small>Anzahl wissenschaftlicher Artikel zu einem Stück im German Drama Corpus (Top-20),<br />via [**BDSL** – Bibliographie der deutschen Sprach- und Literaturwissenschaft](https://www.bdsl-online.de/):</small>
+
+<small>
+
+1. Johann Wolfgang Goethe: Faust (2037)
+2. Georg Büchner: Dantons Tod (309)
+3. Gotthold Ephraim Lessing: Nathan der Weise (307)
+4. Heinrich von Kleist: Penthesilea (304)
+5. Johann Wolfgang Goethe: Iphigenie auf Tauris (243)
+6. Gotthold Ephraim Lessing: Emilia Galotti (193)
+7. Heinrich von Kleist: Prinz Friedrich von Homburg (172)
+8. Friedrich Schiller: Die Räuber (171)
+9. Friedrich Schiller: Wilhelm Tell (147)
+10. Heinrich von Kleist: Der zerbrochne Krug (143)
+11. Friedrich Schiller: Maria Stuart (123)
+12. Georg Büchner: Leonce und Lena (116)
+13. Friedrich Schiller: Die Jungfrau von Orleans (116)
+14. Heinrich von Kleist: Die Hermannsschlacht (114)
+15. Hugo von Hofmannsthal: Elektra (111)
+16. Johann Wolfgang Goethe: Torquato Tasso (109)
+17. Friedrich Schiller: Kabale und Liebe (102)
+18. Karl Kraus: Die letzten Tage der Menschheit (100)
+19. Heinrich von Kleist: Amphitryon (97)
+20. Arthur Schnitzler: Reigen (85)
+
+</small>
+
+<small>Vgl. Jäschke/Fischer: [Quantification of Scholarly Articles on German Drama](https://weltliteratur.net/scholarly-articles-on-german-drama/), <br />in: weltliteratur.net, 12. Oktober 2021</small>
+
+--
+
+### Metadatenzentriert: **Einakter-Datenbank** <br />(https://einakter.dracor.org/)
+
+![Einakter-DB](images/einakter-datenbank.png)<!-- .element width="500px;" -->
+
+<small>Vgl. Dîlan Canan Çakir, Frank Fischer: **Dramatische Metadaten. Die Datenbank deutschsprachiger Einakter 1740–1850.** <br />In: DHd2022: »Kulturen des digitalen Gedächtnisses«. 7.–11. März 2022. <br />Book of Abstracts. Universität Potsdam. ([doi:10.5281/zenodo.6327977](https://doi.org/10.5281/zenodo.6327977))</small>
+
+---
+
+# Kapitel 6.
+
+<br />
+
+## Zusammenfassung und Ausblick
+
+<br />
+
+- DraCor: ein eigenes Ökosystem, selbst wiederum Teil eines größeren digitalen Ökosystems
+- Open Source, FAIR-Prinzipien, Community, Training
+
+--
+
+Vielen Dank.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
