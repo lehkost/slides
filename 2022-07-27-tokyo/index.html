@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Patterns of Verb Usage in Immanuel Kant’s Critical Writings (DH2022, 27 July 2022)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Patterns of Verb Usage in <br />Immanuel Kant’s Critical Writings
+
+![Portrait of Immanuel Kant(via Wikimedia Commons)](images/kant-gemaelde.jpg)<!-- .element width="100px;" -->
+
+Stefan **Heßbrüggen-Walter** ¹ <br />Frank **Fischer** ² <br />Simon **Meier-Vieracker** ³
+<!-- .element: style="font-size:0.8em;" -->
+
+<br />1 · University of Trier <br />2 · Free University of Berlin <br />3 · Dresden University of Technology<!-- .element: style="font-size:0.6em;" -->
+
+<br />
+
+This presentation: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io/slides/2022-07-27-tokyo/](https://lehkost.github.io/slides/2022-07-27-tokyo/index.html)**
+
+[DH2022](https://dh2022.adho.org/) &nbsp;·&nbsp; Tokyo 🇯🇵 &nbsp;·&nbsp; 27 July 2022
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Our approach
+
+<br />
+
+- What we do: analysis of finite verbs in Immanuel Kant’s critical writings.
+- Motivation: learn more about the semantic role of verbs in philosophical texts. Philosophy is articulated not only through nouns.
+- Method: compare verb usage across philosophical subdisciplines (theoretical philosophy, practical philosophy, aesthetics).
+
+--
+
+### The Subcorpora
+
+<br />
+
+| Assembled Subcorpora   | Works                                                                                                                             | N&nbsp;tokens |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------|---------------|
+| Theoretical Philosophy | - *Prolegomena to Any Future Metaphysics* <br />- *Metaphysical Foundations of Natural Science* <br />- *Critique of Pure Reason* |       311,137 |
+| Practical Philosophy   | - *Foundations of the Metaphysics of Morals* <br/>- *Critique of Practical Reason*<br />- *Metaphysics of Morals*                 |       206,471 |
+| Aesthetics/Telelogy    | - *Critique of Judgment*                                                                                                           |       127,939 |
+
+<br />
+
+<small>Tab. 1. Size of subcorpora and contained works. Full texts obtained from [Zeno.org](http://www.zeno.org/nid/20009187871).</small>
+
+--
+
+### Methods
+
+<br />
+
+- POS tagging.
+- Key verbs in subcorpus, using complete corpus as reference corpus.
+- Keyness measure: log-likelihood.
+
+--
+
+### Results
+
+<br />
+
+- In **theoretical philosophy**, high keyness values for verbs associated with theory of knowledge (»geben«, »anschauen«) and natural philosophy (»bewegen«, »anfangen«, »verändern«).
+- **Practical philosophy**: verbs from the sphere of law (»erwerben«, »verpflichten«).
+- **Aesthetics**: activities (»urteilen«, »beurteilen«), aesthetic responses (»gefallen«).
+
+--
+
+### Conclusion
+
+<br />
+
+Differences in verb usage across philosophical subdisciplines indicate that verbs make a non-negligible contribution to the semantics of philosophical texts. At least in Kant.
+
+--
+
+Thanks for listening.
+
+<br /><br />
+
+Our abstract can be found here: <br />https://dh2022.dhii.asia/abstracts/202 
+
+<br /><br />
+
+Find us on Twitter:
+
+[@FrueheNeuzeit](https://twitter.com/FrueheNeuzeit) <br/>
+[@umblaetterer](https://twitter.com/umblaetterer) <br/>
+[@fussballinguist](https://twitter.com/fussballinguist)
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
