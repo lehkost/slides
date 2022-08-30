@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Keynote: Behind the Digitised Mask (Amsterdam, 2 September 2022)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Behind the Digitised Mask 🎭
+#### Focusing on Single Characters Within Large Multilingual Corpora
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.75em;" -->
+
+Freie Universität Berlin<!-- .element: style="font-size:0.65em;" -->
+
+Web: [lehkost.github.io](https://lehkost.github.io/) <br />E-mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+<br />This presentation: **[lehkost.github.io/slides/2022-09-02-amsterdam/](https://lehkost.github.io/slides/2022-09-02-amsterdam/index.html)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[“Transnational Drama Within and Beyond Europe, 1450–1750”](https://translatin.nl/conference/) &nbsp;·&nbsp; Amsterdam &nbsp;🇳🇱 &nbsp;·&nbsp; 2 Sept 2022
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+![DraCor frontpage on 24.05.2022](images/dracor-frontpage-2022-05-24.png)
+
+https://dracor.org/
+
+--
+
+## Chapters
+
+<br />
+
+1. [Characters](#/1)
+2. [Smart Data](#/2)
+3. [Corpus Work](#/3)
+4. [DraCor API](#/4)
+5. [Mythological and Historical Characters](#/5)
+6. [Cross Corpora Analyses](#/6)
+
+---
+
+# Chapter 1.
+
+<br />
+
+### Characters
+
+--
+
+## An Observation
+
+<br />
+
+In Computational Literary Studies, there are <br />few papers that revolve around literary characters.
+
+Like, *concrete* literary characters.
+<!-- .element: class="fragment" -->
+
+Like, *all* characters (including minor <br />characters) of a text or corpus.
+<!-- .element: class="fragment" -->
+
+--
+
+One subfield, though, in which <br />characters occur prominently <br />is literary network analysis.
+
+--
+
+### Distant-Reading Showcase
+
+How do character constellations change in 200 years of German drama?
+
+![465 plays at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+<small>Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)</small>
+
+---
+
+# Chapter 2.
+
+<br />
+
+### Smart Data
+
+--
+
+### Data in the Humanities
+
+<br />
+
+- “a digital, selectively constructed, machine-actionable abstraction representing some aspects of a given object of humanistic inquiry” ([Schöch 2013](http://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/))
+- two main types of data in the humanities: big data vs. smart data
+
+--
+
+### Big Data
+
+<br />
+
+- 3V paradigm:
+  - volume (amount of data)
+  - velocity (speed of data, in-/output, real time)
+  - variety (text, images, audio, video)
+- “messy and implicit, relatively large in volume, and varied in form” (Schöch 2013)
+
+--
+
+### Smart Data
+
+<br />
+
+- usually contains markup, annotations, metadata
+- “involves human agency and demands time”
+- “semi-structured or structured, clean and explicit, as well as relatively small in volume and of limited heterogeneity” (Schöch 2013)
+
+---
+
+# Chapter 3.
+
+<br />
+
+### Corpus Work
+
+--
+
+### Precondition: TEI Standard (1/2)
+
+<br />
+
+![Il servitore (snippet))](images/eccovi.png)<!-- .element height="300px;" -->
+
+<br />
+
+<small>*Il servitore di due padroni. Commedia.* Collezione completa delle commedie del signor Carlo Goldoni. <br />Tomo XII. Piacenza: Del Maino 1829, p. 193. ([via Google Books](https://books.google.com/books?id=O-hReW1pbnEC&pg=PA193))</small>
+
+--
+
+### Precondition: TEI Standard (2/2)
+
+<br />
+
+```xml
+<sp who="#silvio">
+  <speaker>Sil.</speaker>
+    <p>
+      Eccovi la mia destra, e con questa vi dono tutto il mio cuore.
+      <stage>(a Clarice, porgendole la mano.</stage>
+    </p>
+</sp>
+<sp who="#pantalone">
+  <speaker>Pan.</speaker>
+    <p>
+      Via, no ve vergognè; deghe la man anca vu. Cusi sarè promessi,
+      e presto presto sarè maridai.
+      <stage>(a Clarice.</stage>
+    </p>
+</sp>
+
+[etc.]
+```
+
+<br />
+
+<small>Dialogue from Goldoni’s play encoded in TEI format (Text Encoding Initiative). <br />Currently, the standard defines 584 different elements ([as of April 2022](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html), <br />release version 4.4.0, codenamed “Ukraine 🇺🇦 Solidarity”).</small>
+
+--
+
+### Frontend of dracor.org
+
+![DraCor frontpage on 24.05.2022](images/dracor-frontpage-2022-05-24.png)
+
+https://dracor.org/
+
+--
+
+### Growing list of corpora from the community:
+
+- **Fre**DraCor (French)
+- **Ger**DraCor (German)
+- **Rus**DraCor (Russian)
+- **Cal**DraCor (Calderón)
+- **Ita**DraCor (Italian)
+- **Swe**DraCor (Swedish)
+- **Hun**DraCor (Hungarian)
+- **Greek**DraCor (ancient Greek)
+- **Shake**DraCor (Shakespeare)
+- **GerSh**DraCor (Shakespeare in German translation)
+- **Rom**DraCor (Latin)
+- **Span**DraCor (Spanish)
+- **Als**DraCor (Alsatian)
+- **Tat**DraCor (Tatar)
+- **Bash**DraCor (Bashkir)
+- (a handful more corpora are in the works)
+
+<!-- .element: style="font-size:0.9em;" -->
+
+--
+
+### Frontpage of the Italian Drama Corpus (ItaDraCor)
+
+![ItaDraCor)](images/dracor-itadracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/ita
+
+--
+
+### ItaDraCor: *Il servitore di due padroni* (1746)
+
+![Il servitore)](images/dracor-servitore.png)<!-- .element width="720px;" -->
+
+https://dracor.org/id/ita000080
+
+--
+
+### ItaDraCor: *Il servitore di due padroni* (1746)
+
+![Il servitore)](images/dracor-servitore-dialogues.png)<!-- .element width="720px;" -->
+
+https://dracor.org/id/ita000080#speech
+
+--
+
+### ItaDraCor: *Il servitore di due padroni* (1746)
+
+![Il servitore](images/dracor-servitore-relations.png)<!-- .element width="720px;" -->
+
+<small>**Modelling of specific character relationships.** <br />Network data: https://dracor.org/id/ita000080#relations</small>
+
+--
+
+### Download Tab
+
+![Download Tab](images/dracor-servitore-download-tab.png)<!-- .element width="720px;" -->
+
+<small>https://dracor.org/id/ita000080#downloads</small>
+
+--
+
+### ItaDraCor
+
+<br />
+
+- 139 Italian plays, retrieved from [Biblioteca Italiana](http://www.bibliotecaitaliana.it/)
+- “Questa risorsa digitale è liberamente accessibile per uso personale o scientifico.”
+- originally encoded in TEI P4, updated to TEI P5
+- data conversion: Frank Fischer and Carsten Milling
+- annotations: Michael Sonkin and Frank Fischer
+  - Wikidata IDs for both authors and works
+  - date of composition, year of first publication and date of first performance
+  - corrections of OCR errors in names
+  - gender information for all characters
+  - Wikidata IDs for historical and mythological characters
+  - all changes documented on GitHub: https://github.com/dracor-org/itadracor
+
+--
+
+### What else do we know about characters? <br />(Example from Swedish Drama Corpus)
+
+<br />
+
+```xml
+<person xml:id="Jean" sex="male">
+  <persName>
+    <forename>Jean</forename>
+  </persName>
+  <age>30 år</age>
+  <occupation scheme="#HISCO" code="54030">betjänt</occupation>
+</person>
+<person xml:id="Kristin" sex="female">
+  <persName>
+    <forename>Kristin</forename>
+  </persName>
+  <age>35 år</age>
+  <occupation scheme="#HISCO" code="53100">kokerska</occupation>
+</person>
+```
+
+<br />
+
+<small>Additional information on servant and cook in Strindbergs *Fröken Julie* (1888). <br /><br />Source: https://dracor.org/id/swe000041</small>
+
+--
+
+DraCor Ontology (by Ingo Börner)
+
+![WebVOWL](images/webvowl-dracor-ontology.png)<!-- .element height="480px;" -->
+
+<small>https://vowl.acdh.oeaw.ac.at/#iri=https://raw.githubusercontent.com/dracor-org/dracor-schema/ontology/ontology/dracor-ontology.xml</small>
+
+---
+
+# Chapter 4.
+
+<br />
+
+### DraCor API
+
+<br /><br />
+<small>API: Application Programming Interface<br /><br />
+
+--
+
+### What is an API?
+
+<br />
+
+- standardised exchange of information between an application and individual programme parts
+- modularised, simplified programming
+- data is transferred in a structured way according to a defined syntax
+- REST API (for web services)
+
+--
+
+### Functions of the DraCor API
+
+![DraCor-API)](images/dracor-api.png)
+
+<small>https://dracor.org/doc/api</small>
+
+--
+
+### DraCor-API: Example Queries
+
+https://dracor.org/api/corpora/ita/play/goldoni-il-servitore-di-due-padroni/spoken-text?gender=FEMALE
+<!-- .element: style="font-size:0.7em;" -->
+
+Speech text of all female characters in Goldoni’s *Servitore* (i.e. Clarice, Smeraldina and Beatrice).
+<!-- .element: style="font-size:0.6em;" -->
+
+https://dracor.org/api/corpora/ita/play/goldoni-il-servitore-di-due-padroni/spoken-text?gender=MALE&relation=parent_of_active
+<!-- .element: style="font-size:0.7em;" -->
+
+Speech Text of all paternal characters (i.e. Pantalone and Dottore Lombardi).
+<!-- .element: style="font-size:0.6em;" -->
+
+https://dracor.org/api/corpora/ita/play/goldoni-il-servitore-di-due-padroni/metrics
+<!-- .element: style="font-size:0.7em;" -->
+
+Network data.
+<!-- .element: style="font-size:0.6em;" -->
+
+https://dracor.org/api/corpora/rom/play/plautus-rudens/spoken-text?role=servus
+<!-- .element: style="font-size:0.7em;" -->
+
+Speech Text of all servant characters (in the Roman Drama Corpus).
+<!-- .element: style="font-size:0.6em;" -->
+
+https://dracor.org/api/corpora/ita/play/goldoni-il-servitore-di-due-padroni/stage-directions
+<!-- .element: style="font-size:0.7em;" -->
+
+All stage directions.
+<!-- .element: style="font-size:0.6em;" -->
+
+https://dracor.org/api/corpora/ita/metadata/csv
+<!-- .element: style="font-size:0.7em;" -->
+
+Metadata for all plays in the Italian corpus (in JSON or CSV).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Simple visualisation of structural data
+#### Number of characters per play in chronological order (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+itadracor <- fread("https://dracor.org/api/corpora/ita/metadata/csv")
+ggplot(itadracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+<small>Example of a simple R script that obtains data via the API.</small>
+
+--
+
+#### Number of characters per play in chronological order (2/2)
+
+![Number of characters](images/num-of-speakers-itadracor.png)<!-- .element width="520px;" -->
+
+<small>Output in RStudio.</small>
+
+<small>(The dot at the top right: Manzoni’s *Adelchi*, 36 characters.)</small>
+
+--
+
+#### Example using our rdracor library for R:
+
+```R
+library(rdracor)
+library(igraph)
+servitore <- play_igraph(corpus="ita", play="goldoni-il-servitore-di-due-padroni")
+plot(servitore)
+```
+
+<br />
+
+#### Result:
+
+![network graph via rdracor](images/servitore-rdracor-graph.png)<!-- .element height="250px;" -->
+
+---
+
+# Chapter 5.
+
+<br />
+
+### Mythological and Historical Characters
+
+--
+
+### A new attribute …
+
+<br />
+
+```xml
+<listPerson>
+  <person xml:id="faust" sex="MALE" ana="http://www.wikidata.org/entity/Q76918">
+  <persName>Faust</persName>
+</person>
+```
+
+<br />
+
+### … and a new function:
+
+![dracor-wikidata-button](images/dracor-wikidata-button.png)<!-- .element height="120" -->
+
+<br />
+
+<small>(Source: https://dracor.org/id/ger000532)</small>
+
+--
+
+### /character/{id}
+
+<br />
+
+- Desription: “List plays having a character identified by Wikidata ID”
+- Examples:
+  - https://dracor.org/api/character/Q131412 (Maria Stuart)
+  - https://dracor.org/api/character/Q192673 (Iphigenia)
+  - https://dracor.org/api/character/Q76918 (Johann Georg Faust)
+
+--
+
+### “Kennst du den Faust?”
+
+<small>(<span style="font-variant:small-caps;">The Lord</span> to <span style="font-variant:small-caps;">Mephistopheles</span> in the *Prologue in Heaven*.)</small>
+
+![Rembrandt, Faust](images/rembrandt-faust.jpg)<!-- .element height="460px;" -->
+
+<small>(Rembrandt: Scholar in his study/“Faust”, around 1652. Image source: [Hamburger Kunsthalle](https://www.hamburger-kunsthalle.de/sammlung-online/rembrandt-harmensz-van-rijn/gelehrter-im-studierzimmer-faust-0).)</small>
+
+--
+
+### All GerDraCor Plays Featuring a Faust Character
+
+| Author | Title and subtitle | Year |
+|-|-|-|
+| Goethe, Johann Wolfgang | Faust [in ursprünglicher Gestalt] | 1775 |
+| Weidmann, Paul | Johann Faust. Ein Allegorisches Drama von fünf Aufzügen | 1775 |
+| Maler Müller | Fausts Leben dramatisiert | 1778 |
+| Schink, Johann Friedrich | Der neue Doktor Faust. Eine Plaisanterie mit Gesang, in zwei Aufzügen | 1782 |
+| Soden, Julius von | Doktor Faust. Volks-Schauspiel in fünf Akten | 1797 |
+| Benkowitz, Karl Friedrich | Die Jubelfeier der Hölle, oder Faust der jüngere. Ein Drama zum Anfang des neunzehnten Jahrhunderts | 1801 |
+| Baggesen, Jens | Der vollendete Faust oder Romanien in Jauer. Ein dramatisches Gedicht in drei Abtheilungen | 1808 |
+| Goethe, Johann Wolfgang | Faust. Eine Tragödie | 1808 |
+| Klingemann, August | Faust. Ein Trauerspiel in fünf Acten | 1812 |
+| Bernard, Josef Carl | Faust. Große romantische Oper in drei Akten | 1816 |
+| Voß, Julius von | Faust. Trauerspiel mit Gesang und Tanz | 1823 |
+| Grabbe, Christian Dietrich | Don Juan und Faust. Eine Tragödie in vier Akten | 1829 |
+| Goethe, Johann Wolfgang | Faust. Der Tragödie zweiter Teil. In fünf Akten | 1832 |
+| Braun von Braunthal, Karl Johann | Faust. Eine Tragödie | 1835 |
+| Wolfram, Hermann Ludwig | Faust. Ein dramatisches Gedicht in drei Abschnitten | 1839 |
+| Simrock, Karl | Doctor Johannes Faust. Puppenspiel in vier Aufzügen | 1846 |
+| Vischer, Friedrich Theodor | Faust. Der Tragödie dritter Teil | 1862 |
+| Schaefer, Wilhelm | Faustine, der weibliche Faust. Tragödie in sechs Aufzügen nebst Vorspiel und Prolog | 1898 |
+| Avenarius, Ferdinand | Faust. Ein Spiel | 1919 |
+| Busoni, Ferruccio | Doktor Faust | 1920 |
+| Ertler, Bruno | Das Spiel von Doktor Faust. Ein deutsches Stück im Volkston in einem Vorspiel und drei Akten | 1923 |
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Faust and his networks
+
+<br />
+
+- graph visualisations created with [Gephi](https://marketplace.sshopencloud.eu/tool-or-service/87wJWo) based on the DraCor GEXF files
+- layout algorithm: Force Atlas 2
+- label size corresponds to number of spoken words of a character
+- edge thickness corresponds to number of co-occurrences of two characters
+- different communities in colour gradient from blue to red
+
+--
+
+#### Goethe: Urfaust (1775)
+
+![network](images/ger000539-goethe-faust-in-urspruenglicher-gestalt.png)<!-- .element height="500px;" -->
+
+<small>Urfaust. (Permalink: https://dracor.org/id/ger000539)<small>
+
+--
+
+#### Paul Weidmann: Johann Faust. Ein Allegorisches <br />Drama von fünf Aufzügen (1775)
+
+![network](images/ger000014-weidmann-johann-faust.png)<!-- .element height="500px;" -->
+
+<small>Theodor and Elisabeth: Faust’s parents. (Permalink: https://dracor.org/id/ger000014)<small>
+
+--
+
+#### Maler Müller: Fausts Leben dramatisiert (1778)
+
+![network](images/ger000561-maler-mueller-fausts-leben-dramatisiert.png)<!-- .element height="500px;" -->
+
+<small>Faust’s father and mother (Hanne). (Permalink: https://dracor.org/id/ger000561)<small>
+
+--
+
+#### Klingemann: Faust. Ein Trauerspiel in fünf Acten (1812)
+
+![network](images/ger000110-klingemann-faust.png)<!-- .element height="500px;" -->
+
+<small>Diether: Faust’s father. Käthe: Faust’s wife. (Permalink: https://dracor.org/id/ger000110)<small>
+
+--
+
+#### Wilhelm Schaefer: Faustine, der weibliche Faust. Tragödie in <br />sechs Aufzügen nebst Vorspiel und Prolog (1898)
+
+![network](images/ger000302-schaefer-faustine-der-weibliche-faust.png)
+
+<small>(Permalink: https://dracor.org/id/ger000302)<small>
+
+--
+
+#### Goethe: Faust. Der Tragödie zweiter Teil. In fünf Akten (1832)
+
+![network](images/ger000201-goethe-faust-der-tragoedie-zweiter-teil.png)<!-- .element height="520px;" -->
+
+<small>(Permalink: https://dracor.org/id/ger000201)<small>
+
+--
+
+### Further use
+
+<br />
+
+- these Faust networks are not final products, but can facilitate, enable or contextualise access to further data layers <br />(characters, character groups and types/roles, speech texts, stage directions)
+
+--
+
+### Taking data to the lab: <br />Quantitative Text Analysis
+
+--
+
+### Keyness analysis with AntConc
+
+![Oppose](images/faust-antconc.png)<!-- .element height="480px;" -->
+
+<small>Three Goethean Fausts as reference corpus vs. 18 other plays featuring a Faust character <br />(entire speech text of these plays, without speaker information).</small>
+
+--
+
+### stylo oppose() – Parametrisation
+
+![Oppose](images/stylo-oppose-window.png)<!-- .element height="500px;" -->
+
+<small>Experiment with preset parameters, results see next page.</small>
+
+--
+
+### stylo oppose() – Results
+
+![Oppose](images/oppose-goethe-faust-vs-alle-anderen-faust.png)<!-- .element height="500px;" -->
+
+<small>```oppose()```: Three Goethean Fausts (right) vs. 18 other plays featuring a Faust character (links), <br />entire speech text of these plays, without speaker information.</small>
+
+--
+
+### Concordance plot with AntConc
+
+![Oppose](images/faust-antconc-concordance-plot.png)
+
+<small>Occurrences of the word “Ewigkeit” (“eternity”) in five selected Faust plays.</small>
+
+---
+
+# Outlook.
+
+<br />
+
+### Cross-Corpora Analyses
+
+--
+
+### SPARQL Query
+#### (by Ingo Börner)
+
+<br />
+
+https://bit.ly/3Rg1LHk
+
+<br />
+
+<small>⚠️ Deployed on DraCor development server, not yet on production.</small>
+
+--
+
+### Examples
+
+<br />
+
+| Wikidata ID | Character label | # of characters | # of corpora |
+|-|-|-|-|
+| Q76918 | Faust | 19 | 1 |
+| Q131351 | Antigona | 10 | 4 |
+| Q122248 | Hercules | 9 | 3 |
+| Q131651 | Electra | 7 | 3 |
+| Q193232 | Василий Шуйский | 6 | 1 |
+| Q51673 | Anton | 4 | 2 |
+
+<br />
+
+<small>⚠️ Output still very limited as not all corpora were annotated yet.</small>
+
+--
+
+### Fostering new types of research <br />embracing …
+
+<br />
+
+- multilinguality
+- cross-corpora analyses
+- comparative approaches
+
+--
+
+Thanks.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="80px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
