@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>»Internationale Autor:innen zu Gast in der DDR« (DHd-Vortragsfolien, 15.03.2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### **Internationale Autor\*innen zu Gast in der DDR –**
+#### Die **Einreisekartei** des **Schriftstellerverbandes** und ihre digitale Aufbereitung
+
+![intro pic](images/nicolas_guillen_einreisekartei.jpg)<!-- .element height="200px;" -->
+
+Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutta Müller-Tamm ¹ · Luise von Berenberg-Gossler ¹ · Franziska Diehr ²<!-- .element: style="font-size:0.8em;" -->
+
+1 · Freie Universität Berlin <br />2 · Robert Koch-Institut<!-- .element: style="font-size:0.6em;" -->
+
+<br />URL dieser Präsentation: **[bit.ly/dsv-dhd](https://bit.ly/dsv-dhd)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[DHd2023](https://www.conftool.net/dhd2023/index.php?page=browseSessions&form_session=51&presentations=show) &nbsp;·&nbsp; Trier &nbsp;🇩🇪 &nbsp;·&nbsp; Mi, 15. März 2023, 15:00 Uhr
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+![caption](images/berliner-weltliteraturen-cover.jpg)<!-- .element height="500px;" -->
+&nbsp;
+![caption](images/berlin-international-cover.jpg)<!-- .element height="500px;" -->
+
+--
+
+## Akteure
+
+<br />
+
+| | |
+-:|:-
+| Akademie der Künste (West) | Akademie der Künste (Ost) |
+| P.E.N. West | P.E.N. Ost |
+| Wissenschaftskolleg | Club der Kulturschaffenden |
+| FU / TU Berlin | **Deutscher Schriftstellerverband** |
+| Literarisches Colloquium Berlin | Verlag Volk & Welt |
+| Deutscher Akademischer Austauschdienst | Ministerium für Kultur |
+| Berliner Senat | Kulturbund der SED |
+| | Liga für Völkerfreundschaft |
+
+--
+
+## Anlässe
+
+![pic](images/4d_NeueZeit_1964_05_27.jpg)<!-- .element height="220px;" -->
+![pic](images/4b_ND_1965_05_20.jpg)<!-- .element height="200px;" -->
+![pic](images/4e_BerlinerZeitung_1985_04_19.jpg)<!-- .element height="100px;" -->
+![pic](images/4c_ND_1987_05_08.jpg)<!-- .element height="160px;" -->
+![pic](images/4a_ND_1987_05_09.jpg)<!-- .element height="160px;" -->
+
+<small>Neue Zeit 1964, Neues Deutschland 1965, Berliner Zeitung 1985, Neues Deutschland 1987 (2×)</small>
+
+--
+
+## Autor\*innen
+
+![pic](images/nicolas_guillen_einreisekartei.jpg)<!-- .element height="400px;" -->
+
+<small>Archiv des Schriftstellerverbands der DDR, Literaturarchiv der Akademie der Künste Berlin, Signatur SV 2848. <br />(© Archiv der Akademie der Künste, Veröffentlichung mit freundlicher Genehmigung.)</small>
+
+--
+
+## Allgemeines Schema
+
+<br />
+
+<table>
+  <tr>
+    <td style="text-align:left; border:1px solid;">Name, ggf. Vorname</td>
+    <td style="text-align:left; border:1px solid;">Land</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align:center; border:1px solid;">[ggf. kurze biografische Information]</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; border:1px solid;">Datum</td>
+    <td style="text-align:left; border:1px solid;">Aufenthaltsgrund</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; border:1px solid;">Datum</td>
+    <td style="text-align:left; border:1px solid;">Aufenthaltsgrund</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; border:1px solid;">…</td>
+    <td style="text-align:left; border:1px solid;">…</td>
+  </tr>
+</table>
+
+--
+
+## Daten
+
+![OpenRefine](images/daten-openrefine.png)
+
+<small>Vereinheitlichung und Zusammenführung von Einträgen mit OpenRefine, Verknüpfung mit Normdatensätzen, Reconciling mit VIAF (90% der Einträge abgeglichen) und Wikidata (75%), Import weiterer Informationen aus Wikidata (Angaben zu Sprachen, Parteizugehörigkeit, Geschlecht; Identifier der GND und des WorldCat).</small>
+
+---
+
+## WebApp
+
+<br />
+
+- \[Screenshot\]
+
+--
+
+## Framework
+
+<br />
+
+- SvelteKit mit TypeScript
+  - Svelte-Pendant zu Reacts Next.js
+
+- Datumsformat EDTF (Vorteile)
+
+--
+
+## Datumsangaben
+
+<br />
+
+- Extended Date/Time Format (EDTF)
+- Erweiterung zu ISO 8601
+- »Unspecified Digits«
+- Ungewissheit nicht zwingend rechtsbündig
+  - 1972-02-XX – Ungewisser Tag im Februar 1972
+  - XXXX-09-24 – 24. September, Jahr ungewiss
+
+--
+
+## Statistische Narrative
+
+![caption](images/einladungsfrequenz.png)<!-- .element height="450px;" -->
+
+<small>Einladungsfrequenz von Autor\*innen nach Staatsform.</small>
+
+--
+
+## Noch eine Grafik?
+
+--
+
+## Und noch eine Grafik?
+
+--
+
+## Rechtefragen
+
+<br />
+
+<blockquote>»Today’s digital-minded literary scholar is shackled in time; we are all, or are all soon to become, nineteenth century-ists.« (Jockers, »Macroanalysis«, 2013, S. 173)</blockquote>
+
+---
+
+## Ausblick
+
+<br />
+
+- Kooperation mit angrenzenden Projekten wie der Forschungsplattform »Literarisches Feld DDR« (https://ddr-literatur.de/)
+- …
+
+--
+
+### Vielen Dank.
+
+<br /><br />
+
+![TC logo](images/logo-exc-doing-literature.png)<!-- .element width="350px"; style="box-shadow:none;"; -->
+
+<small>https://www.temporal-communities.de/</small>
+
+<br /><br />
+
+<small align="left">**Fördernachweis:** <br />Gefördert durch die Deutsche Forschungsgemeinschaft (DFG) im Rahmen der Exzellenzstrategie des Bundes und der Länder innerhalb des Exzellenzclusters *Temporal Communities: Doing Literature in a Global Perspective* – EXC 2020 – Projekt-ID 390608380.</small>
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
