@@ -13,6 +13,12 @@
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
 
+    <style>
+      :root {
+        --r-link-color: #013d7d;
+      }
+    </style>
+
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
   </head>
@@ -22,10 +28,9 @@
         <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
 <script type="text/template">
 
-### **Internationale Autor\*innen zu Gast in der DDR –**
-#### Die **Einreisekartei** des **Schriftstellerverbandes** und ihre digitale Aufbereitung
+### **Internationale Autor\*innen zu Gast in der DDR** – <br />Die Einreisekartei des Schriftstellerverbandes <br />und ihre digitale Aufbereitung
 
-![intro pic](images/nicolas_guillen_einreisekartei.jpg)<!-- .element height="200px;" -->
+![intro pic](images/frame-guillen.png)<!-- .element height="200px;" -->
 
 Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutta Müller-Tamm ¹ · Luise von Berenberg-Gossler ¹ · Franziska Diehr ²<!-- .element: style="font-size:0.8em;" -->
 
@@ -34,14 +39,18 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
 <br />URL dieser Präsentation: **[bit.ly/dsv-dhd](https://bit.ly/dsv-dhd)**
 <!-- .element: style="font-size:0.6em;" -->
 
-<br />[DHd2023](https://www.conftool.net/dhd2023/index.php?page=browseSessions&form_session=51&presentations=show) &nbsp;·&nbsp; Trier &nbsp;🇩🇪 &nbsp;·&nbsp; Mi, 15. März 2023, 15:00 Uhr
+[DHd2023](https://www.conftool.net/dhd2023/index.php?page=browseSessions&form_session=51&presentations=show) &nbsp;·&nbsp; Trier &nbsp;·&nbsp; Mi, 15. März 2023, 15:00 Uhr
 <!-- .element: style="font-size:0.8em;" -->
 
---
+---
+
+## »Writing Berlin«
 
 ![caption](images/berliner-weltliteraturen-cover.jpg)<!-- .element height="500px;" -->
 &nbsp;
 ![caption](images/berlin-international-cover.jpg)<!-- .element height="500px;" -->
+
+<small>(Projekt des Exzellenzclusters EXC 2020 »Temporal Communities: Doing Literature in a Global Perspective«)</small>
 
 --
 
@@ -76,9 +85,9 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
 
 ## Autor\*innen
 
-![pic](images/nicolas_guillen_einreisekartei.jpg)<!-- .element height="400px;" -->
+![pic](images/nicolas_guillen_einreisekartei.webp)<!-- .element height="400px;" -->
 
-<small>Archiv des Schriftstellerverbands der DDR, Literaturarchiv der Akademie der Künste Berlin, Signatur SV 2848. <br />(© Archiv der Akademie der Künste, Veröffentlichung mit freundlicher Genehmigung.)</small>
+<small>Archiv des Schriftstellerverbands der DDR, Literaturarchiv der Akademie der Künste Berlin, Signatur SV 2848 <br />(© Archiv der Akademie der Künste, Veröffentlichung mit freundlicher Genehmigung)</small>
 
 --
 
@@ -116,41 +125,230 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
 
 <small>Vereinheitlichung und Zusammenführung von Einträgen mit OpenRefine, Verknüpfung mit Normdatensätzen, Reconciling mit VIAF (90% der Einträge abgeglichen) und Wikidata (75%), Import weiterer Informationen aus Wikidata (Angaben zu Sprachen, Parteizugehörigkeit, Geschlecht; Identifier der GND und des WorldCat).</small>
 
----
+</script>
+        </section>
+        <section>
+          <section><h2>Web-App</h2></section>
 
-## WebApp
+          <section>
+            <div class="r-stack r-stretch">
+              <img
+                class="fragment fade-out"
+                data-fragment-index="0"
+                alt="Scan: Karteikarte von Nicolás Guillén"
+                src="images/nicolas_guillen_einreisekartei.webp"
+                style="
+                  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+                    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+                "
+              />
+              <img
+                class="fragment fade-in-then-out"
+                data-fragment-index="0"
+                alt="Bildschirmfoto der App: Personeneintrag zu Nicolás Guillén"
+                src="images/frame-guillen.png"
+              />
+              <img
+                class="fragment"
+                alt="Bildschirmfoto der App: Aufenthalt von Nicolás Guillén im Januar 1956"
+                src="images/frame-stays.png"
+              />
+            </div>
+          </section>
 
-<br />
+          <section>
+            <h2>Frameworks</h2>
+            <br />
+            <ul>
+              <li><a href="https://kit.svelte.dev/">SvelteKit</a> mit TypeScript</li>
+              <ul>
+                <li>Web-Framework</li>
+                <li>
+                  nutzt <a href="https://svelte.dev/">Svelte</a> als clientseitiges
+                  Komponenten-Framework
+                </li>
+                <li>Svelte-Pendant zu Reacts Next.js</li>
+              </ul>
+              <li><a href="https://tailwindcss.com/">Tailwind CSS</a> als CSS-Framework</li>
+            </ul>
+          </section>
 
-- \[Screenshot\]
+          <section>
+            <h2>Externe Daten</h2>
+            <br />
+            <ul>
+              <li>Verknüpfung mit Wikidata-ID</li>
+              <li>
+                Abrufen externer Daten mit
+                <a href="https://github.com/maxlath/wikibase-sdk"><code>wikibase-sdk</code></a>
+              </li>
+              <ul>
+                <li>mit TypeScript-Types seit Februar 2023</li>
+              </ul>
+            </ul>
+          </section>
 
---
+          <section>
+            <div class="r-stack">
+              <div class="fragment fade-out" data-fragment-index="0">
+                <h3>DSV-Daten</h3>
+                <br />
+                <pre><code data-trim data-noescape class="language-js" style="white-space: pre-wrap;">
+                {
+                  id: '9da20d80-2cbc-41d0-80cc-aba0a18150c3',
+                  name: 'Nicolás Guillén',
+                  countryOfOrigin: { id: '6b6ba4e7-1738-4b6a-ba61-a4111929c8dd', }
+                  identifiers: {
+                    viaf: '29534974',
+                    gnd: '118543504',
+                    worldcatIdentities: 'lccn-n50018817',
+                    wikidata: 'Q334118'
+                  },
+                }
+              </code></pre>
+              </div>
 
-## Framework
+              <div class="fragment" data-fragment-index="0">
+                <h3>Wikidata</h3>
+                <br />
+                <div class="r-stack">
+                  <div class="fragment fade-out" data-fragment-index="1">
+                    <pre><code data-trim data-noescape class="language-js" style="white-space: pre-wrap;">
+                {
+                  id: "Q334118",
+                  type: "item",
+                  labels: {
+                    en: "Nicolás Guillén",
+                    de: "Nicolás Guillén",
+                  },
+                  descriptions: {
+                    de: "kubanischer Dichter und Schriftsteller",
+                    en: "Cuban poet, journalist, political activist, and writer",
+                  },
+                  claims: {
+                    P27: ["wikidata:Q241"],
+                    P1412: ["wikidata:Q1321"],
+                    P569: ["1902-07-10"],
+                    P19: ["wikidata:Q115329"],
+                    P570: ["1989-07-16"],
+                    P20: ["wikidata:Q1563"],
+                    P18: ["NicolásGuillén-1942.jpg"],
+                    P21: ["wikidata:Q6581097"],
+                    // ...
+                  },
+                }
+                    </code></pre>
+                    <br />
+                    <small>Vereinfachte Daten aus <code>wikibase-sdk</code></small>
+                  </div>
+                  <div class="fragment" data-fragment-index="1">
+                    <pre><code data-trim data-noescape class="language-js" style="white-space: pre-wrap;">
+                    {
+                      id: 'wikidata:Q334118',
+                      labels: { en: 'Nicolás Guillén', de: 'Nicolás Guillén' },
+                      descriptions: {
+                        de: 'kubanischer Dichter und Schriftsteller',
+                        en: 'Cuban poet, journalist, political activist, and writer'
+                      },
+                      countryOfOrigin: [{ id: '6b6ba4e7-1738-4b6a-ba61-a4111929c8dd', }],
+                      languagesSpoken: [{ id: 'wikidata:Q1321', }],
+                      birthDate: [ '1902-07-10' ],
+                      placeOfBirth: [{ id: 'wikidata:Q115329', }],
+                      deathDate: [ '1989-07-16' ],
+                      placeOfDeath: [{ id: 'wikidata:Q1563', }],
+                      image: [ 'NicolásGuillén-1942.jpg' ],
+                      gender: [{ id: 'wikidata:Q6581097', }]
+                    }
+                    </code></pre>
+                    <br />
+                    <small>Angleichung an unser Schema</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-<br />
+          <section>
+            <h2>Datumsangaben</h2>
+            <br />
+            <ul>
+              <li>Angaben unvollständig</li>
+              <li>Ungewissheit nicht als geordnete Präzision ausdrückbar</li>
+              <li>
+                <a href="https://www.loc.gov/standards/datetime/"
+                  >Extended Date/Time Format (EDTF)</a
+                >
+              </li>
+              <ul>
+                <li>
+                  Erweiterung zu bewährtem ISO-8601-Format (z.&thinsp;B. <code>2023-03-15</code>)
+                </li>
+                <li><em>unspecified Digits</em></li>
+              </ul>
+            </ul>
+          </section>
 
-- SvelteKit mit TypeScript
-  - Svelte-Pendant zu Reacts Next.js
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>EDTF</th>
+                  <th>Darstellung</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- ID: ff163d99-a244-4522-8c83-ebe879abd31b -->
+                  <td><code>1979-12-19</code></td>
+                  <td>19. Dezember 1979</td>
+                </tr>
+                <tr class="fragment">
+                  <!-- ID: de27882c-904c-4e19-be06-ee199132d8c2 -->
+                  <td><code>1972-01-XX</code></td>
+                  <td>im Januar 1972</td>
+                </tr>
+                <tr class="fragment">
+                  <!-- ID: a859cf02-7c32-4017-80ab-27ead9df33a1 -->
+                  <td><code>XXXX-09-24</code></td>
+                  <td>24. September, Jahr unbekannt</td>
+                </tr>
+                <tr class="fragment">
+                  <!-- ID: e275616e-f592-48b5-ab0d-e5a994fa527f -->
+                  <td><code>XXXX-07-XX</code></td>
+                  <td>im Juli, Jahr unbekannt</td>
+                </tr>
+                <tr class="fragment">
+                  <!-- ID: 187f7934-9bd6-4c0c-b933-f7520580b65d -->
+                  <td><code>XXXX-XX-XX</code></td>
+                  <td>unbekannt</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
 
-- Datumsformat EDTF (Vorteile)
-
---
-
-## Datumsangaben
-
-<br />
-
-- Extended Date/Time Format (EDTF)
-- Erweiterung zu ISO 8601
-- »Unspecified Digits«
-- Ungewissheit nicht zwingend rechtsbündig
-  - 1972-02-XX – Ungewisser Tag im Februar 1972
-  - XXXX-09-24 – 24. September, Jahr ungewiss
-
---
+          <section>
+            <h2>EDTF: Anmerkungen</h2>
+            <br />
+            <ul>
+              <li>wenige Implementierungen</li>
+              <ul>
+                <li>
+                  <a href="https://www.loc.gov/standards/datetime/implementations.html"
+                    >Übersicht der LOC</a
+                  >
+                </li>
+              </ul>
+              <li>menschenlesbare Ausgabe eigens implementiert</li>
+              <li>Spezifikation sehr umfangreich</li>
+            </ul>
+          </section>
+        </section>
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
 
 ## Statistische Narrative
+
+--
 
 ![caption](images/einladungsfrequenz.png)<!-- .element height="450px;" -->
 
@@ -164,6 +362,15 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
 
 ## Und noch eine Grafik?
 
+---
+
+## Ausblick
+
+<br />
+
+- Pendantprojekt: Ausreisekarte des DSV
+- Kooperation mit angrenzenden Projekten wie der Forschungsplattform »Literarisches Feld DDR« (https://ddr-literatur.de/)
+
 --
 
 ## Rechtefragen
@@ -171,15 +378,6 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
 <br />
 
 <blockquote>»Today’s digital-minded literary scholar is shackled in time; we are all, or are all soon to become, nineteenth century-ists.« (Jockers, »Macroanalysis«, 2013, S. 173)</blockquote>
-
----
-
-## Ausblick
-
-<br />
-
-- Kooperation mit angrenzenden Projekten wie der Forschungsplattform »Literarisches Feld DDR« (https://ddr-literatur.de/)
-- …
 
 --
 
