@@ -137,6 +137,7 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
                 data-fragment-index="0"
                 alt="Scan: Karteikarte von Nicolás Guillén"
                 src="images/nicolas_guillen_einreisekartei.webp"
+                height="540"
                 style="
                   filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
                     drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
@@ -147,13 +148,16 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
                 data-fragment-index="0"
                 alt="Bildschirmfoto der App: Personeneintrag zu Nicolás Guillén"
                 src="images/frame-guillen.png"
+                height="560"
               />
               <img
                 class="fragment"
                 alt="Bildschirmfoto der App: Aufenthalt von Nicolás Guillén im Januar 1956"
                 src="images/frame-stays.png"
+                height="560"
               />
             </div>
+            <p><a href="https://dsv-einreisekartei.temporal-communities.de/">dsv-einreisekartei.temporal-communities.de</p>
           </section>
 
           <section>
@@ -350,6 +354,45 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
 
 --
 
+### R-Skript (Datenbezug über den JSON-Endpunkt)
+
+<br />
+
+```R
+library(tidyverse)
+library(jsonlite)
+
+df_stays <- read_file("stays.json") %>%
+  fromJSON(simplifyDataFrame = TRUE, flatten = TRUE) %>%
+  # Separate EDTF date components
+  separate(
+    startTime,
+    c("startTime_year", "startTime_month", "startTime_day"),
+    sep = "-"
+  ) %>%
+  mutate(
+    startTime_year = na_if(startTime_year, "XXXX"),
+    startTime_month = na_if(startTime_month, "XX"),
+    startTime_day = na_if(startTime_day, "XX")
+  )
+
+# Group by year and socialist/non-socialist countries
+sig_nonsocialist <- "SV 2848" # Signature of non-socialist entries
+df_stays_by_year <- df_stays %>%
+  select(id, startTime_year, signatureInAdKArchive) %>%
+  mutate(socialist = signatureInAdKArchive != sig_nonsocialist) %>%
+  group_by(startTime_year, socialist) %>%
+  summarise(
+    n = n(),
+  )
+```
+
+<br />
+
+<small>Einlesen der Aufenthalte inkl. Umwandlung des EDTF-Startdatums und Erstellen <br />einer gruppierten Tabelle nach Jahr und sozialistisch/nichtsozialistisch.</small>
+
+--
+
 ![caption](images/einladungsfrequenz.png)<!-- .element height="450px;" -->
 
 <small>Einladungsfrequenz von Autor\*innen nach Staatsform.</small>
@@ -366,7 +409,9 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
 
 <br />
 
-- Pendantprojekt: Ausreisekarte des DSV
+- Pendantprojekte:
+  - Gästeverzeichnis des LCB und DAAD (West-Berlin)
+  - Ausreisekartei des DSV
 - Kooperation mit angrenzenden Projekten wie der Forschungsplattform »Literarisches Feld DDR« (https://ddr-literatur.de/)
 
 --
@@ -393,7 +438,7 @@ Frank Fischer ¹ · Viktor Jonathan Illmer ¹ · Lukas Nils Regeler ¹<br />Jutt
 
 <br />
 
-<small align="left">**Fördernachweis:** <br />Gefördert durch die Deutsche Forschungsgemeinschaft (DFG) im Rahmen der Exzellenzstrategie des Bundes und der Länder innerhalb des Exzellenzclusters *Temporal Communities: Doing Literature in a Global Perspective* – EXC 2020 – Projekt-ID 390608380.</small>
+<small style="text-align:left;">**Fördernachweis:** <br />Gefördert durch die Deutsche Forschungsgemeinschaft (DFG) im Rahmen der Exzellenzstrategie des Bundes und der Länder innerhalb des Exzellenzclusters *Temporal Communities: Doing Literature in a Global Perspective* – EXC 2020 – Projekt-ID 390608380.</small>
 
 </script>
         </section>
