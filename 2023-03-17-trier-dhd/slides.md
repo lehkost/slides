@@ -355,12 +355,12 @@ quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, â€¦ âž
 
 --
 
-<small>Paper: <br />doi:[10.5281/zenodo.7715490](https://doi.org/10.5281/zenodo.7715490)</small>
-
-</br>
-
 ### Vielen Dank.
 
 </br>
 
-https://vossanto.weltliteratur.net/
+[vossanto.weltliteratur.net](https://vossanto.weltliteratur.net/)
+
+</br>
+
+<small>Paper: <br />doi:[10.5281/zenodo.7715490](https://doi.org/10.5281/zenodo.7715490)</small>
