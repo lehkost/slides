@@ -14,12 +14,12 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 <!-- .element: style="font-size:0.8em;" -->
 
 ---
-	  
+
 ## Inhalt
 
-<br />
+<br/>
 
-1. [Defintion und Beispiele](#/1)
+1. [Definition und Beispiele](#/1)
 2. [Forschungsstand](#/2)
 3. [Task](#/3)
 4. [Datensatz](#/4)
@@ -28,38 +28,35 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 
 ---
 
-# Defintion und Beispiele
+# Definition und Beispiele
 
 --
 
 ## Vossianische Antonomasie (Vossanto)
 
 <br/>
-	  
+
 - zuerst beschrieben um 1600 von Gerardus Vossius
 - besteht aus Target, Source, Modifier (vgl. Bergien 2013)
 - traditionelle Beispiele:
-  - Vittorio Hösle, "der Boris Becker der Philosophie" (welt.de, 2013)
-  - Alice Schwarzer, "der Erich Honecker des Feminismus" (cicero.de, 2014)
-  - Markus Lanz, "der Christian Wulff des Showgeschäfts" (spiegel.de, 2014)
-  - Jim Koch, "the Steve Jobs of Beer" (The Atlantic, 2014)
+  - Magnus Carlsen, »der Mozart des Schachs«
+  - Vittorio Hösle, »der Boris Becker der Philosophie«
+  - Bruno Latour, »der Hegel unserer Zeit«
 - titelgebendes Beispiel:
-  - "[Wilson] Kipketer is as guarded [zurückhaltend] as he is fast; some reporters have labeled him the Greta Garbo of track and field.« (NYT, 8. August 1997)"
+  - »\[Wilson\] Kipketer is as guarded \[zurückhaltend\] as he is fast; some reporters have labeled him the Greta Garbo of track and field.« (NYT, 8. August 1997)
 - Ziel des Projekts: Funktion, Wirkungsweise und Verbreitung der Vossanto in verschiedenen Sprachen auf Basis großer Korpora erforschen
-
 
 --
 
-## Beispiel
+### »Michael Jordan is the Michael Jordan of greatness« (Obama)
 
 </br>
 
 ![VA Example](images/example.png)<!-- .element width="450px" -->
 
+</br>
 
-<small>
-image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a></small>
-
+<small>Bildquellen: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a></small>
 
 ---
 
@@ -74,7 +71,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
     <div class="content">
       <h2>DHd 2017</h2>
       <p>
-        Jaeschke et al.
+        Jäschke et al.
       </p>
     </div>
   </div>
@@ -84,7 +81,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
     <div class="content">
       <h2>DSH 2019</h2>
       <p>
-       Fischer and Jaeschke
+       Fischer and Jäschke
       </p>
     </div>
   </div>
@@ -130,6 +127,13 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
   </div>
 </div>
 
+--
+
+## Interaktiv explorierbare Daten
+
+![interaktive Vossanto-Timeline](images/timeline.png)<!-- .element width="70%" -->
+
+https://vossanto.weltliteratur.net/timeline/
 
 ---
 
@@ -137,15 +141,14 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 </br>
 
-- Bisher: Fokus auf Extraktion von Vossantos oder Analyse der Source
-- In diesem Paper: **Exploration und Analyse der Modifier**
+- bisher: Fokus auf Extraktion von Vossantos oder Analyse der Source
+- in diesem Paper: **Exploration und Analyse der Modifier**
 - Fragestellungen:
   - In welche Themengebiete werden Attribute verschoben?
   - Welche Modifier/Gebiete dominieren?
-  - ...
 
 
-- Webapp zur Exploration
+- Web-App zur Exploration
 
 ---
 
@@ -155,7 +158,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 --
 
 
-## Vossanto Datensatz (Schwab et. al (2019, 2022))
+## Vossanto-Datensatz (Schwab et al. (2019, 2022))
 
 </br>
 
@@ -167,15 +170,15 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
     </ul>
   </li>
   <li>
-    Check mit Wikidata Liste bestehend aus Namen und Aliase aller Entitäten mit ‘instance-of’ Eigenschaft 'human'
+    Abgleich mit Wikidata-Liste, bestehend aus Namen und Aliasen aller Entitäten mit ›instance-of‹-Eigenschaft ›human‹
     <ul style="list-style-type: none;">
-      <li>&#8594; Fokus auf Menschen </li>
+      <li>&#8594; Fokus auf Personen </li>
     </ul>
   </li>
   <li>
      Abgleich mit manuell erstellter Streichliste
     <ul style="list-style-type: none;">
-      <li>&#8594;  <s>the House of Commons</s> (vgl. <a href="https://www.wikidata.org/wiki/Q3139666">Homer Doliver House</a>)</li>
+      <li>&#8594; <s>the House of Commons</s> (vgl. <a href="https://www.wikidata.org/wiki/Q3139666">Homer Doliver House</a>)</li>
     </ul>
   </li>
 </ol>
@@ -188,7 +191,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
    - <s>the House of Commons</s> (vgl. [Homer Doliver House](https://www.wikidata.org/wiki/Q3139666)) -->
 
 
-<p style="text-align:left;"> <b>Ergebnis</b>: 6095 Sätze, <b>3115</b> davon enthalten Vossanto </p>
+<p style="text-align:left;"> <b>Ergebnis</b>: 6.095 Sätze, <b>3.115</b> davon enthalten Vossanto </p>
 
 
 --
@@ -227,7 +230,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 - **S-BERT** (Sentence-Transformer)
   - BERT mit siamesischer Netzwerk-Architektur 
-  - Effizientes Berechnen von semantischen Ähnlichkeiten
+  - effizientes Berechnen von semantischen Ähnlichkeiten
 
 
 -- -->
@@ -235,13 +238,15 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 ## 1. Embeddings
 
+<br />
+
 <div style="display: flex; justify-content: space-between;">
   <div style="width: 48%;">
   <ul>
-    <li><b>Sentence-BERT</b>		
+    <li><b>Sentence-BERT</b>
     <ul>
       <li>BERT mit siamesischer Netzwerk-Architektur</li>
-      <li>Effizientes Berechnen von semantischen Ähnlichkeiten</li>
+      <li>effizientes Berechnen von semantischen Ähnlichkeiten</li>
     </ul>
   </ul>
   </div>
@@ -259,7 +264,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <p style="text-align:left;">Gruppieren der Embeddings</p>
 
-- **k-means** Algorithmus
+- **k-means**-Algorithmus
   - gruppiert Daten in `k` Cluster
   - Annahme: wenig Ausreißer 
   - feste Anzahl der Cluster bei Berechnung </br>
@@ -273,10 +278,10 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <p style="text-align:left;">Zuweisung von Themengebieten je Cluster</p>
 
-- Modifier: kurze Nominalphrasen (1-4 Wörter)
-- “klassisches” Topic-Modeling scheitert aufgrund der Kürze der Phrasen
-- Stattdessen: WordNet und **WordNet Domains**:
-  - Jedes Wort/Synset aus WordNet ist einer oder mehreren Domains zugeordnet (hierarchisch gegliedert)
+- Modifier: kurze Nominalphrasen (1–4 Wörter)
+- »klassisches« Topic Modeling scheitert aufgrund der Kürze der Phrasen
+- stattdessen: WordNet und **WordNet Domains**:
+  - jedes Wort/Synset aus WordNet ist einer oder mehreren Domains zugeordnet (hierarchisch gegliedert)
 
 
 Beispiel: 
@@ -290,7 +295,7 @@ quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … �
 ## 4. Visualisierung
 
 </br>
-<p style="text-align:left;">Reduktion der hochdimensionalen Vektoren auf 2d, um Daten zu Visualisierung</p>
+<p style="text-align:left;">Reduktion der hochdimensionalen Vektoren auf 2D, um Daten zu Visualisierung</p>
 - PCA (linear)
 - t-SNE (non-linear)
 - UMAP (non-linear)
@@ -299,14 +304,13 @@ quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … �
 
 --
 
-
 ## 4. Visualisierung
 
 </br>
 
 <div style="display: flex; justify-content: space-between;">
   <div style="width: 48%;">
-  <p style="text-align:left;">Reduktion der hochdimensionalen Vektoren auf 2d, um Daten zu Visualisierung</p>
+  <p style="text-align:left;">Reduktion der hochdimensionalen Vektoren auf 2D, um Daten zu Visualisierung</p>
   <ul>
     <li>PCA (linear)</li>
     <li>t-SNE (non-linear)</li>
@@ -333,10 +337,10 @@ quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … �
 </br>
 
 - eindeutige Cluster (Kultur, Sport, Geografie)
-- Spezieller Cluster: Temporal: Nicht domain-spezifisch
-- viele Grenzfälle, z.B. MTV (Musik vs. TV), Irish theaterland (Geo vs. Kultur)
-- Cluster splitten sich teilweise logisch aus (Kultur → Musik, Kunst, Literatur, Film/TV)
-- [Webapp](https://vossanto.weltliteratur.net/dhd2023/modifier.html)
+- spezieller Cluster: Temporal: nicht domain-spezifisch
+- viele Grenzfälle, z.&nbsp;B. MTV (Musik vs. TV), Irish theaterland (Geo vs. Kultur)
+- Cluster fächern sich teilweise auf (Kultur → Musik, Kunst, Literatur, Film/TV)
+- [Web-App](https://vossanto.weltliteratur.net/dhd2023/modifier.html)
 
 --
 
@@ -344,7 +348,7 @@ quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … �
 
 </br>
 
-- Sind temporale Vossantos unterschiedlich aufgebaut bzw. sind die Source-Target Paare in derselben Domain?
+- Sind temporale Vossantos unterschiedlich aufgebaut bzw. befinden die Source-Target-Paare in derselben Domain?
 - Können Modifier und deren Kategorisierung zur Entdeckung von Vossantos beitragen?
 - Wie sehen die Verbindungen zwischen Source und Modifier aus?
 - …
