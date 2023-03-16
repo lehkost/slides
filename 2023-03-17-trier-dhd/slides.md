@@ -201,7 +201,8 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 </br>
 
-Berechnen kontextabhängiger Word Embeddings, d.h. numerische Repräsentation von Wörtern in Abhängigkeit der Nachbarwörter
+<p style="text-align:left;">Berechnen kontextabhängiger Word Embeddings, d.h. numerische Repräsentation von Wörtern in Abhängigkeit der Nachbarwörter </p>
+
 - **S-BERT** (Sentence-Transformer)
   - BERT mit siamesischer Netzwerk-Architektur 
   - Effizientes Berechnen von semantischen Ähnlichkeiten
@@ -212,7 +213,8 @@ Berechnen kontextabhängiger Word Embeddings, d.h. numerische Repräsentation vo
 
 </br>
 
-Gruppieren der Embeddings
+<p style="text-align:left;">Gruppieren der Embeddings</p>
+
 - **k-means** Algorithmus
   - gruppiert Daten in `k` Cluster
   - Annahme: wenig Ausreißer 
@@ -225,7 +227,8 @@ Gruppieren der Embeddings
 
 </br>
 
-Zuweisung von Themengebieten je Cluster
+<p style="text-align:left;">Zuweisung von Themengebieten je Cluster</p>
+
 - Modifier bestehen meist aus kurzen Nominalphrasen (1-4 Wörter)
 - “klassisches” Topic-Modeling nicht möglich aufgrund der Kürze der Phrasen
 - Ausnutzen von WordNet und **WordNet Domains**:
@@ -243,20 +246,14 @@ quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … �
 
 </br>
 
-Dimensionsreduktionsverfahren zur Visualisierung
-- Reduktion von 768d zu 2d
-- verschiedene Verfahren:
-  - PCA (linear)
-  - t-SNE (non-linear)
-  - UMAP (non-linear)
-  - IVIS (non-linear, neural-network based)
-  - Kombinationen
+<p style="text-align:left;">Reduktion der hochdimensionalen Vektoren auf 2d, um Daten zu Visualisierung</p>
 
---
+- PCA (linear)
+- t-SNE (non-linear)
+- UMAP (non-linear)
+- IVIS (non-linear, neural-network based)
+- Kombinationen
 
-##
-
-</br>
 
 ---
 
