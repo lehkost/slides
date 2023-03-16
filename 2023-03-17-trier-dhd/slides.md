@@ -10,7 +10,7 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 <br />URL dieser Präsentation: **[bit.ly/PLACEHOLDER](https://bit.ly/PLACEHOLDER)** – Illustration: [DALL·E](https://labs.openai.com/s/mjHEyFFSZ6a82FurFVDajUcD)
 <!-- .element: style="font-size:0.6em;" -->
 
-[DHd2023](https://www.conftool.net/dhd2023/index.php?page=browseSessions&form_session=189&presentations=show) &nbsp;·&nbsp; Trier &nbsp;🇩🇪 &nbsp;·&nbsp; Fr, 17. März 2023, 15:00 Uhr
+[DHd2023](https://www.conftool.net/dhd2023/index.php?page=browseSessions&form_session=189&presentations=show) &nbsp;·&nbsp; Trier &nbsp;🇩🇪 &nbsp;·&nbsp; Fr, 17. März 2023
 <!-- .element: style="font-size:0.8em;" -->
 
 ---
@@ -49,9 +49,12 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 
 
 --
-	  
-![VA Example](images/example.png)
-<!-- .element width="450px" -->
+
+## Beispiel
+
+</br>
+
+![VA Example](images/example.png)<!-- .element width="450px" -->
 
 
 <small>
@@ -109,7 +112,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
     <div class="date"></div>
     <i class="icon fa fa-cog"></i>
     <div class="content">
-      <h2>ICNSLP 2022</h2>
+      <h2>ICNLSP 2022</h2>
       <p>
         Schwab et al.
       </p>
@@ -135,9 +138,9 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 </br>
 
 - Bisher: Fokus auf Extraktion von Vossantos oder Analyse der Source
-- In diesem Paper: Analyse der Modifier
+- In diesem Paper: **Exploration und Analyse der Modifier**
 - Fragestellungen:
-- In welche Themengebiete werden Attribute verschoben?
+  - In welche Themengebiete werden Attribute verschoben?
   - Welche Modifier/Gebiete dominieren?
   - ...
 
@@ -152,20 +155,37 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 --
 
 
-## Annotierter Datensatz
+## Vossanto Datensatz (Schwab et. al (2019, 2022))
 
 </br>
 
-- Vossanto Datensatz (Schwab et. al (2019, 2022))
-1. regulärer Ausdruck: a/an/the [up to 10 words] of/for/among
+<ol>
+  <li>
+    regulärer Ausdruck: a/an/the [up to 10 words] of/for/among
+    <ul style="list-style-type: none;">
+      <li>&#8594; Kandidatensätze </li>
+    </ul>
+  </li>
+  <li>
+    Check mit Wikidata Liste bestehend aus Namen und Aliase aller Entitäten mit ‘instance-of’ Eigenschaft 'human'
+    <ul style="list-style-type: none;">
+      <li>&#8594; Fokus auf Menschen </li>
+    </ul>
+  </li>
+  <li>
+     Abgleich mit manuell erstellter Streichliste
+    <ul style="list-style-type: none;">
+      <li>&#8594;  <s>the House of Commons</s> (vgl. <a href="https://www.wikidata.org/wiki/Q3139666">Homer Doliver House</a>)</li>
+    </ul>
+  </li>
+</ol>
 
-   ➜ Kandidatensätze 
+<!-- 1. regulärer Ausdruck: a/an/the [up to 10 words] of/for/among
+   -&#8594 Kandidatensätze 
 2. Check mit Wikidata Liste bestehend aus Namen und Aliase aller Entitäten mit ‘instance-of’ Eigenschaft 'human'
-
-   ➜ Fokus auf Menschen 
+   - Fokus auf Menschen 
 3. Abgleich mit manuell erstellter Streichliste
-
-   ➜ <s>the House of Commons</s> (vgl. [Homer Doliver House](https://www.wikidata.org/wiki/Q3139666))
+   - <s>the House of Commons</s> (vgl. [Homer Doliver House](https://www.wikidata.org/wiki/Q3139666)) -->
 
 
 <p style="text-align:left;"> <b>Ergebnis</b>: 6095 Sätze, 3115 davon enthalten Vossanto </p>
@@ -177,7 +197,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 </br>
 
-| Modifier       | Anzahl |
+<!-- | Modifier       | Anzahl |
 |----------------|--------|
 | his day        | 56     |
 | his time       | 35     |
@@ -188,7 +208,9 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 | tennis         | 16     |
 | his generation | 16     |
 | baseball       | 16     |
-| her time       | 14     |
+| her time       | 14     | -->
+
+![VA Example](images/modifier_stats.png)<!-- .element width="700px" -->
 
 ---
 
@@ -229,11 +251,10 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <p style="text-align:left;">Zuweisung von Themengebieten je Cluster</p>
 
-- Modifier bestehen meist aus kurzen Nominalphrasen (1-4 Wörter)
-- “klassisches” Topic-Modeling nicht möglich aufgrund der Kürze der Phrasen
-- Ausnutzen von WordNet und **WordNet Domains**:
+- Modifier: kurze Nominalphrasen (1-4 Wörter)
+- “klassisches” Topic-Modeling scheitert aufgrund der Kürze der Phrasen
+- Stattdessen: WordNet und **WordNet Domains**:
   - Jedes Wort/Synset aus WordNet ist einer oder mehreren Domains zugeordnet (hierarchisch gegliedert)
-  - Themengebiet = Am häufigsten vorkommende Domain in Cluster
 
 
 Beispiel: 

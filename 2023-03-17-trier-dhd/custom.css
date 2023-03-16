@@ -23,7 +23,6 @@
 }
 
 
-
 /* -------------------- for the timeline --------------------------- */
 
 *,
@@ -41,9 +40,9 @@ body {
 .timeline {
   position: relative;
   width: 100%;
-  max-width: 1140px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 0;
 }
 
 .timeline::after {
@@ -58,7 +57,7 @@ body {
 }
 
 .container {
-  padding: 15px 30px;
+  padding: 2px 30px;
   position: relative;
   background: inherit;
   width: 50%;
@@ -85,26 +84,29 @@ body {
   z-index: 1;
 }
 
+/*punkte auf timeline horizontale ausrichtung */
 .container.right::after {
   left: -8px;
 }
 
+/*stricht zu bullet points -  größe und y ausrichtung */
 .container::before {
   content: '';
   position: absolute;
   width: 50px;
-  height: 2px;
+  height: 1px;
   top: calc(50% - 1px);
   right: 8px;
   background: #006E51;
   z-index: 1;
 }
 
+/*stricht zu bullet points -  horizontale ausrichtung */
 .container.right::before {
   left: 8px;
 }
 
-.container .date {
+/* .container .date {
     
   position: absolute;
   display: inline-block;
@@ -124,14 +126,16 @@ body {
 
 .container.right .date {
   left: -550px;
-}
+} */
 
+
+/* bullet points größe und y-ausrichtung */
 .container .icon {
   position: absolute;
   display: inline-block;
   width: 40px;
   height: 40px;
-  padding: 9px 0;
+  padding: 5px 0;
   top: calc(50% - 20px);
   background: #F6D155;
   border: 2px solid #006E51;
@@ -142,23 +146,25 @@ body {
   z-index: 1;
 }
 
+/* bp horizontal */
 .container.left .icon {
   right: 56px;
 }
 
+/* bp horizontal */
 .container.right .icon {
   left: 56px;
 }
 
 .container .content {
-  padding: 30px 90px 30px 30px;
+  padding: 15px 90px 15px 30px;
   background: #F6D155;
   position: relative;
   border-radius: 0 500px 500px 0;
 }
 
 .container.right .content {
-  padding: 30px 30px 30px 90px;
+  padding: 15px 90px 15px 90px;
   border-radius: 500px 0 0 500px;
 }
 
@@ -216,7 +222,7 @@ body {
 
   .container.left .content,
   .container.right .content {
-    padding: 30px 30px 30px 90px;
+    padding: 15px 30px 15px 90px;
     border-radius: 500px 0 0 500px;
   }
 }
