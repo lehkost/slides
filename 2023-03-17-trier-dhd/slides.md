@@ -43,7 +43,7 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
   - Vittorio Hösle, »der Boris Becker der Philosophie«
   - Bruno Latour, »der Hegel unserer Zeit«
 - titelgebendes Beispiel:
-  - »\[Wilson\] Kipketer is as guarded \[zurückhaltend\] as he is fast; some reporters have labeled him the Greta Garbo of track and field.« (NYT, 8. August 1997)
+  - »\[Wilson\] Kipketer is as guarded \[zurückhaltend\] as he is fast; some reporters have labeled him the Greta Garbo of track and field.« (NYT, 8.&nbsp;August 1997)
 - Ziel des Projekts: Funktion, Wirkungsweise und Verbreitung der Vossanto in verschiedenen Sprachen auf Basis großer Korpora erforschen
 
 --
@@ -184,9 +184,9 @@ https://vossanto.weltliteratur.net/timeline/
 </ol>
 
 <!-- 1. regulärer Ausdruck: a/an/the [up to 10 words] of/for/among
-   -&#8594 Kandidatensätze 
+   -&#8594 Kandidatensätze
 2. Check mit Wikidata Liste bestehend aus Namen und Aliase aller Entitäten mit ‘instance-of’ Eigenschaft 'human'
-   - Fokus auf Menschen 
+   - Fokus auf Menschen
 3. Abgleich mit manuell erstellter Streichliste
    - <s>the House of Commons</s> (vgl. [Homer Doliver House](https://www.wikidata.org/wiki/Q3139666)) -->
 
@@ -229,7 +229,7 @@ https://vossanto.weltliteratur.net/timeline/
 <p style="text-align:left;">Berechnen kontextabhängiger Word Embeddings, d.h. numerische Repräsentation von Wörtern in Abhängigkeit der Nachbarwörter </p>
 
 - **S-BERT** (Sentence-Transformer)
-  - BERT mit siamesischer Netzwerk-Architektur 
+  - BERT mit siamesischer Netzwerk-Architektur
   - effizientes Berechnen von semantischen Ähnlichkeiten
 
 
@@ -251,7 +251,7 @@ https://vossanto.weltliteratur.net/timeline/
   </ul>
   </div>
   <div style="width: 48%;">
-<img src="images/sbert.png" alt="S-BERT" width="300"> 
+<img src="images/sbert.png" alt="S-BERT" width="300">
   </div>
 </div>
 
@@ -266,7 +266,7 @@ https://vossanto.weltliteratur.net/timeline/
 
 - **k-means**-Algorithmus
   - gruppiert Daten in `k` Cluster
-  - Annahme: wenig Ausreißer 
+  - Annahme: wenig Ausreißer
   - feste Anzahl der Cluster bei Berechnung </br>
   ➜ Vorteil: Durchführung und Analyse mit verschiedenen `k`
 
@@ -284,12 +284,12 @@ https://vossanto.weltliteratur.net/timeline/
   - jedes Wort/Synset aus WordNet ist einer oder mehreren Domains zugeordnet (hierarchisch gegliedert)
 
 
-Beispiel: 
+Beispiel:
 quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … ➜ Sport
 
 
 
-<!-- 
+<!--
 --
 
 ## 4. Visualisierung
@@ -319,7 +319,7 @@ quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … �
   </ul>
   </div>
   <div style="width: 48%;">
-<img src="images/dhd2023_1_titel_auto.png" alt="Visulization" width="500"> 
+<img src="images/dhd2023_1_titel_auto.png" alt="Visulization" width="500">
   </div>
 </div>
 
@@ -348,8 +348,19 @@ quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … �
 
 </br>
 
-- Sind temporale Vossantos unterschiedlich aufgebaut bzw. befinden die Source-Target-Paare in derselben Domain?
+- Sind temporale Vossantos unterschiedlich aufgebaut bzw. befinden sich die Source-Target-Paare in derselben Domain?
 - Können Modifier und deren Kategorisierung zur Entdeckung von Vossantos beitragen?
 - Wie sehen die Verbindungen zwischen Source und Modifier aus?
-- …
+- Vergleich der häufigsten Modifier in verschieden(sprachig)en Korpora
 
+--
+
+<small>Paper: <br />doi:[10.5281/zenodo.7715490](https://doi.org/10.5281/zenodo.7715490)</small>
+
+</br>
+
+### Vielen Dank.
+
+</br>
+
+https://vossanto.weltliteratur.net/
