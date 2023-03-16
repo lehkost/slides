@@ -188,7 +188,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
    - <s>the House of Commons</s> (vgl. [Homer Doliver House](https://www.wikidata.org/wiki/Q3139666)) -->
 
 
-<p style="text-align:left;"> <b>Ergebnis</b>: 6095 Sätze, 3115 davon enthalten Vossanto </p>
+<p style="text-align:left;"> <b>Ergebnis</b>: 6095 Sätze, <b>3115</b> davon enthalten Vossanto </p>
 
 
 --
@@ -210,7 +210,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 | baseball       | 16     |
 | her time       | 14     | -->
 
-![VA Example](images/modifier_stats.png)<!-- .element width="700px" -->
+![Modifier Statistics](images/modifier_stats.png)<!-- .element width="700px" -->
 
 ---
 
@@ -219,7 +219,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 --
 
-## 1. Embeddings
+<!-- ## 1. Embeddings
 
 </br>
 
@@ -228,6 +228,28 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 - **S-BERT** (Sentence-Transformer)
   - BERT mit siamesischer Netzwerk-Architektur 
   - Effizientes Berechnen von semantischen Ähnlichkeiten
+
+
+-- -->
+
+
+## 1. Embeddings
+
+<div style="display: flex; justify-content: space-between;">
+  <div style="width: 48%;">
+  <ul>
+    <li><b>Sentence-BERT</b>		
+    <ul>
+      <li>BERT mit siamesischer Netzwerk-Architektur</li>
+      <li>Effizientes Berechnen von semantischen Ähnlichkeiten</li>
+    </ul>
+  </ul>
+  </div>
+  <div style="width: 48%;">
+<img src="images/sbert.png" alt="S-BERT" width="300"> 
+  </div>
+</div>
+
 
 --
 
@@ -261,24 +283,48 @@ Beispiel:
 quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … ➜ Sport
 
 
+
+<!-- 
 --
 
 ## 4. Visualisierung
 
 </br>
-
 <p style="text-align:left;">Reduktion der hochdimensionalen Vektoren auf 2d, um Daten zu Visualisierung</p>
-
 - PCA (linear)
 - t-SNE (non-linear)
 - UMAP (non-linear)
 - IVIS (non-linear, neural-network based)
-- Kombinationen
+- Kombinationen -->
 
+--
+
+
+## 4. Visualisierung
+
+</br>
+
+<div style="display: flex; justify-content: space-between;">
+  <div style="width: 48%;">
+  <p style="text-align:left;">Reduktion der hochdimensionalen Vektoren auf 2d, um Daten zu Visualisierung</p>
+  <ul>
+    <li>PCA (linear)</li>
+    <li>t-SNE (non-linear)</li>
+    <li>UMAP (non-linear)</li>
+    <li>IVIS (non-linear, neural-network based)</li>
+  </ul>
+  </div>
+  <div style="width: 48%;">
+<img src="images/dhd2023_1_titel_auto.png" alt="Visulization" width="500"> 
+  </div>
+</div>
 
 ---
 
 # Erkenntnisse und Ausblick
+
+
+
 
 --
 
@@ -286,7 +332,7 @@ quarterbacks, bull riding, harness track, BMX racing, golf, the Dolphins, … �
 
 </br>
 
-- eindeutige Cluster (Kultur, Sport, Geographie)
+- eindeutige Cluster (Kultur, Sport, Geografie)
 - Spezieller Cluster: Temporal: Nicht domain-spezifisch
 - viele Grenzfälle, z.B. MTV (Musik vs. TV), Irish theaterland (Geo vs. Kultur)
 - Cluster splitten sich teilweise logisch aus (Kultur → Musik, Kunst, Literatur, Film/TV)
