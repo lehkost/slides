@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Methoden der Dramenanalyse: analog und digital (Einführungsvortrag, 20. April 2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+<small>Einführungsvortrag zum hybriden Seminar:</small>
+
+#### **Methoden der Dramenanalyse: analog und digital**
+
+(Sommersemester 2023 · Universität Potsdam · Freie Universität Berlin)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Peer Trilcke (UP)¹ <br />Prof. Dr. Frank Fischer (FU)²<!-- .element: style="font-size:0.65em;" -->
+
+¹ trilcke&#64;uni-potsdam.de<br />
+² fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+Diese Präsentation: <br />https://lehkost.github.io/slides/2023-04-20-dramenanalyse-intro/
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### 1. Organisatorisches
+
+<br />
+
+- Planungswebsite: **[dramenanalyse.github.io](https://dramenanalyse.github.io/)**
+- Bringen Sie, falls möglich, immer Ihren Laptop mit ins Seminar.
+- Erreichbarkeit: via E-Mail, <a href="https://fu-berlin.blackboard.com/webapps/blackboard/execute/courseMain?course_id=_180984_1">Blackboard</a> (FU) bzw. Moodle (UP)
+- Blackboard (FU):
+  - Rufen Sie bitte regelmäßig Ihren FU-Account ab. (Alternativ lässt sich über das ZEDAT-Portal eine E-Mail-Weiterleitung einrichten.)
+- Moodle (UP):
+  - ?
+
+---
+
+### 2. Vorstellungsrunde
+
+<br />
+
+Name, Fach, Fachsemester, Interessenschwerpunkte?
+
+<br />
+
+<small>(ggf. verschieben auf den ersten Hackathon)</small>
+
+---
+
+### 3. Was heißt Digitalisierung?
+
+<br />
+
+- ℌ𝔞𝔟𝔢𝔫 𝔖𝔦𝔢 𝔷𝔲𝔪 𝔅𝔢𝔦𝔰𝔭𝔦𝔢𝔩 𝔰𝔠𝔥𝔬𝔫 𝔪𝔞𝔩 𝔢𝔦𝔫𝔢𝔫 𝔩𝔞𝔫𝔤𝔢𝔫 𝔗𝔢𝔵𝔱 𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯 𝔤𝔢𝔩𝔢𝔰𝔢𝔫?
+- Aufgabe für zu Hause: Transkription einer Seite in Fraktur<!-- .element: class="fragment" -->
+
+---
+
+### 4. Seminarinhalte
+
+<br />
+
+- Digitalisierung
+- Kodierung mit dem TEI-Format
+- reguläre Ausdrücke
+- Netzwerkanalyse
+- APIs
+- Stilometrie
+- Programmieren (Python und R)
+- Wikipedia
+- Linked Open Data / Wikidata / SPARQL
+- GitHub
+- last not least: Dramen, Dramen, Dramen<!-- .element: class="fragment" -->
+
+---
+
+### 5. Einstieg
+
+--
+
+![DraCor-Frontpage am 13.01.2022](images/dracor-frontpage-2022-01-13.png)<!-- .element height="400px;" -->
+
+https://dracor.org/
+
+(Desktop-Version)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+![DraCor-Frontpage am 02.12.2020](images/iphone-11-pro-max-and-ipad-pro-mockup.jpg)
+
+https://dracor.org/
+
+(mobile Version für Smartphones und Tablets)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Ted Underwood: *Distant Horizons* (2018)
+
+<br />
+
+- »[…] we can find other ways to narrate literary history« (S. 108)
+- »But turning those models into fully satisfying stories could take several more decades.« (S. 109)
+
+--
+
+## Grenzen des Lesens
+### Maximale Close-Reading-Korpusgrößen (Beispiele)
+
+<br />
+
+* Cornelia Mönch: [»Abschrecken oder Mitleiden. Das deutsche bürgerliche Trauerspiel im 18. Jahrhundert. Versuch einer Typologie«](https://doi.org/10.1515/9783110910612) (1993)
+  * 242 Stücke
+* Benjamin Herbst: [»Die Dramaturgie des Sterbens. Der Tod im deutschsprachigen Drama von 1768 bis 1849«](https://doi.org/10.18452/18921) (2018)
+  * 509 Stücke
+
+--
+
+### Facetten digitaler Dramenforschung
+
+<br />
+
+* Hartmut Ilsemann: Computerized Drama Analysis (LLC 1995), [doi:10.1093/llc/10.1.11](https://doi.org/10.1093/llc/10.1.11)
+  * DRAMALYS.EXE (zuerst 1984) und DRAMGRAF.EXE (für MS-DOS-Computer, geschrieben in Turbo Basic)
+* Fotis Jannidis und Gerhard Lauer: [Burrows’s Delta and Its Use in German Literary History](http://www.jstor.org/stable/10.7722/j.ctt5vj848.5) (2014)
+* Christof Schöch: [Topic Modeling Genre: An Exploration of French Classical and Enlightenment Drama](http://www.digitalhumanities.org/dhq/vol/11/2/000291/000291.html) (DHQ 2017)
+* Mark Algee-Hewitt: Distributed Character: Quantitative Models of the English Stage, 1550–1900 (NLH 2017), [doi:10.1353/nlh.2017.0038](https://doi.org/10.1353/nlh.2017.0038)
+* Nils Reiter, Tim Strohmayer, Janis Pagel: [DramaAnalysis](https://cran.r-project.org/web/packages/DramaAnalysis/index.html) (2019)
+
+--
+
+### Distant-Reading Showcase
+
+Wie verändern sich die Figurenkonstellationen im deutschen Drama?
+
+![465 Dramennetzwerke auf einen Blick](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+<small>Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)</small>
+
+--
+
+### Was ist eigentlich mit …
+
+<br />
+
+- komparatistischen Ansätzen?
+- FAIR-Prinzipien für Daten? (findable, accessible, interoperable, reusable?)
+- Community-Aspekten?
+- Training?
+
+--
+
+### **DraCor**
+
+<br />
+
+- DraCor: *Drama Corpora*-Portal (https://dracor.org/)
+- [Credits](https://dracor.org/doc/credits)-Seite: &gt; 50 Namen
+- Beginn mit einem Hauskorpus:
+  - German Drama Corpus, GerDraCor (1540er–1940er)
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI (1/2)
+
+<br />
+
+![Der Pudelhund (Snippet))](images/katzen-sprache.jpg)<!-- .element height="300px;" -->
+
+<br />
+
+<small>Karl von Eckartshausen: *Der Pudelhund. Ein Lustspiel in einem Aufzuge.* München: Lentner 1800, S. 24. ([via Google Books](https://books.google.com/books?id=qF5IAAAAcAAJ&pg=PA24))</small>
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI (2/2)
+
+<br />
+
+```xml
+<sp who="#felden">
+  <speaker>Felden.</speaker>
+    <p>
+      Wie viele Buchstaben hat denn das Alphabet der Katzen-Sprache?
+    </p>
+</sp>
+<sp who="#anton">
+  <speaker>Anton.</speaker>
+    <p>
+      Das will ich Ihnen erklären, denn der Herr Sprachmeister hat es mich
+      schon gelehrt. Es hat nur 4 Buchstaben: M. I. A. U; das heißt: Miau.
+      Aus diesen 4 Buchstaben formiren sich aber sämmtliche Wörter, und die
+      Verschiedenheit der Töne, und die Geschwindigkeit des Ausdruckes oder
+      das Aushalten der Sylben formirt die Wörter […]
+    </p>
+</sp>
+```
+
+<br />
+
+<small>Dialog aus Karl von Eckartshausens Lustspiel »Der Pudelhund« (1800) in TEI (Text Encoding Initiative), Quelle: [DraCor](https://dracor.org/id/ger000524). Momentan sind im Standard 585 verschiedene Elemente definiert ([Stand April 2023](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).</small>
+
+--
+
+### Frontend dracor.org
+
+![DraCor-Frontpage am 13.01.2022](images/dracor-frontpage-2022-01-13.png)<!-- .element height="400px;" -->
+
+https://dracor.org/
+
+--
+
+#### Wachsende Liste von Korpora aus der Community:
+
+- FreDraCor
+- GerDraCor
+- RusDraCor
+- ItaDraCor
+- SweDraCor
+- CalDraCor
+- HunDraCor
+- GreekDraCor
+- ShakeDraCor
+- UDraCor
+- RomDraCor
+- SpanDraCor
+- AlsDraCor
+- TatDraCor
+- BashDraCor
+- …
+
+<!-- .element: style="font-size:0.9em;" -->
+
+--
+
+### Frontpage GerDraCor
+
+![GerDraCor)](images/dracor-gerdracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/ger
+
+--
+
+### GerDraCor: »Die Räuber« (1781)
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/ger000008
+
+--
+
+### GerDraCor: »Das Testament« (1745)
+
+![GerDraCor: Das Testament)](images/dracor-das-testament.png)
+
+https://dracor.org/id/ger000220#speech
+
+--
+
+### GerDraCor
+
+<br />
+
+- mittlerweile 612 Stücke (Ergänzungen aus DTA, Wikisource, Gutenberg-DE, Google Books, …)
+- Community-Projekt: Beschreibung und Anwendungsbeispiele [bei forTEXT](https://fortext.net/ressourcen/textsammlungen/dracor-drama-corpora-project) (Hamburg/Darmstadt)
+- [Nathalie Wiedmer et al.](https://quadrama.github.io/publications/Wiedmer2020aa): Annotation von Beziehungen der Figuren untereinander (Familien- und Liebesverhältnisse, dienstliche Abhängigkeiten)
+
+--
+
+#### Ludwig Anzengrubers »Das vierte Gebot« (1877)
+
+![Anzengruber-Drama, Netzwerk mit Figurenbeziehungen](images/anzengruber-list-relations.jpg)<!-- .element width="580px;" -->
+
+<small>**Modellierung spezifischer Figurenrelationen.** <br />Netzwerkdaten: https://dracor.org/id/ger000129#relations</small>
+
+--
+
+#### DraCor-Download-Tab
+
+![DraCor-Download-Tab](images/anzengruber-download-tab.png)
+
+<small>https://dracor.org/id/ger000129#downloads</small>
+
+--
+
+### Forschungsbeispiel
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+<small>Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.</small>
+
+--
+
+### Einfache Visualisierung von Strukturdaten
+#### Anzahl von Figuren pro Stück in chronologischer Folge
+
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+<small>Ausgabe in RStudio.</small>
+
+<small>(Der Punkt rechts oben: Karl Kraus’ »Die letzten Tage der Menschheit«, 925 Sprechinstanzen).</small>
+
+--
+
+### Konzept der ›Programmable Corpora‹
+
+<br />
+
+<small>Publikation: <br />Frank Fischer et al.: **Programmable Corpora: Introducing DraCor, an Infrastructure for the Research on <br />European Drama.** Proceedings of DH2019: »Complexities«, Utrecht, [doi:10.5281/zenodo.4284002](https://doi.org/10.5281/zenodo.4284002).</small>
+
+<br />
+
+- Korpora als vergleichbare Objekte, die selbst Funktionen anbieten und mit anderen Datenquellen verbunden sind (u.&nbsp;a. via LOD)
+
+--
+
+### Anbindung an die <br />Linked Open Data-Cloud
+
+<br />
+
+- Beispiel: Lessings *Emilia Galotti* (1772)
+- hat einen [Wikipedia-Artikel](https://de.wikipedia.org/wiki/Emilia_Galotti)
+- hat einen Wikidata-Artikel mit Fakten: <br />https://www.wikidata.org/wiki/Q782653
+- Uraufführungen deutscher Stücke: https://w.wiki/559n
+
+--
+
+### Uraufführungsorte deutschsprachiger Dramen
+
+![Uraufführungen insgesamt](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+--
+
+### Urauführungsort Berlin
+
+![Uraufführungen Berlin](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+
+<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).</small>
+
+--
+
+### Ermittlung der Forschungsintensität
+
+<small>Anzahl wissenschaftlicher Artikel zu einem Stück im German Drama Corpus (Top-20),<br />via [**BDSL** – Bibliographie der deutschen Sprach- und Literaturwissenschaft](https://www.bdsl-online.de/):</small>
+
+<small>
+
+1. Johann Wolfgang Goethe: Faust (2037)
+2. Georg Büchner: Dantons Tod (309)
+3. Gotthold Ephraim Lessing: Nathan der Weise (307)
+4. Heinrich von Kleist: Penthesilea (304)
+5. Johann Wolfgang Goethe: Iphigenie auf Tauris (243)
+6. Gotthold Ephraim Lessing: Emilia Galotti (193)
+7. Heinrich von Kleist: Prinz Friedrich von Homburg (172)
+8. Friedrich Schiller: Die Räuber (171)
+9. Friedrich Schiller: Wilhelm Tell (147)
+10. Heinrich von Kleist: Der zerbrochne Krug (143)
+11. Friedrich Schiller: Maria Stuart (123)
+12. Georg Büchner: Leonce und Lena (116)
+13. Friedrich Schiller: Die Jungfrau von Orleans (116)
+14. Heinrich von Kleist: Die Hermannsschlacht (114)
+15. Hugo von Hofmannsthal: Elektra (111)
+16. Johann Wolfgang Goethe: Torquato Tasso (109)
+17. Friedrich Schiller: Kabale und Liebe (102)
+18. Karl Kraus: Die letzten Tage der Menschheit (100)
+19. Heinrich von Kleist: Amphitryon (97)
+20. Arthur Schnitzler: Reigen (85)
+
+</small>
+
+<small>Vgl. Jäschke/Fischer: [Quantification of Scholarly Articles on German Drama](https://weltliteratur.net/scholarly-articles-on-german-drama/), <br />in: weltliteratur.net, 12. Oktober 2021</small>
+
+--
+
+## Interfaces
+
+--
+
+<!-- .slide: data-background-image="images/clsinfra-logo.png" data-background-size="10% auto" data-background-position="100% 0%" -->
+
+### Lessings »Emilia Galotti«
+
+![Emilia Galotti (dynamischer Graph)](images/lessing-emilia-galotti.gif)
+
+<small>**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script: Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
+
+--
+
+<!-- .slide: data-background-image="images/clsinfra-logo.png" data-background-size="10% auto" data-background-position="100% 0%" -->
+
+### Experimentelle Interfaces (1/2)
+
+<br />
+
+- 3D-Ko-Okkurrence-Netzwerk für Hamlet (via [VisNow](https://visnow.icm.edu.pl/)):
+  - https://twitter.com/umblaetterer/status/1024689131509739520
+
+--
+
+<!-- .slide: data-background-image="images/clsinfra-logo.png" data-background-size="10% auto" data-background-position="100% 0%" -->
+
+### Experimentelle Interfaces (2/2)
+
+<video data-autoplay src="images/experimental-interfaces.mp4"></video>
+
+--
+
+<!-- .slide: data-background-image="images/clsinfra-logo.png" data-background-size="10% auto" data-background-position="100% 0%" -->
+
+### DraCor als Progressive Web App
+
+![DraCor App](images/realistic-iphone-7-plus-mockup.jpg)
+
+<small>Läuft auf iOS und Android.</small>
+
+--
+
+<!-- .slide: data-background-image="images/clsinfra-logo.png" data-background-size="10% auto" data-background-position="100% 0%" -->
+
+### Gamification
+
+![Quartettspiel](images/dramenquartett_back.jpg)<!-- .element width="300px;" -->
+![Quartettspiel](images/dramenquartett_front.png)<!-- .element width="300px;" -->
+
+<small>Frank Fischer, Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** <br />Bern: edition taberna kritika 2019. – Spielregeln: https://dramenquartett.github.io/</small>
+
+--
+
+## Zusammenfassung
+
+<br />
+
+- DraCor: eine digitale Forschungsinfrastruktur zum europäischen Drama und Teil eines digitalen literaturwissenschaftlichen Ökosystems
+- Schnittstelle zwischen analoger und digitaler Philologie
+
+---
+
+## 6. Was ist ein Drama?
+
+--
+
+(Platzhalter)
+
+---
+
+## 7. Aufgabe für nächste Woche
+
+<br />
+
+- eine Seite hier transkribieren: https://de.wikisource.org/wiki/Index:Kotzebue_-_Blind_geladen.pdf
+- Verteilung der Seiten jetzt im Seminar
+- Thema nächste Woche:<!-- .element: class="fragment" -->
+  - Dramen als digitale Objekte: Theorie & TEI
+
+--
+
+Bis nächsten Donnerstag!
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
