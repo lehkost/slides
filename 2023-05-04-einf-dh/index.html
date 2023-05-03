@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 4. Mai 2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+<small>Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/793088))</small>
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(20. April 2023 – 20. Juli 2023)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+3. Vorlesung (4. Mai 2023):<!-- .element: style="font-size:0.65em;" -->
+
+#### **Kodierungsformate (XML, TEI), Digitale Editionen**<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[bit.ly/dheinf45](https://bit.ly/dheinf45)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Agenda für heute
+
+<br />
+
+1. Zur Einleitung: Markup im Web
+2. XML
+3. TEI
+4. Beispiel eines auf TEI-Kodierung basierenden Projekts
+5. Digitale Editionen
+6. Mit XML-Dokumenten arbeiten
+
+--
+
+# →
+
+---
+
+### Semesterüberblick (1/2)
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| 20.04.2023 | Thematische Rundumschau I |
+| 27.04.2023 | Thematische Rundumschau II |
+| **04.05.2023** | **Kodierungsformate (XML, TEI), Digitale Editionen** |
+| 11.05.2023 | Distant Reading I: Stilometrie |
+| 25.05.2023 | Distant Reading II: Topic Modeling |
+| 01.06.2023 | Visual Analytics: »Beautiful Evidence« |
+| 08.06.2023 | Netzwerkanalyse |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Semesterüberblick (2/2)
+
+<br />
+
+| Date | Topic |
+|:-|:-|
+| 15.06.2023 | Geografische Informationssysteme (GIS) |
+| 22.06.2023 | Wikipedia & Wikidata |
+| 29.06.2023 | KI &amp; Maschinelles Lernen |
+| 06.07.2023 | Infrastrukturen für die Digitalen Geisteswissenschaften, GLAM! |
+| <s>13.07.2023</s> | (Entfällt wegen [DH2023](https://dh2023.adho.org/)) |
+| 20.07.2023 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im SoSe 2023
+
+<br />
+
+* [Seminar »Methoden der Dramenanalyse: analog und digital«](https://www.fu-berlin.de/vv/de/lv/793092)
+  * <!-- .element: style="font-size:0.7em;" -->Do 14:00–16:00 c.t. (in Präsenz)
+* [Blockseminar »Literaturwissenschaftliche Netzwerkanalyse«](https://www.fu-berlin.de/vv/de/lv/793107)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 05.05.2023 12:00–14:00 c.t. (in Präsenz)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 12.05.2023 12:00–18:00 s.t. (in Präsenz)
+  * <!-- .element: style="font-size:0.7em;" -->Sa 13.05.2023 10:00–18:00 s.t. (in Präsenz)
+* [Blockseminar »Digitale Stilometrie«](https://www.fu-berlin.de/vv/de/lv/793213)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 02.06.2023 12:00–14:00 c.t. (in Präsenz)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 09.06.2023 12:00–18:00 s.t. (in Präsenz)
+  * <!-- .element: style="font-size:0.7em;" -->Sa 10.06.2023 10:00–18:00 s.t. (in Präsenz)
+* [Seminar »Webscraping mit Python für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/793221)
+  * <!-- .element: style="font-size:0.7em;" -->Do 16:00–18:00 c.t. (in Präsenz, geleitet von Lisa Poggel &#60;l.poggel@fu-berlin.de&#62;)
+* [Seminar »Einführung in R: Programmieren für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/793218)
+  * <!-- .element: style="font-size:0.7em;" -->Di 12:00–14:00 c.t. (in Präsenz, geleitet von Lisa Poggel)
+* [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/793109)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 16:00–18:00 c.t. (ab 24.04.2023, zweiwöchentlich)
+  * <!-- .element: style="font-size:0.7em;" -->Übersicht über alle 7 Veranstaltungen: <a href="https://wikis.fu-berlin.de/display/phaenodh">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+--
+
+# →
+
+---
+
+### 1. Zur Einleitung: <br />Markup im Web
+
+<br />
+
+* Markup = Textauszeichnung (zur Informationsstrukturierung)
+* Website Inspector / Browser Dev Tools
+* https://www.fu-berlin.de/einrichtungen/fachbereiche/fb/phil-geist/index.html
+
+--
+
+### HTML
+
+<br />
+
+(= HyperText Markup Language, eine Untermenge von XML)
+
+<br />
+
+```<h2>Beispiel für eine Überschrift</h2>```
+
+```<p>Beispiel für einen Absatz (engl. ```<b>```p```</b>```aragraph)</p>```
+
+--
+
+### XML
+
+<br />
+
+(= eXtensible Markup Language)
+
+<br />
+
+```<überschrift>Beispiel für Überschrift</überschrift>```
+
+```<absatz>Beispiel für Absatz</absatz>```
+
+--
+
+![TEI-Logo](images/tei-logo-wikimedia-commons.svg)<!-- .element width="200px";"; -->
+
+(= eine Untermenge von XML)
+
+<br />
+
+```<persName>Arthur Schopenhauer</persName>```
+
+```<title>Die Welt als Wille und Vorstellung</title>```
+
+<small>
+
+<br />
+
+```<persName ref="https://d-nb.info/gnd/118610465">Arthur Schopenhauer</persName>```
+
+```<title ref="https://d-nb.info/gnd/4099344-9">Die Welt als Wille und Vorstellung</title>```
+
+</small>
+
+---
+
+## 2. XML
+
+--
+
+### Michael Sperberg-McQueen
+
+![Michael Sperberg-McQueen](images/sperberg-mcqueen.jpg)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+- PhD in Comparative Literature an der Stanford University (1985)
+- Editor-in-Chief der TEI (1988–2000)
+- Ko-Editor der Extensible Markup Language (XML) 1.0 Spezifikation (1998)
+- Die Spezifikation von XML hat einen geisteswissenschaftlichen Hintergrund!
+
+<small><br />(Quellen: [Wikipedia](https://en.wikipedia.org/wiki/Michael_Sperberg-McQueen) und [ein Interview mit Julianne Nyhan](https://link.springer.com/chapter/10.1007/978-3-319-20170-2_12); Bildquelle: [w3.org](https://www.w3.org/People/cmsmcq/images/))</small>
+
+--
+
+### Definition
+
+<br />
+
+- XML = eXtensible Markup Language
+- »eine Auszeichnungssprache zur Darstellung **hierarchisch** strukturierter Daten im Format einer Textdatei, die sowohl von Menschen als auch von Maschinen lesbar ist« ([Wikipedia](https://de.wikipedia.org/wiki/Extensible_Markup_Language))
+- einem Text werden semantische Auszeichnungen (Markup) hinzugefügt
+- die Struktur eines Textes wird so für Maschinen »verstehbar«
+- aber nicht nur Maschinen, auch Menschen können XML-Code leicht lesen
+
+--
+
+### Auszeichnung/Kodierung
+
+<br />
+
+* Auszeichnungen stehen in spitzen Klammern und können so vom Text unterschieden werden:
+  * ```<Markup>``` Text ```</Markup>```
+* Im Markup-Bereich werden Kodierungen, sogenannte Tags (oder: Elemente) hinterlegt. Es gibt immer ein Anfangstag (```<Tag>```) und ein Endtag (```</Tag>```).
+  * ```<Tag>``` Text ```</Tag>```
+
+--
+
+### XML-Struktur
+
+<br />
+
+* Die Schachtelung der Elemente erzeugt eine Struktur, die Baumstruktur genannt wird. Die Elemente werden Knoten (*nodes*) genannt.
+* Die Elemente sind hierarchisch geordnet und folgen einer sequentiellen Ordnung.
+* Elemente dürfen sich nicht überlappen.
+
+--
+
+### XML-Struktur
+
+<br />
+
+* XML-Elemente sind stets geschachtelt, jedes Element muss vollständig in einem anderen Element enthalten sein (wie bei einer Matroschka).
+
+![Matroschkas](images/matryoshka_from_hungary_wikimedia_commons.jpg)<!-- .element width="560px"; -->
+
+<small>(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Matryoshka_from_Hungary.jpg))</small>
+
+--
+
+### XML-Struktur
+
+<br />
+
+* Alle Elemente eines XML-Dokuments sind in einem obersten Element enthalten, dem Wurzelelement (root).
+* Finden Sie das Wurzelelement in der XML-Datei zu Goethes »Faust«?
+
+➝ https://dracor.org/api/corpora/ger/play/goethe-faust-eine-tragoedie/tei
+
+--
+
+* Wenn alle Regeln der XML eingehalten werden, ist ein Dokument wohlgeformt (**well-formed**).
+
+--
+
+### Parser …
+
+<br />
+
+* … sind Programme, die XML verarbeiten und in eine Ansicht übersetzen, z. B.
+  * Browser
+  * Textansicht der XML-Datei zu »Faust«: https://dracor.org/id/ger000243#text
+  * für Forschungszwecke können bestimmte Teile einer XML- bzw. TEI-kodierten Datei gezielt herausgegriffen werden
+
+--
+
+### Weitere Informationen
+
+<br />
+
+* Wenn Sie sich eingehender mit XML beschäftigen möchten, finden Sie hier ein Tutorial mit anschließendem Quiz:
+  * https://www.w3schools.com/xml/default.asp
+
+--
+
+### Standards
+
+<br />
+
+* XML ist eXtensible, d. h., man kann bei Berücksichtigung allgemeiner Regeln Elemente »erfinden«. Es gibt viele Standardformate für unterschiedliche Zwecke, denen jeweils ein spezifisches Regelwerk für einheitliche Auszeichnungen zugrundeliegt.
+* Für die Geisteswissenschaften ist vor allem das Regelwerk der **Text Encoding Initiative** relevant.
+
+---
+
+## 3. TEI
+
+<br />
+
+TEI bezeichnet …
+
+* … ein Konsortium, die internationale Text Encoding Initiative (seit 1987)
+* … die Richtlinien zur Textkodierung (Guidelines for Electronic Text Encoding and Interchange) und das entsprechende Format (seit 1994)
+
+--
+
+### Software
+
+<br />
+
+* TEI ist XML-basiert und softwareunabhängig (vgl. [diese Folie](../2023-04-27-einf-dh/#/4/2) der letzten Veranstaltung)
+  * keine bestimmte Software notwendig
+  * XML-Editoren mit TEI-Funktion erleichtern die Textaufbereitung, z. B. der [Oxygen XML Editor](https://www.oxygenxml.com/) (den Sie auch über das Softwareportal der FU installieren können)
+
+--
+
+### TEI-Guidelines
+
+<br />
+
+* aktuelle Version der Richtlinien und Empfehlungen der TEI:
+  * https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html
+
+--
+
+### Beispiel für eine Datei mit TEI-Markup
+
+![Faust](images/faust-anfang-erstausgabe-1808.jpg)<!-- .element width="400px"; style="box-shadow:none;"; -->
+
+```xml
+<sp>
+  <speaker>Faust.</speaker>
+  <l>Habe nun, ach! Philosophie,</l>
+  <l>Juristerey und Medicin,</l>
+  <l>Und leider auch Theologie!</l>
+  <l>Durchaus studirt, mit heißem Bemühn.</l>
+  <l>Da steh’ ich nun, ich armer Thor!</l>
+  <l>Und bin so klug als wie zuvor;</l>
+  […]
+</sp>
+```
+
+<small>Die ersten sechs Zeilen aus Goethes »Faust« (1808) in TEI. (Bildquelle: [DTA](https://www.deutschestextarchiv.de/book/view/goethe_faust01_1808?p=39).)</small>
+
+--
+
+### Elemente …
+
+<br />
+
+* … haben (idealerweise sprechende) Namen.
+* … können Text oder wieder andere Elemente umfassen.
+* Welche Elemente finden Sie in unserem Beispiel?
+
+<br />
+
+```xml
+<sp>
+  <speaker>Faust.</speaker>
+  <l>Habe nun, ach! Philosophie,</l>
+  <l>Juristerey und Medicin,</l>
+  <l>Und leider auch Theologie!</l>
+  <l>Durchaus studirt, mit heißem Bemühn.</l>
+  <l>Da steh’ ich nun, ich armer Thor!</l>
+  <l>Und bin so klug als wie zuvor;</l>
+  […]
+</sp>
+```
+
+<br />
+
+<small>```<sp>```: Figurenrede (**sp**eech), beinhaltet andere Elemente. <br />```<speaker>```: Name einer Figur. <br />```<l>```: Verszeile (**l**ine verse).</small><!-- .element: class="fragment" -->
+
+--
+
+### Elementen …
+
+* … können Attribute zugewiesen werden, z. B.: <text sprache="latein">
+
+```xml
+<sp who="#faust">
+  <speaker>F.</speaker>
+  <l n="1">Habe nun, ach! Philosophie,</l>
+  <l n="2">Juristerey und Medicin,</l>
+  <l n="3">Und leider auch Theologie!</l>
+  <l n="4">Durchaus studirt, mit heißem Bemühn.</l>
+  <l n="5">Da steh’ ich nun, ich armer Thor!</l>
+  <l n="6">Und bin so klug als wie zuvor;</l>
+  […]
+</sp>
+```
+
+<br />
+
+<small>```@who```-Attribut: fakultative Vergabe einer Sprecher\*innen-ID. <br />```@n```-Attribut: mögliche **N**ummerierung eines Elements.</small><!-- .element: class="fragment" -->
+
+--
+
+### Elemente für die digitale Editorik
+
+<br />
+
+- Ergänzungen: <br />```<supplied>[fehlendes Wort]</supplied>```
+- Korrekturen: <br />```<choice> <sic>Hlife</sic> <corr cert="high">Hilfe</corr> </choice>```
+- aufgelöste Abkürzungen: <br />```<choice> <abbr>d.</abbr> <expan>der</expan> </choice>```
+- normalisierte Schreibweisen: <br />```<choice> <orig>thun</orig> <reg>tun</reg> </choice>```
+- …
+
+--
+
+### TEI-Module
+
+![TEI-Module](images/kurz-tei-module.png)<!-- .element width="460px"; -->
+
+<small>(Tabelle: Kurz 2015, S. 201)</small>
+
+<small>»Der modulare Aufbau der TEI manifestiert sich in 21 Modulen, die Einheiten von sinnverwandten Elementen bilden. <br />Für die Textkodierung werden die Module ausgewählt, welche die notwendigen Elemente und Attribute enthalten <br />und diese können durch eigene Anpassungen und Ergänzungen erweitert werden.« (ebd., S. 200)</small>
+
+<!-- Derzeit gibt es »126 distinctly-named model classes«:
+https://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-MODEL.html -->
+
+--
+
+### TEI-Customisation
+
+<br />
+
+* Bei der Anwendung des TEI-Standards auf ein spezifisches Projekt ist die *customisation* zentral.
+* Es werden die Module ausgewählt, die für den Text relevant sind, der nach TEI-Standard ausgezeichnet bzw. kodiert werden soll.
+* Bestehende Elemente können angepasst und neue hinzugefügt werden.
+* Es gibt Tools, die eine *customisation* erleichtern, etwa [Roma](https://roma.tei-c.org/).
+
+--
+
+### TEI-Validierung
+
+<br />
+
+Nach der *customisation* entsteht ein spezifisches Validierungsschema, das die korrekte Verwendung aller Elemente und Attribute regelt. Wenn ein Dokument alle diese Regeln einhält, ist es gültig bzw. valide (*valid*).
+
+--
+
+### Weitere Informationen
+
+<br />
+
+* Wenn Sie sich eingehender mit TEI beschäftigen möchten, finden Sie hier weiterführende Materialien:
+  * Teach Yourself TEI: https://tei-c.org/support/learn/teach-yourself-tei/
+  * TEI by Example: https://teibyexample.org
+
+--
+
+### Bibliografie
+
+<br />
+
+* Kevin S. Hawkins: [Introduction to XML for Text](http://www.ultraslavonic.info/intro-to-xml/) (2019).
+* Susanne Kurz: TEI. In: Dies.: Digital Humanities. Grundlagen und Technologien für die Praxis. 1. Aufl. Wiesbaden: Springer 2015, S. 197–249. ([doi:10.1007/978-3-658-05793-0_5](https://doi.org/10.1007/978-3-658-05793-0_5))
+* [A Gentle Introduction to XML](https://tei-c.org/release/doc/tei-p5-doc/en/html/SG.html) (ohne Datum)
+* [Introducing the Guidelines](https://tei-c.org/support/learn/introducing-the-guidelines/) (ohne Datum)
+* Georg Vogeler, Patrick Sahle: XML. In: F. Jannidis, H. Kohle, M. Rehbein (Hg.): Digital Humanities. Eine Einführung. Stuttgart: Metzler 2017, S. 128–146. ([doi:10.1007/978-3-476-05446-3_9](https://doi.org/10.1007/978-3-476-05446-3_9))
+
+---
+
+## 4. Beispiel eines auf TEI-Kodierung basierenden Projekts
+
+--
+
+![DraCor hexagon logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+<br />
+
+## DraCor
+
+(**Dra**ma **Cor**pora project)
+
+--
+
+![DraCor frontpage on 09.01.2021](images/dracor-frontpage-2021-09-12.png)
+
+https://dracor.org/
+
+--
+
+![DraCor on different devices](images/iphone-11-pro-max-and-ipad-pro-mockup.jpg)
+
+Responsives Web-Design.
+
+--
+
+![DraCor App](images/realistic-iphone-7-plus-mockup.jpg)
+
+DraCor als Progressive Web App.
+
+<small>Läuft auf iOS und Android.</small>
+
+--
+
+### Shiny App
+
+![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+<small>https://shiny.dracor.org/ (zur Netzwerkanalyse literarischer Texte)</small>
+
+--
+
+### DraCor Technology Stack
+
+![DraCor technology stack](images/dracor-drawio.svg)
+
+<small>Alle Repositorien mit Code und Daten sind *Open Source*: https://github.com/dracor-org</small>
+
+--
+
+### DraCor-API-Schnittstelle: Beispielanfragen
+
+https://dracor.org/api/corpora/ger/play/goethe-faust-eine-tragoedie/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Sprechtext aller weiblicher Figuren in Goethes »Faust«.</small>
+
+https://dracor.org/api/corpora/ger/play/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Sprechtext aller Sohn-Figuren in Schillers »Räubern«.</small>
+
+https://dracor.org/api/corpora/shake/play/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Netzwerkdaten zu Shakespeares »Hamlet« (im JSON-Format).</small>
+
+https://dracor.org/api/corpora/ger/play/lessing-emilia-galotti/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Alle Regieanweisungen zu Lessings »Emilia Galotti«.</small>
+
+https://dracor.org/api/corpora/ita/metadata<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadaten zu allen Stücken des italienischen Korpus (als JSON oder CSV).</small>
+
+--
+
+### Gamification: »Dramenquartett«
+
+![Dramenquartett, vier Karten](images/dramenquartett-four-cards.jpg)<!-- .element width="400px;" -->
+
+https://dracor.org/doc/merch
+
+--
+
+### All das nimmt seinen Ausgang von der zugrundeliegenden TEI-Kodierung.
+
+---
+
+## 5. Digitale Editionen
+
+<br />
+
+(Fortsetzung)
+
+--
+
+### Beispiel: Baudelaire
+
+(Wiederholung)
+
+```xml
+<div type="sonnet">
+ <lg type="quatrain">
+  <l>Les amoureux fervents et les savants austères</l>
+  <l>Aiment également, dans leur mûre saison,</l>
+  <l>Les chats puissants et doux, orgueil de la maison,</l>
+  <l>Qui comme eux sont frileux et comme eux sédentaires.</l>
+ </lg>
+ <lg type="quatrain">
+  <l>Amis de la science et de la volupté</l>
+  <l>Ils cherchent le silence et l’horreur des ténèbres ;</l>
+  <l>L’Érèbe les eût pris pour ses coursiers funèbres,</l>
+  <l>S’ils pouvaient au servage incliner leur fierté.</l>
+ </lg>
+ <lg type="tercet">
+  <l>Ils prennent en songeant les nobles attitudes</l>
+  <l>Des grands sphinx allongés au fond des solitudes,</l>
+  <l>Qui semblent s’endormir dans un rêve sans fin ;</l>
+ </lg>
+ <lg type="tercet">
+  <l>Leurs reins féconds sont pleins d’étincelles magiques,</l>
+  <l>Et des parcelles d’or, ainsi qu’un sable fin,</l>
+  <l>Étoilent vaguement leurs prunelles mystiques.</l>
+ </lg>
+</div>
+```
+
+<br />
+
+<small>Baudelaires Sonett « Les chats » im TEI-Format.</small>
+
+--
+
+### Fontane-Notizbücher
+
+<br />
+
+https://fontane-nb.dariah.eu/edition.html?id=/xml/data/22jtv.xml&page=
+
+--
+
+### Faustedition
+
+<br />
+
+https://www.faustedition.net/
+
+--
+
+### A Catalog of Digital Scholarly Editions
+
+<br />
+
+- hrsg. von Patrick Sahle et al.
+- https://www.digitale-edition.de/
+
+--
+
+# →
+
+---
+
+## 6. Mit XML-Dokumenten arbeiten
+
+<br />
+
+- XML-fähige Editoren:
+  - XML Notepad
+  - jEdit mit XML/TEI-Plugins
+  - Oxygen XML Editor
+  - …
+
+--
+
+### XML Notepad 2007
+
+![XML Notepad 2007 (screenshot)](images/XML_Notepad_2007.png)<!-- .element width="600px;" -->
+
+XML Notepad 2007 (Screenshot), Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:XML_Notepad_2007.png)
+
+--
+
+### jEdit (mit TEI-Plugin)
+
+<br />
+
+![jEdit with TEI plugin (screenshot)](images/jedit-faust.png)<!-- .element width="600px;" -->
+
+<br />
+
+http://www.jedit.org/
+
+--
+
+### Oxygen XML Editor
+
+<br />
+
+Herunterladen über das Software-Portal der FU:
+
+https://portal.zedat.fu-berlin.de/software/
+
+--
+
+# →
+
+---
+
+Bis nächste Woche.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
