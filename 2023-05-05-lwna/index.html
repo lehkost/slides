@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Literaturwissenschaftliche Netzwerkanalyse (konstituierende Sitzung, 5. Mai 2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+<small>Blockseminar ([LV 17145](https://www.fu-berlin.de/vv/de/lv/793107))</small>
+
+### **Literaturwissenschaftliche <br />Netzwerkanalyse**
+
+(5. Mai, 12./13. Mai 2023)<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.85em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer@fu-berlin.de
+<!-- .element: style="font-size:0.65em;" -->
+
+<br /><br />Diese Präsentation: <br />https://lehkost.github.io/slides/2023-05-05-lwna/index.html
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Termine
+
+<br />
+
+* Do 05.05.2023 · 16:00–18:00 c.t. (in Präsenz)
+* Fr 12.05.2023 · 12:00–18:00 s.t. (in Präsenz)
+* Sa 13.05.2023 · 10:00–18:00 s.t. (in Präsenz)
+
+--
+
+### Vorstellungsrunde
+
+(Name, Fach, Fachsemester, Vorwissen)
+
+--
+
+### Aufgaben für nächsten Freitag (12.05.2023)
+
+<br />
+
+* Laptop mitbringen
+* Software installieren
+* »forTEXT«-Artikel lesen:
+  * Mareike Schumacher: [Einführung »Netzwerkanalyse«](https://fortext.net/routinen/methoden/netzwerkanalyse) (2018)
+  * Marie Flüh: [Vorstellung »Ezlinavis«](https://fortext.net/tools/tools/ezlinavis) (2019)
+  * Mareike Schumacher: [Vorstellung »Gephi«](https://fortext.net/tools/tools/gephi) (2019)
+* einen Anwendungsfall mitbringen
+
+--
+
+### Zu installierende Software
+
+<br />
+
+- Ezlinavis (läuft im Browser: https://ezlinavis.dracor.org/)
+- ein Texteditor Ihrer Wahl (empfohlen wird Sublime Text, von dem es eine zeitlich unbegrenzte Testversion gibt: https://www.sublimetext.com/)
+- Gephi (https://gephi.org/)
+- Cytoscape (https://cytoscape.org/)
+- OBS Studio (https://obsproject.com/de)
+
+---
+
+### Ziele heute
+
+<br />
+
+1. Theoretisch: Vermittlung grundlegender Terminologie der Netzwerktheorie und -analyse.
+2. Praktisch: Modellierung eines literarischen Textes als soziales Netzwerk.
+
+---
+
+### Grundlegende Terminologie
+
+![Bild von einfachem Netzwerk (Quelle: Wikimedia Commons)](images/small_network.png)<!-- .element width="434px;" -->
+
+- Netzwerk = Graph
+- Knoten (nodes, vertices)
+- Kanten (edges)
+
+<small><br /><br />(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png))</small>
+
+--
+
+Wenn sich ein Datensatz sinnvoll mit Knoten und Kanten <br />beschreiben lässt, haben wir es mit Netzwerkdaten zu tun.
+
+--
+
+### Beispiele für Netzwerke
+
+<br />
+
+- Eisenbahnnetz (Bahnhöfe und Schienennetz)
+- Flugverkehr (Flughäfen und Flugrouten)
+- Internet (Endgeräte und Netzverbindungen)
+- soziale Netze<!-- .element: class="fragment" -->
+
+--
+
+### Visualisierte Facebook-Freundschaften
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+<small>Knoten: Personen; Kanten: gegenseitig akzeptierte Freundschaftsanfragen. <br />(Quelle: [Paul Butler, 2010](https://www.facebook.com/notes/facebook-engineering/visualizing-friendships/469716398919))
+
+--
+
+### Cluster (Communities)
+
+![Graph, nodes, edges, communities](images/graph-nodes-edges-communities.png)<!-- .element width="425px;" -->
+
+<br />
+
+<small>(Bildquelle: [doi:10.3390/a9010008](https://doi.org/10.3390/a9010008))</small>
+
+--
+
+### Soziale Netzwerke
+
+![Graph, nodes, edges, communities](images/jill-rettberg-annotated-social-network.png)<!-- .element width="400px;" -->
+
+<small>Persönliches Facebook-Netzwerk mit annotierten Clustern/Communities. <br />(Quelle: [Jill Rettberg, 2013](http://jilltxt.net/?p=3447))
+
+--
+
+#### Beispiel Nr. 1 für ein literarisches Netzwerk: <br />Goethes »Faust I«
+
+![Goethe, Faust I](images/goethe-faust-eine-tragoedie.png)<!-- .element width="480px;" -->
+
+<small>Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/id/ger000243))
+
+--
+
+#### Beispiel Nr. 2 für ein literarisches Netzwerk: <br />Aphra Behns »The Rover« (2 Tle., 1677/1681)
+
+![Goethe, Faust I](images/aphra-behn-the-rover.png)<!-- .element width="480px;" -->
+
+<small>Ko-Okkurrenzgraph, 43 Knoten. (Quelle: [ezlinavis-Beispieldatei](https://ezlinavis.dracor.org/))
+
+---
+
+### Knotenbasierte Werte
+
+- Grad (degree)
+- Pfadlänge (path length)
+- […]
+
+### <br />Graphbasierte Werte
+
+- Netzwerkgröße (network size)
+- […]
+
+--
+
+### Ein Beispielgraph
+
+![Vier Knoten](images/four_nodes.png)<!-- .element height="400px;" -->
+
+Geben Sie an: (a) Grad des mittleren Knotens, (b) Grad der äußeren Knoten, (c)&nbsp;Pfadlänge zwischen zwei äußeren Knoten, (d) Netzwerkgröße?
+
+---
+
+### Netzwerke extrahieren mit »Ezlinavis«
+
+<small>(= Simple Network Visualization for Literary Texts)</small>
+
+![Screenshot von Ezlinavis](images/ezlinavis-screenshot-brecht.png)<!-- .element height="380px;" -->
+
+Linke Spalte: Eingabefenster. – Mittlere Spalte: Automatisch generierte Kantendaten. – Rechte Spalte: Interaktive Visualisierung.
+
+---
+
+#### Übungsbeispiel
+### Ingo Schulze: »Simple Storys« (1998)
+
+![Simple Storys, Cover (1998)](images/simple-storys-cover.jpg)<!-- .element width="250px;" -->
+
+<small>(Buchcover via [piper.de](https://web.archive.org/web/20210301224526/https://www.piper.de/buecher/simple-storys-isbn-978-3-8270-7768-4-ebook))</small>
+
+--
+
+### Übungsaufgabe
+
+
+* Kennen sich **Marianne** und **Raffael** über Ecken? Falls ja, über wieviele Ecken? Erstellen Sie zur Beantwortung der Frage ein Netzwerk mit Ezlinavis!
+
+<!-- .element: style="font-size:0.9em;" -->
+
+### <br />Was bekannt ist (stark vereinfacht)
+
+* Barbara und Frank sind verheiratet.
+* Marianne und Hanni kennen sich von der gemeinsamen Turngruppe.
+* Barbara und Hanni kennen sich seit 18 Jahren.
+* Frank und Barbara haben Enrico besucht.
+* Orlando hat als Taxifahrer bei Raffael gearbeitet.
+* Frank besucht Orlando im Krankenhaus.
+* Ernst wird von Barbara in der Psychiatrie behandelt.
+
+<!-- .element: style="font-size:0.9em;" -->
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Lösung (zum Copy & Pasten)
+
+<br />
+
+```txt
+# 1
+Barbara
+Frank
+# 2
+Marianne
+Hanni
+# 3
+Barbara
+Hanni
+# 4
+Frank
+Barbara
+Enrico
+# 5
+Orlando
+Raffael
+# 6
+Frank
+Orlando
+# 7
+Ernst
+Barbara
+```
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Auswertung
+
+![Screenshot von Ezlinavis](images/ezlinavis-screenshot-beispiel.png)<!-- .element height="450px;" -->
+
+(a) Sind Marianne und Raffael über Ecken bekannt? (b) Über wieviele? <br />(c) Welche ist die Person mit dem maximalen Grad?
+
+--
+
+#### Vollständige Modellierung des Romans »Simple Storys«
+
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-storys-netzwerk.png)<!-- .element width="450px;" -->
+
+<small>Thomas Schweizer, Michael Schnegg: [»Die soziale Struktur der ›Simple Storys‹. Eine Netzwerkanalyse«](https://web.archive.org/web/20220119175152/https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf) (1998). <br />38 Knoten (Romanfiguren). Kanten: positive, negative oder Tauschbeziehungen.</small>
+
+--
+
+### Diskussion
+
+<br />
+
+* Welche Schwierigkeiten gab es bei der Formalisierung?
+* Wieso sieht der visualisierte Graph jedes Mal anders aus?
+* Wo stößt die Methode an ihre Grenzen?
+
+---
+
+### Ausblick
+
+--
+
+Alexei Tolstois »Der Tod Iwans des Schrecklichen« (1866)
+
+![betweenness](images/betweenness-tolstoy-smert-ioanna-groznogo.png)<!-- .element width="780px;" -->
+
+<small>Identifikation von Agenten/Spionen mithilfe der Netzwerktheorie, vgl. die Figur Битяговский (Bitjagovskij). <br />Netzwerkdaten: https://dracor.org/id/rus000076</small>
+
+---
+
+### Bezug literaturwissenschaftlicher Netzwerkdaten
+
+<br />
+
+- via Ezlinavis
+- via https://dracor.org/
+- https://networks.skewed.de/
+- http://konect.cc/
+- …
+
+<br />
+<br />
+
+- für das Seminar empfohlen werden größere Netzwerke (Knotenanzahl > 10)
+
+--
+
+### Anwendungsfall für nächsten Freitag (12.05.2023)
+
+<br />
+
+* mit Ezlinavis ein (Kookkurrenz-)Netzwerk aus einem literarischen Text oder Film oder Serie extrahieren
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
