@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Literaturwissenschaftliche Netzwerkanalyse  (Blockseminar, 12./13. Mai 2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+<small>Blockseminar ([LV 17145](https://www.fu-berlin.de/vv/de/lv/793107))</small>
+
+### **Literaturwissenschaftliche <br />Netzwerkanalyse**
+
+(<s>5. Mai</s>, <u>12./13. Mai 2023</u>)
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.85em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer@fu-berlin.de
+<!-- .element: style="font-size:0.65em;" -->
+
+<br /><br />Diese Präsentation: <br />https://bit.ly/hdmija
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Termine
+
+<br />
+
+* Fr 05.05.2023 · 12:00–14:00 c.t. (in Präsenz) ✅
+* Fr 12.05.2023 · 12:00–18:00 s.t. (in Präsenz)
+* Sa 13.05.2023 · 10:00–18:00 s.t. (in Präsenz)
+
+--
+
+### Aufgaben zu heute
+
+<br />
+
+* Laptop mitbringen
+* Software installieren
+* »forTEXT«-Artikel lesen:
+  * Mareike Schumacher: [Einführung »Netzwerkanalyse«](https://fortext.net/routinen/methoden/netzwerkanalyse) (2018)
+  * Marie Flüh: [Vorstellung »Ezlinavis«](https://fortext.net/tools/tools/ezlinavis) (2019)
+  * Mareike Schumacher: [Vorstellung »Gephi«](https://fortext.net/tools/tools/gephi) (2019)
+* einen Anwendungsfall überlegen
+
+--
+
+### Ablaufplan
+
+<br />
+
+1. Software
+2. Besprechung der Hausaufgabe (Ezlinavis)
+3. Vortrag (v. a. zur Terminologie)
+4. Praxis mit Gephi
+
+---
+
+## 1. Software
+
+<br />
+
+- ezlinavis (läuft im Browser: https://ezlinavis.dracor.org/) ✅
+- ein Texteditor Ihrer Wahl (empfohlen wird Sublime Text, von dem es eine zeitlich unbegrenzte Testversion gibt: https://www.sublimetext.com/) 👈
+- Gephi (https://gephi.org/) 👈
+- Cytoscape (https://cytoscape.org/)
+- OBS Studio (https://obsproject.com/de)
+
+<br /><br />
+
+(Falls nötig, Zeit für Installationshilfe.)
+
+---
+
+## 2. Hausaufgabe mit Ezlinavis
+
+<br />
+
+- Extraktion eines (Kookkurrenz-)Netzwerks aus einem literarischen Text oder Film oder einer Serie
+- für das Seminar empfohlen werden größere Netzwerke (Knotenanzahl > 10)
+- vgl. [Folien zur praktischen Einführung von Ezlinavis letzten Donnerstag](../2023-05-12-lwna/#/4)
+
+---
+
+## 3. Vortrag
+
+--
+
+## »Network Theory …
+
+<br>
+
+… is the study of graphs as a representation of (…) <br />relations between discrete objects.« ([engl. Wikipedia](https://en.wikipedia.org/wiki/Network_theory))
+
+--
+
+#### Beispiel für einen Netzwerkgraph mit <br />8 Knoten (nodes, vertices) und 10 Kanten (edges):
+
+<br>
+
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="350px;" -->
+
+<br>
+
+<small>Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)</small>
+
+--
+
+### Den Beginn der Graphentheorie …
+
+<br>
+
+… markierte Leonhard Eulers Lösung des Königsberger Brückenproblems.
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-1.png)<!-- .element width="440px;" -->
+
+<small>Historische Karte von Königsberg mit dem Fluss Pregel <br>un den sieben Brücken. (Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png))</small>
+
+--
+
+#### Abstrahierung von …
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
+
+<small>… zu …</small>
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-3.png)<!-- .element height="160px;" -->
+
+<small>Von den sieben Brücken (Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg)) <br />zum abstrakten Graph (Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).</small>
+
+--
+
+### Merkmale der Euler’schen Abstraktion
+
+<br />
+
+- Landmassen = Knoten; Brücken = Kanten
+- genaue Lage der Brücken für die Lösung irrelevant!
+- Anzahl der Brücken und ihrer Endpunkte ist entscheidend:
+  - es sollte maximal zwei Landmassen (Knoten) mit einer ungeraden Anzahl von Brücken (Kanten) geben, die als Anfangs- und Endpunkt dienen
+  - die beiden anderen Ufer müssten eine gerade Anzahl von Brücken aufweisen, die zu ihnen führen
+
+--
+
+### xkcd (Randall Munroe): »Königsberg«
+
+![Königsberg (xkcd)](images/koenigsberg_xkcd.png)<!-- .element height="480px;" -->
+
+(Comic #2694, 4. November 2022, URL: https://xkcd.com/2694/)
+
+---
+
+## Gewichtete und gerichtete Graphen
+
+<br />
+
+- Eulers Graph mit den Königsberger Brücken war ungewichtet und ungerichtet
+
+--
+
+### Gerichteter Graph
+
+<br />
+
+![simple directed graph (from Wikimedia Commons)](images/directed-graph-from-wikimedia-commons.png)<!-- .element height="180px;" -->
+
+<br />
+
+<small>Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Directed.svg)</small>
+
+--
+
+### Gewichteter Graph
+
+<br />
+
+![simple weighted graph (from Wikimedia Commons)](images/weighted-graph-from-wikimedia-commons.png)<!-- .element height="227px;" -->
+
+<br />
+
+<small>Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Weighted_network.svg)</small>
+
+--
+
+### Beispiele für gewichtete Graphen
+
+<br />
+
+- Navigationssoftware (z. B. in Google Maps)
+- Bahn-App
+- Metro-Apps (überhaupt ÖPNV-Apps)
+- …
+
+---
+
+## Social Network Analysis …
+
+<br />
+
+»… is the process of investigating social structures through <br />the use of network and graph theories.« (Wikipedia)
+
+--
+
+### Social Network Analysis (SNA)
+
+<br />
+
+- SNA begann als Sammlung von Ansätzen, die in den Sozialwissenschaften seit den 1930er-Jahren entwickelt wurden
+- der »Harvard Breakthrough« in den 1960er-Jahren (um den Soziologen [Harrison White](https://en.wikipedia.org/wiki/Harrison_White)): Soziolog\*innen, Mathematiker\*innen und Programmierer\*innen entwickeln eine strukturanalytische Perspektive auf soziale Phänomene
+- 1990er-Jahre: neue Perspektiven auf Netzwerkstrukturen mit Aufkommen des Internets, Anwendungen in der Physik, Bioinformatik usw.; die Literaturwissenschaft begann vor etwa 20 Jahren, sich mit SNA zu beschäftigen
+
+--
+
+### Eines der ersten Soziogramme
+
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+<small>»Class structure, 4th grade«. Arbeit von Jacob L. Moreno (1889–1974).<br />(Veröffentlicht in der NYT, [3. April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Quelle für dieses PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)</small>
+
+--
+
+## Operationalisierung
+
+<br />
+
+- soziale Netzwerkdaten = **Interaktionen** zwischen sozialen Einheiten
+- Netzwerkdaten: Knoten + Kanten (**wichtig**: man muss stets in der Lage sein zu sagen, welche Beziehung zwischen den Knoten besteht, d.h. welche Bedeutung die Kanten haben)
+- z.B. in dramatischen Texten: »Zwei Figuren interagieren miteinander, wenn sie innerhalb desselben Abschnitts eines Dramas (normalerweise eine ›Szene‹) einen Sprechakt vollziehen.« (in Anlehnung an eine Idee von Solomon Marcus, »Poetica matematică«, 1970)
+
+--
+
+### Formalisierung von Beziehungen/Interaktionen
+
+<br />
+
+```
+# 1
+Barbara
+Frank
+# 2
+Marianne
+Hanni
+# 3
+Barbara
+Hanni
+# 4
+Frank
+Barbara
+Enrico
+# 5
+Orlando
+Raffael
+# 6
+Frank
+Orlando
+# 7
+Ernst
+Barbara
+```
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Visualisierung mit Ezlinavis
+
+![Screenshot von Ezlinavis](images/ezlinavis-screenshot-beispiel.png)<!-- .element height="450px;" -->
+
+---
+
+## Graph-bezogene Werte
+
+<br />
+
+- Network Size (Netzwerkgröße)
+- Maximum Degree (maximaler Grad)
+- Average Degree (durchschnittlicher Grad)
+- Density (Dichte)
+- Average Path Length (durchschnittliche Pfadlänge)
+- …
+
+--
+
+### Beispiel
+
+![three nodes](images/three-nodes.png)<!-- .element height="400px;" -->
+
+Beziffern Sie (a) die Netzwerkgröße, (b) den maximalen Grad, <br />(c) den durchschnittlichen Grad, (d) die Dichte, <br />(e) die durchschnittliche Pfadlänge des Netzwerks!
+
+--
+
+### Möglicher Strukturvergleich
+
+<br />
+
+<small>
+
+| Play                                                                                      | Characters | Max Degree              | Avg Degree | Density | Avg Path Length |
+|-------------------------------------------------------------------------------------------|------------|-------------------------|------------|---------|-----------------|
+| [Goethe: Iphigenie auf Tauris](https://dracor.org/ger/goethe-iphigenie-auf-tauris) (1787) | 5          | 4 &nbsp; (alle Figuren) | 4          | 1       | 1               |
+| [Kleist: Die Hermannsschlacht](https://dracor.org/ger/kleist-die-hermannsschlacht) (1808) | 84         | 44 &nbsp; (Hermann)     | 9.12       | 0.11    | 2.58            |
+
+</small>
+
+--
+
+### Gamification-Ansatz
+
+<br />
+
+![card game](images/dramenquartett-four-cards.jpg)<!-- .element width="450px;" -->
+
+»Dramenquartett« (2019)
+
+--
+
+### Tragödie vs. Komödie
+
+<br />
+
+»[…] the name of Tragedy was assumed by plays in which everyone was killed in the last act, just as […] plays in which everyone was married in the last act called themselves comedies«
+
+<br />
+
+<small>G. B. Shaw: Vorwort zu »Back to Methuselah«, 1921 (vgl. [Project Gutenberg](http://www.gutenberg.org/ebooks/13084)).</small>
+
+--
+
+### Netzwerk-Dichte (German Drama Corpus)
+
+![Development of network sizes (plays with 3 and more acts)](images/densite_moyenne_par_genre.png)
+
+<small>Vgl. [»Comedy vs. Tragedy: Network Values by Genre«](https://dlina.github.io/Network-Values-by-Genre/) (2015).</small>
+
+---
+
+## Knoten-basierte Werte
+
+--
+
+### Grad/Degree
+
+![Hamlet, Degree](images/hamlet-network-moretti.png)<!-- .element height="480px;" -->
+
+<small>In Morettis Formalisierung hat Hamlet direkte Verbindungen zu 16 anderen Figuren (≙ Grad/Degree). <br />(Quelle: [Literary Lab Pamphlet 2](https://litlab.stanford.edu/LiteraryLabPamphlet2.pdf), Abb. 2.)</small>
+
+--
+
+### (Durchschnittliche) Pfaddistanz/ <br />(Average) Distance
+
+<br />
+
+»Die Pfaddistanz ist ein graphentheoretisches Distanzmaß und gibt an, wie viele Schritte erforderlich sind, um von einem Knoten aus einen anderen Knoten zu erreichen. Schritte werden über die Anzahl der Kanten auf dem kürzesten Pfad zwischen beiden Knoten operationalisiert.«
+
+<br />
+
+<small>(Volker Schneider et al. (Hg.): Politiknetzwerke. Modelle, Anwendungen und Visualisierungen, <br />VS Verlag für Sozialwissenschaften 2009, [S. 382f.](https://link.springer.com/content/pdf/bbm%3A978-3-531-91883-9%2F1.pdf#page=13))</small>
+
+--
+
+### Average Distance
+
+<br />
+
+- in Morettis Formalisierung hat Hamlet eine Average Distance (von allen anderen Figuren) von 1,45
+- Average Distance von Claudius: 1,62
+- Horatio: 1,69
+
+--
+
+### Eigenvector Centrality (Prestige)
+
+<br />
+
+»Die Idee der Eigenvektor-Zentralität ist, dass ein Knoten wichtiger ist, wenn er wichtige Nachbarn hat. Der Zentralitätswert eines Knotens entspricht deshalb der Summe der Werte seiner Nachbarn.«
+
+<br />
+
+<small>(Volker Schneider et al. (Hg.): Politiknetzwerke. Modelle, Anwendungen und Visualisierungen, <br />VS Verlag für Sozialwissenschaften 2009, [S. 377](https://link.springer.com/content/pdf/bbm%3A978-3-531-91883-9%2F1.pdf#page=8))</small>
+
+--
+
+### PageRank
+
+<br />
+
+- »PageRank-Zentralität eignet sich ebenso wie die Eigenvektor-Zentralität optimal dafür, den Einfluss in einem Netzwerk zu messen. Während die **Richtungsabhängigkeit** beim Eigenvektor jedoch keine Rolle spielt, ist das bei PageRank anders. PageRank-Zentralität wurde von Google entworfen und populär gemacht, um optimale Suchergebnisse für eine Benutzerfrage zurückgeben zu können.« ([arcgis.com](https://pro.arcgis.com/de/pro-app/2.7/help/analysis/link-charts/centrality.htm))
+
+--
+
+### Betweenness Centrality (1/3)
+
+<br />
+
+»Austauschbeziehungen zwischen Knoten in Netzwerken finden oft nicht nur zwischen direkt verbundenen Knoten statt, sondern Informationen fließen über dritte, intermediäre Knoten. Die Betweenness-Zentralität misst, auf wie vielen kürzesten Verbindungen ein Knoten liegt.«
+
+<small>(Volker Schneider et al. (Hg.): Politiknetzwerke. Modelle, Anwendungen und Visualisierungen, <br />VS Verlag für Sozialwissenschaften 2009, [S. 371](https://link.springer.com/content/pdf/bbm%3A978-3-531-91883-9%2F1.pdf#page=2))</small>
+
+--
+
+### Betweenness Centrality (2/3)
+
+<br />
+
+![betweenness](images/ada-ben-cro.png)<!-- .element height="400px;" -->
+
+<small>Beispiel: Die Degree-Zentralität korreliert nicht mit der Betweenness-Zentralität.</small>
+
+--
+
+### Betweenness Centrality (3/3)
+
+<br />
+
+Node | Degree | Betweeness Centrality
+-|-:|-:
+Ada | 2 | **16**
+Ben | **4** | 15
+Cro | **4** | 15
+Bens Bekannte 1 | 3 | 0
+Bens Bekannte 2 | 3 | 0
+Bens Bekannte 3 | 3 | 0
+Cros Bekannter 1 | 3 | 0
+Cros Bekannter 2 | 3 | 0
+Cros Bekannter 3 | 3 | 0
+
+--
+
+Alexander Puschkins historische Tragödie »Boris Godunow« (1825)
+
+![Betweenness](images/betweenness-pushkin-boris-godunov-de.png)<!-- .element width="760px;" -->
+
+<small>Label-Größe korreliert in diesem Graph mit der Betweenness-Zentralität. <br />Gavrila Puschkin – eine Nebenfigur – in der Mitte.</small>
+
+--
+
+Alexei Tolstois »Tod Iwans des Schrecklichen« (1866)
+
+![betweenness](images/betweenness-tolstoy-smert-ioanna-groznogo-de.png)
+
+<small>Auch hier korreliert die Labelgröße mit der Betweenness-Zentralität. Bitâgovskij verbreitet Fake News.</small>
+
+--
+
+### Schnitzler: »Reigen« (1901) – 1/3
+
+<br />
+
+Volltext: http://www.zeno.org/nid/2000562813X
+
+--
+
+### Schnitzler: »Reigen« (1901) – 2/3
+
+›Konfigurationsmatrix‹ (nach Pfister: Das Drama. Theorie und Analyse, 1977)
+
+![Reigen](images/schnitzler-reigen-konfigurationsmatrix.png)<!-- .element width="600px;" -->
+
+<small>Bildquelle: [DH Regensburg 2016](https://dhregensburg.files.wordpress.com/2016/06/a0-katharsis.pdf).</small>
+
+--
+
+### Schnitzler: »Reigen« (1901) – 3/3
+
+![Reigen](images/schnitzler-reigen.png)<!-- .element width="520px;" -->
+
+<small>Daten [via DraCor](https://dracor.org/id/ger000232).</small>
+
+--
+
+### DraCor Shiny App
+
+<br />
+
+https://pozdniakov.shinyapps.io/Dracor/
+
+(temporäre Adresse)
+
+--
+
+### Periodic Table of Network Centrality
+
+<br />
+
+- http://schochastics.net/sna/periodic.html
+
+---
+
+## Einige Beispiele aus der Populärkultur
+
+<br />
+
+- [Downton Abbey](http://letstalkdata.com/2013/08/a-social-network-of-downton-abbey/)
+- [Game of Thrones](https://networkofthrones.wordpress.com/)
+- [Star Wars (the 6 first movies)](http://evelinag.com/blog/2015/12-15-star-wars-social-network/index.html)
+- [Star Wars: The Force Awakens](http://evelinag.com/blog/2016/01-25-social-network-force-awakens/index.html)
+- [Sherlock](http://obotligtnyfiken.se/sherlock/sherlock-statistics/who-meets-whom-in-which-episode/)
+
+--
+
+#### Netzwerkdaten aus Amazon Prime Videos extrahieren (1/2)
+
+![The Circle (via Amazon Prime)](images/the-circle-prime-network.png)<!-- .element width="720px;" -->
+
+<small>Abb. *The Circle* (James Ponsoldt 2017). – Vgl. Lisa Poggel, Frank Fischer: *Automatic Extraction of Network Data From Amazon Prime Videos (Using »1917« As an Example).* https://weltliteratur.net/extracting-network-data-from-amazon-prime-videos/</small>
+
+--
+
+#### Netzwerkdaten aus Amazon Prime Videos extrahieren (2/2)
+
+![Tenet (via Amazon Prime)](images/tenet-prime-network.png)<!-- .element width="720px;" -->
+
+<small>Abb. *Tenet* (Christopher Nolan 2020). – Vgl. Lisa Poggel, Frank Fischer: *Automatic Extraction of Network Data From Amazon Prime Videos (Using »1917« As an Example).* https://weltliteratur.net/extracting-network-data-from-amazon-prime-videos/</small>
+
+---
+
+## Beispielpräsentation
+
+--
+
+### Bewertungskriterien:
+
+<br />
+
+1. Beschreibung eines sinnvollen Anwendungsfalls.
+2. Kenntnis netzwerkanalytischer Grundbegriffe und Methodik.
+3. Visualisierungsanteil (mit Gephi oder vergleichbarer Software).
+4. Thematisierung des zugrundeliegenden Zahlenmaterials.
+5. Interpretation bzw. Einschätzung der Ergebnisse (auch bei negativen Ergebnissen bzw. Nichtbrauchbarkeit der Methode für den Anwendungsfall).
+6. Qualität der Präsentation/des Screencasts.
+
+--
+
+### Netzwerkanalyse von Imre Madáchs Drama <br />»Die Tragödie des Menschen« (1862)
+
+<br />
+
+- Ausgangsidee:
+  1. Netzwerkanalytische Bestimmung der Position der Protagonist\*innen.
+  2. Untersuchung, inwieweit Madáchs Stück Züge eines »Stationendramas« aufweist (ein Ortswechsel entspricht dem Austausch des Figurenensembles mit Ausnahme der Protagonisten\*innen).
+
+--
+
+#### Imre Madách: »Die Tragödie des Menschen« (1862)
+
+![Az ember tragédiája (book cover)](images/az-ember-tragediaja-cover.jpg)<!-- .element width="320px;" -->
+
+<small>(Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Az_ember_trag%C3%A9di%C3%A1ja_%28els%C5%91_kiad%C3%A1s%29_1861.jpg).)</small>
+
+--
+
+### Formalisierung: »Digitale Zuschauer\*innen« (1/2)
+
+<br />
+
+»Stellen wir uns einen Zuschauer vor, der im Laufe der Theatervorstellung **nur vermag, die Auf- und Abtritte der Schauspieler zu beobachten** und jeden Charakter zu erkennen, also auch zwei verschiedenartige Charaktere voneinander zu unterscheiden. Die Informationsmenge, die unser Zuschauer empfängt, nennen wir die Szenenstruktur des Stückes.«
+
+<br />
+
+<small>Solomon Marcus: Mathematische Poetik, Frankfurt/M. 1973, S. 289.</small>
+
+--
+
+### Formalisierung: »Digitale Zuschauer\*innen« (2/2)
+
+<br />
+
+- Anlehnung an formalistische und strukturalistische Ansätze in der Literaturwissenschaft, aber Automatisierung der Datenerfassung
+- Netzwerkdaten = Interaktionen zwischen Figuren
+- Operationalisierung von »Interaktion«: zwei Figuren interagieren miteinander, wenn sie innerhalb desselben Abschnitts eines Dramas (meist einer ›Szene‹) einen Sprechakt vollziehen (nach Solomon Marcus)
+- ⚠️ das »epistemische Ding« der literarischen Netzwerkanalyse unterscheidet sich von dem der Textanalyse
+
+--
+
+### Formalisierung von Interaktionen (1/2)
+
+<br />
+
+```csv
+Source,Target,Weight
+Ádám,Az Úr,2
+Ádám,Éva,13
+Ádám,Lucifer,13
+Ádám,A föld szellemének szava,3
+Angyalok kara,Az Úr,2
+Angyalok kara,Lucifer,2
+Az Úr,Éva,2
+Az Úr,Lucifer,3
+Éva,Lucifer,12
+Éva,A föld szellemének szava,2
+Lucifer,A föld szellemének szava,3
+…
+```
+
+<br />
+
+Imre Madáchs »Tragödie des Menschen«: Interaktionen (Ko-Okkurrenzen) kodiert in einer CSV-Liste (comma-separated values, Auszug).
+
+--
+
+### Formalisierung von Interaktionen (2/2)
+
+![Imre Madách, ezlinavis](images/madach-ezlinavis.png)
+
+<small>Datenerhebung mit ezlinavis.
+
+--
+
+#### Imre Madách: »Die Tragödie des Menschen« (1862)
+
+![Imre Madách, Die Tragödie des Menschen, network graph](images/madach-tragoedie-des-menschen-graph.png)<!-- .element width="512px;" -->
+
+<small>Sozialer-Netzwerk-Graph von Madáchs Stück, extrahiert aus der [deutschen Übersetzung](http://mek.oszk.hu/00900/00920/html/) in der Hungarian Electronic Library. <br />(Bild lizensiert unter CC-BY 4.0.)</small>
+
+--
+
+### Die Stationen
+
+1. Bild: Im Himmel.
+2. Bild: Im Paradies.
+3. Bild: Außerhalb des Paradieses.
+4. Bild: In Ägypten.
+5. Bild: In Athen.
+6. Bild: In Rom.
+7. Bild: In Byzanz.
+8. Bild: In Prag.
+9. Bild: In Paris.
+10. Bild: In Prag.
+11. Bild: Im London.
+12. Bild: In einem Phalansterium in naher Zukunft.
+13. Bild: Im Weltraum.
+14. Bild: In eisiger Gegend in der Zukunft.
+15. Bild: Zurück in der Palmenlandschaft des 3. Bildes.
+
+--
+
+#### Netzwerkdaten: Schlussfolgerungen für »Die Tragödie des Menschen«
+
+<br />
+
+- Entstehungsdatum:
+  - Netzwerkgröße: 103 Knoten (»Charaktere«, d. h. identifizierbare Sprechinstanzen)
+  - Interpretation: eindeutig ein Produkt des 19. Jahrhunderts (nicht früher)
+- Protagonisten:
+  - höchste Werte bei gewichtetem Grad, Betweenness-Zentralität und PageRank (mit Abstand): Ádám, Éva, Luzifer
+  - Interpretation: Protagonisten leicht identifizierbar
+- Genre:
+  - Netzwerkdurchmesser: 3 (fast sternförmig)
+  - durchschnittliche Pfadlänge: 1,78
+  - Netzwerkdichte: 0,23
+  - Clustering-Koeffizient: 0,97
+  - Interpretation: ein typisches ***Stationendrama*** (bzw. ***Vandringsdrama***)
+
+---
+
+## 4. Praxis mit Gephi
+
+--
+
+### Beispiel: Faust-Dramen
+
+<br />
+
+- ein Faust-Drama aussuchen aus dem German Drama Corpus: https://dracor.org/ger/
+- in der Suchmaske rechts oben eingeben: »Faust«
+- Ordnen nach Network Size (Klick auf den Kolumnenkopf)
+
+--
+
+### Ergebnisse?
+
+---
+
+## Zweiter Tag Blockseminar <br />(Sa, 13.05.2023)
+
+--
+
+### Ablauf
+
+<br />
+
+* 10:00–12:00
+* 12:15–13:15 Mittagspause
+* 13:15–14:30
+* 14:30–14:45 Pause
+* 14:45–
+
+--
+
+### Online-Ordner, um Dateien zu teilen
+
+<br />
+
+(Adresse?)
+
+--
+
+### Literaturliste: <br />»Network Analysis of Literary Texts«
+
+<br />
+
+https://www.zotero.org/groups/940512/dlina/library
+
+--
+
+#### Mathieu Jacomy: »Translating networks: <br />linking visualization to statistics«
+
+![Visual Analysis (Jacomy)](https://reticular.hypotheses.org/files/2020/06/image-2.png)<!-- .element width="640px;" -->
+
+https://reticular.hypotheses.org/1745
+
+--
+
+### Dynamische Netzwerke
+
+<br />
+
+siehe https://lehkost.github.io/slides/2023-04-20-dramenanalyse-intro/#/4/27
+
+---
+
+## Alternativen zu Gephi
+
+--
+
+### Cytoscape
+
+![Cytoscape Screenshot (from WM Commons)](images/cytoscape_screenshot.png)
+
+<small>Download: [**cytoscape.org**](https://cytoscape.org/). (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cytoscape3.7.0.png).)</small>
+
+--
+
+### Cytoscape
+
+<br />
+
+- kann das GEXF-Format nicht verarbeiten, dafür andere Formate
+- Beispiel: GraphML-Version des Kopräsenz-Graph für Kleists »Der zerbrochne Krug« (1808): https://dracor.org/id/ger000363#downloads
+
+---
+
+## Das Small-World-Experiment
+
+--
+
+### Small-World-Netzwerke
+
+<br />
+
+- »widespread in biological, social and man-made systems« ([Watts &amp; Strogatz 1998](http://dx.doi.org/10.1038%2f30918), 442)
+- »highly clustered, […] yet have small characteristic path lengths, like random graphs« (Watts &amp; Strogatz 1998, 440)
+- wurde früh auf Dramen angewandt (Shakespeare): [Stiller, Nettle &amp; Dunbar 2003](https://doi.org/10.1007/s12110-003-1013-1); [Stiller &amp; Hudson 2005](https://doi.org/10.1556/JCEP.3.2005.1.4)
+- danach auch auf ein deutsches Korpus: [Trilcke, Fischer, Göbel &amp; Kampkaspar 2016](http://dh2016.adho.org/abstracts/360)
+
+--
+
+### 1. Kriterium: Clustering Coefficient
+
+![candidates](images/small-world-criterion-1.png)<!-- .element width="640px;" -->
+
+- Der Clustering Coefficient (C) des beobachteten Netzwerks ist signifikant höher als der C eines entsprechenden Random-Netzwerks.<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### 2. Kriterium: Average Path Length
+
+![candidates](images/small-world-criterion-2.png)<!-- .element width="640px;" -->
+
+- Die Average Path Length (APL) des beobachteten Netzwerks weicht nicht signfikant ab von der APL eines entsprechenden Random-Netzwerks.<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### 3. Kriterium: Power Law Distribution
+
+![candidates](images/small-world-criterion-3.png)<!-- .element width="640px;" -->
+
+- Die Node Degree Distribution lässt sich am besten mit einer Power-Law-Regression beschreiben.<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Goethes »Götz von Berlichingen« (1773)
+
+![Berlichingen](https://raw.githubusercontent.com/lehkost/dramenquartett/master/dhd2018-cologne/plays/goethe-berlichingen/goethe-berlichingen.png)<!-- .element width="550px;" -->
+
+--
+
+Aristokratisches vs. kommunistisches Modell:
+
+<br />
+
+siehe https://dlina.github.io/presentations/2016-leipzig/#/4/20
+
+--
+
+### Power-Law-Regression
+
+![candidates](images/goethe-goetz-power-law.png)<!-- .element width="800px;" -->
+
+---
+
+## Netzwerkdaten in R verarbeiten
+
+--
+
+![Huey, Dewey, and Louie (from Wikipedia)](images/louie_dewey_huey_from_wikipedia.png)
+
+<br />
+
+Huey, Dewey, and Louie
+<!-- .element: class="fragment" -->
+
+<br />
+
+<small>(Bildquelle: [engl. Wikipedia](https://en.wikipedia.org/wiki/File:Louie_Dewey_and_Huey.png).)</small>
+
+--
+
+## Graph erzeugen und plotten in R
+
+<br />
+
+```R
+library(igraph)
+mein_graph <- graph_from_literal('Huey'-'Donald', 'Dewey'-'Donald', 'Louie'-'Donald')
+mein_graph
+plot(mein_graph)
+edge_density(mein_graph)
+```
+
+<br />
+
+<small>(igraph-Bibliothek muss installiert sein.)</small>
+
+---
+
+. . .
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
