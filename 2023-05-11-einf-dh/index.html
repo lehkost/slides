@@ -502,7 +502,26 @@ Aber es funktioniert.<!-- .element: class="fragment" -->
 
 --
 
-![caption](images/guess-the-author-cluster-analysis.png)<!-- .element height="400px;" -->
+#### Ergebnis:
+
+![Ergebnis der Clusteranalyse](images/guess-the-author-cluster-analysis.png)<!-- .element height="400px;" -->
+
+<small>Der »unbekannte« Text stammt von Goethe (es handelt sich um »Die Wahlverwandtschaften«) – <br />er gruppiert nah an den anderen Goethe-Romanen, hat also einen ähnlichen ›Fingerprint‹.</small>
+
+--
+
+#### Visualisierung der Abstände im Dendrogramm
+
+![Ergebnis der Clusteranalyse](images/guess-the-author-cluster-analysis.png)<!-- .element height="180px;" -->
+
+tl;dr: »Die Zahlen in der horizontalen Leiste unten geben die Werte des jeweils <br />ausgewählten Distanzmaßes an (hier Classic Delta Distance).« ([forTEXT](https://fortext.net/routinen/lerneinheiten/stilometrie-mit-stylo))
+<!-- .element: style="font-size:0.65em;" -->
+
+Genauer: Diese Skala zeigt den gemessenen Abstand zwischen den Texten an. Die Werte auf der Skala entsprechen den ursprünglichen Einheiten, die zur Abstandsberechnung verwendet wurden. Wenn zum Beispiel eine klassische Manhattan-Distanz auf der Grundlage relativer Worthäufigkeiten berechnet wurde, zeigt die Einheit die durchschnittliche Differenz zwischen einem Textpaar an, ausgedrückt in relativen Häufigkeiten. Wenn z.&nbsp;B. zwei Texte vorliegen, in denen die Häufigkeit von »die« 0,04 und 0,01 (bzw. 4% und 1%) und die Häufigkeit von »von« 0,02 und 0,02 beträgt, dann ist der Gesamtabstand ((0,04 – 0,01) + (0,02 – 0,02) / 2) = (0,03 + 0) / 2 = 0,015. Da die Häufigkeiten in der Regel mit 100 multipliziert werden, um Prozentsätze zu erhalten, wäre die endgültige Punktzahl ebenfalls 0,015 * 100 = 1,5.
+<!-- .element: style="font-size:0.65em;" -->
+
+Classic Delta und Cosinus Delta (auch andere Deltas) basieren auf den z-Scores und nicht auf Häufigkeiten. Folglich werden die Abstände und die Skalen in Dendrogrammen in z-Scores und Differenzen zwischen z-Scores ausgedrückt. Da eine »1« in z-Scores »1 Standardabweichung« bedeutet, lässt sich dies auch auf die Skalen von Dendrogrammen übertragen. Eine Einheit bedeutet also »1 Standardabweichung« zwischen den zu vergleichenden z-Scores. (Mit Dank an Maciej Eder!)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -777,7 +796,7 @@ Einführungen in Stylo
 
 <br />
 
-- Download: https://lehkost.github.io/slides/2023-05-11-einf-dh/files/guess-the-author.zip
+- Download: <br />https://lehkost.github.io/slides/2023-05-11-einf-dh/files/guess-the-author.zip
 
 --
 
