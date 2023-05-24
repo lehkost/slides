@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Kurze DraCor-Präsentation (3. Juni 2022)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+#### Prof. Dr. Frank Fischer
+
+### DraCor (*Drama Corpora*-Plattform)
+
+https://dracor.org/
+
+![DraCor-Frontpage am 13.01.2022](images/dracor-frontpage-2022-01-13.png)<!-- .element height="400px;" -->
+
+<small>([Eröffnungssymposium des »Ada Lovelace Center for Digital Humanities«](https://www.ada.fu-berlin.de/Week-of-DH/ADA_Opening/index.html) · 3. Juni 2022)</small>
+
+--
+
+### DraCor
+
+<br />
+
+- digitalisierte Dramentexte von der Antike bis ins 20. Jahrhundert
+- multilingual: wachsende Anzahl von Korpora in derzeit über einem Dutzend Sprachen (Digitale Komparatistik)
+- über klar definierte Schnittstellen Direktbezug von Forschungsdaten aus reich annotierten Dateien im Standardformat TEI
+- Anbindung an die Linked Open Data-Cloud, in die Daten eingespeist, aus der aber auch Daten zur Anreicherung bezogen werden können
+- Konzept der »programmierbaren Korpora«
+
+--
+
+#### Anzahl von Figuren pro Stück in chronologischer Folge
+
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+<small>Ausgabe in RStudio.</small>
+
+<small>(Der Punkt rechts oben: Karl Kraus’ »Die letzten Tage der Menschheit«, 925 Sprechinstanzen).</small>
+
+--
+
+### Netzwerkanalyse literarischer Texte
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/ger000008
+
+--
+
+### Gamification
+
+![Quartettspiel](images/dramenquartett_back.jpg)<!-- .element width="300px;" -->
+![Quartettspiel](images/dramenquartett_front.png)<!-- .element width="300px;" -->
+
+<small>Frank Fischer, Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** <br />Bern: edition taberna kritika 2019. – Spielregeln: https://dramenquartett.github.io/</small>
+
+--
+
+### Weitere Forschungsarbeiten im DraCor-Umfeld
+
+<br />
+
+- Small World-Phänomen in literarischen Texten
+- Epifizierung des Dramas um 19. Jahrhundert
+- Informationsfluss im Drama
+- Topic Modeling
+- Stilometrie
+- Metaphernforschung
+- Animal Studies
+
+--
+
+Vielen Dank.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
