@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Digitale Stilometrie (Blockseminar, 9./10. Juni 2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+<small>Blockseminar</small>
+
+### Digitale Stilometrie
+
+(<s>2. Juni</s>, 9./10. Juni 2023)
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.85em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer@fu-berlin.de
+<!-- .element: style="font-size:0.65em;" -->
+
+<br /><br />Diese Präsentation: <br />https://bit.ly/dist96
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Termine
+
+<br />
+
+* <strike>Do 02.06.2023 · 12:00–14:00 c.t. (in Präsenz)</strike>
+* Fr 09.06.2023 · 12:00–18:00 c.t. (in Präsenz)
+* Sa 10.06.2023 · 10:00–18:00 c.t. (in Präsenz)
+
+--
+
+### Fragen zur konstituierenden Sitzung?
+
+<br />
+
+* Folienset ist hier: https://bit.ly/dist26
+
+--
+
+»Style is a property of texts constituted by an ensemble of formal features which can be observed quantitatively or qualitatively.«
+
+<br />
+
+<small>J. Berenike Herrmann, Karina van Dalen-Oskam, Christof Schöch: **Revisiting Style, a Key Concept in Literary Studies.** <br />In: Journal of Literary Theory. Band 9 (2015), Heft 1, S. 44.</small>
+
+--
+
+»We call this the epistemic gap between the output of a quantitative procedure and a qualitative expectation.«
+
+<br />
+
+<small>Julian Schröter, Keli Du, Julia Dudar, Cora Rok, Christof Schöch: **From Keyness to Distinctiveness – <br />Triangulation and Evaluation in Computational Literary Studies.** <br />In: Journal of Literary Theory. Band 15 (2021), Heft 1/2, S. 86. ([doi:10.1515/jlt-2021-2011](https://doi.org/10.1515/jlt-2021-2011))</small>
+
+--
+
+### Hausaufgaben zu heute (09.06.2023)
+
+<br />
+
+* Laptop mitbringen
+* Software installieren
+* »forText«-Texte lesen:
+  * Kurzeinführung »Stilometrie«: https://fortext.net/routinen/methoden/stilometrie
+  * Kurzeinführung in die Software »Stylo«: https://fortext.net/tools/tools/stylo
+  * Stilometrie mit Stylo (Lerneinheit): https://fortext.net/routinen/lerneinheiten/stilometrie-mit-stylo
+* ein Arbeitskorpus überlegen
+
+--
+
+### Zu installierende Software
+
+<br />
+
+- **Voyant Tools** (läuft im Browser: https://voyant-tools.org/)
+- ein Texteditor Ihrer Wahl (empfohlen wird **Sublime Text**, von dem es eine zeitlich unbegrenzte Testversion gibt: https://www.sublimetext.com/)
+- **AntConc** (https://www.laurenceanthony.net/software/antconc/)
+- **RStudio** und die **Stylo**-Bibliothek (4-Minuten-Video-Tutorial: https://www.youtube.com/watch?v=hp3MTGA_W8o)
+- **Gephi** (https://gephi.org/)
+- **OBS Studio** (https://obsproject.com/de)
+
+--
+
+### Korpora
+
+<br />
+
+- Dramen
+- Romane oder andere Prosaformen
+  - z.&nbsp;B. Grimms Märchen (1812–1857)
+- Lyrik
+- Chat-Protokolle
+- Anderes?
+  - ChatGPT-generierte Texte, z.&nbsp;B. [hier](https://chat.openai.com/share/14e818e2-dc09-4596-9693-1689203de247)
+
+<br />
+<br />
+
+- benötigt werden mehrere Texte
+- Minimum: ca. 1.000 Wörter pro Text
+- Einführung in die Korpusbildung: https://fortext.net/routinen/methoden/korpusbildung
+
+--
+
+# →
+
+---
+
+### Voyant Tools
+
+<br />
+
+https://voyant-tools.org/
+
+<br />
+
+Beispieltext: <br />https://www.projekt-gutenberg.org/buechner/lenz/lenz.html
+
+---
+
+### Texteditor Ihrer Wahl
+
+<br />
+
+- empfohlen wird Sublime Text, von dem es eine zeitlich unbegrenzte Testversion gibt: https://www.sublimetext.com/
+- für Windows: Notepad++: https://notepad-plus-plus.org/
+
+<br /><br />
+
+Umwandlung in das txt-Format: <br />https://www.projekt-gutenberg.org/buechner/lenz/lenz.html
+
+--
+
+### Andere txt-Quellen
+
+<br />
+
+Deutsche Romane und Erzählungen (400 MB ZIP-Datei):
+- https://figshare.com/ndownloader/files/7320866
+
+<br /><br />
+
+Deutsches Textarchiv:
+- z. B. https://www.deutschestextarchiv.de/book/show/goethe_werther01_1774
+
+---
+
+### AntConc
+
+<br />
+
+- https://www.laurenceanthony.net/software/antconc/
+- Einführung: http://litre.uni-goettingen.de/index.php/AntConc
+
+--
+
+![Eurotrash-Cover (Ki&Wi)](images/eurotrash-cover-kiwi.webp)
+
+--
+
+### »Aber ansonsten ist die häufigste Wortfolge im ganzen Roman ‚Ich erinnerte mich‘«
+
+<br />
+
+(Eckhard Schumacher, Deutschlandfunk Kultur, Kompressor, [10.03.2021](https://www.deutschlandfunkkultur.de/eurotrash-von-christian-kracht-popliterat-wider-willen.2156.de.html?dram:article_id=493868))
+
+--
+
+![Eurotrash](images/ich-erinnerte-mich.png)<!-- .element height="600px;" -->
+
+---
+
+### RStudio und die Stylo-Bibliothek
+
+<br />
+
+4-Minuten-Video-Tutorial: [YouTube](https://www.youtube.com/watch?v=hp3MTGA_W8o)
+
+<br /><br />
+
+Schritte (Windows):
+- R downloaden: https://cran.r-project.org/
+- RStudio: https://www.rstudio.com/products/rstudio/
+
+--
+
+### Beispielkorpora
+
+<br />
+
+- Download: <br />https://lehkost.github.io/slides/2023-06-09-ds/files/stylo_example_directories.zip
+
+---
+
+### Stylo
+
+<br />
+
+- Paket für Stilometrie, geschrieben für R
+- eingebaute Delta-Funktion
+- viele andere Metriken
+- grafisches User\*innen-Interface (GUI)
+
+--
+
+### Delta-Funktion
+
+<br />
+
+- »Burrows’ Delta«: am häufigsten angewendeter Algorithmus in der computergestützten Stilometrie
+- statt semantischer Inhaltswörter werden vor allem Funktionswörter betrachtet (die häufigsten Wörter)
+- diese most frequent words (MFW) werden von Autor\*innen kaum bewusst manipuliert
+- Burrows’ Delta verstehen: https://zfdg.de/2017_006#hd2
+
+--
+
+### Stylo: zwei der Hauptfunktionen
+
+<br />
+
+- stylo()
+- oppose()
+
+--
+
+### stylo()
+
+<br />
+
+- Berechnung und Visualisierung stilistischer Nähe
+- verschiedene Arten des Clusterns (Gruppierens) von Texten nach Nähekriterien
+- Darstellung des mehrdimensionalen »stilistischen Raums« von Texten auf einer 2D-Ebene
+- Listen der am häufigsten verwendeten Wörter, Häufigkeitstabellen usw.
+
+--
+
+### Beispiel »Guess the Author«
+
+--
+
+### oppose()
+
+<br />
+
+- kontrastive Analyse, Beispiel: [Typische Adjektive und Substantive in Bundestagswahlprogrammen 2021](https://doi.org/10.5281/zenodo.5517045)
+- bevorzugte/vermiedene Wörter
+- vergleichende Studien (z. B. männliche vs. weibliche Stimmen)
+- Kurzvorstellung in [dieser Präsentation](https://computationalstylistics.github.io/stylo_nutshell/#main-functions-oppose) (Folien 7 und 26–28)
+
+--
+
+### oppose()
+
+<br />
+
+- basiert auf Burrows’ Zeta (2007):
+  - »Texte werden in kleinere Segmente gesplittet, wobei die Segmentlänge ein wichtiger Parameter ist. Dann wird für jedes Merkmal der Anteil der Segmente erhoben, in denen das Merkmal mindestens einmal vorkommt. Von diesem Anteil in der untersuchten Gruppe wird der entsprechende Anteil in der Vergleichsgruppe subtrahiert, woraus sich ein Zeta-Wert zwischen –1 und 1 ergibt« ([uni-wuerzburg.de](https://www.informatik.uni-wuerzburg.de/datascience/projects/concluded-projects/cligs/?tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=DHd2018_pyzeta.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=03d6baf7b43a7c8d4c2815c1f04c60d0&tx_extbibsonomycsl_publicationlist%5BuserName%5D=dmir&cHash=93fb54cc785fbfc0587eed24b123abbb))
+
+--
+
+### Nachvollzug editorischer Prozesse
+
+<br />
+
+- [Grimms Märchen](https://de.wikipedia.org/wiki/Grimms_M%C3%A4rchen)
+  - Auflagen:
+    - 1. Auflage (1812/1815)
+    - 2. Auflage (1819)
+    - 3. Auflage (1837)
+    - 4. Auflage (1840)
+    - 5. Auflage (1843)
+    - 6. Auflage (1850)
+    - 7. Auflage (1857)
+
+---
+
+### Reguläre Ausdrücke (RegEx)
+
+<br />
+
+https://de.wikipedia.org/wiki/Regulärer_Ausdruck
+
+<br />
+
+[Häufig verwendete Symbole und Syntax](https://ahkde.github.io/docs/misc/RegEx-QuickRef.htm#Common)
+
+<br />
+
+Zum Üben: **[regex101.com](https://regex101.com/)**
+
+--
+
+Copy & paste für Anwendungsbeispiel
+
+<br />
+
+```
+[2019-14-14 12:39] Sam: hallo
+[2019-14-14 15:34] Ben: klalaaalalaalala
+[2019-14-14 16:49] Sam: hallo.
+```
+
+--
+
+#### »How do I open space-delimited file in Microsoft Excel?«
+
+<br />
+
+[Lösung?](https://stackoverflow.com/questions/21759382/how-do-i-open-space-delimited-file-in-microsoft-excel/21759500)
+
+--
+
+#### Visualisierung der Abstände im Dendrogramm (1/2)
+
+![Dendrogram](images/stylo-dendrogram.png)<!-- .element height="400px;" -->
+
+»Die Zahlen in der horizontalen Leiste unten geben die Werte des jeweils ausgewählten Distanzmaßes an (hier Classic Delta Distance).« ([forTEXT](https://fortext.net/routinen/lerneinheiten/stilometrie-mit-stylo))
+<!-- .element: style="font-size:0.9em;" -->
+
+--
+
+#### Visualisierung der Abstände im Dendrogramm (2/2)
+
+![Dendrogram](images/stylo-dendrogram.png)<!-- .element height="200px;" -->
+
+Genauer: Diese Skala zeigt den gemessenen Abstand zwischen den Texten an. Die Werte auf der Skala entsprechen den ursprünglichen Einheiten, die zur Abstandsberechnung verwendet wurden. Wenn zum Beispiel eine klassische Manhattan-Distanz auf der Grundlage relativer Worthäufigkeiten berechnet wurde, zeigt die Einheit die durchschnittliche Differenz zwischen einem Textpaar an, ausgedrückt in relativen Häufigkeiten. Wenn z.&nbsp;B. zwei Texte vorliegen, in denen die Häufigkeit von »die« 0,04 und 0,01 (bzw. 4% und 1%) und die Häufigkeit von »von« 0,02 und 0,02 beträgt, dann ist der Gesamtabstand ((0,04 – 0,01) + (0,02 – 0,02) / 2) = (0,03 + 0) / 2 = 0,015. Da die Häufigkeiten in der Regel mit 100 multipliziert werden, um Prozentsätze zu erhalten, wäre die endgültige Punktzahl ebenfalls 0,015 * 100 = 1,5.
+<!-- .element: style="font-size:0.65em;" -->
+
+Classic Delta und Cosinus Delta (auch andere Deltas) basieren auf den Z-Scores und nicht auf Häufigkeiten. Folglich werden die Abstände und die Skalen in Dendrogrammen in Z-Scores und Differenzen zwischen Z-Scores ausgedrückt. Da eine »1« in Z-Scores »1 Standardabweichung« bedeutet, lässt sich dies auch auf die Skalen von Dendrogrammen übertragen. Eine Einheit bedeutet also »1 Standardabweichung« zwischen den zu vergleichenden Z-Scores. (Mit Dank an Maciej Eder!)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Standardabweichung
+
+<br />
+
+https://studyflix.de/statistik/standardabweichung-1042
+
+---
+
+## Gephi
+
+<br />
+
+- [2-Minuten-Video-Tutorial zur Installation](https://www.youtube.com/watch?v=ewvQ2iuCA5M)
+
+--
+
+#### Beispieldatei für die Arbeit mit Gephi:
+
+<br />
+
+= CSV-Datei aus dem entsprechenden Stylo-Ordner
+
+---
+
+## OBS Studio
+
+<br />
+
+https://obsproject.com/de
+
+---
+
+### Projekte
+
+<br />
+
+- …
+- …
+- …
+- …
+
+--
+
+### Bewertungskriterien:
+
+<br />
+
+1. Beschreibung eines sinnvollen Anwendungsfalls.
+2. Kenntnis der stilometrischen Methodik (mit Stylo).
+3. Visualisierungsanteil.
+4. Thematisierung des zugrundeliegenden Zahlenmaterials.
+5. Interpretation bzw. Einschätzung der Ergebnisse (auch bei negativen Ergebnissen bzw. Nichtbrauchbarkeit der Methode für den Anwendungsfall).
+6. Qualität der Präsentation/des Screencasts.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
