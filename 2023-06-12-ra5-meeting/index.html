@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>»Internationale Autor:innen zu Gast in der DDR« (RA5-Meeting, 12.06.2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <style>
+      :root {
+        --r-link-color: #013d7d;
+      }
+    </style>
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### **Internationale Autor\*innen zu Gast in der DDR** – <br />Die Einreisekartei des Schriftstellerverbandes <br />und ihre digitale Aufbereitung
+
+![intro pic](images/frame-guillen.png)<!-- .element height="200px;" -->
+
+Frank Fischer · Viktor Jonathan Illmer<br />Jutta Müller-Tamm · Lukas Nils Regeler<!-- .element: style="font-size:0.8em;" -->
+
+Freie Universität Berlin<!-- .element: style="font-size:0.6em;" -->
+
+<br />URL dieser Präsentation: **[bit.ly/dsv-ra5](https://bit.ly/dsv-ra5)**
+<!-- .element: style="font-size:0.6em;" -->
+
+EXC2020 &nbsp;·&nbsp; RA5-Meeting &nbsp;·&nbsp; FU Berlin &nbsp;·&nbsp; Mo, 12. Juni 2023, 16:00 Uhr
+<!-- .element: style="font-size:0.8em;" -->
+
+---
+
+## »Writing Berlin«
+
+![caption](images/berliner-weltliteraturen-cover.jpg)<!-- .element height="500px;" -->
+&nbsp;
+![caption](images/berlin-international-cover.jpg)<!-- .element height="500px;" -->
+
+<small>(Projekt des Exzellenzclusters EXC 2020 »Temporal Communities: Doing Literature in a Global Perspective«)</small>
+
+--
+
+## Akteure
+
+<br />
+
+| | |
+-:|:-
+| Akademie der Künste (West) | Akademie der Künste (Ost) |
+| P.E.N. West | P.E.N. Ost |
+| Wissenschaftskolleg | Club der Kulturschaffenden |
+| FU / TU Berlin | **Deutscher Schriftstellerverband** |
+| Literarisches Colloquium Berlin | Verlag Volk & Welt |
+| Deutscher Akademischer Austauschdienst | Ministerium für Kultur |
+| Berliner Senat | Kulturbund der SED |
+| | Liga für Völkerfreundschaft |
+
+--
+
+## Anlässe
+
+![pic](images/4d_NeueZeit_1964_05_27.jpg)<!-- .element height="220px;" -->
+![pic](images/4b_ND_1965_05_20.jpg)<!-- .element height="200px;" -->
+![pic](images/4e_BerlinerZeitung_1985_04_19.jpg)<!-- .element height="100px;" -->
+![pic](images/4c_ND_1987_05_08.jpg)<!-- .element height="160px;" -->
+![pic](images/4a_ND_1987_05_09.jpg)<!-- .element height="160px;" -->
+
+<small>Neue Zeit 1964, Neues Deutschland 1965, Berliner Zeitung 1985, Neues Deutschland 1987 (2×)</small>
+
+--
+
+## Autor\*innen
+
+![pic](images/nicolas_guillen_einreisekartei.webp)<!-- .element height="400px;" -->
+
+<small>Archiv des Schriftstellerverbands der DDR, Literaturarchiv der Akademie der Künste Berlin, Signatur SV 2848 <br />(© Archiv der Akademie der Künste, Veröffentlichung mit freundlicher Genehmigung)</small>
+
+--
+
+## Allgemeines Schema
+
+<br />
+
+<table>
+  <tr>
+    <td style="text-align:left; border:1px solid;">Name, ggf. Vorname</td>
+    <td style="text-align:left; border:1px solid;">Land</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align:center; border:1px solid;">[ggf. kurze biografische Information]</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; border:1px solid;">Datum</td>
+    <td style="text-align:left; border:1px solid;">Aufenthaltsgrund</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; border:1px solid;">Datum</td>
+    <td style="text-align:left; border:1px solid;">Aufenthaltsgrund</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; border:1px solid;">…</td>
+    <td style="text-align:left; border:1px solid;">…</td>
+  </tr>
+</table>
+
+--
+
+## Daten
+
+![OpenRefine](images/daten-openrefine.png)
+
+<small>Vereinheitlichung und Zusammenführung von Einträgen mit OpenRefine, Verknüpfung mit Normdatensätzen, Reconciling mit VIAF (90% der Einträge abgeglichen) und Wikidata (75%), Import weiterer Informationen aus Wikidata (Angaben zu Sprachen, Parteizugehörigkeit, Geschlecht; Identifier der GND und des WorldCat).</small>
+
+</script>
+        </section>
+        <section>
+          <section><h2>Web-App</h2></section>
+
+          <section>
+            <div class="r-stack r-stretch">
+              <img
+                class="fragment fade-out"
+                data-fragment-index="0"
+                alt="Scan: Karteikarte von Nicolás Guillén"
+                src="images/nicolas_guillen_einreisekartei.webp"
+                height="540"
+                style="
+                  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+                    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+                "
+              />
+              <img
+                class="fragment fade-in-then-out"
+                data-fragment-index="0"
+                alt="Bildschirmfoto der App: Personeneintrag zu Nicolás Guillén"
+                src="images/frame-guillen.png"
+                height="560"
+              />
+              <img
+                class="fragment"
+                alt="Bildschirmfoto der App: Aufenthalt von Nicolás Guillén im Januar 1956"
+                src="images/frame-stays.png"
+                height="560"
+              />
+            </div>
+            <p><a href="https://dsv-einreisekartei.temporal-communities.de/">dsv-einreisekartei.temporal-communities.de</p>
+          </section>
+
+          <section>
+            <h2>Frameworks</h2>
+            <br />
+            <ul>
+              <li><a href="https://kit.svelte.dev/">SvelteKit</a> mit TypeScript</li>
+              <ul>
+                <li>Web-Framework</li>
+                <li>
+                  nutzt <a href="https://svelte.dev/">Svelte</a> als clientseitiges
+                  Komponenten-Framework
+                </li>
+                <li>Svelte-Pendant zu Reacts Next.js</li>
+              </ul>
+              <li><a href="https://tailwindcss.com/">Tailwind CSS</a> als CSS-Framework</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Externe Daten</h2>
+            <br />
+            <ul>
+              <li>Verknüpfung mit Wikidata-ID</li>
+              <li>
+                Abrufen externer Daten mit
+                <a href="https://github.com/maxlath/wikibase-sdk"><code>wikibase-sdk</code></a>
+              </li>
+              <ul>
+                <li>mit TypeScript-Types seit Februar 2023</li>
+              </ul>
+            </ul>
+          </section>
+
+          <section>
+            <div class="r-stack">
+              <div class="fragment fade-out" data-fragment-index="0">
+                <h3>DSV-Daten</h3>
+                <br />
+                <pre><code data-trim data-noescape class="language-js" style="white-space: pre-wrap;">
+                {
+                  id: '9da20d80-2cbc-41d0-80cc-aba0a18150c3',
+                  name: 'Nicolás Guillén',
+                  countryOfOrigin: { id: '6b6ba4e7-1738-4b6a-ba61-a4111929c8dd', }
+                  identifiers: {
+                    viaf: '29534974',
+                    gnd: '118543504',
+                    worldcatIdentities: 'lccn-n50018817',
+                    wikidata: 'Q334118'
+                  },
+                }
+              </code></pre>
+              </div>
+
+              <div class="fragment" data-fragment-index="0">
+                <h3>Wikidata</h3>
+                <br />
+                <div class="r-stack">
+                  <div class="fragment fade-out" data-fragment-index="1">
+                    <pre><code data-trim data-noescape class="language-js" style="white-space: pre-wrap;">
+                {
+                  id: "Q334118",
+                  type: "item",
+                  labels: {
+                    en: "Nicolás Guillén",
+                    de: "Nicolás Guillén",
+                  },
+                  descriptions: {
+                    de: "kubanischer Dichter und Schriftsteller",
+                    en: "Cuban poet, journalist, political activist, and writer",
+                  },
+                  claims: {
+                    P27: ["wikidata:Q241"],
+                    P1412: ["wikidata:Q1321"],
+                    P569: ["1902-07-10"],
+                    P19: ["wikidata:Q115329"],
+                    P570: ["1989-07-16"],
+                    P20: ["wikidata:Q1563"],
+                    P18: ["NicolásGuillén-1942.jpg"],
+                    P21: ["wikidata:Q6581097"],
+                    // ...
+                  },
+                }
+                    </code></pre>
+                    <br />
+                    <small>Vereinfachte Daten aus <code>wikibase-sdk</code></small>
+                  </div>
+                  <div class="fragment" data-fragment-index="1">
+                    <pre><code data-trim data-noescape class="language-js" style="white-space: pre-wrap;">
+                    {
+                      id: 'wikidata:Q334118',
+                      labels: { en: 'Nicolás Guillén', de: 'Nicolás Guillén' },
+                      descriptions: {
+                        de: 'kubanischer Dichter und Schriftsteller',
+                        en: 'Cuban poet, journalist, political activist, and writer'
+                      },
+                      countryOfOrigin: [{ id: '6b6ba4e7-1738-4b6a-ba61-a4111929c8dd', }],
+                      languagesSpoken: [{ id: 'wikidata:Q1321', }],
+                      birthDate: [ '1902-07-10' ],
+                      placeOfBirth: [{ id: 'wikidata:Q115329', }],
+                      deathDate: [ '1989-07-16' ],
+                      placeOfDeath: [{ id: 'wikidata:Q1563', }],
+                      image: [ 'NicolásGuillén-1942.jpg' ],
+                      gender: [{ id: 'wikidata:Q6581097', }]
+                    }
+                    </code></pre>
+                    <br />
+                    <small>Angleichung an unser Schema</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Datumsangaben</h2>
+            <br />
+            <ul>
+              <li>Angaben unvollständig</li>
+              <li>Ungewissheit nicht als geordnete Präzision ausdrückbar</li>
+              <li>
+                <a href="https://www.loc.gov/standards/datetime/"
+                  >Extended Date/Time Format (EDTF)</a
+                >
+              </li>
+              <ul>
+                <li>
+                  Erweiterung zu bewährtem ISO-8601-Format (z.&thinsp;B. <code>2023-03-15</code>)
+                </li>
+                <li><em>unspecified Digits</em></li>
+              </ul>
+            </ul>
+          </section>
+
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>EDTF</th>
+                  <th>Darstellung</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- ID: ff163d99-a244-4522-8c83-ebe879abd31b -->
+                  <td><code>1979-12-19</code></td>
+                  <td>19. Dezember 1979</td>
+                </tr>
+                <tr class="fragment">
+                  <!-- ID: de27882c-904c-4e19-be06-ee199132d8c2 -->
+                  <td><code>1972-01-XX</code></td>
+                  <td>im Januar 1972</td>
+                </tr>
+                <tr class="fragment">
+                  <!-- ID: a859cf02-7c32-4017-80ab-27ead9df33a1 -->
+                  <td><code>XXXX-09-24</code></td>
+                  <td>24. September, Jahr unbekannt</td>
+                </tr>
+                <tr class="fragment">
+                  <!-- ID: e275616e-f592-48b5-ab0d-e5a994fa527f -->
+                  <td><code>XXXX-07-XX</code></td>
+                  <td>im Juli, Jahr unbekannt</td>
+                </tr>
+                <tr class="fragment">
+                  <!-- ID: 187f7934-9bd6-4c0c-b933-f7520580b65d -->
+                  <td><code>XXXX-XX-XX</code></td>
+                  <td>unbekannt</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section>
+            <h2>EDTF: Anmerkungen</h2>
+            <br />
+            <ul>
+              <li>wenige Implementierungen</li>
+              <ul>
+                <li>
+                  <a href="https://www.loc.gov/standards/datetime/implementations.html"
+                    >Übersicht der LOC</a
+                  >
+                </li>
+              </ul>
+              <li>menschenlesbare Ausgabe eigens implementiert</li>
+              <li>Spezifikation sehr umfangreich</li>
+            </ul>
+          </section>
+        </section>
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+## Statistische Narrative
+
+--
+
+### R-Skript (Datenbezug über den JSON-Endpunkt)
+
+<br />
+
+```R
+library(tidyverse)
+library(jsonlite)
+
+df_stays <- read_file("stays.json") %>%
+  fromJSON(simplifyDataFrame = TRUE, flatten = TRUE) %>%
+  # Separate EDTF date components
+  separate(
+    startTime,
+    c("startTime_year", "startTime_month", "startTime_day"),
+    sep = "-"
+  ) %>%
+  mutate(
+    startTime_year = na_if(startTime_year, "XXXX"),
+    startTime_month = na_if(startTime_month, "XX"),
+    startTime_day = na_if(startTime_day, "XX")
+  )
+
+# Group by year and socialist/non-socialist countries
+sig_nonsocialist <- "SV 2848" # Signature of non-socialist entries
+df_stays_by_year <- df_stays %>%
+  select(id, startTime_year, signatureInAdKArchive) %>%
+  mutate(socialist = signatureInAdKArchive != sig_nonsocialist) %>%
+  group_by(startTime_year, socialist) %>%
+  summarise(
+    n = n(),
+  )
+```
+
+<br />
+
+<small>Einlesen der Aufenthalte inkl. Umwandlung des EDTF-Startdatums und Erstellen <br />einer gruppierten Tabelle nach Jahr und sozialistisch/nichtsozialistisch.</small>
+
+--
+
+![caption](images/einladungsfrequenz.png)<!-- .element height="450px;" -->
+
+<small>Einladungsfrequenz von Autor\*innen nach Staatsform.</small>
+
+--
+
+![caption](images/aufenthalte-farbe.png)<!-- .element height="450px;" -->
+
+<small>Dieselben Daten als gestapeltes Säulendiagramm.</small>
+
+---
+
+## Ausblick
+
+<br />
+
+- Pendantprojekte:
+  - Gästeverzeichnis des LCB und DAAD (West-Berlin)
+  - Ausreisekartei des DSV
+- Kooperation mit angrenzenden Projekten wie der Forschungsplattform »Literarisches Feld DDR« (https://ddr-literatur.de/)
+- Abgleich mit den [»Bibliographischen Annalen«](https://www.bbaw.de/forschung/bibliographische-annalen) (BBAW): von 2.430 Autor\*innen wurden 534 in der DDR übersetzt
+
+--
+
+## Rechtefragen
+
+<br />
+
+<blockquote>»Today’s digital-minded literary scholar is shackled in time; we are all, or are all soon to become, nineteenth century-ists.« (Jockers, »Macroanalysis«, 2013, S. 173)</blockquote>
+
+--
+
+<small>DHd2023-Paper: <br />doi:[10.5281/zenodo.7715311](https://doi.org/10.5281/zenodo.7715311)</small>
+
+<br />
+
+### Vielen Dank.
+
+<br />
+
+![TC logo](images/logo-exc-doing-literature.png)<!-- .element width="350px"; style="box-shadow:none;"; -->
+
+<small>https://www.temporal-communities.de/</small>
+
+<br />
+
+<small style="text-align:left;">**Fördernachweis:** <br />Gefördert durch die Deutsche Forschungsgemeinschaft (DFG) im Rahmen der Exzellenzstrategie des Bundes und der Länder innerhalb des Exzellenzclusters *Temporal Communities: Doing Literature in a Global Perspective* – EXC 2020 – Projekt-ID 390608380.</small>
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
