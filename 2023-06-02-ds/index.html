@@ -154,7 +154,6 @@ Beispieltext: <br />https://www.projekt-gutenberg.org/buechner/lenz/lenz.html
 2. Was ist eigentlich Stilometrie?
 3. Stilometrie, Stand der Technik
 4. Jenseits von Autor\*innenschaft
-5. Stylo-Paket
 
 --
 
@@ -658,13 +657,13 @@ Eder/Rybicki: [Go Set A Watchman while we Kill the Mockingbird in Cold Blood, wi
 
 --
 
-### Zeitliche Entwicklung: Tolstoy
+### Zeitliche Entwicklung: Tolstoi
 
 ![caption](images/tolstoy-novels-stylo.png)<!-- .element height="500px;" -->
 
 --
 
-### Zeitliche Entwicklung: 1000 Novels
+### Zeitliche Entwicklung: 1000 Romane
 
 ![caption](images/1000-novels.png)<!-- .element height="500px;" -->
 
@@ -718,105 +717,6 @@ Michael Brennan, Rachel Greenstadt: Deceiving Authorship Detection (2011)
 --
 
 # →
-
----
-
-## 5. Stylo-Paket
-
---
-
-### Stylo
-
-<br />
-
-- Paket für Stilometrie, geschrieben für R
-- eingebaute Delta-Funktion
-- viele andere Metriken
-- grafisches User\*innen-Interface (GUI)
-
---
-
-### Stylo
-
-<br />
-
-- Beschreibung auf der [Website der Entwickler](https://github.com/computationalstylistics/stylo)
-- M. Eder, M. Kestemont, J. Rybicki: [Stylometry with R: A Package for Computational Text Analysis](https://journal.r-project.org/archive/2016-1/eder-rybicki-kestemont.pdf) (2016)
-
---
-
-### Delta-Funktion
-
-<br />
-
-- »Burrows’ Delta«: am häufigsten angewendeter Algorithmus in der computergestützten Stilometrie
-- statt semantischer Inhaltswörter werden vor allem Funktionswörter betrachtet (die häufigsten Wörter)
-- diese most frequent words (MFW) werden von Autor\*innen kaum bewusst manipuliert
-- Burrows’ Delta verstehen: https://zfdg.de/2017_006#hd2
-
---
-
-### Stylo: Hauptfunktionen
-
-<br />
-
-- stylo()
-- classify()
-- rolling.delta(), rolling.classify()
-- oppose()
-
---
-
-### stylo()
-
-<br />
-
-- Berechnung und Visualisierung stilistischer Nähe
-- verschiedene Arten des Clusterns (Gruppierens) von Texten nach Nähekriterien
-- Darstellung des mehrdimensionalen »stilistischen Raums« von Texten auf einer 2D-Ebene
-- Listen der am häufigsten verwendeten Wörter, Häufigkeitstabellen usw.
-
---
-
-### classify()
-
-<br />
-
-- Textklassifizierung anhand stilometrischer Merkmale
-- Werkzeug für die tatsächliche Autorschaftszuordnung
-- verwendet Standard-Algorithmen für maschinelles Lernen
-- benötigt zwei Mengen von Dokumenten
-  - training (primary_set)
-  - test (secondary_set)
-
---
-
-### rolling.delta()
-
-<br />
-
-- bildet dynamische Änderungen in einem Text ab
-- variable Größe des Textfensters
-
---
-
-### oppose()
-
-<br />
-
-- kontrastive Analyse, Beispiel: [Typische Adjektive und Substantive in Bundestagswahlprogrammen 2021](https://doi.org/10.5281/zenodo.5517045)
-- bevorzugte/vermiedene Wörter
-- vergleichende Studien (z. B. männliche vs. weibliche Stimmen)
-- Kurzvorstellung in [dieser Präsentation](https://computationalstylistics.github.io/stylo_nutshell/#main-functions-oppose) (Folien 7 und 26–28)
-
---
-
-### oppose()
-
-<br />
-
-- basiert auf Burrows’ Zeta (2007):
-  - »Texte werden in kleinere Segmente gesplittet, wobei die Segmentlänge ein wichtiger Parameter ist. Dann wird für jedes Merkmal der Anteil der Segmente erhoben, in denen das Merkmal mindestens einmal vorkommt. Von diesem Anteil in der untersuchten Gruppe wird der entsprechende Anteil in der Vergleichsgruppe subtrahiert, woraus sich ein Zeta-Wert zwischen –1 und 1 ergibt« ([uni-wuerzburg.de](https://www.informatik.uni-wuerzburg.de/datascience/projects/concluded-projects/cligs/?tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=DHd2018_pyzeta.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=03d6baf7b43a7c8d4c2815c1f04c60d0&tx_extbibsonomycsl_publicationlist%5BuserName%5D=dmir&cHash=93fb54cc785fbfc0587eed24b123abbb))
 
 ---
 
