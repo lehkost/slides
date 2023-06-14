@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 15. Juni 2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+<small>Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/793088))</small>
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(20. April 2023 – 20. Juli 2023)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+8. Vorlesung (15. Juni 2023):<!-- .element: style="font-size:0.65em;" -->
+
+#### **Geografische Informationssysteme (GIS)**<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[bit.ly/dhe156](https://bit.ly/dhe156)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+# →
+
+---
+
+### Semesterüberblick (1/2)
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| 20.04.2023 | Thematische Rundumschau I |
+| 27.04.2023 | Thematische Rundumschau II |
+| 04.05.2023 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 11.05.2023 | Distant Reading I: Stilometrie |
+| 25.05.2023 | Distant Reading II: Topic Modeling |
+| 01.06.2023 | Visual Analytics: »Beautiful Evidence« |
+| 08.06.2023 | Netzwerkanalyse |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Semesterüberblick (2/2)
+
+<br />
+
+| Date | Topic |
+|:-|:-|
+| **15.06.2023** | **Geografische Informationssysteme (GIS)** |
+| 22.06.2023 | Wikipedia & Wikidata |
+| 29.06.2023 | KI &amp; Maschinelles Lernen |
+| 06.07.2023 | Infrastrukturen für die Digitalen Geisteswissenschaften, GLAM! |
+| <s>13.07.2023</s> | (Entfällt wegen [DH2023](https://dh2023.adho.org/)) |
+| 20.07.2023 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im SoSe 2023
+
+<br />
+
+* [Seminar »Methoden der Dramenanalyse: analog und digital«](https://www.fu-berlin.de/vv/de/lv/793092)
+  * <!-- .element: style="font-size:0.7em;" -->Do 14:00–16:00 c.t. (in Präsenz)
+* [Blockseminar »Literaturwissenschaftliche Netzwerkanalyse«](https://www.fu-berlin.de/vv/de/lv/793107)
+  * <!-- .element: style="font-size:0.7em;" --><s>Fr 05.05.2023 12:00–14:00 c.t. (in Präsenz)</s>
+  * <!-- .element: style="font-size:0.7em;" --><s>Fr 12.05.2023 12:00–18:00 s.t. (in Präsenz)</s>
+  * <!-- .element: style="font-size:0.7em;" --><s>Sa 13.05.2023 10:00–18:00 s.t. (in Präsenz)</s>
+* [Blockseminar »Digitale Stilometrie«](https://www.fu-berlin.de/vv/de/lv/793213)
+  * <!-- .element: style="font-size:0.7em;" --><s>Fr 02.06.2023 12:00–14:00 c.t. (in Präsenz)</s>
+  * <!-- .element: style="font-size:0.7em;" --><s>Fr 09.06.2023 12:00–18:00 s.t. (in Präsenz)</s>
+  * <!-- .element: style="font-size:0.7em;" --><s>Sa 10.06.2023 10:00–18:00 s.t. (in Präsenz)</s>
+* [Seminar »Webscraping mit Python für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/793221)
+  * <!-- .element: style="font-size:0.7em;" -->Do 16:00–18:00 c.t. (in Präsenz, geleitet von Lisa Poggel &#60;l.poggel@fu-berlin.de&#62;)
+* [Seminar »Einführung in R: Programmieren für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/793218)
+  * <!-- .element: style="font-size:0.7em;" -->Di 12:00–14:00 c.t. (in Präsenz, geleitet von Lisa Poggel)
+* [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/793109)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 16:00–18:00 c.t. (ab 24.04.2023, zweiwöchentlich)
+  * <!-- .element: style="font-size:0.7em;" -->Übersicht über alle 7 Veranstaltungen: <a href="https://wikis.fu-berlin.de/display/phaenodh">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+---
+
+Recap aus der Einführungsvorlesung vom 27. April 2023:
+
+<br />
+
+[›GIS (Geografische Informationssysteme)‹](../2023-04-27-einf-dh/#/5)
+
+--
+
+### Literatur
+
+<br />
+
+* Armin Volkmann: **Geographische Informationssysteme.** In: Fotis Jannidis, Hubertus Kohle, Malte Rehbein (Hg.): Digital Humanities: Eine Einführung. Stuttgart: Metzler 2017, S. 299–314. ([doi:10.1007/978-3-476-05446-3_21](https://doi.org/10.1007/978-3-476-05446-3_21))
+
+---
+
+### Der *spatial turn* (= die topologische Wende)
+
+<br />
+
+- neue Wahrnehmung des (geografischen) Raums als kulturelle Größe
+- Spatial Humanities: Nutzung von GIS zur Erfassung und Analyse räumlicher Daten
+
+--
+
+### Was ist Geografie?
+
+--
+
+### Physische Geografie (1/2)
+
+![image](images/features2a.jpg)<!-- .element height="349px;" -->
+
+<small>(Bildquelle: [YISS Geography Bee](https://web.archive.org/web/20180723004040/https://yissgeobee.wikispaces.com/Physical+Geography))</small>
+
+--
+
+### Physische Geografie (2/2)
+
+<br />
+
+Naturwissenschaftlich ausgerichtet, Geografie als exakte Wissenschaft.
+
+<br />
+
+Studium der Erde als Gestalt, als Landschaft, hinsichtlich des Klimas usw.
+
+--
+
+### Humangeografie (1/2)
+
+![image](images/world-maps-informational-7.jpg)
+
+<small>Bildquelle: [jamesborrell.com](http://www.jamesborrell.com/maps-world-conservation-perspective/)</small>
+
+--
+
+### Humangeografie (2/2)
+
+<br />
+
+Gesellschaftswissenschaftlich ausgerichtet.
+
+<br />
+
+Beschäftigung mit Kulturen, Gesellschaften, Ökonomien und damit, wie *Raum* diese verschiedenen Aspekte menschlicher Gesellschaft beeinflusst.
+
+--
+
+### Geografie ≠ Kartografie
+
+--
+
+### Kartografie:
+
+<br />
+
+* räumliches Verständnis
+* die Kunst der Herstellung von Karten
+* WYSIWYG
+
+--
+
+### Geografie:
+
+<br />
+
+* Studium des Raums
+* nicht notwendigerweise WYSIWYG
+
+---
+
+### Projektionen
+
+<br />
+
+Transformation von Breiten- und Längengraden auf eine Karte auf Grundlage eines Koordinatensystems.
+
+<br />
+
+⚠️ Alle Projektionen sind Verzerrungen unterworfen.
+
+--
+
+### Mercator-Projektion
+
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Mercator_projection_SW.jpg/1024px-Mercator_projection_SW.jpg)<!-- .element height="500px;" -->
+
+<small>Dehnt die Karte so, dass längere Entfernungen am Äquator kürzer dargestellt werden. <br />Die Pole sind unendlich groß.</small>
+
+--
+
+### Zum Beispiel:
+
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Australia-Greenland_size_comparison.svg/220px-Australia-Greenland_size_comparison.svg.png)<!-- .element height="300px;" -->
+
+(Bilder via [Wikipedia](https://en.wikipedia.org/wiki/Mercator_projection))
+
+--
+
+### Andere Projektionen
+
+--
+
+### Dymaxion-Projektion (Fuller-Projektion)
+
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dymaxion_projection.png/1920px-Dymaxion_projection.png)<!-- .element height="400px;" -->
+
+Die flache Karte ist stark unterbrochen, um Formen und Größen zu erhalten. <br />Bild via [Wikipedia](https://en.wikipedia.org/wiki/Dymaxion_map).
+
+--
+
+### Lee-konforme Welt in einem Tetraeder
+
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Lee_Conformal_World_in_a_Tetrahedron_projection.png/1024px-Lee_Conformal_World_in_a_Tetrahedron_projection.png)<!-- .element height="400px;" -->
+
+Via [Wikipedia](https://en.wikipedia.org/wiki/Lee_conformal_world_in_a_tetrahedron).
+
+--
+
+Vgl. Wikipedia: [Liste von Kartennetzentwürfen](https://de.wikipedia.org/wiki/Liste_von_Kartennetzentw%C3%BCrfen).
+
+--
+
+### Geografie ohne Karten denken
+
+--
+
+### Befreiungsdenkmal (Wien, Schwarzenbergplatz)
+
+![image](images/wien-schwarzenbergplatz.jpg)<!-- .element height="480px;" -->
+
+<small>Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Schwarzenbergplatz_Heldendenkmal.jpg) (Mai 2015)</small>
+
+--
+
+### Kulturelle Geografie:
+
+<br />
+
+Ist dieser Raum sowjetisch/russisch? Ist er österreichisch? <br />Die Antwort darauf erfordert keine Karte.
+
+---
+
+### Was ist ein GIS?
+
+<br />
+
+»Ein GIS [Geographisches Informationssystem] ermöglicht die Visualisierung, Analyse und Archivierung von raumbezogenen Daten und darüber hinaus auch von weiteren Kontexten, z.&nbsp;B. Texte oder Bilder.« (Volkmann, S. 299)
+
+--
+
+### Kann sich GIS von Kartografie unterscheiden? *Ja!*
+
+<br />
+
+Für eine ausführliche Erklärung siehe [»Spatial Unmapped«](https://www.gislounge.com/spatial-unmapped/).
+
+--
+
+### Beispiel: Quantifizierung von Nähe
+
+![image](https://imgs.xkcd.com/comics/movie_narrative_charts.png)
+
+<small>Quelle: [xkcd](https://xkcd.com/657/)</small>
+
+--
+
+### Beispiel: Quantifizierung von Lebensräumen
+
+<br />
+
+[radicalcartography.net](http://www.radicalcartography.net/index.html?histpop)
+
+--
+
+### Müssen GIS-Karten die Erde beschreiben? *Nein!*
+
+---
+
+### Wie sieht ein GIS aus?
+
+--
+
+### Grundlage: Eine Tabelle mit einigen Geodaten
+
+<br />
+
+date,**y,x**,flight,degree,r,g,b<br />
+1948-05-01 08:55,**49.806406,73.085485**,Flight 440: Karaganda-Kostanay,-70.1747994417,170,0,0
+
+--
+
+### Wird zu:
+
+<br />
+
+<iframe src="https://player.vimeo.com/video/145366151" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+--
+
+### Erläuterungen:
+
+<br />
+
+x,y = longitude and latitude
+
+--
+
+date = Zeitstempel (ermöglicht dynamische Darstellung)
+
+--
+
+degree = Richtung eines Fluges
+
+--
+
+### Leistung eines GIS:
+
+<br />
+
+Geodaten werden mit anderen Informationen verbunden.
+
+---
+
+### Arten elektronischer Karten
+
+--
+
+Raster (nur Pixel):
+
+![image](images/memhardt-plan.jpg)<!-- .element height="440px;" -->
+
+Karte von Berlin und Cölln (Memhardt-Plan), 1652
+
+<small>(Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Memhardt_Grundri%C3%9F_der_Beyden_Churf._Residentz_St%C3%A4tte_Berlin_und_C%C3%B6lln_1652_(1888).jpg))</small>
+
+--
+
+### Vektor:
+
+### Digital erzeugte Karten
+
+--
+
+### Punkte
+
+![image](http://st2.depositphotos.com/2723391/5209/v/950/depositphotos_52096437-stock-illustration-world-map-with-points.jpg)<!-- .element height="500px;" -->
+
+<small>Quelle: [depositphotos](https://de.depositphotos.com/52096437/stock-illustration-world-map-with-points.html)</small>
+
+--
+
+### Was kann man mit Punkten darstellen?
+
+--
+
+### Linien
+
+![image](https://upload.wikimedia.org/wikipedia/commons/9/9b/U-Bahn_Berlin_-_Netzplan.svg)<!-- .element height="500px;" -->
+
+<small>Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:U-Bahn_Berlin_-_Netzplan.svg)</small>
+
+--
+
+### Was kann man mit Linien darstellen?
+
+--
+
+### Polygone
+
+![image](https://gvlt.files.wordpress.com/2008/05/picture-11.png)<!-- .element height="500px;" -->
+
+<small>Quelle: [gvlt.wordpress.com](https://gvlt.wordpress.com/2008/05/17/tutorial-thematic-mapping-with-the-google-maps-flash-api/)</small>
+
+--
+
+### Kombinierte Raster-/Vektorkarten
+
+--
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4220.073047706826!2d13.29128275193361!3d52.45432774874649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85aed0dca1045%3A0x8bcc7df1129995aa!2sFreie%20Universit%C3%A4t%20Berlin!5e1!3m2!1sde!2sru!4v1641991412970!5m2!1sde!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+--
+
+### Slippy Map
+
+<br />
+
+- verschieb- und zoombare Karte auf einer Website
+
+--
+
+### Choroplethenkarte
+
+<br />
+
+- thematische Karte, bei der die Gebiete im Verhältnis zur Verteilungsdichte des thematischen Objektes eingefärbt sind
+- Beispiel: Corona-Inzidenzen pro Bundesland oder Landkreis
+
+--
+
+### Heat Map
+
+<br />
+
+- Einfärbung einer Karte entsprechend eine Skala (Zahlenstrahl als Legende)
+- schneller, intuitiver Überblick und Verdeutlichung besonders markanter Werte
+- Unterschied zu Choroplethenkarten, deren Formen durch geografische Standardgrenzen definiert werden
+
+---
+
+### Formate für GIS
+
+--
+
+### Shapefile
+
+<br />
+
+Ein proprietäres, aber relativ offenes Geoformat, das von der Firma ESRI (ArcGIS) entwickelt wurde. Das am häufigsten verwendete Format in anspruchsvolleren GIS.
+
+--
+
+### Keyhole Markup Language (KML)
+
+<br />
+
+Open-Source-Sprache, die für die Verwendung in Google Earth entwickelt wurde. Der Vorteil ist die Einbeziehung von Höhendaten.
+
+--
+
+### GeoJSON
+
+<br />
+
+Beliebte Open-Source-Sprache. Wird sehr häufig im Internet verwendet.
+
+--
+### TopoJSON
+
+<br />
+
+Leichtgewichtige Alternative zu GeoJSON.
+
+![image](https://upload.wikimedia.org/wikipedia/commons/1/18/Topojson_shapes-en.svg)
+
+---
+
+### Werkzeuge für GIS
+
+--
+
+## ArcGIS von ESRI
+
+### [arcgis.com](https://www.arcgis.com/)
+
+<br />
+
+Vorteile:
+- sehr mächtig
+- Open-Source-Karten kostenlos online stellen
+- einfache Benutzbarkeit
+
+<br />
+
+Nachteile:
+- kommerzielle Version ist teuer
+- kostenlose Version hat eingeschränkte Funktionen
+- nicht flexibel
+
+--
+
+## StoryMaps von ESRI
+
+### [storymaps.arcgis.com](https://storymaps.arcgis.com/)<br /><br />
+
+Plattform zur Erstellung von Online-GIS-Präsentationen.
+
+Siehe z. B. zur weltweiten Batterieproduktion: http://arcg.is/2n7sdJL
+
+--
+
+## QGIS
+
+### [qgis.org](https://qgis.org/)
+
+<br />
+
+Vorteile:
+- leistungsstark und voll funktionsfähig
+- Open Source mit aktiver Community
+- kostenlos
+
+<br />
+
+Nachteile:
+- nicht online bzw. nicht ohne Aufwand
+- schwierig zu erlernen
+
+--
+
+### Google
+
+<br />
+
+* Earth (2001–)
+* Maps (2005–)
+* Fusion Tables (2009–2019)
+
+<br />
+
+Im Allgemeinen benötigt man Zugang zur API.
+
+--
+
+### GoogleEarth
+
+<br />
+
+Vorteile:
+- dreidimensionale Daten
+- gute Satellitenbilder
+- kostenlos
+
+<br />
+
+Nachteile:
+- bevorzugt die Keyhole Markup Language
+- nicht so viele Funktionen
+- sehr viele Daten
+- nicht flexibel
+
+--
+
+### GoogleMaps
+
+<br />
+
+Vorteile:
+- nützliche Adressdaten
+- einfach zu teilen, besonders auf dem Handy
+- einfach zu bedienen
+
+<br />
+
+Nachteile:
+- nicht flexibel
+
+--
+
+### Fusion Tables
+
+<br />
+
+Vorteile:
+- leicht zu benutzen
+- eigenständige Geocodierung
+- großartig für Heat Maps
+
+<br />
+
+Nachteile:
+- 2019 eingestellt
+
+--
+
+### [GeoJSON.io](http://geojson.io)
+
+<br />
+
+Vorteile:
+- einfaches Erstellen und Speichern von Vektorkarten
+
+<br />
+
+Nachteile:
+- das ist auch schon alles
+
+--
+
+### Andere Werkzeuge<br />
+
+<br />
+
+CARTO (früher CartoDB): [carto.com](https://carto.com)
+
+Mapbox: [mapbox.com](https://mapbox.com)
+
+---
+
+## GIS für die Geisteswissenschaften
+
+<br />
+
+### Warum?
+
+--
+
+### Geschichten visualisieren
+
+<br />
+
+<small>[From Voices of Silence: The Funeral of Alexander Blok](http://petersburg.berkeley.edu/victoria/vic_1_1a_new.html)</small>
+
+--
+
+### Daten präsentieren und entdecken
+
+<br />
+
+http://internet-content-regulation.uni-goettingen.de/#map=1,0&yr=2004
+
+--
+
+### Entwicklungen visualisieren
+
+<br />
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XpXPN3PS1oE" frameborder="0" allowfullscreen/>
+
+--
+
+### Weitere Beispiele:
+
+<br />
+
+- [DARIAH-DE Geo-Browser](https://geobrowser.de.dariah.eu/)
+- [Handlungsorte](https://einakter.dracor.org/) (Datenbank deutschsprachiger Einakter 1740–1850)
+
+---
+
+### Abschließende Überlegungen
+
+<br />
+
+- GIS ist oft eher Hilfsmittel als zentrales Werkzeug
+- am wichtigsten ist es vor dem Einsatz, den konkreten Zweck zu klären
+- Wer ist die Zielgruppe?
+- Wird mein Werkzeug auch für andere nützlich sein?
+- Wie viele Daten?
+- Wie viel Arbeit wäre nötig für die perfekte Lösung?
+- Meist besser, die beste verfügbare Option zu verwenden.
+
+--
+
+Bis nächste Woche.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
