@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Methoden der Dramenanalyse: analog und digital (Einführung in Stylo, 16. Juni 2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+#### Seminar <br />»Methoden der Dramenanalyse: <br />analog und digital«
+
+<br />
+
+### Einführung in die Stilometrie mit Stylo
+
+(Sommersemester 2023 · Universität Potsdam · Freie Universität Berlin)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Peer Trilcke (UP)¹ <br />Prof. Dr. Frank Fischer (FU)²<!-- .element: style="font-size:0.65em;" -->
+
+¹ trilcke&#64;uni-potsdam.de<br />
+² fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+Diese Präsentation: <br />**[bit.ly/dram166](https://bit.ly/dram166)**
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+Stilometrie gehört zu den Praktiken <br />des Distant Reading (»Fernlesen«).
+
+
+--
+
+### Word Clouds
+
+![Word-Cloud-Beispiel](images/voyant-emilia-galotti.png)<!-- .element width="500px;" -->
+
+- Beispiel: Wortwolke zu Lessings »Emilia Galotti« (generiert mit Voyant Tools)
+- ⚠️ [Stoppwörter](https://de.wikipedia.org/wiki/Stoppwort) einschalten!
+
+--
+
+### Voyant Tools
+
+<br />
+
+https://voyant-tools.org/
+
+<br />
+
+Beispieltext: <br />https://dracor.org/api/corpora/ger/play/lessing-emilia-galotti/spoken-text
+
+---
+
+## Kapitel
+
+<br />
+
+1. Fallbeispiel: Harper Lee
+2. Was ist eigentlich Stilometrie?
+3. Kleine Geschichte der Stilometrie
+4. Delta-Methode
+5. Jenseits von Autor\*innenschaft
+6. Stylo
+
+--
+
+### Literatur (Auswahl)
+
+<br />
+
+* Christof Schöch: Stilometrie mit Burrows’ Delta. In: Fotis Jannidis, Hubertus Kohle, Malte Rehbein (Hg.): Digital Humanities. Eine Einführung. Stuttgart: Metzler 2017, S. 292–296. ([doi:10.1007/978-3-476-05446-3_20](https://doi.org/10.1007/978-3-476-05446-3_20))
+* Massimo Salgaro: Stylistics, Stylometry and Sentiment Analysis in German Studies. The Operationalization of Literary Values. Göttingen: V&amp;R unipress 2023. ([doi:10.14220/9783737015707](https://doi.org/10.14220/9783737015707))
+* Christof Schöch: [Stylometry Bibliography](https://www.zotero.org/groups/643516/stylometry_bibliography/library) (Zotero, derzeit 3.510 Einträge)
+
+--
+
+![Salgaro, Buchcover](images/salgaro-fingerprint-cover.webp)
+
+---
+
+## 1. Fallbeispiel: Harper Lee
+
+--
+
+### »To Kill a Mockingbird« (1960)
+
+(dt. »Wer die Nachtigall stört«)
+
+![caption](images/photo_portrait_of_harper_lee_1960.jpg)<!-- .element height="460px;" -->
+![caption](images/to_kill_a_mockingbird_first_edition_cover.jpg)<!-- .element height="460px;" -->
+
+<small>Bildquelle links: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Photo_portrait_of_Harper_Lee_(To_Kill_a_Mockingbird_dust_jacket,_1960).jpg), rechts: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:To_Kill_a_Mockingbird_(first_edition_cover).jpg).</small>
+
+--
+
+#### 2015 brach ein Streit aus über dieses Buch <br />(dt. »Gehe hin, stelle einen Wächter«):
+
+![caption](images/go_set_a_watchman.jpg)<!-- .element height="500px;" -->
+
+<small>Bildquelle: [HarperCollins](https://www.harpercollins.com/products/go-set-a-watchman-harper-lee).</small>
+
+--
+
+### Startpunkt: zwei Bücher
+
+![caption](images/to_kill_a_mockingbird_first_edition_cover.jpg)<!-- .element height="500px;" -->
+![caption](images/go_set_a_watchman.jpg)<!-- .element height="500px;" -->
+
+<small>Bildquelle links: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:To_Kill_a_Mockingbird_(first_edition_cover).jpg), rechts: [HarperCollins](https://www.harpercollins.com/products/go-set-a-watchman-harper-lee).</small>
+
+--
+
+### Stilometrie als Nachweismittel
+
+![caption](images/wall_street_journal.png)<!-- .element height="480px;" -->
+
+<small>Quelle: https://www.wsj.com/articles/data-miners-dig-into-go-set-a-watchman-1437096631</small>
+
+--
+
+#### Harper Lee und ausgewählte Autor\*innen aus dem amerikanischen Süden
+
+![caption](images/harper_lee_and_others_consensus.png)<!-- .element height="500px;" -->
+
+<small>Quelle: Eder/Rybicki: [Go Set A Watchman while we Kill the Mockingbird in Cold Blood, with Cats and Other People](https://dh2016.adho.org/abstracts/70) (2016)</small>
+
+---
+
+## 2. Was ist eigentlich Stilometrie?
+
+--
+
+### Stylometry is …
+
+<br />
+
+… »the analytic study of literary **styles**, especially as applied to questions of **authorship**«
+
+<br />
+
+Quelle: https://www.dictionary.com/browse/stylometry
+
+--
+
+### »The Main Assumption of …
+
+<br />
+
+… underlying stylometric studies is that authors have an unconscious as well as a conscious aspect to their style«
+
+<br />
+
+Quelle: [Encyclopaedia of Statistical Sciences](https://onlinelibrary.wiley.com/doi/10.1002/0471667196.ess1174.pub2)
+
+--
+
+### »Stylometric studies …
+
+<br />
+
+… in all their variety of material and method, have two features in common: the electronic texts they study have to be coaxed to yield numbers, and the numbers themselves have to be processed via statistics.«
+
+<br />
+
+<small>Maciej Eder, Jan Rybicki, Mike Kestemont: [‘Stylo’: a package for stylometric analyses](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxjb21wdXRhdGlvbmFsc3R5bGlzdGljc3xneDpmM2U3OGUzZTM2YjkyYzM) (2017)</small>
+
+--
+
+### Was gezählt werden kann
+
+<br />
+
+- Worthäufigkeiten
+- n-Gramme von Zeichen
+  - ‘nte’, ‘ichn’, ‘gefal’
+- Lemmata
+  - (Tier/Tiere/Tieres ➝ Tier)
+- Wortarten
+- syntaktische Strukturen
+- Metrum (bei Versen)
+- …
+
+--
+
+### Warum sollte man das tun, <br />einen Text so »messen«?
+
+<br />
+
+- Streitigkeiten über Autor\*innenschaft
+- Gattungsvergleich
+- Vergleich verschiedener Sprecher\*innen
+- Vergleich von Originalen und Übersetzungen
+- Stil früher vs. Stil später Texte
+- forensische Linguistik, Security, Anonymität
+
+---
+
+## 3. Kleine Geschichte der Stilometrie
+
+--
+
+### »Konstantinische Schenkung« (1/2)
+
+![caption](images/sylvester_i_and_constantine_wikimedia_commons.jpg)<!-- .element height="300px;" -->
+
+- Urkunde, die angeblich Anfang des 4. Jahrhunderts vom römischen Kaiser Konstantin I. ausgestellt wurde
+- dem Papst und seinen Nachfolgern wurde darin die geistliche und auch politisch wirksame Oberherrschaft über Rom und die Westhälfte des Römischen Reiches geschenkt
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sylvester_I_and_Constantine.jpg))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### »Konstantinische Schenkung« (2/2)
+
+![caption](images/de_falso_credita_et_ementita_constantini_donatione_declamatio.png)<!-- .element height="300px;" -->
+
+- [Lorenzo Valla](https://de.wikipedia.org/wiki/Lorenzo_Valla) (ca. 1407–1457), italienischer Humanist, Priester
+- um 1439/1440: »Diskurs über die Fälschung der angeblichen [Konstantinischen Schenkung](https://de.wikipedia.org/wiki/Konstantinische_Schenkung)«
+- Beweis, dass die »Konstantinischen Schenkung« nicht im 4. Jahrhundert geschrieben worden sein kann – falsches Latein!
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:De_falso_credita_et_ementita_Constantini_Donatione_declamatio_(1).png))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Erste quantifizierende Unternehmungen
+
+- 1851: der englische Mathematiker Augustus de Morgan schlägt vor, die Länge von Wörtern als Indikator für individuellen Stil zu verwenden (vgl. [Grzybek 2007](https://doi.org/10.1007/978-1-4020-4068-9_2))
+- 1873: die New Shakespeare Society fördert den Einsatz quantitativer Methoden zur Klärung strittiger Fragen zur Autorschaft und Chronologie des Shakespeare-Kanons (F.&nbsp;J. Furnivall, F.&nbsp;G. Fleay)
+- 1887: T. C. Mendenhall, [»The Characteristic Curves of Composition«](https://www.jstor.org/stable/1764604), erste bekannte Arbeit zur Quantifizierung von Autor\*innenschaft
+
+![caption](images/characteristic-curves.jpg)<!-- .element height="250px;" -->
+
+--
+
+### Stilometrische Morgendämmerung
+
+<br />
+
+- 1867: L. Campbell: [»The Sophistes and Politicus of Plato«](https://books.google.com/books?id=JJA82qlzJzQC&printsec=frontcover)
+- 1881: W. Dittenberger: [»Sprachliche Kriterien für die Chronologie der Platonischen Dialoge«](https://www.jstor.org/stable/4471771)
+- 1898: W. Lutosławski: [»Principes de stylométrie appliqués à la chronologie des œuvres de Platon«](https://www.jstor.org/stable/44283556)
+- 1915: N.&nbsp;A. Morosow: [»Лингвистические спектры«](https://www.textology.ru/library/book.aspx?bookId=1&textId=3) (»Linguistische Spektren«, inspiriert von Lutosławski)
+- 1916: A.&nbsp;A. Markow: [»Об одном применении статистического метода«](https://www.ras.ru/namorozovarchive/2_actview.aspx?id=725) (»Über eine Anwendung der statistischen Methode«, Rezension von Morosows Artikel) – offenbar der Erste, der die Bedeutung von Funktionswörtern erkannt hat
+
+--
+
+### Stylometrischer Fortschritt
+
+<br />
+
+- 1937: G.&nbsp;M. Bolling: [»The past Tense of ›To Be‹ in Homer«](https://doi.org/10.2307/409335)
+- 1938: J.&nbsp;B. Carroll: [»Diversity of vocabulary and the harmonic series law of word-frequency distribution«](https://doi.org/10.1007/BF03393224)
+
+--
+
+### Durchbruch in den 1960er-Jahren: <br />Federalist Papers
+
+<br />
+
+- »eine Serie von 85 Artikeln, die 1787/88 in verschiedenen New Yorker Zeitungen veröffentlicht wurden und die Bevölkerung des Staats New York dazu bewegen sollten, der 1787 entworfenen aber noch nicht ratifizierten föderalen Verfassung der Vereinigten Staaten von Amerika zuzustimmen«
+- Autorschaft von 12 Artikeln war umstritten (von Hamilton oder Madison verfasst?)
+- Frederick Mosteller, David L. Wallace: [»Inference in an Authorship Problem«](https://doi.org/10.1080/01621459.1963.10500849) (1963)
+- Bestimmung der Urheberschaft der umstrittenen Schriften, Vorschlag einer Standardmethode zur Lösung von Urheberschaftsproblemen
+
+--
+
+### Mosteller & Wallace, 1963
+
+<br />
+
+- »The **function words** of the language appear to be a fertile source of discriminators, and luckily the high-frequency words are the strongest.«
+- »it is important to have a **variety of sources of material**, to allow ‘between writings’ variability to emerge«
+- »In summary, the following points are clear:«
+  - »Madison is the principal author. These data make it possible to say far more than ever before that the odds are enormously high that Madison wrote the 12 disputed papers.«
+  - »While choice of under­lying constants (choice of prior distributions) matters, it doesn’t matter very much, once one is in the neighborhood of a distribution suggested by **a fair body of data**.«
+
+--
+
+### Paulusbriefe
+
+![caption](images/morton.gif)<!-- .element height="450px;" -->
+
+<small>A. Q. Morton: »The Authorship of the Pauline Epistles: A Scientific Solution« (1965)</small>
+
+(Paulus sei der Autor von nur vier der ihm zugeschriebenen Briefe; begründet diese <br />Behauptung mit einfacher Statistik der häufig vorkommenden Wörter im griechischen Text)<!-- .element: style="font-size:0.5em;" -->
+
+--
+
+### J.&nbsp;F. Burrows (1/2)
+
+![caption](images/burrows-book-cover.jpg)<!-- .element height="500px;" -->
+
+--
+
+### J.&nbsp;F. Burrows (2/2)
+
+<br />
+
+»Most readers and critics behave as though common **prepositions**, **conjunctions**, **personal pronouns**, and **articles** – the parts of speech which make up at least a third of fictional works in English – do not really exist. But far from being a largely inert linguistic mass which has a simple but uninteresting function, these words and their frequency of use can tell us a great deal about the characters who speak them.«
+
+<br />
+
+Vorwort zu »Computation into Criticism«, 1987
+
+--
+
+### Shakespeare oder Marlowe?
+
+<br />
+
+![caption](images/rolling-shakespeare.png)<!-- .element height="350px;" -->
+
+<br />
+
+»Henry VI«: sequenzielle Analyse (mit Rolling Delta).
+
+--
+
+![caption](images/guardian-shakespeare-marlowe.png)<!-- .element height="520px;" -->
+
+Quelle: [The Guardian](https://www.theguardian.com/culture/2016/oct/23/christopher-marlowe-credited-as-one-of-shakespeares-co-writers) (2016)
+
+--
+
+### Lope de Vega: »La francesa Laura«
+
+![La francesa Laura (Manuskript)](images/la-francesa-laura.jpg)<!-- .element height="400px;" -->
+
+<small>(Bildquelle: http://bdh.bne.es/bnesearch/detalle/bdh0000216882)</small>
+
+<small>Publikation zu diesem Fund: <br />Álvaro Cuéllar, Germán Vega García-Luengos: *«La francesa Laura». El hallazgo de una <br />nueva comedia del Lope de Vega último* (2023), [doi:10.5565/rev/anuariolopedevega.492](https://doi.org/10.5565/rev/anuariolopedevega.492).
+
+---
+
+## 4. Delta-Methode
+
+--
+
+### Burrows’ Delta
+
+<br />
+
+- Standardmaß in der Stilometrie seit 2002
+- statt semantischer Inhaltswörter werden vor allem Funktionswörter betrachtet (die häufigsten Wörter)
+- diese most frequent words (MFW) werden von Autor\*innen kaum bewusst manipuliert
+- Burrows’ Delta verstehen: https://zfdg.de/2017_006#hd2
+- sehr einfache Mathematik
+
+--
+
+### z-Score
+
+![caption](images/z-score.svg)<!-- .element height="150px;" -->
+
+- x: Häufigkeit des Wortes in einem Text<!-- .element: style="font-size:0.8em;" -->
+- µ (my): allgemeine Worthäufigkeit im Korpus<!-- .element: style="font-size:0.8em;" -->
+- σ (sigma): Standardabweichung der Worthäufigkeit im Korpus (= durchschnittliche Entfernung der einzelnen Werte vom Mittelwert)<!-- .element: style="font-size:0.8em;" -->
+
+»von jedem Wert (x) [wird] der Mittelwert des Types (µ) in der Sammlung abgezogen und das Ergebnis durch die Standard- <br />abweichung (σ) des Types geteilt.« (Schöch 2017, S. 285)
+
+--
+
+### Beispiel: Autor\*innenschaftsattribution
+
+<br />
+
+- Korpus: 11 Dramen (Prosa und Vers)
+  - 4 × G. E. Lessing
+  - 3 × L. A. V. Gottsched
+  - 2 × C. F. Gellert
+  - 1 × J. E. Schlegel
+  - 1 × J. C. Gottsched
+- Download des Korpus: <br />https://lehkost.github.io/slides/2023-06-16-dramenanalyse-stylo/files/stylo_dramenanalyse_directories.zip
+
+--
+
+#### Für jeden Text erhalten wir 100/300/500/1000 dieser z-Scores:
+
+![caption](images/stylo-dramen-experiment-frequencies.png)
+
+--
+
+#### Die »Nähe« zwischen zwei Texten kann durch die Messung des Abstands im hochdimensionalen Raum ermittelt werden, etwa auf diese Weisen:
+
+![Abstand zwischen zwei Texten](images/abstand_zwischen_zwei_texten.png)<!-- .element height="460px;" -->
+
+<small>2 Texte (A und B), 2 Dimensionen, also die z-Scores von nur zwei Wörtern (z.&nbsp;B. x = »und«; y = »die«) <br /><br />(Abb.: Stefan Evert (CC by 4.0), [doi:10.17175/2017_006](http://dx.doi.org/10.17175/2017_006))</small>
+
+--
+
+### … im 100/300/1000-dimensionalen Raum
+
+![caption](images/clust.gif)
+
+<small>(Bildquelle: [R-Bloggers.com](https://www.r-bloggers.com/2011/10/a-new-dimension-to-principal-components-analysis/))</small>
+
+--
+
+<br />
+
+Klingt bisschen weit hergeholt.
+
+<br />
+
+Aber es funktioniert.<!-- .element: class="fragment" -->
+
+--
+
+#### Ergebnis:
+
+![Ergebnis der Clusteranalyse](images/stylo-dramen-experiment.png)<!-- .element height="450px;" -->
+
+<small>Signale: Autor\*innenschaft, Genre (Versdramen clustern zusammen).</small>
+
+--
+
+#### Visualisierung der Abstände im Dendrogramm
+
+![Ergebnis der Clusteranalyse](images/stylo-dramen-experiment.png)<!-- .element height="180px;" -->
+
+tl;dr: »Die Zahlen in der horizontalen Leiste unten geben die Werte des jeweils <br />ausgewählten Distanzmaßes an (hier Classic Delta Distance).« ([forTEXT](https://fortext.net/routinen/lerneinheiten/stilometrie-mit-stylo))
+<!-- .element: style="font-size:0.65em;" -->
+
+Genauer: Diese Skala zeigt den gemessenen Abstand zwischen den Texten an. Die Werte auf der Skala entsprechen den ursprünglichen Einheiten, die zur Abstandsberechnung verwendet wurden. Wenn zum Beispiel eine klassische Manhattan-Distanz auf der Grundlage relativer Worthäufigkeiten berechnet wurde, zeigt die Einheit die durchschnittliche Differenz zwischen einem Textpaar an, ausgedrückt in relativen Häufigkeiten. Wenn z.&nbsp;B. zwei Texte vorliegen, in denen die Häufigkeit von »die« 0,04 und 0,01 (bzw. 4% und 1%) und die Häufigkeit von »von« 0,02 und 0,02 beträgt, dann ist der Gesamtabstand ((0,04 – 0,01) + (0,02 – 0,02) / 2) = (0,03 + 0) / 2 = 0,015. Da die Häufigkeiten in der Regel mit 100 multipliziert werden, um Prozentsätze zu erhalten, wäre die endgültige Punktzahl ebenfalls 0,015 * 100 = 1,5.
+<!-- .element: style="font-size:0.65em;" -->
+
+Classic Delta und Cosinus Delta (auch andere Deltas) basieren auf den z-Scores und nicht auf Häufigkeiten. Folglich werden die Abstände und die Skalen in Dendrogrammen in z-Scores und Differenzen zwischen z-Scores ausgedrückt. Da eine »1« in z-Scores »1 Standardabweichung« bedeutet, lässt sich dies auch auf die Skalen von Dendrogrammen übertragen. Eine Einheit bedeutet also »1 Standardabweichung« zwischen den zu vergleichenden z-Scores. (Mit Dank an Maciej Eder!)
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+## 5. Jenseits von Autor\*innenschaft
+
+--
+
+»But the study of literature and authorship is not only who wrote what, and who didn’t: it can be also about similarities and differences between texts by different authors.«
+
+<br />
+
+Eder/Rybicki: [Go Set A Watchman while we Kill the Mockingbird in Cold Blood, with Cats and Other People](https://sites.google.com/site/computationalstylistics/projects/lee_vs_capote) (2016)
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Stilometrie jenseits von Autor\*innenschaft:
+
+<br />
+
+- Gattungen
+- Einfluss von Redakteur\*innen
+- Datierung von Schriften
+- Entwicklung des Stils von Autor\*innen
+- Geschlecht, Alter
+- Einfluss von Übersetzer\*innen
+
+--
+
+### Heinrich von Kleist zwischen Klassik und Romantik
+
+![Beispiel für stilometrische Untersuchung](images/jannidis-lauer-dendrogram-kleist.jpg)<!-- .element width="560px;" -->
+
+<small>Jannidis/Lauer: [Burrow’s Delta and Its Use in German Literary History](http://gerhardlauer.de/files/6013/9637/9784/Jannidis-Lauer_Burrowss-Delta.pdf) (2014).</small>
+
+--
+
+### Genres: Shakespeare
+
+![caption](images/shakespeare-genres.png)<!-- .element height="500px;" -->
+
+--
+
+### Zeitliche Entwicklung: Dickens
+
+![caption](images/dickens-novels-stylo.png)<!-- .element height="500px;" -->
+
+»the ripening aubergine« 😊 (Jan Rybicki)
+
+---
+
+## 6. Stylo
+
+--
+
+### Stylo: zwei der Hauptfunktionen
+
+<br />
+
+- stylo()
+- oppose()
+
+--
+
+### stylo()
+
+<br />
+
+- Berechnung und Visualisierung stilistischer Nähe
+- verschiedene Arten des Clusterns (Gruppierens) von Texten nach Nähekriterien
+- Darstellung des mehrdimensionalen »stilistischen Raums« von Texten auf einer 2D-Ebene
+- Listen der am häufigsten verwendeten Wörter, Häufigkeitstabellen usw.
+
+--
+
+### oppose()
+
+<br />
+
+- kontrastive Analyse
+- bevorzugte/vermiedene Wörter
+- Vergleich verschiedener Typen von Sprechinstanzen (z.&nbsp;B. männliche vs. weibliche Stimmen)
+- Kurzvorstellung in [dieser Präsentation](https://computationalstylistics.github.io/stylo_nutshell/#main-functions-oppose) (Folien 7 und 26–28)
+
+--
+
+### oppose()
+
+<br />
+
+- basiert auf Burrows’ Zeta (2007):
+  - »Texte werden in kleinere Segmente gesplittet, wobei die Segmentlänge ein wichtiger Parameter ist. Dann wird für jedes Merkmal der Anteil der Segmente erhoben, in denen das Merkmal mindestens einmal vorkommt. Von diesem Anteil in der untersuchten Gruppe wird der entsprechende Anteil in der Vergleichsgruppe subtrahiert, woraus sich ein Zeta-Wert zwischen –1 und 1 ergibt« ([uni-wuerzburg.de](https://www.informatik.uni-wuerzburg.de/datascience/projects/concluded-projects/cligs/?tx_extbibsonomycsl_publicationlist%5Baction%5D=download&tx_extbibsonomycsl_publicationlist%5Bcontroller%5D=Document&tx_extbibsonomycsl_publicationlist%5BfileName%5D=DHd2018_pyzeta.pdf&tx_extbibsonomycsl_publicationlist%5BintraHash%5D=03d6baf7b43a7c8d4c2815c1f04c60d0&tx_extbibsonomycsl_publicationlist%5BuserName%5D=dmir&cHash=93fb54cc785fbfc0587eed24b123abbb))
+- NB. zur Segmentierung als philologischem Verfahren vgl. Sabine Bartsch, Evelyn Gius, Marcus Müller, Andrea Rapp, Thomas Weitin: *Sinn und Segment. Wie die digitale Analysepraxis unsere Begriffe schärft.* In: *Zeitschrift für digitale Geisteswissenschaften* 8 (2023). 01.06.2023. ([doi:10.17175/2023_003](https://doi.org/10.17175/2023_003))
+
+---
+
+*Hands-on!*
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
