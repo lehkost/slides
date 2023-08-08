@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Network Analysis of Literary Texts (Workshop, DLA Marbach, 9 August 2023)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/white.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Network Analysis of Literary Texts …
+
+![example network](images/brecht-mother-courage-no-labels.png)<!-- .element width="300px"; style="box-shadow:none;"; -->
+
+Prof. Dr. Frank Fischer (Freie Universität Berlin)<!-- .element: style="font-size:0.7em;" -->
+
+Web: [lehkost.github.io](https://lehkost.github.io/) <br />Twitter: [@umblaetterer](https://twitter.com/umblaetterer)
+<!-- .element: style="font-size:0.45em;" -->
+
+<br />This presentation: **[bit.ly/marbanet](https://bit.ly/marbanet)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />**Workshop** · [Summer School “Literature Data and Digital Literature”](https://www.dla-marbach.de/kalender/detail/521/) &nbsp;·&nbsp; DLA Marbach &nbsp;🇩🇪 &nbsp;·&nbsp; 9 Aug 2023
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### … in Three Chapters:
+
+<br />
+
+1. Emergence, Development, Terminology
+2. Extracting Networks from Literary Texts
+3. Visualisation and Analysis of Network Data
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 1
+
+<br />
+
+### Emergence, Development, Terminology
+
+--
+
+### Network Theory …
+
+<br />
+
+“… is the study of graphs as a representation of (…) <br />relations between discrete objects.” (Wikipedia)
+
+--
+
+#### Small example network graph with <br />8 vertices (nodes) and 10 edges:
+
+<br />
+
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="300px;" -->
+
+<br />
+
+<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)</small>
+
+--
+
+### The Emergence of Graph Theory …
+
+<br />
+
+… was Leonhard Euler’s take on the **Seven Bridges of Königsberg**, <br />a historically significant problem in mathematics.
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-1.png)<!-- .element width="420px;" -->
+
+<small>Historical map of Königsberg, highlighting the Pregel River <br />and the seven bridges. (Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png))</small>
+
+--
+
+#### Abstraction from …
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
+
+<small>… to …</small>
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-3.png)<!-- .element height="160px;" -->
+
+<small>Turning the seven bridges (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg)) <br />into an abstract graph (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).</small>
+
+--
+
+### Features of Euler’s Abstraction
+
+<br />
+
+- landmasses: nodes, bridges: edges
+- precise location of bridges is irrelevant!
+- number of bridges and their endpoints are key for the solution of the problem:
+  - there should be a maximum of two landmasses (nodes) with an odd number of bridges (edges) serving as starting and end point
+  - the other two banks would have to feature an even number of bridges leading to them
+
+--
+
+### Skit: “Königsberg” (by Randall Munroe, xkcd)
+
+![Königsberg (xkcd)](images/koenigsberg_xkcd.png)<!-- .element height="480px;" -->
+
+(Comic #2694, 4 Nov 2022, URL: https://xkcd.com/2694/)
+
+--
+
+### Social Network Analysis …
+
+<br />
+
+“… is the process of investigating social structures through <br />the use of network and graph theories.” (Wikipedia)
+
+--
+
+### One of the First Sociograms
+
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+<small>“Class structure, 4th grade.” Work by Jacob L. Moreno (1889–1974). <br />(First published in NYT, [3 April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Source for this PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)</small>
+
+--
+
+### Visualising Facebook Friendships
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+<small>(source: [Paul Butler, 2010](https://www.facebook.com/notes/facebook-engineering/visualizing-friendships/469716398919))
+
+--
+
+### Node-Related Measures
+
+- Degree
+- Path Length
+- […]
+
+### <br />Graph-Related Measures
+
+- Network Size
+- Average Degree
+- Density
+- […]
+
+--
+
+### Example
+
+![four nodes](images/four_nodes.png)<!-- .element height="360px;" -->
+
+Please specify: <br />(a) the **degree** of the node in the middle, (b) the **degree** of outer nodes, <br />(c) the **path length** between two outer nodes, (d) the **network size**, <br />(e) the **average degree**, (f) the **density** of the graph?
+
+--
+
+### Prospects for Network Data Comparison
+
+<br />
+
+<small>
+
+| Play                                            | Network Size | Density | Clustering Coefficient | Avg Path Length | Max Degree               |
+|-------------------------------------------------|--------------|---------|------------------------|-----------------|--------------------------|
+| Sophocles: Antigone                             | 9            | 0.44    | 0.78                   | 1.58            | 7 (Creon & Chorus)       |
+| William Shakespeare: Hamlet                     | 34           | 0.34    | 0.86                   | 1.7             | 30 (Horatio)             |
+| Aphra Behn: The Rover, pt. I & II               | 43           | 0.38    | 0.84                   | 1.62            | 41 (Willmore)            |
+| Johann Wolfgang Goethe: Faust, pt. I            | 115          | 0.2     | 0.98                   | 1.7             | 67 (Faust)               |
+| August Strindberg: Miss Julie                   | 3            | 1       | 1                      | 1               | 2 (all three characters) |
+| Bertolt Brecht: Mother Courage and Her Children | 35           | 0.24    | 0.89                   | 1.95            | 30 (Mother Courage)      |
+| Samuel Beckett: Waiting for Godot               | 5            | 0.8     | 0.87                   | 1.2             | 4 (Vladimir & Estragon)  |
+
+</small>
+
+--
+
+### Gamification: „Brecht Beats Shakespeare!“
+
+![card game](images/card-game-dh2018.jpg)<!-- .element width="600px;" -->
+
+<small>Educational card game released at DH2018, México ([doi:10.6084/m9.figshare.5926363](https://doi.org/10.6084/m9.figshare.6667424)).</small>
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2
+
+<br />
+
+### Extracting Networks from Literary Texts
+
+--
+
+### Extracting Networks with “ezlinavis”
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-brecht.png)<!-- .element height="450px;" -->
+
+Left column: input window. – Middle column: edge data, generated automatically. – Right column: Interactive Visualisation.
+
+--
+
+### Exercise (1/2)
+
+#### Ingo Schulze: “Simple Storys” (1998)
+
+![Simple Storys, 1998, book cover](images/simple-storys-cover.jpg)<!-- .element width="250px;" -->
+
+<small>(Buchcover via [piper.de](https://web.archive.org/web/20210301224526/https://www.piper.de/buecher/simple-storys-isbn-978-3-8270-7768-4-ebook))</small>
+
+--
+
+### Exercise (2/2)
+
+* Question/task: <br /> Do **Marianne** and **Raffael** have mutual acquaintances through whom they are somehow connected? If so, what is the degree of their separation? Create a network with “ezlinavis” to answer the question!
+
+<!-- .element: style="font-size:0.9em;" -->
+
+### <br />What we know:
+
+1. Barbara and Frank are married.
+2. Marianne and Hanni know each other from their gymnastics group.
+3. Barbara and Hanni have known each other for 18 years.
+4. Frank and Barbara paid a visit to Enrico.
+5. Orlando worked as a cab driver for Raffael.
+6. Frank visits Orlando in the hospital.
+7. Ernst receives psychiatric treatment from Barbara.
+
+<!-- .element: style="font-size:0.9em;" -->
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Solution (for Copy & Paste)
+
+<br />
+
+```txt
+# 1
+Barbara
+Frank
+# 2
+Marianne
+Hanni
+# 3
+Barbara
+Hanni
+# 4
+Frank
+Barbara
+Enrico
+# 5
+Orlando
+Raffael
+# 6
+Frank
+Orlando
+# 7
+Ernst
+Barbara
+```
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Results
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-exercise.png)<!-- .element height="400px;" -->
+
+(a) Do **Marianne** and **Raffael** have mutual acquaintances through whom they are somehow connected? (b) If so, what is the degree of their separation? <br />(c) Who is the person with the maximum degree?
+
+--
+
+### Discussion
+
+<br />
+
+* What difficulties did you encounter in the formalisation process?
+* Why does the visualised graph look different every time?
+* What can be made visible with network analysis? Where does the method reach its limits?
+
+--
+
+### Full Network Model of the Novel “Simple Stories”
+
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-storys-netzwerk.png)<!-- .element width="450px;" -->
+
+<small>Thomas Schweizer, Michael Schnegg: [“Die soziale Struktur der ›Simple Storys‹. Eine Netzwerkanalyse”](https://web.archive.org/web/20220119175152/https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf) (1998). <br />38 nodes (characters). Edges: positive, negative or exchange relations</small>
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 3
+
+<br />
+
+### Visualisation and Analysis of Network Data
+
+--
+
+Please download and install:<!-- .element: style="font-size:1.25em;" -->
+
+<br />
+
+![Gephi (logo))](images/gephi-logo.png)<!-- .element height="125px;" -->
+
+**Gephi** (current version 0.10.1, from [gephi.org](https://gephi.org/))
+
+--
+
+Please download the co-occurrence network data for <br />Brecht’s “Mother Courage” from the “Examples” tab <br />of “ezlinavis” → https://ezlinavis.dracor.org/
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-brecht.png)<!-- .element height="325px;" -->
+
+--
+
+### [Hands-on with Gephi]
+
+--
+
+### Get &#62; 3.000 Gephi-Ready Networks from DraCor
+
+![DraCor frontpage on 8 Aug 2023](images/dracor-frontpage-2023-08-08.png)
+
+https://dracor.org/
+
+---
+
+### Select Bibliography
+
+<br />
+
+- Stanley Wasserman, Katherine Faust: [*Social Network Analysis: Methods and Applications*](https://books.google.com/books?id=CAm2DpIqRUIC&printsec=frontcover), 1994
+  - still the standard reference for the foundations of Social (!) Network Analysis, published long before SNA hype
+- Katharina A. Zweig: [*Network Analysis Literacy: A Practical Approach to the Analysis of Networks*](https://books.google.com/books?id=MpNjDQAAQBAJ&printsec=frontcover), 2016
+- Frank Fischer, Daniil Skorinkin: [*Social Network Analysis in Russian Literary Studies*](https://doi.org/10.1007/978-3-030-42855-6_29), in: *The Palgrave Handbook of Digital Russia Studies*, 2021, pp.&nbsp;517–536
+
+--
+
+🙏 &nbsp; 👋<!-- .element: style="font-size:3em;" -->
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
