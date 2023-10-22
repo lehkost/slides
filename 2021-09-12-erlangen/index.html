@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Digital Humanities zwischen Technologie und Interpretation (Erlangen, 12. September 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n"
+          data-charset="utf-8">
+<script type="text/template">
+
+### Digital Humanities zwischen <br />Technologie und Interpretation
+
+![Symbolbild (Quelle: Wikimedia Commons)](images/graph-symbolbild-wm-commons.svg)<!-- .element width="100px;" -->
+<!-- source: https://commons.wikimedia.org/wiki/File:Network_Community_Structure.svg -->
+
+Ass. Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+Higher School of Economics, Moskau<br />
+DARIAH-EU 🇪🇺 (Board of Directors)<!-- .element: style="font-size:0.7em;" -->
+
+Website: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io](https://lehkost.github.io/)** · Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**
+
+<br /><br />Friedrich-Alexander-Universität Erlangen-Nürnberg &nbsp;·&nbsp; 12. September 2021
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Ansprüche der Digital Humanities
+
+<br />
+
+- hohe interdisziplinäre Kompetenz
+- »einheitlichere Sicht auf ›die Geisteswissenschaften‹« (Patrick Sahle, [DHdBlog, 18.03.2018](https://dhd-blog.org/?p=9547))
+- Schaffung neuer Infrastrukturen
+- Umgang mit Forschungsdaten (FAIR-Prinzipien)
+- skalierbare wissenschaftliche Narrative: Sprung von »from numbers to meaning« (Heuser/Le-Khac: [Stanford Literary Lab Pamphlet #4](https://litlab.stanford.edu/LiteraryLabPamphlet4.pdf), 2012)
+
+--
+
+## Inhalt
+
+<br />
+
+1. [Infrastruktur](#/1)
+2. [Standards](#/2)
+3. [Forschung](#/3)
+4. [Didaktik](#/4)
+5. [Zusammenfassung](#/5)
+
+---
+
+# Kapitel 1.
+
+<br />
+
+### Infrastruktur zur Erforschung <br />des europäischen Dramas
+
+--
+
+### DraCor (Drama Corpora)
+
+![DraCor-Frontpage am 12.09.2021](images/dracor-frontpage-2021-09-12.png)
+
+https://dracor.org/
+
+--
+
+### Distant-Reading Showcase
+
+Wie verändern sich die Figurenkonstellationen im deutschen Drama?
+
+![465 Dramennetzwerke auf einen Blick](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+<small>Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)</small>
+
+--
+
+### Was ist eigentlich mit …
+
+<br />
+
+- komparatistischen Ansätzen?
+- FAIR-Prinzipien? (findable, accessible, interoperable, reusable?)
+- Community-Aspekten? Training?
+- Schnittstellen? Linked Open Data?
+
+--
+
+### Infrastruktur findet statt …
+
+<br />
+
+… »›unterhalb der Arbeitsebene‹, d.&nbsp;h. ohne dass genau spezifiziert würde, wie die Arbeit zu tun ist oder wie Informationen zu verarbeiten sind«.
+
+<small>Paul N. Edwards et al.: *[Understanding Infrastructure](http://hdl.handle.net/2027.42/49353)* (2007)</small>
+
+<br />
+
+»Definieren könnte man Infrastruktur als all das Stabile, das nötig ist, um Fließendes zu ermöglichen.«
+
+<small>Dirk van Laak (Universität Leipzig), [Deutschlandfunk Nova, Hörsaal, 19.10.2019](https://www.deutschlandfunknova.de/beitrag/infrastruktur-die-lebensader-unserer-gesellschaft)</small>
+
+---
+
+# Kapitel 2.
+
+<br />
+
+### Standards und Schnittstellen
+
+--
+
+### Kodierungsstandard TEI
+
+<br />
+
+```xml
+<sp who="#gretchen">
+  <speaker>MARGARETE.</speaker>
+  <lg>
+    <l>Nun sag, wie hast du’s mit der Religion?</l>
+    <l>Du bist ein herzlich guter Mann,</l>
+    <l>Allein ich glaub’, du hältst nicht viel davon.</l>
+  </lg>
+</sp>
+<sp who="#faust">
+  <speaker>FAUST.</speaker>
+  <lg>
+    <l>Laß das, mein Kind! Du fühlst, ich bin dir gut;</l>
+    <l>Für meine Lieben ließ’ ich Leib und Blut,</l>
+    <l>Will niemand sein Gefühl und seine Kirche rauben.</l>
+  </lg>
+</sp>
+```
+
+<br />
+
+<small>Dialog aus Goethes »Faust I« (1808) in TEI (Text Encoding Initiative). Momentan <br />sind im Standard 590 verschiedene Elemente definiert ([Stand 31. August 2021](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).</small>
+
+--
+
+### Frontend dracor.org
+
+![DraCor-Frontpage am 12.09.2021](images/dracor-frontpage-2021-09-12.png)
+
+https://dracor.org/
+
+--
+
+#### Wachsende Liste von Korpora aus der Community:
+
+<br />
+
+- GerDraCor
+- RusDraCor
+- ItaDraCor
+- SweDraCor
+- CalDraCor
+- GreekDraCor
+- ShakeDraCor
+- RomDraCor
+- SpanDraCor
+- AlsDraCor
+- TatDraCor
+- BashDraCor
+- …
+
+--
+
+### Frontpage GerDraCor
+
+![GerDraCor)](images/dracor-gerdracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/ger
+
+--
+
+### GerDraCor: »Die Räuber« (1781)
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/ger000008
+
+--
+
+### GerDraCor als Community-Projekt
+
+<br />
+
+- Beschreibung und Anwendungsbeispiele [bei forTEXT](https://fortext.net/ressourcen/textsammlungen/dracor-drama-corpora-project) (Hamburg/Darmstadt)
+- Pull Request von [Nathalie Wiedmer et al.](https://quadrama.github.io/publications/Wiedmer2020aa): Annotation von Beziehungen der Figuren untereinander (Familien- und Liebesverhältnisse, dienstliche Abhängigkeiten)
+
+--
+
+#### Ludwig Anzengrubers »Das vierte Gebot« (1877)
+
+![Anzengruber-Drama, Netzwerk mit Figurenbeziehungen](images/anzengruber-list-relations.jpg)<!-- .element width="580px;" -->
+
+<small>**Modellierung spezifischer Figurenrelationen.** <br />Netzwerkdaten: https://dracor.org/id/ger000129#relations</small>
+
+--
+
+#### DraCor-Download-Tab
+
+![DraCor-Download-Tab](images/anzengruber-download-tab.png)
+
+<small>https://dracor.org/id/ger000129#downloads</small>
+
+--
+
+### API (Application Programming Interface)
+
+<br />
+
+- standardisierter Austausch von Informationen zwischen einer Anwendung und einzelnen Programmteilen
+- modularisierte, vereinfachte Programmierung
+- Übergabe von Daten erfolgt strukturiert nach einer definierten Syntax
+- speziell: REST API (für Webservices)
+
+--
+
+### Funktionen der DraCor-API
+
+![DraCor-API)](images/dracor-api.png)
+
+<small>https://dracor.org/doc/api</small>
+
+--
+
+### DraCor-API: Beispielanfragen
+
+https://dracor.org/api/corpora/ger/play/goethe-faust-eine-tragoedie/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Sprechtext aller weiblicher Figuren in Goethes »Faust«.</small>
+
+https://dracor.org/api/corpora/ger/play/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Sprechtext aller Sohn-Figuren in Schillers »Räubern«.</small>
+
+https://dracor.org/api/corpora/shake/play/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Netzwerkdaten zu Shakespeares »Hamlet« (im JSON-Format).</small>
+
+https://dracor.org/api/corpora/rus/play/chekhov-vishnevyi-sad/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Alle Regieanweisungen zu Tschechows »Kirschgarten«.</small>
+
+https://dracor.org/api/corpora/rus/metadata<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadaten zu allen Stücken des russischen Korpus (als JSON oder CSV).</small>
+
+---
+
+# Kapitel 3.
+
+<br />
+
+## Forschung
+
+--
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+<small>Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.</small>
+
+--
+
+#### Figurentypologie im römischen Drama, <br />untersucht mit stylo.oppose()
+
+![senex vs adulescens](images/senex-vs-adulescens.png)
+
+* adulescens (links) vs. senex (rechts)<!-- .element: style="font-size:0.75em;" -->
+  * adulescens: Liebe und Emotionen (amor, Venus), Angst (perii [ich bin verloren!], Hoffnung auf Rettung (spes)
+  * senex: Familie (filius/gnatus, filia, domum [nach Hause], aedes [Haus], fides [Treue, Vertrauen]); dare (geben)
+
+--
+
+### Einfache Visualisierung von Strukturdaten
+#### Anzahl von Figuren pro Stück in chronologischer Folge (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+gerdracor <- fread("https://dracor.org/api/corpora/ger/metadata.csv")
+ggplot(gerdracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+<small>Beispiel für einfaches R-Skript, das die Daten über die API bezieht.</small>
+
+--
+
+#### Anzahl von Figuren pro Stück in chronologischer Folge (2/2)
+
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+<small>Ausgabe in RStudio.</small>
+
+<small>(Der Punkt rechts oben: Karl Kraus’ »Die letzten Tage der Menschheit«, 925 Sprechinstanzen).</small>
+
+--
+
+### API-Wrapper
+
+<br />
+
+= weitere Vereinfachung: <br />API-Funktionen bekommen eigene Befehle
+
+<br />
+
+- für R: rdracor
+- für Python: PyDraCor
+- für Haskell: HDraCor
+
+--
+
+#### Beispiel (mit rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+hermann <- play_igraph(corpus="ger", play="kleist-die-hermannsschlacht")
+plot(hermann)
+```
+#### Ergebnis:
+
+![Hermannsschlacht, Netzwerkgraph mit rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element height="400px;" -->
+
+--
+
+### Lessings »Emilia Galotti«
+
+![Emilia Galotti (dynamischer Graph)](images/lessing-emilia-galotti.gif)
+
+<small>**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script von Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
+
+--
+
+#### Experimentelle Interfaces
+
+<video data-autoplay src="images/experimental-interfaces.mp4"></video>
+
+--
+
+DraCor-Ontologie <br />(Anbindung an die Linked Open Data-Cloud)
+
+![WebVOWL](images/webvowl-dracor-ontology.png)<!-- .element height="480px;" -->
+
+<small>http://www.visualdataweb.de/webvowl/#iri=https://dracor.org/ontology</small>
+
+--
+
+### Ermittlung der Forschungsintensität
+
+<small>Anzahl wissenschaftlicher Artikel zu einem Stück im German Drama Corpus (Top-20),<br />via [**BDSL** – Bibliographie der deutschen Sprach- und Literaturwissenschaft](https://www.bdsl-online.de/):</small>
+
+<small>
+
+1. Goethe: Faust (2037)
+2. Büchner: Dantons Tod (309)
+3. Lessing: Nathan der Weise (307)
+4. Kleist: Penthesilea (304)
+5. Goethe: Iphigenie auf Tauris (243)
+6. Lessing: Emilia Galotti (193)
+7. Kleist: Prinz Friedrich von Homburg (172)
+8. Schiller: Die Räuber (171)
+9. Schiller: Wilhelm Tell (147)
+10. Kleist: Der zerbrochne Krug (143)
+11. Schiller: Maria Stuart (123)
+12. Büchner: Leonce und Lena (116)
+13. Schiller: Die Jungfrau von Orleans (116)
+14. Kleist: Die Hermannsschlacht (114)
+15. Hofmannsthal: Elektra (111)
+16. Goethe: Torquato Tasso (109)
+17. Schiller: Kabale und Liebe (102)
+18. Kraus: Die letzten Tage der Menschheit (100)
+19. Kleist: Amphitryon (97)
+20. Schnitzler: Reigen (85)
+
+(Durchgeführt von Robert Jäschke im Rahmen des DFG-SPP-Projekts <br />[»Was ist wichtig? Schlüsselstellen in der Literatur«](https://www.projekte.hu-berlin.de/de/schluesselstellen).)
+
+</small>
+
+---
+
+# Kapitel 4.
+
+<br />
+
+## Didaktik
+
+--
+
+### Gamification
+
+![Quartettspiel](images/dramenquartett_back.jpg)<!-- .element width="300px;" -->
+![Quartettspiel](images/dramenquartett_front.png)<!-- .element width="300px;" -->
+
+<small>Frank Fischer und Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** Unter Mitarbeit von Christopher Kittel, Carsten Milling, Peer Trilcke und Jana Wolf. Bern: edition taberna kritika 2019. <br />Spielregeln: https://dramenquartett.github.io/</small>
+
+--
+
+![Dramenquartett, Vortrag](images/dramenquartett-vortrag.png)
+
+<small>Jan Horstmann, Marie Flüh, Mareike Schumacher, Frank Fischer, Peer Trilcke, Jan Christoph Meister: Netzwerkanalyse spielerisch vermitteln mit DraCor und forTEXT: Zur nicht-digitalen Dissemination einer digitalen Methode in Form des Kartenspiels »Dramenquartett«. In: DHd2020: »Spielräume«. 2.–6. März 2020. Book of Abstracts. <br />Universität Paderborn, S. 167–171. (Vortrag: [10.5281/zenodo.3697240](https://doi.org/10.5281/zenodo.3697240))</small>
+
+---
+
+# Zusammenfassung
+
+<br />
+
+- Interdisziplinarität
+- neuartige Infrastrukturen
+- Forschungsdaten und Schnittstellen, die den FAIR-Prinzipien genügen
+- skalierbare wissenschaftliche Narrative: »from numbers to meaning«
+
+--
+
+## CLS INFRA
+
+### = Computational Literary Studies Infrastructure
+
+<br />
+
+* H2020-Projekt (INFRAIA-02-2020 – Integrating Activities for Starting Communities)
+* Laufzeit: 1. März 2021–28. Februar 2025
+* Budget: €4.999.942,50
+* cf. https://cordis.europa.eu/project/id/101004984
+
+--
+
+Vielen Dank.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
