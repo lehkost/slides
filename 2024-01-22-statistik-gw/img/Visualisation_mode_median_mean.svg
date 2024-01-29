@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+  width="100%" height="100%" viewBox="-6 -5 112 192">
+  <title>Visualisation mode median mean</title>
+  <desc>Geometric visualisation of the mode, median and mean of an arbitrary probability density
+    function by CMG Lee.</desc>
+  <defs>
+    <pattern id="pattern_left" patternUnits="userSpaceOnUse" width="4" height="4">
+      <path d="M 2,0 L 4,2 M 2,4 L 0,2" stroke-linecap="round" stroke="#ffff00" fill="none" />
+    </pattern>
+    <pattern id="pattern_right" patternUnits="userSpaceOnUse" width="4" height="4">
+      <path d="M 2,0 L 0,2 M 2,4 L 4,2" stroke-linecap="round" stroke="#99ffff" fill="none" />
+    </pattern>
+    <path id="left" d="M 30,-30 C 10,-50 15,-20  0,0 H 30" />
+    <path id="right" d="M 30,-30 C 40,-20 70,-5 100,0 H 30" />
+    <g id="area" stroke="#000000" fill="#000000" fill-opacity="0.25">
+      <use xlink:href="#left" />
+      <use xlink:href="#right" />
+    </g>
+  </defs>
+
+  <circle cx="0" cy="0" r="99999" fill="#ffffff" />
+  <g font-family="Arial,Helvetica,sans-serif" font-size="12" text-anchor="middle"
+    stroke-linecap="round" stroke-linejoin="round" stroke="none" fill="#000000">
+    <g transform="translate(0,40)">
+      <path d="M 10,-37 H  30" stroke="#ff9900" />
+      <use xlink:href="#area" />
+      <path d="M 20,  5 V -37" stroke="#cc0000" />
+      <switch allowReorder="yes">
+        <text systemLanguage="de" x="20" y="15" id="trsvg18">
+          <tspan id="trsvg1">Modus</tspan>
+        </text>
+        <text systemLanguage="es" x="20" y="15" id="trsvg18">
+          <tspan id="trsvg1">moda</tspan>
+        </text>
+        <text systemLanguage="fi" x="20" y="15" id="trsvg19">
+          <tspan id="trsvg2">moodin</tspan>
+        </text>
+        <text systemLanguage="uk" x="20" y="15" id="trsvg20">
+          <tspan id="trsvg3">&#x43C;&#x43E;&#x434;&#x430;</tspan>
+        </text>
+        <text systemLanguage="vi" x="20" y="15" id="trsvg21">
+          <tspan id="trsvg4">y&#x1EBF;u v&#x1ECB;</tspan>
+        </text>
+
+        <text x="20" y="15" id="trsvg22-id" systemLanguage="id">
+          <tspan id="trsvg5-id">modus</tspan>
+        </text>
+        <text x="20" y="15" id="trsvg22-mk" systemLanguage="mk">
+          <tspan id="trsvg5-mk">&#x43C;&#x43E;&#x434;&#x443;&#x441;</tspan>
+        </text>
+        <text x="20" y="15" id="trsvg22-el" systemLanguage="el">
+          <tspan id="trsvg5-el">&#x3B5;&#x3C0;&#x3B9;&#x3BA;&#x3C1;&#x3B1;&#x3C4;&#x3BF;&#x3CD;&#x3C3;&#x3B1;
+            &#x3C4;&#x3B9;&#x3BC;&#x3AE;</tspan>
+        </text>
+        <text x="20" y="15" id="trsvg22">
+          <tspan id="trsvg5">Modus</tspan>
+        </text>
+      </switch>
+    </g>
+    <g transform="translate(0,100)">
+      <use xlink:href="#left" fill="url(#pattern_left)" />
+      <use xlink:href="#right" fill="url(#pattern_right)" />
+      <use xlink:href="#area" />
+      <path d="M 30,5 V -30" stroke="#009900" />
+      <g font-size="10">
+        <switch>
+          <text x="18" y="-5" id="trsvg23-mk" systemLanguage="mk">
+            <tspan id="trsvg6-mk">50%</tspan>
+          </text>
+          <text x="18" y="-5" id="trsvg23">
+            <tspan id="trsvg6">50%</tspan>
+          </text>
+        </switch>
+        <switch>
+          <text x="42" y="-5" id="trsvg24-mk" systemLanguage="mk">
+            <tspan id="trsvg7-mk">50%</tspan>
+          </text>
+          <text x="42" y="-5" id="trsvg24">
+            <tspan id="trsvg7">50%</tspan>
+          </text>
+        </switch>
+      </g>
+      <switch allowReorder="yes">
+        <text systemLanguage="de" x="30" y="15" id="trsvg25">
+          <tspan id="trsvg8">Median</tspan>
+        </text>
+        <text systemLanguage="es" x="30" y="15" id="trsvg25">
+          <tspan id="trsvg8">mediana</tspan>
+        </text>
+        <text systemLanguage="fi" x="30" y="15" id="trsvg26">
+          <tspan id="trsvg9">mediaanin</tspan>
+        </text>
+        <text systemLanguage="uk" x="30" y="15" id="trsvg27">
+          <tspan id="trsvg10">&#x43C;&#x435;&#x434;&#x456;&#x430;&#x43D;&#x430;</tspan>
+        </text>
+        <text systemLanguage="vi" x="30" y="15" id="trsvg28">
+          <tspan id="trsvg11">trung v&#x1ECB;</tspan>
+        </text>
+
+        <text x="30" y="15" id="trsvg29-id" systemLanguage="id">
+          <tspan id="trsvg12-id">median</tspan>
+        </text>
+        <text x="30" y="15" id="trsvg29-mk" systemLanguage="mk">
+          <tspan id="trsvg12-mk">&#x43C;&#x435;&#x434;&#x438;&#x458;&#x430;&#x43D;&#x430;</tspan>
+        </text>
+        <text x="30" y="15" id="trsvg29-el" systemLanguage="el">
+          <tspan id="trsvg12-el">&#x3B4;&#x3B9;&#x3AC;&#x3BC;&#x3B5;&#x3C3;&#x3BF;&#x3C2;</tspan>
+        </text>
+        <text x="30" y="15" id="trsvg29">
+          <tspan id="trsvg12">Median</tspan>
+        </text>
+      </switch>
+    </g>
+    <g transform="translate(0,160)">
+      <use xlink:href="#area" />
+      <rect x="20" y="5" width="30" height="5" fill="url(#pattern_right)" />
+      <path d="M 30,5 L 35,0.5 L 40,5" fill="#0000ff" />
+      <path
+        d="M 20,5 H 50  M -2,-5 A 10,10 0 0 0 0,5 M -4,-4 A 10,10 0 0 0 -2,5  M 102,-5 A 10,10 0 0 1 100,5 M 104,-4 A 10,10 0 0 1 102,5"
+        stroke="#ccccff" fill="none" />
+      <switch allowReorder="yes">
+        <text systemLanguage="de" x="35" y="20" id="trsvg30">
+          <tspan id="trsvg13">Mittel</tspan>
+        </text>
+        <text systemLanguage="es" x="35" y="20" id="trsvg30">
+          <tspan id="trsvg13">media</tspan>
+        </text>
+        <text systemLanguage="fi" x="35" y="20" id="trsvg31">
+          <tspan id="trsvg14">odotusarvo</tspan>
+        </text>
+        <text systemLanguage="uk" x="35" y="20" id="trsvg32">
+          <tspan id="trsvg15">&#x441;&#x435;&#x440;&#x435;&#x434;&#x43D;&#x454;</tspan>
+        </text>
+        <text systemLanguage="vi" x="35" y="20" id="trsvg33">
+          <tspan id="trsvg16">b&#xEC;nh qu&#xE2;n</tspan>
+        </text>
+
+        <text x="35" y="20" id="trsvg34-id" systemLanguage="id">
+          <tspan id="trsvg17-id">rata-rata</tspan>
+        </text>
+        <text x="35" y="20" id="trsvg34-mk" systemLanguage="mk">
+          <tspan id="trsvg17-mk">&#x441;&#x440;&#x435;&#x434;&#x438;&#x43D;&#x430;</tspan>
+        </text>
+        <text x="35" y="20" id="trsvg34-el" systemLanguage="el">
+          <tspan id="trsvg17-el">&#x3BC;&#x3AD;&#x3C3;&#x3B7; &#x3C4;&#x3B9;&#x3BC;&#x3AE;</tspan>
+        </text>
+        <text x="35" y="20" id="trsvg34">
+          <tspan id="trsvg17">Mittel</tspan>
+        </text>
+      </switch>
+    </g>
+  </g>
+</svg>

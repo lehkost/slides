@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Statistik für Geisteswissenschaftler*innen</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/white.css" />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="text-left">
+          <h2>Statistik für Geisteswissenschaftler*innen</h2>
+
+          <p class="small">
+            <a href="https://temporal-communities.de/people/illmer">Viktor J. Illmer</a>
+            <br />
+            EXC 2020 <em>Temporal Communities</em>
+            <br />
+            <time datetime="2024-01-22">22. Januar 2024</time>
+          </p>
+
+          <p
+            class="mt-8"
+            style="display: flex; justify-content: space-between; align-items: baseline"
+          >
+            <img
+              src="img/fu-logo.svg"
+              alt="Freie Universität Berlin"
+              style="height: 2rem; margin-top: 1rem"
+            />
+            <img
+              src="img/tempcomm-logo.png"
+              alt="EXC 2020 Temporal Communities"
+              style="height: 1.5rem; margin: 1rem 0"
+            />
+          </p>
+        </section>
+
+        <section
+          data-markdown="content.md"
+          data-separator-vertical="^\r?\n--\r?\n$"
+          data-separator-notes="^==="
+        />
+      </div>
+    </div>
+
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script src="../revealjs4/plugin/math/math.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // slideNumber: "h.v",
+        progress: false,
+        controls: false,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          // RevealLoadContent
+        ],
+
+        katex: {
+          // output: "mathml",
+        },
+      })
+    </script>
+  </body>
+</html>
