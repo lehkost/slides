@@ -1,0 +1,219 @@
+/* Custom style overrides */
+
+:root {
+  --colour-tx-heavy: #000;
+  --colour-tx-normal: #222;
+  --colour-tx-muted: #555; /* Roughly 75% opacity */
+
+  --r-background-color: #fff;
+  --r-main-font: Source Sans Pro, Helvetica, sans-serif;
+  /* --r-main-font-size: 42px; */
+  --r-main-font-size: 38px;
+  --r-main-color: var(--colour-tx-normal);
+  --r-block-margin: 0.5rem;
+  --r-heading-margin: 0 0 0.5em 0;
+  --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
+  --r-heading-color: --r-heading-line-height: 1;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: bold;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 1.9em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+  --r-code-font: Berkeley Mono, monospace;
+  --r-link-color: inherit;
+  --r-link-color-dark: #1a53a1;
+  --r-link-color-hover: #6ca0e8;
+  --r-selection-background-color: #98bdef;
+  --r-selection-color: #fff;
+  --r-overlay-element-bg-color: 0, 0, 0;
+  --r-overlay-element-fg-color: 240, 240, 240;
+}
+
+/* Set rem */
+html {
+  font-size: var(--r-main-font-size);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.slides a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em; /* 1px at 17px */
+  text-underline-offset: 0.125em;
+  transition: all 150ms ease;
+}
+.slides a:hover {
+  color: #fff;
+  text-decoration-color: #000;
+  background-color: #000;
+}
+
+.slides ul {
+  list-style: square;
+}
+
+.slides .list-none {
+  list-style: none;
+  margin-inline-start: 0;
+}
+
+/* Table style (booktabs) */
+.slides table {
+  border-collapse: collapse;
+  --border-thin: 0.0625em solid;
+  --border-thick: 0.125em solid;
+}
+
+/* Blockquote: Left border */
+.slides blockquote {
+  border-left: 0.25em solid #000;
+  padding-left: 0.5em;
+  box-shadow: none;
+  width: 80%;
+  margin-left: 0;
+  font-style: inherit;
+  font-size: 0.9em;
+}
+
+/* Use a thick border at the top and bottom of the table. Use a thin border between head and body. */
+.slides table {
+  width: 100%;
+  border-top: var(--border-thick);
+  border-bottom: var(--border-thick);
+}
+.slides table th,
+.slides table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.slides table tbody tr td {
+  border-top: none;
+  border-bottom: none;
+}
+.slides table thead {
+  border-bottom: var(--border-thin);
+}
+
+/* Make images whose alt tag begins with "inline" inline images */
+.slides img.inline,
+.slides img[alt^="inline"] {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  max-height: 1em;
+  max-width: 1em;
+  vertical-align: -10%;
+}
+
+/* Helper classes */
+.slides .text-left {
+  text-align: left;
+}
+.slides .text-center {
+  text-align: center;
+}
+.slides .small {
+  /* From .reveal small */
+  font-size: 0.75em;
+  line-height: 1.2;
+}
+.reveal small,
+.reveal .note,
+.reveal blockquote cite {
+  display: block;
+  font-size: 0.6em;
+  opacity: 0.75;
+  /* color: var(--colour-tx-muted); */
+  text-transform: initial;
+  font-weight: initial;
+  margin-block-end: 0.5em;
+}
+
+/* Horizontal centering */
+.slides .flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.slides .flex-center > * {
+  margin: 0 1rem;
+  flex: 1 1 0; /* Make same width */
+}
+
+/* Slide number */
+.reveal .slide-number {
+  font-family: var(--r-code-font);
+  font-size: 0.4rem;
+  color: var(--colour-tx-muted);
+  background-color: transparent;
+}
+.reveal .slide-number-delimiter {
+  margin: 0 -1ch;
+}
+
+/* Margin utilities like Tailwind */
+.slides .mt-0 {
+  margin-top: 0;
+}
+.slides .mt-2 {
+  margin-top: 0.5rem;
+}
+.slides .mt-4 {
+  margin-top: 1rem;
+}
+.slides .mt-6 {
+  margin-top: 1.5rem;
+}
+.slides .mt-8 {
+  margin-top: 2rem;
+}
+.slides .mb-0 {
+  margin-bottom: 0;
+}
+.slides .mb-2 {
+  margin-bottom: 0.5rem;
+}
+.slides .mb-4 {
+  margin-bottom: 1rem;
+}
+.slides .mb-6 {
+  margin-bottom: 1.5rem;
+}
+.slides .mb-8 {
+  margin-bottom: 2rem;
+}
+
+/* Drop shadow */
+.drop-shadow-2xl {
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+}
+
+.border-1 {
+  border: 1px solid rgb(0 0 0 / 0.15);
+}
+
+/* Table alignment */
+.reveal table th[align="left"],
+.reveal table td[align="left"] {
+  text-align: left;
+}
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+  text-align: center;
+}
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+  text-align: right;
+}
+
+/* Fix maths */
+.reveal small * {
+  vertical-align: initial;
+}
