@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Das »ureigenste theatralische Element« (DHd-Vortrag, 1. März 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Das »ureigenste theatralische Element«
+#### Automatische Extraktion von Requisiten aus deutschsprachigen Dramentexten
+
+<br />
+
+## 🗡️ 🍵 🌱
+
+<br />
+
+Jonah Lubin ¹ · Anke Detken ² · Frank Fischer ¹<!-- .element: style="font-size:0.8em;" -->
+
+1 · Freie Universität Berlin <br />2 · Georg-August-Universität Göttingen<!-- .element: style="font-size:0.6em;" -->
+
+<br />
+
+<br />URL dieser Präsentation: **[bit.ly/props-dhd](https://bit.ly/props-dhd)**
+<!-- .element: style="font-size:0.6em;" -->
+
+[DHd2024](https://dhd2024.dig-hum.de/programm-freitag-01-03-2024/) &nbsp;·&nbsp; Passau &nbsp;·&nbsp; Mi, 1. März 2024, 11:30 Uhr
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Vorhaben und Forschungsstand](#/1)
+2. [Workflow](#/2)
+3. [Analyse 1: Requisiten chronologisch](#/3)
+4. [Analyse 2: Genre und formale Aspekte](#/4)
+5. [Zusammenfassung und Ausblick](#/5)
+
+---
+
+### Vorhaben und Forschungsstand
+
+--
+
+### Ziel
+
+- Blick über spezielle Requisiten hinaus auf die Gesamtheit der Requisiten
+
+<br /><br />
+
+### Formalisierung/Operationalisierung
+
+- ein Gegenstand kommt nur als Requisit in Betracht, wenn er nicht nur in der Figurenrede, sondern zusätzlich in den Regiebemerkungen (oder auch nur dort) erwähnt wird (vgl. Roman Ingarden: *Das literarische Kunstwerk. Mit einem Anhang von den Funktionen der Sprache im Theaterschauspiel.* Dritte, durchgesehene Auflage. Tübingen: Niemeyer 1965, S. 405)
+
+--
+
+»Stage directions, quite literally, don’t count.«
+
+<br />
+
+– Eric Rasmussen, 2003
+<!-- .element: style="text-align:right;" -->
+
+--
+
+![Im Nebenraum des Textes (Cover)](images/detken-nebenraum-cover.jpg)<!-- .element height="400px;" -->
+
+Anke Detken: *Im Nebenraum des Textes. Regiebemerkungen in Dramen des 18. Jahrhunderts.* <br />Berlin, New York: De Gruyter 2009. ([doi:10.1515/9783110230031](https://doi.org/10.1515/9783110230031))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+![The Stage Life of Props (Cover)](images/sofer-props-cover.jpg)<!-- .element height="400px;" -->
+
+Andrew Sofer: *The Stage Life of Props.* University of Michigan Press 2003. ([doi:10.3998/mpub.11888](https://doi.org/10.3998/mpub.11888))
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Workflow
+
+--
+
+### Datenbezug über DraCor API
+
+<br />
+
+- Zeitraum 1730–1950
+- Korpus: 609 Stücke
+- Beispiel für Query:
+  - https://staging.dracor.org/api/v1/corpora/ger/plays/kotzebue-das-koestlichste/stage-directions
+
+--
+
+### Ggf. Normalisierung der historischen Orthografie
+
+<br />
+
+- Wörter vereinheitlichen
+  - »Schwerd«, »Schwerdt« → »Schwert«
+- [DTA::CAB Web Service](https://deutschestextarchiv.de/public/cab/) (vgl. Jurish 2012)
+- resultierende Liste manuell moderiert, um Ergebnisse zu optimieren
+
+--
+
+### POS-Tagging
+
+<br />
+
+- POS-Tagging der Regiebemerkungen mit ›spaCy‹
+- Beschränkung auf Substantive bzw. *noun phrases*, wobei auch Eigennamen ausgelassen wurden
+
+--
+
+### Grundformreduktion
+
+<br />
+
+- Substantive morphologisch auf Grundformen reduziert mit [GermaLemma](https://github.com/WZBSocialScienceCenter/germalemma)
+- Komposita in Bestandteile zerlegt mit [CharSplit](https://github.com/dtuggener/CharSplit)
+- Klassifizierung der Lemmata als potenzielle Requisiten:
+  - GermaNet (Hamp/Feldweg 1997, Henrich/Hinrichs 2010) in der aktuellen Version 18.0
+  - immer dann, wenn ein Lemma in GermaNet in mindestens einer Bedeutung als ›Artefakt‹, ›Pflanze‹ oder ›Nahrung‹ klassifiziert wird
+
+--
+
+### Disambiguierung
+
+<br />
+
+- Simplified Lesk Algorithmus
+    - Glossen von Wiktionary und lexikalischen Feldern von GermaNet verwendet (wie beschrieben in Henrich/Hinrichs 2012)
+    - falls keine Word Sense Disambiguation geliefert wird, wurde der ranghöchste Sinn von Wiktionary übernommen
+
+--
+
+### Beispiel (1/2)
+#### [»Der Witzling«](https://dracor.org/id/ger000395#text) (1745) von Luise Gottsched
+
+<br />
+
+- 18 Requisiten extrahiert:
+    - »Tische«, »einen versiegelten Brief«, »den Brief«, »den Brief«, »den Tisch«, »dem Geräte«, »ein Schälchen Kaffee«, »ein Stück Zucker«, »die Degen«, »einem jeden Kaffee«, »den Brief«, »Tische«, »seinen Degen«, »den Brief«, »den Brief«, »den Stuhl«, »einen versiegelten Brief«, »Degen«
+    - die in den Regieanweisungen vorkommenden »Hüte« wurden entsprechend unserer Operationalisierung nicht extrahiert, da es sich um ›Kleidung‹ handelt
+
+--
+
+### Beispiel (2/2)
+#### [»Der Witzling«](https://dracor.org/id/ger000395#text) (1745) von Luise Gottsched
+
+<br />
+
+- Die so herausgelösten Requisiten schärfen den Blick auf ihre Rolle im Stück:
+    - Dem **Degen** kommt hier als Kavaliersdegen nur die Funktion eines Attributsrequisits zu
+    - der (falsch adressierte) **Brief** hingegen ist typisch für die Komödie
+    - der **Kaffee** – das Getränk, das die Kaffeehauskultur der Aufklärung prägte – erkaltet symbolisch über der Diskussion der drei vorgeführten Möchtegerns und wird schließlich unverrichteter Dinge abgeräumt
+
+---
+
+### Analyse 1: Requisiten chronologisch
+
+--
+
+### Erwähnungen von Requisiten im Korpus <br />pro Drama, chronologisch
+
+![props per play](images/fig_1_props_per_play.png)<!-- .element height="300px;" -->
+
+- Vgl. die Verlaufskurven in Trilcke et al. 2020 – Regieanweisungen werden entlang der Zeitachse systematisch umfangreicher und lebendiger (mehr Adjektive, mehr Verben).
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Allerdings …
+
+<br />
+
+- … korreliert in dieser Darstellung die Anzahl von Requisiten mit dem Umfang der Dramen
+- Werke mit den meisten Nennungen von Requisiten gehören auch zu den umfangreichsten Dramen: Arno Holz’ »Ignorabimus« (1914) und »Sonnenfinsternis« (1908) sowie Karl Kraus’ »Die letzten Tage der Menschheit« (1919)
+
+--
+
+#### Berechnung der durchschnittlichen Erwähnungen von Requisiten pro Segment (Akt, Szene oder eine andere Unterteilung) eines Dramas
+
+<br />
+
+| **Drama**                                            | **Anzahl Requisiten** | **Anzahl Segmente** | **Requisiten/Segment** |
+| ---------------------------------------------------- | --------------------- | ------------------- | ---------------------- |
+| Luise Gottsched: »Der Witzling« (1745)               | 18                    | 9                   | 2                      |
+| G. E. Lessing: »Emilia Galotti« (1772)               | 24                    | 43                  | 0,56                   |
+| Karl Kraus: »Die letzten Tage der Menschheit« (1919) | 327                   | 220                 | 1,49                   |
+
+--
+
+#### Durchschnittliche Erwähnungen von Requisiten im Korpus pro Segment (Akt, Szene oder eine andere Unterteilung) pro Jahr der Erstveröffentlichung
+
+![props per segment](images/fig_2_props_per_segment_per_play.png)<!-- .element height="300px;" -->
+
+- Relative Häufigkeit von Requisiten ändert sich ab Ende 19. Jh. (Teil der Epifizierungstendenzen anlässlich der »Krise des Dramas« um 1900?)
+- Outlier nach oben: Stücke ohne Szeneneinteilung (Segmente hier = umfangreiche Akte): Hermann Bahrs »Das Konzert« (1909) und »Das Phantom« (1913) sowie »Ignorabimus« von Arno Holz
+
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Durchschnittliche Erwähnungen von Requisiten im Korpus pro Akt pro Jahr der Erstveröffentlichung
+
+![props per act](images/fig_3_props_per_act_per_play.png)<!-- .element height="300px;" -->
+
+- Bei dieser Normalisierung fächert sich das Feld nach oben auf, ohne dass sich allerdings die Tendenz ändert.
+<!-- .element: style="font-size:0.7em;" -->
+
+---
+
+### Analyse 2: Verteilung einzelner Typen von Requisiten nach Genre und formalen Aspekten
+
+--
+
+Ist die Verwendung von Requisiten abhängig <br />vom Genre sowie formalen Aspekten?
+
+<br />
+
+(→ Kategorisierung verschiedener Typen von Requisiten mit GermaNet)
+
+--
+
+### Requisiten in Tragödie und Komödie
+
+<br />
+
+| **Requisit bzw. Typ von Requisit** | **Komödie (N = 184)** | **Tragödie (N = 130)** |
+| ---------------------------------- | --------------------- | ---------------------- |
+| Waffen                             | 49,5 %                | 86,2 %                 |
+| Feuerwaffen                        | 12,5 %                | 16,2 %                 |
+| Dolch                              | 6,5 %                 | 38,5 %                 |
+| Kaffee                             | 10,9 %                | 6,9 %                  |
+
+<br />
+
+- Prozentzahlen: in wie vielen Komödien und Tragödien kommt ein bestimmtes Requisit bzw. ein bestimmter Typ von Requisit mindestens einmal vor.
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Requisiten in Prosa- und Versdramen
+
+<br />
+
+| **Requisit bzw. Typ von Requisit** | **Prosadrama (N = 378)** | **Versdrama (N = 231)** |
+| ---------------------------------- | ------------------------ | ----------------------- |
+| Waffen                             | 60,1 %                   | 75,3 %                  |
+| Feuerwaffen                        | 18,8 %                   | 7,8 %                   |
+| Dolch                              | 10,6 %                   | 26,0 %                  |
+| Kaffee                             | 13,8 %                   | 1,3 %                   |
+
+<br />
+
+- Prozentzahlen: in wie vielen Prosa- und Versdramen kommt ein bestimmtes Requisit bzw. ein bestimmter Typ von Requisit mindestens einmal vor.
+- Enthält ein Werk mehr Verszeilen (```<l>```) als Prosaabsätze (```<p>```): Versdrama. Wenn Verhältnis umgekehrt: Prosadrama.
+
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Gesamtes Waffenarsenal im Korpus
+
+<br />
+
+- 38 individuelle Waffentypen (bzw. Munition), inklusive spezifizierenden Komposita:
+  - Armbrust, Bajonett, Bogen, Bombe, Büchse, Degen, Dienstgewehr, Dolch, Doppelflinte, Dreizack, Fangmesser, Flinte, Florett, Geißel, Gewehr, Hellebarde, Hetzpeitsche, Kanone, Keule, Klinge, Knüppel, Knüttel, Lanze, Messer, Muskete, Peitsche, Pfeil, Pistole, Rasiermesser, Revolver, Schild, Schläger, Schnitzmesser, Schwert, Seitengewehr, Speer, Spieß, und Säbel.
+- Die meisten Waffentypen im Korpus stammen aus dem **»Age of Muscle«** (Trevor N. Dupuy), dem **»Age of Gunpowder«** sind nur ein knappes Dutzend zuzuordnen.
+
+--
+
+#### »Increase of weapon lethality and dispersion over history«
+
+![Increase of weapon lethality and dispersion over history](images/increase-of-weapon-lethality.png)<!-- .element height="520px;" -->
+
+Quelle: Trevor N. Dupuy: The Evolution of Weapons and Warfare. New York: Bobbs-Merrill 1980, S. 288f.
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Zusammenfassung und Ausblick
+
+--
+
+### Ergebnisse
+
+<br />
+
+- quantitativer Ansatz vermittelt einen Eindruck von der Häufigkeit und Distribution von Requisiten innerhalb deutschsprachiger Dramentexte
+- bisher wenig beachtete Typen von Requisiten besser erforschbar
+
+--
+
+### Einschränkungen
+
+<br />
+
+- keine Aussagen über die Qualität der Erwähnungen von Requisiten
+  - »a stage dagger might move from being a passive emblem of the wearer’s status to participating in the action as an instrument of murder, and thence to a final independent association with the concept ›murder.‹« (Sofer 2003, S. 9)
+- beobachtete *false negatives* v.&nbsp;a. aufgrund historischer Grammatik (Dativ-›e‹)
+- Probleme bei der Disambiguierung mittels Simplified Lesk Algorithmus (ein »Tisch« kann mal erfolgreich extrahiert werden, ein andermal nicht)
+
+--
+
+### Ausblick
+
+<br />
+
+- Übertragung des Ansatzes auf andere Sprachen durch Anpassung der NLP-Tools
+  - (DraCor derzeit: 26 Korpora in 19 Sprachen)
+- wünschenswert: entsprechendes TEI-Markup (```<rs type="prop" ref="http://www.wikidata.org/entity/Q182780">```), auch als Evaluierungsbasis und Basis für Trainingsdatenset
+
+--
+
+Vielen Dank.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
