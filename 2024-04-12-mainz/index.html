@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Netzwerkdaten in der Literaturwissenschaft (Vortrag 12. April 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Netzwerkdaten in der <br />Literaturwissenschaft
+
+![Simple network (from Wikimedia Commons)](images/graph-symbolbild-wm-commons.png)<!-- .element width="120px;" -->
+<!-- source: https://commons.wikimedia.org/wiki/File:Graph_betweenness.svg -->
+
+[Prof. Dr. Frank Fischer](https://lehkost.github.io/)<!-- .element: style="font-size:0.85em;" -->
+
+(Freie Universität Berlin)<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br />Diese Präsentation: <br />**[lehkost.github.io/slides/2024-04-12-mainz/](https://lehkost.github.io/slides/2024-04-12-mainz/index.html)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br /><br />[»Connecting the Dots«](https://korrespondenzen-fruehromantik.uni-mainz.de/tagung-april-2024/) &nbsp;·&nbsp; Akademie der Wissenschaften und der Literatur Mainz &nbsp;·&nbsp; 12. April 2024
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+#### Netzwerke als Denkfiguren in Briefen: <br />H. M. Enzensberger an Uwe Johnson (am 22. August 1962)
+
+![Enzensberger-Netzwerke](images/enzensberger-networks.jpg)
+
+»fig. 1 ist das schema einer kommunikation zwischen sieben herausgebern von denen einer als redakteur fungiert, nach deinem vorschlag. fig. 2 zeigt ein vereinfachtes schema, wie ich es vorschlage. die vorzüge sind sichtbar. […] natürlich ändert sich dabei die position des redakteurs; seine vollmachten müssen größer werden. dafür bin ich; dafür ist auch grass.« (S. 43)
+<!-- .element: style="font-size:0.65em;" -->
+
+(Quelle: Hans Magnus Enzensberger u. Uwe Johnson: »fuer Zwecke der brutalen Verstaendigung«: Der Briefwechsel. Frankfurt/M.: Suhrkamp 2009, S. 42f. – Vielen Dank an Hannah Scheithauer für Hinweis und Foto!)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## Inhalt
+
+<br />
+
+1. [Dramatik](#/1)
+2. [Prosa](#/2)
+3. [Tools](#/3)
+4. [Weitere Netzwerke](#/4)
+5. [Zusammenfassung](#/5)
+
+---
+
+## 1. Dramatik
+
+--
+
+### ›Digitale Netzwerkanalyse dramatischer Texte‹: <br />Was kommt da alles zusammen?
+
+<br />
+
+- formalistische Ansätze (Yarkho [1930er](https://doi.org/10.1515/jlt-2019-0002))
+- co-mention analysis (Rosengren 1968)
+- strukturanalytische Ansätze (Titzmann 1977)
+- Social Network Analysis (Moreno 1933, Wasserman/Faust 1998)
+- Digital Humanities:
+  - Verfahren der automatisierten Datenerhebung und -auswertung
+  - Vorhandensein großer Textkorpora
+  - Infrastrukturen
+
+<br />Vgl. auch Peer Trilcke, Frank Fischer, Dario Kampkaspar: *Digitale Netzwerkanalyse dramatischer Texte.* <br />In: DHd2015: »Von Daten zu Erkenntnissen«. Graz, 25. Februar 2015. ([doi:10.5281/zenodo.4623288](https://doi.org/10.5281/zenodo.4623288))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Karl Erik Rosengren: Sociological Aspects of the Literary System (1968)
+
+![Rosengren](images/rosengren-sociological-aspects.jpg)<!-- .element width="320px;" -->
+
+»To a humanist Mr. Rosengren’s thesis seems at first glance to be **a somewhat nightmarish product** of the scientific age.« ([Review](https://jstor.org/stable/40916980) in *Scandinavian Studies* 1969)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## Operationalisierung
+
+<br />
+
+- soziale Netzwerkdaten = **Interaktionen** zwischen sozialen Entitäten
+- Netzwerkdaten: Knoten + Kanten (**wichtig**: man muss stets in der Lage sein zu sagen, welche Beziehung zwischen den Knoten besteht, d.&nbsp;h. welche Bedeutung die Kanten haben)
+- z.&nbsp;B. in dramatischen Texten: »Zwei Figuren interagieren miteinander, wenn sie innerhalb desselben Abschnitts eines Dramas (normalerweise eine ›Szene‹) einen Sprechakt vollziehen.« (in Anlehnung an Solomon Marcus, »Poetica matematică«, 1970)
+
+--
+
+### Schnitzler: »Reigen« (1901) – 1/2
+
+›Konfigurationsmatrix‹ (nach Pfister: »Das Drama. Theorie und Analyse«, 1977)
+
+![Reigen](images/schnitzler-reigen-konfigurationsmatrix.png)<!-- .element width="600px;" -->
+
+Bildquelle: [DH Regensburg 2015](https://dhregensburg.net/wp-content/uploads/2015/03/2015-quantitative-drama-slides.pdf).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Schnitzler: »Reigen« (1901) – 2/2
+
+![Reigen](images/schnitzler-reigen.png)<!-- .element width="520px;" -->
+
+Kookkurenzgraph. – Daten [via DraCor](https://dracor.org/id/ger000232).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+Franco Moretti: »Network Theory, Plot Analysis« (2011)
+
+![Hamlet Network by Moretti](images/moretti-hamlet.gif)
+
+(Quelle: [Literary Lab Pamphlet 2](https://litlab.stanford.edu/LiteraryLabPamphlet2.pdf), Abb. 2.)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+Formalisierungen sind immer kontingent (2020)
+
+![To Be or Not to Be Central (Poster)](images/to_be_or_not_to_be_central_dh2020.png)<!-- .element width="600px;" -->
+
+Anastasia Klimashevskaia, Bernhard C. Geiger, Martin Hagmüller, Denis Helic, Frank Fischer: <br />*To Be or Not to Be Central: On the Stability of Network Centrality Measures in Shakespeare’s »Hamlet«* <br />(Poster, DH2020, Ottawa) · [doi:10.5281/zenodo.3989291](https://doi.org/10.5281/zenodo.3989291)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Distant-Reading Showcase (2016)
+
+Wie verändern sich die Figurenkonstellationen im deutschen Drama?
+
+![465 Dramennetzwerke auf einen Blick](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DraCor
+
+![DraCor-Frontpage am 09.04.2024](images/dracor_frontpage_2024-04-09.png)<!-- .element width="960px;" -->
+
+Das *Drama Corpora*-Portal (https://dracor.org/), entwickelt seit 2017, <br />bietet mittlerweile Netzwerkdaten zu 26 Korpora in 19 Sprachen an.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### GerDraCor
+
+<br />
+
+- mittlerweile 698 Stücke (wird systematisch ergänzt)
+- Community-Projekt: Beschreibung und Anwendungsbeispiele [bei forTEXT](https://fortext.net/ressourcen/textsammlungen/dracor-drama-corpora-project) (Hamburg/Darmstadt)
+- [Nathalie Wiedmer et al.](https://quadrama.github.io/publications/Wiedmer2020aa): Annotation von Beziehungen der Figuren untereinander (Familien- und Liebesverhältnisse, dienstliche Abhängigkeiten)
+
+--
+
+### GerDraCor: »Die Räuber« (1781)
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/ger000008
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Ludwig Anzengrubers »Das vierte Gebot« (1877)
+
+![Anzengruber-Drama, Netzwerk mit Figurenbeziehungen](images/anzengruber-list-relations.jpg)<!-- .element width="580px;" -->
+
+**Modellierung spezifischer Figurenrelationen.** <br />Netzwerkdaten: https://dracor.org/id/ger000129#relations
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### DraCor-Download-Tab
+
+![DraCor-Download-Tab](images/anzengruber-download-tab.png)
+
+https://dracor.org/id/ger000129#downloads
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+Über die **DraCor-API**, Kernstück des DraCor-Ökosystems, <br />hat man noch mehr Interaktionsmöglichkeiten <br />(mehr dazu gleich).
+
+---
+
+## 2. Prosa
+
+--
+
+#### Vollständige Modellierung des Romans »Simple Storys« von Ingo Schulze
+
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-storys-netzwerk.png)<!-- .element width="450px;" -->
+
+Thomas Schweizer, Michael Schnegg: [»Die soziale Struktur der ›Simple Storys‹. Eine Netzwerkanalyse«](https://web.archive.org/web/20220119175152/https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf) (1998). <br />38 Knoten (Romanfiguren). Kanten: positive, negative oder Tauschbeziehungen.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### »The Adventures of Sherlock Holmes« (1/2)
+#### <u>Schritte (laut [Jupyter Notebook](https://nbviewer.org/gist/sgsinclair/bf112f84f130c8bac96c) von Stéfan Sinclair, 2015):</u>
+
+- Text besorgen (via [Project Gutenberg](https://www.gutenberg.org/cache/epub/1661/pg1661.txt))
+- Absätze einzeln betrachten
+- Personen (*named entities*) finden (mit Hilfe des NLTK-Taggers)
+- Absätze mit mehr als einer *named entity* suchen
+- wenn A, B und C vorkommen: A ⇆ B, A ⇆ C, B ⇆ C
+- gemeinsame Relationen zählen:
+  - Holmes, Watson, 19
+  - Holmes, Lestrade, 7
+  - Holmes, Hosmer Angel, 7
+  - Holmes, Lord St. Simon, 6
+  - Doctor, Holmes, 6
+  - (…)
+
+--
+
+### »The Adventures of Sherlock Holmes« (2/2)
+
+![holmes](images/holmes.png)
+
+Quelle für die Visualisierung: [Jupyter Notebook](https://nbviewer.org/gist/sgsinclair/bf112f84f130c8bac96c) von Stéfan Sinclair (2015).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Das »Nation, Genre & Gender«-Projekt des UCD
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/KX7rzQMswEw?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+(Direkt [auf YouTube](https://www.youtube.com/watch?v=KX7rzQMswEw).)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### 9 britische Romane (Austen & Dickens) (1/5)
+
+<br />
+
+* Siobhán Grayson, Karen Wade, Gerardine Meaney, Derek Greene: **The Sense and Sensibility of Different Sliding Windows in Constructing Co-Occurrence Networks from Literature.** In: Bojan Bozic, Gavin Mendel-Gleason, Christophe Debruyne, Declan O’Sullivan (Hrsg.): Computational History and Data-Driven Humanities. CHDDH 2016. IFIP Advances in Information and Communication Technology, Vol. 482. Cham: Springer. ([doi:10.1007/978-3-319-46224-0_7](https://doi.org/10.1007/978-3-319-46224-0_7))
+
+--
+
+### 9 britische Romane (Austen & Dickens) (2/5)
+
+<br />
+
+- bei Romanen braucht man einen operationalisierungsfähigen Ko-Präsenz-Begriff
+- Voraussetzung: manuelle Annotation aller Romane, um Figurenreferenzen zu finden (Figurenlexikon mit Aliases)
+- 3 Fenstertechniken:
+  - collinear
+  - coplanar (wenn das Window der ganze Text ist, dann sind alle Charaktere miteinander verbunden, man muss sich also für eine Fenstergröße entscheiden, und sie probieren drei verschiedene aus)
+  - combination
+
+--
+
+### 9 britische Romane (Austen & Dickens) (3/5)
+
+<br />
+
+![collinear and coplanar](images/collinear-coplanar.png)<!-- .element width="640px;" -->
+
+--
+
+### 9 britische Romane (Austen & Dickens) (4/5)
+
+<br />
+
+- collinear: besonders nützlich im Bezug auf die Erzähltechnik, für die Identifizierung von narrativen Abwegen und Nebenhandlungen
+- combination: Illustration der Verbindungen zwischen und über die sozialen Klassen hinweg
+- »Der kollineare Ansatz hat langfristiges Potenzial für die Analyse der viel kommentierten Kette von erzählerischen Ursachen und Wirkungen bei Austen.«
+
+--
+
+### 9 britische Romane (Austen & Dickens) (5/5)
+
+<br />
+
+![Austen](images/austen.png)<!-- .element width="640px;" -->
+
+--
+
+Angereicherte Netzwerke
+
+![madame-bovary-netzwerk-topics](images/madame-bovary-netzwerk-topics.png)
+
+Quelle: Isabella Reger: *Figurennetzwerke als Ähnlichkeitsmaß.* Masterarbeit. <br />Julius-Maximilians-Universität Würzburg. 08.08.2016. ([urn:nbn:de:bvb:20-opus-149106](https://nbn-resolving.org/urn:nbn:de:bvb:20-opus-149106)) S. 61.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Extraktion von Figurennetzwerken aus Romanen: <br />Dynamik der Netzwerkdichte in Tolstois »Krieg und Frieden«
+
+![Netzwerkdichte für die einzelnen Bücher von Tolstois "Krieg und Frieden"](images/densities-dynamics-war-and-peace.png)<!-- .element height="400px;" -->
+
+Frank Fischer, Daniil Skorinkin: [Social Network Analysis in Russian Literary Studies.](https://doi.org/10.1007/978-3-030-42855-6_29) In: Gritsenko, Wijermars, <br />Kopotev (Hrsg.): The Palgrave Handbook of Digital Russia Studies. Palgrave Macmillan 2020.
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+## 3. Tools
+
+--
+
+### Gephi 🦌
+
+<br />
+
+* Gephi
+* Gephi lite
+* Gephisto
+
+--
+
+### Gephi (seit 2006)
+
+![Gephi Screenshot](images/gephi-les-miserables.png)
+
+(»Les misérables« von Victor Hugo als Gephi-Beispieldatei. Ursprünglich 1993 formalisiert von Donald E. Knuth <br />für die Stanford GraphBase. Bildquelle: [Jason Heppler](https://jasonheppler.org/courses/csu-workshop/gephi.html), 2016. Lizenz: CC BY-NC-SA 4.0.)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+![Besuch im Marstheater (Poster)](images/besuch-im-marstheater-poster.jpg)<!-- .element height="520px;" -->
+
+Frank Fischer, Anna Busch, Angelika Hechtl, Peer Trilcke, Andreas Vogel: **Besuch im »Marstheater« – Eine Netzwerkmodellierung von Karl Kraus’ Riesendrama »Die letzten Tage der Menschheit«.** In: DHd2020: »Spielräume«. 2.–6. März 2020. Book of Abstracts. Universität Paderborn. ([doi:10.6084/m9.figshare.11917902](https://doi.org/10.6084/m9.figshare.11917902))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Gephi lite (seit 2022)
+
+![Gephi lite Screenshot](images/gephi-lite.png)<!-- .element width="720px;" -->
+
+https://gephi.org/gephi-lite/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+###
+
+### Gephisto (seit 2021)
+
+![Gephi lite Screenshot](images/gephisto.png)<!-- .element width="720px;" -->
+
+https://jacomyma.github.io/gephisto/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Cytoscape (seit 2002)
+
+![Cytoscape 3.7.0 Screenshot (from Wikimedia Commons)](images/cytoscape_screenshot.png)
+
+https://cytoscape.org/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Pajek (seit 1996)
+
+![Pajek Screenshot 1](images/pajek_screenshot_1.png)<!-- .element width="520px;" -->
+![Pajek Screenshot 2](images/pajek_screenshot_2.jpg)<!-- .element width="405px;" -->
+
+http://mrvar.fdv.uni-lj.si/pajek/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Visone (seit 1996)
+
+![Visone Screenshot](images/visone_screenshot.png)<!-- .element width="820px;" -->
+
+https://visone.ethz.ch/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Formalisierung und Visualisierung mit ezlinavis
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-beispiel.png)<!-- .element height="420px;" -->
+
+Linke Spalte: Eingabefenster. – Mittlere Spalte: Automatisch generierte Kantendaten. – <br />Rechte Spalte: Interaktive Visualisierung. · https://ezlinavis.dracor.org/ <br /><br />Vgl. Frank Fischer, Carsten Milling: Easy Linavis (Simple Network Visualisation for Literary Texts). In: HDH2017: »Sociedades, políticas, saberes.« 18.–20. Oktober 2017. Málaga. Libro de resúmenes, S. 173–176. ([doi:10.5281/zenodo.10478399](https://doi.org/doi:10.5281/zenodo.10478399))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Netzwerkvisualisierung eines Briefes
+
+![Netzwerkvisualisierung des Briefes von Emmy an Rudolf](images/emmy-an-rudolf-ezlinavis.png)<!-- .element width="600px;" -->
+
+Quelle: Canan Hastik, Andrea Rapp, Eva Lia Wyss: *Liebesbriefe in sozialen Netzen des 19. und 21. Jahrhunderts.* In: Markus Bernauer, Selma Jahnke, Frederike Neuber, Michael Rölcke (Hrsg.): *Soziales Medium Brief. Sharen, Liken, Retweeten im 18.&nbsp;und 19. Jahrhundert. Neue Perspektiven auf die Briefkultur.* Darmstadt: wbg Academic 2023, S. 69–89, hier S. 83.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### sigma.js (seit 2014)
+
+![sigma js screenshot](images/sigma_js_screenshot.png)<!-- .element width="800px;" -->
+
+https://www.sigmajs.org/
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DraCor-API-Bibliotheken
+
+<br />
+
+= einfache, flexiblere Nutzbarkeit <br />aus Programmiersprachen heraus
+
+<br />
+
+- für R: rdracor ([CRAN](https://cran.r-project.org/web/packages/rdracor/index.html))
+- für Python: pydracor ([PyPI](https://pypi.org/project/pydracor/))
+
+--
+
+#### Beispiel (mit rdracor):
+
+```R
+library(rdracor)
+hermann <- get_net_cooccur_igraph(corpus="ger", play="kleist-die-hermannsschlacht")
+plot(hermann)
+```
+
+#### Ergebnis:
+
+![Hermannsschlacht, Netzwerkgraph mit rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element height="440px;" -->
+
+--
+
+<!-- .slide: data-background-image="images/clsinfra-logo.png" data-background-size="10% auto" data-background-position="100% 0%" -->
+
+### Lessings »Emilia Galotti«
+
+![Emilia Galotti (dynamischer Graph)](images/lessing-emilia-galotti.gif)
+
+**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script: Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Gamification-Ansatz: »Dramenquartett« (2019)
+
+<br />
+
+![Dramenquartett](images/dramenquartett-four-cards.jpg)<!-- .element width="450px;" -->
+
+Frank Fischer und Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** Unter Mitarbeit von Christopher Kittel, Carsten Milling, Peer Trilcke und Jana Wolf. Bern: edition taberna kritika 2019. 32 Blatt in Kartonbox, Farbdruck. <br />ISBN: 978-3-905846-55-3. Preis: €14 / 17 SFr. (mittlerweile vergriffen) – Spielregeln: https://dramenquartett.github.io/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Berechnung ante Visualisierung
+
+![periodic table of network centrality](images/periodic-table-of-network-centrality.png)<!-- .element width="820px;" -->
+
+Periodensystem der Netzwerkzentralitäten <br />([schochastics.net/sna/periodic.html](http://schochastics.net/sna/periodic.html))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Mathieu Jacomy: »Translating networks: <br />linking visualization to statistics«
+
+![Visual Analysis (Jacomy)](images/visual-analysis-jacomy.png)<!-- .element width="640px;" -->
+
+»visualization helps building hypotheses, while statistics allow testing them and building evidence« (https://reticular.hypotheses.org/1745)
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+## 4. Weitere Netzwerke
+
+--
+
+### DraCor-Ontologie
+
+![WebVOWL](images/webvowl-dracor-ontology.png)<!-- .element height="480px;" -->
+
+https://vowl.acdh.oeaw.ac.at/#iri=https://raw.githubusercontent.com/dracor-org/dracor-schema/ontology/ontology/dracor-ontology.xml
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Stilometrische Netzwerke
+
+<br />
+
+- Messung von Textähnlichkeit aufgrund der Frequenz von Wörtern in einem hochdimensionalen Raum
+- berechnete Ähnlichkeitsmaße lassen sich auch als Netzwerk darstellen
+
+--
+
+#### Stilnetzwerk zur Bestimmung der <br />Autor\*innenschaft: Elena Ferrante
+
+![caption](images/ferrante.png)<!-- .element height="500px;" -->
+
+Quelle: Jan Rybicki.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Stilnetzwerk zur Genrebestimmung: Shakespeare
+
+![caption](images/shakesepare-genres.png)<!-- .element height="480px;" -->
+
+Quelle: Jan Rybicki.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Stilnetzwerk zur Datierung: Charles Dickens
+
+![caption](images/dickens-novels.png)<!-- .element height="420px;" -->
+
+Quelle: Jan Rybicki.
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+## 5. Zusammenfassung
+
+<br />
+
+- digitales Ökosystem mit reicher Daten- und Tool-Landschaft
+- Formalisierung/Operationalisierung ist immer kontingent und hat Einfluss auf die Interpretierbarkeit
+
+### <br />Paralipomena
+
+- geschlossene vs. offene Netzwerke (vollständige vs. per se unvollständige Daten)
+- multimodale Netzwerke
+
+--
+
+Vielen Dank.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
