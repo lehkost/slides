@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Von DRAMALYS.EXE zu DraCor (Vortrag für #RosDH, 2. Mai 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Von DRAMALYS.EXE zu DraCor
+#### Eine Geschichte der digitalen Dramenanalyse von 1984 bis heute
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+(Freie Universität Berlin)<!-- .element: style="font-size:0.75em;" -->
+
+<br />Kurzlink zu dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/geschdra](https://bit.ly/geschdra)**
+
+<br />[Ringvorlesung des #RosDH](https://www.germanistik.uni-rostock.de/forschung/digital-humanities/rosdh/ringvorlesung/2024/n/von-dramalysexe-zu-dracor-eine-geschichte-der-digitalen-dramenanalyse-von-1984-bis-heute-188659/) &nbsp;·&nbsp; Universität Rostock &nbsp;·&nbsp; 2. Mai 2024, 17:15 Uhr
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Programmankündigung:
+
+<br />
+
+* Nach formalistischen und strukturalistischen Vorarbeiten werden Dramentexte spätestens seit den 1980er-Jahren mit Computern erforscht. Der Vortrag lässt 40 Jahre digitale Dramenforschung Revue passieren, von den ersten Experimenten mit imperativen Programmiersprachen bis hin zu ausgewachsenen Infrastrukturen in den digitalen Ökosystemen der Gegenwart.
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Vor 1984](#1)
+2. [1984](#2)
+3. [Nach 1984](#3)
+4. [Zusammenfassung](#4)
+
+---
+
+# Vor 1984
+
+--
+
+### »Data« as of 1819
+
+* »Thus having been provided in the fewest words, in a natural reply to as natural a question, – which yet answers a secondary purpose of attracting our attention to the difference or diversity between the characters of Cornwall and Albany, – provided **the premises and data**, as it were, having been thus afforded **for our after-insight into the mind and mood of the person, whose character, passions, and sufferings are the main subject-matter of the play**; – from Lear, the persona patiens of his drama, Shakespeare passes without delay to the second in importance, the chief agent and prime mover, and introduces Edmund to our acquaintance, preparing us with the same felicity of judgment, and in the same easy, natural way, for his character in the seemingly casual communication of its origin and occasion.«
+
+S. T. Coleridge: Thursday, 28 January 1819 (King Lear). In: Adam Roberts (ed.): [Coleridge: <br />Lectures on Shakespeare (1811–1819).](https://www.cambridge.org/core/books/coleridge-lectures-on-shakespeare-1811-1819/7532FA60F4C9B8CDEF51FE0D1753B348) Edinburgh University Press 2016, pp. 167–174.
+<!-- .element: style="font-size:0.65em;" -->
+
+(Ein Fund von Nan Z. Da, vgl. ihren Vortrag »Literary-Critical Complexity« auf dem [2nd Workshop <br />»Mathematics of Small Data Analysis«](https://mathplus.de/topic-development-lab/tes-winter-2023-24/workshop-2/) am Zuse-Institut Berlin, 18. Januar 2024. 🙏)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Der Moskauer Formalismus und <br />Boris Yarkho (1889–1942)
+
+![Boris Yarkho (cropped)](images/boris-yarkho.jpg)<!-- .element width="320px;" -->
+
+(Bildquelle: [urokiistorii.ru – via Internet Archive](https://web.archive.org/web/20201001011015/http://urokiistorii.ru/article/52560))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+Boris Yarkho: ***Speech Distribution in Five-Act Tragedies (A Question of Classicism and Romanticism)*** (verfasst 1935–1938, Erstdruck 1997)
+
+![Shakespeare vs Romantiker 2, Redeverteilung im Durchschnitt](images/yarkho-shakespeare-vs-romanticists-2.png)<!-- .element height="400px;" -->
+
+Shakespeare im Vergleich mit dem romantischen Drama (im Durchschnitt): »romantic drama is a return to Shakespeare«. – Englische Übersetzung von Craig Saunders in: Frank Fischer, Marina Akimova, Boris Orekhov (Hrsg.): *Journal of Literary Theory*. [Vol. 13. No. 1: Moscow Formalism and Literary History.](https://www.degruyter.com/journal/key/jlt/13/1/html) De&nbsp;Gruyter 2019, S. 13–76. ([doi:10.1515/jlt-2019-0002](https://doi.org/10.1515/jlt-2019-0002))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### »Computational thinking« bei Boris Yarkho
+
+<br />
+
+- »Eine große Unannehmlichkeit der von uns vorgeschlagenen komparativ-statistischen Methode ist die Unwahrscheinlichkeit, dass eine Person jemals in der Lage wäre, eine ausreichende Anzahl von Merkmalen der Klassik und der Romantik zu studieren, wenn sie dies nicht zu ihrem gesamten Lebenswerk machen will.«
+- »Die Berechnung [eines bestimmten Koeffizienten] würde jedoch über 150 Berechnungen von Standardabweichungen erfordern. Da wir dafür nicht die entsprechenden Mitarbeiter zur Verfügung hatten, hätten wir damit mehr Zeit verloren, als es wert gewesen wäre.«
+- »Wir haben die Technik demonstriert; der Weg ist frei für diejenigen, die mehr Glück haben als wir.«
+
+(Übers. F. F.)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Solomon Marcus: »Poetica matematică« (1970)
+
+(dt. »Mathematische Poetik«. Aus d. Rumän. übertr. von Edith Mândroiu. Frankfurt/M.: Athenäum 1973)
+<!-- .element: style="font-size:0.65em;" -->
+
+![TOC, Seite 15](images/solomon-marcus-inahlt-seite-15.png)<!-- .element height="440px;" -->
+![TOC, Seite 16](images/solomon-marcus-inahlt-seite-16.png)<!-- .element height="440px;" -->
+
+Sehr instruktiv in Sachen Operationalisierung, z.&nbsp;B. (sinngemäß): »Zwei Figuren interagieren miteinander, wenn sie <br />innerhalb desselben Abschnitts eines Dramas (normalerweise eine ›Szene‹) einen Sprechakt vollziehen.«
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Strukturalismus
+#### Manfred Pfister: »Das Drama. Theorie und Analyse« (1977)
+
+![Reigen](images/schnitzler-reigen-konfigurationsmatrix.png)<!-- .element width="600px;" -->
+
+›Konfigurationsmatrix‹ zu Schnitzlers »Reigen« (1901). – Bildquelle: [DH Regensburg 2015](https://dhregensburg.net/wp-content/uploads/2015/03/2015-quantitative-drama-slides.pdf).
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+# 1984
+
+--
+
+### Hartmut Ilsemann (1984/1995) <small>(1/2)</small>
+
+![ilsemann-computerized-1995-snippet](images/ilsemann-computerized-1995-snippet.png)
+
+In: Literary and Linguistic Computing. Vol. 10 (1995), Nr. 1, S. 11–21, [doi:10.1093/llc/10.1.11](https://doi.org/10.1093/llc/10.1.11)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Hartmut Ilsemann (1984/1995) <small>(2/2)</small>
+
+- Bezug auf:
+  - Solomon Marcus
+  - Wilhelm Fucks (»Nach allen Regeln der Kunst«, 1968)
+  - Manfred Pfister
+  - Étienne Souriau (»Les deux cent mille situations dramatiques«, 1950)
+
+<!-- .element: style="font-size:0.6em;" -->
+
+![ilsemann-computerized-1995-table-6](images/ilsemann-computerized-1995-table-6.png)<!-- .element width="370px;" -->
+
+»There is no need to lay emphasis on the fact that once a large data background has been created all sorts of linguistic and literary research are possible.« (S. 13)
+
+---
+
+# Nach 1984
+
+--
+
+### Deutschsprachige Dramenkorpora (ab 2007)
+
+<br />
+
+- [Zeno.org](http://www.zeno.org/) (2007/2008)
+  - deutschsprachige Volltextbibliothek, die auch knapp 700 Dramen enthielt (in eigenem XML-Format)
+  - 2009 vom Forschungsverbund TextGrid erworben, in TEI konvertiert und unter Creative-Commons-Lizenz zur Verfügung gestellt: [Digitale Bibliothek](https://textgrid.de/de/digitale-bibliothek)
+- außerdem:
+  - Deutsches Textarchiv (DTA)
+  - Wikisource: 50 Dramen
+  - Projekt Gutenberg-DE
+
+--
+
+#### Franco Moretti: »Network Theory, Plot Analysis« (2011)
+
+![Hamlet Network by Moretti](images/moretti-hamlet.gif)
+
+(Quelle: [Literary Lab Pamphlet 2](https://litlab.stanford.edu/LiteraryLabPamphlet2.pdf), Abb. 2.)
+<!-- .element: style="font-size:0.6em;" -->
+
+»just think of this: I am discussing *Hamlet*, and <br />saying nothing about Shakespeare’s words« (S. 4)
+
+--
+
+#### Peer Trilcke: Social Network Analysis als Methode einer <br />textempirischen Literaturwissenschaft (2013)
+
+![2013-trilcke-sna-seite-229](images/2013-trilcke-sna-seite-229.png)<!-- .element width="340px;" -->
+
+In: Philip Ajouri, Katja Mellmann, Christoph Rauen (Hg.): Empirie in der Literaturwissenschaft. Münster 2013, S. 201–247.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Stilometrie: Heinrich von Kleist zwischen Klassik und Romantik (2014)
+
+![Beispiel für stilometrische Untersuchung](images/jannidis-lauer-dendrogram-kleist.jpg)<!-- .element width="560px;" -->
+
+Fotis Jannidis und Gerhard Lauer: [Burrows’s Delta and Its Use in German Literary History](http://www.jstor.org/stable/10.7722/j.ctt5vj848.5) (2014)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Distant-Reading Showcase (2016)
+
+Wie verändern sich die Figurenkonstellationen im deutschen Drama?
+
+![465 Dramennetzwerke auf einen Blick](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Kittel/Fischer: Dramavis (2014–2017)
+
+- das in Python geschriebene Programm war u.&nbsp;a. Basis für den »Distant-Reading Showcase«
+- Startpunkt: DARIAH International Digital Humanities Summer School im August 2014 in Göttingen
+- Open Source, Adaptionen? – Wenige…
+
+![Phèdre](images/phedre-it-works.png)<!-- .element height="300px;" -->
+
+https://twitter.com/christof77/status/772370040016568320
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Fischer/Milling: [ezlinavis](https://ezlinavis.dracor.org/) (2017)
+
+![ezlinavis-caragiale](images/ezlinavis-caragiale.png)
+
+Eine der Beispieldateien: Ion Luca Caragiale: »O scrisoare pierdută« (1884), <br />das auch Solomon Marcus als Showcase diente.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### NB.
+
+<br />
+
+- ezlinavis kam u.&nbsp;a. auch in der medizinischen Forschung zum Einsatz:
+  - [doi:10.1007/s00432-022-04200-0](https://doi.org/doi:10.1007/s00432-022-04200-0)
+  - [doi:10.21873/invivo.12976](https://doi.org/doi:10.21873/invivo.12976)
+
+--
+
+#### Christof Schöch: [Topic Modeling Genre: An Exploration of French <br />Classical and Enlightenment Drama](http://www.digitalhumanities.org/dhq/vol/11/2/000291/000291.html) (DHQ 2017)
+
+![schoech-topic-modeling-genre-figure-8](images/schoech-topic-modeling-genre-figure-8.png)<!-- .element height="400px;" -->
+
+Korpus: 391 Stücke (via [Théâtre classique](http://www.theatre-classique.fr/) von Paul Fièvre).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Mark Algee-Hewitt: [Distributed Character: Quantitative <br />Models of the English Stage](https://doi.org/10.1353/nlh.2017.0038), 1550–1900 (NLH 2017)
+
+![algee-hewitt-distributed-character-figure-2](images/algee-hewitt-distributed-character-figure-2.png)<!-- .element height="400px;" -->
+
+Korpus: 3.568 Stücke (via ProQuest).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Fischer/Trilcke et al.: <br />[To Catch a Protagonist](https://dh2018.adho.org/wp-content/uploads/2018/06/dh2018_abstracts.pdf#page=193) (1730–1930) <br />(DH 2018)
+
+![to-catch-a-protagonist-screenshot](images/to-catch-a-protagonist-screenshot.jpg)<!-- .element height="400px;" -->
+
+Operationalisierung verschiedener »quantitativer Dominanzrelationen« (Pfister).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Trilcke/Fischer: <br />[Literaturwissenschaft als Hackathon](https://doi.org/10.17175/sb003_003) <br />(ZfdG 2018)
+
+<br />
+
+- »Dass die Arbeit in der ›digitalen Literaturwissenschaft‹ wesentlich dadurch geprägt ist, dass digitale Methoden eingesetzt werden, die im Methodenrepertoire der ›traditionellen Literaturwissenschaft‹ bisher *nicht* vorkommen, versteht sich von selbst. […] So selbstverständlich diese Differenz in den Praktiken aber sein mag, so folgenreich ist sie zugleich. Nur ein Gedankenexperiment: Selbst eine exzellent ausgebildete Literaturwissenschaftlerin, ein exzellent ausgebildeter Literaturwissenschaftler hätte, wäre sie oder er zufällig in unserem temporären Potsdamer Labor aufgetaucht, vermutlich nichts von dem verstanden, was wir da taten.«
+
+--
+
+### Infrastrukturelle Aspekte
+
+<br />
+
+- Programmiersprachen (Basic, R, Python, …)
+- Libraries (stylo, igraph, networkx, spaCy, nltk, gensim, …)
+- digitale Korpora (mit oder ohne wissenschaftliches Markup)
+
+<br />Was ist eigentlich mit …
+
+- komparatistischen Ansätzen?
+- FAIR-Prinzipien? (findable, accessible, interoperable, reusable?)
+- Community-Aspekten? Training?
+- Linked Open Data?
+
+--
+
+### DLS → CLS
+
+<br />
+
+- Digital Humanities als polysemer Begriff (nach Camille Roth: Digital, digitized, and numerical humanities. In: DSH 34.3 (2019), S. 616–632, [doi:10.1093/llc/fqy057](https://doi.org/10.1093/llc/fqy057))
+  - **digitized**: Aufbau, Verwaltung und Verarbeitung digitalisierter Archive
+  - **numerical**: mathematische Abstraktion geisteswissenschaftlicher Inhalte und Entwicklung numerischer und formaler Modelle
+  - **humanities of the digital**: Untersuchung computervermittelter Interaktionen und Online-Communitys
+- **DLS**: vom als Quarterly angekündigten Journal »Digital Literary Studies« von James O’Sullivan erschien 2016 nur eine Ausgabe, danach eingestellt
+- **CLS**: DFG-Schwerpunktprogramm 2207 »Computational Literary Studies« (2019–), Horizon-2020-Projekt »CLS INFRA« (2021–2025), »Journal of Computational Literary Studies« (2022–)
+
+--
+
+### Nils Reiter, Tim Strohmayer, Janis Pagel: [DramaAnalysis](https://cran.r-project.org/web/packages/DramaAnalysis/index.html) (2019)
+
+![drama-analysis-tutorial-screenshot](images/drama-analysis-tutorial-screenshot.png)<!-- .element height="420px;" -->
+
+Screenshot aus dem [Tutorial](https://quadrama.github.io/DramaAnalysis/tutorial/3/index.html).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DraCor (2017–)
+
+![DraCor-Frontpage 2019](images/dracor-frontpage-2019.png)
+
+--
+
+### DraCor (Stand 2. Mai 2024)
+
+(Design: Mark Schwindt)
+
+![DraCor-Frontpage am 02.05.2024](images/dracor-frontpage-2024-05-02.png)
+
+https://dracor.org/
+
+--
+
+![DraCor-Frontpage am 02.12.2020](images/iphone-11-pro-max-and-ipad-pro-mockup.jpg)
+
+DraCor auf verschiedenen Endgeräten (Mockup).
+
+--
+
+### DraCor
+
+<br />
+
+- *Drama Corpora* (-Projekt/-Portal/-Plattform)
+- Beginn im Jahr 2017 mit zwei Hauskorpora:
+  - German Drama Corpus, GerDraCor (1500er–1950er)
+  - Russian Drama Corpus, RusDraCor (1740er–1940er)
+- [Credits](https://dracor.org/doc/credits)-Seite: &gt; 50 Namen
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI (1/2)
+
+<br />
+
+![Der Pudelhund (Snippet))](images/katzen-sprache.jpg)<!-- .element height="300px;" -->
+
+<br />
+
+Karl von Eckartshausen: *Der Pudelhund. Ein Lustspiel in einem Aufzuge.* München: Lentner 1800, S. 24. ([via Google Books](https://books.google.com/books?id=qF5IAAAAcAAJ&pg=PA24))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI (2/2)
+
+<br />
+
+```xml
+<sp who="#felden">
+  <speaker>Felden.</speaker>
+    <p>
+      Wie viele Buchstaben hat denn das Alphabet der Katzen-Sprache?
+    </p>
+</sp>
+<sp who="#anton">
+  <speaker>Anton.</speaker>
+    <p>
+      Das will ich Ihnen erklären, denn der Herr Sprachmeister hat es mich
+      schon gelehrt. Es hat nur 4 Buchstaben: M. I. A. U; das heißt: Miau.
+      Aus diesen 4 Buchstaben formiren sich aber sämmtliche Wörter, und die
+      Verschiedenheit der Töne, und die Geschwindigkeit des Ausdruckes oder
+      das Aushalten der Sylben formirt die Wörter […]
+    </p>
+</sp>
+```
+
+<br />
+
+Dialog aus Karl von Eckartshausens Lustspiel »Der Pudelhund« (1800) in TEI (Text Encoding Initiative), Quelle: [DraCor](https://dracor.org/id/ger000524). <br />Momentan sind im Standard 586 verschiedene Elemente definiert ([Stand November 2023](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+Wachsende Liste von Korpora aus der Community:
+
+- FreDraCor
+- GerDraCor
+- RusDraCor
+- CalDraCor
+- ItaDraCor
+- DutchDraCor
+- HunDraCor
+- SweDraCor
+- UDraCor
+- GreekDraCor
+- GerShDraCor
+- ShakeDraCor
+- RomDraCor
+- AlsDraCor
+- SpanDraCor
+- PolDraCor
+- TatDraCor
+- BashDraCor
+- …
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### GerDraCor
+
+<br />
+
+- mittlerweile 699 Stücke (Ergänzungen aus DTA, Wikisource, Gutenberg-DE, Google Books, …)
+- Community-Projekt: Beschreibung und Anwendungsbeispiele [bei forTEXT](https://fortext.net/ressourcen/textsammlungen/dracor-drama-corpora-project) (Hamburg/Darmstadt)
+- [Nathalie Wiedmer et al.](https://quadrama.github.io/publications/Wiedmer2020aa): Annotation von Beziehungen der Figuren untereinander (Familien- und Liebesverhältnisse, dienstliche Abhängigkeiten)
+
+--
+
+### Frontpage GerDraCor
+
+![GerDraCor)](images/dracor-gerdracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/ger
+
+--
+
+### GerDraCor: »Die Räuber« (1781)
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/ger000008
+
+--
+
+### GerDraCor: »Das Testament« (1745)
+
+![GerDraCor: Das Testament)](images/dracor-das-testament.png)
+
+https://dracor.org/id/ger000220#speech
+
+--
+
+### Redeverteilung nach Yarkho
+
+![Emilia Galotti, speech distribution](images/speech-distribution-lessing-emilia-galotti.png)
+
+Implementiert in **DraCor** (hier für Lessings „Emilia Galotti“): <br />https://dracor.org/ger/lessing-emilia-galotti#speech
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Ludwig Anzengrubers »Das vierte Gebot« (1877)
+
+![Anzengruber-Drama, Netzwerk mit Figurenbeziehungen](images/anzengruber-list-relations.jpg)<!-- .element width="580px;" -->
+
+**Modellierung spezifischer Figurenrelationen.** <br />Netzwerkdaten: https://dracor.org/id/ger000129#relations
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### DraCor-Download-Tab
+
+![DraCor-Download-Tab](images/anzengruber-download-tab.png)
+
+https://dracor.org/id/ger000129#downloads
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Annotation mythologischer und <br />historischer Figuren
+
+<br />
+
+![dracor-wikidata-button](images/dracor-wikidata-button.png)<!-- .element width="200px;" -->
+
+--
+
+### Konzept der ›Programmable Corpora‹
+
+<br />
+
+Publikation: <br />Frank Fischer et al.: **Programmable Corpora: Introducing DraCor, an Infrastructure for the Research on <br />European Drama.** Proceedings of DH2019: »Complexities«, Utrecht, [doi:10.5281/zenodo.4284002](https://doi.org/10.5281/zenodo.4284002).
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+- Korpora als vergleichbare Objekte, die selbst Funktionen anbieten und mit anderen Datenquellen verbunden sind (u.&nbsp;a. via LOD)
+
+--
+
+### DraCor Technology Stack
+
+![DraCor Technology Stack](images/dracor-drawio.svg)
+
+Alle Repos (Code, Daten) sind *open source*: https://github.com/dracor-org
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## DraCor-API
+
+![DraCor-API)](images/dracor-api.png)<!-- .element width="700px;" -->
+
+https://dracor.org/doc/api
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DraCor-API: Beispielanfragen
+
+https://dracor.org/api/v1/corpora/ita/plays/goldoni-il-servitore-di-due-padroni/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+Sprechtext aller weiblicher Figuren in Goldonis »Il servitore di due padroni« (cioè Clarice, Smeraldina e Beatrice).
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+Sprechtext aller Sohn-Figuren in Schillers »Räubern«.
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/shake/plays/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
+
+Netzwerkdaten zu Shakespeares »Hamlet« (im JSON-Format).
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/ger/plays/gottschedin-die-pietisterey-im-fischbein-rocke/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+Alle Regieanweisungen aus »Die Pietisterey im Fischbein-Rocke« von Luise Gottsched.
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/ita/metadata<!-- .element: style="font-size:0.7em;" -->
+
+Metadaten zu allen Stücken des italienischen Korpus (als JSON oder CSV).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Forschungsbeispiel:
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Einfache Visualisierung von Strukturdaten
+#### Anzahl von Figuren pro Stück in chronologischer Folge (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+gerdracor <- fread("https://dracor.org/api/v1/corpora/ger/metadata/csv")
+ggplot(gerdracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+Beispiel für einfaches R-Script, das die Daten über die API bezieht.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Anzahl von Figuren pro Stück in chronologischer Folge (2/2)
+
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+Ausgabe in RStudio.
+<!-- .element: style="font-size:0.65em;" -->
+
+(Der Punkt rechts oben: Karl Kraus’ »Die letzten Tage der Menschheit«, 925 Sprechinstanzen).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### API-Wrapper
+
+<br />
+
+= weitere Vereinfachung: <br />API-Funktionen bekommen eigene Befehle
+
+<br />
+
+- für R: rdracor
+- für Python: PyDraCor
+
+--
+
+#### Beispiel (mit rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+hermann <- get_net_cooccur_igraph(corpus="ger", play="kleist-die-hermannsschlacht")
+plot(hermann)
+```
+#### Ergebnis:
+
+![Hermannsschlacht, Netzwerkgraph mit rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element height="400px;" -->
+
+--
+
+<!-- .slide: data-background-image="images/clsinfra-logo.png" data-background-size="10% auto" data-background-position="100% 0%" -->
+
+### Lessings »Emilia Galotti«
+
+![Emilia Galotti (dynamischer Graph)](images/lessing-emilia-galotti.gif)
+
+**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script: Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+<!-- .slide: data-background-image="images/clsinfra-logo.png" data-background-size="10% auto" data-background-position="100% 0%" -->
+
+### Gamification
+
+![Quartettspiel](images/dramenquartett_back.jpg)<!-- .element width="300px;" -->
+![Quartettspiel](images/dramenquartett_front.png)<!-- .element width="300px;" -->
+
+Frank Fischer, Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** <br />Bern: edition taberna kritika 2019. – Spielregeln: https://dramenquartett.github.io/
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Metadatenzentriert: **Einakter-Datenbank** (2020)
+#### (https://einakter.dracor.org/)
+
+![Einakter-DB](images/einakter-datenbank.png)<!-- .element width="460px;" -->
+
+Vgl. Dîlan Canan Çakir, Frank Fischer: **Dramatische Metadaten. Die Datenbank deutschsprachiger Einakter 1740–1850.** <br />In: DHd2022: »Kulturen des digitalen Gedächtnisses«. 7.–11. März 2022. <br />Book of Abstracts. Universität Potsdam. ([doi:10.5281/zenodo.6327977](https://doi.org/10.5281/zenodo.6327977))
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+#### Miguel Escobar Varela: [Theater as Data: <br />Computational Journeys into Theater Research](https://doi.org/10.3998/mpub.11667458) (2022)
+
+![theater-as-data-2022-toc](images/theater-as-data-2022-toc.png)<!-- .element width="400px;" -->
+
+Inhaltsverzeichnis des Bandes.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Lope de Vega: »La francesa Laura« (2023)
+
+![La francesa Laura (Manuskript)](images/la-francesa-laura.jpg)<!-- .element height="400px;" -->
+
+(Bildquelle: http://bdh.bne.es/bnesearch/detalle/bdh0000216882)
+<!-- .element: style="font-size:0.65em;" -->
+
+Publikation zu diesem Fund: <br />Álvaro Cuéllar, Germán Vega García-Luengos: *«La francesa Laura». El hallazgo de una <br />nueva comedia del Lope de Vega último* (2023), [doi:10.5565/rev/anuariolopedevega.492](https://doi.org/10.5565/rev/anuariolopedevega.492).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Dramen und Machine Learning/KI/GPT
+
+<br />
+
+- ChatGPT:
+  - post-correction tasks (OCR)
+  - automatic encoding (TEI)
+- GPT-2:
+  - Mariam Bangura, Kristina Barabashova, Anna Karnysheva, Sarah Semczuk, Yifan Wang: Automatic Generation of German Drama Texts Using Fine Tuned GPT-2 Models. [arXiv:2301.03119 [cs.CL]](https://arxiv.org/abs/2301.03119)
+
+---
+
+### Zusammenfassung
+
+<br />
+
+- seit 1984: programmiertechnische Umsetzung vorgelegter formalistischer und strukturalistischer Ansätze
+- zusätzlich NLP-basierte Verfahren
+- TEI als Kodierungsstandard (mittlerweile viele Dutzend Dramenkorpora)
+- Open Source-Paradigma, FAIR-Prinzipien
+- breit genutzte Standardtools, die sich auch für die Dramenanalyse nutzen lassen (Gephi, Stylo etc.)
+- Infrastrukturen
+- APIs
+- Linked Open Data
+
+--
+
+Vielen Dank.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
