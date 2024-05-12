@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 13. Mai 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+<small>Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/870164))</small>
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(15. April – 15. Juli 2024)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+5. Vorlesung (13. Mai 2024):<!-- .element: style="font-size:0.65em;" -->
+
+#### **Distant Reading II: Topic Modeling**<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[bit.ly/dh135](https://bit.ly/dh135)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Semesterüberblick
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| 15.04.2024 | Thematische Rundumschau I |
+| 22.04.2024 | Thematische Rundumschau II |
+| 29.04.2024 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 06.05.2024 | Distant Reading I: Stilometrie |
+| **13.05.2024** | **Distant Reading II: Topic Modeling** |
+| 27.05.2024 | Visual Analytics: »Beautiful Evidence« |
+| 03.06.2024 | Netzwerkanalyse |
+| 10.06.2024 | Geografische Informationssysteme (GIS) |
+| 17.06.2024 | (Selbststudium) |
+| 24.06.2024 | Wikipedia & Wikidata |
+| 01.07.2024 | KI &amp; Maschinelles Lernen |
+| 08.07.2024 | Digitale Praxis der Geisteswissenschaften: ›Recherche‹ |
+| 15.07.2024 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im SoSe 2024
+
+<br />
+
+* [Seminar »Games und Literatur«](https://www.fu-berlin.de/vv/de/lv/870181)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 14:00–16:00 c.t. (zus. mit Dr. Dîlan Canan Çakir)
+* [Seminar »Wikipedia und Wikidata in den Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/870185)
+  * <!-- .element: style="font-size:0.7em;" -->Do 10:00–12:00 c.t. (zus. mit Viktor J. Illmer)
+* [Seminar »Digitale Stilometrie«](https://www.fu-berlin.de/vv/de/lv/867132)
+  * <!-- .element: style="font-size:0.7em;" -->Do 14:00–16:00 c.t.
+* [Seminar »Webscraping mit Python für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/870213)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Seminar »Textanalyse mit R für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/868465)
+  * <!-- .element: style="font-size:0.7em;" -->Di 14:00–16:00 c.t. (geleitet von Lisa Poggel)
+* [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/870197)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 10:00–12:00 c.t. (ab 26.04.2024, zweiwöchentlich)
+  * <!-- .element: style="font-size:0.7em;" -->Übersicht über alle Veranstaltungen: <a href="https://wikis.fu-berlin.de/display/phaenodh">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+---
+
+### Literatur
+
+<br />
+
+* Matthew L. Jockers: Kapitel »Theme«. In: ders.: *Macroanalysis. Digital Methods and Literary History.* University of Illinois Press 2013, S. 118–153. (https://www.jstor.org/stable/10.5406/j.ctt2jcc3m)
+* Jan Horstmann: [Topic Modeling.](https://fortext.net/routinen/methoden/topic-modeling) In: forText, 15. Januar 2018.
+
+--
+
+### Auftakt mit Wordle
+
+- Software zur Erstellung von Wortwolken: wordle.net (historisch relevant, mittlerweile down)
+- Beispiel aus [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Nube_de_etiquetas_-_Don_Quijote_de_la_Mancha.png) ([erstes Kapitel von »Don Quijote«](https://es.wikisource.org/wiki/Don_Quijote,_Primera_Parte:_Cap%C3%ADtulo_I)):
+
+![Wordle example](images/wordle_don_quijote.jpg)<!-- .element width="600px;" -->
+
+--
+
+### Wortwolken mit [Voyant Tools](https://voyant-tools.org/)
+
+![Voyant Cirrus](images/voyant-cirrus-buechner-lenz.png)<!-- .element width="520px;" -->
+
+- Eingabebeispiel: Georg Büchners Erzählung »Lenz« (https://www.projekt-gutenberg.org/buechner/lenz/lenz.html)
+- ⚠️ [Stoppwörter](https://de.wikipedia.org/wiki/Stoppwort) einschalten!
+
+--
+
+### Wortwolken
+
+<br />
+
+»I like to think of word clouds as a kind of **aerial photography for literary texts**. Just as an aerial photograph can reveal features in the landscape that we might not notice passing through on foot – a slight ridge, a glacial moraine, a crop circle – a word cloud can reveal large-scale patterns that we might not perceive as we move from word to word and page to page […].«
+
+<br />
+
+Adam Hammond: Literature in the Digital Age: An Introduction. Cambridge University Press 2016, [S. 93](https://books.google.com/books?id=IE6SCwAAQBAJ&pg=PA93).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### tl;dr (1/2)
+
+<br />
+
+**Topic Modeling** ist ein auf Wahrscheinlichkeitsrechnung basierendes Verfahren zur Exploration größerer Textsammlungen. Das Verfahren erzeugt statistische Modelle (Topics) zur Abbildung häufiger gemeinsamer Vorkommnisse von Wörtern.
+
+<br />
+
+Jan Horstmann: [Topic Modeling.](https://fortext.net/routinen/methoden/topic-modeling) In: forText, 15. Januar 2018.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### tl;dr (2/2)
+
+<br />
+
+»In machine learning and natural language processing, a **topic model** is a type of statistical model for discovering the **abstract ›topics‹** that occur in a **collection of documents**. Topic modeling is a frequently used text-mining tool for **discovery of hidden semantic structures** in a text body.« ([Wikipedia](https://en.wikipedia.org/wiki/Topic_model))
+
+--
+
+### Topic Modeling und die Digital Humanities
+
+<br />
+
+»So many scholars in humanities departments are turning to [topic modeling] in their research that it is sometimes described as **part of the digital humanities in itself**.«
+
+<br />
+
+Benjamin M. Schmidt: [Words Alone: Dismantling Topic Models in the Humanities.](http://journalofdigitalhumanities.org/2-1/words-alone-by-benjamin-m-schmidt/)<br />In: Journal of Digital Humanities 2.1 (2012).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### »Topic models are …
+
+<br />
+
+… the mother of all collocation tools.«
+
+<br />
+
+Matthew Jockers: Macroanalysis (2013), S. 123
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### »Topic modeling is …
+
+<br />
+
+… based on the idea that individual documents are made up of **one or more topics**. It uses emerging technologies in computer science to automatically cluster **topically similar documents** by determining the **groups of words** that tend to **co-occur** in them. Most importantly, topic modeling creates topical categories **without a priori subject definitions**.«
+
+<br />
+
+Sharon Block: [Doing More with Digitization](http://www.common-place-archives.org/vol-06/no-02/tales/) (2006)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Anwendungsszenarien
+
+<br />
+
+- Information Retrieval: Suche nicht nach Einzelbegriffen, sondern nach Themen / Wortfeldern
+- Recommender Systems: Vorschlag thematisch ähnlicher wissenschaftlicher Artikel
+- Exploration von Textsammlungen
+- literatur- und kulturhistorische Fragestellungen
+
+<br /><br />
+
+(Quelle für diese und die nächste Folie: [Christof Schöch](https://christofs.github.io/topic-modeling-vorlesung/#/2/2).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Anwendungsbeispiel
+
+![Topics in Signs](images/topics-in-signs.png)
+
+Topic Modeling zu Anlass des 40. Geburtstags von »Signs: Journal of Women in Culture and Society« (1975–2014).
+<!-- .element: style="font-size:0.65em;" -->
+
+Link: https://signsat40.signsjournal.org/topic-model/
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Topic Modeling-Algorithmus: <br />Die Latent Dirichlet Allocation (LDA)
+
+<br />
+
+- derzeit populärstes Topic Model, eingeführt von David M. Blei et al. (2003)
+- sehr einflussreicher Artikel ([PDF hier](https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)), Google Scholar verzeichnet bisher [49.579 Zitationen](https://scholar.google.com/scholar?cites=17756175773309118945)
+- LDA = »a generative probabilistic model for collections of discrete data such as text corpora«
+- baut auf der [Dirichlet-Verteilung](https://de.wikipedia.org/wiki/Dirichlet-Verteilung) auf (Aussprache: [diʀiˈkleː] oder [diʀiˈʃleː])
+- besonders nützlich für die automatische Textklassifizierung in größeren Korpora und zum Auffinden bisher unbekannter Texte mit ähnlichen Topics
+
+--
+
+### Wie LDA funktioniert
+
+<br />
+
+- grundlegende Annahme: jedes Dokument im Korpus enthält eine Reihe von Themen (latenten Topics), die mit LDA extrahiert werden können
+- der\*die Forscher\*in muss mit den Modellparametern experimentieren:
+  - die Anzahl der Topics muss vorher bestimmt werden
+  - die Aufteilung jedes Textes im Korpus muss im Vorhinein festgelegt werden
+  - auf Grundlage der Ergebnisse können die Parameter angepasst werden
+
+---
+
+### Beispiel
+
+<br />
+
+- Gegebenes Korpus:
+  - Dokument 1: goethe jelinek
+  - Dokument 2: goethe cervantes
+  - Dokument 3: jelinek cervantes
+  - Dokument 4: apple raspberry
+  - Dokument 5: apple pumpkin
+  - Dokument 6: raspberry pumpkin
+
+<br />(Beispiel abgeleitet aus [diesem Video](https://www.youtube.com/watch?v=ZgyA1Q2ywbM).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Beispiel
+
+<br />
+<small>LDA (K = 2)</small>
+<br />
+
+|           | Topic 1 | Topic 2 |
+|-----------|---------|---------|
+| goethe    | 33%     | 0%      |
+| jelinek   | 33%     | 0%      |
+| cervantes | 33%     | 0%      |
+| apple     | 0%      | 33%     |
+| raspberry | 0%      | 33%     |
+| pumpkin   | 0%      | 33%     |
+
+--
+
+### Beispiel
+
+<br />
+
+|                | Topic 1 | Topic 2 |
+|----------------|---------|---------|
+| Dokument 1     | 100%    | 0%      |
+| Dokument 2     | 100%    | 0%      |
+| Dokument 3     | 100%    | 0%      |
+| Dokument 4     | 0%      | 100%    |
+| Dokument 5     | 0%      | 100%    |
+| Dokument 6     | 0%      | 100%    |
+
+--
+
+### Beispiel
+
+<br />
+
+- Dokument 7:
+  - »**goethe** met **jelinek** at **cervantes’** mansion, where they ate a **pumpkin**.«
+
+--
+
+### Beispiel
+
+<br />
+
+|                | Topic 1 | Topic 2 |
+|----------------|---------|---------|
+| Dokument 1     | 100%    | 0%      |
+| Dokument 2     | 100%    | 0%      |
+| Dokument 3     | 100%    | 0%      |
+| Dokument 4     | 0%      | 100%    |
+| Dokument 5     | 0%      | 100%    |
+| Dokument 6     | 0%      | 100%    |
+| **Dokument 7** | **75%** | **25%** |
+
+--
+
+### Pre-Processing
+
+<br />
+
+- **Tokenisierung**: Zerlegung eines Textes in Wörter, Symbole usw.
+- **Stammformreduktion**: Verkürzung flektierter Wörter auf ihren Stamm
+- Eliminierung von **Stoppwörtern**: anders als bei der Stilometrie sind häufige Funktionswörter bei der Topic-Modellierung oft hinderlich
+- **chunking**: Aufteilung eines Textes in kleinere Portionen (chunks)
+  - zwei Wörter, die in einem kleinen Abschnitt (etwa einem Absatz eines Romans oder einer Szene in einem Theaterstück) zusammen vorkommen, stehen in engerer Beziehung zueinander als wenn sie in größeren Abschnitten (z. B. einem ganzen Buch) zusammen benutzt werden
+
+---
+
+### Realistischeres Beispiel (1/2)
+
+![example from Blei’s article](images/blei_figure_1.png)<!-- .element width="860px;" -->
+
+aus David M. Blei: [Probabilistic Topic Models](https://dl.acm.org/citation.cfm?id=2133826) (2012)<br />(»topics and topic assignments in this figure are illustrative«)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Realistischeres Beispiel (2/2)
+
+![example from Blei’s article](images/blei_figure_2.png)<!-- .element width="860px;" -->
+
+aus David M. Blei: [Probabilistic Topic Models](https://dl.acm.org/citation.cfm?id=2133826) (2012)<br />(100-Topic-LDA-Model; 17.000 Artikel aus *Science*; links: Topic-Anteile für den Beispielartikel aus der vorherigen Abbildung;<br />rechts: die top 15 MFWs der häufigsten Topics in diesem Artikel)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Wie man Topics liest (1/2)
+
+<br >
+
+- Beispiel entnommen aus [»Text Analysis with Topic Models for the Humanities and Social Sciences«](https://web.archive.org/web/20160326024609/https://de.dariah.eu/tatom/index.html) von Allen Riddell:
+  - sechs Romane von Jane Austen und Charlotte Brontë, 20&nbsp;Topics
+
+--
+
+### Wie man Topics liest (2/2)
+
+![example from Riddell’s tutorial](images/austen-bronte-6-novels-20-topics.png)<!-- .element width="845px;" -->
+
+entnommen aus Allen Riddell: [Topic modeling with MALLET](https://web.archive.org/web/20160406171148/https://de.dariah.eu/tatom/topic_model_mallet.html#inspecting-the-topic-model)
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Visualisierung von Topic Models
+
+<br />
+
+- Beispiel: Stanford Literary Lab-Korpus (3,346 US-amerikanische, britische und irische Romane aus dem 19. Jahrhundert)
+- Beispiele aus Matthew Jockers’ »Macroanalysis« (2013)
+- 500 Topics (Übersicht [hier](http://www.matthewjockers.net/macroanalysisbook/macro-themes/) bzw. [im Internet Archive](https://web.archive.org/web/20180301200448/https://www.matthewjockers.net/macroanalysisbook/macro-themes/)), eines davon ist dieses: [Clerks and Offices](http://www.matthewjockers.net/macroanalysisbook/macro-themes/?topic=CLERKS_AND_OFFICES)
+
+--
+
+### Clerks and Offices (1/3)
+
+<br />
+
+![Clerks and Offices, word cloud](images/clerks_and_offices_1.png)<!-- .element width="400px;" -->
+
+<br />
+
+Wortwolke (Quelle: [matthewjockers.net](http://www.matthewjockers.net/macroanalysisbook/macro-themes/?topic=CLERKS_AND_OFFICES)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Clerks and Offices (2/3)
+
+<br />
+
+![Clerks and Offices, topics by gender](images/clerks_and_offices_2.png)<!-- .element width="400px;" -->
+
+Topic-Verteilung anhand Gender-Informationen der Autor\*innen (Quelle: [matthewjockers.net](http://www.matthewjockers.net/macroanalysisbook/macro-themes/?topic=CLERKS_AND_OFFICES)).
+<!-- .element: style="font-size:0.65em;" -->
+
+⚠️ »For most of history, Anonymous was a woman.« (Virginia Woolf, <br />populär umformuliertes Zitat aus »A Room of One’s Own«)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Clerks and Offices (3/3)
+
+<br />
+
+![Clerks and Offices, topic distribution over time](images/clerks_and_offices_3.png)<!-- .element width="400px;" -->
+
+<br />
+
+Topic-Verteilung entlang des Zeitstrahls (Quelle: [matthewjockers.net](http://www.matthewjockers.net/macroanalysisbook/macro-themes/?topic=CLERKS_AND_OFFICES)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Weiteres Beispiel (als Streamgraph): <br />Topics einer TV-Serie
+
+![HIMYM topics, by Ben Schmidt](images/how_i_met_your_mother_topics_by_ben_schmidt.png)<!-- .element width="800px;" -->
+
+Ben Schmidt: [»Typical TV episodes: visualizing topics in screen time«](http://sappingattention.blogspot.ch/2014/12/typical-tv-episodes-visualizing-topics.html) (11. Dezember 2014)
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Praxis
+
+--
+
+### Topic Modeling-Bibliotheken
+
+<br />
+
+- [MALLET](http://mallet.cs.umass.edu/) (MAchine Learning for LanguagE Toolkit)
+- Gensim (Python)
+- Martin Schweinberger: [Topic Modeling with R](https://slcladal.github.io/topicmodels.html)
+
+--
+
+### DARIAH-DE TopicsExplorer
+
+https://dariah-de.github.io/TopicsExplorer/
+
+![caption](images/dariah-topics-explorer-screenshot.png)<!-- .element width="800px;" -->
+
+--
+
+### Alan Liu: »Humans in the Loop« (2020)
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/lnfeOUBCi3s?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+- sein Thema: »Humans learning from machine learning«
+- »How do we annotate a topic model? The answer is: good luck!«
+- Vorschlag eines [Topic Model Interpretation Protocol](https://we1s.ucsb.edu/research/we1s-methods/topic-model-interpretation-protocol/)
+
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+Bis nächste Woche.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
