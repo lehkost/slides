@@ -1,28 +1,20 @@
-	<!doctype html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 		<title>Introduction to DARIAH-EU · University of Zurich (UZH) · 18 Dec 2017</title>
 
-		<link rel="stylesheet" href="../reveal/css/reveal.css">
-		<link rel="stylesheet" href="../reveal/css/theme/black.css">
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/black.css" id="theme" />
 
-      <!-- adjustments for serif.css -->
-      <link rel="stylesheet" href="custom.css">
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
 	</head>
 	<body>
 		<div class="reveal">
@@ -34,18 +26,22 @@
 
 ## DARIAH and Its <br />«Architecture of Participation»
 
-<br /><br />
-Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+<br />
 
-<!-- .element: style="font-size:0.7em;" -->Higher School of Economics &nbsp;·&nbsp; Moscow<br />
-DARIAH-EU Board of Directors<br />
+[Frank Fischer](https://lehkost.github.io/)
+<!-- .element: style="font-size:0.8em;" -->
 
-<!-- .element: style="font-size:0.6em;" -->ffis&#99;her&#64;hse.ru &nbsp;·&nbsp; [homepage](https://www.hse.ru/en/org/persons/182492735)
-
-<br /><br />
-<!-- .element: style="font-size:0.6em;" -->This presentation: [lehkost.github.io/slides/2017-zurich/](https://lehkost.github.io/slides/2017-zurich/)
+Higher School of Economics &nbsp;·&nbsp; Moscow<br />
+DARIAH-EU Board of Directors
+<!-- .element: style="font-size:0.7em;" -->
 
 <br />
+
+This presentation: [lehkost.github.io/slides/2017-zurich/](https://lehkost.github.io/slides/2017-zurich/)
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />
+
 [DARIAH Day](http://www.linguistik.uzh.ch/de/whatsup/dariahday.html) · Universität Zürich 🇨🇭 · 18 December 2017
 
 --
@@ -53,9 +49,11 @@ DARIAH-EU Board of Directors<br />
 ### DARIAH is …
 
 <br />
+
 … the <br />DigitAl Research Infrastructure <br />for the Arts and Humanities, …<!-- .element: class="fragment" -->
 
 <br />
+
 … a pan-European community of researchers to <br />facilitate humanities research in the digital age.<!-- .element: class="fragment" -->
 
 --
@@ -75,6 +73,7 @@ DARIAH-EU Board of Directors<br />
 «All disciplines have infrastructural needs, for data, for specialist knowledge, for methodological support, for storage and processing power. The arts and humanities need shared research infrastructure as much as any other discipline.»
 
 <br /><br />
+
 <small>([PARTHENOS’ Leaflet to address Policy Makers](http://www.parthenos-project.eu/why-humanities-need-a-research-infrastructure/))</small>
 
 --
@@ -82,6 +81,7 @@ DARIAH-EU Board of Directors<br />
 ### Some DARIAH-Driven Services
 
 <br />
+
 * [DARIAH-DE Repository](https://de.dariah.eu/repository) – Humanities research data
 * [Open Archive HAL](https://hal.archives-ouvertes.fr/) – preprints and other scholarly documents
 * [DH Course Registry](https://registries.clarin-dariah.eu/courses/) – together with CLARIN
@@ -115,6 +115,7 @@ DARIAH-EU Board of Directors<br />
 ### Some of Our High-Level Principles
 
 <br />
+
 * community-driven ([22 working groups](https://www.dariah.eu/activities/working-groups-list/) at the moment)
 * inclusive (addressing the humanities as a whole, not the *digital* humanities in particular)
 * promoting openness ([Open Science Officer](https://www.dariah.eu/2017/11/20/dariah-seeks-an-open-science-officer-based-in-our-berlin-offices/))
@@ -128,6 +129,7 @@ DARIAH-EU Board of Directors<br />
 ### DARIAH History
 
 <br />
+
 * 2006: DARIAH appears on ESFRI Roadmap
 * 2008–2011: Preparatory Phase
 * 2011–2013: Transition Phase
@@ -146,6 +148,7 @@ DARIAH-EU Board of Directors<br />
 ### Moving Forward Strategically
 
 <br />
+
 - in early November 2017, the General Assembly approved the DARIAH Action Plan
 - 25 key actions for a stronger DARIAH by 2020, among which:
   - populating the DARIAH Open Marketplace
@@ -194,26 +197,18 @@ UK&nbsp;🇬🇧
 – https://www.dariah.eu/ –
 
 </script>
-			    </section>
-			</div>
-		</div>
-
-		<script src="../reveal/lib/js/head.min.js"></script>
-		<script src="../reveal/js/reveal.js"></script>
-
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: '../reveal/plugin/markdown/marked.js' },
-					{ src: '../reveal/plugin/markdown/markdown.js' },
-					{ src: '../reveal/plugin/notes/notes.js', async: true },
-					{ src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
 </html>
