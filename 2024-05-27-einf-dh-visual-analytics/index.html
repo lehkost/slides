@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 27. Mai 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+<small>Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/870164))</small>
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(15. April – 15. Juli 2024)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+6. Vorlesung (27. Mai 2024):<!-- .element: style="font-size:0.65em;" -->
+
+#### **Visual Analytics: »Beautiful Evidence«**<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[bit.ly/dh275](https://bit.ly/dh275)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Semesterüberblick
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| 15.04.2024 | Thematische Rundumschau I |
+| 22.04.2024 | Thematische Rundumschau II |
+| 29.04.2024 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 06.05.2024 | Distant Reading I: Stilometrie |
+| 13.05.2024 | Distant Reading II: Topic Modeling |
+| **27.05.2024** | **Visual Analytics: »Beautiful Evidence«** |
+| 03.06.2024 | Netzwerkanalyse |
+| 10.06.2024 | (Selbststudium) |
+| 17.06.2024 | Geografische Informationssysteme (GIS) |
+| 24.06.2024 | Wikipedia & Wikidata |
+| 01.07.2024 | KI &amp; Maschinelles Lernen |
+| 08.07.2024 | Digitale Praxis der Geisteswissenschaften: ›Recherche‹ |
+| 15.07.2024 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im SoSe 2024
+
+<br />
+
+* [Seminar »Games und Literatur«](https://www.fu-berlin.de/vv/de/lv/870181)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 14:00–16:00 c.t. (zus. mit Dr. Dîlan Canan Çakir)
+* [Seminar »Wikipedia und Wikidata in den Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/870185)
+  * <!-- .element: style="font-size:0.7em;" -->Do 10:00–12:00 c.t. (zus. mit Viktor J. Illmer)
+* [Seminar »Digitale Stilometrie«](https://www.fu-berlin.de/vv/de/lv/867132)
+  * <!-- .element: style="font-size:0.7em;" -->Do 14:00–16:00 c.t.
+* [Seminar »Webscraping mit Python für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/870213)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Seminar »Textanalyse mit R für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/868465)
+  * <!-- .element: style="font-size:0.7em;" -->Di 14:00–16:00 c.t. (geleitet von Lisa Poggel)
+* [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/870197)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 10:00–12:00 c.t. (ab 26.04.2024, zweiwöchentlich)
+  * <!-- .element: style="font-size:0.7em;" -->Übersicht über alle Veranstaltungen: <a href="https://wikis.fu-berlin.de/display/phaenodh">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+---
+
+## Drei Beispiele
+
+--
+
+### Klimastreifen (Warming Stripes)<!-- .element: class="fragment" -->
+
+![Warming stripes](images/warming-stripes.png)
+
+Quelle: https://en.wikipedia.org/wiki/Warming_stripes
+<!-- .element: style="font-size:0.65em;" --><!-- .element: class="fragment" -->
+
+--
+
+#### »Increase of weapon lethality and dispersion over history«
+
+![Increase of weapon lethality and dispersion over history](images/increase-of-weapon-lethality.png)<!-- .element height="520px;" -->
+
+Quelle: Trevor N. Dupuy: The Evolution of Weapons and Warfare. New York: Bobbs-Merrill 1980, S. 288f.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Cholera-Karte von John Snow (1855)
+
+![Cholera map](images/snow-cholera-map.jpg)<!-- .element height="480px;" -->
+
+Quelle: [On the Mode of Communication of Cholera. Second Edition, much Enlarged. London 1855.](https://archive.org/details/b28985266/page/n57/mode/2up) – <br />Animierte Version von Sarah Bell [auf YouTube](https://youtu.be/aHg5avw15Pg).
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### M&amp;M’s
+
+![Minard](images/minard-from-wikimedia-commons.jpg)<!-- .element height="300px;" -->
+![Manovich](images/manovich-from-wikimedia-commons.jpg)<!-- .element height="300px;" -->
+
+[Charles Joseph Minard](https://commons.wikimedia.org/wiki/File:Charles_Joseph_Minard.png) und [Lev Manovich](https://commons.wikimedia.org/wiki/File:Lev_Manovich_—_How_to_analyze_culture_using_social_networks.jpg).
+<!-- .element: style="font-size:0.8em;" -->
+
+(Bildquellen: Wikimedia Commons.)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Information Visualisation (Infovis)
+
+<br />
+
+»Although scientists had already been making graphs and charts of their data since the early nineteenth century, the ubiquity of computers, the growing programming literacy, and the wealth of data unleashed by networks at the turn of the twenty-first century democratized information visualization, making it a rapidly expanding new area of art and culture. […] Visualization of complex data is well on its way to becoming as important to the twenty-first century as photography and film were to the twentieth century.«
+
+<br />
+
+Lev Manovich, Vorwort zu Manuel Limas Band *Visual Complexity*, 2011
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Die Sprache der Infovis
+
+<br />
+
+- die [grafischen Primitive](https://de.wikipedia.org/wiki/Grafisches_Primitiv) sind immer noch dieselben: Punkte, Linien, Kurven, einfache Formen
+- Visualisierung ist immer eine Kombination aus drei Dingen: Wissenschaft, Design, Kunst
+- Ziel: Daten verstehen (Muster, Beziehungen, Strukturen)
+- Infovis ist eine (neue) Methode neben anderen
+
+vgl. Lev Manovich, ebd.
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+- »visualizations are a craft, not a science«
+
+Jeffrey Schnapp: [*Knowledge Design*](https://jeffreyschnapp.com/wp-content/uploads/2011/06/HH_lectures_Schnapp_01.pdf), 2013
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Charles Joseph Minard: »Carte figurative …
+
+#### … des pertes successives en hommes de l’armée française <br />dans la campagne de Russie 1812–1813« (1869)
+
+![Minard's 'Carte figurative'.](images/minard-carte-figurative-from-wikimedia-commons.jpg)<!-- .element height="381px;" -->
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Minard.png).)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Dimensionen der »Carte figurative«
+
+<br />
+
+- Geografie: Karte mit Einmarsch und Rückzug der Grande Armée (beige und schwarz), einschließlich Gabelung und Zusammenschluss der Truppen
+- Durchmesser als Indikator der abnehmenden Truppenstärke (von 400.000 auf ca. 10.000)
+- zeitlicher Verlauf
+- Temperaturkurve während des Rückzugs
+
+---
+
+### Edward Tuftes Prinzipien
+
+![Edward Tufte, from Wikimedia Commons](images/edward-tufte-from-wikimedia-commons.jpg)<!-- .element height="400px;" -->
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Edware_Tufte_giving_a_class.jpg).)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### »What makes a data visualization memorable?«
+
+<br />
+
+![symbolic pic](images/what-makes-data-visualization-memorable.jpg)<!-- .element height="388px;" -->
+
+(Bildquelle: [seas.harvard.edu](https://www.seas.harvard.edu/news/2013/10/what-makes-data-visualization-memorable).)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Tuftes Visualisierungsklassiker
+
+![Bücherstapel](images/5-tufte-books-stacked.jpg)<!-- .element height="200px;" -->
+
+- *The Visual Display of Quantitative Information* (1983, 2. Ausgabe 2001)
+- *Envisioning Information* (1990)
+- *Visual Explanations* (1997)
+- *Beautiful Evidence* (2006)
+- *Seeing With Fresh Eyes* (2020)
+- vgl. auch [*PowerPoint Is Evil*](https://www.wired.com/2003/09/ppt2/) (Wired 2003)
+
+(Bildquelle: [edwardtufte.com](https://www.edwardtufte.com/tufte/seeing-with-fresh-eyes).)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Graphical Excellence
+
+<br /><br />
+
+»Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space.«
+
+<br /><br />
+
+*The Visual Display of Quantitative Information*, 2. Ausgabe [2001], S. 51.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Tuftes Prinzipen
+
+<br />
+
+- »induce the viewer to think about the substance rather than about methodology, graphic design, the technology of graphic production, or something else«
+- »present many numbers in a small space«
+- »encourage the eye to compare different pieces of data«
+- das Daten/Tinte-Verhältnis maximieren
+  - data-ink ratio = (data ink) / (total ink used in the chart)
+- »Above all else, show the data.«
+
+<br />
+
+Vgl. *The Visual Display of Quantitative Information*, 2. Ausgabe [2001], S. 13.
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### »Chartjunk«
+
+<br />
+
+- 1983 von Tufte geprägt (vgl. *The Visual Display of Quantitative Information*, [S.&nbsp;106ff.](https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=00040Z))
+- chartjunk = »non-data-ink« bzw. redundantes data-ink
+- beschreibt drei Arten:
+  - unintentional optical art
+  - »the dreaded grid«
+  - »the self-promoting graphical duck«
+
+--
+
+### »The Friendly Data Graphic«
+
+![friendly v unfriendly, table from Ed Tufte's book](images/friendly-vs-unfriendly-tufte.jpg)<!-- .element width="508px;" -->
+
+(Tufte 1983, S.&nbsp;183)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Visualisierung zu Analysezwecken
+
+<br />
+
+»The graphic is no longer only the ›representation‹ of a final simplification, it is a point of departure for the discovery of these simplifications and the means for their justification. The graphic has become, by its manageability, an instrument for information processing.«
+
+<br />
+
+Jacques Bertin: *Semiology of Graphics* [Orig. 1967], 1983, S.&nbsp;4
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Diagramme und Schaubilder lesen
+
+<br />
+
+»How to weave together forms of visual and verbal (and – why not? – acoustical, tactile, and olfactory) evidence?«
+
+Jeffrey Schnapp: [*Knowledge Design*](https://jeffreyschnapp.com/wp-content/uploads/2011/06/HH_lectures_Schnapp_01.pdf), 2013
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+»Whereas for Augustine reading began with wonder, for digital humanists reading ends in wonder: The object of interest and wonder is less a particular literary text than a visual or diagrammatic unity produced through a method. […] These new diagrams and graphs […] are themselves texts to be read, interpreted, and marveled at.«
+
+Chad Wellmon: [*Sacred Reading: From Augustine to the Digital Humanists.*](https://chadwellmon.files.wordpress.com/2015/11/wellmon-sacred-reading-fall-2015.pdf) <br />In: The Hedgehog Review. Vol. 17, No. 3 (Herbst 2015).
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Interlude mit Hans Rosling (1948–2017), <br />[»the World’s Greatest Data-Storyteller«](https://informationisbeautiful.net/2017/hans-rosling-the-worlds-greatest-data-storyteller/)
+
+--
+
+### »200 Countries, 200 Years, 4 Minutes«
+
+<br />
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/jbkSRLYSojo?rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+(direkt [auf YouTube](https://www.youtube.com/watch?v=jbkSRLYSojo))
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Historizität von Datenvisualisierungen
+
+--
+
+### Balkendiagramme (1/2)
+
+<br />
+
+![meaningless bar chart](images/meaningless-bar-chart.png)<!-- .element height="372px;" -->
+
+(zufällige Daten, visualisiert in RStudio)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Balkendiagramme (2/2)
+
+<br />
+
+- erfunden vom schottischen Ingenieur und Ökonom William Playfair (1759–1823)
+- erstmals 1786 verwendet
+- auch Erfinder des Kuchendiagramms (1801)
+- vgl. Mafe Callejón: [»William Playfair, the father of statistical graphics«](https://flourish.studio/blog/masters-william-playfair-father-of-statistical-graphics/) (Blogpost, 22. Februar 2023)
+
+--
+
+### Diagrammsoftware vor Excel
+
+![Chart-Master](images/chart-master.png)
+
+Quelle: https://flowingdata.com/2022/05/27/charting-software-that-pre-dating-excel/
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Bäume
+
+--
+
+### Baum des Wissens / Porphyrianischer Baum
+
+![Porphyrian tree, from Wikipedia](images/porphyrian-tree-from-wikimedia-commons.png)<!-- .element height="456px;" -->
+
+Benannt nach Porphyrios von Tyros (3. Jh.). Aristoteles’ Einteilung der Kategorien in ein baumartiges Diagramm mit <br />dichotomen Unterteilungen, erstmals als Baum visualisiert von Boëthius (6. Jh.). (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Porphyrian_Tree.png).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Hochmittelalter (~ 1000–1300)
+
+<br />
+
+- Stammbäume (Adelsfamilien und religiöse Verwandtschaft)
+- Ramon Llull (1232–1316) arbeitete mit Diagrammen und Grafiken als exegetische und didaktische Mittel
+- sein *Arbor Scientiae* (1296) enthält 16 Baumdarstellungen, die verschiedene Wissenszweige kategorisieren
+
+--
+
+### Beispiel aus *Arbor Scientiae* (1296)
+
+![Arbor elementalis, from Wikimedia](images/arbor-scientiae-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+Der [*arbor elementalis*](https://books.google.com/books?id=Vl2FBOTNtTQC&pg=PA3). – Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ArborLulle.jpg).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### »Système figuré des connaissances humaines« (1751)
+
+![Tree of knowledge, Encyclopédie, from Wikimedia](images/systeme-figure-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+Aus dem 1. Band der »Encyclopédie« (1751). – Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ENC_SYSTEME_FIGURE.jpeg).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Darwins »Tree of Life« (1837)
+
+![Tree of knowledge, Encyclopédie, from Wikimedia](images/darwin-tree-of-life-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+Darwins erste Skizze des Evolutionsbaums, 1837. – Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Darwin_Tree_1837.png).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### (Neuere) Arten von Baumdarstellungen
+
+<br />
+
+- Figurative Trees<!-- .element: style="font-size:0.8em;" -->
+- Vertical Trees<!-- .element: style="font-size:0.8em;" -->
+- Horizontal Trees<!-- .element: style="font-size:0.8em;" -->
+- Multidirectional Trees<!-- .element: style="font-size:0.8em;" -->
+- Radial Trees<!-- .element: style="font-size:0.8em;" -->
+- Hyperbolic Trees<!-- .element: style="font-size:0.8em;" -->
+- Rectangular Treemaps<!-- .element: style="font-size:0.8em;" -->
+- Voronoi Treemaps <!-- .element: style="font-size:0.8em;" -->([Beispiel](https://www.jasondavies.com/voronoi-treemap/))
+- Circular Treemaps<!-- .element: style="font-size:0.8em;" -->
+- Sunbursts <!-- .element: style="font-size:0.8em;" -->([Beispiel](https://twitter.com/mslima/status/590510046812995585))
+- Icicle Trees<!-- .element: style="font-size:0.8em;" -->
+
+<br />Vgl. Manuel Lima, *The Book of Trees*, 2014
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Die Erfindung der Treemaps
+
+<br />
+
+- Anfang 1990er-Jahre: der Informatiker Ben Shneiderman (U&nbsp;Maryland) suchte eine intuitive Lösung, um die größten Speicherplatzverbraucher auf seiner Festplatte zu finden (Ordner, Dateien)
+- neue Visualisierungsmethode: Visualisierung von Hierarchien unter Einbezug des verbrauchten Platzes
+- seither wurden verschiedene Kachelalgorithmen entwickelt
+- Geschichte der Treemap-Forschung: [cs.umd.edu](http://www.cs.umd.edu/hcil/treemap-history/index.shtml)
+
+--
+
+### Treemap: Beispiel
+
+![treemap example](images/treemap-from-wikimedia-commons.png)<!-- .element height="450px;" -->
+
+- Bildquelle: <!-- .element: style="font-size:0.6em;" -->[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tree_Map.png) = Screenshot mit TreeSize Professional (Win)
+- alternative Programme: WinDirStat, Disk Inventory X (Mac), GrandPerspective (Mac), Baobab (Linux/Gnome), KDirStat (Linux/KDE), …<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+### [visualcomplexity.com](http://www.visualcomplexity.com/vc/)
+
+<br />
+
+- Manuel Limas Datenbank mit 1000 Visualisierungsprojekten (fokussiert auf Netzwerke)
+- Sammlung begonnen 2005
+- Buch: *Visual Complexity. Mapping Patterns of Information* (2011)
+
+--
+
+### Limas 8 Prinzipien (ebd., S.&nbsp;82–95)
+
+<br />
+
+1. Start with a Question
+2. Look for Relevancy
+   * Inhalt und Visualisierungsmethode müssen passen
+3. Enable Multivariate Analysis
+   * binäre Semantiken vermeiden und qualitativen Reichtum nutzen
+4. Embrace Time
+   * »networks are evolving systems«, Abbildung von Zeit in Visualisierungen
+
+--
+
+### Limas 8 Prinzipien (ebd., S.&nbsp;82–95)
+
+<br />
+
+5. Enrich Your Vocabulary<!-- .element value="5" -->
+   * nicht nur Punkte für Knoten und Linien für Kanten (Verwendung von Farben, Formen, unterschiedlichen Größe, Ausrichtungen, Texturen, Positionen)
+6. Expose Grouping
+   * Kriterien: nach Zeit, nach Ort, nach bestimmten Gemeinsamkeiten, nach einer bestimmten Kategorie
+7. Maximize Scaling
+   * Makro- vs. Mikroanalyse
+8. Manage Intricacy
+   * Shneidermans Mantra: »Overview first, zoom and filter, then details on demand.«
+
+--
+
+### »The Syntax of a New Language«
+
+<br />
+
+- neue Visualisierungstechniken der letzten 20 Jahre: Arc Diagram, Area Grouping, Centralized Burst, Centralized Ring, Circled Globe, Circular Ties, Elliptical Implosion, Flow Chart, Organic Rhizome, Radial Convergence, Radial Implosion, Ramifications, Scaling Circles, Segmented Radial Convergence ([Beispiel](https://sensorymaps.com/?projects=comparative-smell-vocabularies)), Sphere (vgl. Lima 2011, S.&nbsp;160–219)
+
+---
+
+### Tools
+
+--
+
+### »The 35 best tools for data visualization«
+
+<br />
+
+- laut [Creative Bloq](http://www.creativebloq.com/design-tools/data-visualization-712402), 2017:
+  - Plotly · DataHero · Chart.js · Tableau · Raw · Dygraphs · ZingChart · InstantAtlas · Timeline · Exhibit · Modest Maps · Leaflet · WolframAlpha · Visual.ly · Visualize Free · Better World Flux · FusionCharts · jqPlot · D3.js · JavaScript InfoVis Toolkit · jpGraph · Highcharts · Google Charts · Excel · CSV/JSON · Crossfilter · Tangle · Polymaps · OpenLayers · Kartograph · CartoDB · Processing · NodeBox · R · Weka · Gephi · iCharts · Flot
+
+--
+
+### Text Visualization Browser
+
+<br />
+
+https://textvis.lnu.se/
+
+---
+
+### Weitere Videos
+
+<br />
+
+- David McCandless: [»The beauty of data visualization«](https://www.youtube.com/watch?v=5Zg-C8AAIGg), 2012</small>
+- Manuel Lima: [»A Visual History of Human Knowledge«](https://www.youtube.com/watch?v=BQZKs75RMqM), 2015
+- Jeffrey Heer: [»The Future of Data Visualization«](https://www.youtube.com/watch?v=vc1bq0qIKoA), 2015
+
+--
+
+Bis nächste Woche.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
