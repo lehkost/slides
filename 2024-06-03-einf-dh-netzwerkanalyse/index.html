@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 3. Juni 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+<small>Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/870164))</small>
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(15. April – 15. Juli 2024)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+7. Vorlesung (3. Juni 2024):<!-- .element: style="font-size:0.65em;" -->
+
+#### **Netzwerkanalyse**<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[bit.ly/dh36](https://bit.ly/dh36)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Semesterüberblick
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| 15.04.2024 | Thematische Rundumschau I |
+| 22.04.2024 | Thematische Rundumschau II |
+| 29.04.2024 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 06.05.2024 | Distant Reading I: Stilometrie |
+| 13.05.2024 | Distant Reading II: Topic Modeling |
+| 27.05.2024 | Visual Analytics: »Beautiful Evidence« |
+| **03.06.2024** | **Netzwerkanalyse** |
+| 10.06.2024 | (Selbststudium) |
+| 17.06.2024 | Geografische Informationssysteme (GIS) |
+| 24.06.2024 | Wikipedia & Wikidata |
+| 01.07.2024 | KI &amp; Maschinelles Lernen |
+| 08.07.2024 | Digitale Praxis der Geisteswissenschaften: ›Recherche‹ |
+| 15.07.2024 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im SoSe 2024
+
+<br />
+
+* [Seminar »Games und Literatur«](https://www.fu-berlin.de/vv/de/lv/870181)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 14:00–16:00 c.t. (zus. mit Dr. Dîlan Canan Çakir)
+* [Seminar »Wikipedia und Wikidata in den Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/870185)
+  * <!-- .element: style="font-size:0.7em;" -->Do 10:00–12:00 c.t. (zus. mit Viktor J. Illmer)
+* [Seminar »Digitale Stilometrie«](https://www.fu-berlin.de/vv/de/lv/867132)
+  * <!-- .element: style="font-size:0.7em;" -->Do 14:00–16:00 c.t.
+* [Seminar »Webscraping mit Python für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/870213)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Seminar »Textanalyse mit R für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/868465)
+  * <!-- .element: style="font-size:0.7em;" -->Di 14:00–16:00 c.t. (geleitet von Lisa Poggel)
+* [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/870197)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 10:00–12:00 c.t. (ab 26.04.2024, zweiwöchentlich)
+  * <!-- .element: style="font-size:0.7em;" -->Übersicht über alle Veranstaltungen: <a href="https://wikis.fu-berlin.de/display/phaenodh">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+---
+
+### Auftakt mit [Mark Lombardi](https://de.wikipedia.org/wiki/Mark_Lombardi)
+
+--
+
+#### »George W. Bush, Harken Energy, Jackson Stephens«
+
+![Lombardi-Werk)](images/lombardi_harken_energy.jpg)
+
+Mark Lombardi: »George W. Bush, Harken Energy, Jackson Stephens«. Ca. 1979–1990. 5. Version. <br />Graphit auf Papier, 0,58 × 1,11 m. Daniel Lombardi & Pierogi Gallery (Bildquelle: [daremag.de](http://daremag.de/2012/06/der-lombardi-code/)) – vgl. [http://lombardinetworks.net](https://lombardinetworks.net/network/1005/) <br />Nur [zwei Kontakte](https://web.archive.org/web/20151014070439/http://hyperallergic.wpengine.netdna-cdn.com/wp-content/uploads/2011/03/bushbinladen2-LG.jpg) zwischen George W. Bush und Osama Bin Laden.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### »Global International Airways and Indian Springs State Bank, Kansas City«
+
+![Lombardi-Werk)](images/lombardi_global_international_airways.jpg)<!-- .element width="650px;" -->
+
+Mark Lombardi: »Global International Airways and Indian Springs State Bank, Kansas City«. <br />4. Version, 1999. Galerie Thomas Schulte (Bildquelle: [daremag.de](http://daremag.de/2012/06/der-lombardi-code/)) – vgl. [http://lombardinetworks.net](https://lombardinetworks.net/network/1008/)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### »Global International Airways […]« (Detail)
+
+![Lombardi-Werk)](images/lombardi_global_international_airways_detail.jpg)
+
+Mark Lombardi: »Global International Airways and Indian Springs State Bank, Kansas City«. <br />4. Version, 1999. Galerie Thomas Schulte (Bildquelle: [vice.com](https://www.vice.com/de/article/qkj5gv/mark-lombardi-die-kunst-des-netzwerkes))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### »Bank of Credit and Commerce International (BCCI)« (Detail)
+
+![Lombardi-Werk)](images/lombardi_bcci_detail.jpg)<!-- .element width="650px;" -->
+
+Mark Lombardi: »BCCI-ICIC & FAB, 1972–91«. 4. Version. Daniel Lombardi & Pierogi Gallery (Bildquelle: [vice.com](https://www.vice.com/de/article/qkj5gv/mark-lombardi-die-kunst-des-netzwerkes))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Dokumentation über Lombardi: <br />»Kunst und Konspiration« (2012)
+
+<br />
+
+- Regie: Mareike Wegener
+- ganze Doku (53 Min.): https://www.youtube.com/watch?v=63eYXqbXLtg
+- »artistic intelligence« / »artistic research methodology as an enabling technology«
+- seine Netzwerke wurden datentechnisch aufbereitet von Robert Tolksdorf: https://lombardinetworks.net/
+
+---
+
+## »Network Theory …
+
+<br>
+
+… is the study of graphs as a representation of (…) <br />relations between discrete objects.« ([engl. Wikipedia](https://en.wikipedia.org/wiki/Network_theory))
+
+--
+
+#### Beispiel für einen Netzwerkgraph mit <br />8 Knoten (nodes, vertices) und 10 Kanten (edges):
+
+<br>
+
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="350px;" -->
+
+<br>
+
+Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+Wenn sich ein Datensatz sinnvoll mit Knoten und Kanten <br />beschreiben lässt, haben wir es mit Netzwerkdaten zu tun.
+
+--
+
+### Beispiele für Netzwerke
+
+<br />
+
+- Eisenbahnnetz (Bahnhöfe und Schienennetz)
+- Flugverkehr (Flughäfen und Flugrouten)
+- Internet (Endgeräte und Netzverbindungen)
+- soziale Netze<!-- .element: class="fragment" -->
+
+--
+
+### Visualisierte Facebook-Freundschaften
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+Knoten: Personen; Kanten: gegenseitig akzeptierte Freundschaftsanfragen. <br />(Quelle: [Paul Butler, 2010](https://engineering.fb.com/2010/12/13/core-data/visualizing-friendships/))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Cluster (Communities)
+
+![Graph, nodes, edges, communities](images/graph-nodes-edges-communities.png)<!-- .element width="425px;" -->
+
+<br />
+
+(Bildquelle: [doi:10.3390/a9010008](https://doi.org/10.3390/a9010008))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Soziale Netzwerke
+
+![Graph, nodes, edges, communities](images/jill-rettberg-annotated-social-network.png)<!-- .element width="400px;" -->
+
+Persönliches Facebook-Netzwerk mit annotierten Clustern/Communities. <br />(Quelle: [Jill Rettberg, 2013](http://jilltxt.net/?p=3447))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Beispiel Nr. 1 für ein literarisches Netzwerk: <br />Goethes »Faust I«
+
+![Goethe, Faust I](images/goethe-faust-eine-tragoedie.png)<!-- .element width="480px;" -->
+
+Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/id/ger000243))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Beispiel Nr. 2 für ein literarisches Netzwerk: <br />Aphra Behns »The Rover« (2 Tle., 1677/1681)
+
+![Goethe, Faust I](images/aphra-behn-the-rover.png)<!-- .element width="480px;" -->
+
+Ko-Okkurrenzgraph, 43 Knoten. (Quelle: [ezlinavis-Beispieldatei](https://ezlinavis.dracor.org/))
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+### Den Beginn der Graphentheorie …
+
+<br>
+
+… markierte Leonhard Eulers Lösung des Königsberger Brückenproblems.
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-1.png)<!-- .element width="440px;" -->
+
+Historische Karte von Königsberg mit dem Fluss Pregel <br>un den sieben Brücken. (Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Abstrahierung von …
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
+
+… zu …
+<!-- .element: style="font-size:0.6em;" -->
+
+![Map of Königsberg (from Wikimedia Commons)](images/kenig-3.png)<!-- .element height="160px;" -->
+
+Von den sieben Brücken (Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg)) <br />zum abstrakten Graph (Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Merkmale der Euler’schen Abstraktion
+
+<br />
+
+- Landmassen = Knoten; Brücken = Kanten
+- genaue Lage der Brücken für die Lösung irrelevant!
+- Anzahl der Brücken und ihrer Endpunkte ist entscheidend:
+  - es sollte maximal zwei Landmassen (Knoten) mit einer ungeraden Anzahl von Brücken (Kanten) geben, die als Anfangs- und Endpunkt dienen
+  - die beiden anderen Ufer müssten eine gerade Anzahl von Brücken aufweisen, die zu ihnen führen
+
+--
+
+### xkcd (Randall Munroe): »Königsberg«
+
+![Königsberg (xkcd)](images/koenigsberg_xkcd.png)<!-- .element height="480px;" -->
+
+(Comic #2694, 4. November 2022, URL: https://xkcd.com/2694/)
+
+---
+
+## Gewichtete und gerichtete Graphen
+
+<br />
+
+- Eulers Graph mit den Königsberger Brücken war ungewichtet und ungerichtet
+
+--
+
+### Gerichteter Graph
+
+<br />
+
+![simple directed graph (from Wikimedia Commons)](images/directed-graph-from-wikimedia-commons.png)<!-- .element height="180px;" -->
+
+<br />
+
+Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Directed.svg)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Gewichteter Graph
+
+<br />
+
+![simple weighted graph (from Wikimedia Commons)](images/weighted-graph-from-wikimedia-commons.png)<!-- .element height="227px;" -->
+
+<br />
+
+Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Weighted_network.svg)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Beispiele für gewichtete Graphen
+
+<br />
+
+- Navigationssoftware (z. B. in Google Maps)
+- Bahn-App
+- Metro-Apps (überhaupt ÖPNV-Apps)
+- …
+
+---
+
+## Social Network Analysis …
+
+<br />
+
+»… is the process of investigating social structures through <br />the use of network and graph theories.« (Wikipedia)
+
+--
+
+### Social Network Analysis (SNA)
+
+<br />
+
+- SNA begann als Sammlung von Ansätzen, die in den Sozialwissenschaften seit den 1930er-Jahren entwickelt wurden
+- der »Harvard Breakthrough« in den 1960er-Jahren (um den Soziologen [Harrison White](https://en.wikipedia.org/wiki/Harrison_White)): Soziolog\*innen, Mathematiker\*innen und Programmierer\*innen entwickeln eine strukturanalytische Perspektive auf soziale Phänomene
+- 1990er-Jahre: neue Perspektiven auf Netzwerkstrukturen mit Aufkommen des Internets, Anwendungen in der Physik, Bioinformatik usw.; die Literaturwissenschaft begann vor etwa 20 Jahren, sich mit SNA zu beschäftigen
+
+--
+
+### Eines der ersten Soziogramme
+
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+»Class structure, 4th grade«. Arbeit von Jacob L. Moreno (1889–1974).<br />(Veröffentlicht in der NYT, [3. April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Quelle für dieses PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Grundlegende Literatur zur SNA
+
+<br />
+
+- Stanley Wasserman, Katherine Faust: [*Social Network Analysis: Methods and Applications*](https://books.google.com/books?id=CAm2DpIqRUIC&printsec=frontcover), 1994
+  - immer noch das Referenzwerk zur SNA, lange vor dem SNA-Hype publiziert
+- Alain Degenne, Michel Forsé: [*Introducing Social Networks*](https://books.google.com/books?id=1mSHqydgrYcC&printsec=frontcover), Orig. 1994, Übers. 1999
+- John Scott: *Social Network Analysis: A Handbook*, 2. Ausgabe 2000.
+- John Scott, Peter J. Carrington (Hg.): [*The SAGE Handbook of Social Network Analysis*](https://books.google.com/books?id=mWlsKkIuFNgC&printsec=frontcover), 2011
+- Katharina A. Zweig: [Network Analysis Literacy: A Practical Approach to the Analysis of Networks](https://books.google.com/books?id=MpNjDQAAQBAJ&printsec=frontcover) (2016)
+- Fotis Jannidis: **Netzwerke.** In: Ders., Hubertus Kohle, Malte Rehbein (Hg.): Digital Humanities: Eine Einführung. Stuttgart: Metzler 2017, S. 147–161. ([doi:10.1007/978-3-476-05446-3_10](https://doi.org/10.1007/978-3-476-05446-3_10))
+
+---
+
+## Operationalisierung
+
+<br />
+
+- soziale Netzwerkdaten = **Interaktionen** zwischen sozialen Entitäten
+- Netzwerkdaten: Knoten + Kanten (**wichtig**: man muss stets in der Lage sein zu sagen, welche Beziehung zwischen den Knoten besteht, d.h. welche Bedeutung die Kanten haben)
+- z.&nbsp;B. in dramatischen Texten: »Zwei Figuren interagieren miteinander, wenn sie innerhalb desselben Abschnitts eines Dramas (normalerweise eine ›Szene‹) einen Sprechakt vollziehen.« (in Anlehnung an eine Idee von Solomon Marcus, »Poetica matematică«, 1970)
+
+--
+
+### Schnitzler: »Reigen« (1901) – 1/3
+
+<br />
+
+Volltext: http://www.zeno.org/nid/2000562813X
+
+--
+
+### Schnitzler: »Reigen« (1901) – 2/3
+
+›Konfigurationsmatrix‹ (nach Pfister: Das Drama. Theorie und Analyse, 1977)
+
+![Reigen](images/schnitzler-reigen-konfigurationsmatrix.png)<!-- .element width="600px;" -->
+
+Bildquelle: [DH Regensburg 2016](https://dhregensburg.files.wordpress.com/2016/06/a0-katharsis.pdf).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Schnitzler: »Reigen« (1901) – 3/3
+
+![Reigen](images/schnitzler-reigen.png)<!-- .element width="520px;" -->
+
+Daten [via DraCor](https://dracor.org/id/ger000232).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Vereinfachtes Beispiel
+### Ingo Schulze: »Simple Storys« (1998)
+
+![Simple Storys, Cover (1998)](images/simple-storys-cover.jpg)<!-- .element width="250px;" -->
+
+(Buchcover via [piper.de](https://web.archive.org/web/20210301224526/https://www.piper.de/buecher/simple-storys-isbn-978-3-8270-7768-4-ebook))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+* Kennen sich **Marianne** und **Raffael** über Ecken? Falls ja, über wieviele Ecken?
+
+<!-- .element: style="font-size:0.9em;" -->
+
+### <br />Was bekannt ist (stark vereinfacht)
+
+* Barbara und Frank sind verheiratet.
+* Marianne und Hanni kennen sich von der gemeinsamen Turngruppe.
+* Barbara und Hanni kennen sich seit 18 Jahren.
+* Frank und Barbara haben Enrico besucht.
+* Orlando hat als Taxifahrer bei Raffael gearbeitet.
+* Frank besucht Orlando im Krankenhaus.
+* Ernst wird von Barbara in der Psychiatrie behandelt.
+
+<!-- .element: style="font-size:0.9em;" -->
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Formalisierung von Beziehungen/Interaktionen
+
+<br />
+
+```md
+# 1
+Barbara
+Frank
+# 2
+Marianne
+Hanni
+# 3
+Barbara
+Hanni
+# 4
+Frank
+Barbara
+Enrico
+# 5
+Orlando
+Raffael
+# 6
+Frank
+Orlando
+# 7
+Ernst
+Barbara
+```
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Visualisierung mit Ezlinavis
+
+![Screenshot von Ezlinavis](images/ezlinavis-screenshot-beispiel.png)<!-- .element height="450px;" -->
+
+Linke Spalte: Eingabefenster. – Mittlere Spalte: Automatisch generierte Kantendaten. – Rechte Spalte: Interaktive Visualisierung.
+
+--
+
+#### Vollständige Modellierung des Romans »Simple Storys«
+
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-storys-netzwerk.png)<!-- .element width="450px;" -->
+
+Thomas Schweizer, Michael Schnegg: [»Die soziale Struktur der ›Simple Storys‹. Eine Netzwerkanalyse«](https://web.archive.org/web/20220119175152/https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf) (1998). <br />38 Knoten (Romanfiguren). Kanten: positive, negative oder Tauschbeziehungen.
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+## Graph-bezogene Werte
+
+<br />
+
+- Network Size (Netzwerkgröße)
+- Maximum Degree (maximaler Grad)
+- Average Degree (durchschnittlicher Grad)
+- Density (Dichte)
+- Average Path Length (durchschnittliche Pfadlänge)
+- …
+
+--
+
+### Beispiel
+
+![three nodes](images/three-nodes.png)<!-- .element height="400px;" -->
+
+Beziffern Sie (a) die Netzwerkgröße, (b) den maximalen Grad, <br />(c) den durchschnittlichen Grad, (d) die Dichte, <br />(e) die durchschnittliche Pfadlänge des Netzwerks!
+
+--
+
+### Möglicher Strukturvergleich
+
+<br />
+
+<small>
+
+| Play                                                                   | Characters | Max Degree          | Avg Degree | Density | Avg Path Length |
+|------------------------------------------------------------------------|------------|---------------------|------------|---------|-----------------|
+| [Goethe: Iphigenie auf Tauris](https://dracor.org/id/ger000001) (1787) | 5          | 4                   | 4          | 1       | 1               |
+| [Tieck: Der gestiefelte Kater](https://dracor.org/id/ger000285) (1797) | 48         | 43 &nbsp; (Fischer) | 20.96      | 0.45    | 1.61            |
+| [Kleist: Die Hermannsschlacht](https://dracor.org/id/ger000078) (1808) | 84         | 44 &nbsp; (Hermann) | 9.12       | 0.11    | 2.58            |
+
+</small>
+
+--
+
+### Gamification-Ansatz: »Dramenquartett« (2019)
+
+<br />
+
+![Dramenquartett](images/dramenquartett-four-cards.jpg)<!-- .element width="450px;" -->
+
+Frank Fischer und Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** Unter Mitarbeit von Christopher Kittel, Carsten Milling, Peer Trilcke und Jana Wolf. Bern: edition taberna kritika 2019. 32 Blatt in Kartonbox, Farbdruck. <br />ISBN: 978-3-905846-55-3. Preis: €14 / 17 SFr. (mittlerweile vergriffen) – Spielregeln: https://dramenquartett.github.io/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+## Distant-Reading Showcase
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+*Distant-Reading Showcase* (DHd2016 in Leipzig, 9. März 2016).<br />Download via Figshare. DOI: [10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Tragödie vs. Komödie
+
+<br />
+
+»[…] the name of Tragedy was assumed by plays in which everyone was killed in the last act, just as […] plays in which everyone was married in the last act called themselves comedies«
+
+<br />
+
+G. B. Shaw: Vorwort zu »Back to Methuselah«, 1921 (vgl. [Project Gutenberg](http://www.gutenberg.org/ebooks/13084)).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Netzwerk-Dichte (German Drama Corpus)
+
+![Development of network sizes (plays with 3 and more acts)](images/densite_moyenne_par_genre.png)
+
+Vgl. [»Comedy vs. Tragedy: Network Values by Genre«](https://dlina.github.io/Network-Values-by-Genre/) (2015).
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+## Knoten-basierte Maße
+
+--
+
+### Grad/Degree
+
+![Hamlet, Degree](images/hamlet-network-moretti.png)<!-- .element height="480px;" -->
+
+In Morettis Formalisierung hat Hamlet direkte Verbindungen zu 16 anderen Figuren (≙ Grad/Degree). <br />(Quelle: [Literary Lab Pamphlet 2](https://litlab.stanford.edu/LiteraryLabPamphlet2.pdf), Abb. 2.)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### (Durchschnittliche) Pfaddistanz/ <br />(Average) Distance
+
+<br />
+
+»Die Pfaddistanz ist ein graphentheoretisches Distanzmaß und gibt an, wie viele Schritte erforderlich sind, um von einem Knoten aus einen anderen Knoten zu erreichen. Schritte werden über die Anzahl der Kanten auf dem kürzesten Pfad zwischen beiden Knoten operationalisiert.«
+
+<br />
+
+(Volker Schneider et al. (Hg.): Politiknetzwerke. Modelle, Anwendungen und Visualisierungen, <br />VS Verlag für Sozialwissenschaften 2009, [S. 382f.](https://link.springer.com/content/pdf/bbm%3A978-3-531-91883-9%2F1.pdf#page=13))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Beispiel für Average Distance
+
+<br />
+
+- in Morettis Formalisierung hat Hamlet eine Average Distance (von allen anderen Figuren) von 1,45
+- Average Distance von Claudius: 1,62
+- Horatio: 1,69
+
+--
+
+### Eigenvector Centrality (Prestige)
+
+<br />
+
+»Die Idee der Eigenvektor-Zentralität ist, dass ein Knoten wichtiger ist, wenn er wichtige Nachbarn hat. Der Zentralitätswert eines Knotens entspricht deshalb der Summe der Werte seiner Nachbarn.«
+
+<br />
+
+(Volker Schneider et al. (Hg.): Politiknetzwerke. Modelle, Anwendungen und Visualisierungen, <br />VS Verlag für Sozialwissenschaften 2009, [S. 377](https://link.springer.com/content/pdf/bbm%3A978-3-531-91883-9%2F1.pdf#page=8))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### PageRank
+
+<br />
+
+- »PageRank-Zentralität eignet sich ebenso wie die Eigenvektor-Zentralität optimal dafür, den Einfluss in einem Netzwerk zu messen. Während die **Richtungsabhängigkeit** beim Eigenvektor jedoch keine Rolle spielt, ist das bei PageRank anders. PageRank-Zentralität wurde von Google entworfen und populär gemacht, um optimale Suchergebnisse für eine Benutzerfrage zurückgeben zu können.« ([arcgis.com](https://pro.arcgis.com/de/pro-app/2.7/help/analysis/link-charts/centrality.htm))
+
+--
+
+### Betweenness Centrality (1/3)
+
+<br />
+
+»Austauschbeziehungen zwischen Knoten in Netzwerken finden oft nicht nur zwischen direkt verbundenen Knoten statt, sondern Informationen fließen über dritte, intermediäre Knoten. Die Betweenness-Zentralität misst, auf wie vielen kürzesten Verbindungen ein Knoten liegt.«
+
+(Volker Schneider et al. (Hg.): Politiknetzwerke. Modelle, Anwendungen und Visualisierungen, <br />VS Verlag für Sozialwissenschaften 2009, [S. 371](https://link.springer.com/content/pdf/bbm%3A978-3-531-91883-9%2F1.pdf#page=2))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Betweenness Centrality (2/3)
+
+![betweenness](images/ada-ben-cro.png)<!-- .element height="400px;" -->
+
+Beispiel: Die Degree-Zentralität korreliert nicht mit der Betweenness-Zentralität.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Betweenness Centrality (3/3)
+
+<br />
+
+Node | Degree | Betweeness Centrality
+-|-:|-:
+Ada | 2 | **16**
+Ben | **4** | 15
+Cro | **4** | 15
+Bens Bekannte 1 | 3 | 0
+Bens Bekannte 2 | 3 | 0
+Bens Bekannte 3 | 3 | 0
+Cros Bekannter 1 | 3 | 0
+Cros Bekannter 2 | 3 | 0
+Cros Bekannter 3 | 3 | 0
+
+--
+
+Alexander Puschkins historische Tragödie »Boris Godunow« (1825)
+
+![Betweenness](images/betweenness-pushkin-boris-godunov-de.png)<!-- .element width="760px;" -->
+
+Label-Größe korreliert in diesem Graph mit der Betweenness-Zentralität. <br />Gavrila Puschkin – eine Nebenfigur – in der Mitte.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+Alexei Tolstois »Tod Iwans des Schrecklichen« (1866)
+
+![betweenness](images/betweenness-tolstoy-smert-ioanna-groznogo-de.png)
+
+Auch hier korreliert die Labelgröße mit der Betweenness-Zentralität. Bitâgovskij verbreitet Fake News.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Periodensystem der Netzwerkzentralitäten
+
+<br />
+
+- http://schochastics.net/sna/periodic.html
+
+---
+
+### Figurennetzwerke (automatisch) <br />aus Romanen extrahieren
+
+--
+
+### »The Adventures of Sherlock Holmes« (1/2)
+#### <u>Schritte (laut [Jupyter Notebook](https://nbviewer.org/gist/sgsinclair/bf112f84f130c8bac96c) von Stéfan Sinclair, 2015):</u>
+
+- Text besorgen (via [Project Gutenberg](https://www.gutenberg.org/cache/epub/1661/pg1661.txt))
+- Absätze einzeln betrachten
+- Personen (*named entities*) finden (mit Hilfe des NLTK-Taggers)
+- Absätze mit mehr als einer *named entity* suchen
+- wenn A, B und C vorkommen: A ⇆ B, A ⇆ C, B ⇆ C
+- gemeinsame Relationen zählen:
+  - Holmes, Watson, 19
+  - Holmes, Lestrade, 7
+  - Holmes, Hosmer Angel, 7
+  - Holmes, Lord St. Simon, 6
+  - Doctor, Holmes, 6
+  - (…)
+
+--
+
+### »The Adventures of Sherlock Holmes« (2/2)
+
+![holmes](images/holmes.png)
+
+Quelle für die Visualisierung: [Jupyter Notebook](https://nbviewer.org/gist/sgsinclair/bf112f84f130c8bac96c) von Stéfan Sinclair (2015).
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+### Das »Nation, Genre & Gender«-Projekt des UCD
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/KX7rzQMswEw?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+(Direkt [auf YouTube](https://www.youtube.com/watch?v=KX7rzQMswEw).)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### 9 britische Romane (Austen & Dickens) (1/5)
+
+<br />
+
+* Siobhán Grayson, Karen Wade, Gerardine Meaney, Derek Greene: **The Sense and Sensibility of Different Sliding Windows in Constructing Co-Occurrence Networks from Literature.** In: Bojan Bozic, Gavin Mendel-Gleason, Christophe Debruyne, Declan O’Sullivan (Hrsg.): Computational History and Data-Driven Humanities. CHDDH 2016. IFIP Advances in Information and Communication Technology, Vol. 482. Cham: Springer. ([doi:10.1007/978-3-319-46224-0_7](https://doi.org/10.1007/978-3-319-46224-0_7))
+
+--
+
+### 9 britische Romane (Austen & Dickens) (2/5)
+
+<br />
+
+- bei Romanen braucht man einen operationalisierungsfähigen Ko-Präsenz-Begriff
+- Voraussetzung: manuelle Annotation aller Romane, um Figurenreferenzen zu finden (Figurenlexikon mit Aliases)
+- 3 Fenstertechniken:
+  - collinear
+  - coplanar (wenn das Window der ganze Text ist, dann sind alle Charaktere miteinander verbunden, man muss sich also für eine Fenstergröße entscheiden, und sie probieren drei verschiedene aus)
+  - combination
+
+--
+
+### 9 britische Romane (Austen & Dickens) (3/5)
+
+<br />
+
+![collinear and coplanar](images/collinear-coplanar.png)<!-- .element width="640px;" -->
+
+--
+
+### 9 britische Romane (Austen & Dickens) (4/5)
+
+<br />
+
+- collinear: besonders nützlich im Bezug auf die Erzähltechnik, für die Identifizierung von narrativen Abwegen und Nebenhandlungen
+- combination: Illustration der Verbindungen zwischen und über die sozialen Klassen hinweg
+- »Der kollineare Ansatz hat langfristiges Potenzial für die Analyse der viel kommentierten Kette von erzählerischen Ursachen und Wirkungen bei Austen.«
+
+--
+
+### 9 britische Romane (Austen & Dickens) (5/5)
+
+<br />
+
+![Austen](images/austen.png)<!-- .element width="640px;" -->
+
+---
+
+### Software
+
+--
+
+### Gephi
+
+![Gephi Screenshot](images/gephi-les-miserables.png)
+
+(Bildquelle: [Jason Heppler](https://jasonheppler.org/courses/csu-workshop/gephi.html), 2016. Lizenz: CC BY-NC-SA 4.0.)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Cytoscape
+
+![Cytoscape Screenshot (from WM Commons)](images/cytoscape_screenshot.png)
+
+Download: [**cytoscape.org**](https://cytoscape.org/). (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cytoscape3.7.0.png).)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Einige beispielhafte Netzwerkdaten <br />aus der Populärkultur
+
+<br />
+
+- [Downton Abbey](http://letstalkdata.com/2013/08/a-social-network-of-downton-abbey/)
+- [Game of Thrones](https://networkofthrones.wordpress.com/)
+- [Star Wars (die ersten 6 Filme)](http://evelinag.com/blog/2015/12-15-star-wars-social-network/index.html)
+- [Star Wars: The Force Awakens](http://evelinag.com/blog/2016/01-25-social-network-force-awakens/index.html)
+- [Sherlock](http://obotligtnyfiken.se/sherlock/sherlock-statistics/who-meets-whom-in-which-episode/)
+
+--
+
+#### Netzwerkdaten aus Amazon Prime Videos extrahieren (1/3)
+
+![1917, movie, network](images/1917-network.png)<!-- .element width="720px;" -->
+
+Abb. *1917* (Sam Mendes 2019). – Vgl. Lisa Poggel, Frank Fischer: *Automatic Extraction of Network Data From Amazon Prime Videos (Using »1917« As an Example).* https://weltliteratur.net/extracting-network-data-from-amazon-prime-videos/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Netzwerkdaten aus Amazon Prime Videos extrahieren (2/3)
+
+![The Circle (via Amazon Prime)](images/the-circle-prime-network.png)<!-- .element width="720px;" -->
+
+Abb. *The Circle* (James Ponsoldt 2017). – Vgl. Lisa Poggel, Frank Fischer: *Automatic Extraction of Network Data From Amazon Prime Videos (Using »1917« As an Example).* https://weltliteratur.net/extracting-network-data-from-amazon-prime-videos/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Netzwerkdaten aus Amazon Prime Videos extrahieren (3/3)
+
+![Tenet (via Amazon Prime)](images/tenet-prime-network.png)<!-- .element width="720px;" -->
+
+Abb. *Tenet* (Christopher Nolan 2020). – Vgl. Lisa Poggel, Frank Fischer: *Automatic Extraction of Network Data From Amazon Prime Videos (Using »1917« As an Example).* https://weltliteratur.net/extracting-network-data-from-amazon-prime-videos/
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Mathieu Jacomy: »Translating networks: <br />linking visualization to statistics«
+
+![Visual Analysis (Jacomy)](images/visual-analysis-jacomy-2020.png)<!-- .element width="640px;" -->
+
+»visualization helps building hypotheses, while statistics allow testing them and building evidence« (https://reticular.hypotheses.org/1745)
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+Bis nächste Woche.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
