@@ -37,169 +37,19 @@ Dîlan Canan Çakir · Frank Fischer · Viktor Illmer · Jonas Rohe · Mark Schw
 
 --
 
-### … in Four Chapters:
+### … in Three Chapters:
 
 <br />
 
-1. Emergence, Development, Terminology
-2. Extracting Networks from Literary Texts
-3. Visualisation and Analysis of Network Data
-4. Handling Network Data with Python and the NetworkX Library
+1. Extracting Networks from Literary Texts
+2. Visualisation and Analysis of Network Data
+3. Handling Network Data with Python and the NetworkX Library
 
 ---
 
 <!-- .slide: data-background-color="lightblue" -->
 
 ## Chapter 1
-
-<br />
-
-### Emergence, Development, Terminology
-
---
-
-### Network Theory …
-
-<br />
-
-“… is the study of graphs as a representation of (…) <br />relations between discrete objects.” (Wikipedia)
-
---
-
-#### Small example network graph with <br />8 vertices (nodes) and 10 edges:
-
-<br />
-
-![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="300px;" -->
-
-<br />
-
-<small>Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)</small>
-
---
-
-### The Emergence of Graph Theory …
-
-<br />
-
-… was Leonhard Euler’s take on the **Seven Bridges of Königsberg**, <br />a historically significant problem in mathematics. (~ 1736)
-
-![Map of Königsberg (from Wikimedia Commons)](images/kenig-1.png)<!-- .element width="420px;" -->
-
-<small>Historical map of Königsberg, highlighting the Pregel River <br />and the seven bridges. (Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png))</small>
-
---
-
-#### Abstraction from …
-
-![Map of Königsberg (from Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
-
-<small>… to …</small>
-
-![Map of Königsberg (from Wikimedia Commons)](images/kenig-3.png)<!-- .element height="160px;" -->
-
-<small>Turning the seven bridges (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg)) <br />into an abstract graph (source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).</small>
-
---
-
-### Features of Euler’s Abstraction
-
-<br />
-
-- landmasses: nodes, bridges: edges
-- precise location of bridges is irrelevant!
-- number of bridges and their endpoints are key for the solution of the problem:
-  - there should be a maximum of two landmasses (nodes) with an odd number of bridges (edges) serving as starting and end point
-  - the other two banks would have to feature an even number of bridges leading to them
-
---
-
-### Skit: “Königsberg” (by Randall Munroe, xkcd)
-
-![Königsberg (xkcd)](images/koenigsberg_xkcd.png)<!-- .element height="480px;" -->
-
-(Comic #2694, 4 Nov 2022, URL: https://xkcd.com/2694/)
-
---
-
-### Social Network Analysis …
-
-<br />
-
-“… is the process of investigating social structures through <br />the use of network and graph theories.” (Wikipedia)
-
---
-
-### One of the First Sociograms
-
-![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
-
-<small>“Class structure, 4th grade.” Work by Jacob L. Moreno (1889–1974). <br />(First published in NYT, [3 April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Source for this PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)</small>
-
---
-
-### Visualising Facebook Friendships
-
-![FB network 2010](images/fb-network-2010.jpg)
-
-<small>(source: [Paul Butler, 2010](https://www.facebook.com/notes/facebook-engineering/visualizing-friendships/469716398919))
-
---
-
-### Node-Related Measures
-
-- Degree
-- Path Length
-- […]
-
-### <br />Graph-Related Measures
-
-- Network Size
-- Average Degree
-- Density
-- […]
-
---
-
-### Example
-
-![four nodes](images/four_nodes.png)<!-- .element height="360px;" -->
-
-Please specify: <br />(a) the **degree** of the node in the middle, (b) the **degree** of outer nodes, <br />(c) the **path length** between two outer nodes, (d) the **network size**, <br />(e) the **average degree**, (f) the **density** of the graph?
-
---
-
-### Prospects for Network Data Comparison
-
-<br />
-
-<small>
-
-| Play                                                | Network Size | Density | Clustering Coefficient | Avg Path Length | Max Degree                   |
-|-----------------------------------------------------|--------------|---------|------------------------|-----------------|------------------------------|
-| Sophocles: Antigone                                 | 9            | 0.44    | 0.78                   | 1.58            | 7 (Creon &amp; Chorus)       |
-| William Shakespeare: Hamlet                         | 34           | 0.34    | 0.86                   | 1.7             | 30 (Horatio)                 |
-| Aphra Behn: The Rover, pt. I &amp; II               | 43           | 0.38    | 0.84                   | 1.62            | 41 (Willmore)                |
-| Johann Wolfgang Goethe: Faust, pt. I                | 115          | 0.2     | 0.98                   | 1.7             | 67 (Faust)                   |
-| August Strindberg: Miss Julie                       | 3            | 1       | 1                      | 1               | 2 (all three characters)     |
-| Bertolt Brecht: Mother Courage and Her Children     | 35           | 0.24    | 0.89                   | 1.95            | 30 (Mother Courage)          |
-| Samuel Beckett: Waiting for Godot                   | 5            | 0.8     | 0.87                   | 1.2             | 4 (Vladimir &amp; Estragon)  |
-
-</small>
-
---
-
-### Gamification: „Brecht Beats Shakespeare!“
-
-![card game](images/card-game-dh2018.jpg)<!-- .element width="600px;" -->
-
-<small>Educational card game released at DH2018, México ([doi:10.6084/m9.figshare.5926363](https://doi.org/10.6084/m9.figshare.6667424)).</small>
-
----
-
-<!-- .slide: data-background-color="lightblue" -->
-
-## Chapter 2
 
 <br />
 
@@ -308,7 +158,7 @@ Barbara
 
 <!-- .slide: data-background-color="lightblue" -->
 
-## Chapter 3
+## Chapter 2
 
 <br />
 
@@ -328,7 +178,7 @@ Please download and install:<!-- .element: style="font-size:1.25em;" -->
 
 ### Get &#62; 3.000 Gephi-Ready Networks from DraCor
 
-![DraCor frontpage on 8 Aug 2023](images/dracor-frontpage-2023-08-08.png)
+![DraCor frontpage on 7 Jun 2024](images/dracor-frontpage-2024-06-07.png)
 
 https://dracor.org/
 
@@ -350,7 +200,7 @@ https://dracor.org/
 
 <!-- .slide: data-background-color="lightblue" -->
 
-## Chapter 4
+## Chapter 3
 
 <br />
 
