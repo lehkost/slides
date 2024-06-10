@@ -39,6 +39,15 @@ Web: [lehkost.github.io](https://lehkost.github.io/) <br />Twitter: [@umblaetter
 
 --
 
+### How DraCor Started Around 10 Years Ago
+
+![17 June 2015, hackathon at GCDH](images/2015-06-17_hackathon_at_gcdh.jpg)<!-- .element width="500px;" -->
+
+(Hacking some code and encoding some plays on 17 June 2015 at Heyne House, Göttingen Centre for Digital Humanities.)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
 ![DraCor frontpage on 10 Sept 2023](images/dracor-frontpage-2023-09-10.png)
 
 https://dracor.org/
@@ -94,7 +103,8 @@ https://dracor.org/
 
 <br />
 
-<small>Dialogue from Goethe’s "Faust, pt. I" (1808) in TEI. <br />Currently, 585 different elements are defined in the standard <br />([Version 4.7.0, November 2023](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).</small>
+Dialogue from Goethe’s "Faust, pt. I" (1808) in TEI. <br />Currently, 585 different elements are defined in the standard <br />([Version 4.7.0, November 2023](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
@@ -152,41 +162,6 @@ https://dracor.org/id/ger000220#speech
 
 https://dracor.org/id/ger000129#downloads
 
---
-
-### RomDraCor
-
-<br />
-
-- https://dracor.org/rom
-- features 36 plays in Latin: <br />20 comedies by Plautus, 6 comedies by Terence, 10 tragedies by Seneca
-- corpus adapted from Perseus Digital Library (licence: CC BY-SA 3.0 US), then we added/revised:
-  - speaker markup
-  - scene divisions
-  - page numbers of print editions
-  - Wikidata IDs
-  - gender information
-  - dates for creation/first performance added
-  - character types (adulescens, senex, servus, etc.)
-  - correction of typos
-
---
-
-### Building/Growing Corpora
-
-<br />
-
-- easiest: reliable digital versions (usually scanned/OCR’ed from a specific edition of a play)
-  - Gutenberg projects (gutenberg.org, Gutenberg-DE)
-  - Ben-Yehuda Project ("Hebrew Gutenberg project")
-  - Wikisource (different languages)
-  - Deutsches Textarchiv (German Text Archive)
-  - Magyar Elektronikus Könyvtár (Hungarian Electronic Library)
-  - lib.ru, rvb.ru, ilibrary.ru
-  - …
-- [OCR-D – DFG-funded Initiative for Optical Character Recognition Development](https://ocr-d.de/en/)
-- DraCor pipeline (Transkribus – ezDrama)
-
 ---
 
 # Chapter 2.
@@ -215,7 +190,8 @@ https://dracor.org/id/ger000129#downloads
 
 ![DraCor-API)](images/dracor-api.png)
 
-<small>https://dracor.org/doc/api</small>
+https://dracor.org/doc/api
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
@@ -227,7 +203,7 @@ https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie/spoken-t
 
 https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
 
-<small>Speech Text of all son characters in Schiller’s "The Robbers".</small>
+<small>Speech text of all son characters in Schiller’s "The Robbers".</small>
 
 https://dracor.org/api/v1/corpora/shake/plays/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
 
@@ -257,7 +233,8 @@ ggplot(gerdracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
 
 <br />
 
-<small>Example of a simple R script that obtains data via the API.</small>
+Example of a simple R script that obtains data via the API.
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
@@ -265,9 +242,11 @@ ggplot(gerdracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
 
 ![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
 
-<small>Output in RStudio.</small>
+Output in RStudio.
+<!-- .element: style="font-size:0.6em;" -->
 
-<small>(The dot at the top right: Karl Kraus’ "The Last Days of Mankind", 925 speaker instances.)</small>
+(The dot at the top right: Karl Kraus’ "The Last Days of Mankind", 925 speaker instances.)
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
@@ -280,7 +259,7 @@ ggplot(gerdracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
 <br />
 
 - for R: rdracor
-- for Python: PyDraCor
+- for Python: pydracor
 
 --
 
@@ -324,15 +303,17 @@ plot(hermann)
 
 ![DraCor Technology Stack](images/dracor-drawio.svg)
 
-<small>All repos (code, data) are open source: https://github.com/dracor-org</small>
+All repos (code, data) are open source: https://github.com/dracor-org
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
-### Shiny App
+### Third-Party Apps
 
 ![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
 
-<small>https://shiny.dracor.org/ (by Ivan Pozdniakov). Data access completely via the API.</small>
+https://shiny.dracor.org/ (by Ivan Pozdniakov). Data access completely via the API.
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
@@ -340,7 +321,8 @@ plot(hermann)
 
 ![Boris Godunow (dynamischer Graph)](images/lessing-emilia-galotti.gif)
 
-<small>**Dynamic Graph**, generated with the [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html) package. Daten directly via **DraCor API**. <br />Script by Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
+**Dynamic Graph**, generated with the [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html) package. Daten directly via **DraCor API**. <br />Script by Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.6em;" -->
 
 ---
 
