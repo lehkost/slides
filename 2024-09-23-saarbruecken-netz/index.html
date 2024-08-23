@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Erhebung und Analyse von Netzwerkdaten (23. September 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+<!-- .slide: data-background-color="white" -->
+
+### Erhebung und Analyse von Netzwerkdaten
+
+![Co-occurrence network extracted from Brecht's "Mother Courage", no labels](images/brecht-mother-courage-no-labels.png)<!-- .element width="250px;" -->
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
+
+Freie Universität Berlin<!-- .element: style="font-size:0.7em;" -->
+
+<br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/eanetz](https://bit.ly/eanetz)**
+
+<br />Universität des Saarlandes &nbsp;·&nbsp; 23. September 2024<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Verortung
+
+<br />
+
+* Bachelor-Nebenfach Digital Humanities
+  * Spezialisierungsbereich ›Bild – Objekt – Raum‹
+    * Erhebung, Auswertung und Visualisierung von Daten in verschiedenen Bereichen der Geistes- und Kulturwissenschaften
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Beginn der Netzwerktheorie](#/1)
+2. [Soziale Netzwerkanalyse](#/2)
+3. [Knoten- und graphbasierte Werte](#/3)
+4. [Extraktion von Netzwerkdaten](#/4)
+5. [Übungsaufgabe](#/5)
+6. [Ausblick](#/6)
+
+---
+
+### Netzwerktheorie …
+
+<br />
+
+»… ist die Untersuchung von Graphen als Darstellung [von] Beziehungen zwischen diskreten Objekten.« ([engl. Wikipedia](https://en.wikipedia.org/wiki/Network_theory))
+
+--
+
+### Beispielgraph mit <br />8 Knoten und 10 Kanten:
+
+![Bild von einfachem Netzwerk (Quelle: Wikimedia Commons)](images/small_network.png)<!-- .element width="380px;" -->
+
+* Knoten (nodes, vertices)
+* Kanten (edges, links)
+
+<br />Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Am Beginn der Netzwerktheorie …
+
+
+… stand Leonhard Eulers Lösung des <br />[Königsberger Brückenproblems](https://de.wikipedia.org/wiki/Königsberger_Brückenproblem) (1736).
+
+![Historische Karte von Königsberg (Quelle: Wikimedia Commons)](images/kenig-1.png)<!-- .element width="440px;" -->
+
+Historische Karte von Königsberg mit den sieben Brücken <br />über den Pregel. (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Konigsberg_bridges.png).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Abstraktion von …
+
+![Karte von Königsberg (Quelle: Wikimedia Commons)](images/kenig-2.png)<!-- .element height="160px;" -->
+
+… zu …
+<!-- .element: style="font-size:0.65em;" -->
+
+![Abstraktion als Graph](images/kenig-3.png)<!-- .element height="160px;" -->
+
+Von den sieben Brücken (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:7_bridges.svg)) <br />zum abstrahierten Graph (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Königsberg_graph.svg)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Merkmale der Euler’schen Abstraktion
+
+<br />
+
+- Landmassen = Knoten; Brücken = Kanten
+- genaue Lage der Brücken für die Lösung irrelevant
+- Anzahl der Brücken und ihrer Endpunkte ist entscheidend:
+  - es sollte maximal zwei Landmassen (Knoten) mit einer ungeraden Anzahl von Brücken (Kanten) geben, die als Anfangs- und Endpunkt dienen
+  - die beiden anderen Ufer müssten eine gerade Anzahl von Brücken aufweisen, die zu ihnen führen
+
+---
+
+### Die Soziale Netzwerkanalyse (SNA) …
+
+<br />
+
+»… untersucht soziale Strukturen mit Hilfe der Netzwerk- und Graphentheorie.« ([engl. Wikipedia](https://en.wikipedia.org/wiki/Social_network_analysis))
+
+--
+
+### Ein frühes Soziogramm
+
+![Sociogram von Jacob L. Moreno](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+»Class structure, 4th grade«. Arbeit von Jacob L. Moreno (1889–1974). <br />(aus: New York Times, [3. April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html); Bildquelle: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Visualising Facebook Friendships
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+(Quelle: [Paul Butler, 2010](https://www.facebook.com/notes/facebook-engineering/visualizing-friendships/469716398919))
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Knotenbasierte Werte
+
+- Grad
+- Pfadlänge
+- […]
+
+### <br />Graphbasierte Werte
+
+- Netzwerkgröße
+- […]
+
+--
+
+### Ein Beispielgraph
+
+![Vier Knoten](images/four_nodes.png)<!-- .element height="400px;" -->
+
+Geben Sie an: (a) Grad des mittleren Knotens, (b) Grad der äußeren Knoten, (c)&nbsp;Pfadlänge zwischen zwei äußeren Knoten, (d)&nbsp;Netzwerkgröße?
+
+---
+
+### Netzwerke extrahieren mit »ezlinavis«
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-brecht.png)<!-- .element height="400px;" -->
+
+Linke Spalte: Eingabefenster. – Mittlere Spalte: Automatisch generierte Kantendaten. – Rechte Spalte: Interaktive Visualisierung.
+
+---
+
+### Übungsaufgabe
+
+* Kennen sich **Ella** und **Aline** über Ecken? Falls ja, über wieviele Ecken? Erstellen Sie zur Beantwortung der Frage ein Netzwerk mit ezlinavis!
+
+### <br />Was bekannt ist:
+
+* **Aline** und Ben haben zusammen studiert.
+* Ben, Carl und Dana sind im selben Sportverein.
+* **Ella** und Fanny haben in derselben WG gewohnt.
+* Ben ist der Patenonkel von Hanna.
+* Gina und Carl sind verheiratet.
+* Gina und Fanny sind Arbeitskolleginnen.
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Lösung (zum Copy&Pasten)
+
+<br />
+
+```
+# 1
+Aline
+Ben
+# 2
+Ben
+Carl
+Dana
+# 3
+Ella
+Fanny
+# 4
+Ben
+Hanna
+# 5
+Gina
+Carl
+# 6
+Gina
+Fanny
+```
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Auswertung
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-beispiel.png)<!-- .element height="450px;" -->
+
+(a) Sind Ella und Aline über Ecken bekannt? (b) Über wieviele? <br />(c) Welche ist die Person mit dem maximalen Grad?
+
+--
+
+## Diskussion
+
+<br />
+
+* Welche Schwierigkeiten gab es bei der Formalisierung?
+* Wieso sieht der visualisierte Graph jedes Mal anders aus?
+* Was kann man mithilfe der Netzwerkanalyse sichtbar machen? Wo stößt die Methode an ihre Grenzen?
+
+---
+
+### Im Anschluss:
+
+<br />
+
+- historische Beispiele:
+  - Zacharys Karateklub
+  - Hochzeitspolitik der Medici
+
+--
+
+### Gamification!
+
+![Dramenquartett](images/dramenquartett-vier-karten.jpg)<!-- .element height="450px;" -->
+
+Frank Fischer/Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** <br />Bern: edition taberna kritika 2019. Spielregeln: https://dramenquartett.github.io/
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Vielen Dank!
+
+<br />
+
+### *
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
