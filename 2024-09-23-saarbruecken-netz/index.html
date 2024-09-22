@@ -22,11 +22,9 @@
         <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
 <script type="text/template">
 
-<!-- .slide: data-background-color="white" -->
-
 ### Erhebung und Analyse von Netzwerkdaten
 
-![Co-occurrence network extracted from Brecht's "Mother Courage", no labels](images/brecht-mother-courage-no-labels.png)<!-- .element width="250px;" -->
+![Symbolbild Graph](images/graph-symbolbild-wm-commons.png)
 
 Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.8em;" -->
 
@@ -65,7 +63,7 @@ Freie Universität Berlin<!-- .element: style="font-size:0.7em;" -->
 
 <br />
 
-»… ist die Untersuchung von Graphen als Darstellung [von] Beziehungen zwischen diskreten Objekten.« ([engl. Wikipedia](https://en.wikipedia.org/wiki/Network_theory))
+»… ist die Untersuchung von Graphen als Darstellung <br />von Beziehungen zwischen diskreten Objekten.« <br />([engl. Wikipedia](https://en.wikipedia.org/wiki/Network_theory))
 
 --
 
@@ -111,8 +109,6 @@ Von den sieben Brücken (Bildquelle: [Wikimedia Commons](https://commons.wikimed
 
 <br />
 
-- Landmassen = Knoten; Brücken = Kanten
-- genaue Lage der Brücken für die Lösung irrelevant
 - Anzahl der Brücken und ihrer Endpunkte ist entscheidend:
   - es sollte maximal zwei Landmassen (Knoten) mit einer ungeraden Anzahl von Brücken (Kanten) geben, die als Anfangs- und Endpunkt dienen
   - die beiden anderen Ufer müssten eine gerade Anzahl von Brücken aufweisen, die zu ihnen führen
@@ -123,7 +119,7 @@ Von den sieben Brücken (Bildquelle: [Wikimedia Commons](https://commons.wikimed
 
 <br />
 
-»… untersucht soziale Strukturen mit Hilfe der Netzwerk- und Graphentheorie.« ([engl. Wikipedia](https://en.wikipedia.org/wiki/Social_network_analysis))
+»… untersucht soziale Strukturen mit Hilfe <br />der Netzwerk- und Graphentheorie.« <br />([engl. Wikipedia](https://en.wikipedia.org/wiki/Social_network_analysis))
 
 --
 
@@ -174,47 +170,65 @@ Linke Spalte: Eingabefenster. – Mittlere Spalte: Automatisch generierte Kanten
 
 ---
 
+#### Übungsbeispiel
+### Ingo Schulze: »Simple Storys« (1998)
+
+![Simple Storys, Cover (1998)](images/simple-storys-cover.jpg)<!-- .element width="250px;" -->
+
+(Buchcover via [piper.de](https://web.archive.org/web/20210301224526/https://www.piper.de/buecher/simple-storys-isbn-978-3-8270-7768-4-ebook).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
 ### Übungsaufgabe
 
-* Kennen sich **Ella** und **Aline** über Ecken? Falls ja, über wieviele Ecken? Erstellen Sie zur Beantwortung der Frage ein Netzwerk mit ezlinavis!
+* Kennen sich **Marianne** und **Raffael** über Ecken? Falls ja, über wieviele Ecken? Erstellen Sie zur Beantwortung der Frage ein Netzwerk mit ezlinavis!
 
-### <br />Was bekannt ist:
+<!-- .element: style="font-size:0.9em;" -->
 
-* **Aline** und Ben haben zusammen studiert.
-* Ben, Carl und Dana sind im selben Sportverein.
-* **Ella** und Fanny haben in derselben WG gewohnt.
-* Ben ist der Patenonkel von Hanna.
-* Gina und Carl sind verheiratet.
-* Gina und Fanny sind Arbeitskolleginnen.
+### <br />Was bekannt ist (stark vereinfacht)
+
+* Barbara und Frank sind verheiratet.
+* Marianne und Hanni kennen sich von der gemeinsamen Turngruppe.
+* Barbara und Hanni kennen sich seit 18 Jahren.
+* Frank und Barbara haben Enrico besucht.
+* Orlando hat als Taxifahrer bei Raffael gearbeitet.
+* Frank besucht Orlando im Krankenhaus.
+* Ernst wird von Barbara in der Psychiatrie behandelt.
+
+<!-- .element: style="font-size:0.9em;" -->
 
 <br />→ https://ezlinavis.dracor.org/
 
 --
 
-### Lösung (zum Copy&Pasten)
+### Lösung (zum Copy & Pasten)
 
 <br />
 
 ```
 # 1
-Aline
-Ben
+Barbara
+Frank
 # 2
-Ben
-Carl
-Dana
+Marianne
+Hanni
 # 3
-Ella
-Fanny
+Barbara
+Hanni
 # 4
-Ben
-Hanna
+Frank
+Barbara
+Enrico
 # 5
-Gina
-Carl
+Orlando
+Raffael
 # 6
-Gina
-Fanny
+Frank
+Orlando
+# 7
+Ernst
+Barbara
 ```
 
 <br />→ https://ezlinavis.dracor.org/
@@ -223,19 +237,28 @@ Fanny
 
 ### Auswertung
 
-![Screenshot von ezlinavis](images/ezlinavis-screenshot-beispiel.png)<!-- .element height="450px;" -->
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-exercise.png)<!-- .element height="450px;" -->
 
-(a) Sind Ella und Aline über Ecken bekannt? (b) Über wieviele? <br />(c) Welche ist die Person mit dem maximalen Grad?
+(a) Sind Marianne und Raffael über Ecken bekannt? (b) Über wieviele? <br />(c) Welche ist die Person mit dem maximalen Grad?
 
 --
 
-## Diskussion
+#### Vollständige Modellierung des Romans »Simple Storys«
+
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-storys-netzwerk.png)<!-- .element width="450px;" -->
+
+Thomas Schweizer, Michael Schnegg: [»Die soziale Struktur der ›Simple Storys‹. Eine Netzwerkanalyse«](https://web.archive.org/web/20220119175152/https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf) (1998). <br />38 Knoten (Romanfiguren). Kanten: positive, negative oder Tauschbeziehungen.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Diskussion
 
 <br />
 
 * Welche Schwierigkeiten gab es bei der Formalisierung?
 * Wieso sieht der visualisierte Graph jedes Mal anders aus?
-* Was kann man mithilfe der Netzwerkanalyse sichtbar machen? Wo stößt die Methode an ihre Grenzen?
+* Wo stößt die Methode an ihre Grenzen?
 
 ---
 
