@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>French Drama in TEI (TEI2024, Buenos Aires, 9 October 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### French Drama in TEI
+#### A Workflow for the Continuous Integration of the <br />*Théâtre classique* Corpus into the DraCor Infrastructure
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+Frank Fischer ¹ · Carsten Milling ² · Jan Jokisch ³ · Peer Trilcke ²<!-- .element: style="font-size:0.8em;" -->
+
+1 · Freie Universität Berlin <br />2 · Universität Potsdam <br />3 · Max-Planck-Institut für empirische Ästhetik<!-- .element: style="font-size:0.6em;" -->
+
+<br />This presentation: **[bit.ly/teifre](https://bit.ly/teifre)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[TEI2024](https://tei2024.tei-c.org/) &nbsp;·&nbsp; Universidad del Salvador (USAL), Buenos Aires &nbsp;🇦🇷 &nbsp;·&nbsp; 9 Oct 2024
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### What is DraCor?
+
+![DraCor frontpage as of 5 October 2024](images/dracor-frontpage-2024-10-05.png)
+
+- Short for *drama corpora*, a growing collection of plays in (mostly) European languages, all encoded in TEI.
+- As of now, 25 DraCor corpora in 19 languages, almost 4,000 plays.
+- DraCor also provides an interface for research into European drama from Greek antiquity to the 20th century.
+- check it out: [**dracor.org**](https://dracor.org/)
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+## TOC
+
+<br />
+
+1. [DraCor Corpora](#/1)
+2. [DraCor API](#/2)
+3. [French Drama Corpus](#/3)
+4. [Summary](#/4)
+
+---
+
+# Chapter 1.
+
+<br />
+
+## DraCor Corpora
+
+<br />
+
+--
+
+### 21 corpora on DraCor production server:
+
+- **Fre**DraCor (French)
+- **Ger**DraCor (German)
+- **Eng**DraCor (English)
+- **Rus**DraCor (Russian)
+- **Cal**DraCor (Calderón de la Barca)
+- **Ita**DraCor (Italian)
+- **Dutch**DraCor (Dutch)
+- **Hun**DraCor (Hungarian)
+- **Swe**DraCor (Swedish)
+- **Am**DraCor (American)
+- **Greek**DraCor (ancient Greek)
+- **U**DraCor (Ukrainian)
+- **GerSh**DraCor (Shakespeare in German translation)
+- **Shake**DraCor (Shakespeare)
+- **Rom**DraCor (Roman)
+- **Pol**DraCor (Polish)
+- **Als**DraCor (Alsatian)
+- **Span**DraCor (Spanish)
+- **Bash**DraCor (Bashkir)
+- **Tat**DraCor (Tatar)
+- **Yi**DraCor (Yiddish)
+- more corpora in the works: **Cze**DraCor, **He**DraCor, **Jes**DraCor, **NeoLat**DraCor
+
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Prerequisite: TEI Encoding Standard (1/2)
+
+![La Mort de César (Snippet))](images/mort-de-cesar-snippet.png)<!-- .element height="450px;" -->
+
+Voltaire: *La Mort de César. Tragédie.* Seconde édition revue, corrigée et <br />augmentée par l’auteur. Amsterdam: Ledet 1736, p. 7. ([via Gallica](http://gallica.bnf.fr/ark:/12148/bpt6k311874h))
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### Prerequisite: TEI Encoding Standard (2/2)
+
+```
+<sp who="#antoine">
+  <speaker>ANTOINE.</speaker>
+  <l part="I">Brutus ! il se pourroit.....</l>
+</sp>
+<sp who="#cesar">
+  <speaker>CÉSAR.</speaker>
+  <l part="F">Ne m’en crois pas. Tiens, lis.</l>
+</sp>
+<sp who="#antoine">
+  <speaker>ANTOINE.</speaker>
+  <l>Dieux ! La Sœur de Caton ! La fière Servilie !</l>
+</sp>
+<sp who="#cesar">
+<speaker>CÉSAR.</speaker>
+  <l>Par un hymen secret, elle me fut unie.</l>
+  <l>Ce farouche Caton dans nos premiers débats,</l>
+  <l>La fit presqu’à mes yeux, passer en d’autres bras :</l>
+  <l>Mais le jour qui forma ce second hyménée,</l>
+  <l>De son nouvel Époux trancha la destinée.</l>
+  <l>Sous le nom de Brutus mon fils fut élevé.</l>
+  <l>Pour me haïr, ô Ciel ! étoit-il réservé !</l>
+  <l>Mais lis, tu sauras tout par cet Écrit funeste.</l>
+</sp>
+```
+
+Dialogue from Voltaire’s tragedy “La Mort de César” encoded in TEI. <br />There are currently 587 different elements defined in the standard ([as of September 2024](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### FreDraCor Frontpage
+
+![FreDraCor frontpage)](images/fredracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/fre
+
+--
+
+### Molière: “L’Avare” (“The Miser”, 1669)
+
+![Molière: L’Avare in DraCor)](images/avare-network.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/fre000996
+
+--
+
+### Speech Distribution
+
+![Speech distribution in L’Avare)](images/avare-speech-distribution.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/fre000996#speech
+
+--
+
+### DraCor Download Tab
+
+![Download tab for L’Avare](images/avare-download-tab.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/fre000996#downloads
+
+---
+
+# Chapter 2.
+
+<br />
+
+## DraCor API
+
+<br /><br />
+<small>API: Application Programming Interface<br /><br />
+
+--
+
+### What is an API?
+
+<br />
+
+- standardised exchange of information between an application and individual programme parts
+- modularised, simplified programming
+- data is transferred in a structured way according to a defined syntax
+- REST API (for web services)
+
+--
+
+### Functions of the DraCor API
+
+![DraCor API)](images/dracor-api.png)
+
+https://dracor.org/doc/api
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### DraCor-API: Example Queries
+
+https://dracor.org/api/v1/corpora/fre/plays/moliere-avare/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Speech text of all female characters in Molières’s “L’Avare”.</small>
+
+https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Speech text of all son characters in Friedrich Schiller’s “The Robbers” (German corpus).</small>
+
+https://dracor.org/api/v1/corpora/fre/plays/racine-britannicus/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Network data extracted from Jean Racine’s “Britannicus” (in JSON format).</small>
+
+https://dracor.org/api/v1/corpora/fre/plays/hugo-hernani/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>All stage directions from Victor Hugo’s “Hernani”.</small>
+
+https://dracor.org/api/v1/corpora/fre/metadata/csv<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadata for all plays in the French corpus (in JSON or CSV).</small>
+
+--
+
+### Simple visualisation of structural data
+#### Number of characters per play in chronological order (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+fredracor <- fread("https://dracor.org/api/v1/corpora/fre/metadata/csv")
+ggplot(fredracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+Example of a simple R script that obtains data via the API.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Number of charcters per play in chronological order (2/2)
+
+![Number of characters per play](images/num-of-speakers-fredracor.png)
+
+Output in RStudio.
+<!-- .element: style="font-size:0.6em;" -->
+
+(Dot at the far left: “Le Jeu d’Adam”, liturgical drama from 12th century. Dot at the far right: “Molière à Québec”, <br />a comedy written by the corpus maintainer ‼️, dated 2017. And in-between: a lot of classical French drama.)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### API Wrapper
+
+<br />
+
+= further simplification: <br />API functions get their own commands
+
+<br />
+
+- for R: rdracor
+- for Python: pydracor
+
+--
+
+#### Example (rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+avare <- get_net_cooccur_igraph(play="moliere-avare", corpus = "fre")
+plot(avare)
+```
+#### Result:
+
+![L’Avare, netowrk graph generated with rdracor](images/avare-rdracor-graph.png)<!-- .element height="400px;" -->
+
+---
+
+# Chapter 3.
+
+<br />
+
+## French Drama Corpus
+
+--
+
+![TC frontpage](images/theatre-classique-frontpage.png)<!-- .element height="560px;" -->
+
+https://www.theatre-classique.fr/
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Research on “Théâtre classique” Corpus
+
+<br />
+
+* Christof Schöch: **Topic Modeling Genre: An Exploration of French Classical and Enlightenment Drama.** <br />In: Digital Humanities Quarterly 11, no. 2 (2017). http://www.digitalhumanities.org/dhq/vol/11/2/000291/000291.html
+* working corpus: 391 plays (150 comedies, 189 tragedies, 52 tragicomedies in verse or prose)
+
+--
+
+### “Théâtre classique” Overview
+
+![TC overview](images/theatre-classique-overview.png)<!-- .element height="500px;" -->
+
+Plays can be read and downloaded in different formats. <br/>(http://www.theatre-classique.fr/pages/programmes/PageEdition.php)
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+## A Central Git Repo for the Corpus?
+
+<br />
+
+- would be nice, but …
+  - “Suite à des divergences editoriales irrémédiables, l’ensemble du corpus a été retiré par son auteur” (“Due to irreparable editorial differences, the entire corpus has been withdrawn by its author”) ([source](https://github.com/dramacode/theatre-classique))
+- TC project is a leisure project for Paul Fièvre, we have to work with what we have
+- inconsistencies, non-standard markup (including non-transparent retroactive changes for the entire corpus), thousands (!) of validation errors, missing text
+- but also, almost 2,000 full-text plays with workable markup
+
+--
+
+### “Théâtre classique” → FreDraCor
+
+<br />
+
+- goal: French Drama Corpus in TEI P5 on a par with all the other DraCor corpora in different languages
+- structural clean-up, trying to preserve as much information as possible
+- all texts out of copyright, but licensed under CC BY NC SA 4.0 (work on markup, of course, represents intellectual work)
+- strategic decisions:
+  - DraCor branch of the “Théâtre classique” collection (i.e. intermediary version control)
+  - “tc2dracor.xq” transformation script
+  - that way, we can update the corpus on our end without losing information
+
+--
+
+### Changes, corrections and additions we have made (1/2)
+
+<br />
+
+- add TEI namespace
+- add XML declaration
+- replace the teiHeader with DraCor-specific version while preserving as much as possible of original content
+- refine licence statement using current version 3.0 of the given licence and adding URL
+- add ```<particDesc>``` (essential for DraCor to collect information on characters beyond printed cast lists)
+- transform ```@xml:id``` and ```@who``` attributes into proper IDs and ID references
+- replace ```@id``` with ```@corresp``` at castItem/role
+- remove unknown attributes from ```tei:role``` (commented)
+
+--
+
+### Changes, corrections and additions we have made (2/2)
+
+<br />
+
+- transform numeral ```@id``` into ```@n``` on ```tei:s``` and ```tei:l```
+- upper-case ```tei:l/@part```
+- remove instances of ```tei:l/@syll``` (commented)
+- rename ```docDate/@value``` to ```docDate/@when```
+- transform addresse element to ```tei:opener```/```tei:salute```
+- transform signature element to ```tei:signed```
+- remove empty ```@type```
+- add written and print dates where available
+- adjust case of character names
+- normalise author names
+- add Wikidata IDs for authors and plays (using OpenRefine)
+
+--
+
+### Rebuild from Source
+
+<br />
+
+- scripted workflow to process the original files with an XQuery transformation
+- to speed up the process, multiple eXist-db instances can be started in parallel using either Podman or Docker
+- main steps of this workflow:
+  - start one or more pods (or containers) running eXist-db
+  - loading the transformation XQuery “tc2dracor.xq” and auxiliary files (“authors.xml”, “ids.xml”) to the database(s)
+  - process each source file by posting it to the transformation XQuery and storing the output in the ```/tei/``` directory
+  - stop and remove all pods (or containers)
+
+--
+
+## DraCor IDs
+
+<br />
+
+- just like with the other corpora, each FreDraCor play is given a unique DraCor ID (e.g. fre000784)
+- these IDs are mapped to the “Théâtre classique” documents in “ids.xml”
+- when “Théâtre classique” adds new plays, a new ID needs to be assigned to them and added to “ids.xml”
+
+--
+
+## Validation
+
+<br />
+
+- run ```./validate``` to check current validation status of the corpus against tei_all schema (needs Jing installed for this to work)
+
+--
+
+### Enhanced Author Information
+
+<br />
+
+- auxiliary file “authors.xml” to unify and enrich author information within FreDraCor
+- entries in this file provide a canonical ```tei:author``` element for each author, e.g.:
+
+```xml
+<author>
+  <author xmlns="http://www.tei-c.org/ns/1.0">
+    <persName>
+      <forename>Charles</forename>
+      <surname>Collé</surname>
+    </persName>
+    <idno type="isni">0000000121258527</idno>
+    <idno type="wikidata">Q2404425</idno>
+  </author>
+  <name>Charles COLLÉ (1709-1783)</name>
+  <name>COLLE, Charles</name>
+  <isni>0000 0001 2125 8527</isni>
+</author>
+```
+
+--
+
+### Current Status of FreDraCor
+
+<br />
+
+- 1,940 plays (upstream TC is already at 1,950 plays)
+- work started in November 2019 (~ 5 years ago)
+- biggest achievement: since September 2024, all FreDraCor documents comply to TEI-All 😊
+- list of open issues: https://github.com/dracor-org/fredracor/issues
+
+---
+
+## Summary
+
+<br />
+
+- DraCor: a TEI-driven research infrastructure/ecosystem for the study of European drama
+- reliable, expandable corpora in multiple languages, coupled with highly functional interfaces to enable comparative approaches
+- open data, open source, community
+- French Drama Corpus is adapted from a growing source
+
+--
+
+### Rahtz Prize for TEI Ingenuity 2022 …
+#### … in memory of Sebastian Rahtz (1955–2016)
+
+![Rahtz Prize 2022](images/rahtz-prize-2022.png)
+
+(Overview [here](https://tei-c.org/activities/rahtz-prize-for-tei-ingenuity/).)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+Thanks. Gracias. Merci.
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
