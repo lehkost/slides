@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 14. Oktober 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+<small>Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/906756))</small>
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(14. Oktober 2024 – 10. Februar 2025)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+1. Vorlesung (14. Oktober 2024):<!-- .element: style="font-size:0.65em;" -->
+
+#### **Thematische Rundumschau I**<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[bit.ly/dhe1410](https://bit.ly/dhe1410)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Agenda für heute
+
+<br />
+
+1. Organisatorisches
+2. Was sind Digital Humanities?
+3. Semesterüberblick und einführende Literatur (Möglichkeit für Fragen)
+4. Kurzer Überblick über alle Themen <br />(Teil 1 von 2: Digitale Editionen und Distant Reading)
+
+--
+
+### Organisatorisches
+
+<br />
+
+- Erreichbarkeit: via E-Mail, Blackboard
+- Blackboard:
+  - Rufen Sie bitte regelmäßig Ihren FU-Account ab. (Alternativ lässt sich über das ZEDAT-Portal eine E-Mail-Weiterleitung einrichten.)
+- Anwesenheitsliste
+
+--
+
+### Umfrage
+
+<br />
+
+1. Haben Sie vor dieser Veranstaltung von Digital Humanities gehört bzw. konnten Sie sich schon etwas darunter vorstellen?
+2. Welchem Fachbereich gehören Sie an?<!-- .element: class="fragment" -->
+3. Sind Sie im Bachelor oder Master?<!-- .element: class="fragment" -->
+4. In welchem Fachsemester studieren Sie? (1–3, 4–6, &#62; 6)<!-- .element: class="fragment" -->
+5. Welches Betriebssystem nutzen Sie auf Ihrem Computer? (Windows, MacOS, Linux)<!-- .element: class="fragment" -->
+6. Haben Sie schon mal programmiert?<!-- .element: class="fragment" -->
+7. Falls ja, welche Programmiersprachen? (Python, R, andere)<!-- .element: class="fragment" -->
+
+---
+
+### Digital Humanities, oder …
+
+<small>(kleine Auswahl, alfabetisch nach langcode)</small>
+
+- <small>{ar}</small> [إنسانيات رقمية](https://medium.com/@RedHD/3ehd-digital-humanities-in-the-arab-world-in-2016-f74b238ccbeb)
+- <small>{de1}</small> <font color="blue">Kulturinformatik</font>
+- <small>{de2}</small> Digitale Geistes- und Sozialwissenschaften
+- <small>{en}</small> <font color="blue">Humanities Computing</font>
+- <small>{es}</small> Humanidades digitales
+- <small>{fr}</small> Humanités numériques
+- <small>{he}</small> מדעי הרוח הדיגיטליים
+- <small>{it}</small> <font color="blue">Informatica umanistica</font>
+- <small>{tr}</small> Dijital beşeri bilimler
+- <small>{uk}</small> Цифрова гуманітаристика <small>(›Cyfrova humanitarystyka‹)</small>
+
+--
+
+### »What Is Digital Humanities?«
+
+<br />
+
+Die Website …
+
+http://whatisdigitalhumanities.com/
+
+… präsentiert <u>817 Definitionen</u> des Begriffs ›Digital Humanities‹ <br />(die zugrunde liegenden Daten sind herunterladbar).
+
+--
+
+### Digital Humanities laut Wikipedia
+
+<br />
+»Digital humanities (DH) is an area of scholarly activity at the intersection of computing or information technologies and the disciplines of the humanities.«
+
+Quelle: https://en.wikipedia.org/wiki/Digital_humanities
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+»Das interdisziplinär ausgerichtete Fach Digital Humanities (›digitale Geisteswissenschaften‹) umfasst die systematische Nutzung computergestützter Verfahren und digitaler Ressourcen in den Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung.«
+
+Quelle: https://de.wikipedia.org/wiki/Digital_Humanities
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Digital, digitized, and numerical humanities
+
+<br />
+
+- Digital Humanities als polysemer Begriff
+- **digitized**: Aufbau, Verwaltung und Verarbeitung digitalisierter Archive
+- **numerical**: mathematische Abstraktion geisteswissenschaftlicher Inhalte und Entwicklung numerischer und formaler Modelle
+- **humanities of the digital**: Untersuchung computervermittelter Interaktionen und Online-Communitys
+- unterschiedliche erkenntnistheoretische Bestrebungen sich nicht unbedingt überlappender wissenschaftlicher Communitys (bei oft fließenden Übergängen)
+
+<br />
+
+Vgl. Camille Roth: Digital, digitized, and numerical humanities. <br />In: Digital Scholarship in the Humanities 34.3 (2019), S. 616–632. ([doi:10.1093/llc/fqy057](https://doi.org/10.1093/llc/fqy057))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Drei-Sphären-Modell
+
+![Mapping DH (Patrick Sahle)](images/Patrick_Sahle_-_Mapping_DH_de.png)<!-- .element width="500px;" -->
+
+Modell (zuerst veröffentlicht 2013, Stand 2021) von Patrick Sahle, Bergische Universität Wuppertal. – <br />DH sind »radically interdisciplinary« (Stephen Ramsay: *Reading Machines*, University of Illinois Press 2011, S. 83).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Worüber und wie forschen die Digital Humanities?
+
+<br />
+
+- Blicke in die aktuellen Ausgaben von:
+  - [Digital Scholarship in the Humanities](https://academic.oup.com/dsh) (= Journal der European Association for Digital Humanities)
+  - [Journal of Cultural Analytics](https://culturalanalytics.org/issues)
+  - [Zeitschrift für digitale Geisteswissenschaften (ZfdG)](https://zfdg.de/)
+
+--
+
+### DH-Aktivitäten (TaDiRAH)
+
+![TaDiRAH Browser](images/tadirah-browser.png)<!-- .element width="500px;" -->
+
+- <!-- .element: style="font-size:0.6em;" -->TaDiRAH = Taxonomy of Digital Research Activities in the Humanities (<a href="https://vocabs.dariah.eu/tadirah/">https://vocabs.dariah.eu/tadirah/</a>)
+- <!-- .element: style="font-size:0.6em;" -->Visualisierung via <a href="https://tadirah.info/pages/Browser.html">tadirah.info</a> (Luise Borek, Canan Hastik et al.)
+
+--
+
+### Die DH-Community
+
+<br />
+
+- Arbeit im Team statt einzeln
+- building/crafting
+- virtuelle Forschungsumgebungen
+- alternative Lehrformate:
+  - Hackathons, Workshops, Summer/Winter/Spring Schools
+- Social-Media-Plattformen nicht nur als Forschungsobjekte, sondern auch als Umgebungen für Zusammenarbeit und Verbreitung wissenschaftlicher Inhalte (Bots, zum Beispiel [@die_reklame@mastodon.social](https://mastodon.social/@die_reklame))
+
+---
+
+### Semesterüberblick (1/2)
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| **14.10.2024** | **Thematische Rundumschau I** |
+| 21.10.2024 | Thematische Rundumschau II |
+| 28.10.2024 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 04.11.2024 | Distant Reading I: Stilometrie |
+| 11.11.2024 | Distant Reading II: Topic Modeling |
+| 18.11.2024 | Visual Analytics: »Beautiful Evidence« |
+| 25.11.2024 | Netzwerkanalyse |
+| 02.12.2024 | Geografische Informationssysteme (GIS) |
+| 09.12.2024 | Wikipedia & Wikidata |
+| 16.12.2024 | KI &amp; Maschinelles Lernen |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Semesterüberblick (2/2)
+
+<br />
+
+| Date | Topic |
+|:-|:-|
+| 06.01.2025, <font color="red">16:15 Uhr</font> | Praxis der Geisteswissenschaften: ›Recherche‹ (GiK) – <font color="red">Hörsaal 2</font> |
+| 13.01.2025 | Showcase: Digitale Dramenanalyse |
+| 20.01.2025 | Statistik für Geisteswissenschaftler\*innen (Viktor Illmer) |
+| 27.01.2025 | Game Studies (Dîlan Canan Çakir) |
+| 03.02.2025 | Infrastrukturen für die Digitalen Geisteswissenschaften, GLAM! |
+| 10.02.2025 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im WiSe 2024/25
+
+<br />
+
+* [Seminar »Literaturwissenschaftliche Netzwerkanalyse«](https://www.fu-berlin.de/vv/de/lv/906779)
+  * <!-- .element: style="font-size:0.7em;" -->Do 10:00–12:00 c.t.
+* [Seminar »Aktivistische Figuren in der Literatur«](https://www.fu-berlin.de/vv/de/lv/906780)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 14:00–16:00 c.t. (zus. mit Dr. Dîlan Canan Çakir)
+* [Seminar »Webscraping mit Python für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/906787)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Seminar »Textanalyse mit R für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/906784)
+  * <!-- .element: style="font-size:0.7em;" -->Di 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/870197)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 10:00–12:00 c.t. (ab 18.10.2024, zweiwöchentlich)
+  * <!-- .element: style="font-size:0.7em;" -->Übersicht über alle Veranstaltungen: <a href="https://wikis.fu-berlin.de/display/phaenodh">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+--
+
+## Fragen?
+
+--
+
+### Einführungsbände (1/3)
+
+<br />
+
+* Susan Schreibman, Ray Siemens, John Unsworth (Hg.): [Companion to Digital Humanities. Blackwell Companions to Literature and Culture.](http://www.digitalhumanities.org/companion/) Blackwell 2004.
+  * [A ***New*** Companion to Digital Humanities.](https://www.doi.org/10.1002/9781118680605) Wiley Blackwell 2016.
+* Matthew K. Gold, Lauren F. Klein (Hg.): Debates in the Digital Humanities. (Ausgaben [2012](https://dhdebates.gc.cuny.edu/projects/debates-in-the-digital-humanities), [2016](https://dhdebates.gc.cuny.edu/projects/debates-in-the-digital-humanities-2016) und [2019](https://dhdebates.gc.cuny.edu/projects/debates-in-the-digital-humanities-2019).)
+* Melissa Terras, Julianne Nyhan, Edward Vanhoutte (Hg.): [Defining Digital Humanities. A Reader.](https://www.routledge.com/Defining-Digital-Humanities-A-Reader/Terras-Nyhan-Vanhoutte/p/book/9781409469636) Routledge 2014.
+* Susanne Kurz: Digital Humanities. Grundlagen und Technologien für die Praxis. Springer Vieweg 2015. (2. Auflage 2016.)
+
+--
+
+### Einführungsbände (2/3)
+
+<br />
+
+* Taylor Arnold, Lauren Tilton: [Humanities Data in R. Exploring Networks, Geospatial Data, Images, and Text.](https://www.doi.org/10.1007/978-3-319-20702-5) Springer 2015.
+* Fotis Jannidis, Hubertus Kohle, Malte Rehbein (Hg.): Digital Humanities. Eine Einführung. Stuttgart: Metzler 2017. (2. Auflage 2022.)
+* Andrew Piper: [Enumerations. Data and Literary Study.](https://press.uchicago.edu/ucp/books/book/chicago/E/bo28465405.html) University of Chicago Press 2018.
+* Ted Underwood: [Distant Horizons. Digital Evidence and Literary Change.](https://doi.org/10.7208/chicago/9780226612973.001.0001) University of Chicago Press 2019.
+* Julia Flanders, Fotis Jannidis (Hg.): [The Shape of Data in Digital Humanities. Modeling Texts and Text-based Resources.](https://www.routledge.com/The-Shape-of-Data-in-Digital-Humanities-Modeling-Texts-and-Text-based-Resources/Flanders-Jannidis/p/book/9780367584030) Routledge 2019.
+* Lev Manovich: [Cultural Analytics.](https://doi.org/10.7551/mitpress/11214.001.0001) MIT Press 2020.
+
+--
+
+### Einführungsbände (3/3)
+
+<br />
+
+* Johanna Drucker: [The Digital Humanities Coursebook. An Introduction to Digital Methods for Research and Scholarship.](https://www.routledge.com/The-Digital-Humanities-Coursebook-An-Introduction-to-Digital-Methods-for/Drucker/p/book/9780367565756) Routledge 2021.
+* Folgert Karsdorp, Mike Kestemont, Allen Riddell: Humanities Data Analysis. Case Studies with Python. Princeton University Press 2021. ([Google Books-Preview](https://books.google.com/books?id=eaz0DwAAQBAJ&printsec=frontcover))
+* Thomas Weitin: [Digitale Literaturgeschichte. Eine Versuchsreihe mit sieben Experimenten.](https://doi.org/10.1007/978-3-662-63663-3) Berlin, Heidelberg: Metzler 2021.
+* Jakob Jünger, Chantal Gärtner: [Computational Methods für die Sozial- und Geisteswissenschaften.](https://doi.org/10.1007/978-3-658-37747-2) Wiesbaden: Springer VS 2023.
+* Doing Digital Humanities. A DARIAH Bibliography. (**[online](https://www.zotero.org/groups/doing_digital_humanities_-_a_dariah_bibliography/items)**, zurzeit 1157 Einträge)
+
+---
+
+## Digitale Editionen
+
+<br />
+
+- Digitalisierung des kulturellen Erbes ongoing (Universitätsbibliotheken, Privatfirmen wie Google)
+  - Scans, OCR (optische Zeichenerkennung)
+- in den Digital Humanities ist mit einer digitalen Edition fast automatisch das Akronym TEI verbunden
+  - Text Encoding Initiative: verantwortlich für die TEI-Richtlinien ([tei-c.org/Guidelines/](https://tei-c.org/Guidelines/))
+  - der Standard besteht zurzeit aus 586 Elementen ([Version 4.7.0, November 2023](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html))
+
+--
+
+### Beispiel 1
+
+<br />
+
+```xml
+<div type="sonnet">
+ <lg type="quatrain">
+  <l>Les amoureux fervents et les savants austères</l>
+  <l>Aiment également, dans leur mûre saison,</l>
+  <l>Les chats puissants et doux, orgueil de la maison,</l>
+  <l>Qui comme eux sont frileux et comme eux sédentaires.</l>
+ </lg>
+ <lg type="quatrain">
+  <l>Amis de la science et de la volupté</l>
+  <l>Ils cherchent le silence et l’horreur des ténèbres ;</l>
+  <l>L’Érèbe les eût pris pour ses coursiers funèbres,</l>
+  <l>S’ils pouvaient au servage incliner leur fierté.</l>
+ </lg>
+ <lg type="tercet">
+  <l>Ils prennent en songeant les nobles attitudes</l>
+  <l>Des grands sphinx allongés au fond des solitudes,</l>
+  <l>Qui semblent s’endormir dans un rêve sans fin ;</l>
+ </lg>
+ <lg type="tercet">
+  <l>Leurs reins féconds sont pleins d’étincelles magiques,</l>
+  <l>Et des parcelles d’or, ainsi qu’un sable fin,</l>
+  <l>Étoilent vaguement leurs prunelles mystiques.</l>
+ </lg>
+</div>
+```
+
+<br />
+
+Baudelaires Sonett « Les chats » im TEI-Format.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Beispiel 2
+
+<br />
+
+```xml
+<sp who="#faust">
+  <speaker>Faust.</speaker>
+  <l>Habe nun, ach! Philosophie,</l>
+  <l>Juristerey und Medicin,</l>
+  <l>Und leider auch Theologie!</l>
+  <l>Durchaus studirt, mit heißem Bemühn.</l>
+  <l>Da steh’ ich nun, ich armer Thor!</l>
+  <l>Und bin so klug als wie zuvor;</l>
+  <l>[…]</l>
+</sp>
+```
+
+<br />
+
+Die ersten sechs Zeilen aus Goethes »Faust« (1808) in TEI.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Beispiel 3
+
+![Digital evolution of the text/corpus](images/pessoa-digital-workflow.png)
+
+»Fernando Pessoa – Digitale Edition«: Entwicklung einer mit TEI semantisch <br />ausgezeichneten digitalen Version der Werke Fernando Pessoas (Quelle: [pessoadigital.pt](http://www.pessoadigital.pt/de/project/documentation)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Beispiel 4
+
+![DTA](images/deutsches-textarchiv-screenshot.png)<!-- .element width="800px;" -->
+
+https://www.deutschestextarchiv.de/
+
+--
+
+### A Catalog of Digital Scholarly Editions
+
+<br />
+
+- hrsg. von Patrick Sahle et al.
+- https://www.digitale-edition.de/
+
+---
+
+## Distant Reading (»Fernlesen«)
+
+![Wordle example](images/wordle_don_quijote.jpg)<!-- .element width="600px;" -->
+
+- Beispiel: Word Cloud zum ersten Kapitel von »Don Quijote« (Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Nube_de_etiquetas_-_Don_Quijote_de_la_Mancha.png))
+
+--
+
+### Beispiel: »Between the Words«
+
+![Between the Words](images/alice-punctuation.jpg)
+
+Nicholas Rougeux: [Between the Words. Exploring the punctuation in literary classics](https://www.c82.net/work/?id=347) (Januar 2016).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### »Anecdotal Evidence«
+
+<br />
+
+»The literary scholar of the twenty-first century can no longer be content with <u>anecdotal evidence</u>, with random ›things‹ gathered from a few, even ›representative‹, texts. We must strive to understand these things we find interesting in the <u>context</u> of everything else, including a mass of possibly ›uninteresting‹ texts.«
+
+<br />
+
+Matthew L. Jockers: Macroanalysis. Digital Methods &amp; Literary History.<br />University of Illinois Press, 2013, S. 8. ([Google Books](https://books.google.com/books?id=mPOdxQgpOSUC&pg=PA8))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Distanz als Bedingung für Erkenntnis
+
+<br />
+
+»[…] if you want to look beyond the canon […], close reading will not do it. It’s not designed to do it, it’s designed to do the opposite. […] we know how to read texts, now let’s learn how *not* to read them. Distant reading: where distance […] *is a condition of knowledge* […].«
+
+<br />
+
+Franco Moretti: *Conjectures on World Literature*. In: *New Left Review* 1 (2000).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Aufsatzsammlung
+
+![no info](images/Distant_Reading_cover_en.jpg)
+
+Franco Moretti: *Distant Reading* (2013)
+
+--
+
+### Alternative Begrifflichkeiten
+
+<br />
+
+- Lauren F. Klein: [Distant Reading after Moretti](https://lklein.com/digital-humanities/distant-reading-after-moretti/) (Januar 2018)
+- Macroanalysis (Matthew Jockers)
+- Scalable Reading (Martin Mueller)
+  - Mikro-, Meso-, Makro-Skala (vgl. Krautter, [Skalierungspraktiken in der computergestützten Analyse von literarischen Texten](https://doi.org/10.5281/zenodo.7715408), 2023)
+
+--
+
+### Scalable Reading
+
+<br />
+
+»The charms of Google Earth led me to the term Scalable Reading as a happy synthesis of ›close‹ and ›distant‹ reading. With Google Earth you can <u>zoom in and out</u> of things and discover that different properties of phenomena are revealed by looking at them from different distances.«
+
+<br />
+
+Martin Mueller: [Scalable Reading](https://scalablereading.northwestern.edu/?page_id=22). In: Scalable Reading (Blog), 29. Mai 2012.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### »Powers of Ten«
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/0fKBhvDjuy0?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+Kurzfilm von Charles und Ray Eames für IBM (1977). Zoomen durch 40 Zehnerpotenzen (erst Makro-, dann Mikrolevel).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Stilometrie
+
+![Beispiel für stilometrische Untersuchung](images/jannidis-lauer-dendrogram-kleist.jpg)<!-- .element width="560px;" -->
+
+Aus Jannidis/Lauer: [Burrow’s Delta and Its Use in German Literary History](http://gerhardlauer.de/files/6013/9637/9784/Jannidis-Lauer_Burrowss-Delta.pdf) (2014).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Topic Modelling
+
+![Beispiel für Topic Modelling](images/jockers-topic-modeling-moby-dick.jpg)<!-- .element width="640px;" -->
+
+Topic Modelling (Ko-Okkurrenz signifikanter Wörter und ihre Verteilung in einem Textkorpus) mit »Moby Dick« als Beispiel, <br />im Kontext von 3.345 anderen Romanen aus dem Arbeitskorpus von Jockers (*Macroanalysis*, p.&nbsp;132).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Quantitative Analysen
+
+<br />
+
+- Quantifizierungen als Ergänzung (nicht Ersatz!) zur traditionellen/qualitativen Forschung in den Geisteswissenschaften
+- entscheidend ist, eine Formalisierung finden: Wie verwandeln wir Kultur in Ziffern und Daten? Und zu welchem Zweck?
+
+--
+
+### Verhältnis zum Close Reading
+
+<br />
+
+- Mitte 20. Jahrhundert (New Criticism)
+- gründliche Lektüre und Interpretation aller Nuancen eines (literarischen) Textes (gegen eine Überbetonung historischer, philologischer, biografischer Kontexte)
+- Beispiele:
+  - Derrida widmet &#62; 50 Seiten dem Wort »yes« in Joyces »Ulysses« (*Ulysses Gramophone: Hear Say Yes in Joyce*, 1984)
+  - Kittsteiner: [»Das Komma von SANS, SOUCI.«](https://de.wikipedia.org/wiki/Das_Komma_von_SANS,_SOUCI.) (2001)
+- ⚠️ Distant Reading steht ***nicht*** im Gegensatz zum Close Reading, sondern soll es *ergänzen* (vor allem im Hinblick auf den Umfang eines zu untersuchenden Gegenstands)
+
+--
+
+### Lesepraxis
+
+<br />
+
+- Pierre Bayard: «&nbsp;Comment parler des livres que l’on n’a pas lus&nbsp;?&nbsp;» (Éditions de Minuit 2007)
+- Heinz Schlaffer: *[Der Umgang mit Literatur. Diesseits und jenseits der Lektüre.](https://www.jstor.org/stable/43028186)* In: Poetica 31 (1999), S. 1–25.
+  - 17 Stadien der Lektüre: **Paralektüre**, Verpflichtung zur Lektüre, Potentielle Lektüre, Aufgeschobene Lektüre, Vermiedene Lektüre, Vorgetäuschte Lektüre, **Anschauende Lektüre**, Substituierte Lektüre, **Partielle Lektüre**, Zitieren, Schreibendes Lesen, **Vollständige Lektüre**, Unterbrochene Lektüre, Mitgeteilte Lektüre, Verbesserte Lektüre, Erinnerte Lektüre, **Wiederholte Lektüre**
+
+--
+
+### Arno Schmidt über die Grenzen des Lesens
+
+<br />
+
+»Das Leben ist so kurz ! Selbst wenn Sie ein Bücherfresser sind, und nur fünf Tage brauchen, um ein Buch zweimal zu lesen, schaffen Sie im Jahr nur 70. Und für die fünfundvierzig Jahre, von Fünfzehn bis Sechzig, die man aufnahmefähig ist, ergibt das 3.150 Bände : die wollen sorgfältigst ausgewählt sein !«<!-- .element: style="font-size:1.2em;" -->
+
+
+<br />
+
+Arno Schmidt: *Ich bin erst sechzig* (1955). In: Bargfelder Ausgabe, Werkgruppe I, Vol. 4.<br />Zürich: Haffmans 1987, S. 30.
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+(Fortsetzung nächste Woche)
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
