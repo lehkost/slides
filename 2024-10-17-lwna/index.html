@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Literaturwissenschaftliche Netzwerkanalyse (konstituierende Sitzung, 17. Oktober 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+Seminar ([LV 16480](https://www.fu-berlin.de/vv/de/lv/906779))
+<!-- .element: style="font-size:0.65em;" -->
+
+### **Literaturwissenschaftliche <br />Netzwerkanalyse**
+
+(17. Oktober 2024)
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.85em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer@fu-berlin.de
+<!-- .element: style="font-size:0.65em;" -->
+
+<br /><br />Diese Präsentation: <br />[lehkost.github.io/slides/2024-10-17-lwna/](https://lehkost.github.io/slides/2024-10-17-lwna/index.html)
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Anwesenheitsliste
+
+<br />
+
+und
+
+<br />
+
+### Vorstellungsrunde
+
+(Name, Fach/Modul, Vorwissen/Interesse)
+
+--
+
+## Begriffssammlung
+
+<br />
+
+![QR Code](https://www2.hu-berlin.de/internal/qrcode/generator.pl?text=https%3A%2F%2Fpad.gwdg.de%2FUel6qMN9S9ihobmXLVuXcA%3Fedit&ecc=M&msize=6&caption=&captionpos=b&captionsize=&color=%23000000&bgcolor=%23ffffff)
+
+<br />
+
+https://pad.gwdg.de/Uel6qMN9S9ihobmXLVuXcA?edit
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Bestätigung der aktiven Teilnahme
+
+<br />
+
+1. Bearbeitung und Präsentation eines Semesterprojekts ***und***
+2. Kurz(!)-Vorstellung eines wiss. Papers zur Netzwerkanalyse
+
+--
+
+### Semesterprojekt
+
+<br />
+
+- Erhebung und Analyse von Netzwerkdaten zu einem selbst gewählten Szenario (Drama, Roman, TV-Serie, …)
+  - einige Beispiele aus den vergangenen Semestern folgen am Ende der Sitzung
+- Deadline für Findung des Seminarprojekts: 7. November 2024
+
+--
+
+### Voraussetzungen für Hausarbeit
+
+<br />
+
+- 4–6.000 Wörter (je nach Studienordnung)
+- genuine Forschungsfrage, die gern aus dem Semesterprojekt erwachsen kann
+- vor Beginn Thema und Gliederung vorlegen
+- späteste Abgabe am 31. März 2025 (!)
+
+--
+
+### Seminar-Organisation
+
+<br />
+
+- Blackboard (Uni-Mails regelmäßig checken!)
+- zu jeder Sitzung Laptop o.&nbsp;ä. mitbringen
+
+--
+
+### [Seminarplan](https://docs.google.com/document/d/1SnJQfjREfzkEnCYS_6okui71w0pf8XG67CXpk_X1MSY/edit?usp=sharing) und Verteilung der Referate
+
+---
+
+### Ziele heute
+
+<br />
+
+1. Theoretisch: Vermittlung grundlegender Terminologie der Netzwerktheorie und -analyse.
+2. Praktisch: Modellierung eines literarischen Textes als soziales Netzwerk.
+
+---
+
+### Die Netzwerktheorie …
+
+<br />
+
+»… ist die Untersuchung von Graphen als Darstellung <br />von Beziehungen zwischen diskreten Objekten.« <br />([engl. Wikipedia](https://en.wikipedia.org/wiki/Network_theory))
+
+--
+
+### Grundlegende Terminologie
+
+![Bild von einfachem Netzwerk (Quelle: Wikimedia Commons)](images/small_network.png)<!-- .element width="434px;" -->
+
+- Netzwerk = Graph
+- Knoten (nodes, vertices)
+- Kanten (edges)
+
+<br />
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+Wenn sich ein Datensatz sinnvoll mit Knoten und Kanten <br />beschreiben lässt, haben wir es mit Netzwerkdaten zu tun.
+
+--
+
+### Beispiele für Netzwerke
+
+<br />
+
+- Eisenbahnnetz (Bahnhöfe und Schienennetz)
+- Flugverkehr (Flughäfen und Flugrouten)
+- Internet (Endgeräte und Netzverbindungen)
+- soziale Netze<!-- .element: class="fragment" -->
+
+--
+
+### Die Soziale Netzwerkanalyse (SNA) …
+
+<br />
+
+»… untersucht soziale Strukturen mit Hilfe <br />der Netzwerk- und Graphentheorie.« <br />([engl. Wikipedia](https://en.wikipedia.org/wiki/Social_network_analysis))
+
+--
+
+### Ein frühes Soziogramm
+
+![Sociogram von Jacob L. Moreno](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+»Class structure, 4th grade«. Arbeit von Jacob L. Moreno (1889–1974). <br />(aus: New York Times, [3. April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html); Bildquelle: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Visualisierte Facebook-Freundschaften
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+Knoten: Personen; Kanten: gegenseitig akzeptierte Freundschaftsanfragen. <br />(Quelle: [Paul Butler, 2010](https://www.facebook.com/notes/facebook-engineering/visualizing-friendships/469716398919))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Cluster (Communities)
+
+![Graph, nodes, edges, communities](images/graph-nodes-edges-communities.png)<!-- .element width="425px;" -->
+
+<br />
+
+(Bildquelle: [doi:10.3390/a9010008](https://doi.org/10.3390/a9010008))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Soziale Netzwerke
+
+![Graph, nodes, edges, communities](images/jill-rettberg-annotated-social-network.png)<!-- .element width="400px;" -->
+
+Persönliches Facebook-Netzwerk mit annotierten Clustern/Communities. <br />(Quelle: [Jill Rettberg, 2013](http://jilltxt.net/?p=3447))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Beispiel für ein literarisches Netzwerk: <br />Goethes »Faust I«
+
+![Goethe, Faust I](images/goethe-faust-eine-tragoedie.png)<!-- .element width="480px;" -->
+
+Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/id/ger000243))
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Knotenbasierte Werte
+
+- Grad (degree)
+- Pfadlänge (path length)
+- […]
+
+### <br />Graphbasierte Werte
+
+- Netzwerkgröße (network size)
+- […]
+
+--
+
+### Ein Beispielgraph
+
+![Vier Knoten](images/four_nodes.png)<!-- .element height="400px;" -->
+
+Geben Sie an: (a) Grad des mittleren Knotens, (b) Grad der äußeren Knoten, (c)&nbsp;Pfadlänge zwischen zwei äußeren Knoten, (d) Netzwerkgröße?
+
+---
+
+### Netzwerke extrahieren mit »ezlinavis«
+
+(= Simple Network Visualization for Literary Texts)
+<!-- .element: style="font-size:0.65em;" -->
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-brecht.png)<!-- .element height="380px;" -->
+
+Linke Spalte: Eingabefenster. – Mittlere Spalte: Automatisch generierte Kantendaten. – Rechte Spalte: Interaktive Visualisierung.
+
+---
+
+#### Übungsbeispiel
+### Ingo Schulze: »Simple Storys« (1998)
+
+![Simple Storys, Cover (1998)](images/simple-storys-cover.jpg)<!-- .element width="250px;" -->
+
+(Buchcover via [piper.de](https://web.archive.org/web/20210301224526/https://www.piper.de/buecher/simple-storys-isbn-978-3-8270-7768-4-ebook))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Übungsaufgabe
+
+
+* Kennen sich **Marianne** und **Raffael** über Ecken? Falls ja, über wieviele Ecken? Erstellen Sie zur Beantwortung der Frage ein Netzwerk mit ezlinavis!
+
+<!-- .element: style="font-size:0.9em;" -->
+
+### <br />Was bekannt ist (stark vereinfacht)
+
+* Barbara und Frank sind verheiratet.
+* Marianne und Hanni kennen sich von der gemeinsamen Turngruppe.
+* Barbara und Hanni kennen sich seit 18 Jahren.
+* Frank und Barbara haben Enrico besucht.
+* Orlando hat als Taxifahrer bei Raffael gearbeitet.
+* Frank besucht Orlando im Krankenhaus.
+* Ernst wird von Barbara in der Psychiatrie behandelt.
+
+<!-- .element: style="font-size:0.9em;" -->
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Lösung (zum Copy & Pasten)
+
+<br />
+
+```txt
+# 1
+Barbara
+Frank
+# 2
+Marianne
+Hanni
+# 3
+Barbara
+Hanni
+# 4
+Frank
+Barbara
+Enrico
+# 5
+Orlando
+Raffael
+# 6
+Frank
+Orlando
+# 7
+Ernst
+Barbara
+```
+
+<br />→ https://ezlinavis.dracor.org/
+
+--
+
+### Auswertung
+
+![Screenshot von ezlinavis](images/ezlinavis-screenshot-beispiel.png)<!-- .element height="450px;" -->
+
+(a) Sind Marianne und Raffael über Ecken bekannt? (b) Über wieviele? <br />(c) Welche ist die Person mit dem maximalen Grad?
+
+--
+
+### Diskussion
+
+<br />
+
+* Welche Schwierigkeiten gab es bei der Formalisierung?
+* Wieso sieht der visualisierte Graph jedes Mal anders aus?
+* Wo stößt die Methode an ihre Grenzen?
+
+--
+
+#### Vollständige Modellierung des Romans »Simple Storys«
+
+![Simple Storys, Network Graph, with Pajek (1998)](images/simple-storys-netzwerk.png)<!-- .element width="450px;" -->
+
+Thomas Schweizer, Michael Schnegg: [»Die soziale Struktur der ›Simple Storys‹. Eine Netzwerkanalyse«](https://www.ethnologie.uni-hamburg.de/pdfs/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf) (1998). <br />38 Knoten (Romanfiguren). Kanten: positive, negative oder Tauschbeziehungen.
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Einige studentische Arbeiten im Themenfeld Netzwerkanalyse (1/2)
+
+<br />
+
+- »Community« (S1/E1–8), Daten erhoben mit ezlinavis
+- »Wendla und Gretchen – Die gesellschaftliche Position bürgerlicher Frauen im 19. Jahrhundert« (Wedekind/Goethe)
+- »Brooklyn Nine-Nine vs. Criminal Minds: Netzwerkanalyse«, Daten erhoben mit ezlinavis
+- »A Charlie Brown Thanksgiving: Netzwerkanalyse«
+- »Figurenkonstellationen im Vergleich in Georg Büchners Woyzeck«
+- »Modern Family« – Folgenvergleich 11x11 vs. 10x03
+- Dorothea Schlegels Roman »Florentine« – Formalisierung: Kapitel für Kapitel und (Ab)satz für (Ab)satz
+
+--
+
+### Einige studentische Arbeiten im Themenfeld Netzwerkanalyse (2/2)
+
+<br />
+
+- Vergleich einer Telenovela (Jane the Virgin) mit einer Sitcom (Superstore)
+- »Normal People« (12 Folgen, bes. ersten 6 Folgen für die Analyse)
+- Netzwerkanalyse »Game of Thrones« (1. und letzte Folge von S1)
+- Zitationsanalyse Masculinity Studies
+- Netzwerke 3er Filme: Requiem for a Dream, Trainspotting, American Psycho
+- Netzwerkanalyse Tintenwelt (von Cornelia Funke), Bände 2 und 3
+- Tanja Skarynkinas Erzählband »Rajcentr«
+- Filmadaptionen in der Netzwerkanalyse: Vergleich zweier Verfilmungen von »Alice’s Adventures in Wonderland«
+
+--
+
+### Bezug literaturwissenschaftlicher Netzwerkdaten
+
+<br />
+
+- via ezlinavis
+- via https://dracor.org/
+- https://networks.skewed.de/
+- …
+
+<br />
+<br />
+
+- für das Seminar empfohlen werden größere Netzwerke (Knotenanzahl > 10)
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
