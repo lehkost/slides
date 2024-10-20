@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 21. Oktober 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/906756))
+<!-- .element: style="font-size:0.6em;" -->
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(14. Oktober 2024 – 10. Februar 2025)
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+2. Vorlesung (21. Oktober 2024):
+<!-- .element: style="font-size:0.65em;" -->
+
+#### **Thematische Rundumschau II**
+<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[bit.ly/dh2110](https://bit.ly/dh2110)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Agenda für heute
+
+<br />
+
+1. Organisatorisches
+2. Kurzer Überblick über alle Themen <br />(Fortsetzung von letzter Woche) <br />(Teil 2 von 2: InfoVis, Netzwerkanalyse, Daten, GIS)
+
+---
+
+### 1. Organisatorisches
+
+<br />
+
+- Anwesenheitsliste
+- Erreichbarkeit: via E-Mail, Blackboard
+- Blackboard:
+  - Rufen Sie bitte regelmäßig Ihren FU-Account ab. (Alternativ lässt sich über das ZEDAT-Portal eine E-Mail-Weiterleitung einrichten.)
+  - Im Blackboard werden die Foliensets der vergangenen Veranstaltungen aufgelistet.
+
+--
+
+### Semesterüberblick (1/2)
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| 14.10.2024 | Thematische Rundumschau I |
+| **21.10.2024** | **Thematische Rundumschau II** |
+| 28.10.2024 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 04.11.2024 | Distant Reading I: Stilometrie |
+| 11.11.2024 | Distant Reading II: Topic Modeling |
+| 18.11.2024 | Visual Analytics: »Beautiful Evidence« |
+| 25.11.2024 | Netzwerkanalyse |
+| 02.12.2024 | Geografische Informationssysteme (GIS) |
+| 09.12.2024 | Wikipedia & Wikidata |
+| 16.12.2024 | KI &amp; Maschinelles Lernen |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Semesterüberblick (2/2)
+
+<br />
+
+| Date | Topic |
+|:-|:-|
+| 06.01.2025, <font color="red">16:15 Uhr</font> | Praxis der Geisteswissenschaften: ›Recherche‹ (GiK) – <font color="red">Hörsaal 2</font> |
+| 13.01.2025 | Showcase: Digitale Dramenanalyse |
+| 20.01.2025 | Statistik für Geisteswissenschaftler\*innen (Viktor Illmer) |
+| 27.01.2025 | Game Studies (Dîlan Canan Çakir) |
+| 03.02.2025 | Infrastrukturen für die Digitalen Geisteswissenschaften, GLAM! |
+| 10.02.2025 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im WiSe 2024/25
+
+<br />
+
+* [Seminar »Literaturwissenschaftliche Netzwerkanalyse«](https://www.fu-berlin.de/vv/de/lv/906779)
+  * <!-- .element: style="font-size:0.7em;" -->Do 10:00–12:00 c.t.
+* [Seminar »Aktivistische Figuren in der Literatur«](https://www.fu-berlin.de/vv/de/lv/906780)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 14:00–16:00 c.t. (zus. mit Dr. Dîlan Canan Çakir)
+* [Seminar »Webscraping mit Python für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/906787)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Seminar »Textanalyse mit R für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/906784)
+  * <!-- .element: style="font-size:0.7em;" -->Di 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/870197)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 10:00–12:00 c.t. (ab 18.10.2024, zweiwöchentlich)
+  * <!-- .element: style="font-size:0.7em;" -->Übersicht über alle Veranstaltungen: <a href="https://wikis.fu-berlin.de/display/phaenodh">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+---
+
+### Informationsvisualisierung (InfoVis)
+
+<br />
+
+»**Visualization of complex data** is well on its way to becoming as important to the twenty-first century as photography and film <br />were to the twentieth century.«
+
+![Manovich](images/manovich-from-wikimedia-commons.jpg)<!-- .element height="280px;" -->
+
+Lev Manovich, Vorwort zu Manuel Limas *Visual Complexity*, 2011
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Historizität von Datenvisualisierungen:
+
+<br />
+
+## Diagramme, Bäume, Netzwerke
+
+--
+
+#### Ergebnisse der Parlamentswahlen in Polen am 15.10.2023
+
+(Quelle: [statista](https://de.statista.com/statistik/daten/studie/1417740/umfrage/ergebnis-der-parlamentswahl-in-polen-2023/).)
+<!-- .element: style="font-size:0.5em;" -->
+
+![Wahlen Polen 2023](images/polen_ergebnis_der_parlamentswahl_2023-10-15_statista.png)<!-- .element height="340px;" -->
+
+Wie nennt man diese Darstellungsform?
+
+### Balkendiagramm (Bar Charts)<!-- .element: class="fragment" -->
+
+--
+
+### Wie alt sind Balkendiagramme?
+
+--
+
+### Balkendiagramme
+
+<br />
+
+- erfunden vom schottischen Ingenieur und Ökonom William Playfair (1759–1823)
+- erstmals **1786** verwendet in »The Commercial and Political Atlas« ([»A New Edition, Improved.« London 1787](https://archive.org/details/bim_eighteenth-century_the-commercial-and-polit_playfair-william_1787/page/n153/mode/2up))
+- das Werk enthält über 40 Grafiken, meist Liniendiagramme, aber auch ein Balkendiagramm
+
+--
+
+»Exports and Imports of Scotland to and from different parts for <br />one Year from Christmas 1780 to Christmas 1781« (1786)
+
+![Exports and Imports of Scotland, 1786](images/playfair_exports_and_imports_of_scotland_1786.jpg)<!-- .element height="440px;" -->
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:1786_Playfair_-_Exports_and_Imports_of_Scotland_to_and_from_different_parts_for_one_Year_from_Christmas_1780_to_Christmas_1781.jpg).)
+<!-- .element: style="font-size:0.5em;" -->
+
+--
+
+### Eigenschaften der Playfair’schen Diagramme
+
+<br />
+
+- Balken erleichtern das Vergleichen von Werten und Erkennen von Trends
+- verschiedene Schraffierungen und Farben (bei den Liniendiagrammen), um die Übersichtlichkeit zu steigern
+- vorher waren es vor allem Listen und Tabellen, die Übersicht über Datenlagen schaffen sollten
+- Idee der »universal language«, die unmittelbar zu verstehen ist
+- sofortige Kritik (von James Watt): »it might be proper to give in letter press the Tables from which the Charts have been constructed […] for the charts now seem to rest on your own authority, and it will naturally be enquired from whence you have derived your intelligence« (zit. nach Spence/Wainer 2005, S.&nbsp;227)
+- **1786: »Gründungsjahr der modernen Infografik«**
+
+--
+
+### Playfairs Inspiration für sein Balkendiagramm
+
+<br />
+
+- die Zeitleistendiagramme von [Joseph Priestley](https://de.wikipedia.org/wiki/Joseph_Priestley) (1733–1804), zuerst 1765
+- »A Chart of Biography«:
+
+![A Chart of Biography](images/priestley_chart_of_biography.gif)<!-- .element height="360px;" -->
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:PriestleyChart.gif).)
+<!-- .element: style="font-size:0.5em;" -->
+
+--
+
+### Kuchendiagramm (Pie Chart)
+
+<br />
+
+- Playfair ist auch Erfinder des [Kuchendiagramms](https://en.wikipedia.org/wiki/Pie_chart) (1801):
+
+![Playfair, Pie Chart, Turkish Empire](images/playfair_pie_chart_turkish_empire_1801.jpg)<!-- .element height="300px;" -->
+
+(Quelle: »The Statistical Breviary« (1801) – [Google Books-Link](https://books.google.com/books?id=Y4wBAAAAQAAJ&pg=PA12-IA2))
+<!-- .element: style="font-size:0.5em;" -->
+
+--
+
+### Weiterführend zu William Playfair
+
+<br />
+
+- Literaturhinweis:
+  - Ian Spence, Howard Wainer: [William Playfair and His Graphical Inventions: An Excerpt from the Introduction to the Republication of His ‘Atlas’ and ‘Statistical Breviary.’](http://www.jstor.org/stable/27643669) In: The American Statistician 59, No. 3 (2005), S. 224–229.
+
+- Podcasthinweis:
+  - Daniel Meßner (mit Richard Hemmer): [»GAG421: Playfair und die Erfindung des Balkendiagramms«](https://www.geschichte.fm/archiv/gag421/) (18. Oktober 2023)
+
+--
+
+## Bäume
+
+--
+
+### Baum des Wissens / Porphyrianischer Baum
+
+![Porphyrian tree, from Wikipedia](images/porphyrian-tree-from-wikimedia-commons.png)<!-- .element height="456px;" -->
+
+Benannt nach Porphyrios von Tyros (3. Jh.). Aristoteles’ Einteilung der Kategorien in ein baumartiges Diagramm mit <br />dichotomen Unterteilungen, erstmals als Baum visualisiert von Boëthius (6. Jh.). (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Porphyrian_Tree.png).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Hochmittelalter (~ 1000–1300)
+
+<br />
+
+- Stammbäume (Adelsfamilien und religiöse Verwandtschaft)
+- Ramon Llull (1232–1316) arbeitete mit Diagrammen und Grafiken als exegetische und didaktische Mittel
+- sein *Arbor Scientiae* (1296) enthält 16 Baumdarstellungen, die verschiedene Wissenszweige kategorisieren
+
+--
+
+### Beispiel aus *Arbor Scientiae* (1296)
+
+![Arbor elementalis, from Wikimedia](images/arbor-scientiae-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+Der [*arbor elementalis*](https://books.google.com/books?id=Vl2FBOTNtTQC&pg=PA3). – Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ArborLulle.jpg).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### »Système figuré des connaissances humaines« (1751)
+
+![Tree of knowledge, Encyclopédie, from Wikimedia](images/systeme-figure-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+Aus dem 1. Band der »Encyclopédie« (1751). – Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ENC_SYSTEME_FIGURE.jpeg).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Darwins »Tree of Life« (1837)
+
+![Tree of knowledge, Encyclopédie, from Wikimedia](images/darwin-tree-of-life-from-wikimedia-commons.jpg)<!-- .element height="500px;" -->
+
+Darwins erste Skizze des Evolutionsbaums, 1837. – Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Darwin_Tree_1837.png).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Von Bäumen zu Netzwerken
+
+<br />
+
+- Kritik an hierarchischen Strukturen und Weltbildern und damit an der Baummetapher (und ihre Neigung zu Dichotomien und Finalismus)
+- Deleuze und Guattaris Idee des Rhizoms, Anerkennung von Multilinearitäten (multiple Wurzeln, verschiedenartige Wechselbeziehungen, keine einfachen Dichotomien) (vgl. *Tausend Plateaus*, 1987)
+
+---
+
+## Soziale Netzwerkanalyse
+
+![Simple Storys, Netzwerkgraph, mit Pajek (1998)](images/simple-stories.png)<!-- .element width="400px;" -->
+
+Figurennetzwerk extrahiert aus Ingo Schulzes Roman »Simple Storys«. 38 Knoten (Romanfiguren). <br />Kanten: positive, negative oder Tauschbeziehungen. Quelle: Thomas Schweizer, Michael Schnegg: <br />[»Die soziale Struktur der ›Simple Storys‹. Eine Netzwerkanalyse«](https://web.archive.org/web/20220119175152/https://www.ethnologie.uni-hamburg.de/pdfs-de/michael-schnegg/simple-stories-publikation-michael-schnegg.pdf) (1998).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Soziale Netzwerkanalye (SNA)
+
+<br />
+
+- Wandel der Netzwerkmetapher: während der Begriff bis 1930 eher für makrotechnischen Infrastrukturen (Gas, Wasser, Eisenbahn, Telegrafen usw.) stand, verschob sich der Gebrauch in der Folge hin zu mikrosoziologischen Ansätzen (vgl. Sebastian Gießmann: [Drawing the Social](http://netzeundnetzwerke.de/drawing-the-social/), 2017)
+- die SNA entstand seit den 1930er-Jahren als Bündel von Ansätzen in der Soziologie
+- ›Harvard Breakthrough‹ in den 1960ern: Soziolog\*innen, Mathematiker\*innen und Programmierer\*innen entwickelten eine eigenständige strukturanalytische Perspektive auf soziale Phänomene
+- 1990er: neue Perspektiven auf Netzwerkstrukturen durch das Internet, Anwendungen in der Physik und Bioinformatik; Literaturwissenschaft begann erst um/nach 2010 aktiv damit, auf SNA-Ansätze zurückzugreifen
+
+--
+
+### Eines der ersten Soziogramme
+
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+»Class structure, 4th grade«. Von Jacob L. Moreno (1889–1974).<br />(Veröffentlicht in der NYT, [3. April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Bildquelle: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### »Mapping Shakespeare’s Tragedies«
+
+![6 (out of 11) Shakespeare tragedies](images/grandjean-shakespeare-2015.png)<!-- .element width="640px;" -->
+
+Martin Grandjeans Netzwerkvisualisierung für 6 (von 11) Shakespeare-Tragödien (Dez. 2015).<br />Vollständiges Poster [auf Grandjeans Website](http://www.martingrandjean.ch/network-visualization-shakespeare/).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### »Distant-Reading Showcase«
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="680px;" -->
+
+»Distant-Reading Showcase«, Poster präsentiert auf der #DHd2016 in Leipzig (9. März 2016).<br />In voller Auflösung (28.88 MB) via Figshare. [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Detail
+
+![Poster-Detail](images/poster-detail-1.jpg)<!-- .element width="680px;" -->
+
+Zoom auf Goethes Stück »Götz von Berlichingen« (1773).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Strukturelle Unterschiede
+
+![Aristokratisches vs, kommunistisches Modell](images/goethe-vs-muehsam.gif)<!-- .element width="600px;" -->
+
+Vgl. Trilcke, Fischer, Göbel, Kampkaspar: Theatre Plays as ›Small Worlds‹? Network Data on the <br />History and Typology of German Drama, 1730–1930. DH2016, Conference Proceedings.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Puschkins Drama »Boris Godunow« (1/3)
+
+![Betweenness Centrality, Puschkins "Boris Godunow"](images/betweenness-pushkin-boris-godunov-de.png)<!-- .element width="720px;" -->
+
+Größe der Label entspricht Betweenness Centrality. Gavrila Puschkin – eine Nebenfigur – in der Mitte. <br /><br />(Quelle: GEXF-Datei via https://dracor.org/id/rus000042.)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Puschkins Drama »Boris Godunow« (2/3)
+
+<br />
+
+| Figur                         | Grad   | Betweenness Centrality |
+|-------------------------------|--------|------------------------|
+| Grigori (der falsche Dimitri) | **18** | 537.0                  |
+| Fjodor                        | 17     | 276.28                 |
+| Xenia                         | 15     | 187.81                 |
+| Volk                          | 11     | 606.93                 |
+| Gawrila Puschkin              | 11     | **976.12**             |
+| Basmanow                      | 11     | 862.69                 |
+| Boris Godunow (Zar)           | 11     | 484.57                 |
+| Schuiski                      | 10     | 282.14                 |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Puschkins Drama »Boris Godunow« (3/3)
+
+![Boris Godunov (dynamic graph)](images/pushkin-boris-godunov.gif)
+
+**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script von Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Aus Filmen extrahierte soziale Netzwerke
+
+![Screenshot from website](images/moviegalaxies-screenshot.png)<!-- .element width="642px;" -->
+
+(Screenshot: moviegalaxies.com.)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Aus Amazon Prime extrahierte Netzwerke
+
+![1917, movie, network](images/1917-network.png)<!-- .element width="720px;" -->
+
+Quelle: https://weltliteratur.net/extracting-network-data-from-amazon-prime-videos/
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Six Degrees of Separation
+#### (Sechs Grade der Trennung)
+
+<br />
+
+- die These, dass jeder Mensch mit jedem anderen Menschen auf dem Planeten durch eine Kette von Bekanntschaften verbunden ist, die nicht mehr als fünf Zwischenpersonen umfasst<!-- .element: class="fragment" -->
+
+--
+
+### »Wer kannte wen im frühneuzeitlichen Großbritannien?«
+
+<br />
+
+- Projekt [»Six Degrees of Francis Bacon«](http://www.sixdegreesoffrancisbacon.com/)
+- inspiriert von dem Gesellschaftsspiel *[Six Degrees of Kevin Bacon](https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon)*
+- &#62; 13.000 Personen, &#62; 200.000 Beziehungen
+- Quelle: Oxford Dictionary of National Biography
+- Beispiel: Sir Francis Drake &amp; Francis Bacon = 2 degrees of separation (through Queen Elizabeth I)
+- 5-minütiges Einführungsvideo von Chris Warren: [YouTube](https://www.youtube.com/watch?v=41_DQQii628)
+
+---
+
+### Was sind Daten? (1/2)
+
+<br />
+
+- data = »a set of values of qualitative or quantitative variables« (engl. Wikipedia)
+
+<br />
+
+![no info](images/data-types.gif)
+
+Quelle: https://www.mathsisfun.com/data/data.html
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Was sind Daten? (2/2)
+
+<br />
+
+- Beispiele: Temperatur, Geschwindigkeit eines Fahr- oder Flugzeugs, Umfragen, Kriminalitätsraten, Arbeitslosenquoten, ...
+- Daten werden von Organisationen, Institutionen, Unternehmen und Regierungen erhoben und gesammelt
+- Daten in den Geisteswissenschaften: Bücher oder Korpora, Dateien, Listen, Bilder, ...
+- Rohdaten/Primärdaten: unverfälscht, unsortiert, unkategorisiert – müssen aufbereitet werden
+
+<br />Sind ein Roman oder ein Gedicht Daten? (Was könnte man da messen?)
+
+--
+
+### Daten-/Dateiformate
+
+<br />
+BMP – JPEG/JPG – PNG – TIF/TIFF – GIF
+
+<font color="blue">PPT</font>/PPTX – <font color="blue">XLS</font>/XLSX – <font color="blue">DOC</font>/DOCX – RTF – ODT
+
+TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
+
+<br />
+
+<font color="blue">proprietär</font> ⚡ offen
+
+--
+
+### Daten in den Geisteswissenschaften
+
+<br />
+
+- »eine digitale, selektiv erzeugte, maschinell verarbeitbare Abstraktion, die ausgesuchte Facetten eines bestimmten geisteswissenschaftlichen Untersuchungsgegenstands darstellt« ([Schöch 2013](http://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/))
+- Big Data vs. Smart Data
+
+--
+
+### Big Data
+
+<br />
+
+- 3V-Paradigma:
+  - Volumen (Menge der Daten)
+  - Velocity (Geschwindigkeit der Daten, Ein-/Ausgabe, Echtzeit)
+  - Variety (Vielfalt: Text, Bilder, Audio, Video)
+- »ungeordnet und implizit, relativ große Menge und vielfältige Form« (Schöch 2013)
+
+--
+
+### Big Data in Action
+
+<br />
+
+- Google Ngram Viewer: https://books.google.com/ngrams
+- veröffentlicht 2010
+- Erez Aiden, Jean-Baptiste Michel: *Uncharted: Big Data as a Lens on Human Culture*. Riverhead Books 2013.
+
+--
+
+### Probleme des Google Ngram Viewers
+
+<br />
+
+Fotis Jannidis: **Korpuszusammensetzung und Verlässlichkeit des deutschsprachigen Google Ngram-Viewers.** In: DHd2023: »Open Humanities, Open Culture«. 13.–17. März 2023. Book of Abstracts. Universität Trier. ([doi:10.5281/zenodo.7715378](https://doi.org/10.5281/zenodo.7715378))
+
+<br />
+
+### tl;dr
+»Nach 1998 ändert sich die Zusammensetzung des deutschsprachigen Ngram-Korpus einschneidend, sodass es für die meisten Analysen zur Entwicklung von Sprache und Kultur weitgehend unbrauchbar wird.«
+
+--
+
+### Smart Data
+
+<br />
+
+- enthält normalerweise Markup, Annotationen, Metadaten
+- verlangt händischen Eingriff und kostet Zeit
+- »strukturiert oder teilstrukturiert, sauber und explizit, relativ geringer Umfang und begrenzte Heterogenität« (Schöch 2013)
+
+--
+
+### Linked Open Data
+
+<br />
+
+- Teil des Semantic Web
+- identifizierbar durch URI (Uniform Resource Identifier), bequem verfügbar über HTTP
+- RDF (Resource Description Framework): Subjekt – Prädikat – Objekt
+- direkte Abfrage über SPARQL-Endpunkte
+- Beispiel: Wikidata ([wikidata.org](https://www.wikidata.org/))
+
+--
+
+### Wikipedia abfragen (via Wikidata)
+
+<br />Gehen Sie zu https://w.wiki/4FBk und drücken »Play«.
+
+Ergebnis?
+
+<br />
+
+Nun noch etwas differenzierter:
+
+Gehen Sie zu https://w.wiki/4FBj und drücken wieder »Play«.
+
+Ergebnis?
+
+--
+
+### »Charting Culture«
+
+<br />
+
+- Maximilian Schich et al.: A network framework of cultural history. *Science*, Vol. 345, Issue 6196, S. 558–562. ([doi:10.1126/science.1240064](https://doi.org/10.1126/science.1240064))
+- »Schich, an art historian at the University of Texas at Dallas, and his colleagues used the Google-owned [and now extinct] knowledge base, [Freebase](https://en.wikipedia.org/wiki/Freebase_(database)), to find 120,000 individuals who were notable enough in their life-times that the dates and locations of their births and deaths were recorded.«
+- … und was haben sie mit den Daten gemacht?
+
+--
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+*Charting culture*, YouTube (Kanal »nature video«), 31. Juli 2014 <br />(blau: Geburtsdaten; rot: Sterbedaten)
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+## GIS
+#### (Geografische Informationssysteme)
+
+<br />
+
+Geografisches Koordinatensystem: <br />Breitengrad (latitude), Längengrad (longitude)
+<!-- .element: style="font-size:0.65em;" -->
+
+![no info](images/geographic_coordinates_sphere.png)<!-- .element width="300px;" -->
+
+Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Geographic_coordinates_sphere.svg)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Breitengrade (latitude), Längengrade (longitude)
+
+<br />
+
+- Breitengrad: Nord-Süd-Position auf der Erdoberfläche
+- Längengrad: Position in Ost-West-Richtung auf der Erdoberfläche
+- Berlin?
+- 52°31′N, 13°24′O<!-- .element: class="fragment" -->
+- Frankfurt/Oder?<!-- .element: class="fragment" -->
+- 52°21′N, 14°33′O <!-- .element: class="fragment" -->
+
+--
+
+### Geokoordinaten historischer Ereignisse
+
+![no info](images/trafalgar-wikipedia.png)<!-- .element width="640px;" -->
+
+(Screenshot: [Wikipedia](https://en.wikipedia.org/wiki/Battle_of_Trafalgar).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Eine Geografie der Gewalt
+
+![no info](images/nodegoat-geography-of-violence.jpg)<!-- .element width="740px;" -->
+
+(Quelle: [nodegoat.net](https://nodegoat.net/blog.p/82.m/14/a-wikidatadbpedia-geography-of-violence).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Kartierung des Gulag-Systems
+
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/XpXPN3PS1oE?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+
+Visualisierung der Entwicklung des sowjetischen Gulag-Lagersystems, <br />erstellt von [Seth Bernstein](https://history.ufl.edu/directory/current-faculty/seth-bernstein/) (University of Florida).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## GIS …
+
+<br />
+
+… bedeutet nicht nur, dass man Punkte auf Karten mappt, sondern <br />auch die Zuordnung von Daten zu diesen geografischen Punkten.
+
+---
+
+### Vor-/Nachbereitung <br />für nächste Woche
+
+<br />
+
+* verlinkte YouTube-Videos anschauen
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
