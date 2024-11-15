@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Modelling Drama in a Digital Ecosystem (Berlin, 4 November 2021)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+## Modelling Drama in <br />a Digital Ecosystem
+
+![symbolic picture (source: Wikimedia Commons)](images/graph-symbolbild-wm-commons.svg)<!-- .element width="125px;" -->
+<!-- source: https://commons.wikimedia.org/wiki/File:Network_Community_Structure.svg -->
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:1em;" -->
+
+FU Berlin · DARIAH-EU<!-- .element: style="font-size:0.75em;" -->
+
+Website: <!-- .element: style="font-size:0.75em;" --> **[lehkost.github.io](https://lehkost.github.io/)** · Twitter: **@umblaetterer**
+
+<br /><br />
+
+[EXC 2020 “Temporal Communities”](https://www.temporal-communities.de/), [RA5](https://www.temporal-communities.de/research/digital-communities/index.html) Meeting &nbsp;·&nbsp; 4 November 2021
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+![DraCor frontpage on 12 Sep 2021](images/dracor-frontpage-2021-09-12.png)
+
+https://dracor.org/
+
+--
+
+![DraCor, mobile mockup 2021](images/dracor-2021-mobile-mockup.jpg)<!-- .element width="760px;" -->
+
+--
+
+## TOC
+
+<br />
+
+1. [Corpora](#/1)
+2. [DraCor API](#/2)
+3. [Ecosystem](#/3)
+4. [Linked Open Data](#/4)
+5. [CLS INFRA](#/5)
+6. [Summary](#/6)
+
+---
+
+# Chapter 1.
+
+<br />
+
+## Corpora
+
+--
+
+### Precondition: TEI Standard
+
+<br />
+
+```xml
+<sp who="#gretchen">
+  <speaker>MARGARETE.</speaker>
+  <lg>
+    <l>Nun sag, wie hast du’s mit der Religion?</l>
+    <l>Du bist ein herzlich guter Mann,</l>
+    <l>Allein ich glaub’, du hältst nicht viel davon.</l>
+  </lg>
+</sp>
+<sp who="#faust">
+  <speaker>FAUST.</speaker>
+  <lg>
+    <l>Laß das, mein Kind! Du fühlst, ich bin dir gut;</l>
+    <l>Für meine Lieben ließ’ ich Leib und Blut,</l>
+    <l>Will niemand sein Gefühl und seine Kirche rauben.</l>
+  </lg>
+</sp>
+```
+
+<br />
+
+Dialogue from Goethe’s “Faust, pt. I” (1808) in TEI (Text Encoding Initiative). <br />Currently, 590 different elements are defined in the standard ([as of August 2021](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+- Growing list of corpora from the community:
+  - FreDraCor
+  - GerDraCor
+  - RusDraCor
+  - ItaDraCor
+  - SweDraCor
+  - CalDraCor
+  - HunDraCor
+  - GreekDraCor
+  - ShakeDraCor
+  - RomDraCor
+  - SpanDraCor
+  - AlsDraCor
+  - TatDraCor
+  - BashDraCor
+  - …
+
+</small>
+
+--
+
+### Frontpage GerDraCor
+
+![GerDraCor)](images/dracor-gerdracor.png)<!-- .element height="480px;" -->
+
+https://dracor.org/ger
+
+--
+
+### GerDraCor: “The Robbers” (1781)
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="480px;" -->
+
+https://dracor.org/id/ger000008
+
+--
+
+### GerDraCor: “The Testament” (1745)
+
+![GerDraCor: Das Testament)](images/dracor-das-testament.png)<!-- .element height="480px;" -->
+
+https://dracor.org/id/ger000220#speech
+
+--
+
+### GerDraCor
+
+<br />
+
+- started with 465 plays from the TextGrid repository, corrected and enriched
+- Wikidata IDs for authors and works added
+- currently 545 plays (additions from various sources: DTA, Wikisource, Gutenberg-DE, Google Books, ..., Arthur Schnitzler digital)
+
+--
+
+### GerDraCor as Community Project
+
+<br />
+
+- description and examples of use [by forTEXT](https://fortext.net/ressourcen/textsammlungen/dracor-drama-corpora-project) (Hamburg/Darmstadt)
+- pull request by [Nathalie Wiedmer et al.](https://quadrama.github.io/publications/Wiedmer2020aa): annotation of relationships between characters (family and love relationships, dependencies)
+
+--
+
+#### Ludwig Anzengruber’s “The Fourth Commandment” (1877)
+
+![Anzengruber-Drama, network graph with character relations](images/anzengruber-list-relations.jpg)<!-- .element width="550px;" -->
+
+**Modelling character relations.** <br />Network data: https://dracor.org/id/ger000129#relations
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### DraCor Download Tab
+
+![DraCor download tab](images/anzengruber-download-tab.png)
+
+https://dracor.org/id/ger000129#downloads
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### RomDraCor
+
+<br />
+
+- https://dracor.org/rom
+- ed. together with Julia Jennifer Beine (University of Bochum)
+- corpus adopted from the Perseus Digital Library (licence: CC BY-SA 3.0 US), then:
+  - speaker markup
+  - scene divisions
+  - page numbers of print editions
+  - Wikidata IDs
+  - gender information added
+  - dates for creation/first performance added
+  - character types (adulescens, senex, servus, etc.)
+  - correction of typos
+
+---
+
+# Chapter 2.
+
+<br />
+
+## DraCor API
+
+<br /><br />
+
+API: Application Programming Interface
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### What is an API?
+
+<br />
+
+- standardised exchange of information between an application and individual programme parts
+- modularised, simplified programming
+- data is transferred in a structured way according to a defined syntax
+- REST API (for web services)
+
+--
+
+### Functions of the DraCor API
+
+![DraCor API)](images/dracor-api.png)
+
+https://dracor.org/doc/api
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DraCor-API: Example Queries
+
+https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Speech text of all female characters in Goethe’s “Faust”.</small>
+
+https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Speech Text of all son characters in Schiller’s “The Robbers”.</small>
+
+https://dracor.org/api/v1/corpora/shake/plays/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Network data extracted from Shakespeare’s “Hamlet” (in JSON format).</small>
+
+https://dracor.org/api/v1/corpora/rus/plays/chekhov-vishnevyi-sad/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>All stage directions from Chekhov’s “Cherry Orchard”.</small>
+
+https://dracor.org/api/v1/corpora/rus/metadata<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadata for all plays in the Russian corpus (in JSON or CSV).</small>
+
+--
+
+### Research example:
+
+#### Epification tendencies in German-language drama, <br />examined on the basis of stage directions
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)<!-- .element height="340px;" -->
+
+Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: “carrefours/intersections”. Book of Abstracts. University of Ottawa.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Character typology in Roman drama, <br />examined with stylo.oppose()
+
+![senex vs adulescens](images/senex-vs-adulescens.png)<!-- .element height="360px;" -->
+
+* adulescens (left) vs. senex (right)<!-- .element: style="font-size:0.75em;" -->
+  * adulescens: love and emotions (amor, Venus), fear (perii [I am lost!], hope of salvation (spes)
+  * senex: family (filius/gnatus, filia, domum [home = direction], aedes [house], fides [fidelity, trust]); dare (to give)
+
+--
+
+### Simple visualisation of structural data
+#### Number of characters per play in chronological order (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+gerdracor <- fread("https://dracor.org/api/v1/corpora/ger/metadata/csv")
+ggplot(gerdracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+Example of a simple R script that obtains data via the API.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Number of charcters per play in chronological order (2/2)
+
+![number of characters per play](images/num-of-speakers-gerdracor.png)
+
+Output in RStudio.
+<!-- .element: style="font-size:0.65em;" -->
+
+(The dot at the top right: Karl Kraus’ “The Last Days of Mankind”, 925 speaker instances.)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### API Wrapper
+
+<br />
+
+= further simplification: <br />API functions get their own commands
+
+<br />
+
+- for R: rdracor
+- for Python: PyDraCor
+- for Haskell: HDraCor
+
+--
+
+#### Example (rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+hermann <- get_net_cooccur_igraph(play = "kleist-die-hermannsschlacht", corpus = "ger")
+plot(hermann)
+```
+#### Result:
+
+![Hermannsschlacht, drawing network graph with rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element height="360px;" -->
+
+---
+
+# Chapter 3.
+
+<br />
+
+## Ecosystem
+
+--
+
+### Concept of ›Programmable Corpora‹
+
+<br />
+
+Publication: <br />Frank Fischer et al.: **Programmable Corpora: Introducing DraCor, an Infrastructure for the Research on <br />European Drama.** Proceedings of DH2019: “Complexities”, Utrecht, [doi:10.5281/zenodo.4284002](https://doi.org/10.5281/zenodo.4284002).
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+- corpora as comparable objects that offer functions themselves and are linked to other data sources (e.g. via LOD)
+- [FAIR principles](https://www.go-fair.org/fair-principles/)
+- Programmable Corpora are not limited to the offered API, connection is possible on all levels (TEI, API, R, Python, LOD, ...)
+
+--
+
+### DraCor Technology Stack
+
+![DraCor technology stack](images/dracor-drawio.svg)
+
+All repos (code, data) are open source: https://github.com/dracor-org
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Shiny App
+
+![DraCor Shiny App](images/shiny-kaethchen.png)<!-- .element height="480px;" -->
+
+https://shiny.dracor.org/ (by Ivan Pozdniakov). Data access completely via the API.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Lessing’s “Emilia Galotti”
+
+![Emilia Galotti (dynamic graph)](images/lessing-emilia-galotti.gif)<!-- .element height="420px;" -->
+
+**Dynamic Graph**, generated with the [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html) package. Daten directly via **DraCor API**. <br />Script by Ivan Pozdniakov ([source code on RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Determining research intensity
+
+Number of scholarly articles per play in the German Drama Corpus (Top-20), <br />via [**BDSL** – Bibliography of German Linguistics and Literary Studies](https://www.bdsl-online.de/):
+<!-- .element: style="font-size:0.65em;" -->
+
+<small>
+
+1. Goethe: Faust (2037)
+2. Büchner: Dantons Tod (309)
+3. Lessing: Nathan der Weise (307)
+4. Kleist: Penthesilea (304)
+5. Goethe: Iphigenie auf Tauris (243)
+6. Lessing: Emilia Galotti (193)
+7. Kleist: Prinz Friedrich von Homburg (172)
+8. Schiller: Die Räuber (171)
+9. Schiller: Wilhelm Tell (147)
+10. Kleist: Der zerbrochne Krug (143)
+11. Schiller: Maria Stuart (123)
+12. Büchner: Leonce und Lena (116)
+13. Schiller: Die Jungfrau von Orleans (116)
+14. Kleist: Die Hermannsschlacht (114)
+15. Hofmannsthal: Elektra (111)
+16. Goethe: Torquato Tasso (109)
+17. Schiller: Kabale und Liebe (102)
+18. Kraus: Die letzten Tage der Menschheit (100)
+19. Kleist: Amphitryon (97)
+20. Schnitzler: Reigen (85)
+
+Blogpost: https://weltliteratur.net/scholarly-articles-on-german-drama/
+
+</small>
+
+--
+
+### Experimental Interfaces (1/2)
+
+<br />
+
+- 3D co-occurrence network for Hamlet (done with [VisNow](https://visnow.icm.edu.pl/)):
+  - https://twitter.com/umblaetterer/status/1024689131509739520
+
+--
+
+### Experimental Interfaces (2/2)
+
+<video data-autoplay src="images/experimental-interfaces.mp4"></video>
+
+--
+
+### DraCor as Progressive Web App
+
+![DraCor app](images/realistic-iphone-7-plus-mockup.jpg)
+
+Runs on iOS and Android.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Gamification
+
+![playing card (back)](images/dramenquartett_back.jpg)<!-- .element width="280px;" -->
+![playing card (front)](images/dramenquartett_front.png)<!-- .element width="280px;" -->
+
+Frank Fischer, Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** <br />In collaboration with Christopher Kittel, Carsten Milling, Peer Trilcke and Jana Wolf. <br />Bern: edition taberna kritika 2019. – Rules of play: https://dramenquartett.github.io/
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+# Chapter 4.
+
+<br />
+
+## Linked Open Data
+
+--
+
+DraCor Ontology (by Ingo Börner)
+
+![WebVOWL](images/webvowl-dracor-ontology.png)<!-- .element height="480px;" -->
+
+http://www.visualdataweb.de/webvowl/#iri=https://dracor.org/ontology
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### SPARQL Endpoint
+
+![DraCor API)](images/dracor-sparql.png)
+
+https://dracor.org/sparql
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Connecting to the <br />Linked Open Data-Cloud
+
+<br />
+
+- Example: Lessings *Emilia Galotti* (1772)
+- has a [Wikipedia article](https://de.wikipedia.org/wiki/Emilia_Galotti)
+- has a Wikidata article containing facts: <br />https://www.wikidata.org/wiki/Q782653
+- premiere locations of German plays: https://w.wiki/559m
+- premiere locations of Russian plays: https://w.wiki/Bz4S
+
+--
+
+### Premiere locations of German plays
+
+![first performances overall](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (“location of first performance”).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Berlin as premiere location of German plays
+
+![premieres in Berlin](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+
+Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (“location of first performance”).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Representativeness of a Corpus
+
+(via https://dracor.org/api/v1/corpus/rus/metadata/csv)
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+| Play | Wikipedia Article Count |
+|:----:|:-----------------------:|
+| Anton Tschechow: Der Kirschgarten | 36 |
+| Anton Tschechow: Drei Schwestern | 36 |
+| Nikolai Gogol: Der Revisor | 35 |
+| Anton Tschechow: Die Möwe | 35 |
+| Anton Tschechow: Onkel Wanja | 33 |
+| Alexander Gribojedow: Verstand schafft Leiden | 14 |
+| Alexander Puschkin: Boris Godunow | 14 |
+| Maxim Gorki: Nachtasyl | 13 |
+| Anton Tschechow: Iwanow | 11 |
+| Nikolai Gogol: Die Hochzeit | 10 |
+
+<br />
+
+The 10 most popular plays according to Wikipedia (RusDraCor currently includes 212 plays).
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+# Chapter 5.
+
+<br />
+
+## Further Development in CLS INFRA
+
+--
+
+## CLS INFRA
+
+### = Computational Literary Studies Infrastructure
+
+<br />
+
+* H2020 projekt (INFRAIA-02-2020 – Integrating Activities for Starting Communities)
+* Duration: 1 March 2021 – 28 February 2025
+* Budget: €4.999.942,50
+* cf. https://cordis.europa.eu/project/id/101004984
+
+--
+
+## CLS INFRA – 13 Project Partners
+
+![DraCor API)](images/cls-infra-partners.png)<!-- .element width="580px;" -->
+
+--
+
+## CLS INFRA – Working Packages
+
+<br />
+
+- WP1: Management, Coordination and Innovation Planning
+- WP2: Dissemination, Communication and Exploitation
+- WP3: Methodological Considerations of CLS
+- WP4: Training and Skills for CLS
+- WP5: Issues of Data Curation and Selection
+- WP6: Consolidating and Preparing Data for CLS
+- **WP7: Building the Ecosystem of and for Programmable Corpora**
+- WP8: Corpus Enrichment and NLP Toolchains
+- WP9: Transnational Access to Key Collections and Methods
+- WP10: Ethics Requirements
+
+
+---
+
+### Summary
+
+<br />
+
+- DraCor: a digital research infrastructure/ecosystem for the study of European drama
+- reliable, expandable corpora in multiple languages, coupled with highly functional interfaces (→&nbsp;comparative approaches)
+- open data, open source, community
+- further development in critical engagement with digital research possibilities
+- interface between analogue and digital philology
+
+--
+
+Thanks.
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
