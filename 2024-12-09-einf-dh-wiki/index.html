@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 9. Dezember 2024)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/906756))
+<!-- .element: style="font-size:0.6em;" -->
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(14. Oktober 2024 – 10. Februar 2025)
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+9. Vorlesung (9. Dezember 2024):
+<!-- .element: style="font-size:0.65em;" -->
+
+#### **Wikipedia &amp; Wikidata**
+<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[bit.ly/dh912](https://bit.ly/dh912)**
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Semesterüberblick (1/2)
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| 14.10.2024 | Thematische Rundumschau I |
+| 21.10.2024 | Thematische Rundumschau II |
+| 28.10.2024 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 04.11.2024 | Distant Reading I: Stilometrie |
+| 11.11.2024 | Distant Reading II: Topic Modeling |
+| 18.11.2024 | Visual Analytics: »Beautiful Evidence« |
+| 25.11.2024 | Netzwerkanalyse |
+| 02.12.2024 | Geografische Informationssysteme (GIS) |
+| **09.12.2024** | **Wikipedia & Wikidata** |
+| 16.12.2024 | KI &amp; Maschinelles Lernen |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Semesterüberblick (2/2)
+
+<br />
+
+| Date | Topic |
+|:-|:-|
+| 06.01.2025, <font color="red">16:15 Uhr</font> | Praxis der Geisteswissenschaften: ›Recherche‹ (GiK) – <font color="red">Hörsaal 2</font> |
+| 13.01.2025 | Showcase: Digitale Dramenanalyse |
+| 20.01.2025 | Statistik für Geisteswissenschaftler\*innen (Viktor Illmer) |
+| 27.01.2025 | Game Studies (Dîlan Canan Çakir) |
+| 03.02.2025 | Infrastrukturen für die Digitalen Geisteswissenschaften, GLAM! |
+| 10.02.2025 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im WiSe 2024/25
+
+<br />
+
+* [Seminar »Literaturwissenschaftliche Netzwerkanalyse«](https://www.fu-berlin.de/vv/de/lv/906779)
+  * <!-- .element: style="font-size:0.7em;" -->Do 10:00–12:00 c.t.
+* [Seminar »Aktivistische Figuren in der Literatur«](https://www.fu-berlin.de/vv/de/lv/906780)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 14:00–16:00 c.t. (zus. mit Dr. Dîlan Canan Çakir)
+* [Seminar »Webscraping mit Python für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/906787)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Seminar »Textanalyse mit R für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/906784)
+  * <!-- .element: style="font-size:0.7em;" -->Di 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/870197)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 10:00–12:00 c.t. (ab 18.10.2024, zweiwöchentlich)
+  * <!-- .element: style="font-size:0.7em;" -->Übersicht über alle Veranstaltungen: <a href="https://wikis.fu-berlin.de/display/phaenodh">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+---
+
+### Literatur
+
+<br />
+
+* Christof Schöch: **Digitale Wissensproduktion.** In: Fotis Jannidis, Hubertus Kohle, Malte Rehbein (Hg.): Digital Humanities: Eine Einführung. Stuttgart: Metzler 2017, S. 206–212. ([doi:10.1007/978-3-476-05446-3_14](https://doi.org/10.1007/978-3-476-05446-3_14))
+* Mathieu von Rohr: **[Im Innern des Weltwissens](https://www.spiegel.de/spiegel/a-689588.html).** In: Der Spiegel 16, 19. April 2010, S. 152–156.
+
+--
+
+### »Ein Wiki …
+
+<br />
+
+…  ist eine Website, deren Inhalte von den Besuchern nicht nur gelesen, sondern auch direkt im Webbrowser bearbeitet und geändert werden können (Web-2.0-Anwendung).« ([Wikipedia](https://de.wikipedia.org/wiki/Wiki))
+
+---
+
+### [Wikipedia-Denkmal](https://de.wikipedia.org/wiki/Wikipedia-Denkmal) in Słubice
+
+![Wikipedia Monument](images/WikipediaMonument.jpg)<!-- .element height="500px;" -->
+
+eingeweiht am 22. Oktober 2014 (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Wikipedia_Monument_3.JPG))
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+![Wikipedia logo](images/WikipediaLogo.png)<!-- .element height="120px;" -->
+
+<br />
+
+- zur Zeit gibt es 352 Sprachversionen, von denen 339 aktiv sind ([Liste der Wikipedien](https://en.wikipedia.org/wiki/Wikipedia:Statistics_of_Wikipedias))
+- Größenvergleich:
+  - Wie erklären Sie sich die hohe Anzahl von Artikeln in den Sprachen Cebuano und Waray?
+
+--
+
+### Ein Artikel kann enthalten …
+
+<br />
+
+- Geodaten
+- Bilder, Ton- und Filmdateien
+- Fußnoten
+- bibliografische Angaben
+- Kategorien
+- …
+
+<br /><br />
+
+→ Analyse der Struktur eines Beispielartikels: [Göttingen](https://de.wikipedia.org/wiki/G%C3%B6ttingen)
+
+--
+
+### Wissensorganisation (1/2)
+
+#### »Système figuré des connaissances humaines« (1751)
+
+![Tree of knowledge, Encyclopédie, from Wikimedia](images/systeme-figure-from-wikimedia-commons.jpg)<!-- .element height="460px;" -->
+
+Aus dem 1. Band der »Encyclopédie« (1751). – Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ENC_SYSTEME_FIGURE.jpeg).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Wissensorganisation (2/2)
+
+<br />
+
+- Kategorien
+- standardisierte Infoboxen für vergleichbare Informationsinhalte (Länder, Städte, Krankheiten usw.)
+- Portale (z. B. zu [COVID-19](https://de.wikipedia.org/wiki/Portal:COVID-19))
+- [Zufällige Seite](https://de.wikipedia.org/wiki/Spezial:Zuf%C3%A4llige_Seite)
+
+--
+
+### Verlässlichkeit
+
+<br />
+
+- Versionshistorie
+- Zitierbarkeit von Artikelversionen (Funktion »Artikel zitieren« in der linken Seitenleiste)
+- Textbausteine wie »Dieser Artikel beschreibt ein aktuelles Ereignis. Die von den Kriegsparteien veröffentlichten Angaben können gegenwärtig objektiv nur sehr schwer überprüft werden. Die Informationen können sich deshalb rasch ändern.« (Beispiel: [Chronologie des Krieges in Nahost seit 2023](https://de.wikipedia.org/wiki/Chronologie_des_Krieges_in_Nahost_seit_2023))
+
+--
+
+### Die Donauturmdebatte
+
+![Donauturm](https://upload.wikimedia.org/wikipedia/commons/f/fe/Donauturm_20120714.JPG)<!-- .element height="140px;" -->
+
+- ein *Edit War* um den Eintrag zum [Wiener Donauturm](https://de.wikipedia.org/wiki/Donauturm), der Ende Oktober 2009 entbrannt ist
+- Versicherungsberater und Turmspezialist Wladyslaw Sojka hatte aus dem »Aussichtsturm« nach reiflicher Überlegung einen »Fernseh- und Aussichtsturm« gemacht
+- es folgte »eine der absurdesten Auseinandersetzungen, die in Wikipedia je geführt wurden, sie füllt Seiten voller Beleidigungen und Belehrungen und erreichte eine Länge von mehr als 600.000 Zeichen, so viel wie ein Buch. Sehr bald ging es nicht mehr um den Donauturm. Es ging um die Wahrheit und darum, wer sie gepachtet hat.« (Mathieu von Rohr 2010)
+
+--
+
+### Community-Aspekte
+
+<br />
+
+- [Mentor\*innenprogramm](https://de.wikipedia.org/wiki/Wikipedia:Mentorenprogramm)
+- Diskussionsseiten (artikelbasiert, userbasiert)
+- Userspace (Unterseiten der Benutzer\*innenseite für eigene Entwürfe)
+- [Artikel des Tages](https://de.wikipedia.org/wiki/Wikipedia:Hauptseite/Artikel_des_Tages)
+- Wikipedia-Apps, etwa [http://www.wiki-watch.de/](http://www.wiki-watch.de/)
+- Seitenstatistiken
+
+--
+
+### Fehlende Diversität unter den Editor\*innen
+
+<br />
+
+- »A 2013 Wikipedia blog post estimated that 90 percent of the company’s top editors were men.« ([thecut.com](https://www.thecut.com/2015/07/drink-your-way-to-a-childs-eye-view.html))
+- »Well, three authors who excel at writing personal narratives have found a way to control the Wikipedia narrative, in a way. Emily Gould (Friendship), Sheila Heti (How Should a Person Be?), and Chris Kraus (I Love Dick) used Genius’s annotation tool to add corrections and personal details to their Wikipedia pages – mostly as a way to play with the form but also as a way to correct, explain, and rewrite a story that someone else has written about them.« (ebd.)
+
+--
+
+### Aufbau eines Wikipedia-Artikels
+
+<br />
+
+- [Wikipedia:Relevanzkriterien](https://de.wikipedia.org/wiki/Wikipedia:Relevanzkriterien)
+- Markup
+- Diskussionsseiten
+- Versionsgeschichte (Beispiel: die allererste Version des Artikels zur [Nordsee](https://de.wikipedia.org/w/index.php?title=Nordsee&oldid=9532))
+- Setzen von Fußnoten (```<ref> </ref>```)
+- Einbindung von Medien
+
+--
+
+Eigenen Artikel anlegen:
+
+<br />
+
+https://de.wikipedia.org/wiki/Hilfe:Neuen_Artikel_anlegen
+
+--
+
+### Wikipedia und die Wissenschaft (1/2)
+
+<br />
+
+- bei Google Scholar führt der [Suchterm »Wikipedia«](https://scholar.google.com/scholar?q=Wikipedia) zurzeit zu ~ 2.760.000 Treffern
+- Beispiele für entsprechende Forschungsarbeiten (2006–2009):
+  - [»Motivations of Contributors to Wikipedia«](https://doi.org/10.1145/1215942.1215943) (2006)
+  - [»Can History Be Open Source? Wikipedia and the Future of the Past«](https://doi.org/10.2307/4486062) (2006)
+  - [»Measuring Article Quality in Wikipedia: Models and Evaluation«](https://doi.org/10.1145/1321440.1321476) (2007)
+  - [»The Wikipedia XML Corpus«](https://doi.org/10.1007/978-3-540-73888-6_2) (2007)
+  - [»Assessing the Value of Cooperation in Wikipedia«](https://arxiv.org/abs/cs/0702140) (2007)
+  - [»Measuring Author Contributions to the Wikipedia«](https://doi.org/10.1145/1822258.1822279) (2008)
+  - [»How and Why Do College Students Use Wikipedia?«](https://doi.org/10.1002/asi.21142) (2009)
+
+--
+
+### Wikipedia und die Wissenschaft (2/2)
+
+<br />
+
+- Beispiele für entsprechende Forschungsarbeiten (2012–2021):
+  - [»Dynamics of Conflicts in Wikipedia«](https://doi.org/10.1371/journal.pone.0038869) (2012)
+  - [»Wikipedia: A Quantitative Analysis«](http://hdl.handle.net/10115/11239) (2012)
+  - [»(Don't) Mention the War: A Comparison of Wikipedia and Britannica Articles on National Histories«](https://doi.org/10.1145/3178876.3186132) (2018)
+  - [»Ms. Categorized: Gender, Notability, and Inequality on Wikipedia«](https://doi.org/10.1177%2F14614448211023772) (2021)
+  - [»Information Asymmetry in Wikipedia Across Different Languages: A Statistical Analysis«](https://doi.org/10.1002/asi.24553) (2021)
+
+---
+
+### Die Wikimedia-Familie
+
+<br />
+
+- [wikimedia.org](https://www.wikimedia.org/)
+  - Wikipedia
+  - Wikimedia Commons
+  - Wikisource
+  - Wikivoyage
+  - Wiktionary
+  - Wikiquote
+  - Wikinews
+  - …
+
+--
+
+#### Kurzer Exkurs
+### Aufbau einer URL
+
+<br />
+
+https://de.wikipedia.org/wiki/Göttingen
+
+<br />
+
+* **https://** – das verwendete Protokoll (Hypertext Transfer Protocol Secure)
+* **de.wikipedia.org** – der Hostname
+* **de.** – die Subdomain
+* **wikipedia.org** – der Domainname
+* **.org** – die Top-Level-Domain (TLD)
+* **/wiki/Göttingen** – der Pfad
+
+--
+
+![MediaWiki logo](images/MediaWikiLogo.png)<!-- .element height="200px;" -->
+
+<br />
+
+- MediaWiki: freie und quelloffene Wiki-Software, kann heruntergeladen und auf eigenen Servern betrieben werden
+- Wikipedia wurde am 15. Januar 2001 gestartet und läuft seit Januar 2002 auf Basis von MediaWiki
+- die aktuelle Version ist 1.41.1 ([mediawiki.org](https://www.mediawiki.org/))
+- es gibt auch andere Wiki-Software, wie DokuWiki oder TWiki ([Übersicht](https://en.wikipedia.org/wiki/Comparison_of_wiki_software))
+
+--
+
+![Wikimedia Commons logo](images/WikimediaCommonsLogo.png)<!-- .element height="200px;" -->
+
+- [Wikimedia Commons](https://commons.wikimedia.org/): Online-Speicher für frei verwendbare Bilder, Ton- und andere Mediendateien
+- die Pflege der Medieninhalte wurde von den Wikipedia-Inhalten getrennt
+- ein Vorteil: die gleiche Mediendatei kann in mehreren Wikis/Wikipedias verwendet werden
+
+--
+
+![Wikisource logo](https://upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg)<!-- .element height="200px;" -->
+
+- [Wikisource](https://de.wikisource.org/): Sammlung und Edition von gemeinfreien Texten
+- kollaboratives Arbeiten
+- Vier-Augen-Prinzip
+
+---
+
+### Semantische Versionen von Wikipedia
+
+<br />
+
+- Semantic MediaWiki
+- Wikidata
+- DBpedia
+
+--
+
+### Wikidata Query Service
+
+<br />
+
+https://query.wikidata.org/
+
+--
+
+### SPARQL
+
+<br />
+
+- Akronym für **S**PARQL **P**rotocol **A**nd **R**DF **Q**uery **L**anguage
+- semantische Abfragesprache für Datenbanken
+- RDF: Resource Description Framework
+- Sammlung von Triples, die den RDF-Graphen bilden
+- ein Tripel in diesem Sinne ist eine elementare Aussage, die aus **Subjekt**, **Prädikat** und **Objekt** besteht
+- 2008 wurde SPARQL eine offizielle W3C-Empfehlung
+
+--
+
+### Beispiel für eine RDF-Darstellung
+
+<br />
+
+- der Website *The Programming Historian* entnommen:
+  - Matthew Lincoln: [Using SPARQL to access Linked Open Data](https://programminghistorian.org/lessons/graph-databases-and-SPARQL) (publ. 2015, released under CC-BY 4.0)
+
+--
+
+![Wikimedia Commons logo](https://upload.wikimedia.org/wikipedia/commons/0/0b/Rembrandt_van_Rijn-De_Nachtwacht-1642.jpg)<!-- .element height="480px;" -->
+
+- Rembrandt: Die Nachtwache, 1642<!-- .element: class="fragment" -->
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn-De_Nachtwacht-1642.jpg))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+![Wikimedia Commons logo](https://upload.wikimedia.org/wikipedia/commons/7/72/Woman-with-a-balance-by-Vermeer.jpg)<!-- .element height="480px;" -->
+
+- Vermeer: Frau mit Waage, 1662/1663<!-- .element: class="fragment" -->
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Woman-with-a-balance-by-Vermeer.jpg))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+![Wikimedia Commons logo](https://programminghistorian.org/images/graph-databases-and-SPARQL/sparql01.svg)<!-- .element height="440px;" -->
+
+RDF-kodierte Informationen, visualisiert als Graph: <br />Pfeile zeigen die Richtung des Prädikats an, *Die Nachtwache* <br />wurde von Rembrandt geschaffen und nicht umgekehrt <br />(Bildquelle: [*The Programming Historian*](https://programminghistorian.org/lessons/graph-databases-and-SPARQL))
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+## Wikidata
+
+<br />
+
+- Beispieleintrag: https://www.wikidata.org/wiki/Q7351526 <br />(= Roberta Metsola)
+
+--
+
+### Wikidata Query Service
+
+<br />
+
+- [Beispielabfragen aus der Community](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries)
+- Beispiel 1: Zeige alle Bundeskanzler\*innen der Bundesrepublik Deutschland!
+- Beispiel 2: Zeige alle Spitznamen der Bundeskanzler\*innen!
+- Beispiel 3: https://w.wiki/4XkF <br />(von Viktor Illmer, auf »Graph«-Ansicht wechseln)
+
+---
+
+## Wikidata-Daten in eigenen Applikationen
+
+--
+
+### Geokoordinaten historischer Ereignisse
+
+![no info](images/trafalgar-wikipedia.jpg)<!-- .element width="600px;" -->
+
+Screenshot: [Wikipedia](https://en.wikipedia.org/wiki/Battle_of_Trafalgar)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Eine Geografie der Gewalt
+
+![no info](images/nodegoat-geography-of-violence.jpg)<!-- .element width="740px;" -->
+
+Quelle: [nodegoat.net](https://nodegoat.net/blog.p/82.m/14/a-wikidatadbpedia-geography-of-violence)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Vossianische Antonomasien
+
+![Magnus Carlsen, der Mozart des Schachs](images/der-mozart-des-schachs_dw-com.jpg)<!-- .element width="480px" -->
+
+= Magnus Carlsen (Quelle: [dw.com](https://www.dw.com/de/der-mozart-des-schachs/a-36500634), 2016)
+
+--
+
+### Auswertung mithilfe von <br />Wikidata/Wikimedia Commons
+
+![Gallery of 39 most frequent sources](images/gallery-top-39-sources-vossian-antonomasia.jpg)
+
+Die 39 häufigsten Quellen für vossianische Antonomasien in der New York Times 1987–2007. <br />Bildquellen: Wikimedia Commons (Property:P18 in Wikidata).
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Interaktive Datenvisualisierung
+
+![interaktive Visualisierung](images/vossanto-timeline-screenshot.png)
+
+Zeitstrahl, Zeitungsressort, Metadaten, Bilder via Wikidata, Suche mit KWIC-Funktion, Link zum Volltext.
+<!-- .element: style="font-size:0.65em;" -->
+
+URL: https://vossanto.weltliteratur.net/timeline
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+## Beispiele für <br />Rezeptionsanalysen
+
+<br />
+
+--
+
+### Weltliteratur in Wikipedia
+
+![Netzwerkgraph aus dem Artikel "World Literature According to Wikipedia"](images/world-literature-wikipedia-gephi-graph-influence-filter.png)<!-- .element height="450px;" -->
+
+Christoph Hube, Frank Fischer, Robert Jäschke, Gerhard Lauer, Mads Rosendahl Thomsen: <br />**World Literature According to Wikipedia: Introduction to a DBpedia-Based Framework**. <br />*arXiv.org*, 4. Januar 2017. (https://arxiv.org/abs/1701.00991)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Fontane im Wikiversum
+
+<br />
+
+![Wikipedia-Logo](../2019-06-14-potsdam-fontane/images/wikipedia-logo.png)<!-- .element height="150px;" -->
+![Fontane](../2019-06-14-potsdam-fontane/images/theodor-fontane-commons.png)<!-- .element height="150px;" -->
+
+<br />
+
+https://lehkost.github.io/slides/2019-06-14-potsdam-fontane/#/1/2
+
+--
+
+### [»Wikipedia, Wikidata, and World Literature«](https://culturalanalytics.org/issue/7259)
+
+<br />
+
+![Journal of CA, Special Issue](images/journal-ca-cover.png)<!-- .element height="250px;" -->
+
+<br />
+
+(= Sonderheft des »Journal of Cultural Analytics«, 2023)
+
+---
+
+Bis nächste Woche.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
