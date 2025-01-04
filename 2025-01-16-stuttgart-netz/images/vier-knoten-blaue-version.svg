@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg contentScriptType="text/ecmascript" width="164.0"
+     xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify"
+     contentStyleType="text/css"
+     viewBox="-81.000000 -39.000000 164.000000 78.000000" height="78.0"
+     preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+     version="1.1">
+    <g id="edges">
+        <path fill="none" stroke-width="3.0"
+              d="M -9.235641,-3.794951 L -61.760143,-25.351936"
+              class="id_A id_B" stroke-opacity="1.0" stroke="#4295ff"/>
+        <path fill="none" stroke-width="3.0"
+              d="M -9.232652,3.806007 L -61.738239,25.403513" class="id_A id_C"
+              stroke-opacity="1.0" stroke="#4295ff"/>
+        <path fill="none" stroke-width="3.0"
+              d="M 10.015519,-0.002504 L 63.488121,-0.025992" class="id_A id_D"
+              stroke-opacity="1.0" stroke="#4295ff"/>
+        <path fill="none" stroke-width="3.0"
+              d="M -71.007042,-19.148777 L -70.990677,19.207634"
+              class="id_B id_C" stroke-opacity="1.0" stroke="#4295ff"/>
+    </g>
+    <g id="nodes">
+        <circle fill-opacity="1.0" fill="#4295ff" r="9.2" cx="0.015520545"
+                class="id_A" cy="0.001888796" stroke="#2e68b2"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#4295ff" r="9.2" cx="-71.01131"
+                class="id_B" cy="-29.148777" stroke="#2e68b2"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#4295ff" r="9.2" cx="-70.98641"
+                class="id_C" cy="29.207632" stroke="#2e68b2"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+        <circle fill-opacity="1.0" fill="#4295ff" r="9.2" cx="73.48812"
+                class="id_D" cy="-0.03038452" stroke="#2e68b2"
+                stroke-opacity="1.0" stroke-width="1.5999999"/>
+    </g>
+</svg>

@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Texte und Netzwerke (16. Januar 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Texte und Netzwerke
+
+![Symbolbild Graph](images/graph-symbolbild-wm-commons.png)
+<!-- .element width="135px;" -->
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.8em;" -->
+
+Freie Universität Berlin
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />URL dieser Präsentation: **[bit.ly/netz161](https://bit.ly/netz161)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />Universität Stuttgart &nbsp;·&nbsp; 16. Januar 2025
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Verortung
+
+<br />
+
+* Master of Arts ›Digital Humanities‹
+  * Seminar ›Reflexion digitaler Methoden‹
+    * 7. Sitzung: Texte und Netzwerke
+
+### <br />Lernziele
+
+<br />
+
+- Begriffsarbeit
+- Berechnung einfacher Netzwerkmetriken
+- Extraktion von Netzwerkdaten aus Texten
+- Analyse von Netzwerkdaten
+- Reflexion der Extraktionsmethode
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Netzwerktheorie](#/1)
+2. [Soziale Netzwerkanalyse](#/2)
+3. [Graphbasierte Werte](#/3)
+4. [Extraktion von Netzwerkdaten](#/4)
+5. [Vergleichende Analyse](#/5)
+6. [Reflexion der Extraktionsmethode](#/6)
+7. [Diskussion](#/7)
+
+---
+
+### Die Netzwerktheorie …
+
+<br />
+
+»… ist die Untersuchung von Graphen als Darstellung <br />von Beziehungen zwischen diskreten Objekten.« <br />([engl. Wikipedia](https://en.wikipedia.org/wiki/Network_theory))
+
+--
+
+### Beispielgraph mit <br />8 Knoten und 10 Kanten:
+
+![Bild von einfachem Netzwerk (Quelle: Wikimedia Commons)](images/small_network.png)<!-- .element width="380px;" -->
+
+* Knoten (nodes, vertices)
+* Kanten (edges, links)
+
+<br />(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png))
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Die Soziale Netzwerkanalyse (SNA) …
+
+<br />
+
+»… untersucht soziale Strukturen mit Hilfe <br />der Netzwerk- und Graphentheorie.« <br />([engl. Wikipedia](https://en.wikipedia.org/wiki/Social_network_analysis))
+
+---
+
+### Graphbasierte Werte
+
+- Netzwerkgröße
+- Durchmesser
+- Dichte
+- Clusterkoeffizient
+- Durchschnittliche Pfadlänge
+- Maximaler Grad
+- […]
+
+### <br />Knotenbasierte Werte
+
+- Grad
+- Pfadlänge
+- […]
+
+--
+
+### Ein Beispielgraph
+
+![Vier Knoten](images/vier-knoten-blaue-version.svg)<!-- .element height="200px;" -->
+
+Bitte geben Sie an: <br />(a) Netzwerkgröße, (b) Durchmesser, (c) Dichte, <font color="gray">(d) Clusterkoeffizient</font>, <br /><font color="gray">(e) Durchschnittliche Pfadlänge</font>, (f) maximaler Grad.
+
+<br />
+
+Lösung: <br />(a) 4, (b) 2, (c) ~ 0,667, (d) ~ 0,778, (e) ~ 1,333, (f) 3.
+<!-- .element: class="fragment" -->
+
+---
+
+### Extraktion von Netzwerkdaten
+
+z.&nbsp;B. mit »ezlinavis«: https://ezlinavis.dracor.org/
+<!-- .element: style="font-size:0.65em;" -->
+
+![Screenshot von ezlinavis](images/ezlinavis-die-raeuber.png)<!-- .element height="400px;" -->
+
+Linke Spalte: Eingabefenster. – Mittlere Spalte: Automatisch generierte Kantendaten. – <br />Rechte Spalte: Interaktive Visualisierung.
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Netzwerkdaten analysieren und vergleichen
+
+![dramenquartett-die-raeuber.png](images/dramenquartett-die-raeuber.png)<!-- .element height="450px;" -->
+![dramenquartett-kabale-und-liebe.png](images/dramenquartett-kabale-und-liebe.png)<!-- .element height="450px;" --><!-- .element: class="fragment" -->
+![dramenquartett-wilhelm-tell.png](images/dramenquartett-wilhelm-tell.png)<!-- .element height="450px;" --><!-- .element: class="fragment" -->
+
+Frank Fischer, Anika Schultz: **[Dramenquartett. Eine didaktische Intervention.](http://www.etkbooks.com/dramenquartett/)** Unter Mitarbeit von Christopher Kittel, Carsten Milling, Peer Trilcke, Jana Wolf. Bern: etk 2019. 32 Blatt in Kartonbox, Farbdruck. – Spielregeln: https://dramenquartett.github.io/
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+### Reflexion der Extraktionsmethode
+
+![Variante mit Bruderlink](images/schiller-mit-bruderlink.png)<!-- .element height="500px;" -->
+
+--
+
+### Textbefund
+
+<br />
+
+**Friedrich Schiller: Die Räuber. Ein Schauspiel**
+<!-- .element: style="font-size:0.75em;text-align:left;" -->
+
+[…]
+<!-- .element: style="font-size:0.55em;text-align:left;" -->
+
+**Vierter Akt**
+<!-- .element: style="font-size:0.65em;text-align:left;" -->
+
+**Zweite Szene**
+<!-- .element: style="font-size:0.55em;text-align:left;" -->
+
+*Galerie im Schloß. Räuber Moor, Amalia treten auf.*
+<!-- .element: style="font-size:0.55em;text-align:left;" -->
+
+[…]
+<!-- .element: style="font-size:0.55em;text-align:left;" -->
+
+KARL VON MOOR. Aber dies Bild rechter Hand? – du weinst, Amalia?
+<!-- .element: style="font-size:0.55em;text-align:left;" -->
+
+*Amalia schnell ab.*
+<!-- .element: style="font-size:0.55em;text-align:left;" -->
+
+KARL VON MOOR. Sie liebt mich, Sie liebt mich! – […] *Ergriffen vom Anblick seines Vaters.* Du, du – Feuerflammen aus deinem Auge – Fluch, Fluch, Verwerfung! – wo bin ich? Nacht vor meinen Augen – Schrecknisse Gottes – Ich, ich hab ihn getötet! *Er rennt davon.*
+<!-- .element: style="font-size:0.55em;text-align:left;" -->
+
+FRANZ VON MOOR *in tiefen Gedanken.* Weg mit diesem Bild! weg, feige Memme! was zagst du und vor wem? […]
+<!-- .element: style="font-size:0.55em;text-align:left;" -->
+
+<br />→ Karl und Franz begegnen sich im Stück nicht.
+<!-- .element: class="fragment" -->
+
+--
+
+### Eduard Jerrmann (Schauspieler, 1798–1859)
+
+![Eduard Jerrmann (Wikimedia Commons)](images/eduard_jerrmann_wikimedia_commons.jpg)<!-- .element width="225px;" -->
+
+<br />
+
+»Hier [1826 in St. Petersburg] brachte er das schon oben erwähnte Kunststück, den **Franz** und **Karl Moor** an einem und demselben Theaterabend zu spielen, das er später oft wiederholt hat, zum ersten Mal zur Ausführung und zwar mit glänzendem äußeren Erfolge.« <br />([Allgemeine Deutsche Biographie, Band 51, Leipzig: Duncker &amp; Humblot 1906, S. 745](https://de.wikisource.org/wiki/ADB:Jerrmann,_Eduard))
+<!-- .element: style="font-size:0.85em;" -->
+
+<br />
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Eduard_Jerrmann.jpg))
+<!-- .element: style="font-size:0.5em;" -->
+
+--
+
+### Variante ohne Bruderlink
+
+![Variante ohne Bruderlink](images/schiller-ohne-bruderlink.png)<!-- .element height="500px;" -->
+
+--
+
+### Vergleich der beiden Varianten
+
+<br /><br />
+
+| Datenset                                         | Netzwerkgröße | Durchmesser | Dichte | Clusterkoeffizient | Durchschnittl. Pfadlänge | Maximaler Grad      |
+|--------------------------------------------------|---------------|-------------|--------|--------------------|--------------------------|---------------------|
+| Schiller: Die Räuber <br />(**mit** Bruderlink)  | 25            | 2           | 0,53   | 0,85               | 1,47                     | 24 (Grimm, Schwarz) |
+| Schiller: Die Räuber <br />(**ohne** Bruderlink) | 25            | 2           | 0,53   | 0,84               | 1,47                     | 24 (Grimm, Schwarz) |
+
+<!-- .element: style="font-size:0.75em;" -->
+
+---
+
+### Diskussion
+
+<br />
+
+* Was ist bei der Datenextraktion zu beachten?
+* Wie bringt man Netzwerkmetriken und den ursprünglichen Text argumentativ wieder zusammen?
+* Wo stößt die Methode an ihre Grenzen?
+
+--
+
+### Ausblick: Formalisierungen sind immer kontingent
+
+![To Be or Not to Be Central (Poster)](images/to_be_or_not_to_be_central_dh2020.png)<!-- .element width="600px;" -->
+
+Anastasia Klimashevskaia, Bernhard C. Geiger, Martin Hagmüller, Denis Helic, Frank Fischer: <br />*To Be or Not to Be Central: On the Stability of Network Centrality Measures in Shakespeare’s »Hamlet«* <br />(Poster, DH2020, Ottawa) · [doi:10.5281/zenodo.3989291](https://doi.org/10.5281/zenodo.3989291)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Vielen Dank!
+
+<br />
+
+### *
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
