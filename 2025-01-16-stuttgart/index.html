@@ -99,7 +99,7 @@ Freie Universität Berlin<!-- .element: style="font-size:0.7em;" -->
 
 ### Definition (2/3)
 
-“‘Vossian Antonomasia’ means […] to put a proper name in place of an appellative: the bearer of that proper name is a person or thing which, in history or mythology, represents an outstanding realisation of the quality indicated by the appellative. The exceptional person or thing is the archetype […], rediscovered in the new instance at hand. Typically, the archetype is brought out of its typological remoteness and into the present moment by <u>an atypological, updating marker</u> (pronoun, adjective, genitive), in any case via the (linguistic or situational) context […].”
+“‘Vossian Antonomasia’ means […] to put a proper name in place of an appellative: the bearer of that proper name is a person or thing which, in history or mythology, represents an outstanding realisation of the quality indicated by the appellative. The exceptional person or thing is the archetype […], rediscovered in the new instance at hand. Typically, the archetype is brought out of its typological remoteness and into the present moment by <u>an atypological, updating marker</u> (pronoun, adjective, genitive), […].”
 
 Heinrich Lausberg: *Handbuch der literarischen Rhetorik. Eine Grundlegung der Literaturwissenschaft.* Vol 2. Munich: Hueber 1960. §581, p. 301. [[this page in the 3rd ed. 1990 on Google Books](https://books.google.com/books?id=IR8ru0joFKcC&pg=PA301); translation and emphasis mine]
 <!-- .element: style="font-size:0.65em;" -->
@@ -131,6 +131,7 @@ Frank Fischer, Joseph Wälzholz: Jeder kann Napoleon sein. [On Vossian Antonomas
 
 - To gather knowledge about the frequency, distribution, and function of the phenomenon
 - Gradual process (8 joint papers published so far)
+- Co-authors: Michel Schwab, Robert Jäschke (Humboldt-Universität zu Berlin)
 
 --
 
@@ -162,9 +163,7 @@ Frank Fischer, Joseph Wälzholz: Jeder kann Napoleon sein. [On Vossian Antonomas
 <br />
 
 - Grammatical formalisation (“the … of …”) plus Named-Entity Recognition (via NLTK)
-  - Problem #1: Unsatisfactory performance of the NER module
-  - Problem #2: More complex grammatical cases in other languages (genitive not expressed by articles but by suffixes)
-  - Problem #3: “the Church of England” etc. (though matching the grammatical pattern, semantically irrelevant)
+  - One of the problems: “the Church of England” etc. (though matching the grammatical pattern, semantically irrelevant)
 - Breakthrough: leveraging personalities’ names via Wikidata as a positive list
   - Underlying assumption: source names for Vossian antonomasia should have a certain degree of fame and thus be recorded encyclopedically
 
@@ -262,7 +261,6 @@ URL: https://vossanto.weltliteratur.net/timeline
 
 </br>
 
-- Creating semantic clusters using word embeddings
 - Assigning topic areas to each cluster based on the following approach:
   - Modifiers tend to be short noun phrases (1–4 words)
   - “Classic” topic modelling fails due to the brevity of the phrases
@@ -330,7 +328,6 @@ The longest *VA chain* in the NYT corpus: [interactive app](https://vossanto.wel
 
 <br />
 
-- A humanities research question taken to new heights via Digital Humanities
 - Fresh insights into the frequency, functions, distribution of this stylistic device, plus its circular and chain formations
 - New data, tools, and apps for further exploration (everything is open source)
 - Reusability potential
@@ -344,21 +341,8 @@ The longest *VA chain* in the NYT corpus: [interactive app](https://vossanto.wel
 
 - A fully automated end-to-end detection pipeline
 - A Google [BERT](https://github.com/google-research/bert)-based model
-- Fine-tuning: an additional layer classifying whether a sentence contains a Vossian antonomasia (0 or 1)
-- Adaption to other languages via transfer learning
-
---
-
-### Dissemination Strategies
-
-<br />
-
-- So far, eight peer-reviewed papers plus conference posters
-- [Project website](https://vossanto.weltliteratur.net/)
-- Code and data on GitHub and Figshare
-- [Blog posts](https://weltliteratur.net/)
-- Multiple [threads](https://twitter.com/umblaetterer/status/1097865223564869635) on social media
-- Third-party bots ([Vossantian Times](https://mastodon.social/@vossantos))
+- Fine-tuning: an additional layer classifying whether a sentence contains Vossian antonomasia (0 or 1)
+- Adaptation to other languages via transfer learning
 
 --
 
