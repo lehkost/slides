@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Flüsse mit Ufern (Antrittsvorlesung 21. Januar 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+<!-- .slide: data-background-color="lightblue" -->
+
+![caption](images/fluesse_mit_ufern_poster.png)<!-- .element height="620px;" -->
+
+--
+
+## Flüsse mit Ufern
+### Literaturgeschichten und digitale Infrastruktur
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="100px";"; -->
+
+[Prof. Dr. Frank Fischer](https://lehkost.github.io/)<!-- .element: style="font-size:0.85em;" -->
+
+(Freie Universität Berlin)<!-- .element: style="font-size:0.8em;" -->
+
+<br /><br />Diese Präsentation: <br />**[lehkost.github.io/slides/2025-01-21-antritt/index.html](https://lehkost.github.io/slides/2025-01-21-antritt/index.html)**
+<!-- .element: style="font-size:0.5em;" -->
+
+<br /><br />[Antrittsvorlesung](https://www.geisteswissenschaften.fu-berlin.de/we02/institut/news/2025_01_21-Antrittsvorlesung-Fischer.html) &nbsp;·&nbsp; Freie Universität Berlin (Rostlaube, Hörsaal 2) &nbsp;·&nbsp; 21. Januar 2025, 18:00 c.t.
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+»die Quellen sollen sprudeln«
+
+<br />
+
+(Frieda Paris: **[Nachwasser.](https://www.voland-quist.de/werke/nachwasser/)** Berlin, Dresden: Voland &amp; Quist 2024, S. 7.)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+»Literaturwissenschaft ist in der Praxis immer noch eine Disziplin, in der die Forschungsarbeit im Wesentlichen von Einzelpersonen vollzogen wird. Anders als in den Natur- und Sozialwissenschaften sind Projekte, in denen größere Gruppen mit einem gemeinsamen Erkenntnisziel forschen, in unserem Fach unüblich.«
+<!-- .element: style="text-align:left;" -->
+
+<br />
+
+Moritz Baßler/Rainer Karczewski: Computergestützte Literaturwissenschaft als Kulturwissenschaft. Eine Wunschliste. [Datiert auf den 11.02.2009.] In: Jahrbuch für Computerphilologie 9 (2007). Paderborn: mentis 2009.
+<!-- .element: style="font-size:0.65em;" -->
+
+(Vielen Dank an Bernhard Oberreither für den Hinweis.)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Literaturgeschichte? Infrastruktur? Digital?](#/1)
+2. [DraCor](#/2)
+3. [Dekanonisierung dank Metadaten](#/3)
+4. [Ausblick](#/4)
+
+---
+
+## 1. Literaturgeschichte? Infrastruktur? Digital?
+
+--
+
+![Flaischlen's Flowchart](images/flaischlen-litteratur-tafel-small.jpg)<!-- .element height="560x;" -->
+
+Cäsar Flaischlen: Graphische Litteratur-Tafel. Die Deutsche Litteratur und der <br />Einfluß fremder Litteraturen auf ihren Verlauf. (58 × 86,5 cm.) Stuttgart: Göschen 1890.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+![Flaischlen's Flowchart](images/graphische_litteratur-tafel_1740-1850.png)<!-- .element height="560x;" -->
+
+Cäsar Flaischlen: Graphische Litteratur-Tafel [etc.]. Ausschnitt 1740–1850.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Aus Flaischlens »Erklärende[r] Einleitung«:
+
+<br />
+
+»Daß manches Datum und manche Linie, namentlich in Bezug auf die Intensität eines fremden Einflusses, zu bestreiten ist und bestritten werden wird, darf ich offen einräumen. Auch gegen die Fassung des Ganzen in Konzeption und Ausführung ließe sich allerlei einwenden, wie z. B. daß […] die Breite des Hauptstroms **keine mathematisch berechnete** [ist], und manches andre. Kritische Bemerkungen werden bei eventueller Neuauflage sorgfältigste Berücksichtigung erfahren, um eine möglichste Vervollkommnung anzustreben, […].«
+<!-- .element: style="text-align:left;" -->
+
+--
+
+### Infrastruktur findet statt …
+
+<br />
+
+… »›unterhalb der Arbeitsebene‹, d.&nbsp;h. ohne dass genau spezifiziert würde, wie die Arbeit zu tun ist oder wie Informationen zu verarbeiten sind«.
+
+Paul N. Edwards et al.: *[Understanding Infrastructure: Dynamics, Tensions, and Design](http://hdl.handle.net/2027.42/49353)* (Workshop Report, 2007)
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+»Definieren könnte man Infrastruktur als all das Stabile, das nötig ist, um Fließendes zu ermöglichen.«
+
+Dirk van Laak, [Deutschlandfunk Nova, Hörsaal, 19.10.2019](https://www.deutschlandfunknova.de/beitrag/infrastruktur-die-lebensader-unserer-gesellschaft), ähnlich formuliert in: ders.: Alles im Fluss. Die Lebensadern unserer Gesellschaft – Geschichte und Zukunft der Infrastruktur. Frankfurt am Main: S. Fischer 2018.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### ›Infrastruktur‹ im Google Ngram Viewer
+
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=Infrastruktur&year_start=1800&year_end=2008&corpus=20&smoothing=1&direct_url=t1%3B%2CInfrastruktur%3B%2Cc0" width=900 height=500 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
+
+--
+
+#### Eine geisteswissenschaftliche Infrastruktur:
+
+![Eine random Bibliothek](images/historischer-bibliothekssaal.jpg)<!-- .element width="740px;" -->
+
+Oberlausitzische Bibliothek der Wissenschaften in Görlitz (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Historischer_Bibliothekssaal.JPG)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Antwort der Redaktion einer literatur&shy;wissenschaftlichen Zeitschrift (2021)
+
+<br />
+
+»Auch die Tabelle müssten wir Sie bitten herauszunehmen, da in <br />[der Zeitschrift] leider keine Abbildungen abgedruckt werden.«
+
+--
+
+![Scooby-Doo reveal meme](images/antrittsvorlesung_meme.jpg)<!-- .element width="350px;" -->
+
+--
+
+### Digitale Dramenanalyse
+
+<br />
+
+&#62; 40 Jahre alt
+
+--
+
+### Hartmut Ilsemann (1984/1995) <small>(1/2)</small>
+
+![ilsemann-computerized-1995-snippet](images/ilsemann-computerized-1995-snippet.png)
+
+In: Literary and Linguistic Computing. Vol. 10 (1995), Nr. 1, S. 11–21. ([doi:10.1093/llc/10.1.11](https://doi.org/10.1093/llc/10.1.11))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Hartmut Ilsemann (1984/1995) <small>(2/2)</small>
+
+- Bezug auf:
+  - Étienne Souriau (»Les deux cent mille situations dramatiques«, 1950)
+  - Wilhelm Fucks (»Nach allen Regeln der Kunst«, 1968)
+  - Solomon Marcus (»Poetica matematică«, 1970)
+  - Manfred Pfister
+
+<!-- .element: style="font-size:0.6em;" -->
+
+![ilsemann-computerized-1995-table-6](images/ilsemann-computerized-1995-table-6.png)<!-- .element width="370px;" -->
+
+»There is no need to lay emphasis on the fact that *once a large data background has been created* all sorts of linguistic and literary research are possible.« (S. 13)
+
+--
+
+### Distant-Reading Showcase (2016)
+
+Wie entwickeln sich die Figurenkonstellationen im deutschen Drama?
+
+![465 Dramennetzwerke auf einen Blick](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Detail
+
+![Poster-Detail](images/poster-detail-1.jpg)<!-- .element width="600px;" -->
+
+Zoom auf Goethes Stück »Götz von Berlichingen« (1773).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Digitale Dramenforschung *at scale*?
+
+<br />
+
+- multilinguale Dramenkorpora
+- Standardformat der Text Encoding Initiative (TEI)
+- Hosting (Code, Daten, Website)
+- Schnittstelle (API) im Sinne des ›programmable web‹ (Aaron Swartz)
+- Tools
+- Normdaten und Linked Open Data
+- FAIR-Prinzipien (findable, accessible, interoperable, reusable)
+- Trainingsmaterial (Open Educational Resources)
+- Community?
+
+---
+
+## 2. DraCor
+
+--
+
+### DraCor
+
+![DraCor-Frontpage am 18.01.2025](images/dracor_frontpage_2025-01-18.png)<!-- .element width="960px;" -->
+
+Das *Drama Corpora*-Portal (https://dracor.org/), entwickelt seit 2017, <br />hostet mittlerweile 27 Korpora in 21 Sprachen.
+<!-- .element: style="font-size:0.65em;" -->
+
+Hrsg. von Frank Fischer, Peer Trilcke, Julia Jennifer Beine, Daniil Skorinkin. Technische Leitung: <br />Carsten Milling, Ingo Börner. Art director: Mark Schwindt. Full Credits: [&#62; 50 Personen](https://dracor.org/doc/credits).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Liste aktiv betreuter DraCor-Korpora
+
+<br />
+
+<div id="left">
+
+- FreDraCor
+- GerDraCor
+- EngDraCor
+- RusDraCor
+- CalDraCor
+- DutchDraCor
+- ItaDraCor
+- HunDraCor
+- SweDraCor
+- UDraCor
+- GreekDraCor
+- AmDraCor
+
+</div>
+
+<div id="right">
+
+- GerShDraCor
+- ShakeDraCor
+- RomDraCor
+- PolDraCor
+- AlsDraCor
+- SpanDraCor
+- YiDraCor
+- TatDraCor
+- BashDraCor
+- im Entstehen: CzeDraCor, HeDraCor, GeorgDraCor, NeoLatDraCor, JesDraCor, ArDraCor
+
+</div>
+
+--
+
+### GerDraCor
+
+<br />
+
+- mittlerweile 715 Dramen von 1500 bis 1950 (wird systematisch ergänzt)
+- 15.628 Figuren (M: 11.037, F: 3.257)
+- ca. 11,4 Mio. Tokens
+- Community-Projekt:
+  - Trainingsmaterialien und Anwendungsbeispiele [bei forTEXT](https://fortext.net/ressourcen/textsammlungen/dracor-drama-corpora-project) (Hamburg/Darmstadt)
+  - [Nathalie Wiedmer et al.](https://quadrama.github.io/publications/Wiedmer2020aa): Annotation von Beziehungen der Figuren untereinander (Familien- und Liebesverhältnisse, dienstliche Abhängigkeiten)
+
+--
+
+#### GerDraCor: Übersicht
+
+![GerDraCor overview)](images/dracor-gerdracor-overview.png)
+
+https://dracor.org/ger
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Luise Gottsched: »Das Testament« (1745) · Kookkurrenz-Netzwerk
+
+![GerDraCor: Das Testament](images/dracor-luise-gottsched-testament-network.png)
+
+https://dracor.org/id/ger000220#network
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Luise Gottsched: »Das Testament« (1745) · Figurenrelationen
+
+![GerDraCor: Das Testament](images/dracor-luise-gottsched-testament-relations.png)
+
+https://dracor.org/id/ger000220#relations
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Luise Gottsched: »Das Testament« (1745) · Speech Distribution
+
+![GerDraCor: Das Testament](images/dracor-luise-gottsched-testament-speech-distribution.png)
+
+https://dracor.org/id/ger000220#speech
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Luise Gottsched: »Das Testament« (1745) · Download-Tab
+
+![DraCor-Download-Tab](images/dracor-luise-gottsched-testament-download-tab.png)
+
+https://dracor.org/id/ger000220#downloads
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+Die **DraCor-API**, Kernstück des DraCor-Ökosystems, <br />bietet noch mehr Interaktionsmöglichkeiten.
+
+--
+
+### Qu’est-ce qu’une API ?
+
+(Application Programming Interface, dt. Schnittstelle)
+<!-- .element: style="font-size:0.55em;" -->
+
+<br />
+
+- ermöglicht den standardisierten Austausch von Informationen
+- strukturierter Datenbezug nach einer definierten Syntax
+
+--
+
+### DraCor-API: Beispielanfragen
+
+https://dracor.org/api/v1/corpora/ita/plays/goldoni-il-servitore-di-due-padroni/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+**Sprechtext aller weiblicher Figuren in Goldonis »Il servitore di due padroni« (cioè Clarice, Smeraldina e Beatrice).**
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+**Sprechtext aller Sohn-Figuren in Schillers »Räubern«.**
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/shake/plays/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
+
+**Netzwerkdaten zu Shakespeares »Hamlet« (im JSON-Format).**
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/ger/plays/gottschedin-die-pietisterey-im-fischbein-rocke/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+**Alle Regieanweisungen aus »Die Pietisterey im Fischbein-Rocke« von Luise Gottsched.**
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/ita/metadata<!-- .element: style="font-size:0.7em;" -->
+
+**Metadaten zu allen Stücken des italienischen Korpus (als JSON oder CSV).**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Requisiten in Prosa- und Versdramen
+
+<br />
+
+| **Requisit bzw. Typ von Requisit** | **Prosadrama (N = 378)**     | **Versdrama (N = 231)**     |
+| ---------------------------------- | ---------------------------- | --------------------------- |
+| Waffen                             | 60,1 %                       | 75,3 %                      |
+| Feuerwaffen                        | 18,8 %                       | 7,8 %                       |
+| Dolch                              | 10,6 %                       | **26,0 %**                  |
+| Kaffee                             | **13,8 %**                   | 1,3 %                       |
+
+<br />
+
+- Prozentzahlen: in wie vielen Prosa- und Versdramen kommt ein bestimmtes Requisit bzw. ein bestimmter Typ von Requisit *mindestens einmal* vor.
+
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />Quelle: Jonah Lubin, Anke Detken, Frank Fischer: Das »ureigenste theatralische Element« – Automatische Extraktion von Requisiten aus deutschsprachigen Dramentexten. In: DHd2024: »DH Quo Vadis«. 26. Februar–1. März 2024. Book of Abstracts. Universität Passau. ([doi:10.5281/zenodo.10698448](https://doi.org/10.5281/zenodo.10698448))
+<!-- .element: style="font-size:0.7em; text-align:left;" -->
+
+--
+
+### DraCor-API-Bibliotheken
+
+<br />
+
+= einfache, flexiblere Nutzbarkeit <br />aus Programmiersprachen heraus
+
+<br />
+
+- für R: rdracor ([CRAN](https://cran.r-project.org/web/packages/rdracor/index.html))
+- für Python: pydracor ([PyPI](https://pypi.org/project/pydracor/))
+
+<br /><br />⚠️ Zu R und Python gibt es in jedem Semester Einführungskurse von Lisa Poggel, <br />die auf Studierende des Fachbereichs PhilGeist zugeschnitten sind.
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+#### Beispiel (mit rdracor):
+
+```R
+library(rdracor)
+hermann <- get_net_cooccur_igraph(corpus="ger", play="kleist-die-hermannsschlacht")
+plot(hermann)
+```
+
+#### Ergebnis:
+
+![Hermannsschlacht, Netzwerkgraph mit rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element height="440px;" -->
+
+--
+
+### Lessings »Emilia Galotti«
+
+![Emilia Galotti (dynamischer Graph)](images/lessing-emilia-galotti.gif)
+
+**Dynamischer Graph**, als Animated GIF generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script: Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Gamification-Ansatz: »Battle of the Plays« (2024)
+
+![Battle of the Plays, card](images/battle-of-the-plays_sophocles-antigone.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_back.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_mitford-rienzi.jpg)
+
+Frank Fischer, Mark Schwindt: **[Battle of the Plays. A Gamification Approach to Literary Network Analysis.](https://sukultur.de/produkt/battle-of-the-plays-a-gamification-approach-to-literary-network-analysis/)** Berlin: **SUKULTUR** 2024. – 32+1 cards including case, color print. ISBN: 978-3-95566-182-3. €15,00. – Spielregeln: https://battle-of-the-plays.github.io/
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+#### Uraufführungsorte deutschsprachiger Stücke
+
+![Uraufführungen insgesamt](images/first-performances-overall.png)<!-- .element height="450px;" -->
+
+Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Urauführungsort deutschsprachiger Stücke in Berlin
+
+![Uraufführungen Berlin](images/first-performances-berlin.png)<!-- .element height="450px;" -->
+
+Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) (»location of first performance«).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Ermittlung der Forschungsintensität
+
+Anzahl wissenschaftlicher Artikel zu den Werken im German Drama Corpus (Top-20),<br />via [**BDSL** – Bibliographie der deutschen Sprach- und Literaturwissenschaft](https://www.bdsl-online.de/):
+<!-- .element: style="font-size:0.6em;" -->
+
+1. Goethe: Faust (2032)
+2. Kleist: Penthesilea (303)
+3. Lessing: Nathan der Weise (303)
+4. Goethe: Iphigenie auf Tauris (242)
+5. Lessing: Emilia Galotti (191)
+6. Kleist: Prinz Friedrich von Homburg (172)
+7. Schiller: Wilhelm Tell (145)
+8. Schiller: Maria Stuart (123)
+9. Schiller: Die Jungfrau von Orleans (115)
+10. Kleist: Die Hermannsschlacht (114)
+11. Hofmannsthal: Elektra (109)
+12. Goethe: Torquato Tasso (108)
+13. Schiller: Kabale und Liebe (101)
+14. Kraus: Die letzten Tage der Menschheit (100)
+15. Kleist: Amphitryon (97)
+16. Schnitzler: Reigen (85)
+17. Hofmannsthal: Der Schwierige (76)
+18. Goethe: Egmont (65)
+19. Kleist: Die Familie Schroffenstein (57)
+20. Lenz: Die Soldaten (48)
+
+<!-- .element: style="font-size:0.6em;" -->
+
+Vgl. Jäschke/Fischer: [Quantification of Scholarly Articles on German Drama](https://weltliteratur.net/scholarly-articles-on-german-drama/). In: weltliteratur.net, 12. Oktober 2021.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### KPI
+
+<br />
+
+- seit Januar 2024 sind 39 Bücher bzw. Artikel erschienen, die mit DraCor-Daten arbeiten
+- [https://dracor.org/doc/research](https://staging.dracor.org/doc/research)
+
+--
+
+#### Beispielhafte DraCor-Forschungsarbeiten seit 2024
+
+- Linguistische Untersuchungen
+  - Wissensdistribution im deutschen Drama
+  - Wiederholung und Innovation in dramatischen Texten
+  - Analyse semantischer und struktureller Ähnlichkeiten in Dramentexten
+  - stilistische Variation in Figurenrede
+  - handlungstreibende Muster in Günderrodes Dramen
+  - automatische Klassifizierung von Regieanweisungen in französischen Dramen mit Hilfe großer Sprachmodelle
+  - Possessivpronomen und Reparatursequenzen in historischen Dramen
+  - Charaktertypologie der römischen Komödie
+- Gender
+  - Geschlechterdarstellungen in den Komödien von Calderón de la Barca und im Drama des spanischen Edad de Plata
+- Korpusarbeit
+  - Analyse des frühneuzeitlichen niederländischen Dramas
+  - Aufbau und Analyse des elsässischen Dramenkorpus
+  - komputationelle Ansätze zur Analyse von Opernlibretti
+- Netzwerkanalyse
+  - Machiavellis Dramen aus der Perspektive der digitalen Netzwerkanalyse
+  - Small World-Phänomen beobachtet in 3.000 Theaterstücken
+
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+DraCor gehört zum Stabilen, das nötig ist, um Fließendes zu ermöglichen.
+
+---
+
+## 3. Dekanonisierung dank Metadaten
+
+--
+
+### Metadata Turn in der Literaturwissenschaft?
+
+<br />
+
+- die Semantik literarischer Werke erschließt sich nicht nur aus deren Volltexten
+- oft Katalogdaten (Nationalbibliotheken), erfasst nach dem IFLA Library Reference Model (LRM), inkl. inkorporiertem WEMI-Modell: work, expression, manifestation, item
+- Bsp.: https://d-nb.info/gnd/4421303-7 (das *Werk* »Die Wupper« von Else Lasker-Schüler)
+- im GND Explorer: https://explore.gnd.network/gnd/4421303-7/relations
+- andere Projekte, die Metadaten über Werk-IDs zugänglich machen: Wikidata, GoodReads, Perlentaucher, …
+
+--
+
+### Projekt [›Werktitel als Wissensraum‹](https://www.klassik-stiftung.de/herzogin-anna-amalia-bibliothek/werktitel-als-wissensraum/) <br />(HAAB Weimar, DLA Marbach)
+
+<br />
+
+- Erfassung aller erwähnten Werke aus acht führenden Literaturlexika als Normdaten (u. a. Kindlers Literatur Lexikon, Metzler Literatur Chronik, Wilperts
+Deutsches Dichterlexikon)
+- Masterarbeit von Jonas Rohe über diesen Metakanon
+- Abgleich dieser Titelliste mit knapp 5.000 Werken mit anderen Listen möglich (etwa Epochen, Genres), um daraus die jeweils kanonischsten Werke zu destillieren
+- dadurch wird als Negativbild das sichtbar, was bisher nicht kanonisch ist
+
+--
+
+### Beispiel 1: Bürgerliches Trauerspiel
+
+<br />
+
+- Cornelia Mönch: Abschrecken oder Mitleiden. Das deutsche bürgerliche Trauerspiel im 18. Jahrhundert: Versuch einer Typologie. Berlin, New York: Niemeyer 1993. ([doi:10.1515/9783110910612](https://doi.org/10.1515/9783110910612))
+- darin eine historisch beglaubigte Korpusliste mit 257 Stücken dieses Genres, die wir [als Normdaten erfasst haben](https://github.com/lehkost/bgltr)
+- davon bleiben 16 übrig – aber wir haben damit auch 241 Stücke, die auf einmal sichtbar sind und erschlossen werden können
+
+--
+
+### Beispiel 2: Einakter-Datenbank
+
+(https://einakter.dracor.org/)
+<!-- .element: style="font-size:0.65em;" -->
+
+![Einakter-DB](images/einakter-datenbank_2025-01-18.png)<!-- .element width="440px;" -->
+
+Vgl. Dîlan Canan Çakir, Frank Fischer: **Dramatische Metadaten. Die Datenbank deutschsprachiger Einakter 1740–1850.** <br />In: DHd2022: »Kulturen des digitalen Gedächtnisses«. 7.–11. März 2022. <br />Book of Abstracts. Universität Potsdam. ([doi:10.5281/zenodo.6327977](https://doi.org/10.5281/zenodo.6327977))
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+### Kanonische Einakter 1740–1850
+
+- von 2.602 Einaktern in der Datenbank finden 11 in den Literaturgeschichten Erwähnung, der Rest ist dank der Datenbank aber nun auch [klar sichtbar](https://einakter.dracor.org/)
+
+![Einakter-DB](images/metakanon-einakter.png)<!-- .element width="400px;" -->
+
+Quelle: Jonas Rohe: Digitaler Meta-Kanon? Die Ergebnisse des Projekts »Werktitel als Wissensraum« <br />in praktischer Anwendung. (Unveröff. Masterarbeit.) Freie Universität Berlin 2024, S. 71.
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+### À propos Einakter-Datenbank
+
+- Modellierung inspiriert von Reinhart Meyers »Bibliographia Dramatica et Dramaticorum«, die in 34 Bänden alle im 18. Jahrhundert im deutschen Sprachraum gedruckten und aufgeführten Theaterstücke verzeichnet
+<!-- .element: style="font-size:0.55em;" -->
+
+![Einakter-DB](images/einakter-kotzebue.png)<!-- .element width="600px;" -->
+
+- keine Volltexte, aber Titel, Untertitel, Vorlagen (bei Übersetzungen), Publikationsdaten, Anzahl Szenen, Liste der Figuren u. a. m.
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+### Einakter-Übersetzungen
+
+![Einakter-DB](images/einakter-translations-overview.png)<!-- .element width="720px;" -->
+
+- 502 der Einakter sind Übersetzungen, meist aus dem Französischen, auch das haben wir über Normdaten modelliert
+- Ergebnis ist ein bipartiter Graph, bei dem die Namen der Übersetzer\*innen auf die der Originalautor\*innen zeigen; je dicker die Kante, desto höher die Anzahl der Übersetzungen zwischen einem Paar
+
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+#### Einakter-Übersetzungsnetzwerk
+
+![Einakter-DB](images/einakter-translators-scribe-excerpt.png)
+
+Visualisierung mit Gephi (Ausschnitt). Layout: Yifan Hu. Label-Größe ≙ In-Degree. <br />Label-/Knotenfarbe schwarz: Originalautor\*innen, grau: Übersetzer\*innen. <br />Großer Dank an Carsten Milling für die Implementierung in letzter Sekunde. 🙏
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+![Flaischlen's Flowchart](images/graphische_litteratur-tafel_1740-1850-red-circle.png)<!-- .element height="560x;" -->
+
+Cäsar Flaischlen: Graphische Litteratur-Tafel [etc.]. Ausschnitt 1740–1850.
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+## 4. Ausblick
+
+--
+
+viel Ufer, immer mehr Fluss
+
+--
+
+»the literary subject itself [has to] take center stage«
+
+<br />
+
+Ted Underwood: Distant Horizons. Digital Evidence and Literary Change. Chicago, London: <br />University of Chicago Press 2019, S. 149. ([doi:10.7208/chicago/9780226612973.001.0001](https://doi.org/10.7208/chicago/9780226612973.001.0001))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+»Doing (Computational) Literary Studies«
+
+<br />
+
+Katherine Bode: Doing (Computational) Literary Studies. In: New Literary History. <br />Vol. 53, no. 4 (Herbst 2022) / Vol. 54, no. 1 (Winter 2023), S. 531–558. <br />([https://doi.org/10.1353/nlh.2022.a898320](https://doi.org/10.1353/nlh.2022.a898320))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+Vielen Dank.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="100px";"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor #ProgrammableCorpora
+
+<br />
+
+Dank an: Sofia Orfanidou, Dîlan Canan Çakir, Roya Zendebudie, Lilly Welz, Stephan Schwarz, Leonid Nezhinskiy, Mark Schwindt, Carsten Milling.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
