@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Eins@FU-Ringvorlesung Geist & Kultur: Digital Humanities (FU Berlin, 12. Februar 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### **Digital Humanities**
+
+![DH-Symbolbild](images/digital-humanities-symbolbild-dall-e-2.jpg)<!-- .element width="300px;" -->
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.85em;" -->
+
+(Freie Universität Berlin)
+<!-- .element: style="font-size:0.75em;" -->
+
+Web: [lehkost.github.io](https://lehkost.github.io/) <br/>E-Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+<br />[Eins@FU-Ringvorlesung Geist & Kultur (Wintersemester 2024/2025)](https://dh-teaching.github.io/courses/wise_2024-2025_eins-at-fu) &nbsp;·&nbsp; FU Berlin &nbsp;·&nbsp; 12. Februar 2025
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Ablauf
+
+<br />
+
+1. [Was sind die Digital Humanities?](#/1)
+2. [DH in der Praxis: Distant Reading](#/2)
+3. [›Wahrheit‹ in den Digital Humanities](#/3)
+4. [Digital Humanities @ FU Berlin](#/4)
+5. [Berufsperspektiven](#/5)
+
+--
+
+### Umfrage
+
+<br />
+
+Wer von Ihnen hat vor dieser Veranstaltung schon <br />mal von **Digital Humanities** gehört?
+
+---
+
+### Digital Humanities laut Wikipedia
+
+<br />
+»Digital humanities (DH) is an area of scholarly activity at the intersection of computing or information technologies and the disciplines of the humanities.«
+
+Quelle: https://en.wikipedia.org/wiki/Digital_humanities
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+»Das interdisziplinär ausgerichtete Fach Digital Humanities (›digitale Geisteswissenschaften‹) umfasst die systematische Nutzung computergestützter Verfahren und digitaler Ressourcen in den Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung.«
+
+Quelle: https://de.wikipedia.org/wiki/Digital_Humanities
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### »What Is Digital Humanities?«
+
+<br />
+
+Die Website …
+
+http://whatisdigitalhumanities.com/
+
+… präsentiert <u>817 Definitionen</u> des Begriffs ›Digital Humanities‹ <br />(die zugrunde liegenden Daten sind herunterladbar).
+
+--
+
+### Digital Humanities, oder …
+
+<small>(kleine Auswahl, alfabetisch nach langcode)</small>
+
+- <small>{ar}</small> [إنسانيات رقمية](https://medium.com/@RedHD/3ehd-digital-humanities-in-the-arab-world-in-2016-f74b238ccbeb)
+- <small>{de1}</small> <font color="blue">Kulturinformatik</font>
+- <small>{de2}</small> Digitale Geistes- und Sozialwissenschaften
+- <small>{en}</small> <font color="blue">Humanities Computing</font>
+- <small>{es}</small> Humanidades digitales
+- <small>{fr}</small> Humanités numériques
+- <small>{he}</small> מדעי הרוח הדיגיטליים
+- <small>{it}</small> <font color="blue">Informatica umanistica</font>
+- <small>{tr}</small> Dijital beşeri bilimler
+- <small>{uk}</small> Цифрова гуманітаристика <small>(›Cyfrova humanitarystyka‹)</small>
+
+--
+
+### Digital, digitized, and computational humanities
+
+<br />
+
+- Digital Humanities als polysemer Begriff
+- **digitized**: Aufbau, Verwaltung und Verarbeitung digitalisierter Archive
+- **numerical**/**computational**: mathematische Abstraktion geisteswissenschaft&shy;licher Inhalte und Entwicklung numerischer und formaler Modelle
+- **humanities of the digital**: Untersuchung computervermittelter Interaktionen und Online-Communitys
+- unterschiedliche erkenntnistheoretische Bestrebungen sich nicht unbedingt überlappender wissenschaftlicher Communitys (bei oft fließenden Übergängen)
+
+<br />
+
+Vgl. Camille Roth: Digital, digitized, and numerical humanities. <br />In: Digital Scholarship in the Humanities 34.3 (2019), S. 616–632. ([doi:10.1093/llc/fqy057](https://doi.org/10.1093/llc/fqy057))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Drei-Sphären-Modell
+
+![Mapping DH (Patrick Sahle)](images/Patrick_Sahle_-_Mapping_DH_de.png)<!-- .element width="500px;" -->
+
+Modell (zuerst veröffentlicht 2013, Stand 2021) von Patrick Sahle, Bergische Universität Wuppertal. – <br />DH sind »radically interdisciplinary« (Stephen Ramsay: *Reading Machines*, University of Illinois Press 2011, S. 83).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Worüber und wie forschen die Digital Humanities?
+
+<br />
+
+- Blicke in die aktuellen Ausgaben der führenden DH-Journale
+  - [Digital Scholarship in the Humanities](https://academic.oup.com/dsh) (= Journal der European Association for Digital Humanities)
+  - [Digital Humanities Quarterly](https://digitalhumanities.org/dhq/)
+  - [Zeitschrift für digitale Geisteswissenschaften (ZfdG)](https://zfdg.de/)
+  - [Journal of Cultural Analytics](https://culturalanalytics.org/issues)
+
+--
+
+### Die DH-Community
+
+<br />
+
+- Arbeit im Team statt einzeln
+- building/crafting
+- Arbeit mit (digitalen) Tools und Programmiersprachen
+- alternative Lehrformate:
+  - Hackathons, Workshops, Summer/Winter/Spring Schools
+
+---
+
+### Distant Reading (»Fernlesen«)
+
+![Wordle example](images/wordle_don_quijote.jpg)<!-- .element width="600px;" -->
+
+Beispiel: Word Cloud zum ersten Kapitel von »Don Quijote« (Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Nube_de_etiquetas_-_Don_Quijote_de_la_Mancha.png))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Distanz als Bedingung für Erkenntnis
+
+<br />
+
+»[…] if you want to look beyond the canon […], close reading will not do it. It’s not designed to do it, it’s designed to do the opposite. […] we know how to read texts, now let’s learn how *not* to read them. Distant reading: where distance […] *is a condition of knowledge* […].«
+
+<br />
+
+Franco Moretti: *Conjectures on World Literature*. In: *New Left Review* 1 (2000).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### »Anecdotal Evidence«
+
+<br />
+
+»The literary scholar of the twenty-first century can no longer be content with <u>anecdotal evidence</u>, with random ›things‹ gathered from a few, even ›representative‹, texts. We must strive to understand these things we find interesting in the <u>context</u> of everything else, including a mass of possibly ›uninteresting‹ texts.«
+
+<br />
+
+Matthew L. Jockers: Macroanalysis. Digital Methods &amp; Literary History.<br />University of Illinois Press, 2013, S. 8. ([Google Books](https://books.google.com/books?id=mPOdxQgpOSUC&pg=PA8))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Arno Schmidt über die Grenzen des Lesens
+
+<br />
+
+»Das Leben ist so kurz ! Selbst wenn Sie ein Bücherfresser sind, und nur fünf Tage brauchen, um ein Buch zweimal zu lesen, schaffen Sie im Jahr nur 70. Und für die fünfundvierzig Jahre, von Fünfzehn bis Sechzig, die man aufnahmefähig ist, ergibt das 3.150 Bände : die wollen sorgfältigst ausgewählt sein !«<!-- .element: style="font-size:1.2em;" -->
+
+<br />
+
+Arno Schmidt: *Ich bin erst sechzig* (1955). In: Bargfelder Ausgabe, Werkgruppe I, Vol. 4.<br />Zürich: Haffmans 1987, S. 30.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Beispiel: »Between the Words«
+
+![Between the Words](images/alice-punctuation.jpg)
+
+Nicholas Rougeux: [Between the Words. Exploring the punctuation in literary classics](https://www.c82.net/work/?id=347) (Januar 2016).
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+#### ›Wahrheit‹ in den Digital Humanities
+
+<br />
+
+### Wann findet die deutsche Literatur statt?
+
+--
+
+!["Järven lounaispää kesällä 1974" (Wikimedia Commons)](images/finland-summer-1974.jpg)<!-- .element height="300px" -->
+
+„Die meisten finnischen Romane <br />spielen im Sommer.“
+
+(Stefan Moster, *Im Gespräch*, <br />Deutschlandradio Kultur, 8. 10. 2014)
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+(Bild: Sommer 1974 in Westfinnland. Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kalajaisj%C3%A4rvi,_Ilmajoki,_Finland,_summer_1974.jpg). CC BY-SA 4.0.)
+<!-- .element: style="font-size:0.5em;" -->
+
+--
+
+### Fünf Beispieltage der <br />deutschsprachigen Literatur
+
+<br />
+
+* Georg Büchner: *Lenz* (20. Jänner)
+* Arthur Schnitzler: *Leutnant Gustl* (4. April)
+* Stefan Zweig: *Schachnovelle* (27. Juli)
+* Theodor Fontane: *Effi Briest* (3. Oktober)
+* J. W. Goethe: *Die Leiden des jungen Werthers* (21.&nbsp;Dezember)
+
+--
+
+### Korpus: Projekt Gutenberg-DE
+
+![Logo von Gutenberg-DE](images/gutenberg-de-logo.jpg)
+
+https://www.projekt-gutenberg.org/
+
+--
+
+### Arbeitskorpus
+
+<br />
+
+* abgezweigt von der Gutenberg-DE Edition 13 DVD-ROM (2013)
+* 549 Autor*innen und 2735 Werke vom 16.–20. Jahrhundert <br />(Schwerpunkt zwischen 1840–1930)
+* 891 MB reiner Text
+* Download: Corpus of German-Language Fiction (txt) ([doi:10.6084/m9.figshare.4524680](https://doi.org/10.6084/m9.figshare.4524680))
+
+--
+
+## Workflow
+
+![UIMA-Pipeline](images/uima-pipeline.png)
+
+Hauptwerkzeug zur Extraktion temporaler Angaben: [HeidelTime](https://dbs.ifi.uni-heidelberg.de/research/heideltime/).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Ergebnisse fürs Gesamtkorpus
+
+![Ergebnisse für Gesamtkorpus](images/gesamtkorpus-dt.png)<!-- .element width="800px;" -->
+
+Datums- (rot) &amp; Monatsnennungen (grau).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Tage wie dieser
+
+![Heatmap](images/heatmap-all-days.png)
+
+In grün: Tage, die 50+ Mal im Korpus erwähnt werden.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+![gesamtkorpus-dt-crop](images/per-genre.png)
+
+Anzahl an Datumsnennungen pro Werk.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Zweitverwertung der Ergebnisse
+
+Apps [für iOS](https://apps.apple.com/de/app/tiwoli/id1162600098) und Android
+
+![TIWOLI-App auf Android](images/tiwoli-de-01-20-buechner-lenz.png)<!-- .element height="330px" -->
+![TIWOLI-App auf Android](images/tiwoli-de-04-04-schnitzler-gustl.png)<!-- .element height="330px" -->
+![TIWOLI-App auf Android](images/tiwoli-de-07-27-zweig-schachnovelle.png)<!-- .element height="330px" -->
+![TIWOLI-App auf Android](images/tiwoli-de-10-03-fontane-effi.png)<!-- .element height="330px" -->
+
+--
+
+### Zweitverwertung der Ergebnisse
+
+Apps [für iOS](https://apps.apple.com/de/app/tiwoli/id1162600098) und Android
+
+![TIWOLI-App auf Android](images/tiwoli-de-12-21-goethe-werther.png)<!-- .element height="330px" -->
+![TIWOLI-App auf Android](images/tiwoli-de-12-23-berend-babette.png)<!-- .element height="330px" -->
+![TIWOLI-App auf Android](images/tiwoli-de-12-24-droste-huelshoff-judenbuche.png)<!-- .element height="330px" -->
+
+--
+
+## Tiwoli-Web-App
+
+![Tiwoli-Web-App](images/lasswitz-12-april.png)<!-- .element height="400px" -->
+
+https://tiwoli.spinfo.uni-koeln.de/view?id=243&lang=de
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## TiwoliChirp
+
+![Tiwoli-Web-App](images/lasswitz-12-april-twitter.png)<!-- .element height="450px" -->
+
+<s>https://twitter.com/TiwoliChirp</s>
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+### Digital Humanities @ FU Berlin
+
+<br />
+
+- [Ada Lovelace Center for Digital Humanities](https://www.ada.fu-berlin.de/) (ADA)
+  - benannt nach [Ada Lovelace](https://de.wikipedia.org/wiki/Ada_Lovelace) (1815–1852)
+  - eingeweiht am 3. Juni 2022
+  - »Das ADA bündelt, vernetzt und befördert die Aktivitäten der digitalen Geisteswissenschaften und wird getragen von den Fachbereichen GeschKult, PhilGeist, MI sowie der UB.«
+  - »Das ADA dient als Kompetenzzentrum für alle Forschungsaktivitäten auf dem Gebiet IT-gestützter Verfahren, Methoden und Werkzeuge und hat darüber hinaus das langfristige Ziel die Überführung der projektförmigen persönlichen Expertisen in ein nachhaltiges, fächerübergreifendes Wissensmanagement zu koordinieren.«
+
+--
+
+### DH-Professuren @ FU Berlin
+
+- GeschKult
+  - **Prof. Dr. Eliese-Sophia Lincke**
+    - Juniorprofessorin für Computerphilologie und Data Science der Sprachen der Alten Welt
+  - **Prof. Dr. Elisa Roßberger**
+    - Juniorprofessorin für Explorative Visual Archaeology of the Ancient Near East
+  - **Prof. Dr. Hubert Mara**
+    - Professor für Archäoinformatik
+- PolSoz
+  - **Prof. Dr. Marko Bachl**
+    - Juniorprofessor für Digitale Forschungsmethoden
+- PhilGeist
+  - **Prof. Dr. Frank Fischer**
+    - Professor für Digital Humanities
+
+<!-- .element: style="font-size:0.85em;" -->
+
+<br />Übersicht: https://www.ada.fu-berlin.de/dh-fu/Personen/index.html
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Ausgewählte DH-Seminare an der FU 2021–2025 (PhilGeist)
+
+<br />
+
+* Literaturwissenschaftliche Netzwerkanalyse
+* Digitale Stilometrie
+* Digitale Dramenanalyse
+* Cicero digital
+* Entwurf einer Theorie der Digital Humanities
+* Einführung in R: Programmieren für die Geisteswissenschaften
+* Webscraping mit Python für die Geisteswissenschaften
+* Methoden der Dramenanalyse: analog und digital
+* Der deutschsprachige Einakter
+* Digitale Methoden in der Literaturwissenschaft
+* Games und Literatur
+* Wikipedia und Wikidata in den Geisteswissenschaften
+
+---
+
+### Berufsperspektiven
+
+--
+
+### [Anna-Nicole Heinrich](https://www.ekd.de/heinrich-63266.htm)
+
+<br />
+
+- Masterstudium Digital Humanities an der Uni Regensburg
+- seit 2021 Präses der Synode der Evangelischen Kirche in Deutschland
+
+--
+
+### Berufschancen
+
+<br />
+
+- G.L.A.M.-Institutionen (Galleries, Libraries, Archives, Museums)
+- »Digital Humanities: ›Sehr gute Berufschancen‹«: Interview mit Christof Schöch (Prof. für Digital Humanities an der Uni Trier)
+  - »Die Kompetenzen der Digital Humanities sind auf dem Arbeitsmarkt gefragt, […]. Trotzdem wüssten viele Arbeitgeber über die Disziplin noch zu wenig.« ([wila-arbeitsmarkt.de](https://www.wila-arbeitsmarkt.de/blog/2019/07/02/digital-humanities-berufschancen/))
+- DH-Expert\*innen prädestiniert für Altac (Alternative Academic) Careers
+  - [»The Marriage of the Digital Humanities and Alt-Ac Positions«](https://jitp.commons.gc.cuny.edu/the-marriage-of-the-digital-humanities-and-alt-ac-positions/) (cuny.edu)
+- Patrick Sahle: »Digital Humanities als Beruf – Wie wird man ein ›Digital Humanist‹, und was macht man dann eigentlich?« ([badw.de](https://badw.de/fileadmin/pub/akademieAktuell/2016/56/0116_18_Sahle_V04.pdf))
+- Übersicht über Studiengänge
+  - [DH Course Registry](https://dhcr.clarin-dariah.eu/)
+
+--
+
+Danke!
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs4/dist/reveal.js"></script>
+    <script src="../revealjs4/plugin/notes/notes.js"></script>
+    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
