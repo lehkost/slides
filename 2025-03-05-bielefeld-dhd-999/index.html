@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>»999 und noch etliche [mehr]« (DHd-Vortrag, 5. März 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### »999 und noch etliche \[mehr\]«
+#### Georg Nikolaus Bärmanns Würfel-Almanach von 1829 als Web-App
+
+<br />
+
+# 🎲
+
+<br />
+
+Viktor J. Illmer, Frank Fischer, Mark Schwindt, Jonas Rohe<!-- .element: style="font-size:0.8em;" -->
+
+Freie Universität Berlin<!-- .element: style="font-size:0.6em;" -->
+
+<br />
+
+URL dieser Präsentation: **[bit.ly/999mehr](https://bit.ly/999mehr)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[DHd2025](https://dhd2025.dig-hum.de/?page_id=8) &nbsp;·&nbsp; Universität Bielefeld &nbsp;·&nbsp; Mi, 5. März 2025, 10:00 Uhr
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Was bisher geschah …](#/1)
+2. [Bärmann und der Würfelalmanach](#/2)
+3. [Workflow](#/3)
+4. [Analyse](#/4)
+5. [Zusammenfassung](#/5)
+
+---
+
+## Was bisher geschah …
+
+--
+
+### Einakter-Dissertation
+
+![Poetische Ökonomie im Drama (Cover)](images/poetische-oekonomie-cover.jpg)<!-- .element width="320px;" -->
+
+Dîlan Canan Çakir: Poetische Ökonomie im Drama. Einakter im 18. und frühen 19. Jahrhundert. Berlin, Boston: <br />De Gruyter 2024. (= Studien und Texte zur Sozialgeschichte der Literatur. Band 164.) ([doi:10.1515/9783111334059](https://doi.org/10.1515/9783111334059))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### [Einakter-Datenbank](https://einakter.dracor.org/)
+
+![Einakter-Datenbank (Screenshot)](images/einakter-datenbank_screenshot_2025-02-24.png)<!-- .element width="640px;" -->
+
+Dîlan Canan Çakir, Frank Fischer: Dramatische Metadaten. Die Datenbank deutschsprachiger Einakter 1740–1850. <br />In: DHd2022: »Kulturen des digitalen Gedächtnisses«. 7.–11. März 2022. Book of Abstracts. Universität Potsdam. ([doi:10.5281/zenodo.6327977](https://doi.org/10.5281/zenodo.6327977))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Einakter-Manie in der ersten Hälfte <br />des 19. Jahrhunderts
+
+<br />
+
+»Schon die Thatsache, daß zwei, ja drei berühmte deutsche Uebersetzerfedern zu gleicher Zeit ein und dasselbe französische Originallustspiel bearbeiten [...] mögte hinlänglich den Beweis führen, von welchem sehnsüchtigen Verlangen nach immer neuen **einactigen Lustspielen** das schaugierige deutsche Publikum beseelt ist; allein es giebt noch viele andere Beweisgründe des Vorhandenseyns dieses sehnsüchtigen, unaufhörlich sich wiederholenden Verlangens.«
+
+<br />
+
+Georg Nikolaus Bärmann: Vorrede, [S. IX](https://de.wikisource.org/wiki/Seite:Neunhundert_neun_und_neunzig_und_noch_etliche_Almanachs-Lustspiele_durch_den_W%C3%BCrfel_(Reprint_1972).pdf/11).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Daten zu Einakter-Übersetzungsnetzwerken
+
+![Netzwerk der Übersetzungen Einakter-Datenbank](images/einakter-translators-scribe-excerpt.png)
+
+Visualisierung mit Gephi (Ausschnitt). Layout: Yifan Hu. Label-Größe ≙ In-Degree. <br />Label-/Knotenfarbe schwarz: Originalautor\*innen, grau: Übersetzer\*innen.
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+## Bärmann und der Würfelalmanach
+
+--
+
+### Georg Nikolaus Bärmann (1785–1850)
+
+![Porträt Bärmann](images/baermann-konterfei-wikimedia-commons.jpg)<!-- .element width="400px;" -->
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:PPN663960886_G._N._B%C3%A4rmann,_Dr._(1835).jpg))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+![Cover Würfelalmanach](images/almanach-cover.png)<!-- .element width="340px;" -->
+
+Der Titel – »Neunhundert neun und neunzig und noch etliche Almanachs-Lustspiele <br />durch den Würfel« – verspricht genug Einakter für 133 Jahre.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Status der Einakter
+
+<br />
+
+- Würfel-Almanach = Parodie auf den berühmten »Almanach dramatischer Spiele zur geselligen Unterhaltung auf dem Lande«, begründet 1803 von August von Kotzebue
+- darin wurden v. a. Einakter für das Laientheater gedruckt
+- hohe Nachfrage nach Einaktern, aber auch Kritik:
+  - »Zusammengewürfelte Scenen voll trivialer Späße, Zeitglossen, schale Witze und Zweideutigkeiten, das heißt jetzt Posse, die meisten sind **einactig** und das Publicum ist zufrieden, wenn es nur aus vollem Halse lachen kann […].« (Ignaz Franz Castelli 1861, [S. 126](https://books.google.com/books?id=1945AAAAcAAJ&pg=PA126))
+
+--
+
+### Aufbau des Würfel-Almanachs
+
+![Beispielseite Almanach](images/beispielseite-almanach.jpg)<!-- .element width="600px;" -->
+
+--
+
+### Spielregeln
+
+<br />
+
+- um ein Stück zusammenzustellen, muss 200 Mal gewürfelt werden
+- die Wurftabelle zeigt an, welche Textbausteine ins Spiel kommen
+
+--
+
+### Wurftabelle (Beispielseite)
+
+![Beispielseite Wurftabelle](images/wurftabelle.jpg)<!-- .element width="640px;" -->
+
+--
+
+### Vergleichbare Projekte (kombinatorische Poesie)
+
+<br />
+
+- Raymond Queneau: *Cent mille milliards de poèmes* (1961)
+- Poesieautomaten von Hans Magnus Enzensberger
+
+---
+
+## Workflow
+
+--
+
+Wie digitalisiert man ein Buch, das aber auch ein Spiel ist?
+
+<br />
+
+(Es handelt sich ja nicht einfach um die Edition einer gedruckten Vorlage.)
+
+--
+
+### Ziel
+
+![Mockup 1](images/mockup-1.png)<!-- .element height="250px;" -->
+![Mockup 2](images/mockup-2.png)<!-- .element height="250px;" -->
+
+- Nachbau des Spiels in einer interaktiven Web-App
+- Reverse Engineering: Bärmanns aleatorisches Projekt wieder in die ursprüngliche Reihenfolge bringen
+
+--
+
+### Gameplay
+
+<br />
+
+- Funktionsweise orientiert am Original
+- Implementierung eines Würfelmechanismus zur Erstellung individueller Einakter
+- neben der Spiel- auch andere Analysemöglichkeiten
+
+--
+
+### Textgrundlage
+
+<br />
+
+- Digitalisat von »Neunhundert neun und neunzig und noch etliche Almanachs-Lustspiele durch den Würfel« [auf Google Books](https://books.google.com/books?id=5phlNmAMBt8C&printsec=frontcover)
+
+--
+
+### Texterkennung (OCR)
+
+<br />
+
+- mit Transkribus
+- Modell: [›German Fraktur 18th Century – WrDiarium_M9‹](https://readcoop.eu/de/modelle/german-fraktur-18th-century/)
+
+--
+
+### OCR-Korrektur
+
+<br />
+
+- Einstellung [in Wikisource](https://w.wiki/Aj99)
+- Korrektur nach Vier-Augen-Prinzip
+
+--
+
+### TEI-Konvertierung
+
+<br />
+
+- semantisches Encoding von Sprecher\*innen, Redeanteilen, Szenenüberschriften, Bühnenanweisungen usw.
+
+--
+
+### Wurftabelle
+
+<br />
+
+- Digitalisierung als CSV-Tabelle mit sechs Spalten à 200 Zeilen
+
+--
+
+### Web-App
+
+<br />
+
+- entwickelt in TypeScript unter Verwendung von SvelteKit (komponentenbasiertes Web-Framework)
+- Transofmration des TEI-XMLs in HTML-Darstellung des robusten XSLTProcessor-Interfaces und eines benutzerdefinierten XSL-Stylesheets
+- Konvertierung der Wurftabelle in ein JSON-Array mit Arrays der Form 200 × 6 (für 200 Würfe eines sechsseitigen Würfels)
+- dient als Nachschlagetabelle zur Identifizierung der im TEI mit ```xml:id``` ausgestatteten Segment-IDs auf den entsprechenden ```<div>```-Elementen
+
+---
+
+## Analyse
+
+--
+
+### 999+ Spiele für 133 Jahre?
+
+<br />
+
+- Behauptung des Autors zur Anzahl erwürfelbarer individuellen Einakter ist eine radikale Untertreibung
+- rein rechnerisch sind 6<sup>200</sup> mögliche Kombinationen der einzelnen Textsegmente möglich
+- entspricht etwa 4 × 10<sup>155</sup>, das sind mehr Einakter als es Atome im Universum gibt (wenn man von etwa 10<sup>82</sup> Atomen ausgeht, vgl. [Baker 2021](https://www.livescience.com/how-many-atoms-in-universe.html))
+
+--
+
+### Charakter der Varianzen
+
+<br />
+
+- Sind die Änderungen in der Handlung bedeutend oder handelt es sich lediglich um subtile Abweichungen, die aber die Gesamthandlung nicht verändern?
+
+--
+
+### Beispiel 125. Wurf
+
+<br />
+
+- sortierte Ansicht in der Web-App: alle sechs Varianten jedes Wurfes sind nebeneinander angeordnet
+- die Sprechtexte ändern sich nur in Details
+- Beispiel 125. Wurf: der Liebhaber argumentiert jeweils leicht verändert, warum er seine zukünftige Ehefrau ernähren kann
+
+--
+
+### Spielmechanik
+
+<br />
+
+- komplexere Variationen sind aufgrund des Fehlens von Kontrollmechanismen (z. B. Rückverweise oder Sprunganweisungen) nicht möglich
+- jedes der im Detail unterschiedlichen Stücke ist im Ablauf statisch:
+  - 3\. Wurf: im ersten Auftritt erscheint die monologisierende Nichte
+  - 42\. Wurf: der Onkel besteht auf der Verheiratung der Nichte
+  - 192\. Wurf: der Diener enthüllt seine wahre Identität
+  - 199\. Wurf: Vorhang fällt
+
+--
+
+### Funktion des Würfel-Alamanachs
+
+<br />
+
+- Dramenautomat verfolgt nicht primär das Ziel, tatsächlich individuelle Einakter zu generieren
+- reproduziert genau die Eintönigkeit, gegen die sich Bärmanns Kritik richtet
+- wichtige Funktion der Almanache und Einakter: »radikale Demokratisierung« des Theaters (vgl. Çakir 2024, S. 223)
+- spielerischer Aspekt des Einakterschreibens, vereinfacht durch den Würfel
+
+---
+
+## Zusammenfassung
+
+<br />
+
+- Fragmentierung des Würfel-Almanachs als Herausforderung für seine Digitalisierung
+- Implementierung als App macht den Spielmechanismus erfahrbar
+- Bärmanns Würfelspiel als eindrucksvolle spielerisch-ästhetische Auseinandersetzung mit dem Einakter
+
+--
+
+Vielen Dank.
+
+<br />
+
+App: https://temporal-communities.github.io/999/
+
+<br />
+
+Paper: (folgt)
+
+<br />
+
+Repo: https://github.com/temporal-communities/999
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
