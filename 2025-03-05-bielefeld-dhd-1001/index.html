@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>»Wikipedia als Hallraum der Kanonizität« (DHd-Vortrag, 5. März 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Wikipedia als Hallraum der Kanonizität
+#### »1001 Books You Must Read Before You Die«
+
+<br />
+
+# 📚
+
+<br />
+
+Jonas Rohe, Viktor J. Illmer, Lisa Poggel, Frank Fischer<!-- .element: style="font-size:0.85em;" -->
+
+Freie Universität Berlin <br />[EXC 2020 »Temporal Communities«](https://www.temporal-communities.de/)
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+URL dieser Präsentation: **[https://bit.ly/1001you](https://bit.ly/1001you)**
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />[DHd2025](https://dhd2025.dig-hum.de/?page_id=8) &nbsp;·&nbsp; Universität Bielefeld &nbsp;·&nbsp; Mi, 5. März 2025, 09:00 Uhr
+<!-- .element: style="font-size:0.85em;" -->
+
+--
+
+### Projektkontext: [Digital Observatory of World Literature](https://www.temporal-communities.de/research/digital-communities/projects/digital-observatory-world-literature)
+
+<br />
+
+- Was bisher geschah…
+  - Christoph Hube, Frank Fischer, Robert Jäschke, Gerhard Lauer, Mads Rosendahl Thomsen: **World Literature According to Wikipedia**: Introduction to a DBpedia-Based Framework (2017)
+  - Frank Fischer, Jacob Blakesley, Paula Wojcik, Robert Jäschke (Hg.): **Wikipedia, Wikidata, and World Literature** (Sammelband, 2023)
+  - **Wikipedia, Wikidata and Wikibase**: Usage Scenarios for Literary Studies (EXC2020-Konferenz, 2024)
+  - Viktor J. Illmer, Bart Soethaert, Lilly Welz, Frank Fischer, Robert Jäschke: **Literatur im Wikiversum** – Eine praktische Annäherung über API-Abfragen und Wikipedia-Metriken (DHd2024-Workshop)
+
+--
+
+### »1001 Books You Must Read Before You Die«
+
+![alt](images/1001-books-1st-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-2nd-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-3rd-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-4th-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-5th-edition-cover.jpg)<!-- .element height="220px;" -->
+
+- Kanonprojekt
+- bisher fünf Auflagen (2006, 2008, 2010, 2012, 2018)
+- hrsg. von Peter Boxall, Kurzbeschreibungen der Werke durch verschiedene Beiträger\*innen
+- durch Aktualisierungen der Werkliste insgesamt 1.318 Werke von 768 Autor\*innen
+
+--
+
+### Kanonizitätsmarker: Sitelinks
+
+![alt](images/wikipedia-sitelinks-example.png)<!-- .element height="350px;" -->
+
+- Wikipedia-Sitelinks als Teil der »Metrics of World Literature« (Robinson 2017), als »a simple measure of canonicity« (Kukkonen 2020)
+
+--
+
+### Kanonizitätsmarker: QRank
+
+![alt](images/wikipedia-searchbox.png)<!-- .element height="350px;" -->
+
+- Seitenaufrufe zu einem Wikidata-Item, also Aufrufe von Wikipedia, Wikitravel, Wikibooks etc., werden zusammengerechnet und ein QRanking vergeben (https://qrank.wmcloud.org/), es kommt etwa beim Ranken von Suchbegriffen zum Einsatz
+
+--
+
+### Lese-Community
+
+![alt](images/goodreads.png)<!-- .element height="380px;" -->
+
+- zahlreiche 1001-Book-Challenge-Blogs
+- Listopia-Liste auf Amazon-Plattform [Goodreads](https://www.goodreads.com/list/show/952.1001_Books_You_Must_Read_Before_You_Die)
+- enthält öffentlichen [Google-Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0AkhsHzWtNCPkdEVsX0k4eFZNSHhXM1pyaE5pWDN2QWc&usp=sharing)
+
+--
+
+- »Does a body of writing, a canon of essential texts, emerge from a national context, or does it in some way transcend nationality, rising above the contexts that generate it? What does it mean to try to respond to all of these different national contexts at the same time? Is it possible to produce a list that can speak at once to the readers in Turkey and in Greece, in Serbia and Croatia?«
+
+<br />(Boxall, 2. Auflage, 2008)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Anreicherung über OpenRefine
+
+<br />
+
+- 1.256 von 1.318 Werken & alle 768 Autor\*innen konnten mit ihrem Wikidata-Eintrag verknüpft werden
+- zusätzliche Metadaten zu Werken und Autor\*innen via OpenRefine Reconciliation Service abgerufen (Geschlechtseinträge in Wikidata, Veröffentlichungsdaten)
+
+--
+
+### Anreicherung über GeoNames
+
+<br />
+
+- GND ordnet literarischen Werken Ländercodes (Geographic Area Codes) zu
+- Abfrage von GND-Ländercodes über [lobig-gnd API](https://lobid.org/gnd/api) und Abgleich mit Wikidata-Werk-IDs, Namensvarianten der Verfasser\*innen und Werktiteln
+- Abfrage der Wikidata-Property *P495 country of origin* für gestalterische Werke über MediaWiki API (via [Pywikibot](https://www.mediawiki.org/wiki/Manual:Pywikibot/Overview)) für fehlende Datensätze
+- Zuordnung der GND-Ländercodes zu GeoNames-URIs (via [RDF-Vokabular](https://d-nb.info/standards/vocab/gnd/geographic-area-code.html)) und Abfrage der Koordinaten über [GeoNames API](https://www.geonames.org/export/web-services.html)
+
+--
+
+### Anreicherung mit Popularitätsmetriken
+
+<br />
+
+- vgl. [WikiMetrix](https://github.com/temporal-communities/wiki-metrix) (DHd 2024)
+- Sitelinks und QRank
+- angereicherte Tabelle im [GitHub-Repo](https://github.com/temporal-communities/1001-books)
+
+--
+
+### Statistische Beschreibung des Kanons
+
+![alt](images/publication-years.png)<!-- .element height="300px;" -->
+
+- Verteilung der Wikidata-Geschlechtereinträge:
+  - 281 Werke von Autor\*innen, 1.031 von Autoren, 1 Werk von nichtbinärer Person, Rest: N/A, darunter 3 Anonymate
+- Autor\*innen mit den meisten Werken: Ch. Dickens, J. M. Coetzee (10), V. Woolf (9), G. Greene, I. McEwan, Ph. Roth, S. Beckett, D. DeLillo (8)
+- starker Fokus auf 20. Jahrhundert
+- 27 Werke (veröffentlicht vor 1700) in dieser Darstellung nicht angezeigt
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+![alt](images/geografische-verteilung.png)
+
+--
+
+### Geografische Beschreibung des Kanons
+
+<br />
+
+- stark eurozentristisch und starker Fokus auf englischsprachige Texte:
+  - Großbritannien (347), USA (266), Frankreich (106), Deutschland (57), Italien, Russland (je 30)
+- 857 Einträge via GND, 287 via Wikidata (insgesamt 1.144)
+- GND: *Geographic Area Codes* (Herkunftsland der Verfasser\*in, geografischer Schwerpunkt des Wirkens oder Sprache des Textes, [Quelle](https://wiki.dnb.de/download/attachments/90411323/Laendercodeleitfaden.pdf))
+- Wikidata: *P495 country of origin* (Ursprungsland gestalterischer Werke, [Quelle](https://www.wikidata.org/wiki/Property:P495))
+
+--
+
+### Anzahl der Sitelinks für Werke
+
+![alt](images/sitelinks-works.png)<!-- .element height="380px;" -->
+
+- *The Thousand and One Nights* (130), *Don Quixote* (123), *The Little Prince* (114), *The Lord of the Rings* (114), *A Dream of Red Mansions* (102)
+- Mittel 13,7; Median 7,0
+- 86 Werke (noch) ohne Wikidata-Eintrag
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Anzahl der Sitelinks für Autor\*innen
+
+![alt](images/sitelinks-authors.png)<!-- .element height="380px;" -->
+
+- alle Autor\*innen haben mindestens einen Wikipedia-Artikel
+- Mittel 58,6; Median 48,0
+- Top 5: Goethe (186), Tolstoi (182), Cervantes (176), Victor Hugo (176), Dostojewski (173)
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### QRank
+
+- (Placeholder: was ist QRank)
+
+--
+
+### QRank-Sitelink-Korrelation (autor\*innenzentriert)
+
+<br />
+
+<div id="left">
+
+| Author | QRank | Sitelinks |
+|:-|:-|:-|
+| Poe, Edgar Allan | 6.770.125 | 145 |
+| <font color="red">Kafka, Franz</font> | 5.827.580 | 166 |
+| King, Stephen | 5.752.199 | 110 |
+| Hemingway, Ernest | 5.732.463 | 148 |
+| <font color="brown">Dostoevsky, Fyodor</font> | 5.714.591 | 173 |
+| Christie, Agatha | 5.620.277 | 139 |
+| Tolkien, J. R. R. | 5.533.813 | 154 |
+| <font color="blue">Tolstoy, Leo</font> | 5.046.400 | 182 |
+| Wilde, Oscar | 4.522.706 | 127 |
+| <font color="green">Dickens, Charles</font> | 4.158.626 | 162 |
+
+</div>
+
+<div id="right">
+
+| Author | QRank | Sitelinks |
+|:-|:-|:-|
+| Goethe, Johann Wolfgang | 3.380.565 | 186 |
+| <font color="blue">Tolstoy, Leo</font> | 5.046.400 | 182 |
+| Hugo, Victor | 3.917.537 | 176 |
+| Cervantes | 2.272.986 | 176 |
+| <font color="brown">Dostoevsky, Fyodor</font> | 5.714.591 | 173 |
+| Voltaire | 3.293.244 | 171 |
+| <font color="red">Kafka, Franz</font> | 5.827.580 | 166 |
+| Pushkin, Alexander | 4.027.476 | 164 |
+| <font color="green">Dickens, Charles</font> | 4.158.626 | 162 |
+| Tagore, Rabindranath | 4.068.155 | 161 |
+
+</div>
+
+Links: gerankt nach QRank; rechts: nach Anzahl Sitelinks.
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Sitelink-QRank-Korrelation (werkzentriert)
+
+![alt](images/qrank-sitelink-correlation.png)<!-- .element height="320px;" -->
+
+- Edgar Allan Poe: *The Fall of the House of Usher* (unter allen Werken höchster QRank von 5.547.853 bei nur 27 Sitelinks)
+- George Orwell: *Nineteen Eighty-Four* (das Werk hat einen höheren QRank als der Autor, 5.547.853 gegenüber 3.995.278)
+- dasselbe gilt für *The Handmaid’s Tale* (1.799.096) von Margaret Atwood (1.156.848) – diese Werke sind prominenter als ihre Autor\*innen
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+## Zusammenfassung
+
+<br />
+
+- Wikipedia-Sitelinks und der QRank sind ein interessanter »Hallraum für Kanonizität«
+- zu allen Autor\*innen sowie über 90% der Werke der »1001 Book«-Liste gibt es mindestens einen Wikipedia-Artikel
+- Korrelation mit QRank hat gezeigt, dass es andere hilfreiche Ranking-Varianten gibt, die sich ebenso leicht beforschen lassen
+- für eigene Experimente: [WikiMetrix](https://github.com/temporal-communities/wiki-metrix) (Illmer et al. 2024)
+- ⚠️ Wikidata-Sitelinks und QRank sind veränderliche Größen
+
+--
+
+Vielen Dank.
+
+<br />
+
+Paper: (folgt)
+
+<br />
+
+https://github.com/temporal-communities/1001-books
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
