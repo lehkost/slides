@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Infrastructures and DH</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Infrastructures and DH
+
+<br />
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.8em;" -->
+
+Freie Universität Berlin
+<!-- .element: style="font-size:0.75em;" -->
+
+[Homepage](https://lehkost.github.io/) · [Bluesky](https://bsky.app/profile/umblaetterer.bsky.social)
+<!-- .element: style="font-size:0.75em;" -->
+
+<!--
+<br /><br /><br />This presentation: <br />**[lehkost.github.io/slides/2025-02-25-infrastructures-dh/index.html](https://lehkost.github.io/slides/2025-02-25-infrastructures-dh/index.html)**
+-->
+<!-- .element: style="font-size:0.6em;" -->
+
+<br /><br />This presentation: <br />**[bit.ly/infradh](https://bit.ly/infradh)**
+<!-- .element: style="font-size:0.7em;" -->
+
+![QR Code](images/qr-code.png)<!-- .element width="240px;" -->
+
+--
+
+## TOC
+
+<br />
+
+1. [Aspects of an Infrastructure](#/1)
+2. [Corpora](#/2)
+3. [DraCor API](#/3)
+4. [Interaction: Network Analysis, Linguistic Analysis](#/4)
+5. [Summary](#/5)
+
+---
+
+# Chapter 1.
+
+<br />
+
+## Aspects of an Infrastructure
+
+--
+
+### The term ›infrastructure‹ in Google Ngram Viewer
+
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=infrastructure&year_start=1800&year_end=2022&corpus=en" width=900 height=500 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
+
+--
+
+### Infrastructure …
+
+<br />
+
+… takes place »below the level of the work, i.e. without <br />specifying exactly how work is to be done«.
+
+Paul N. Edwards et al.: *[Understanding Infrastructure: Dynamics, Tensions, and Design](http://hdl.handle.net/2027.42/49353)* (Workshop Report, 2007)
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+»We could define infrastructure as the stability required to facilitate fluidity.«
+
+Dirk van Laak, [Deutschlandfunk Nova, 19 October 2019](https://www.deutschlandfunknova.de/beitrag/infrastruktur-die-lebensader-unserer-gesellschaft)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Infrastructural aspects for doing digital <br />research on drama *at scale*?
+
+<br />
+
+- multilingual drama corpora
+- standard (XML) format: Text Encoding Initiative (TEI)
+- hosting (code, data, website)
+- interface (API)
+- tools (with GUIs)
+- FAIR principles (findable, accessible, interoperable, reusable)
+- training material (Open Educational Resources)
+- community?
+
+--
+
+### Context: Computational Drama Analysis
+
+![DraCor frontpage on 18 January 2025](images/dracor_frontpage_2025-01-18.png)
+
+DraCor (<u>Dra</u>ma <u>Cor</u>pora) infrastructure: **[dracor.org](https://dracor.org/)**
+
+--
+
+![DraCor team in 2017](images/dracor_flashmob_2017.jpg)
+
+Part of the DraCor team [in 2017](https://dlina.github.io/Potsdam-Hackathon-2017/).
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+# Chapter 2.
+
+<br />
+
+## Corpora
+
+--
+
+### Precondition: TEI Standard
+#### (= <u>T</u>ext <u>E</u>ncoding <u>I</u>nitiative)
+
+<br />
+
+```xml
+<sp who="#gretchen">
+  <speaker>MARGARETE.</speaker>
+  <lg>
+    <l>Nun sag, wie hast du’s mit der Religion?</l>
+    <l>Du bist ein herzlich guter Mann,</l>
+    <l>Allein ich glaub’, du hältst nicht viel davon.</l>
+  </lg>
+</sp>
+<sp who="#faust">
+  <speaker>FAUST.</speaker>
+  <lg>
+    <l>Laß das, mein Kind! Du fühlst, ich bin dir gut;</l>
+    <l>Für meine Lieben ließ’ ich Leib und Blut,</l>
+    <l>Will niemand sein Gefühl und seine Kirche rauben.</l>
+  </lg>
+</sp>
+```
+
+<br />
+
+Dialogue from Goethe’s »Faust, pt. I« (1808) in TEI. <br />Currently, 588 different elements are defined in the standard <br />([Version 4.9.0, January 2025](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Growing list of corpora from the community
+
+<br />
+
+<div id="left">
+
+- FreDraCor
+- GerDraCor
+- EngDraCor
+- RusDraCor
+- CalDraCor
+- DutchDraCor
+- ItaDraCor
+- HunDraCor
+- SweDraCor
+- UDraCor
+- GreekDraCor
+- AmDraCor
+
+</div>
+
+<div id="right">
+
+- GerShDraCor
+- ShakeDraCor
+- RomDraCor
+- PolDraCor
+- AlsDraCor
+- SpanDraCor
+- YiDraCor
+- TatDraCor
+- BashDraCor
+- in the works: CzeDraCor, HeDraCor, GeorgDraCor, NeoLatDraCor, JesDraCor, ArDraCor
+
+</div>
+
+--
+
+### Frontpage GerDraCor
+
+![GerDraCor)](images/dracor-gerdracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/ger
+
+--
+
+### GerDraCor: »The Robbers« (1781)
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/ger000008
+
+--
+
+### GerDraCor: »The Testament« (1745)
+
+![GerDraCor: Das Testament)](images/dracor-das-testament.png)
+
+https://dracor.org/id/ger000220#speech
+
+--
+
+#### DraCor Download Tab
+
+![DraCor Download Tab](images/anzengruber-download-tab.png)
+
+https://dracor.org/id/ger000129#downloads
+
+--
+
+### Building/Growing Corpora
+
+<br />
+
+- easiest: reliable digital versions (usually scanned/OCR’ed from a specific edition of a play)
+  - Gutenberg projects (gutenberg.org, Gutenberg-DE)
+  - Ben-Yehuda Project (»Hebrew Gutenberg project«)
+  - Wikisource (different languages)
+  - Deutsches Textarchiv (German Text Archive)
+  - Magyar Elektronikus Könyvtár (Hungarian Electronic Library)
+  - lib.ru, rvb.ru, ilibrary.ru
+  - …
+- DraCor pipeline (Transkribus – [EzDrama](https://github.com/dracor-org/ezdrama))
+
+--
+
+### Yiddish Drama Corpus (YiDraCor)
+
+<br />
+
+https://dracor.org/yi
+
+<br />
+
+Talk at TEI2024: <br /><br />Jonah Lubin, Frank Fischer: <br />[The »Foreign« Element in Yiddish](https://sreyfe.github.io/slides/2024-10-10-foreign-tag/#/1/2)
+
+---
+
+# Chapter 3.
+
+<br />
+
+## DraCor API
+
+<br /><br />
+<small>API: Application Programming Interface
+
+--
+
+### What is an API?
+
+<br />
+
+- enables standardised exchange of information between applications
+- facilitates modularised, simplified programming
+
+--
+
+### Functions of the DraCor API
+
+![DraCor API)](images/dracor-api.png)
+
+https://dracor.org/doc/api
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DraCor API: Example Queries
+
+https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Speech text of all female characters in Goethe’s »Faust«.</small>
+
+https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Speech Text of all son characters in Schiller’s »The Robbers«.</small>
+
+https://dracor.org/api/v1/corpora/shake/plays/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Network data extracted from Shakespeare’s »Hamlet« (in JSON format).</small>
+
+https://dracor.org/api/v1/corpora/rus/plays/chekhov-vishnevyi-sad/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>All stage directions from Chekhov’s »Cherry Orchard«.</small>
+
+https://dracor.org/api/v1/corpora/ita/metadata/csv<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadata for all plays in the Italian corpus (in JSON or CSV).</small>
+
+--
+
+### API Wrapper
+
+<br />
+
+= further simplification: <br />API functions get their own commands
+
+<br />
+
+- for R: rdracor
+- for Python: PyDraCor
+
+--
+
+#### Example (rdracor):
+
+```R
+library(rdracor)
+hermann <- get_net_cooccur_igraph(corpus="ger", play="kleist-die-hermannsschlacht")
+plot(hermann)
+```
+#### Result:
+
+![Hermannsschlacht, Netzwerkgraph mit rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element height="400px;" -->
+
+--
+
+### Lessing’s »Emilia Galotti«
+
+![Emilia Galotti (dynamischer Graph)](images/lessing-emilia-galotti.gif)
+
+**Dynamic Graph**, generated with the [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html) package. Daten directly via **DraCor API**. <br />Script by Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+# Chapter 4.
+
+<br />
+
+## Interaction: Network Analysis, Linguistic Analysis
+
+--
+
+### Network Analysis
+
+<br />
+
+- one of the most prominent DH tools is Gephi (»Like Photoshop but for graphs«)
+- many tutorials, including from forTEXT (👀 Mareike), [English translation](https://fortext-net.translate.goog/routinen/methoden/netzwerkanalyse?_x_tr_sl=de&_x_tr_tl=en&_x_tr_hl=de&_x_tr_pto=wapp) (Google Translate)
+- but, there’s a simpler option now …
+
+--
+
+### Gephi Lite
+
+<br />
+
+https://gephi.org/gephi-lite/
+
+<br />
+
+* go to https://dracor.org/ and look for an example
+* alternative (direct download of example files in GEXF format):
+  * https://dracor.org/api/v1/corpora/ita/plays/manzoni-il-conte-di-carmagnola/networkdata/gexf
+  * https://dracor.org/api/v1/corpora/yi/plays/rose-engshaft/networkdata/gexf
+
+--
+
+### Gamification Approach: »Battle of the Plays« (2024)
+
+![Battle of the Plays, card](images/battle-of-the-plays_sophocles-antigone.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_back.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_mitford-rienzi.jpg)
+
+Frank Fischer, Mark Schwindt: **[Battle of the Plays. A Gamification Approach to Literary Network Analysis.](https://sukultur.de/produkt/battle-of-the-plays-a-gamification-approach-to-literary-network-analysis/)** Berlin: **SUKULTUR** 2024. – 32+1 cards including case, color print. ISBN: 978-3-95566-182-3. €15,00. – Spielregeln: https://battle-of-the-plays.github.io/
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Voyant Tools
+
+![Voyant Tools screenshot](images/voyant-tools-hamlet.png)<!-- .element width="800px"; -->
+
+https://voyant-tools.org/
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+## Tools Tab
+
+<br />
+
+https://staging.dracor.org/shake/hamlet#tools
+
+--
+
+## DraCor Onboarding Workshop <br />for Hebrew and Yiddish
+
+<br />
+
+- [in September 2023](https://www.ada.fu-berlin.de/kalender/HeDraCorWorkshop.html)
+- one of the results: https://dracor.org/yi
+- main editor: Jonah Lubin, also editor of [iberz](https://iberz.org/), the database of Yiddish translations
+
+--
+
+### Adding Yiddish Stoppwords
+
+<br />
+
+https://github.com/voyanttools/trombone/pull/50
+
+--
+
+https://staging.dracor.org/yi/rose-engshaft
+
+---
+
+## Summary
+
+<br />
+
+- DraCor: a digital research infrastructure/ecosystem for the study of drama
+- reliable, expandable corpora in multiple languages, coupled with highly functional interfaces (enabling comparative approaches)
+- open data, open source, community
+- ideally, an interface between analogue and digital philology
+
+--
+
+Thanks.
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
