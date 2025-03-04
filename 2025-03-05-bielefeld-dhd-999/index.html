@@ -80,6 +80,15 @@ Dîlan Canan Çakir, Frank Fischer: Dramatische Metadaten. Die Datenbank deutsch
 
 --
 
+#### Daten zu Einakter-Übersetzungsnetzwerken
+
+![Netzwerk der Übersetzungen Einakter-Datenbank](images/einakter-translators-scribe-excerpt.png)
+
+Visualisierung mit Gephi (Ausschnitt). Layout: Yifan Hu. Label-Größe ≙ In-Degree. <br />Label-/Knotenfarbe schwarz: Originalautor\*innen, grau: Übersetzer\*innen.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
 ### Einakter-Manie in der ersten Hälfte <br />des 19. Jahrhunderts
 
 <br />
@@ -89,15 +98,6 @@ Dîlan Canan Çakir, Frank Fischer: Dramatische Metadaten. Die Datenbank deutsch
 <br />
 
 Georg Nikolaus Bärmann: Vorrede, [S. IX](https://de.wikisource.org/wiki/Seite:Neunhundert_neun_und_neunzig_und_noch_etliche_Almanachs-Lustspiele_durch_den_W%C3%BCrfel_(Reprint_1972).pdf/11).
-<!-- .element: style="font-size:0.65em;" -->
-
---
-
-#### Daten zu Einakter-Übersetzungsnetzwerken
-
-![Netzwerk der Übersetzungen Einakter-Datenbank](images/einakter-translators-scribe-excerpt.png)
-
-Visualisierung mit Gephi (Ausschnitt). Layout: Yifan Hu. Label-Größe ≙ In-Degree. <br />Label-/Knotenfarbe schwarz: Originalautor\*innen, grau: Übersetzer\*innen.
 <!-- .element: style="font-size:0.65em;" -->
 
 ---
@@ -136,6 +136,9 @@ Der Titel – »Neunhundert neun und neunzig und noch etliche Almanachs-Lustspie
 ### Aufbau des Würfel-Almanachs
 
 ![Beispielseite Almanach](images/beispielseite-almanach.jpg)<!-- .element width="600px;" -->
+
+Insgesamt sind es 1.200 Versatzstücke.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -242,9 +245,17 @@ Wie digitalisiert man ein Buch, das aber auch ein Spiel ist?
 <br />
 
 - entwickelt in TypeScript unter Verwendung von SvelteKit (komponentenbasiertes Web-Framework)
-- Transofmration des TEI-XMLs in HTML-Darstellung des robusten XSLTProcessor-Interfaces und eines benutzerdefinierten XSL-Stylesheets
-- Konvertierung der Wurftabelle in ein JSON-Array mit Arrays der Form 200 × 6 (für 200 Würfe eines sechsseitigen Würfels)
+- Transformation des TEI-XMLs in HTML-Darstellung des robusten XSLTProcessor-Interfaces und eines benutzerdefinierten XSL-Stylesheets
+- Konvertierung der Wurftabelle in ein JSON-Array mit Arrays der Form 200 × 6 (für 200 Würfe eines sechsseitigen Würfels)
 - dient als Nachschlagetabelle zur Identifizierung der im TEI mit ```xml:id``` ausgestatteten Segment-IDs auf den entsprechenden ```<div>```-Elementen
+
+--
+
+### Würfel-App ausprobieren (Preview)
+
+![Würfel-App-Preview](images/wuerfel-app-preview.png)<!-- .element width="740px;" -->
+
+https://temporal-communities.github.io/999/
 
 ---
 
