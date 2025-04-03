@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Working With Programmable Corpora and Rich Metadata (Closing Keynote, 4 April 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Working With <br />Programmable Corpora <br />and Rich Metadata
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+Prof. Dr. Frank Fischer <br />(Freie Universität Berlin)
+<!-- .element: style="font-size:0.7em;" -->
+
+Web: [lehkost.github.io](https://lehkost.github.io/) <br />Bluesky: [@umblaetterer.bsky.social](https://bsky.app/profile/umblaetterer.bsky.social)
+<!-- .element: style="font-size:0.45em;" -->
+
+<br />This presentation: **[bit.ly/p4425](https://bit.ly/p4425)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[“Text as Data” Spring School in Digital Humanities](https://www.uni-potsdam.de/de/digital-humanities/aktivitaeten/potsdam-dh-school-2025) ([Program](https://www.uni-potsdam.de/de/digital-humanities/aktivitaeten/potsdam-dh-school-2025/program)) &nbsp;·&nbsp; University of Potsdam &nbsp;·&nbsp; 4 April 2025, 15:45
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+## Chapters
+
+<br />
+
+1. [Programmable Corpora](#/1)
+2. [Beyond Full-Text Analysis](#/2)
+3. [Metadata in Practice](#/3)
+4. [Digital Observatory of World Literature](#/4)
+
+---
+
+# Chapter 1.
+
+<br />
+
+## Programmable Corpora
+
+--
+
+### The DraCor Project
+
+![DraCor frontpage)](images/dracor-frontpage-2024-10-05.png)
+
+The **[dracor.org](https://dracor.org/)** frontpage as of 5 October 2024.
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### The Concept of ›Programmable Corpora‹
+
+<br />
+
+See Frank Fischer et al.: **Programmable Corpora: Introducing <br />DraCor, an Infrastructure for the Research on European Drama.** <br />Proceedings of DH2019: “Complexities”, Utrecht, [doi:10.5281/zenodo.4284002](https://doi.org/10.5281/zenodo.4284002).
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+- (drama) corpora as comparable objects that offer various functions and are linked to other data sources
+
+--
+
+### Growing list of corpora from the community
+
+<div id="left">
+
+- FreDraCor
+- GerDraCor
+- EngDraCor
+- RusDraCor
+- CalDraCor
+- DutchDraCor
+- ItaDraCor
+- HunDraCor
+- SweDraCor
+- UDraCor
+- GreekDraCor
+- AmDraCor
+
+</div>
+
+<div id="right">
+
+- GerShDraCor
+- ShakeDraCor
+- RomDraCor
+- PolDraCor
+- AlsDraCor
+- SpanDraCor
+- YiDraCor
+- TatDraCor
+- BashDraCor
+- in the works: CzeDraCor, HeDraCor, GeorgDraCor, NeoLatDraCor, JesDraCor, RoDraCor, ArDraCor
+
+</div>
+
+(Sorted by number of plays per corpus. See [DraCor Corpus Registry](https://dracor.org/doc/corpora).)
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### Prerequisite: TEI Encoding Standard (1/2)
+
+![La Mort de César (Snippet))](images/mort-de-cesar-snippet.png)<!-- .element height="450px;" -->
+
+Voltaire: *La Mort de César. Tragédie.* Seconde édition revue, corrigée et <br />augmentée par l’auteur. Amsterdam: Ledet 1736, p. 7. ([via Gallica](http://gallica.bnf.fr/ark:/12148/bpt6k311874h))
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### Prerequisite: TEI Encoding Standard (2/2)
+
+```
+<sp who="#antoine">
+  <speaker>ANTOINE.</speaker>
+  <l part="I">Brutus ! il se pourroit.....</l>
+</sp>
+<sp who="#cesar">
+  <speaker>CÉSAR.</speaker>
+  <l part="F">Ne m’en crois pas. Tiens, lis.</l>
+</sp>
+<sp who="#antoine">
+  <speaker>ANTOINE.</speaker>
+  <l>Dieux ! La Sœur de Caton ! La fière Servilie !</l>
+</sp>
+<sp who="#cesar">
+<speaker>CÉSAR.</speaker>
+  <l>Par un hymen secret, elle me fut unie.</l>
+  <l>Ce farouche Caton dans nos premiers débats,</l>
+  <l>La fit presqu’à mes yeux, passer en d’autres bras :</l>
+  <l>Mais le jour qui forma ce second hyménée,</l>
+  <l>De son nouvel Époux trancha la destinée.</l>
+  <l>Sous le nom de Brutus mon fils fut élevé.</l>
+  <l>Pour me haïr, ô Ciel ! étoit-il réservé !</l>
+  <l>Mais lis, tu sauras tout par cet Écrit funeste.</l>
+</sp>
+```
+
+Dialogue from Voltaire’s tragedy “La Mort de César” encoded in TEI. <br />There are currently 588 different elements defined in the standard ([as of January 2025](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### FreDraCor Frontpage
+
+![FreDraCor frontpage)](images/fredracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/fre
+
+--
+
+### Molière: “L’Avare” (“The Miser”, 1669)
+
+![Molière: L’Avare in DraCor)](images/avare-network.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/fre000996
+
+--
+
+### Speech Distribution
+
+![Speech distribution in L’Avare)](images/avare-speech-distribution.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/fre000996#speech
+
+--
+
+### DraCor Downloads Tab
+
+![Downloads tab for L’Avare](images/avare-downloads-tab.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/fre000996#downloads
+
+--
+
+### DraCor Tools Tab (*new in 2025!*)
+
+![Tools tab for L’Avare](images/avare-tools-tab.png)<!-- .element height="460px;" -->
+
+https://dracor.org/id/fre000996#tools
+
+---
+
+# Chapter 2.
+
+<br />
+
+## Beyond Full-Text Analysis
+
+--
+
+### What is an API?
+
+<br />
+
+- API: Application Programming Interface
+- standardised exchange of information in favour of modularised, simplified programming
+- data is transferred in a structured way according to a defined syntax
+
+--
+
+### Functions of the DraCor API
+
+![DraCor API)](images/dracor-api.png)
+
+https://dracor.org/doc/api
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### DraCor API: Example Queries
+
+https://dracor.org/api/v1/corpora/fre/plays/moliere-avare/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Speech text of all female characters in Molières’s “L’Avare”.</small>
+
+https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Speech text of all son characters in Friedrich Schiller’s “The Robbers” (German corpus).</small>
+
+https://dracor.org/api/v1/corpora/fre/plays/racine-britannicus/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Network data extracted from Jean Racine’s “Britannicus” (in JSON format).</small>
+
+https://dracor.org/api/v1/corpora/fre/plays/hugo-hernani/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>All stage directions from Victor Hugo’s “Hernani”.</small>
+
+https://dracor.org/api/v1/corpora/fre/metadata/csv<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadata for all plays in the French corpus (in JSON or CSV).</small>
+
+--
+
+### Metadata
+
+![Metadata of FreDraCor)](images/metadata-fredracor.png)<!-- .element height="510px;" -->
+
+Downloading metadata for FreDraCor via the DraCor API.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Metadata
+
+![Metadata of FreDraCor in LibreOffice Calc)](images/metadata-fredracor-libreoffice-calc.png)<!-- .element height="510px;" -->
+
+Metadata in LibreOffice Calc.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Simple visualisation of structural data
+#### Number of characters per play in chronological order (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+fredracor <- fread("https://dracor.org/api/v1/corpora/fre/metadata/csv")
+ggplot(fredracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+Example of a simple R script that obtains data via the API.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Number of charcters per play in chronological order (2/2)
+
+![Number of characters per play](images/num-of-speakers-fredracor.png)
+
+Output in RStudio.
+<!-- .element: style="font-size:0.6em;" -->
+
+(Dot at the far left: “Le Jeu d’Adam”, liturgical drama from 12th century. Dot at the far right: “Molière à Québec”, <br />a comedy written by the corpus maintainer Paul Fièvre ‼️, dated 2017. And in-between: a lot of classical French drama.)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### API Wrapper
+
+<br />
+
+= further simplification: <br />API functions get their own commands
+
+<br />
+
+- for R: rdracor
+- for Python: pydracor
+
+--
+
+#### Example (rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+avare <- get_net_cooccur_igraph(play="moliere-avare", corpus = "fre")
+plot(avare)
+```
+#### Result:
+
+![L’Avare, netowrk graph generated with rdracor](images/avare-rdracor-graph.png)<!-- .element height="400px;" -->
+
+--
+
+### Metadata Gamification: “Battle of the Plays” (2024)
+
+![Battle of the Plays, card](images/battle-of-the-plays_sophocles-antigone.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_back.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_mitford-rienzi.jpg)
+
+Frank Fischer, Mark Schwindt: **[Battle of the Plays. A Gamification Approach to Literary Network Analysis.](https://sukultur.de/produkt/battle-of-the-plays-a-gamification-approach-to-literary-network-analysis/)** Berlin: **SUKULTUR** 2024. – 32+1 cards including case, color print. ISBN: 978-3-95566-182-3. €15.00. – <br />Rules of play: https://battle-of-the-plays.github.io/
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DraCor KPIs
+#### (Key Performance Indicators)
+
+<br />
+
+- we don’t really have them …
+- … except for the number of research articles conducted on the basis of DraCor-provided corpora and data
+- since the beginning of 2024, roughly 50 DraCor-driven research papers have been published (incl. monographs)
+- see [dracor.org/doc/research](https://dracor.org/doc/research)
+
+--
+
+### Outlook: DraCor and AI
+
+![DraCor MCP server in Claude](images/avare-claude-dracor-mcp.png)<!-- .element height="500px;" -->
+
+DraCor MCP server (Model Context Protocol) in Claude (by Stijn Meijers).
+<!-- .element: style="font-size:0.75em;" -->
+
+---
+
+# Chapter 3.
+
+<br />
+
+## Metadata in Practice
+
+--
+
+### Metadata Turn in Literary Studies?
+
+<br />
+
+- the semantics of literary works are not only revealed by their full texts
+- role of catalog data (e.g., from national libraries), recorded according to the IFLA Library Reference Model (LRM), incl. incorporated WEMI model: work, expression, manifestation, item
+- example: https://d-nb.info/gnd/4099314-0 (info on “L’Avare” as *work*, as provided by the German National Library)
+- in GND Explorer: https://explore.gnd.network/gnd/040993140
+- dozens of other suitable projects that make metadata on literary works available via work IDs: Wikidata, GoodReads, LibraryThing, etc.
+
+--
+
+### Database of German-Language One-Act Plays
+
+**[einakter.dracor.org](https://einakter.dracor.org/)**
+<!-- .element: style="font-size:0.65em;" -->
+
+![Database of German-Language One-Act Plays](images/einakter-datenbank_2025-01-18.png)<!-- .element width="440px;" -->
+
+Cf. Dîlan Canan Çakir, Frank Fischer: **Dramatische Metadaten. Die Datenbank deutschsprachiger Einakter 1740–1850.** <br />In: DHd2022: “Kulturen des digitalen Gedächtnisses”. 7–11 March 2022. <br />Book of Abstracts. University of Potsdam. ([doi:10.5281/zenodo.6327977](https://doi.org/10.5281/zenodo.6327977))
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+### Modeling Metadata
+
+- inspired by Reinhart Meyer’s “Bibliographia Dramatica et Dramaticorum”, which lists all plays printed and performed in the German-speaking world of the 18th century, in 34 volumes
+<!-- .element: style="font-size:0.55em;" -->
+
+![Database of German-Language One-Act Plays](images/einakter-kotzebue.png)<!-- .element width="600px;" -->
+
+- no full texts, only titles, subtitles, original plays (in case of translations), publication dates, number of scenes, list of characters, etc.
+
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+### Translations of One-Act Plays into German
+
+![Database of German-Language One-Act Plays](images/einakter-translations-overview.png)<!-- .element width="720px;" -->
+
+- 502 of German one-acters are translations, mostly from French, which we have also modeled by linking to authority files
+- result: a bipartite graph in which the names of translators point to original authors; the thicker the edge, the higher the number of translations between a pair
+
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+### One-Act Play Translation Network
+
+![Graph visualised with Gephi](images/einakter-translators-scribe-excerpt.png)
+
+Visualised using Gephi (excerpt). Layout: Yifan Hu. Label size ≙ In-Degree. <br />Black labels/nodes: original authors, light grey: translators.
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+# Chapter 4.
+
+<br />
+
+## Digital Observatory of World Literature
+
+--
+
+## Can Wikipedia Serve as an <br />Echo Chamber of Canonicity?
+
+<br /><br />
+
+- cf. Jonas Rohe, Viktor J. Illmer, Lisa Poggel, Frank Fischer: **Wikipedia als Hallraum der Kanonizität: “1001 Books You Must Read Before You Die”.** In: DHd2025: “Under Construction”. 3–7 March 2025. Book of Abstracts. Bielefeld University. ([doi:10.5281/zenodo.14943076](https://doi.org/10.5281/zenodo.14943076))
+
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### “1001 Books You Must Read Before You Die”
+
+![alt](images/1001-books-1st-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-2nd-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-3rd-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-4th-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-5th-edition-cover.jpg)<!-- .element height="220px;" -->
+
+- popular canon project
+- five editions to date (2006, 2008, 2010, 2012, 2018)
+- edited by Peter Boxall, short descriptions of all works by various contributors
+- a total of 1,318 works by 768 authors due to updates to the list of works
+
+--
+
+### Reading Communities
+
+![alt](images/goodreads.png)<!-- .element height="380px;" -->
+
+- numerous 1001-book-challenge blogs
+- Listopia list on Amazon-owned platform [Goodreads](https://www.goodreads.com/list/show/952.1001_Books_You_Must_Read_Before_You_Die)
+
+--
+
+### Contribution to digital deconstructions of canons by ...
+
+<br />
+
+- ... correlating them with other canonicity markers (‘echo chamber’)
+- ... evaluating their metadata (publication periods, linguistic and geographical diversity)
+
+--
+
+### Marker of Canonicity: Sitelinks
+
+![alt](images/wikipedia-sitelinks-example.png)<!-- .element height="350px;" -->
+
+- Wikipedia sitelinks as part of the “metrics of World Literature” (Robinson 2017), as “a simple measure of canonicity” (Kukkonen 2020)
+- example: Charles Dickens has 162, *A Tale of Two Cities* has 51 sitelinks
+
+--
+
+### Marker of Canonicity: QRank
+
+![Wikipedia searchbox](images/wikipedia-searchbox.png)<!-- .element height="300px;" -->
+
+- page views for a Wikidata item, i.e. views of their Wikipedia, Wikitravel, Wikibooks versions etc., are added together and a QRanking is assigned (https://qrank.wmcloud.org/), which is used when ranking search terms
+- example: Charles Dickens has a QRank of 4,158,626, *A Tale of Two Cities* 1,238,166
+
+--
+
+### Enrichment via OpenRefine
+
+<br />
+
+- 1,256 of the 1,318 works &amp; all of the 768 authors could be linked to their Wikidata entry
+- additional metadata on works and authors retrieved via OpenRefine Reconciliation Service (gender entries in Wikidata, publication data)
+
+--
+
+### Enrichment With Geo Data
+
+![alt](images/geografische-verteilung.png)
+
+- querying country codes for literary works via GND’s [lobid-gnd API](https://lobid.org/gnd/api) and Wikidata’s property *P495 country of origin* for creative works
+
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Geographical Distribution of the Canon
+
+<br />
+
+- highly Eurocentric and strong focus on English-language texts:
+  - Great Britain (347), USA (266), France (106), Germany (57), Italy, Russia (30 each)
+- 857 entries via GND, 287 via Wikidata (1,144 in total)
+
+--
+
+### Statistical Canon Description
+
+![alt](images/publication-years.png)<!-- .element height="300px;" -->
+
+- strong focus on 20th century
+- 27 works (published before 1700) not shown in this diagram
+- distribution of Wikidata gender entries:
+  - 281 works by female authors, 1,031 by male authors, 1 work by a non-binary person, rest: n/a, including anonymous works
+- authors with most works: Ch. Dickens, J. M. Coetzee (10), V. Woolf (9), G. Greene, I. McEwan, Ph. Roth, S. Beckett, D. DeLillo (8)
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Number of Sitelinks per Work
+
+![alt](images/sitelinks-works.png)<!-- .element height="380px;" -->
+
+- *The Thousand and One Nights* (130), *Don Quixote* (123), *The Little Prince* (114), *The Lord of the Rings* (114), *A Dream of Red Mansions* (102)
+- mean 13.7; median 7.0
+- 86 works lacking Wikidata entry
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Number of Sitelinks per Author
+
+![alt](images/sitelinks-authors.png)<!-- .element height="380px;" -->
+
+- all authors have at least one Wikipedia article
+- mean 58.6; median 48.0
+- top-5: Goethe (186), Tolstoi (182), Cervantes (176), Victor Hugo (176), Dostojewski (173)
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### QRank
+
+> QRank is a ranking signal for Wikidata entities. It gets computed by aggregating page view statistics for Wikipedia, Wikitravel, Wikibooks, Wikispecies and other Wikimedia projects.
+> ([brawer/wikidata-qrank](https://github.com/brawer/wikidata-qrank))
+
+<br />[qrank.toolforge.org](https://qrank.toolforge.org/)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### QRank-Sitelink Correlation (author-centered)
+
+<br />
+
+<div id="left">
+
+| Author | QRank | Sitelinks |
+|:-|-:|-:|
+| Poe, Edgar Allan | 6,770,125 | 145 |
+| <font color="red">Kafka, Franz</font> | 5,827,580 | 166 |
+| King, Stephen | 5,752,199 | 110 |
+| Hemingway, Ernest | 5,732,463 | 148 |
+| <font color="brown">Dostoevsky, Fyodor</font> | 5,714,591 | 173 |
+| Christie, Agatha | 5,620,277 | 139 |
+| Tolkien, J. R. R. | 5,533,813 | 154 |
+| <font color="blue">Tolstoy, Leo</font> | 5,046,400 | 182 |
+| Wilde, Oscar | 4,522,706 | 127 |
+| <font color="green">Dickens, Charles</font> | 4,158,626 | 162 |
+
+</div>
+
+<div id="right">
+
+| Author | QRank | Sitelinks |
+|:-|-:|-:|
+| Goethe, Johann Wolfgang | 3,380,565 | 186 |
+| <font color="blue">Tolstoy, Leo</font> | 5,046,400 | 182 |
+| Hugo, Victor | 3,917,537 | 176 |
+| Cervantes | 2,272,986 | 176 |
+| <font color="brown">Dostoevsky, Fyodor</font> | 5,714,591 | 173 |
+| Voltaire | 3,293,244 | 171 |
+| <font color="red">Kafka, Franz</font> | 5,827,580 | 166 |
+| Pushkin, Alexander | 4,027,476 | 164 |
+| <font color="green">Dickens, Charles</font> | 4,158,626 | 162 |
+| Tagore, Rabindranath | 4,068,155 | 161 |
+
+</div>
+
+Left: ranked by QRank; right: by number of sitelinks.
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### QRank-Sitelink Correlation (work-centered)
+
+![alt](images/qrank-sitelink-correlation.png)<!-- .element height="320px;" -->
+
+- Edgar Allan Poe: *The Fall of the House of Usher* (highest QRank of 5,547,853 among all works, with only 27 sitelinks)
+- George Orwell: *Nineteen Eighty-Four* (the work has a higher QRank than the author, 5,547,853 compared to 3,995,278)
+- the same applies to *The Handmaid’s Tale* (1,799,096) by Margaret Atwood (1,156,848) – these works are more prominent than their authors
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+## Summary
+
+<br />
+
+- Wikipedia sitelinks and QRank as interesting ‘echo chambers for canonicity’
+- correlation with QRank has shown that there are other helpful ranking variants in addition to sitelinks
+- analysis of metadata can uncover implicit biases
+- for your own experiments, try [WikiMetrix](https://github.com/temporal-communities/wiki-metrix) (cf. [Illmer et al. 2024](https://doi.org/10.5281/zenodo.10698426))
+
+---
+
+## Thank you.
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>

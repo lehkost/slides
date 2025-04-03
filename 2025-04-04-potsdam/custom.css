@@ -1,0 +1,39 @@
+.reveal section img {
+  border: none;
+}
+.reveal table th {
+  font-size: 0.75em;
+}
+.reveal table td {
+  font-size: 0.75em;
+}
+.reveal {
+  font-size: 30px;
+}
+.reveal h1 {
+	font-size: 2em;
+}
+.reveal h2 {
+	font-size: 1.6em;
+}
+.reveal h3 {
+	font-size: 1.3em;
+}
+#left {
+  margin:10px 0 15px 20px;
+  text-align:left;
+  float:left;
+  z-index:-10;
+  width:48%;
+  font-size:0.9em;
+  line-height:1.5;
+}
+#right {
+  margin:10px 0 15px 0;
+  float:right;
+  text-align:left;
+  z-index:-10;
+  width:48%;
+  font-size:0.9em;
+  line-height:1.5;
+}
