@@ -1,13 +1,13 @@
 ### »Die **Greta Garbo** der **Leichtathletik**« – <br />Eine systematische Analyse der Modifier vossianischer Antonomasien mithilfe von Word Embeddings
 
-![intro pic](images/greta-garbo-middle-distance-runner_dall-e.jpg)<!-- .element height="200px;" -->
+![intro pic](images/greta-garbo-as-athlete-ai-generated.jpg)<!-- .element height="200px;" -->
 
 Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg"/></a> · Frank Fischer ² <a href="https://orcid.org/0000-0003-2419-6629"><img height=20 src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg"/></a><!-- .element: style="font-size:0.8em;" -->
 
 1 · Humboldt-Universität zu Berlin <br />
 2 · Freie Universität Berlin<!-- .element: style="font-size:0.6em;" -->
 
-<br />URL dieser Präsentation: **[bit.ly/va-trier](https://bit.ly/va-trier)** – Illustration: [DALL·E](https://labs.openai.com/s/mjHEyFFSZ6a82FurFVDajUcD)
+<br />URL dieser Präsentation: **[bit.ly/va-trier](https://bit.ly/va-trier)** – Illustration: AI-generated.
 <!-- .element: style="font-size:0.6em;" -->
 
 [DHd2023](https://www.conftool.net/dhd2023/index.php?page=browseSessions&form_session=189&presentations=show) &nbsp;·&nbsp; Trier &nbsp;🇩🇪 &nbsp;·&nbsp; Fr, 17. März 2023
