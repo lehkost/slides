@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Bürgerliches Trauerspiel digital (14. April 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+<small>Einstiegspräsentation:</small>
+
+### **Bürgerliches Trauerspiel digital**
+
+(Sommersemester 2025 · Freie Universität Berlin)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Diese Präsentation: <br />https://lehkost.github.io/slides/2025-04-14-bgltr/
+<!-- .element: style="font-size:0.65em;" -->
+
+![QR-Code](images/qr-code.png)<!-- .element width="180px;" -->
+
+---
+
+## 1. Vorstellungsrunde
+
+<br />
+
+Name, Fach, BA oder MA, Fachsemester, Interessenschwerpunkte?
+
+---
+
+## 2. Lernziele
+
+<br />
+
+- Vermittlung von Gattungsmerkmalen des bürgerlichen Trauerspiels und Diskussion anhand ausgewählter Dramen
+- praktische Kenntnisse hinsichtlich der Erstellung digitaler Korpora
+- Umgang mit digitalen Analysewerkzeugen
+
+---
+
+## 3. Bürgerliches Trauerspiel
+
+--
+
+### Modernisierungsschub ab Mitte des 18. Jahrhunderts
+
+<br />
+
+* »›Niemand […] wird leugnen, daß die deutsche Schaubühne einen grossen Theil ihrer ersten Verbesserungen dem Herrn Professor Gottsched zu danken habe.‹ <br />Ich bin dieser Niemand; ich leugne es gerade zu. Es wäre zu wünschen, daß sich Herr Gottsched niemals mit dem Theater vermengt hätte. Seine vermeinten Verbesserungen betreffen entweder entbehrliche Kleinigkeiten, oder sind wahre Verschlimmerungen.«
+
+<br />Lessing, 17. Litteraturbrief ([16. Februar 1759](https://books.google.com/books?id=lM5KAAAAcAAJ&pg=PA97))
+
+--
+
+### »Der Umstand …
+
+<br />
+
+- … daß sich unter dem Stichwort ›bgl. Tr.‹ eigentlich nur vier Dramen im kollektiven Gedächtnis der Gebildeten erhalten haben:
+    - »Miß Sara Sampson« (1755),
+    - »Emilia Galotti« (1772),
+    - »Kabale und Liebe« (1784) und
+    - »Maria Magdalena« (1844).
+
+<br />(Guthke 2006, S. 1)
+
+--
+
+### »Briefwechsel über das Trauerspiel«
+
+<br />
+
+- »Der mitleidigste Mensch ist der beste Mensch«
+
+<br />(Lessing, November 1756, [zeno.org](http://www.zeno.org/nid/20005265401))
+
+--
+
+### Phasen der Beschäftigung mit dem bgl. Tr.
+
+<br />
+
+- Sicherung und Systematisierung des Textkorpus im Positivismus (Ende 19.&nbsp;Jahrhundert)
+- Interesse am bgl. Tr. wegen »Spiegelung gesellschaftlicher Umbruchsprozesse« (1960er- und frühe 1970er-Jahre)
+- »familiengeschichtlich orientierte Studien zur Gattung« (1980er-Jahre)
+- »Um 1990 dann schien der ganze Komplex im wesentlichen hinreichend erforscht zu sein«
+- postmoderne Zuwendung zum bgl. Tr. sei bisher ausgeblieben, dafür Dekanonisierung, d.&nbsp;h. Zuwendung zu Texten jenseits des Kanons (Stand 1993)
+- bgl. Tr. und digitale Literaturwissenschaft?
+
+--
+
+### Wichtige Korpuszusammenstellungen
+
+<br />
+
+- [Christian Heinrich Schmids Korpus](https://books.google.com/books?id=XMA7AQAAMAAJ&pg=PA282) (1798)
+- Cornelia Mönchs Korpus (1993)
+    - als [PDF](https://github.com/lehkost/bgltr/blob/main/abschrecken_oder_mitleiden_korpusliste.pdf)
+    - als [Tabelle/CSV-Datei](https://github.com/lehkost/bgltr/blob/main/bgltr.csv)
+- Karl S. Guthkes Korpus (1972, aktualisiert 2006, dort S. 77–79)
+
+--
+
+### Weitere Hilfsmittel
+
+<br />
+
+- Reinhart Meyer: **Das deutsche Trauerspiel des 18. Jahrhunderts.** Eine Bibliografie. München: Fink 1977.
+- Reinhart Meyer: **Bibliographia dramatica et dramaticorum.** Kommentierte Bibliographie der im ehemaligen deutschen Reichsgebiet gedruckten und gespielten Dramen des 18. Jahrhunderts nebst deren Bearbeitungen und Übersetzungen und ihrer Rezeption bis in die Gegenwart. Mehrere Bände in verschiedenen Abteilungen in verschiedenen Verlagen. 1986ff.
+- Wolfang F. Bender, Siegfried Bushuven, Michael Huesmann: **Theaterperiodika des 18. Jahrhunderts.** Bibliographie und inhaltliche Erschließung deutschsprachiger Theaterzeitschriften, Theaterkalender und Theatertaschenbücher. Teil 1: 1750–1780; Teil 2: 1781–1790; Teil 3: 1791–1800. München u.&nbsp;a.: Saur 1994; 1997; 2005.
+
+---
+
+## 4. Digitalisierung der Forschungsgegenstände
+
+<br />
+
+- ℌ𝔞𝔟𝔢𝔫 𝔖𝔦𝔢 𝔷𝔲𝔪 𝔅𝔢𝔦𝔰𝔭𝔦𝔢𝔩 𝔰𝔠𝔥𝔬𝔫 𝔪𝔞𝔩 𝔢𝔦𝔫𝔢𝔫 𝔩𝔞𝔫𝔤𝔢𝔫 𝔗𝔢𝔵𝔱 𝔦𝔫 𝔉𝔯𝔞𝔨𝔱𝔲𝔯 𝔤𝔢𝔩𝔢𝔰𝔢𝔫?
+- Aufgabe für zu Hause: Transkription einer Seite in Fraktur<!-- .element: class="fragment" -->
+
+--
+
+### Facetten digitaler Dramenforschung
+
+<br />
+
+* Hartmut Ilsemann: Computerized Drama Analysis (LLC 1995), [doi:10.1093/llc/10.1.11](https://doi.org/10.1093/llc/10.1.11)
+    * DRAMALYS.EXE (zuerst 1984) und DRAMGRAF.EXE (für MS-DOS-Computer, geschrieben in Turbo Basic)
+* Fotis Jannidis und Gerhard Lauer: [Burrows’s Delta and Its Use in German Literary History](http://www.jstor.org/stable/10.7722/j.ctt5vj848.5) (2014)
+* Christof Schöch: [Topic Modeling Genre: An Exploration of French Classical and Enlightenment Drama](http://www.digitalhumanities.org/dhq/vol/11/2/000291/000291.html) (DHQ 2017)
+* Mark Algee-Hewitt: Distributed Character: Quantitative Models of the English Stage, 1550–1900 (NLH 2017), [doi:10.1353/nlh.2017.0038](https://doi.org/10.1353/nlh.2017.0038)
+* Nils Reiter, Tim Strohmayer, Janis Pagel: [DramaAnalysis](https://cran.r-project.org/web/packages/DramaAnalysis/index.html) (2019)
+
+--
+
+### Distant-Reading Showcase
+
+Wie verändern sich die Figurenkonstellationen im deutschen Drama?
+
+![465 Dramennetzwerke auf einen Blick](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### **DraCor**
+
+<br />
+
+- DraCor: *Drama Corpora*-Portal (https://dracor.org/)
+- [Credits](https://dracor.org/doc/credits)-Seite: &gt; 50 Namen
+- Beginn mit einem Hauskorpus:
+    - German Drama Corpus, GerDraCor (1540er–1940er)
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI (1/2)
+
+<br />
+
+![Der Pudelhund (Snippet))](images/katzen-sprache.jpg)<!-- .element height="300px;" -->
+
+<br />
+
+Karl von Eckartshausen: *Der Pudelhund. Ein Lustspiel in einem Aufzuge.* München: Lentner 1800, S. 24. ([via Google Books](https://books.google.com/books?id=qF5IAAAAcAAJ&pg=PA24))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI (2/2)
+
+<br />
+
+```xml
+<sp who="#felden">
+  <speaker>Felden.</speaker>
+    <p>
+      Wie viele Buchstaben hat denn das Alphabet der Katzen-Sprache?
+    </p>
+</sp>
+<sp who="#anton">
+  <speaker>Anton.</speaker>
+    <p>
+      Das will ich Ihnen erklären, denn der Herr Sprachmeister hat es mich
+      schon gelehrt. Es hat nur 4 Buchstaben: M. I. A. U; das heißt: Miau.
+      Aus diesen 4 Buchstaben formiren sich aber sämmtliche Wörter, und die
+      Verschiedenheit der Töne, und die Geschwindigkeit des Ausdruckes oder
+      das Aushalten der Sylben formirt die Wörter […]
+    </p>
+</sp>
+```
+
+<br />
+
+Dialog aus Karl von Eckartshausens Lustspiel »Der Pudelhund« (1800) in TEI (Text Encoding Initiative), Quelle: [DraCor](https://dracor.org/id/ger000524). Momentan sind im Standard 588 verschiedene Elemente definiert ([Stand Januar 2025](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Frontend dracor.org
+
+![DraCor-Frontpage am 05.10.2024](images/dracor-frontpage-2024-10-05.png)
+
+https://dracor.org/
+
+--
+
+#### Wachsende Liste von Korpora aus der Community
+
+<div id="left">
+
+- FreDraCor
+- GerDraCor
+- EngDraCor
+- RusDraCor
+- CalDraCor
+- DutchDraCor
+- ItaDraCor
+- HunDraCor
+- SweDraCor
+- UDraCor
+- GreekDraCor
+- AmDraCor
+
+</div>
+
+<div id="right">
+
+- GerShDraCor
+- ShakeDraCor
+- RomDraCor
+- PolDraCor
+- AlsDraCor
+- SpanDraCor
+- YiDraCor
+- TatDraCor
+- BashDraCor
+- im Entstehen: CzeDraCor, HeDraCor, GeorgDraCor, NeoLatDraCor, JesDraCor, RoDraCor, ArDraCor
+
+</div>
+
+(Sortiert nach Anzahl von Stücken pro Korpus, vgl. die [DraCor Corpus Registry](https://dracor.org/doc/corpora).)
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### Frontpage GerDraCor
+
+![GerDraCor)](images/dracor-gerdracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/ger
+
+--
+
+### GerDraCor: »Die Räuber« (1781)
+
+![GerDraCor: Die Räuber)](images/dracor-die-raeuber.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/ger000008
+
+--
+
+### GerDraCor: »Das Testament« (1745)
+
+![GerDraCor: Das Testament)](images/dracor-das-testament.png)
+
+https://dracor.org/id/ger000220#speech
+
+--
+
+### GerDraCor
+
+<br />
+
+- mittlerweile 726 Stücke
+- Community-Projekt: Beschreibung und Anwendungsbeispiele [bei forTEXT](https://fortext.net/ressourcen/textsammlungen/dracor-drama-corpora-project) (Hamburg/Darmstadt)
+- [Nathalie Wiedmer et al.](https://quadrama.github.io/publications/Wiedmer2020aa): Annotation von Beziehungen der Figuren untereinander (Familien- und Liebesverhältnisse, dienstliche Abhängigkeiten)
+
+--
+
+#### Ludwig Anzengrubers »Das vierte Gebot« (1877)
+
+![Anzengruber-Drama, Netzwerk mit Figurenbeziehungen](images/anzengruber-list-relations.jpg)<!-- .element width="580px;" -->
+
+**Modellierung spezifischer Figurenrelationen.** <br />Netzwerkdaten: https://dracor.org/id/ger000129#relations
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### DraCor-Download-Tab
+
+![DraCor-Download-Tab](images/anzengruber-download-tab.png)
+
+https://dracor.org/id/ger000129#downloads
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Forschungsbeispiel
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Einfache Visualisierung von Strukturdaten
+#### Anzahl von Figuren pro Stück in chronologischer Folge
+
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+Ausgabe in RStudio.
+<!-- .element: style="font-size:0.65em;" -->
+
+(Der Punkt rechts oben: Karl Kraus’ »Die letzten Tage der Menschheit«, 925 Sprechinstanzen).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Lessings »Emilia Galotti«
+
+![Emilia Galotti (dynamischer Graph)](images/lessing-emilia-galotti.gif)
+
+**Dynamischer Graph**, generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script: Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Gamification: »Battle of the Plays« (2024)
+
+![Battle of the Plays, card](images/battle-of-the-plays_sophocles-antigone.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_back.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_mitford-rienzi.jpg)
+
+Frank Fischer, Mark Schwindt: **[Battle of the Plays. A Gamification Approach to Literary Network Analysis.](https://sukultur.de/produkt/battle-of-the-plays-a-gamification-approach-to-literary-network-analysis/)** Berlin: **SUKULTUR** 2024. – 32+1 cards including case, color print. ISBN: 978-3-95566-182-3. €15.00. – <br />Rules of play: https://battle-of-the-plays.github.io/
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+## Zusammenfassung
+
+<br />
+
+- DraCor: eine digitale Forschungsinfrastruktur zum europäischen Drama und Teil eines digitalen literaturwissenschaftlichen Ökosystems
+- Schnittstelle zwischen analoger und digitaler Philologie
+
+---
+
+## 5. Seminarplan
+
+<br />
+
+[dramenanalyse.github.io](https://dramenanalyse.github.io/buergerliches_trauerspiel_digital_sose_2025)
+
+---
+
+## 6. Hausaufgabe für nächste Sitzung
+
+<br />
+
+- eine Seite hier transkribieren: (Link folgt)
+- Verteilung der Seiten jetzt live im Seminar
+
+---
+
+## 7. Organisatorisches
+
+<br />
+
+- Planungswebsite: **[dramenanalyse.github.io](https://dramenanalyse.github.io/buergerliches_trauerspiel_digital_sose_2025)**
+- Bringen Sie, falls möglich, immer Ihren Laptop mit ins Seminar.
+- Erreichbarkeit: via E-Mail, <a href="https://fu-berlin.blackboard.com/ultra/courses/_202846_1/cl/outline">Blackboard</a> (FU)
+- Blackboard (FU):
+    - Rufen Sie bitte regelmäßig Ihren FU-Account ab. (Alternativ lässt sich über das ZEDAT-Portal eine E-Mail-Weiterleitung einrichten.)
+
+---
+
+Bis nächsten Montag.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
