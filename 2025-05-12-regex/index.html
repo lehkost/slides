@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>RegEx (Seminarsitzung am 12. Mai 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+Seminar ([LV 17145](https://www.fu-berlin.de/vv/de/lv/952530))
+<!-- .element: style="font-size:0.65em;" -->
+
+#### **»Bürgerliches Trauerspiel digital«**
+
+(14. April 2025 – 14. Juli 2025)<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+4. Veranstaltung (12. Mai 2025):<!-- .element: style="font-size:0.65em;" -->
+
+#### **Einführung in reguläre Ausdrücke**<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />https://lehkost.github.io/slides/2025-05-12-regex/index.html
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Was sind reguläre Ausdrücke?
+
+Reguläre Ausdrücke (engl. *regular expressions*, kurz *regex*) sind Muster, die verwendet werden, um Texte zu durchsuchen und zu manipulieren.
+
+<br />
+
+Anwendungsgebiete:
+
+- Validierung von Eingaben (z. B. E-Mail-Adressen).
+- Durchsuchen von Texten nach bestimmten Mustern.
+- Ersetzen von Zeichen oder Wörtern in Texten.
+- Extraktion von Daten aus strukturierten Texten.
+
+--
+
+### Aufbau eines regulären Ausdrucks
+
+<br />
+
+Syntax-Grundlagen:
+
+- **Literal:** Direkte Übereinstimmung mit Zeichen (z. B. `abc` sucht »abc«).
+- **Metazeichen:** Sonderzeichen mit spezieller Bedeutung, z. B.:
+  - `.`: Beliebiges Zeichen.
+  - `^`: Anfang einer Zeile.
+  - `$`: Ende einer Zeile.
+  - `\`: Escape-Zeichen, um Metazeichen zu maskieren.
+
+--
+
+### Zeichenklassen
+
+Zeichenklassen spezifizieren eine Menge von Zeichen, <br />die übereinstimmen können.
+
+<br />
+
+Wichtige Beispiele:
+
+- `[abc]`: Sucht »a«, »b« oder »c«.
+- `[^abc]`: Sucht alles außer »a«, »b« oder »c«.
+- `[0-9]`: Sucht eine beliebige Ziffer.
+- `[a-zA-Z]`: Sucht Buchstaben (groß und klein).
+- `.`: Jedes Zeichen außer Zeilenumbrüchen.
+
+--
+
+### Quantifizierer
+
+Quantifizierer legen fest, wie oft ein Element im Text vorkommen soll.
+
+<br />
+
+**Wichtige Beispiele:**
+- `*`: 0 oder mehr Wiederholungen (z. B. `a*` sucht »«, »a«, »aa« usw.).
+- `+`: 1 oder mehr Wiederholungen (z. B. `a+` sucht »a«, »aa« usw.).
+- `?`: 0 oder 1 Wiederholung (z. B. `a?` sucht »« oder »a«).
+- `{n}`: Genau n Wiederholungen (z. B. `a{3}` sucht »aaa«).
+- `{n,}`: Mindestens n Wiederholungen (z. B. `a{2,}` sucht »aa«, »aaa« usw.).
+- `{n,m}`: Zwischen n und m Wiederholungen (z. B. `a{1,3}` sucht »a«, »aa« oder »aaa«).
+
+--
+
+### Gruppen und Alternativen
+
+<br />
+
+Gruppen:
+
+- `()`: Gruppierung von Mustern (z. B. `(abc)+` sucht »abc«, »abcabc« usw.).
+
+<br />
+
+Alternativen:
+
+- `|`: Oder-Operator (z. B. `a|b` sucht »a« oder »b«).
+
+<br />
+
+Beispiel:
+
+- `(cat|dog)` sucht »cat« oder »dog«.
+
+--
+
+### Anker
+
+Anker bestimmen die Position im Text.
+
+<br />
+
+Wichtige Beispiele:
+
+- `^`: Anfang einer Zeile (z. B. `^abc` sucht »abc« am Zeilenanfang).
+- `$`: Ende einer Zeile (z. B. `abc$` sucht »abc« am Zeilenende).
+- `\b`: Wortgrenze (z. B. `\bword\b` sucht »word« als eigenständiges Wort).
+- `\B`: Keine Wortgrenze (z. B. `\Bword` sucht »word« innerhalb eines Wortes).
+
+--
+
+### Sonderzeichen und Escapes
+
+<br />
+
+Escaping:
+
+- `\`: Maskiert Metazeichen (z. B. `\.\$` sucht ».$«).
+
+<br />
+
+Häufige Sonderzeichen:
+
+- `\d`: Ziffern [0-9].
+- `\D`: Keine Ziffern.
+- `\w`: Wortzeichen [a-zA-Z0-9_].
+- `\W`: Keine Wortzeichen.
+- `\s`: Leerzeichen (inkl. Tab, Zeilenumbruch).
+- `\S`: Keine Leerzeichen.
+
+--
+
+### Greedy vs. Lazy Regex
+
+Greedy (gierig):
+
+- Ein greedy Quantifizierer versucht, so viel Text wie möglich zu matchen.
+- Beispiel:
+  - Regex: `a.*b`
+  - Text: `a123b456b`
+  - Match: `a123b456b`
+
+Lazy (faul):
+
+- Ein lazy Quantifizierer versucht, so wenig Text wie möglich zu matchen.
+- Lazy-Quantifizierer werden durch ein `?` nach dem Quantifizierer aktiviert.
+- Beispiel:
+  - Regex: `a.*?b`
+  - Text: `a123b456b`
+  - Match: `a123b`
+
+--
+
+### Ersetzungen mit Regex in Editoren
+
+Reguläre Ausdrücke können in Texteditoren wie VS Code, Sublime Text oder Notepad++ verwendet werden, <br />um mithilfe von Klammern gezielt Zeichenketten zu ersetzen oder zu manipulieren.
+<!-- .element: style="font-size:0.7em;" -->
+
+Syntax:
+- Klammern `()` definieren Gruppen.
+- `$1`, `$2`, ... referenzieren die jeweiligen Gruppen in der Ersetzung.
+
+<br />
+
+Beispiel:
+
+- Text: `John Doe, Jane Doe`
+- Regex: `(\w+) (\w+)`
+- Ersetzung: `$2, $1`
+- Ergebnis: `Doe, John, Doe, Jane`
+
+Viele Editoren haben eine Checkbox für »Regex aktivieren«, um reguläre Ausdrücke beim Suchen und Ersetzen zu verwenden.
+<!-- .element: style="font-size:0.7em;" -->
+
+Je nach Editor kann statt dem Platzhalter `$1` auch `\1` für die Ersetzung nötig sein.
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Lookaheads und Lookbehinds
+
+Lookaheads und Lookbehinds ermöglichen das Suchen nach Mustern basierend auf Kontext, ohne den Kontext in das Ergebnis einzuschließen.
+
+<br />
+
+Arten:
+
+- **Positive Lookahead:** `(?=...)` (z. B. `a(?=b)` sucht »a«, gefolgt von »b«).
+- **Negative Lookahead:** `(?!...)` (z. B. `a(?!b)` sucht »a«, nicht gefolgt von »b«).
+- **Positive Lookbehind:** `(?<=...)` (z. B. `(?<=a)b` sucht »b«, nach vorangegangenem »a«).
+- **Negative Lookbehind:** `(?<!...)` (z. B. `(?<!a)b` sucht »b«, nach nicht vorangegangenem »a«).
+
+--
+
+### Praktische Beispiele
+
+<br />
+
+Postleitzahlen (DE):
+
+```^[0-9]{5}$```
+
+<br />
+
+Telefonnummer:
+
+```^\+?[0-9]{1,4}[- ]?[0-9]{3,}$```
+
+<br />
+
+E-Mail-Validierung:
+
+```^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$```
+
+--
+
+###  Tipps und Tricks
+
+<br />
+
+- Online-Testumgebungen: [regex101.com](https://regex101.com/) oder [regexr.com](https://regexr.com/)
+- Kleine Schritte: Komplexe Muster schrittweise aufbauen.
+- Dokumentation lesen: Regex-Engines können sich in Details unterscheiden.
+
+--
+
+### Copy & paste für Anwendungsbeispiel
+
+<br />
+
+```
+1. E-Mail: max.mustermann@example.com
+2. Telefonnummer: +49 123 456 7890
+3. Postleitzahl: 12345.
+4. URL: https://www.example.com
+5. Benutzername: user_12345
+6. Satz: "Dies ist ein "Beispieltext" mit Zahlen 123 und Zeichen!"
+```
+
+<br />
+
+Gehe zu [regex101.com](https://regex101.com/) und fügen Sie dieses Snippet ein.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
