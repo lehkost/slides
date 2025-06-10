@@ -69,7 +69,7 @@ Syntax-Grundlagen:
 
 - **Literal:** Direkte Übereinstimmung mit Zeichen (z. B. `abc` sucht »abc«).
 - **Metazeichen:** Sonderzeichen mit spezieller Bedeutung, z. B.:
-  - `.`: Beliebiges Zeichen.
+  - `.`: Beliebiges Zeichen außer Zeilenumbrüchen.
   - `^`: Anfang einer Zeile.
   - `$`: Ende einer Zeile.
   - `\`: Escape-Zeichen, um Metazeichen zu maskieren.
@@ -85,10 +85,9 @@ Zeichenklassen spezifizieren eine Menge von Zeichen, <br />die übereinstimmen k
 Wichtige Beispiele:
 
 - `[abc]`: Sucht »a«, »b« oder »c«.
-- `[^abc]`: Sucht alles außer »a«, »b« oder »c«.
+- `[^abc]`: Sucht alles außer »a«, »b« oder »c« (Negation).
 - `[0-9]`: Sucht eine beliebige Ziffer.
 - `[a-zA-Z]`: Sucht Buchstaben (groß und klein).
-- `.`: Jedes Zeichen außer Zeilenumbrüchen.
 
 --
 
