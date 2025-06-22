@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DraCor y escenarios de uso para la Inteligencia Artificial («Literatura, teatro e inteligencia artificial», 27 jun 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+## DraCor y escenarios de uso para <br />la Inteligencia Artificial
+<!-- .element: style="font-size:1.55em;" -->
+
+![logo de DraCor](images/dracor-hexagon.png)<!-- .element width="160px"; style="box-shadow:none;"; -->
+
+Frank Fischer<!-- .element: style="font-size:0.85em;" -->
+
+(Freie Universität Berlin)
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+URL de la presentación: **[bit.ly/tea27625](https://bit.ly/tea27625)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />
+
+[«Literatura, teatro e inteligencia artificial»](https://www.uned.es/universidad/inicio/en/dam/jcr:0dd43135-89a0-4702-a1d9-345b3f0a4e5a/Programa%2034%20Seminario.pdf) &nbsp;·&nbsp; Universidad Nacional de Educación a Distancia (UNED), Madrid &nbsp;·&nbsp; 27 jun 2025
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+## Índice
+
+<br />
+
+1. [Análisis computacionales de textos dramáticos antes de la era digital](#/1)
+2. [DraCor y el análisis digital del drama](#/2)
+3. [Uso de la IA en estudios teatrales y literatura comparada](#/3)
+4. [DraCor y el Protocolo de Contexto de Modelo (MCP)](#/4)
+5. [Resumen](#/5)
+
+---
+
+# Capítulo 1.
+
+<br />
+
+## Análisis computacionales de textos dramáticos antes de la era digital
+
+--
+
+### El formalismo moscovita y <br />Boris Yarkho (1889–1942)
+
+![Boris Yarkho (recortado)](images/boris-yarkho.jpg)<!-- .element width="320px;" -->
+
+(fuente de la imagen: [urokiistorii.ru – vía Internet Archive](https://web.archive.org/web/20201001011015/http://urokiistorii.ru/article/52560))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+Boris Yarkho: ***Distribución de las intervenciones en tragedias en cinco actos (una cuestión de clasicismo y romanticismo)*** <br />(escrito entre 1935–1938, primera edición 1997)
+
+![Shakespeare vs Románticos 2, distribución de intervenciones en promedio](images/yarkho-shakespeare-vs-romanticists-2.png)<!-- .element height="380px;" -->
+
+Shakespeare comparado con el drama romántico (promedio): «el drama romántico representa un retorno a Shakespeare». – Traducción inglesa de Craig Saunders en: Frank Fischer, Marina Akimova, Boris Orekhov (eds.): *Journal of Literary Theory*. [Vol. 13. No. 1: Moscow Formalism and Literary History.](https://www.degruyter.com/journal/key/jlt/13/1/html) De&nbsp;Gruyter 2019, pp. 13–76. ([doi:10.1515/jlt-2019-0002](https://doi.org/10.1515/jlt-2019-0002))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Solomon Marcus: »Poetica matematică« (1970)
+
+(«Poética matemática». Trad. del rumano por Edith Mândroiu. Frankfurt/M.: Athenäum 1973)
+<!-- .element: style="font-size:0.65em;" -->
+
+![Índice, página 15](images/solomon-marcus-indice-p-15.png)<!-- .element height="440px;" -->
+![Índice, página 16](images/solomon-marcus-indice-p-16.png)<!-- .element height="440px;" -->
+
+Muy instructivo en cuanto a la operacionalización, por ejemplo (parafraseado): «Dos personajes interactúan si, dentro de la misma unidad de un drama (normalmente una ‹escena›), realizan un acto de habla.»
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Hartmut Ilsemann (1984/1995) <small>(1/2)</small>
+
+![ilsemann-computerized-1995-snippet](images/ilsemann-computerized-1995-snippet.png)
+
+En: Literary and Linguistic Computing. Vol. 10 (1995), no. 1, pp. 11–21, [doi:10.1093/llc/10.1.11](https://doi.org/10.1093/llc/10.1.11)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Hartmut Ilsemann (1984/1995) <small>(2/2)</small>
+
+![ilsemann-computerized-1995-table-6](images/ilsemann-computerized-1995-table-6.png)
+
+«No es necesario enfatizar que una vez se ha creado una gran base de datos, es posible realizar todo tipo de investigaciones lingüísticas y literarias.» (p. 13)
+
+---
+
+# Capítulo 2.
+
+<br />
+
+## DraCor y el análisis digital del drama
+
+--
+
+### Página principal de DraCor
+
+![Página principal de DraCor el 18 de enero de 2025](images/dracor_frontpage_2025-01-18.png)
+
+https://dracor.org/
+
+--
+
+### Precondición: Estándar TEI
+#### (= <u>T</u>ext <u>E</u>ncoding <u>I</u>nitiative)
+
+```xml
+<sp who="#jose">
+  <speaker>José</speaker>
+  <p>¡Oh, sí, señor!</p>
+</sp>
+<sp who="#marq">
+  <speaker>Marqués</speaker>
+  <p>Y siempre tan retraídos… aunque hay en la familia,
+     según creo, una novedad muy interesante…</p>
+</sp>
+<sp who="#jose">
+  <speaker>José</speaker>
+  <p>¿Novedad? ¡Ah! sí… ¿lo dice por…?</p>
+</sp>
+<sp who="#marq">
+  <speaker>Marqués</speaker>
+  <p>Oye, <rs key="#jose">José</rs>: ¿harás lo que yo te diga?
+</p>
+</sp>
+```
+
+Del diálogo inicial de *Electra* (1901) de Pérez Galdós, codificado en TEI. <br />Actualmente, el estándar define 588 elementos diferentes <br />([Versión 4.9.0, enero de 2025](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Lista creciente de corpus de la comunidad:
+
+<div id="left">
+
+- FreDraCor
+- GerDraCor
+- EngDraCor
+- RusDraCor
+- **CalDraCor**
+- DutchDraCor
+- ItaDraCor
+- HunDraCor
+- SweDraCor
+- UDraCor
+- GreekDraCor
+- AmDraCor
+
+</div>
+
+<div id="right">
+
+- GerShDraCor
+- ShakeDraCor
+- RomDraCor
+- PolDraCor
+- AlsDraCor
+- **SpanDraCor**
+- YiDraCor
+- TatDraCor
+- BashDraCor
+- unos cuantos corpus más están en preparación ➔ ArDraCor, HeDraCor, …
+- [catálogo](https://dracor.org/doc/corpora)
+
+</div>
+
+--
+
+### Página principal de SpanDraCor
+
+![Página principal de SpanDraCor)](images/dracor-spandracor.png)<!-- .element height="480px;" -->
+
+https://dracor.org/span – Editado por María Concepción Jiménez, Teresa Santa María Fernández y José Calvo Tello. Derivado del corpus BETTE (Biblioteca Electrónica Textual del Teatro en Español de 1868–1936).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Red de personajes
+
+![SpanDraCor: Electra)](images/dracor-electra.png)<!-- .element height="480px;" -->
+
+SpanDraCor: «Electra» (1901), enlace permanente: https://dracor.org/id/span000006
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Distribución de intervenciones
+
+![SpanDraCor: Electra)](images/dracor-electra-characters-per-scene.png)<!-- .element height="480px;" -->
+
+https://dracor.org/id/span000006#speech
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Pestaña de descargas en DraCor
+
+![Pestaña de descargas en DraCor](images/dracor-electra-download-tab.png)<!-- .element height="480px;" -->
+
+https://dracor.org/id/span000006#downloads
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### API de DraCor
+
+<br />
+
+- API: Interfaz de Programación de Aplicaciones
+- permite el intercambio estandarizado de información
+- los datos se transfieren de forma estructurada según una sintaxis definida
+
+--
+
+### Funciones de la API de DraCor
+
+![API de DraCor)](images/dracor-api.png)
+
+https://dracor.org/doc/api
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### API de DraCor: Consultas de ejemplo
+
+https://dracor.org/api/v1/corpora/span/plays/galdos-electra/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Texto hablado de todos los personajes femeninos de la obra «Electra» de Pérez Galdós.</small>
+
+https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Texto hablado de todos los personajes que son hijos de otros personajes en «Los bandidos» de Schiller.</small>
+
+https://dracor.org/api/v1/corpora/span/plays/galdos-electra/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Datos de red extraídos de la obra «Electra» de Pérez Galdós (en formato JSON).</small>
+
+https://dracor.org/api/v1/corpora/span/plays/galdos-electra/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Todas las acotaciones escénicas de la obra «Electra» de Pérez Galdós.</small>
+
+https://dracor.org/api/v1/corpora/cal/metadata/csv<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadatos de todas las obras del corpus de Calderón (en JSON o CSV).</small>
+
+--
+
+### Visualización simple de datos estructurales
+#### Número de personajes por obra en orden cronológico (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+spandracor <- fread("https://dracor.org/api/v1/corpora/span/metadata/csv")
+ggplot(spandracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+Ejemplo de un script sencillo en R que obtiene datos vía API.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Número de personajes por obra en orden cronológico (2/2)
+
+![Número de personajes](images/num-of-speakers-spandracor.png)
+
+Resultado en RStudio.
+<!-- .element: style="font-size:0.6em;" -->
+
+(El punto a la altura del año 1901 con unos 15 personajes, esto es «Electra».)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Bibliotecas DraCor (envoltorios de API)
+
+<br />
+
+= simplificación adicional: <br />las funciones de la API se convierten en comandos dedicados
+
+<br />
+
+- para R: rdracor
+- para Python: pydracor
+
+--
+
+#### Ejemplo (rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+electra <- get_net_cooccur_igraph(play="galdos-electra", corpus = "span")
+plot(electra)
+```
+#### Result:
+
+![Electra, grafo de red con rdracor](images/electra-rdracor-graph.png)<!-- .element height="400px;" -->
+
+---
+
+# Capítulo 3.
+
+<br />
+
+## Uso de la IA en estudios teatrales y literatura comparada
+
+--
+
+- digitalización
+  - corrección OCR: uso de modelos de aprendizaje profundo para mejorar la precisión de textos digitalizados (Transkribus, OCR4all, eScriptorium)
+    - Transkribus: muchos modelos distintos para distintos tipos de letra y escrituras manuscritas
+    - Transkribus: proyecto exitoso de la UE, ahora funcionando como proveedor de servicios
+  - traducción automática
+- tareas de investigación
+  - anotación
+  - generación de texto
+- análisis
+  - modelado de temas (Topic Modeling)
+
+---
+
+# Capítulo 4.
+
+<br />
+
+## DraCor y el Protocolo de Contexto de Modelo (MCP)
+
+--
+
+¿Qué pasaría si combináramos la fortaleza de la codificación TEI, los resultados de la API y el conocimiento general que los modelos de lenguaje grande (LLM) tienen sobre el mundo?
+
+Aquí entra en escena el Protocolo de Contexto de Modelo (MCP).
+
+
+--
+
+### ¿Qué significa MCP?
+
+- estándar abierto para conectar modelos de IA con datos/herramientas externas
+- buzzword (palabra de moda) en el mundo de la IA
+- todavía muy reciente: publicado por Anthropic [en noviembre de 2024](https://www.anthropic.com/news/model-context-protocol) como protocolo abierto
+- Anthropic es la empresa detrás del LLM Claude, uno de los competidores de ChatGPT o Gemini
+- hasta ahora solo 280 menciones del MCP en Google Scholar, por lo que aún no se utiliza ampliamente en la ciencia
+- MCP: piénsalo como un **USB-C para la IA** — integración universal y plug-and-play
+
+--
+
+### MCP en los estudios literarios digitales
+
+- conecta la IA con archivos, corpus y metadatos
+- permite …
+  - investigación entre corpus
+  - análisis contextual rico en metadatos
+  - flujos de trabajo sin fricciones para las humanidades digitales
+- visión: una IA que navegue y analice datos literarios de forma inteligente
+
+--
+
+### El caso de uso de DraCor
+
+- implementación del servidor DraCor MCP
+  - Ingo Börner (2025): DraCor MCP Server (Version v1.0.0-alpha.2) [Computer software]. GitHub. https://github.com/dracor-org/dracor-mcp
+- cuando preguntas algo a Claude sobre textos dramáticos, puede …
+  - acceder a recursos como corpus, obras, personajes y redes
+  - usar herramientas para buscar, comparar y analizar obras
+  - proporcionar ideas y visualizaciones (interactivas) basadas en estos datos
+- la API de DraCor es de acceso público, por lo que no se requiere autenticación
+
+--
+
+### Un ejemplo
+
+<br />
+
+- prompt
+  - «Describe el papel y la posición del personaje principal de la obra ‹Electra› de Pérez Galdós argumentando en el sentido del análisis de redes.»
+
+--
+
+### Respuesta de Claude **sin** conexión al servidor DraCor MCP
+
+<br />
+
+- «En ‹Electra› de Pérez Galdós, el personaje principal ocupa una posición central y estratégica dentro de la red de relaciones sociales que estructura la obra, funcionando como el nodo principal que articula y dinamiza todo el sistema narrativo.»
+
+--
+
+#### Respuesta de Claude **con** conexión al servidor DraCor MCP (1/2)
+
+![imagen](images/dracor-mcp-electra-1.png)<!-- .element height="600px;" -->
+
+--
+
+#### Respuesta de Claude **con** conexión al servidor DraCor MCP (2/2)
+
+![imagen](images/dracor-mcp-electra-2.png)<!-- .element height="600px;" -->
+
+--
+
+- prompt
+  - ¿Puedes visualizar la red de la obra de forma interactiva?
+
+![imagen](images/dracor-mcp-electra-3.png)
+
+---
+
+# Resumen
+
+<br />
+
+- papel importante de las API en las humanidades digitales para acceder a capas de datos específicas
+- MCP como conector ideal entre los LLM y los datos especializados de las humanidades
+- investigación multilingüe, multimedia y comparativa asistida por IA
+- herramientas para pedagogía, colaboración y divulgación pública
+
+--
+
+Gracias a Ingo Börner y Antonio Rojas Castro.
+
+![logo de DraCor](images/dracor-hexagon.png)<!-- .element width="200px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+https://github.com/dracor-org/dracor-mcp
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
