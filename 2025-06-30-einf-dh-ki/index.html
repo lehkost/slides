@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 30. Juni 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/943722))
+<!-- .element: style="font-size:0.6em;" -->
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(14. April – 14. Juli 2025)
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+10. Vorlesung (30. Juni 2025):
+<!-- .element: style="font-size:0.65em;" -->
+
+#### **KI &amp; Maschinelles Lernen**
+<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[bit.ly/dh306](https://bit.ly/dh306)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Semesterüberblick
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| 14.04.2025 | Thematische Rundumschau I |
+| 28.04.2025 | Thematische Rundumschau II |
+| 05.05.2025 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 12.05.2025 | Distant Reading I: Stilometrie |
+| 19.05.2025 | Distant Reading II: Topic Modeling |
+| 26.05.2025 | Visual Analytics: »Beautiful Evidence« |
+| 02.06.2025 | Netzwerkanalyse |
+| 16.06.2025 | Geografische Informationssysteme (GIS) |
+| 23.06.2025 | Wikipedia & Wikidata |
+| **30.06.2025** | **KI &amp; Maschinelles Lernen** |
+| 07.07.2025 | Programmieren in den Geisteswissenschaften <br />(Gastvortrag von Lisa Poggel) |
+| 14.07.2025 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im SoSe 2025
+
+<br />
+
+* [Seminar »Bürgerliches Trauerspiel digital«](https://www.fu-berlin.de/vv/de/lv/952530)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 14:00–16:00 c.t.
+* [Seminar »Wikipedia und Wikidata in der Literaturwissenschaft«](https://www.fu-berlin.de/vv/de/lv/952531)
+  * <!-- .element: style="font-size:0.7em;" -->Do 10:00–12:00 c.t. (zusammen mit Viktor J. Illmer)
+* [Seminar »Digitale Stilometrie«](https://www.fu-berlin.de/vv/de/lv/952529)
+  * <!-- .element: style="font-size:0.7em;" -->Do 14:00–16:00 c.t.
+* [Seminar »Webscraping mit Python für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/954068)
+  * <!-- .element: style="font-size:0.7em;" -->Mo 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Seminar »Textanalyse mit R für die Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/952532)
+  * <!-- .element: style="font-size:0.7em;" -->Di 16:00–18:00 c.t. (geleitet von Lisa Poggel)
+* [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/952528)
+  * <!-- .element: style="font-size:0.7em;" -->Fr 10:00–12:00 c.t. (ab 02.05.2025, zweiwöchentlich)
+  * <!-- .element: style="font-size:0.7em;" -->Übersicht über alle Veranstaltungen: <a href="https://wikis.fu-berlin.de/pages/viewpage.action?pageId=1641516319">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+---
+
+### Zum Einstieg
+
+<br />
+
+Chris Anderson: **The End of Theory**: The Data Deluge Makes the Scientific Method Obsolete. In: Wired 16 (**2008**), S. 108–109. <br />(URL: [wired.com/2008/06/pb-theory/](https://www.wired.com/2008/06/pb-theory/))
+
+<br />
+
+»Sixty years ago, digital computers made information readable. Twenty years ago, the Internet made it reachable. Ten years ago, the first search engine crawlers made it a single database. Now Google and like-minded companies are sifting through the most measured age in history, treating this **massive corpus** as a **laboratory of the human condition**. They are the children of the Petabyte Age.«
+<!-- .element: style="font-size:0.7em;" -->
+
+»Who knows why people do what they do? The point is they do it, and we can track and measure it with unprecedented fidelity. **With enough data, the numbers speak for themselves.**&laquo;
+<!-- .element: style="font-size:0.7em;" -->
+
+»We can stop looking for models. We can analyze the data without hypotheses about what it might show. We can throw the numbers into the biggest computing clusters the world has ever seen and **let statistical algorithms find patterns** where science cannot.«
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Blitzumfrage
+
+<br />
+
+- Wer von Ihnen hat schon mal ChatGPT genutzt? <small>(oder Claude? oder Gemini?)</small>
+- <!-- .element: class="fragment" --> … DALL·E? <small>(oder Midjourney? oder Stable Diffusion?)</small>
+- <!-- .element: class="fragment" --> … zu Reddit beigetragen? <small>(Auflösung folgt)</small>
+
+--
+
+#### Zwischenstopp (1/3)
+
+<br />
+
+### Wofür steht GPT?
+
+<br />
+
+**G**enerative **P**re-trained **T**ransformer
+<!-- .element: class="fragment" -->
+
+<br />
+
+<small>(dt. generatives, vortrainiertes Transformationsmodell)<!-- .element: class="fragment" -->
+
+- generative: basierend auf erlernten Mustern können neue Inhalte generiert werden<!-- .element: class="fragment" -->
+- pre-trained: das Modell wurde auf großen Datensätzen trainiert, um ein allgemeines Verständnis (von Sprache) zu entwickeln<!-- .element: class="fragment" -->
+- transformer: Computermodell, das vor allem für die Verarbeitung von Text verwendet wird<!-- .element: class="fragment" -->
+
+</small>
+
+--
+
+### Kapitel heute
+
+<br />
+
+1. Begriffe: AI, ML, DL, ANNs, LLMs
+2. Geschichte der knNs
+3. Anwendungsbereiche und Apps
+4. GPT-Modelle
+5. Computerpoesie mit knNs
+
+--
+
+### Literatur
+
+* Alexander Löser und Christian Herta: [Maschinen, die wie Menschen lernen. Keine Science-Fiction: Deep Learning bringt Maschinen das Denken bei. Fast jeder hat bereits ein Gerät zu Hause, das diese Technik nutzt. Sie ist sehr komplex – und hat großes Potenzial.](https://glm.io/116468) 6. Oktober 2015.
+* Helmut Linde: [Wie frühe Hirnforschung moderne KI beeinflusst hat. Künstliche neuronale Netze sind hochaktuell – doch der entscheidende Funke für die KI sprang schon in den 1940er Jahren aus den Neurowissenschaften über.](https://glm.io/161836) 17. Januar 2022.
+* Helmut Linde: [Wie sich Deep Learning vom Gehirn unterscheidet. Künstliche Intelligenz, insbesondere Deep Learning, wird gerne mit dem Gehirn verglichen – doch es gibt vier große Unterschiede. Einer davon stellt Forscher vor ein besonderes Rätsel.](https://glm.io/162231) 13. Februar 2022.
+* Daniel Kehlmann: Mein Algorithmus und ich. Stuttgart: Klett-Cotta 2021. (allerdings auf Basis eines [CTRL-](https://arxiv.org/abs/1909.05858), keines GPT-Modells)
+* Will Slocombe, Genevieve Liveley (Hg.): The Routledge Handbook of AI and Literature. New York: Routledge 2025.
+
+---
+
+## Begriffe: AI, ML, DL, ANNs, LLMs
+
+--
+
+- Künstliche Intelligenz (Artificial Intelligence)
+- Maschinelles Lernen (Machine Learning)
+- Tiefes Lernen (Deep Learning)
+- Künstliche neuronale Netze (Artificial Neural Networks)
+- Große Sprachmodelle (Large Language Models)
+
+--
+
+### Künstliche Intelligenz (Artificial Intelligence)
+
+<br />
+
+- ein Forschungszweig/Teilgebiet der Informatik
+- Automatisierung von ›intelligentem‹ Verhalten
+- nicht festgelegt, was ›intelligent‹ bedeutet
+- eine Grundlage für KI ist das maschinelle Lernen
+
+--
+
+### Maschinelles Lernen (Machine Learning)
+
+<br />
+
+- Generierung von Wissen aus Erfahrungswerten
+- Lernalgorithmen entwickeln anhand von (vielen) Beispielen ein komplexes Modell
+- dieses Modell kann anschließend auf neue, potenziell unbekannte Daten derselben Art angewendet werden
+- manuelle Wissenseingabe nicht nötig
+- Beispiel aus dem Alltag: die Empfehlungs-Algorithmen von Konsum- und Entertainment-Plattformen
+
+--
+
+### Tiefes Lernen (Deep Learning)
+
+<br />
+
+- maschinelles Lernen in künstlichen neuronalen Netzen
+- mehrere Schichten, gebildet aus einer Vielzahl künstlicher Neuronen
+- populäre Anwendungen in der Sprach-, Bild- und Videoverarbeitung
+- erfordert viel Rechenkapazität (oft auf mehrere Grafikkarten verteilt)
+
+--
+
+### Künstliche neuronale Netze <br />(Artificial Neural Networks)
+
+<br />
+
+- Vorbild: natürliche neuronale Netze des Gehirns
+- viele – in Software realisierte – Schichten von Knoten (künstliche Neuronen)
+- anhand von Beispielen verändert ein Lernalgorithmus die Gewichte bzw. Zahlenwerte an den Verbindungen zwischen den Knoten, bis die Ergebnisse für die Aufgabe gut genug sind
+- Anzahl der Knoten und Schichten sowie ihre Verknüpfung untereinander bestimmen über die Lösungskompetenz eines Modells
+
+--
+
+![caption](images/Deep-Learning-KI.jpg)<!-- .element height="300px;" -->
+
+<small>
+
+- jedes Neuron (rote Kreise) ist eine Art Container für einen numerischen Wert
+- die Neuronen werden schichtweise zusammengeschaltet, die Kanten zwischen ihnen sind mit Gewichten versehen, die den Input für die nächste Schicht definieren
+- jedes Neuron der ersten Schicht erhält seine Eingabe direkt vom Eingang des neuronalen Netzes und berechnet mit diesen Werten seine Ausgabe
+- die Neuronen der nächsten Schicht (rechts davon) bekommen als Eingabe die Ausgaben der Neuronenaktivitäten der Schicht davor
+- d.&nbsp;h., Informationen werden im neuronalen Netz schichtweise verarbeitet, fließen von links nach rechts bis zum Ausgang des neuronalen Netzes (Ausgabe-Neuronen)
+- je mehr Schichten, desto tiefer ist ein neuronales Netz
+
+</small>
+
+--
+
+### Standard-Machine-Learning <br />vs. Deep Learning
+
+- Standard-Machine-Learning: nur eine verdeckte Schicht, d.&nbsp;h., mit nur einer einzigen Transformation müssen hochdimensionalen Ausgangsmerkmale auf die wichtigsten Merkmale generalisiert werden
+- dabei hilft oft Domänenwissen, Feature-Engineering
+- Deep Learning: Merkmale werden hierarchisch über viele Schichten gelernt
+- inspiriert von den kognitiven Wissenschaften: im visuellen Kortex wird die von den Augen aufgenommene Information schichtweise verarbeitet und in höhere Repräsentationen überführt (auch im visuellen Kortex des Gehirns sind die Neuronen schichtweise angeordnet, in höheren Schichten werden die Schlüsselreize immer komplexer)
+
+--
+
+### Große Sprachmodelle (Large Language Models)
+
+- ab ca. 2018
+- Sprachmodelle, die aus einem künstlichen neuronalen Netz mit vielen Mio./Mrd. Parametern bestehen, die auf großen Mengen von unmarkiertem Text mit Mrd. von Token trainiert werden
+- Annahme, dass Wörter, die in ähnlichem Kontext vorkommen, ähnliche Bedeutung haben:
+  - »You shall know a word by the company it keeps!« (John Rupert Firth, *A Synopsis of Linguistic Theory*, 1957)
+- Beispiel: trinken – Wasser, Tee, Kaffee, Club Mate
+- Allzweckmodelle
+- komplexe Sachverhalte wie die Grammatik einer Sprache werden nicht durch Regelvermittlung, sondern durch die Masse an Trainingsdaten abgebildet
+- Sprachmodelle, keine Wissensmodelle!
+
+---
+
+## Geschichte der knNs
+
+--
+
+### 19. Jahrhundert
+
+<br />
+
+- Erkenntnis der Biologie schon im 19. Jahrhundert: Neuronen als Körperzellen, auf denen die kognitiven Leistungen des Gehirns beruhen
+- die Verknüpfungen zwischen den Neuronen ändern sich im Laufe des Lebens ständig = biologische Grundlage des Lernens (Santiago Ramón y Cajal)
+
+--
+
+### 20. Jahrhundert
+
+<br />
+
+- das anatomische Verständnis des Gehirns in der Mitte des 20. Jahrhunderts hat die Modelle der künstlichen Intelligenz geprägt
+- Warren S. McCulloch (Neurologe) und  Walter Pitts (Logiker) schlugen 1943 künstliche Nervenzellen (Neuronen) als Recheneinheiten vor, um Leistungen des menschlichen Gehirns auf maschinelles Lernen zu übertragen
+- biologisches Vorbild: die Nervenzellen des Gehirns
+- die McCulloch-Pitts-Neuronen senden erst ein Signal, wenn die Summe ihrer Inputs einen gewissen Schwellenwert überschritten hat
+- Implementierung von KI-Ansätzen erst Jahrzehnte später dank steigender Rechenkapazität und großer Mengen an (online) verfügbaren Trainingsdaten
+
+--
+
+### 20. und 21. Jahrhundert
+
+- 1956: Dartmouth-Workshop = Geburtsstunde der KI-Forschung als eigenständiges akademisches Fachgebiet
+- vielversprechende Leistungen allerdings erst dann, wenn viele künstliche Neuronen in einem Netzwerk verbunden werden (1970er- und 1980er-Jahre: »KI-Winter«)
+- 1957: Frank Rosenblatt stellt das Perzeptron-Modell vor (= vereinfachtes künstliches neuronales Netz)
+- daraus entwickelte sich das mehrschichtige neuronale Netz: Eingangsdaten werden von den knNs der ersten Schicht verarbeitet, die als Detektoren für unterschiedliche Muster fungieren und deren Ausgabekanäle die Eingabe für die nächste Schicht darstellen
+- (Zeitsprung)
+- November 2015: Vorstellung von Googles TensorFlow, einer Bibliothek für Deep Learning, öffentlich verfügbar, Erstellung neuronaler Netzwerke stark vereinfacht
+
+--
+
+### Training
+
+<br />
+
+- knNs müssen trainiert werden, bevor sie bestimmte Aufgabe lösen können
+- die einzelnen Neuronen werden solange auf bestimmte Muster trainiert, bis das Ergebnis (die Ausgabe der letzten Schicht) der zu lösenden Aufgabe entspricht
+- überwachtes Lernen: ein Datensatz mit Beispielen, für die das jeweilige Problem bereits gelöst wurde
+- Beispiel: sollen bestimmte Objekte auf Fotos erkannt werden, wird eine gewisse Zahl von annotierten Bildern benötigt, zu denen jeweils die korrekte Bezeichnung maschinenlesbar gespeichert ist
+
+---
+
+## Anwendungsbereiche und Apps
+
+--
+
+### Anwendungsbereiche
+
+<br />
+
+- Bildverarbeitung
+- Bildanalyse
+- Spracherkennung
+- Textanalyse
+- automatische Übersetzung
+- Robot Journalism
+- Erstellung von Krankheitsdiagnosen aus medizinischen Bildaufnahmen
+- selbstfahrende Autos
+- Werbung
+- Recommender Systems (Empfehlungssysteme)
+
+--
+
+### Anwendungen/Apps
+
+<br />
+
+- Google-Suche
+- Gmail
+- Siri, Alexa, Google Assistant
+- YouTube, Spotify, Netflix
+- Google Maps
+- Social Media (Instagram, Facebook, TikTok etc.)
+- Google Translate, DeepL
+- [United Robots](https://www.unitedrobots.ai/) (Zeitungsmeldungen z.&nbsp;B. zu Lokalfussball)
+- OpenAI GPT-2, GPT-3, GPT-4, GPT-4o, o1, o3, …
+
+--
+
+### DeepL
+
+<br />
+
+- Kölner Firma
+- warum DeepL die eigenen Erkenntnisse nicht als Paper publiziert: »Zum einen ist dieses Wissen unser Marktvorsprung. Zum anderen können wir es selbst nicht restlos erklären.« (In: [Der Spiegel 19/2018](https://www.spiegel.de/wirtschaft/deepl-der-deutsche-unternehmer-ist-besser-als-google-a-00000000-0002-0001-0000-000157181383))
+
+--
+
+![caption](images/wolfram-language-image-identification-project.png)<!-- .element height="500px;" -->
+
+Eingabe: Wikimedia Commons-[Bild des Tages](https://commons.wikimedia.org/wiki/File:TR_Pamukkale_Laodicea_asv2020-02_img11.jpg) vom 27. Juni 2022.
+<!-- .element: style="font-size:0.65em;" -->
+
+Link: [The Wolfram Language Image Identification Project](https://www.imageidentify.com/).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Zwischenstopp (2/3)
+
+<br />
+
+### Wofür steht GPT?
+
+<br />
+
+**G**enerative **P**re-trained **T**ransformer
+<!-- .element: class="fragment" -->
+
+<br />
+
+<small>(dt. generatives, vortrainiertes Transformationsmodell)</small><!-- .element: class="fragment" -->
+
+---
+
+## GPT-Modelle
+
+<br />
+
+- Sprachverarbeitungsmodelle der US-amerikanischen Non-Profit-Organisation OpenAI
+  - allerdings: »OpenAI: Von non-profit zum Profit-orientierten Unternehmen« ([heise online, 17. Juni 2024](https://heise.de/-9765565))
+- Ziel: Texte erstellen, zusammenfassen, vereinfachen oder übersetzen
+
+--
+
+### GPT-2
+
+<br />
+
+- veröffentlicht im November 2019
+- Nutzung des Datensatzes »WebText« (40 GB Textdaten, über 8 Mio. Dokumente, 1,5 Mrd. Parameter)
+- OpenAI hat selbst vor dem Produkt gewarnt ([faz.net, 19.02.2019](https://www.faz.net/-gsf-9jyo4))
+- Sprachmodell wird gelernt, indem beobachtet wird, was auf ein Zeichen oder ein Wort folgt
+
+--
+
+### GPT-3
+
+<br />
+
+- veröffentlicht im Mai 2020
+- mehr Daten und 100 Mal mehr Parameter als der Vorgänger (175 Mrd.)
+- Parameter: eine Berechnung in einem neuronalen Netz, bei der ein Aspekt der Daten (mehr oder weniger stark) gewichtet wird; dieser Aspekt geht entsprechend in die Gesamtberechnung der Daten ein
+- GPT-3 kann auch Programmcode erzeugen
+- Verwendung mehrerer Datensätze (insg. ~ 570 GB Textdaten, siehe nächste Folie)
+
+--
+
+#### Verwendete Datensätze zum Trainieren von GPT-3 (1/2)
+
+<br />
+
+| Datensatz | Anzahl Token |
+|:-|:-|
+| CommonCrawl (gefiltert) | 410 Mrd. |
+| WebText2 | 19 Mrd. |
+| Books1 | 12 Mrd. |
+| Books2 | 55 Mrd. |
+| Wikipedia | 3 Mrd. |
+
+<br />
+
+(Quelle: [arXiv.org](https://doi.org/10.48550/arXiv.2005.14165))
+
+--
+
+#### Verwendete Datensätze zum Trainieren von GPT-3 (2/2)
+
+- CommonCrawl:
+  - Daten von mehr als 3,2 Mrd. Websites inkl. Hyperlinks (vergleichbar mit dem Google-Suchmaschinenindex)
+  - gecrawlt seit 2008, enthält auch Daten von Seiten, die nicht mehr online sind
+  - Texte in mehr als 40 Sprachen, allerdings stark auf Englisch ausgerichtet
+- WebText2:
+  - gefilterter Text von allen Websites, auf die von Reddit-Beiträgen mit mehr als 3 Upvotes verwiesen wird (als Alternative zu manueller Kuratierung)
+  - Ergebnis: ca. 45 Mio. Weblinks
+- Books1 und Books2:
+  - zwei internetbasierte Buchkorpora, offenbar eine Teilmenge aller gemeinfreien Bücher (genaue Datenlage unklar)
+- Wikipedia:
+  - die gesamte (englischsprachige) Wikipedia
+
+--
+
+### Zu den Books-Korpora …
+
+<br />
+
+- … vgl. die Studie von Kent K. Chang, Mackenzie Cramer, Sandeep Soni, David Bamman: **[Speak, Memory: An Archaeology of Books Known to ChatGPT/GPT-4](https://arxiv.org/abs/2305.00118)** (28. April 2023)
+- »We find that OpenAI models have memorized a wide collection of copyrighted materials, […]« (dazu gleich mehr)
+
+--
+
+### Tokenisierung
+
+<br />
+
+- Token: einzelne Zeichen oder häufige Kombinationen von Zeichen (Wörter)
+- Tokenizer: https://platform.openai.com/tokenizer
+
+--
+
+### GPT-4
+
+<br />
+
+- veröffentlicht im März 2023
+- vermutlich ~ 170 Billionen Parameter
+- Training des Modells kostete mehr als $100 Mio. (Quelle: [Wired](https://www.wired.com/story/openai-ceo-sam-altman-the-age-of-giant-ai-models-is-already-over/))
+- unklar, welche Trainingsdaten benutzt wurden
+- um Hate Speech usw. zu erkennen, wurden entsprechende Daten gelabelt, outgesourct an eine Firma in Kenia ([»Exclusive: OpenAI Used Kenyan Workers on Less Than $2 Per Hour to Make ChatGPT Less Toxic«](https://time.com/6247678/openai-chatgpt-kenya-workers/), time.com, 18. Januar 2023)
+- Diskussion über technische Risiken
+- Vorschlag eines Moratoriums ([»Experten fordern Denkpause für künstliche Intelligenz«](https://www.spiegel.de/netzwelt/netzpolitik/openai-und-chatgpt-experten-fordern-denkpause-fuer-kuenstliche-intelligenz-a-26eca454-b10d-4521-83a9-e8bf79ee6081), Spiegel Online, 29. März 2023)
+
+--
+
+### Copyright-Verstöße
+
+<br />
+
+- »The Times Sues OpenAI and Microsoft Over A.I. Use of Copyrighted Work: Millions of articles from The New York Times were used to train chatbots that now compete with it, the lawsuit said.« ([nytimes.com, 27. Dezember 2023](https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html))
+- »The Unbelievable Scale of AI’s Pirated-Books Problem: Meta pirated millions of books to train its AI. Search through them here.« ([theatlantic.com, 20. März 2025](https://www.theatlantic.com/technology/archive/2025/03/libgen-meta-openai/682093/))
+  - App von Alex Reisner: [Search for an author in LibGen](https://reisner-books-index.vercel.app/)
+
+--
+
+### 1 Mio. Bücher für alle!
+
+<br />
+
+- Kate Knibbs: [Harvard Is Releasing a Massive Free AI Training Dataset Funded by OpenAI and Microsoft. The project’s leader says that allowing everyone to access the collection of public-domain books will help »level the playing field« in the AI industry.](https://www.wired.com/story/harvard-ai-training-dataset-openai-microsoft/) In: WIRED, 12. Dezember 2024.
+- Bücher, die für Google Books gescannt wurden und deren Urheberrechte abgelaufen sind
+- ca. fünf Mal so groß wie das Books3-Datenset (multilingual, cross-genre)
+- »The exact way the books dataset will be released is not settled. The Institutional Data Initiative has asked Google to work together on public distribution, but the details are still being hammered out.«
+
+--
+
+### Unstillbarer Datenhunger
+
+<br />
+
+- »AI Companies Are Running Out of Internet: AI is hungry, and there’s not enough data to sate its appetite.« ([Jake Peterson, lifehacker.com, 3. April 2024](https://lifehacker.com/tech/ai-is-running-out-of-internet))
+- »There’s a rumor flying around the Internet that OpenAI is training foundation models on your Dropbox documents.« ([schneier.com, 19. Dezember 2023](https://www.schneier.com/blog/archives/2023/12/openai-is-not-training-on-your-dropbox-documents-today.html))
+- Nicola Jones: The AI revolution is running out of data. What can researchers do? In: Nature 636 (2024), S. 290–292. ([doi:10.1038/d41586-024-03990-2](https://doi.org/10.1038/d41586-024-03990-2))
+
+--
+
+### KI-Opt-out?
+
+<br />
+
+- Tutorial: So sperrst Du OpenAIs ChatGPT, Googles Gemini und andere Bots aus, die deine Texte für ihre KI nutzen wollen ([Kai Spriestersbach, 23. Mai 2024](https://www.afaik.de/bots-aussperren/))
+- »A recent notification from Adobe about a terms of service update caused outrage online once many people – forced to accept the new terms for continued access to its apps and services – interpreted it to mean Adobe was permitting itself free rein to access and use their work **to train AI models**.« ([Jess Weatherbed, theverge.com, 7. Juni 2024](https://www.theverge.com/2024/6/7/24173838/adobe-tos-update-firefly-generative-ai-trust))
+- »Instagram und Facebook nutzen **private Daten für KI**: So können Sie widersprechen« ([Carmen Mörwald, Frankfurter Rundschau, 30. Juni 2024](https://www.fr.de/verbraucher/meta-nutzer-instagram-facebook-private-daten-ki-widersprechen-widerspruch-zr-93149865.html))
+
+--
+
+### Demo einer (freien) GPT-Anwendung
+
+<br />
+
+- [GPT-J](https://en.wikipedia.org/wiki/GPT-J) (ein Open-Source-LLM, englischsprachiges Modell mit 6 Mrd. Parametern, folgt der GPT-2-Architektur):
+  - https://textsynth.com/playground.html
+
+--
+
+### ChatGPT
+
+<br />
+
+- veröffentlicht im November 2022
+- basiert aktuell auf GPT-4, GPT-4o und o1
+- derzeit betrieben als Freemium-Modell (Abo für »ChatGPT Plus« möglich, Zugang zu neueren Sprachmodellen, höhere Nutzungsgrenzen)
+
+--
+
+### Missbrauchsszenarien mit GPT
+
+<br />
+
+- Spam, Desinformation, Propaganda, Plagiarismus, …
+- Erkennungstools:
+  - DetectGPT, ZeroGPT, GPTZero, Writefull GPT Detector …
+- Übersicht über Bedrohungsmodelle durch KI-generierte Texte und Erkennungsmethoden (empfohlen von Bruce Schneier):
+  - Evan Crothers, Nathalie Japkowicz, Herna Viktor: [Machine Generated Text: A Comprehensive Survey of Threat Models and Detection Methods](https://arxiv.org/abs/2210.07321) (2022)
+
+--
+
+### Diskussionsbeiträge
+
+<br />
+
+- Anna Mills: [AI Text Generators: Sources to Stimulate Discussion Among Teachers](https://bit.ly/AITextEdu) (gehostet bei Google Docs)
+
+--
+
+### Weitere Risiken von LLMs
+
+<br />
+
+- Umweltschäden durch den hohen Energieaufwand
+- Biases: Reproduktion von Rassismus, Sexismus usw. (z.&nbsp;B. im Fall des Chatbots [Tay](https://de.wikipedia.org/wiki/Tay_(Bot)))
+- LLMs sind keine Suchmaschinen, die Korrektheit des Outputs kann nicht garantiert werden
+- weiterführende Lektüre: Kate Crawford: *Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence.* Yale University Press 2021. ([10.12987/9780300252392](https://doi.org/10.12987/9780300252392))
+
+--
+
+### Berufsziel ›Prompt Engineer‹
+
+<br />
+
+* Philipp Westermeyer auf der OMR-Konferenz im Mai 2023: https://youtu.be/1pNDTri61IY?t=722
+
+---
+
+## Computerpoesie mit knNs
+
+--
+
+»Taxonomy of major NLG approaches«
+
+<small>(NLG: Natural Language Generation)</small>
+
+<br />
+
+![Taxonomie](images/taxonomy-of-major-nlg-approaches.png)
+
+<br />
+
+Quelle: [Crothers, Nathalie Japkowicz, Herna Viktor](https://arxiv.org/abs/2210.07321), S. 6.
+
+--
+
+### Gedichte als Testbed
+
+<br />
+
+- um mit der neuen Technologie zu experimentieren, boten sich Gedichte an, da online in großem Umfang frei verfügbar
+auf GitHub zahlreiche Beispiele für die automatische Erstellung poetischer Texte
+
+--
+
+
+### Was sehen die Algorithmen?
+
+<br />
+
+- Lyrik als Kette in sich geschlossener Aussagen, die keine ganzheitliche Geschichte erzählen müssen
+- als Beispiel eine Strophe aus Joseph Brodskys Gedichtzyklus »Часть речи« (1975/76, Übersetzung: Elisabeth Markstein):
+
+<p align="left">
+<!-- .element: style="font-size:0.9em; padding-left:15%;" -->Beobachtungen dies … Ein warmer Winkel.<br />
+Der Blick lässt auf den Dingen Spuren.<br />
+Das Wasser stellt sich dar als Glas.<br />
+Der Mensch ist schauriger als sein Skelett.
+</p>
+
+--
+
+### Grammatik und Semantik
+
+<br />
+
+- neuronale Netze schaffen es nicht immer, grammatikalische und interpretatorisch durchsichtige Strukturen zu erzeugen
+- Lyrik des 20. Jahrhunderts ist voller experimenteller Texte, die grammatikalische Regeln und Konventionen der semantischen Konnektivität unterlaufen
+- aus nicht-professioneller Sicht: Lyrik muss nicht »sinnvoll« sein
+- Poesie muss auch »dumm sein«, wie Puschkin 1826 in einem Brief an Pjotr Wjasemski schrieb ([»поэзия […] должна быть глуповата«](http://feb-web.ru/feb/pushkin/texts/push17/vol13/y132278-.htm))
+
+--
+
+### Postulate von H. P. Grice
+
+<br />
+
+- poetische Texte und knN-generierte Texte ähneln sich darin, dass sie die meisten der Postulate von H. P. Grice verletzen:
+  - Aussagen liefern weniger Informationen als nötig
+  - sind nicht notwendigerweise wahr
+  - sind unverständlich und mehrdeutig
+
+--
+
+
+### Computerpoesie vor der Ära neuronaler Netze
+
+--
+
+### Vorgeschichte
+
+<br />
+
+- die Geschichte der Computerpoesie begann lange vor dem aktuellen Boom neuronaler Netze
+- erste Computer bereits in den frühen 1940er-Jahren (Konrad Zuses »Z3« und Howard Aikens »Mark I«)
+- in den späten 1950er-Jahren begannen Dichter, sich ihrer zu bedienen
+
+--
+
+### Opus Primum
+
+<br />
+
+- der deutsche Mathematiker Theo Lutz programmierte 1959 einen Computer (einen Zuse Z22) so, dass er Passagen aus den 16 Kapiteln von Kafkas unvollendetem Roman »Das Schloss« zufällig rekombinierte, er nannte die resultierenden Texte »stochastisch«:
+
+<p align="left">
+NICHT JEDER BLICK IST NAH. KEIN DORF IST SPAET.<br />
+EIN SCHLOSS IST FREI UND JEDER BAUER IST FERN.<br />
+JEDER FREMDE IST FERN. EIN TAG IST SPAET.<br />
+JEDES HAUS IST DUNKEL. EIN AUGE IST TIEF.<br />
+NICHT JEDES SCHLOSS IST ALT. JEDER TAG IST ALT<br />
+NICHT JEDER GAST IST WUETEND. EINE KIRCHE IST SCHMAL<br />
+KEIN HAUS IST OFFEN UND NICHT JEDE KIRCHE IST STILL.<br />
+NICHT JEDES AUGE IST WUETEND. KEIN BLICK IST NEU.
+</p>
+<!-- .element: style="font-size:0.8em; padding-left:10%;" -->
+
+--
+
+### 1960er-Jahre
+
+- in den 1960er-Jahren wurden noch mehrere solcher poetischen Experimente durchgeführt
+- Brion Gysin ließ 1960 den Computer nach dem Zufallsprinzip die Wörter des Satzes »I AM THAT I AM« durchtauschen
+- Nanni Balestrini erstellte 1961 auf dem IBM 7070-Computer das Gedicht »Tape Mark I«, das aus Teilen von Werken wie dem »Hiroshima Diary« von Michihiko Hachiya und dem »Daodejing« besteht:
+
+<p align="left">
+<!-- .element: style="font-size:0.8em;padding-left:15%;" -->l’accecante / globo / di fuoco<br />
+si espande / rapidamente<br />
+trenta volte / più luminoso / del sole<br />
+quando raggiunge / la stratosfera<br />
+la sommità / della nuvola<br />
+assume / la ben nota forma / di fungo
+</p>
+
+--
+
+### Zwischenbemerkung
+
+<br />
+
+- »Il mistero dell’ascensore« eines Paul Goldwin gehört auch zu den angegebenen Quellen Balestrinis
+- es findet sich aber keinerlei Spur eines solchen Werks
+- »Non sappiamo niente su Paul Goldwin!« ([Alessandro Giammei 2018](https://www.giammei.com/s/Il_contenuto_della_poesia_informale_Nell.pdf))
+
+--
+
+- ebenfalls 1961 erschien Rul Gunzenhäusers »Weihnachtsgedicht«
+- zehn Substantive und Adjektive des Weihnachtsthemas wurden vom Computer zufallsbasiert zu einem grammatisch korrekten Gedicht verbunden:
+
+<p align="left">
+<!-- .element: style="font-size:0.9em; padding-left:15%;" -->Der Schnee ist kalt<br />
+und jeder Friede ist tief<br />
+und kein Christbaum ist leise<br />
+oder jede Kerze ist weiss<br />
+oder ein Friede ist kalt<br />
+oder nicht jede Kerze ist rein<br />
+und ein Engel ist rein<br />
+und jeder Friede ist still<br />
+oder jeder Friede ist weiss<br />
+oder das Kind ist still<br />
+ein Engel ist überall
+</p>
+
+--
+
+### Zwei Grundprinzipien
+
+<br />
+
+1. Rekombination von Wörtern oder Phrasen eines bereits existierenden Textes (in den Anfängen der Computerpoesie eher an Prosawerken orientiert)
+2. zufällige Auswahl von Wörtern (Einschränkungen der Anordnung vom Programmierer festgelegt)
+
+--
+
+### Permutationskunst
+
+<br />
+
+- frühe Computerpoesie basiert auf der Kombinatorik vorgegebener Elemente (Wörter oder vorgefertigte Phrasen)
+- Abraham Moles: »Erstes Manifest der permutationellen Kunst« (1962)
+- Permutationskunst zerlege die Welt in Atome, aus denen sich dann beliebige Strukturen konstituieren lassen
+- Permutationskunst ist nicht nur Spiel, sondern eine Methode der ästhetischen Forschung, die einen konkreten Weg zur Analyse und Synthese eines Kunstwerkes eröffne
+
+--
+
+### Zufälligkeit
+
+<br />
+
+- Zufall als zentrale Kategorie des Prozesses
+- Marc Adrian: »For me, the neutrality of the machine is very important. It makes it much easier for the reader to find their own meanings associated with words, since their choice, size, and composition are randomised.«
+- dieses künstlerische Prinzip ist aber in Wirklichkeit ein nicht-triviales technisches Problem für einen Computer
+- äußerst schwierig, Quellen für wirklich zufällige Werte zu finden, daher sollte man, um terminologisch genau zu sein, entsprechende Funktionen eher **»pseudo-random«** nennen ([von Neumann, 1951](https://mcnp.lanl.gov/pdf_files/InBook_Computing_1961_Neumann_JohnVonNeumannCollectedWorks_VariousTechniquesUsedinConnectionwithRandomDigits.pdf))
+
+--
+
+### Computerpoesie mit knNs
+
+<br />
+
+- »ein prinzipieller, nicht nur ein gradueller Fortschritt« (Hannes Bajohr: [»Die ›Gestalt‹ der KI«](https://doi.org/10.25969/mediarep/14824), 2020)
+- Bajohr unterscheidet das alte vom neuen Paradigma terminologisch als *sequential* vs. *connectionist* ([»Algorithmic Empathy«](https://studip.tu-braunschweig.de/plugins.php/coreforum/index/index/aa8dc43d4fe28a8d6d234bd8fa50bdd2?cid=6a4c969e34c005476f21a8fa4800ded4#aa8dc43d4fe28a8d6d234bd8fa50bdd2), 2020)
+- der Zufall im Prozess der Texterzeugung ist in den Hintergrund getreten
+- algorithmische Beschreibung komplexer Sprach- und Poetikregeln nicht mehr nötig
+- Hauptfaktoren sind nicht Kombinatorik und Zufall, sondern, im Gegenteil, Konsistenz, nicht Beliebigkeit der Struktur, sondern strukturelle Abhängigkeiten der Elemente
+
+--
+
+### KnNs als Echokammern der Literaturgeschichte
+
+<br />
+
+- ein knN kann die Poesie von Autor*innen, von Genres oder einer Epoche konzentriert einfangen und reproduzieren
+- ein Beispiel, das von einem zweischichtigen neuronalen Netz mit 512 Neuronen erzeugt wurde, trainiert auf einem Korpus russischer Übersetzungen antiker Hexameter (Homer, Hesiod, Ovid, Virgil usw.), 5.351.336 Zeichen (106.321 Verszeilen):
+
+<p align="left">
+<!-- .element: style="font-size:0.8em; padding-left:8%;" -->Силу, к голубке хитон отличась, Гиоклей благородный.<br />
+На Ликеи веселие слово кружает другого,<br />
+Слишком попал бы и все повреждает она одиноко<br />
+И возливаешь они рассудить — городские, проделать<br />
+Кровью вкусили два дочь. На корабль он твухте твоей силы!
+</p>
+
+--
+
+<p align="left">
+<!-- .element: style="font-size:0.8em; padding-left:10%;" -->Sílu, k golúbke khitón otlichás’, Giokléy blagoródnyy.<br />
+Ná Likéi veséliye slóvo kruzháyet drugógo,<br />
+Slíshkom popál by i vsé povrezhdáyet oná odinóko<br />
+Í vozliváyesh’ oní rassudít’ — gorodskíye, prodélat’<br />
+Króv’yu vkusíli dva dóch’. Na korábl’ on tvukhté tvoyey síly!
+</p>
+
+<br />
+<p align="left">
+<!-- .element: style="font-size:0.8em; padding-left:10%;" -->Power, to the dove the chiton is different, Giocleus the noble.<br />
+To the Lyceum, the amusement, a word spins the other,<br />
+Too much you would hit and she damages everything lonely.<br />
+And you drink they to decide — urbanic, to do.<br />
+With blood tasted, two daughter. To the ship he tbay your strength!
+</p>
+
+<br />
+
+(Übertragungsversuch in [Orekhov/Fischer 2019](https://doi.org/10.1111/oli.12274).)
+<!-- .element: style="font-size:0.8em; padding-left:10%; text-align:left;" -->
+
+--
+
+### Beobachtungen
+
+<br />
+
+- korrekte Wiedergabe des Metrums
+- das Epitheton »blagorodnyy« (»edel«) in Postposition eines Eigennamens, wie es in der Übersetzung griechischer Hexameter üblich ist
+- nicht existierende Wörter generiert (»kruzhat’«, »tvukhta«), die es aus Sicht des Modells geben könnte
+- der neu erzeugte Name »Giokley« (»Giokleus«) ähnelt antiken Helden: Diokley (Diokles), Gippodam (Hippodamus), Egiokh (Aegiochos), Peley (Peleus)
+- grammatikalische Inkonsistenzen (»dva doch’«, »oni rassudit’«) sind auf die Größe des Korpus zurückzuführen
+
+--
+
+## HÖL 9000
+
+<br />
+
+![HAL 9000 (Wikimedia Commons)](images/HAL9000.svg)<!-- .element height="200px" style="border:none; box-shadow:none;" -->
+
+<br />
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:HAL9000.svg))
+<!-- .element: style="font-size:0.5em;" -->
+
+--
+
+- das Trainingskorpus für Hölderlin bestand aus 415.516 Zeichen (10.676 Verszeilen)
+- Kleine Stuttgarter Ausgabe, Bände 1 (1946) und 2 (1953)
+- via Zeno.org: http://www.zeno.org/nid/20005102944
+- Gedichte nach 1806 (»Turmphase«) nicht berücksichtigt
+- vierschichtiges neuronales Netz mit 512 Neuronen
+
+--
+
+### Neuro-Hölderlin 1<!-- .element align="left" -->
+
+<br />
+
+<p align="left">
+Daß ich die Väter im Schlafe mir den Höhen auch,<br />
+Der dunkle Seele mir das treue Gestade fallen,<br />
+Wenn die Krone des Hains oft zur Pfade des Geschlechts,<br />
+Dem Jimmersang* den deinen Höhen des Himmels.<br />
+Es scheinen mit deinen Hallen unter den Liebenden zu beben,<br />
+Schattig bedenk der Weisheit zu der Wilde<br />
+Gestalten, im geschiedenen Strahle<br />
+Schon entflohen umsonst ferne sie in Stunden,<br />
+Da stürzte die schöne Lust mich in den stillen Brust,<br />
+Und das Auge blickte dein Strahl die Menschen hinauf.
+</p>
+
+--
+
+### Beobachtungen
+
+<br />
+
+- Substantive: durchaus hölderlintypisches Vokabular, neu kontextualisiert
+- grammatikalisch korrekte Formulierungen, die aber bei Hölderlin fehlen:
+  - »Da stürzte die schöne Lust mich«
+  - »Krone des Hains«
+
+--
+
+- vergleichsweise wenige Verben
+- besondere Anordnung der Syntagmen (spiegelt besonders Hölderlins reifere Lyrik wider)
+- im Vergleich zu den russischen Hexametern mehr grammatikalische Ungereimtheiten, was mit der Korpusgröße zusammenhängt (ca. ⅒ des russischen Korpus)
+- Präpositionen, Artikel, Adjektive und Substantive passen oft nicht zusammen, obwohl meist nur ein einziger Buchstabe fehlt oder falsch ist
+
+--
+
+- »Jimmersang«: Jammer + immer + Schlummersang?
+- heterogene Versmaße im Arbeitskorpus (anders als beim Korpus russischer Hexameter), daher keine eindeutige Wiedergabe eines spezifischen lyrischen Metrums
+- allerdings finden sich Elemente antiker Metren, die Hölderlin für seine Dichtung adaptierte, insbesondere der alkäischen, der asklepiadischen und sapphischen Strophe
+- Zeile 4 etwa entspricht den ersten beiden Zeilen der alkäischen Strophe, wie sie Hölderlin verwendet: <br/>»Dem <u>Jim</u>mer<u>sang*</u> den <u>dei</u>nen <u>Hö</u>hen des <u>Him</u>mels«
+
+--
+
+### Neuro-Hölderlin 2<!-- .element align="left" -->
+
+<br />
+
+<p align="left">
+Daß ich das Kind der Jugend,<br />
+Wie die Liebe das geschweigende Land,<br />
+Und der Strom und kühner Freudentage,<br />
+So schien der Gesang der Morgen ihm auf,<br />
+Mich liebend der Tränen,<br />
+Mit uns ihr mich nicht!
+</p>
+
+--
+
+### Neuro-Hölderlin 3<!-- .element align="left" -->
+
+<br />
+
+<p align="left">
+Mich schweigen, der Sterne sich bewinnen,<br />
+Daß sie die blühende Liebe streun,<br />
+Schöner Gestalt, wie der Tage sich,<br />
+Voll Engelsauge du,<br />
+Da war ich die Winke der Liebe der Seele,<br />
+Und der Himmlischen erste Natur.
+</p>
+
+<br />
+
+(Rezitiert von Arno Orzessek <br />im [Deutschlandfunk Kultur](https://www.deutschlandfunkkultur.de/aus-den-feuilletons-von-beethoven-lernen.1059.de.html?dram:article_id=472525), <br />13. März 2020.)
+<!-- .element align="left" style="font-size:0.8em;" -->
+
+--
+
+### Neuro-Hölderlin 4 (Zugabe)<!-- .element align="left" -->
+
+<br />
+
+<p align="left">
+Ein Lieb in den Augen dir,<br />
+Dort auch das sterbliche Gewiß<br />
+Viel ist ergrüptet,<br />
+Und die Welt der Menschen Einsamkeit.
+</p>
+
+--
+
+### Zusammenfassung
+
+<br />
+
+- Texte, die mit Hilfe von künstlichen neuronalen Netzen generiert werden, reproduzieren einen Teil der stilistischen Merkmale der Trainingsdaten
+- hauptsächlich diejenigen, die in kleinen Segmenten sichtbar sind:
+  - Morphologie
+  - Wortschatz
+  - Syntax
+  - Prosodie
+- Plot und größere narrative Einheiten bleiben bei begrenzten Trainingsdaten dieser Art noch außerhalb des Reproduzierbaren
+
+--
+
+### Literatur
+
+<br />
+
+* Boris Orekhov, Frank Fischer: **Neural Reading: Insights from the Analysis of Poetry Generated by Artificial Neural Networks.** In: Orbis Litterarum. Vol. 75, Heft 5. Wiley Online Library 2020, S. 230–246. ([doi:10.1111/oli.12274](https://doi.org/10.1111/oli.12274))
+* Frank Fischer, Boris Orekhov: **[Der digitale Superdichter. Vor 250 Jahren wurde Friedrich Hölderlin geboren. Heute kann Computertechnik neue Gedichte im Hölderlin-Sound generieren. Ein Werkstattbericht.](http://nevmenandr.net/personalia/holderlin.pdf)** In: Die Literarische Welt, 14. März 2020, S. 29.
+
+---
+
+#### Zwischenstopp (3/3)
+
+<br />
+
+### Wofür steht GPT?
+
+<br />
+
+**G**enerative **P**re-trained **T**ransformer
+<!-- .element: class="fragment" -->
+
+<br />
+
+<small>(dt. generatives, vortrainiertes Transformationsmodell)</small><!-- .element: class="fragment" -->
+
+--
+
+Bis nächste Woche.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
