@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Battle of the Plays (1. Juli 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### **Battle of the Plays**
+
+#### Netzwerkanalyse dramatischer Texte … als Spiel
+
+·
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.7em;" -->
+
+(Arbeitsbereich Digital Humanities · Freie Universität Berlin · EXC 2020 »Temporal Communities«)
+<!-- .element: style="font-size:0.6em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+[uni.vers@geisteswissenschaften](https://www.geisteswissenschaften.fu-berlin.de/studium/uni-vers/index.html) · 1. Juli 2025
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Diese Präsentation: <br />**[bit.ly/bat1725](https://bit.ly/bat1725)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Ablauf
+
+<br />
+
+* 11:00 – Begrüßung durch Sabine Greiner
+* 11:05 – Prof. Dr. Frank Fischer über die Grundlagen der Netzwerkanalyse (interaktiver Vortrag)
+* 11:30 – Spielregeln und Auslosung
+* 11:35 – 5 Runden à 6 Minuten
+* 12:15 – Siegerehrung, Feedback, Round-up
+
+---
+
+### Die Netzwerktheorie …
+
+<br>
+
+… untersucht, wie Dinge miteinander verbunden sind, und stellt diese Verbindungen als Punkte und Linien in einem Netz dar.
+
+--
+
+#### Beispiel für einen Netzwerkgraph mit <br />8 Knoten (nodes, vertices) und 10 Kanten (edges):
+
+<br>
+
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="350px;" -->
+
+<br>
+
+(Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+Wenn sich ein Datensatz sinnvoll mit Knoten und Kanten <br />beschreiben lässt, haben wir es mit Netzwerkdaten zu tun.
+
+--
+
+### Beispiele für Netzwerke
+
+<br />
+
+- Eisenbahnnetz (Bahnhöfe und Schienennetz)
+- Flugverkehr (Flughäfen und Flugrouten)
+- Internet (Endgeräte und Netzverbindungen)
+- soziale Netze<!-- .element: class="fragment" -->
+
+--
+
+### Visualisierte Facebook-Freundschaften
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+Knoten: Personen; Kanten: gegenseitig akzeptierte Freundschaftsanfragen. <br />(Quelle: [Paul Butler, 2010](https://engineering.fb.com/2010/12/13/core-data/visualizing-friendships/))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Cluster (Communitys)
+
+![Graph, nodes, edges, communities](images/graph-nodes-edges-communities.png)<!-- .element width="425px;" -->
+
+<br />
+
+(Bildquelle: [doi:10.3390/a9010008](https://doi.org/10.3390/a9010008))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Soziale Netzwerke
+
+![Graph, nodes, edges, communities](images/jill-rettberg-annotated-social-network.png)<!-- .element width="400px;" -->
+
+Persönliches Facebook-Netzwerk mit annotierten Clustern/Communities. <br />(Quelle: [Jill Rettberg, 2013](http://jilltxt.net/?p=3447))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Beispiel für ein literarisches Netzwerk: <br />Goethes »Faust I«
+
+![Goethe, Faust I](images/goethe-faust-eine-tragoedie.png)<!-- .element width="480px;" -->
+
+Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/id/ger000243))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+## Gerichtete und gewichtete Graphen
+
+--
+
+### Gerichteter Graph
+
+<br />
+
+![simple directed graph (from Wikimedia Commons)](images/directed-graph-from-wikimedia-commons.png)<!-- .element height="180px;" -->
+
+<br />
+
+(Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Directed.svg))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Gewichteter Graph
+
+<br />
+
+![simple weighted graph (from Wikimedia Commons)](images/weighted-graph-from-wikimedia-commons.png)<!-- .element height="227px;" -->
+
+<br />
+
+(Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Weighted_network.svg))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Beispiele für gewichtete Graphen
+
+<br />
+
+- Navigationssoftware (z. B. in Google Maps)
+- Bahn-App
+- Metro-Apps (überhaupt ÖPNV-Apps)
+- …
+
+--
+
+### Soziale Netzwerkanalyse (SNA) …
+
+<br />
+
+… ist eine Methode, mit der man untersucht, wie Menschen oder Gruppen miteinander verbunden sind. Dabei nutzt man die Netzwerktheorie, um diese Verbindungen besser zu verstehen.
+
+--
+
+### Eines der ersten Soziogramme
+
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+
+»Class structure, 4th grade«. Arbeit von Jacob L. Moreno (1889–1974).<br />(Veröffentlicht in der NYT, [3. April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Quelle für dieses PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+### Netzwerkanalyse dramatischer Texte <br />als typischer Anwendungsfall <br />der Digital Humanities
+
+--
+
+## Formalisierung
+
+<br />
+
+- soziale Netzwerkdaten = **Interaktionen** zwischen sozialen Entitäten
+- z.&nbsp;B. in dramatischen Texten: »Zwei Figuren interagieren miteinander, wenn sie innerhalb desselben Abschnitts eines Dramas (normalerweise eine ›Szene‹) einen Sprechakt vollziehen.« (in Anlehnung an eine Idee von Solomon Marcus, »Poetica matematică«, 1970)
+
+---
+
+### Graph-bezogene Werte
+
+![four nodes](images/example_network_graph_four_nodes.svg)<!-- .element height="240px;" -->
+
+| Kennzahl                            | Bedeutung                                                                                             | Wert                                        |
+| ------------------------------------| ----------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| **(a) Netzwerkgröße**               | Anzahl der Knoten<!-- .element: class="fragment" -->                                                  | **4**<!-- .element: class="fragment" -->    |
+| **(b) Netzwerkdurchmesser**         | Größte Länge eines kürzesten Weges zwischen zwei beliebigen Knoten<!-- .element: class="fragment" --> | **2**<!-- .element: class="fragment" -->    |
+| **(c) Netzwerkdichte**              | Anteil der vorhandenen Kanten an allen möglichen Kanten<!-- .element: class="fragment" -->            | **0,67**<!-- .element: class="fragment" --> |
+| **(d) Clusteringkoeffizient**       | mittlerer lokaler Clusteringkoeffizient aller Knoten<!-- .element: class="fragment" -->              | **0,58**<!-- .element: class="fragment" --> |
+| **(e) Durchschnittliche Pfadlänge** | Mittelwert aller kürzesten Wege zwischen sämtlichen Knotenpaaren<!-- .element: class="fragment" -->   | **1,33**<!-- .element: class="fragment" --> |
+| **(f) Maximaler Grad**              | höchste Zahl von Kanten, die an einem Knoten anliegen<!-- .element: class="fragment" -->              | **3**<!-- .element: class="fragment" -->    |
+
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+(NB. Der **Clusteringkoeffizient** beschreibt, wie stark die <br />Nachbarn eines Knotens untereinander vernetzt sind.)
+
+--
+
+### Strukturvergleich mit Gamification-Ansatz: <br />»Battle of the Plays«
+
+![Battle of the Plays, card](images/battle-of-the-plays_sophocles-antigone.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_back.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_mitford-rienzi.jpg)
+
+Frank Fischer, Mark Schwindt: **[Battle of the Plays. A Gamification Approach to Literary Network Analysis.](https://sukultur.de/produkt/battle-of-the-plays-a-gamification-approach-to-literary-network-analysis/)** Berlin: **SUKULTUR** 2024. – 32+1 cards including case, color print. ISBN: 978-3-95566-182-3. €15,00. – Spielregeln: https://battle-of-the-plays.github.io/
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Woher kommen die Netzwerkdaten?
+
+![Startseite von DraCor am 18. Januar 2025](images/dracor_frontpage_2025-01-18.png)
+
+DraCor ([dracor.org](https://dracor.org/)) ist eine offene, freie Onlineplattform, die Volltexte und Daten zu mehr als 4.000 Theaterstücken in über 20 Sprachen bereitstellt. Sie unterstützt die digitale Forschung zum europäischen Drama seit der Antike.
+
+--
+
+## Spielkarten
+
+<br />
+
+…
+
+--
+
+### Spielregeln
+
+<br />
+
+1. Gespielt wird nach dem [Supertrumpf](https://de.wikipedia.org/wiki/Supertrumpf)-Prinzip.
+2. Jedes Spiel eins gegen eins.
+3. Sollte ein abgefragter Wert gleich sein, wird ein weiterer Wert der je aktuellen Spielkarte abgefragt.
+3. Wenn ein\*e Spieler\*in alle Karten übernommen hat, ist Schluss.
+4. Nach 5 Minuten ist ebenfalls Schluss, dann werden die Karten gezählt.
+5. Bei Gleichstand (16:16) nennt die Spielleitung einen zu vergleichenden Wert für die je aktuelle Spielkarte, der das Spiel entscheidet.
+
+--
+
+### Auslosung
+
+<br />
+
+[auslosungstool.de](https://www.auslosungstool.de/)
+
+--
+
+### Tragödie vs. Komödie
+
+<br />
+
+»[…] the name of Tragedy was assumed by plays in which everyone was killed in the last act, just as […] plays in which everyone was married in the last act called themselves comedies«
+
+<br />
+
+G. B. Shaw: Vorwort zu »Back to Methuselah«, 1921 (vgl. [Project Gutenberg](http://www.gutenberg.org/ebooks/13084)).
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Netzwerkdichte (German Drama Corpus)
+
+![Development of network sizes (plays with 3 and more acts)](images/densite_moyenne_par_genre.png)
+
+Vgl. [»Comedy vs. Tragedy: Network Values by Genre«](https://dlina.github.io/Network-Values-by-Genre/) (2015).
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+Danke.
+
+<br />
+
+## 👋
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
