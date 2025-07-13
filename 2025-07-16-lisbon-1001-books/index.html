@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>»Wikipedia as an Echo Chamber of Canonicity« (DH2025 Presentation, 16 July 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Wikipedia as an Echo Chamber of Canonicity:
+#### »1001 Books You Must Read Before You Die«
+
+<br />
+
+# 📚
+
+Jonas Rohe, Viktor J. Illmer, Lisa Poggel, Frank Fischer<!-- .element: style="font-size:0.85em;" -->
+
+Freie Universität Berlin <br />[EXC 2020 »Temporal Communities«](https://www.temporal-communities.de/)
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+Presentation URL: **[https://bit.ly/1001you](https://bit.ly/1001you)**
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />[DH2025](https://www.conftool.pro/dh2025/sessions.php) &nbsp;·&nbsp; Universidade NOVA de Lisboa 🇵🇹 &nbsp;·&nbsp; Wed, 16 July 2025, 09:00 a.m.
+<!-- .element: style="font-size:0.85em;" -->
+
+--
+
+### Project Context: <br />[Digital Observatory of World Literature](https://www.temporal-communities.de/research/digital-communities/projects/digital-observatory-world-literature)
+
+<br />
+
+- Previous research
+  - Christoph Hube, Frank Fischer, Robert Jäschke, Gerhard Lauer, Mads Rosendahl Thomsen: **[World Literature According to Wikipedia](https://arxiv.org/abs/1701.00991)**: Introduction to a DBpedia-Based Framework (2017)
+  - Frank Fischer, Jacob Blakesley, Paula Wojcik, Robert Jäschke (eds.): **[Wikipedia, Wikidata, and World Literature](https://culturalanalytics.org/issue/7259)** (collected volume, 2023)
+  - **[Wikipedia, Wikidata and Wikibase](https://www.hsozkult.de/conferencereport/id/fdkn-142913)**: Usage Scenarios for Literary Studies (conference, 2023)
+  - Viktor J. Illmer, Bart Soethaert, Lilly Welz, Frank Fischer, Robert Jäschke: **[Literatur in the Wikiversum](https://doi.org/10.5281/zenodo.10698426)** – A practical approach via API queries and Wikipedia metrics (DHd2024 workshop)
+
+--
+
+### »1001 Books You Must Read Before You Die«
+
+![alt](images/1001-books-1st-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-2nd-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-3rd-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-4th-edition-cover.jpg)<!-- .element height="220px;" -->
+![alt](images/1001-books-5th-edition-cover.jpg)<!-- .element height="220px;" -->
+
+- Canon project
+- Five editions so far (2006, 2008, 2010, 2012, 2018)
+- Edited by Peter Boxall, with short summaries written by various contributors
+- Due to list updates in subsequent editions: 1,318 works by 768 authors in total
+
+--
+
+### Contribution to the Digital Deconstruction <br />of Canons through …
+
+<br />
+
+- … correlation with other markers of canonicity (»echo chamber«)
+- … analysis of metadata (publication periods, linguistic and geographical diversity)
+
+--
+
+### Marker of Canonicity: Sitelinks
+
+![alt](images/wikipedia-sitelinks-example.png)<!-- .element height="350px;" -->
+
+- Wikipedia sitelinks as part of the »Metrics of World Literature« (Robinson 2017), as »a simple measure of canonicity« (Kukkonen 2020)
+- Example: Charles Dickens 162, *A Tale of Two Cities* 51 Sitelinks
+
+--
+
+### Another Marker of Canonicity: QRank
+
+![alt](images/wikipedia-searchbox.png)<!-- .element height="300px;" -->
+
+- Page views of a Wikidata item (i.e. from Wikipedia, Wikitravel, Wikibooks, etc.) are aggregated into a QRanking (https://qrank.wmcloud.org/), used for ranking search results
+- Example: Charles Dickens 4,158,626; *A Tale of Two Cities* 1,238,166
+
+--
+
+### Reading Community
+
+![alt](images/goodreads.png)<!-- .element height="380px;" -->
+
+- Numerous »1001 Books« challenge blogs
+- Listopia list on the Amazon platform [Goodreads](https://www.goodreads.com/list/show/952.1001_Books_You_Must_Read_Before_You_Die)
+- Includes public [Google spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0AkhsHzWtNCPkdEVsX0k4eFZNSHhXM1pyaE5pWDN2QWc&usp=sharing)
+
+--
+
+> »Does a body of writing, a canon of essential texts, emerge from a national context, or does it in some way transcend nationality, rising above the contexts that generate it? What does it mean to try to respond to all of these different national contexts at the same time? Is it possible to produce a list that can speak at once to the readers in Turkey and in Greece, in Serbia and Croatia?«
+
+<br />Boxall, Preface to the 2nd edition (2008)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Enrichment via OpenRefine
+
+<br />
+
+- 1,256 of 1,318 works and each of the 768 authors could be linked to their Wikidata entries
+- Additional metadata on works and authors retrieved via OpenRefine Reconciliation Service (e.g., gender data in Wikidata, publication dates)
+
+--
+
+### Enrichment via GeoNames
+
+<br />
+
+- GND (German National Library authority file) assigns country codes to literary works (Geographic Area Codes)
+- Retrieval of GND country codes via [lobid-gnd API](https://lobid.org/gnd/api) and comparison with Wikidata work IDs, name variants of authors and titles
+- Query of Wikidata property *P495 country of origin* for creative works via MediaWiki API (using [Pywikibot](https://www.mediawiki.org/wiki/Manual:Pywikibot/Overview)) to fill in missing data
+- Assignment of GND country codes to GeoNames URIs (via [RDF vocabulary](https://d-nb.info/standards/vocab/gnd/geographic-area-code.html)) and retrieval of coordinates via [GeoNames API](https://www.geonames.org/export/web-services.html)
+
+--
+
+### Enrichment with Popularity Metrics
+
+<br />
+
+- Cf. [WikiMetrix](https://github.com/temporal-communities/wiki-metrix) (DHd2024)
+- Sitelinks and QRank
+- Enriched table in [GitHub repo](https://github.com/temporal-communities/1001-books)
+
+--
+
+![alt](images/geografische-verteilung.png)
+
+--
+
+### Geographical Description of the Canon
+
+<br />
+
+- Strong Eurocentrism and strong focus on English-language texts:
+  - United Kingdom (347), USA (266), France (106), Germany (57), Italy, Russia (30 each)
+- 857 entries via GND, 287 via Wikidata (1,144 in total)
+- GND: *Geographic Area Codes* (country of origin of author, geographic focus of work or language of text, [source](https://wiki.dnb.de/download/attachments/90411323/Laendercodeleitfaden.pdf))
+- Wikidata: *P495 country of origin* (country of origin of creative work, [source](https://www.wikidata.org/wiki/Property:P495))
+
+--
+
+### Statistical Description of the Canon
+
+![alt](images/publication-years.png)<!-- .element height="300px;" -->
+
+- Distribution of Wikidata gender entries:
+  - 281 works by women, 1,031 by men, 1 by a nonbinary person, remainder: N/A, including 3 anonymous works
+- Authors with the most works: Ch. Dickens, J. M. Coetzee (10), V. Woolf (9), G. Greene, I. McEwan, Ph. Roth, S. Beckett, D. DeLillo (8)
+- Strong focus on the 20th century
+- 27 works (published before 1700) not shown in this chart
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Number of Sitelinks for Works
+
+![alt](images/sitelinks-works.png)<!-- .element height="380px;" -->
+
+- *The Thousand and One Nights* (130), *Don Quixote* (123), *The Little Prince* (114), *The Lord of the Rings* (114), *A Dream of Red Mansions* (102)
+- Mean: 13.7; Median: 7.0
+- 86 works (still) lack a Wikidata entry
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Number of Sitelinks for Authors
+
+![alt](images/sitelinks-authors.png)<!-- .element height="380px;" -->
+
+- All authors have at least one Wikipedia article
+- Mean: 58.6; Median: 48.0
+- Top 5: Goethe (186), Tolstoy (182), Cervantes (176), Victor Hugo (176), Dostoevsky (173)
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### QRank
+
+> QRank is a ranking signal for Wikidata entities. It gets computed by aggregating page view statistics for Wikipedia, Wikitravel, Wikibooks, Wikispecies and other Wikimedia projects.\
+> ([brawer/wikidata-qrank](https://github.com/brawer/wikidata-qrank))
+
+<br />[qrank.toolforge.org](https://qrank.toolforge.org/)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### QRank–Sitelink Correlation (Author-Centered)
+
+<br />
+
+<div id="left">
+
+| Author | QRank | Sitelinks |
+|:-|-:|-:|
+| Poe, Edgar Allan | 6.770.125 | 145 |
+| <font color="red">Kafka, Franz</font> | 5.827.580 | 166 |
+| King, Stephen | 5.752.199 | 110 |
+| Hemingway, Ernest | 5.732.463 | 148 |
+| <font color="brown">Dostoevsky, Fyodor</font> | 5.714.591 | 173 |
+| Christie, Agatha | 5.620.277 | 139 |
+| Tolkien, J. R. R. | 5.533.813 | 154 |
+| <font color="blue">Tolstoy, Leo</font> | 5.046.400 | 182 |
+| Wilde, Oscar | 4.522.706 | 127 |
+| <font color="green">Dickens, Charles</font> | 4.158.626 | 162 |
+
+</div>
+
+<div id="right">
+
+| Author | QRank | Sitelinks |
+|:-|-:|-:|
+| Goethe, Johann Wolfgang | 3.380.565 | 186 |
+| <font color="blue">Tolstoy, Leo</font> | 5.046.400 | 182 |
+| Hugo, Victor | 3.917.537 | 176 |
+| Cervantes | 2.272.986 | 176 |
+| <font color="brown">Dostoevsky, Fyodor</font> | 5.714.591 | 173 |
+| Voltaire | 3.293.244 | 171 |
+| <font color="red">Kafka, Franz</font> | 5.827.580 | 166 |
+| Pushkin, Alexander | 4.027.476 | 164 |
+| <font color="green">Dickens, Charles</font> | 4.158.626 | 162 |
+| Tagore, Rabindranath | 4.068.155 | 161 |
+
+</div>
+
+Left: ranked by QRank; right: by number of sitelinks.
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Sitelink–QRank Correlation (Work-Centered)
+
+![alt](images/qrank-sitelink-correlation.png)<!-- .element height="320px;" -->
+
+- Edgar Allan Poe: *The Fall of the House of Usher* (highest QRank among all works: 5,547,853, but only 27 sitelinks)
+- George Orwell: *Nineteen Eighty-Four* (work has a higher QRank than the author: 5,547,853 vs. 3,995,278)
+- Same applies to *The Handmaid’s Tale* (1,799,096) by Margaret Atwood (1,156,848) – these works are more prominent than their authors
+
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+## Summary
+
+<br />
+
+- Wikipedia sitelinks and QRank as insightful »echo chambers for canonicity«
+- Correlation with QRank showed that, alongside sitelinks, there are other helpful ranking variants with similarly accessible data
+- Metadata analysis can highlight implicit biases
+- For your own experiments: [WikiMetrix](https://github.com/temporal-communities/wiki-metrix) (Illmer et al. 2024)
+- All authors and over 90% of the »1001 Books« have at least one Wikipedia article
+- ⚠️ Wikidata sitelinks and QRank are mutable metrics
+
+--
+
+Thank you.
+
+<br />✳️
+
+<br />Paper: **placeholder**
+
+<br />✳️
+
+<br />Repo: https://github.com/temporal-communities/1001-books
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
