@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DraCorOS Training Sessions: Simple Analyses with DraCor Data (DraCor Summit, Berlin, 1 September 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/white.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+#### DraCorOS Training Sessions
+### Simple Analyses with DraCor Data
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="100px";"; -->
+
+Frank Fischer (Freie Universität Berlin) &nbsp; · &nbsp; Peer Trilcke (University of Potsdam)<br /><!-- .element: style="font-size:0.7em;" -->
+
+<br />This presentation: **[tinyurl.com/dra19s](https://tinyurl.com/dra19s)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[DraCor Summit](https://summit.dracor.org/) &nbsp; · &nbsp; Freie Universität Berlin &nbsp; · &nbsp; 1 September 2025, 16:00–17:30
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Chapters
+
+<br />
+
+- 1. **DraCor and Its API**
+- 2. **Selected Third-Party Analysis Tools**
+  - 2.1 Voyant
+  - 2.2 RAWGraphs
+  - 2.3 Datawrapper
+  - 2.4 Gephi Lite
+- 3. **The DraCor Tools Tab**
+- 4. **Outlook**
+  - 4.1 AntConc
+  - 4.2 stylo
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 1
+
+<br />
+
+### DraCor and Its API
+
+--
+
+### [dracor.org](https://dracor.org/) Frontpage
+
+![DraCor frontpage on 25 Aug 2025](images/dracor-frontpage-2025-08-25.png)
+
+overview over DraCor corpora: [dracor.org/doc/corpora](https://dracor.org/doc/corpora)
+
+--
+
+### Functions of the DraCor API
+
+![DraCor API)](images/dracor-api.png)<!-- .element width="600px";"; -->
+
+https://dracor.org/doc/api
+
+--
+
+### DraCor Download Tab
+
+![DraCor Download tab)](images/goldoni-due-padroni-download-tab.png)<!-- .element width="700px";"; -->
+
+https://dracor.org/id/ita000080#downloads
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2
+
+<br />
+
+### Selected Third-Party Analysis Tools
+
+--
+
+### Recommended Examples
+
+<br />
+
+- [Molière: L’Avare](https://dracor.org/id/fre000996#text) (1669)
+- [Carlo Goldoni: Il servitore di due padroni](https://dracor.org/id/ita000080#text) (1746)
+- [Friedrich Schiller: Die Jungfrau von Orleans](https://dracor.org/id/ger000227#text) (1801)
+- or another of the &#62; 4,000 plays on [dracor.org](https://dracor.org/)
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2.1: Full-Text Data
+
+<br />
+
+### Voyant
+
+--
+
+### Task
+
+<br />
+
+- Open Voyant in another Browser tab (https://voyant-tools.org/).
+- Choose a DraCor play and go to the Download tab. (example: [Goldoni](https://dracor.org/id/ita000080))
+- Download the ›Spoken text‹ → ›Plain (no markup)‹ → TXT.
+- You can also copy the URL.
+- Then you can paste the text, paste the URL or upload the file to Voyant.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2.2: Tabular Data
+
+<br />
+
+### RAWGraphs
+
+--
+
+### Task
+
+<br />
+
+- Open RAWGraphs in another Browser tab (https://www.rawgraphs.io/).
+- Choose a DraCor play and go to the Download tab. (example: [Goldoni](https://dracor.org/id/ita000080))
+- Download the ›List of characters‹ → ›Including precalculated data‹ → CSV.
+- You can also copy the URL.
+- Then you can paste the text, paste the URL or upload the file to RAWGraphs.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2.3: Tabular Data
+
+<br />
+
+### Datawrapper
+
+--
+
+### Task
+
+<br />
+
+- Open Datawrapper in another Browser tab (https://www.datawrapper.de/).
+- Choose a DraCor play and go to the Download tab. (example: [Goldoni](https://dracor.org/id/ita000080))
+- Download the ›List of characters‹ → ›Including precalculated data‹ → CSV.
+- You can also copy the URL.
+- Then you can paste the text, paste the URL or upload the file to Datawrapper.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2.4: Network Data
+
+<br />
+
+### Gephi Lite
+
+--
+
+### Task
+
+<br />
+
+- Open Gephi Lite in another Browser tab (https://gephi.org/gephi-lite/).
+- Choose a DraCor play and go to the Download tab. (example: [Goldoni](https://dracor.org/id/ita000080))
+- Download the ›Network data‹ → ›Co-occurrence network‹ → GEXF.
+- You can also copy the URL.
+- Then you can paste the text, paste the URL or upload the file to Gephi Lite.
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 3
+
+<br />
+
+### The DraCor Tools Tab
+
+--
+
+### Task
+
+<br />
+
+- For any play, click on the recently introduced Tools Tab. (example: [Goldoni](https://dracor.org/id/ita000080))
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 4
+
+<br />
+
+### Outlook
+
+--
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 4.1
+
+<br />
+
+### AntConc
+
+--
+
+### Task
+
+<br />
+
+- Download and install AntConc (https://www.laurenceanthony.net/software/antconc/).
+- Load data downloaded from the DraCor Download Tab or the DraCor API.
+
+--
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 4.2
+
+<br />
+
+### stylo
+
+--
+
+### Task
+
+<br />
+
+- Download and install stylo (https://github.com/computationalstylistics/stylo), preferably wiuth RStudio already installed.
+- Load data downloaded from the DraCor Download Tab or the DraCor API.
+
+---
+
+🙏 &nbsp; 👋<!-- .element: style="font-size:3em;" -->
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
