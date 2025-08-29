@@ -1,0 +1,27 @@
+.reveal section img {
+  border: none;
+}
+.reveal table th {
+  font-size: 0.85em;
+}
+.reveal table td {
+  font-size: 0.85em;
+}
+.reveal {
+  font-size: 30px;
+}
+.reveal h1 {
+	font-size: 2em;
+  text-transform: none;
+}
+.reveal h2 {
+	font-size: 1.6em;
+  text-transform: none;
+}
+.reveal h3 {
+  font-size: 1.3em;
+  text-transform: none;
+}
+.reveal h4 {
+  text-transform: none;
+}
