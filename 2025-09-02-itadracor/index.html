@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DraCor Corpora Conference: ItaDraCor (DraCor Summit, Berlin, 2 September 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/white.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Italian Drama Corpus <br />(ItaDraCor)
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="100px;" -->
+
+Frank Fischer (Freie Universität Berlin)<!-- .element: style="font-size:0.7em;" -->
+
+<br />This presentation: **[lehkost.github.io/slides/2025-09-02-itadracor/](https://lehkost.github.io/slides/2025-09-02-itadracor/index.html)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[DraCor Corpora Conference](https://summit.dracor.org/corpora_conference) &nbsp; · &nbsp; Freie Universität Berlin &nbsp; · &nbsp; 2 September 2025, 15:15–15:30
+<!-- .element: style="font-size:0.7em;" -->
+
+---
+
+### Main Source of ItaDraCor
+
+<br />
+
+- originally 139 Italian plays, retrieved from the [Biblioteca Italiana](http://www.bibliotecaitaliana.it/)
+- »Questa risorsa digitale è liberamente accessibile per uso personale o scientifico.« (»This digital resource is freely accessible for personal or scientific use.«)
+
+--
+
+### Adaptation to DraCor
+
+<br />
+
+- released in early 2020
+- the plays were encoded in TEI P4, er updated them to TEI P5
+- data conversion by Frank Fischer and Carsten Milling
+- annotations by Misha Sonkin (Saarland University) and Frank Fischer
+  - added Wikidata IDs for both authors and works
+  - added date of composition, year of first publication, date of premiere (if available)
+  - corrections of OCR errors in character names
+  - added gender information for all characters
+  - all changes documented in the [README](https://github.com/dracor-org/itadracor)
+
+--
+
+### Wikidata IDs for Historical and <br />Mythological Characters
+
+<br />
+
+- example [here](https://dracor.org/id/ita000102)
+- API endpoint: [/character/{id}](https://staging.dracor.org/doc/api#/public/plays-with-character)
+- https://dracor.org/api/v1/character/Q41746 (showing all plays with Achilles as a character)
+
+--
+
+### Further Development
+
+<br />
+
+- Luca Giovannini, Ingo Börner, Frank Fischer, Carsten Milling, Daniil Skorinkin, Peer Trilcke: »Quali prospettive per ItaDraCor? Risorse e strumenti per la codifica di testi drammatici in lingua italiana.« In: AIUCD2023. Book of Abstracts. Università di Siena 2023, pp. 108–111. ([poster](https://doi.org/10.5281/zenodo.7963028)) ([abstract](http://www.aiucd.it/wp-content/uploads/2023/06/2023_aiucd_la_memoria_digitale_v1.pdf#page=121))
+- in the spring of 2025, 18 plays were added, stemming from Luca’s dissertation project
+
+--
+
+![ItaDraCor: Number of Plays per Decade)](images/itadracor-number-of-plays-per-decade.svg)
+
+ItaDraCor as of 31 August 2025 (157 plays), <br />peaks around 1750s (Goldoni, Metastasio) and 1780s (Alfieri)
+
+---
+
+Thanks.
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="100px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#DraCorSummit
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
