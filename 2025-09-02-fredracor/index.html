@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DraCor Corpora Conference: FreDraCor (DraCor Summit, Berlin, 2 September 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/white.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### French Drama Corpus <br />(FreDraCor)
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="100px;" -->
+
+Frank Fischer (Freie Universität Berlin)<!-- .element: style="font-size:0.7em;" -->
+
+<br />This presentation: **[lehkost.github.io/slides/2025-09-02-fredracor/](https://lehkost.github.io/slides/2025-09-02-fredracor/index.html)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[DraCor Corpora Conference](https://summit.dracor.org/corpora_conference) &nbsp; · &nbsp; Freie Universität Berlin &nbsp; · &nbsp; 2 September 2025, 14:45–15:00
+<!-- .element: style="font-size:0.7em;" -->
+
+---
+
+### [dracor.org](https://dracor.org/) Frontpage
+
+![DraCor frontpage on 25 Aug 2025](images/dracor-frontpage-2025-08-25.png)
+
+FreDraCor is by far the biggest corpus in DraCor.
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+![TC frontpage](images/theatre-classique-frontpage.png)<!-- .element height="560px;" -->
+
+https://www.theatre-classique.fr/
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Research on the “Théâtre classique” Corpus
+
+<br />
+
+* Christof Schöch: **Topic Modeling Genre: An Exploration of French Classical and Enlightenment Drama.** <br />In: Digital Humanities Quarterly 11, no. 2 (2017). http://www.digitalhumanities.org/dhq/vol/11/2/000291/000291.html
+* working corpus: 391 plays (150 comedies, 189 tragedies, 52 tragicomedies in verse or prose)
+
+--
+
+### “Théâtre classique” Overview
+
+![TC overview](images/theatre-classique-overview.png)<!-- .element height="500px;" -->
+
+Plays can be read and downloaded in different formats. <br/>(http://www.theatre-classique.fr/pages/programmes/PageEdition.php)
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+## A Central Git Repo for the Corpus?
+
+<br />
+
+- would be nice, but …
+  - “Suite à des divergences editoriales irrémédiables, l’ensemble du corpus a été retiré par son auteur” (“Due to irreparable editorial differences, the entire corpus has been withdrawn by its author”) ([source](https://github.com/dramacode/theatre-classique))
+- TC project is a leisure project for Paul Fièvre, we have to work with what we have
+- inconsistencies, non-standard markup (including non-transparent retroactive changes for the entire corpus), thousands (!) of validation errors, missing text
+- but also, more than 2,000 full-text plays with workable markup
+
+--
+
+### “Théâtre classique” → FreDraCor
+
+<br />
+
+- goal: French Drama Corpus in TEI P5 on a par with all the other DraCor corpora in different languages
+- structural clean-up, trying to preserve as much information as possible
+- all texts out of copyright, but licensed under CC BY NC SA 4.0 (work on markup, of course, represents intellectual work)
+- strategic decisions:
+  - DraCor branch of the “Théâtre classique” collection (i.e. intermediary version control)
+  - “tc2dracor.xq” transformation script
+  - that way, we can update the corpus on our end without losing information
+
+--
+
+### Changes, corrections and additions we have made (1/2)
+
+<br />
+
+- add TEI namespace
+- add XML declaration
+- replace the teiHeader with DraCor-specific version while preserving as much as possible of original content
+- refine licence statement using current version 3.0 of the given licence and adding URL
+- add ```<particDesc>``` (essential for DraCor to collect information on characters beyond printed cast lists)
+- transform ```@xml:id``` and ```@who``` attributes into proper IDs and ID references
+- replace ```@id``` with ```@corresp``` at castItem/role
+- remove unknown attributes from ```tei:role``` (commented)
+
+--
+
+### Changes, corrections and additions we have made (2/2)
+
+<br />
+
+- transform numeral ```@id``` into ```@n``` on ```tei:s``` and ```tei:l```
+- upper-case ```tei:l/@part```
+- remove instances of ```tei:l/@syll``` (commented)
+- rename ```docDate/@value``` to ```docDate/@when```
+- transform addresse element to ```tei:opener```/```tei:salute```
+- transform signature element to ```tei:signed```
+- remove empty ```@type```
+- add written and print dates where available
+- adjust case of character names
+- normalise author names
+- add Wikidata IDs for authors and plays (using OpenRefine)
+
+--
+
+### Rebuild from Source
+
+<br />
+
+- scripted workflow to process the original files with an XQuery transformation
+- to speed up the process, multiple eXist-db instances can be started in parallel using either Podman or Docker
+- main steps of this workflow:
+  - start one or more pods (or containers) running eXist-db
+  - loading the transformation XQuery “tc2dracor.xq” and auxiliary files (“authors.xml”, “ids.xml”) to the database(s)
+  - process each source file by posting it to the transformation XQuery and storing the output in the ```/tei/``` directory
+  - stop and remove all pods (or containers)
+
+--
+
+## DraCor IDs
+
+<br />
+
+- just like with the other corpora, each FreDraCor play is given a unique DraCor ID (e.g. fre000784)
+- these IDs are mapped to the “Théâtre classique” documents in “ids.xml”
+- when “Théâtre classique” adds new plays, a new ID needs to be assigned to them and added to “ids.xml”
+
+--
+
+## Validation
+
+<br />
+
+- run ```./validate``` to check current validation status of the corpus against tei_all schema (needs Jing installed for this to work)
+
+--
+
+### Enhanced Author Information
+
+<br />
+
+- auxiliary file “authors.xml” to unify and enrich author information within FreDraCor
+- entries in this file provide a canonical ```tei:author``` element for each author, e.g.:
+
+```xml
+<author>
+  <author xmlns="http://www.tei-c.org/ns/1.0">
+    <persName>
+      <forename>Charles</forename>
+      <surname>Collé</surname>
+    </persName>
+    <idno type="isni">0000000121258527</idno>
+    <idno type="wikidata">Q2404425</idno>
+  </author>
+  <name>Charles COLLÉ (1709-1783)</name>
+  <name>COLLE, Charles</name>
+  <isni>0000 0001 2125 8527</isni>
+</author>
+```
+
+--
+
+### Current Status of FreDraCor
+
+<br />
+
+- 1,940 plays (upstream TC is already at 2,060 plays)
+- work started in November 2019 (~ 6 years ago)
+- biggest achievement: since September 2024, all FreDraCor documents comply to TEI-All 😊
+- list of open issues: https://github.com/dracor-org/fredracor/issues
+
+
+---
+
+Thanks.
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="100px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#DraCorSummit
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
