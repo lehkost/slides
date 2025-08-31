@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DraCor Corpora Conference: GerDraCor and RusDraCor (DraCor Summit, Berlin, 2 September 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/white.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### GerDraCor and RusDraCor
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="100px;" -->
+
+Frank Fischer (Freie Universität Berlin)<!-- .element: style="font-size:0.7em;" -->
+
+<br />This presentation: **[tinyurl.com/292025gr](https://tinyurl.com/292025gr)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[DraCor Corpora Conference](https://summit.dracor.org/corpora_conference) &nbsp; · &nbsp; Freie Universität Berlin &nbsp; · &nbsp; 2 September 2025, 11:30–11:45
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### How DraCor Started Around 10 Years Ago
+
+![17 June 2015, hackathon at GCDH](images/2015-06-17_hackathon_at_gcdh.jpg)<!-- .element width="500px;" -->
+
+Hacking some code and encoding some plays on 17 June 2015 at [Heyne House](https://wwwuser.gwdguser.de/~nprofwg/Heyne-Haus.html), Göttingen Centre for Digital Humanities.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Distant-Reading Showcase
+
+How do character constellations change in 200 years of German drama?
+
+![465 plays at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+<small>Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)</small>
+
+--
+
+### DLINA project, precursor of DraCor (2014–2017)
+
+<br />
+
+- objective: large-scale network analysis of German drama
+- Python super script [***dramavis***](https://github.com/lehkost/dramavis) (not maintained beyond 2018)
+- although script and corpus were openly accessible, it was hard to reuse for other purposes
+- full-texts were never in the picture
+
+---
+
+## GerDraCor
+
+https://dracor.org/ger
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />
+
+- started in early 2017 with 465 plays from the TextGrid repository, corrected and enriched over two years
+- Wikidata IDs for authors and works added, among other things, documented [in the Wiki](https://github.com/dracor-org/gerdracor/wiki/Documentation-for-Correcting-Plays-from-TextGrid-Repository)
+- currently 742 plays
+- additions from various sources: German Text Archive (DTA), Wikisource, Gutenberg-DE (full-texts already digitised)
+- Google Books and other book-scanning projects (full-texts through OCR using Transkribus)
+
+--
+
+![GerDraCor: Number of Plays per Decade)](images/gerdracor-number-of-plays-per-decade.svg)
+
+GerDraCor as of 31 August 2025 (742 plays)
+
+---
+
+## RusDraCor
+
+https://dracor.org/rus
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />
+
+- started parallel to GerDraCor, no previous corpus, building from scratch
+- goal: creating a corpus of Russian-language drama from 1740s–1940s
+- multi-sourcing: Wikisource, Russian Virtual Library (rvb.ru), Online Library Alexei Komarov (ilibrary.ru), Maksim Moshkow’s Library (az.lib.ru)
+- all plays converted to TEI (P5), corrected and enriched in various ways
+- currently 212 plays
+
+--
+
+![RusDraCor: Number of Plays per Decade)](images/rusdracor-number-of-plays-per-decade.svg)
+
+RusDraCor as of 31 August 2025 (212 plays)
+
+---
+
+## Some Learnings and Useful Takeaways
+
+--
+
+### What to Do with *Groups* of Speakers?
+
+![snippet from a play](images/alle-eine-schlacht-eine-schlacht.png)<!-- .element: style="border:1px solid black; width:250px;" -->
+
+- each individual speaker can be identified, example [here](https://github.com/dracor-org/gerdracor/blob/1c109b077e403bc9e9659ee98bb41dc3fea8a713/tei/birch-pfeiffer-mutter-und-tochter.xml#L311)
+- speakers in a group may be identifiable through context, example [here](https://github.com/dracor-org/gerdracor/blob/1c109b077e403bc9e9659ee98bb41dc3fea8a713/tei/laube-gottsched-und-gellert.xml#L2600)
+- if a group cannot be divided into individual speakers, the group itself becomes a speaker instance, example [here](https://github.com/dracor-org/gerdracor/blob/1c109b077e403bc9e9659ee98bb41dc3fea8a713/tei/kotzebue-die-spanier-in-peru.xml#L1113)
+  - in this case, the group can be defined as a ```<personGrp>``` speaker instance within ```<listPerson>```, example [here](https://github.com/dracor-org/gerdracor/blob/1c109b077e403bc9e9659ee98bb41dc3fea8a713/tei/kotzebue-die-spanier-in-peru.xml#L72)
+
+--
+
+### Relationship Annotations
+
+- perfect example for DraCor’s community-based approach
+- originally a pull request by Stuttgart-based QuaDramA group, meant for GerDraCor
+  - Nathalie Wiedmer et al.: *Romeo, Freund des Mercutio: Semi-Automatische Extraktion von Beziehungen zwischen dramatischen Figuren*, Proceedings of DHd2020, Paderborn ([doi:10.5281/zenodo.4621778](https://doi.org/10.5281/zenodo.4621778))
+  - idea: annotation of relationships between characters (family and love relationships, dependencies), see [here](https://github.com/dracor-org/gerdracor#character-relations), now also documented in the DraCor ODD
+  - caveat: for the most part, relying on information in cast lists only (»father of«, »lover of«, »servant of«, etc.), no further plot-related investigation
+- useable in all corpora (optional)
+
+--
+
+## Implementation Into the DraCor API
+
+<br />
+
+- a new »relation« parameter was implemented in the »spoken-text« API call (https://dracor.org/doc/api)
+
+<br />Text spoken by mothers:
+
+https://dracor.org/api/v1/corpora/ger/plays/lessing-emilia-galotti/spoken-text?sex=FEMALE&relation-active=parent_of
+
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />Text spoken by daughters:
+
+https://dracor.org/api/v1/corpora/ger/plays/lessing-emilia-galotti/spoken-text?sex=FEMALE&relation-passive=parent_of
+
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Encode Bibliographic Data and Page Numbers
+
+<br />
+
+- use ```<bibl>``` in ```<sourceDesc>``` for bibliographic data of the digitised version of a drama
+- map page numbers ```<pb n="[number]"/>``` to the corresponding book edition
+
+--
+
+### GitHub Wiki
+
+<br />
+
+- each repository has its own Wiki, perfect for documenting the corpus-building process
+
+--
+
+### Growing the Corpus Through Teaching
+
+<br />
+
+- since 2022, four seminars on digital drama analysis have been held ([overview](https://dramenanalyse.github.io/))
+- as part of the seminars, each student selects a play, performs OCR, and encodes it in TEI, followed by a correction workflow
+
+---
+
+Thanks.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="100px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#DraCorSummit
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
