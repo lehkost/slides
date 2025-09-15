@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Generating TEI Documents Through a Game of Dice (TEI2025, Kraków, 18 September 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/white.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+# Generating TEI Documents <br />Through a Game of Dice
+
+<br />
+
+# 🎲
+
+<br />
+
+Viktor J. Illmer, Nele Heindorf, Roya Zendebudie, <br />Mark Schwindt, Frank Fischer<!-- .element: style="font-size:0.85em;" -->
+
+Freie Universität Berlin <br />[EXC 2020 “Temporal Communities”](https://www.temporal-communities.de/)
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+Slides: **[tinyurl.com/tei-dice](https://tinyurl.com/tei-dice)**
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />[TEI2025](https://tei2025.confer.uj.edu.pl/) &nbsp;·&nbsp; Kraków 🇵🇱 &nbsp;·&nbsp; Thu, 18 Sep 2025, 2:30 p.m.
+<!-- .element: style="font-size:0.85em;" -->
+
+--
+
+### TOC
+
+<br />
+
+1. [The story so far](#/1)
+2. [Bärmann and his drama automaton](#/2)
+3. [Workflow](#/3)
+4. [Analysis](#/4)
+5. [Summary](#/5)
+
+---
+
+## The story so far
+
+--
+
+### Dissertation on one-act plays
+
+![Poetische Ökonomie im Drama (Cover)](images/poetische-oekonomie-cover.jpg)<!-- .element width="320px;" -->
+
+Dîlan Canan Çakir: Poetische Ökonomie im Drama. Einakter im 18. und frühen 19. Jahrhundert. Berlin, Boston: <br />De Gruyter 2024. (= Studien und Texte zur Sozialgeschichte der Literatur. Vol. 164.) ([doi:10.1515/9783111334059](https://doi.org/10.1515/9783111334059))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### [Database of German-Language One-Act Plays 1740–1850](https://einakter.dracor.org/)
+
+![Einakter-Datenbank (Screenshot)](images/einakter-datenbank_screenshot_2025-02-24.png)<!-- .element width="640px;" -->
+
+Dîlan Canan Çakir, Frank Fischer: Dramatische Metadaten. Die Datenbank deutschsprachiger Einakter 1740–1850. <br />In: DHd2022: “Kulturen des digitalen Gedächtnisses”. 7–11 March 2022. Book of Abstracts. University of Potsdam. ([doi:10.5281/zenodo.6327977](https://doi.org/10.5281/zenodo.6327977))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### One-act play translation networks
+
+![Netzwerk der Übersetzungen Einakter-Datenbank](images/einakter-translators-scribe-excerpt.png)
+
+Visualisation with Gephi (excerpt). Layout: Yifan Hu. Label size ≙ In-degree. <br />Label/node color black: original authors, gray: translators.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### One-act mania in the first half of the 19th century
+
+<br />
+
+“The very fact that two, indeed three, renowned German translators are working on the same French original comedy at the same time […] should suffice to prove the eager desire for ever new **one-act comedies** that animates the German audience, which is eager for entertainment.; but there are many other reasons to believe in the existence of this eager, incessantly recurring desire.”
+
+<br />
+
+Georg Nikolaus Bärmann: Preface, [p. IX](https://de.wikisource.org/wiki/Seite:Neunhundert_neun_und_neunzig_und_noch_etliche_Almanachs-Lustspiele_durch_den_W%C3%BCrfel_(Reprint_1972).pdf/11).
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+## Bärmann and his drama automaton
+
+--
+
+### Georg Nikolaus Bärmann (1785–1850)
+
+![Portrait of Bärmann](images/baermann-konterfei-wikimedia-commons.jpg)<!-- .element width="400px;" -->
+
+(image source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:PPN663960886_G._N._B%C3%A4rmann,_Dr._(1835).jpg))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+![Cover Würfel-Almanach](images/almanach-cover.png)<!-- .element width="340px;" -->
+
+Its title – “Nine hundred and ninety-nine plus several more almanac comedies <br />by throwing dice” – promises enough one-act plays for 133 years.
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Status of one-act plays
+
+<br />
+
+- Bärmann’s Almanac = parody of the famous “Almanac of Dramatic Plays Designed for the Social Entertainment in the Countryside”, founded in 1803 by August von Kotzebue
+- Predominantly features one-act plays for amateur theater
+- High demand for one-act plays, but also criticism:
+  - “A jumble of scenes full of trivial jokes, topical comments, stale jokes, and ambiguities, that is called a farce today, most of which are **one-act plays**, and the audience is satisfied as long as it can laugh heartily [...]”. (Ignaz Franz Castelli 1861, [p. 126](https://books.google.com/books?id=1945AAAAcAAJ&pg=PA126))
+
+--
+
+### Structure of Bärmann’s Almanac
+
+![example page of the Almanach](images/beispielseite-almanach.jpg)<!-- .element width="600px;" -->
+
+1,200 snippets in total.
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+### Rules of play
+
+<br />
+
+- To generate a play, you must roll the dice 200 times
+- The dice-roll table shows which snippets are to be inserted next
+
+--
+
+### Dice-roll table (example page)
+
+![example page of dice-roll table](images/wurftabelle.jpg)<!-- .element width="640px;" -->
+
+--
+
+### Similar projects (combinatorial poetry)
+
+<br />
+
+- Raymond Queneau: *Cent mille milliards de poèmes* (1961)
+- Poetry automatons by Hans Magnus Enzensberger
+
+---
+
+## Workflow
+
+--
+
+How do you digitise a book that’s also a game?
+
+<br />
+
+(It’s not just an edition of a printed original.)
+
+--
+
+### Goal
+
+![Mockup 2](images/mockup-2.png)<!-- .element height="250px;" -->
+![Mockup 1](images/mockup-1.png)<!-- .element height="250px;" -->
+
+- Recreating the game in an interactive web app
+- Reverse engineering: restoring Bärmann’s aleatoric project to its original order
+
+--
+
+### Gameplay
+
+<br />
+
+- Functionality based on the original
+- Implementation of a dice-roll mechanism for creating individual plays
+- In addition to the gameplay, other analysis options are also available
+
+--
+
+### Textual basis
+
+<br />
+
+- Digital copy of “Neunhundert neun und neunzig und noch etliche Almanachs-Lustspiele durch den Würfel” [on Google Books](https://books.google.com/books?id=5phlNmAMBt8C&printsec=frontcover)
+
+--
+
+### Optical Character Recognition (OCR)
+
+<br />
+
+- Transkribus
+- Model: [›German Fraktur 18th Century – WrDiarium_M9‹](https://readcoop.eu/de/modelle/german-fraktur-18th-century/)
+
+--
+
+### OCR correction
+
+<br />
+
+- Started a project [in Wikisource](https://w.wiki/Aj99)
+- Correction according to four-eyes principle &nbsp;👀&nbsp;👀
+
+--
+
+### TEI conversion
+
+<br />
+
+- Semantic encoding of speakers, speech acts, scene headings, stage directions, etc.
+
+--
+
+### Dice-roll table
+
+<br />
+
+- Digitisation as CSV table with six columns and 200 rows each
+
+--
+
+### Web app
+
+<br />
+
+- Developed in TypeScript using SvelteKit (component-based web framework)
+- Transformed the TEI XML into an HTML representation of robust XSLTProcessor interface and a custom XSL stylesheet
+- Converted the dice-roll table to JSON array with arrays of the form 200 × 6 (for 200 rolls of a six-sided dice)
+- Serves as lookup table to identify the segment IDs equipped with ```xml:id``` on the corresponding ```<div>``` elements
+
+--
+
+### Try the app
+
+![dice-roll app screenshot](images/wuerfel-app.png)<!-- .element width="740px;" -->
+
+https://temporal-communities.github.io/999/
+
+---
+
+## Analysis
+
+--
+
+### 999+ plays for 133 years?
+
+<br />
+
+- The author’s claim regarding the number of individual one-act plays that can be rolled is a radical understatement
+- Purely mathematically, 6<sup>200</sup> possible combinations of the individual text snippets are possible
+- Corresponds to approximately 4 × 10<sup>155</sup>, which is more one-act plays than there are atoms in the universe (assuming approximately 10<sup>82</sup> atoms, cf. [Baker 2021](https://www.livescience.com/how-many-atoms-in-universe.html))
+
+--
+
+### Nature of the text variances
+
+<br />
+
+- Are the changes in the plot significant, or are they merely subtle deviations that do not change the overall plot?
+
+--
+
+### Example: 125th roll
+
+<br />
+
+- Sorted view in the web app: all six variants of each throw are arranged side by side ([direct link](https://temporal-communities.github.io/999/#125))
+- The spoken text usually changes only in details
+- 125th roll: The lover’s argument for supporting his future wife is slightly different in each case
+- However, the variants vary in length, with the shortest possible version at 3,000 words being only half as long as the longest possible version at 6,000 words
+
+--
+
+### Game mechanics
+
+<br />
+
+- More complex variations not possible due to the lack of control mechanisms (e.g., back references or jump instructions).
+- Each of the snippets, which differ in detail, is static in its sequence:
+  - 3rd roll: in the first scene, the monologuing niece appears
+  - 42nd roll: the uncle insists on marrying off his niece
+  - 192nd roll: the servant reveals his true identity
+  - 199th roll: curtain falls
+
+--
+
+### Function of the Dice-Roll Almanac
+
+<br />
+
+- Drama automaton does not primarily aim to generate individual one-act plays
+- Reproduces precisely the monotony that Bärmann’s criticism is directed against
+- Important function of almanacs and one-act plays: “radical democratisation” of theater (cf. Çakir 2024, p. 223)
+- Playful aspect of writing one-act plays, simplified by the dice
+
+--
+
+### Generated plays are downloadable in TEI‼️
+
+<br />
+
+- To facilitate further research, we added a download function
+- Each generated play can be downloaded in TEI format
+- File name uses timestamp, the individual 200-digit IDs are stored in the file
+
+---
+
+## Summary
+
+<br />
+
+- Fragmentation of the Dice-Roll Almanac poses a challenge for its digitisation
+- Implementation as an app makes the game mechanism easy to experience
+- Bärmann’s Automaton is an impressive playful and aesthetic exploration of the one-act play
+
+--
+
+# Game on!
+
+<br />✳️
+
+<br />App: https://temporal-communities.github.io/999/
+
+<br />✳️
+
+<br />Repo: https://github.com/temporal-communities/999
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
