@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title> DraCor, eine digitale Infrastruktur zur Erforschung der europäischen Dramengeschichte (IBI, 10. Oktober 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### **DraCor**, <br />eine digitale Infrastruktur <br />zur Erforschung der <br />europäischen Dramengeschichte
+
+![intro pic](images/dracor-hexagon.png)<!-- .element height="120px;" -->
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.8em;" -->
+
+Freie Universität Berlin · [EXC2020](https://www.temporal-communities.de/)
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />URL dieser Präsentation: **[lehkost.github.io/slides/2025-10-13-ibi-dracor/](https://lehkost.github.io/slides/2025-10-13-ibi-dracor/index.html)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[IBI-Seminar](https://www.ibi.hu-berlin.de/) &nbsp; · &nbsp; Humboldt-Universität zu Berlin · Mo, 13. Oktober 2025
+<!-- .element: style="font-size:0.8em;" -->
+
+--
+
+![DraCor-Frontpage am 12.10.2025](images/dracor_frontpage_2025-10-12.png)
+
+https://dracor.org/
+
+--
+
+## Inhalt
+
+<br />
+
+1. [Digitale Literaturwissenschaft](#/1)
+2. [Korpusarbeit](#/2)
+3. [DraCor-API](#/3)
+4. [DraCor in der Forschung](#/4)
+5. [Zusammenfassung](#/5)
+
+---
+
+## Kapitel 1.
+
+<br />
+
+### Digitale Literaturwissenschaft
+
+--
+
+### Digitale Dramenanalyse
+
+<br />
+
+&#62; 40 Jahre alt
+
+--
+
+### Hartmut Ilsemann (1984/1995) <small>(1/2)</small>
+
+![ilsemann-computerized-1995-snippet](images/ilsemann-computerized-1995-snippet.png)
+
+In: Literary and Linguistic Computing. Vol. 10 (1995), Nr. 1, S. 11–21. ([doi:10.1093/llc/10.1.11](https://doi.org/10.1093/llc/10.1.11))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Hartmut Ilsemann (1984/1995) <small>(2/2)</small>
+
+- Bezug auf:
+  - Étienne Souriau (»Les deux cent mille situations dramatiques«, 1950)
+  - Wilhelm Fucks (»Nach allen Regeln der Kunst«, 1968)
+  - Solomon Marcus (»Poetica matematică«, 1970)
+  - Manfred Pfister
+
+<!-- .element: style="font-size:0.6em;" -->
+
+![ilsemann-computerized-1995-table-6](images/ilsemann-computerized-1995-table-6.png)<!-- .element width="370px;" -->
+
+»There is no need to lay emphasis on the fact that *once a large data background has been created* all sorts of linguistic and literary research are possible.« (S. 13)
+
+--
+
+### Grenzen des Lesens
+#### Maximale Close-Reading-Korpusgrößen (Beispiele)
+
+<br />
+
+* Cornelia Mönch: [»Abschrecken oder Mitleiden. Das deutsche bürgerliche Trauerspiel im 18. Jahrhundert. Versuch einer Typologie«](https://doi.org/10.1515/9783110910612) (1993)
+  * 257 Stücke ([Tabelle](https://github.com/lehkost/bgltr))
+* Benjamin Herbst: [»Die Dramaturgie des Sterbens. Der Tod im deutschsprachigen Drama von 1768 bis 1849«](https://doi.org/10.18452/18921) (2018)
+  * 509 Stücke
+
+--
+
+»Literaturwissenschaft ist in der Praxis immer noch eine Disziplin, in der die Forschungsarbeit im Wesentlichen von Einzelpersonen vollzogen wird. Anders als in den Natur- und Sozialwissenschaften sind Projekte, in denen größere Gruppen mit einem gemeinsamen Erkenntnisziel forschen, in unserem Fach unüblich.«
+<!-- .element: style="text-align:left;" -->
+
+<br />
+
+Moritz Baßler/Rainer Karczewski: Computergestützte Literaturwissenschaft als Kulturwissenschaft. Eine Wunschliste. [Datiert auf den 11.02.2009.] In: Jahrbuch für Computerphilologie 9 (2007). Paderborn: mentis 2009.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Distant-Reading Showcase (2016)
+
+Wie entwickeln sich die Figurenkonstellationen im deutschen Drama?
+
+![465 Dramennetzwerke auf einen Blick](images/distant-reading-showcase-poster.jpg)<!-- .element width="640px;" -->
+
+Fischer, Kittel, Trilcke, Göbel, Vogel, Meiners, Kampkaspar 2016, [doi:10.6084/m9.figshare.3101203](https://dx.doi.org/10.6084/m9.figshare.3101203)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Detail
+
+![Poster-Detail](images/poster-detail-1.jpg)<!-- .element width="600px;" -->
+
+Zoom auf Goethes Stück »Götz von Berlichingen« (1773).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Digitale Dramenforschung *at scale*?
+
+<br />
+
+- multilinguale Dramenkorpora
+- Standardformat der Text Encoding Initiative (TEI)
+- Hosting (Code, Daten, Website)
+- Schnittstelle (API) im Sinne des ›programmable web‹ (Aaron Swartz)
+- Tools
+- Normdaten und Linked Open Data
+- FAIR-Prinzipien (findable, accessible, interoperable, reusable)
+- Trainingsmaterial (Open Educational Resources)
+- Community!
+
+--
+
+### Antwort der Redaktion einer literatur&shy;wissenschaftlichen Zeitschrift (2021)
+
+<br />
+
+»Auch die Tabelle müssten wir Sie bitten herauszunehmen, da in <br />[der Zeitschrift] leider keine Abbildungen abgedruckt werden.«
+
+---
+
+## Kapitel 2.
+
+<br />
+
+### Korpusarbeit
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI (1/2)
+
+<br />
+
+![Der Pudelhund (Snippet))](images/katzen-sprache.jpg)<!-- .element height="300px;" -->
+
+<br />
+
+Karl von Eckartshausen: *Der Pudelhund. Ein Lustspiel in einem Aufzuge.* München: Lentner 1800, S. 24. ([via Google Books](https://books.google.com/books?id=qF5IAAAAcAAJ&pg=PA24))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Voraussetzung: Kodierungsstandard TEI (2/2)
+
+<br />
+
+```xml
+<sp who="#felden">
+  <speaker>Felden.</speaker>
+    <p>
+      Wie viele Buchstaben hat denn das Alphabet der Katzen-Sprache?
+    </p>
+</sp>
+<sp who="#anton">
+  <speaker>Anton.</speaker>
+    <p>
+      Das will ich Ihnen erklären, denn der Herr Sprachmeister hat es mich
+      schon gelehrt. Es hat nur 4 Buchstaben: M. I. A. U; das heißt: Miau.
+      Aus diesen 4 Buchstaben formiren sich aber sämmtliche Wörter, und die
+      Verschiedenheit der Töne, und die Geschwindigkeit des Ausdruckes oder
+      das Aushalten der Sylben formirt die Wörter […]
+    </p>
+</sp>
+```
+
+<br />
+
+Dialog aus Karl von Eckartshausens Lustspiel »Der Pudelhund« (1800) in TEI (Text Encoding Initiative), Quelle: [DraCor](https://dracor.org/id/ger000524). <br />Momentan sind im Standard 587 verschiedene Elemente definiert ([Stand November 2024](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DraCor
+
+![DraCor-Frontpage am 12.10.2025](images/dracor_frontpage_2025-10-12.png)
+
+Das *Drama Corpora*-Portal (https://dracor.org/), entwickelt seit 2017, <br />hostet mittlerweile 29 Korpora in 22 Sprachen.
+<!-- .element: style="font-size:0.65em;" -->
+
+Hrsg. von Frank Fischer, Peer Trilcke, Julia Jennifer Beine, Daniil Skorinkin. Technische Leitung: <br />Carsten Milling, Ingo Börner. Art Director: Mark Schwindt. Full Credits: [&#62; 50 Personen](https://dracor.org/doc/credits).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Wachsende Liste von Korpora aus der Community
+
+<div id="left">
+
+- FreDraCor
+- GerDraCor
+- EngDraCor
+- RusDraCor
+- CalDraCor
+- DutchDraCor
+- ItaDraCor
+- HunDraCor
+- SweDraCor
+- PolDraCor
+- UDraCor
+- GreekDraCor
+- AmDraCor
+
+</div>
+
+<div id="right">
+
+- GerShDraCor
+- ShakeDraCor
+- IbsDraCor
+- RomDraCor
+- RoDraCor
+- AlsDraCor
+- SpanDraCor
+- YiDraCor
+- TatDraCor
+- BashDraCor
+- im Entstehen: ArDraCor, CzeDraCor, GeorgDraCor, HeDraCor, NeoLatDraCor, JesDraCor
+
+</div>
+
+(Sortiert nach Anzahl von Stücken pro Korpus, vgl. die [DraCor Corpus Registry](https://dracor.org/doc/corpora).)
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### GerDraCor
+
+<br />
+
+- mittlerweile 748 Dramen von 1500 bis 1950 (wird stetig ergänzt)
+- 16.089 Figuren (M: 11.357, F: 3.350)
+- ca. 11,7 Mio. Tokens
+- Community-Projekt:
+  - Trainingsmaterialien und Anwendungsbeispiele [bei forTEXT](https://fortext.net/ressourcen/textsammlungen/dracor-drama-corpora-project) (Hamburg/Darmstadt)
+  - [Nathalie Wiedmer et al.](https://quadrama.github.io/publications/Wiedmer2020aa): Annotation von Beziehungen der Figuren untereinander (Familien- und Liebesverhältnisse, dienstliche Abhängigkeiten)
+
+--
+
+#### GerDraCor: Übersicht
+
+![GerDraCor overview)](images/dracor-gerdracor-overview.png)
+
+https://dracor.org/ger
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Luise Gottsched: »Das Testament« (1745) · Kookkurrenz-Netzwerk
+
+![GerDraCor: Das Testament](images/dracor-luise-gottsched-testament-network.png)
+
+https://dracor.org/id/ger000220#network
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Luise Gottsched: »Das Testament« (1745) · Figurenrelationen
+
+![GerDraCor: Das Testament](images/dracor-luise-gottsched-testament-relations.png)
+
+https://dracor.org/id/ger000220#relations
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Luise Gottsched: »Das Testament« (1745) · Speech Distribution
+
+![GerDraCor: Das Testament](images/dracor-luise-gottsched-testament-speech-distribution.png)
+
+https://dracor.org/id/ger000220#speech
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Luise Gottsched: »Das Testament« (1745) · Download-Tab
+
+![DraCor-Download-Tab](images/dracor-luise-gottsched-testament-download-tab.png)
+
+https://dracor.org/id/ger000220#downloads
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+Die **DraCor-API**, Kernstück des DraCor-Ökosystems, <br />bietet noch mehr Interaktionsmöglichkeiten.
+
+---
+
+## Kapitel 3.
+
+<br />
+
+### DraCor-API
+
+<br /><br />
+
+- Dokumentation: [dracor.org/doc/api](https://dracor.org/doc/api)
+
+--
+
+### DraCor-API: Beispielanfragen
+
+https://dracor.org/api/v1/corpora/ita/plays/goldoni-il-servitore-di-due-padroni/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+**Sprechtext aller weiblicher Figuren in Goldonis »Il servitore di due padroni« (cioè Clarice, Smeraldina e Beatrice).**
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+**Sprechtext aller Sohn-Figuren in Schillers »Räubern«.**
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/shake/plays/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
+
+**Netzwerkdaten zu Shakespeares »Hamlet« (im JSON-Format).**
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/ger/plays/gottschedin-die-pietisterey-im-fischbein-rocke/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+**Alle Regieanweisungen aus »Die Pietisterey im Fischbein-Rocke« von Luise Gottsched.**
+<!-- .element: style="font-size:0.65em;" -->
+
+https://dracor.org/api/v1/corpora/ita/metadata<!-- .element: style="font-size:0.7em;" -->
+
+**Metadaten zu allen Stücken des italienischen Korpus (als JSON oder CSV).**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+### Einfache Visualisierung von Strukturdaten
+#### Anzahl von Figuren pro Stück in chronologischer Folge (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+gerdracor <- fread("https://dracor.org/api/v1/corpora/ger/metadata/csv")
+ggplot(gerdracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+Beispiel für einfaches R-Skript, das die Daten über die API bezieht.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Anzahl von Figuren pro Stück in chronologischer Folge (2/2)
+
+![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
+
+Ausgabe in RStudio.
+<!-- .element: style="font-size:0.65em;" -->
+
+(Der Punkt rechts oben: Karl Kraus’ »Die letzten Tage der Menschheit«, 925 Sprechinstanzen).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DraCor-API-Bibliotheken
+
+<br />
+
+= weitere Vereinfachung: <br />API-Funktionen bekommen eigene Befehle
+
+<br />
+
+- für R: rdracor ([CRAN](https://cran.r-project.org/web/packages/rdracor/index.html))
+- für Python: pydracor ([PyPI](https://pypi.org/project/pydracor/))
+- für Haskell: HDraCor (experimentell)
+
+--
+
+#### Beispiel (mit rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+hermann <- get_net_cooccur_igraph(corpus="ger", play="kleist-die-hermannsschlacht")
+plot(hermann)
+```
+#### Ergebnis:
+
+![Hermannsschlacht, Netzwerkgraph mit rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element height="400px;" -->
+
+--
+
+### Lessings »Emilia Galotti«
+
+![Emilia Galotti (dynamischer Graph)](images/lessing-emilia-galotti.gif)
+
+**Dynamischer Graph**, als Animated GIF generiert mit dem [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html)-Package. Daten direkt von der **DraCor API**. <br />Script: Ivan Pozdniakov ([Sourcecode auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Gamification-Ansatz: »Battle of the Plays« (2024)
+
+![Battle of the Plays, card](images/battle-of-the-plays_sophocles-antigone.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_back.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_mitford-rienzi.jpg)
+
+Frank Fischer, Mark Schwindt: **[Battle of the Plays. A Gamification Approach to Literary Network Analysis.](https://sukultur.de/produkt/battle-of-the-plays-a-gamification-approach-to-literary-network-analysis/)** Berlin: **SUKULTUR** 2024. – 32+1 cards including case, color print. ISBN: 978-3-95566-182-3. €15,00. – Spielregeln: https://battle-of-the-plays.github.io/
+<!-- .element: style="font-size:0.7em;" -->
+
+---
+
+## Kapitel 4.
+
+<br />
+
+## DraCor in der Forschung
+
+--
+
+### KPI
+
+<br />
+
+- seit Januar 2024 sind 67 Bücher bzw. Artikel erschienen, die mit DraCor-Daten arbeiten → [dracor.org/doc/research](https://staging.dracor.org/doc/research)
+
+--
+
+### Forschungsbeispiel 1:
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Forschungsbeispiel 2:
+
+#### Requisiten in Prosa- und Versdramen
+
+<br />
+
+| **Requisit bzw. Typ von Requisit** | **Prosadrama (N = 378)**     | **Versdrama (N = 231)**     |
+| ---------------------------------- | ---------------------------- | --------------------------- |
+| Waffen                             | 60,1 %                       | 75,3 %                      |
+| Feuerwaffen                        | 18,8 %                       | 7,8 %                       |
+| Dolch                              | 10,6 %                       | **26,0 %**                  |
+| Kaffee                             | **13,8 %**                   | 1,3 %                       |
+
+<br />
+
+- Prozentzahlen: in wie vielen Prosa- und Versdramen kommt ein bestimmtes Requisit bzw. ein bestimmter Typ von Requisit *mindestens einmal* vor.
+
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />Quelle: Jonah Lubin, Anke Detken, Frank Fischer: Das »ureigenste theatralische Element« – Automatische Extraktion von Requisiten aus deutschsprachigen Dramentexten. In: DHd2024: »DH Quo Vadis«. 26. Februar–1. März 2024. Book of Abstracts. Universität Passau. ([doi:10.5281/zenodo.10698448](https://doi.org/10.5281/zenodo.10698448))
+<!-- .element: style="font-size:0.7em; text-align:left;" -->
+
+--
+
+#### Weitere beispielhafte DraCor-Forschungsarbeiten (seit 2024, Auswahl)
+
+- Linguistische Untersuchungen
+  - Wissensdistribution im deutschen Drama
+  - Wiederholung und Innovation in dramatischen Texten
+  - Analyse semantischer und struktureller Ähnlichkeiten in Dramentexten
+  - stilistische Variation in Figurenrede
+  - handlungstreibende Muster in Günderrodes Dramen
+  - automatische Klassifizierung von Regieanweisungen in französischen Dramen mit Hilfe großer Sprachmodelle
+  - Possessivpronomen und Reparatursequenzen in historischen Dramen
+  - Charaktertypologie der römischen Komödie
+- Gender
+  - Geschlechterdarstellungen in den Komödien von Calderón de la Barca und im Drama des spanischen Edad de Plata
+- Korpusarbeit
+  - Analyse des frühneuzeitlichen niederländischen Dramas
+  - Aufbau und Analyse des elsässischen Dramenkorpus
+  - komputationelle Ansätze zur Analyse von Opernlibretti
+- Netzwerkanalyse
+  - Machiavellis Dramen aus der Perspektive der digitalen Netzwerkanalyse
+  - Small World-Phänomen beobachtet in 3.000 Theaterstücken
+
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### DraCor Summit 2025
+
+![DraCor Summit 2025, Berlin, Day 3](images/dracor-summit-2025-day-3.jpg)<!-- .element height="480px;" -->
+
+1.–5. September 2025 an der FU Berlin, Website: **[summit.dracor.org](https://summit.dracor.org/)**.
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### Ermittlung der Forschungsintensität
+
+Anzahl wissenschaftlicher Artikel zu den Werken im German Drama Corpus (Top-20), <br />via [**BDSL** – Bibliographie der deutschen Sprach- und Literaturwissenschaft](https://www.bdsl-online.de/):
+<!-- .element: style="font-size:0.6em;" -->
+
+1. Goethe: Faust (2032)
+2. Kleist: Penthesilea (303)
+3. Lessing: Nathan der Weise (303)
+4. Goethe: Iphigenie auf Tauris (242)
+5. Lessing: Emilia Galotti (191)
+6. Kleist: Prinz Friedrich von Homburg (172)
+7. Schiller: Wilhelm Tell (145)
+8. Schiller: Maria Stuart (123)
+9. Schiller: Die Jungfrau von Orleans (115)
+10. Kleist: Die Hermannsschlacht (114)
+11. Hofmannsthal: Elektra (109)
+12. Goethe: Torquato Tasso (108)
+13. Schiller: Kabale und Liebe (101)
+14. Kraus: Die letzten Tage der Menschheit (100)
+15. Kleist: Amphitryon (97)
+16. Schnitzler: Reigen (85)
+17. Hofmannsthal: Der Schwierige (76)
+18. Goethe: Egmont (65)
+19. Kleist: Die Familie Schroffenstein (57)
+20. Lenz: Die Soldaten (48)
+
+<!-- .element: style="font-size:0.6em;" -->
+
+Vgl. Jäschke/Fischer: [Quantification of Scholarly Articles on German Drama](https://weltliteratur.net/scholarly-articles-on-german-drama/). In: weltliteratur.net, 12. Oktober 2021.
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+## Zusammenfassung
+
+<br />
+
+- DraCor: eine digitale Forschungsinfrastruktur zum europäischen Drama und Teil eines digitalen literaturwissenschaftlichen Ökosystems
+- fungiert als Schnittstelle zwischen analoger und digitaler Philologie
+- schafft die Voraussetzungen für inter-/transdisziplinäres Arbeiten, vgl. [Notebooks am IBI](https://ibi.pages.cms.hu-berlin.de/notebooks/)
+
+--
+
+Vielen Dank.
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="180px"; style="box-shadow:none;"; -->
+
+https://dracor.org/
+
+<br />
+
+#DraCor <br /><br />#ProgrammableCorpora
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
