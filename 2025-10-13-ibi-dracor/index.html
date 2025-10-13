@@ -35,7 +35,7 @@ Freie Universität Berlin · [EXC2020](https://www.temporal-communities.de/)
 <br />URL dieser Präsentation: **[lehkost.github.io/slides/2025-10-13-ibi-dracor/](https://lehkost.github.io/slides/2025-10-13-ibi-dracor/index.html)**
 <!-- .element: style="font-size:0.6em;" -->
 
-<br />[IBI-Seminar](https://www.ibi.hu-berlin.de/) &nbsp; · &nbsp; Humboldt-Universität zu Berlin · Mo, 13. Oktober 2025
+<br />[IBI-Seminar](https://www.ibi.hu-berlin.de/) &nbsp; · &nbsp; Humboldt-Universität zu Berlin · Mo, 13. Oktober 2025, 13:00 Uhr
 <!-- .element: style="font-size:0.8em;" -->
 
 --
@@ -565,6 +565,46 @@ Anzahl wissenschaftlicher Artikel zu den Werken im German Drama Corpus (Top-20),
 
 Vgl. Jäschke/Fischer: [Quantification of Scholarly Articles on German Drama](https://weltliteratur.net/scholarly-articles-on-german-drama/). In: weltliteratur.net, 12. Oktober 2021.
 <!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### DraCor und das Model Context Protocol (MCP)
+
+<br />
+
+- Kombination der Stärken von TEI-Codierung, API-Output und dem ›Wissen‹ großer Sprachmodelle? MCP!
+- offener Standard zur Verbindung von KI-Modellen mit externen Daten/Werkzeugen:
+  - [»Think of MCP like a USB-C port for AI applications.«](https://modelcontextprotocol.io/docs/getting-started/intro)
+- veröffentlicht von Anthropic im November 2024
+- bis Juni nur 280 Erwähnungen des MCP bei Google Scholar, Stand heute sind es 1.150
+
+--
+
+### DraCor-MCP-Server
+
+<br />
+
+- Ingo Börner (2025): DraCor MCP Server (Version v1.0.0-alpha.2) [Computer software]. GitHub. https://github.com/dracor-org/dracor-mcp
+- Wenn man Claude zu dramatischen Texten befragt, kann das LLM …
+  - auf Ressourcen wie Korpora, Werke, Figuren und Netzwerke zugreifen
+  - Werkzeuge zum Suchen, Vergleichen und Analysieren von Stücken verwenden
+  - (interaktive) Visualisierungen auf Basis dieser Daten liefern
+- die DraCor-API ist öffentlich zugänglich (keine Authentifizierung erforderlich)
+
+--
+
+### Ein Beispiel
+
+<br />
+
+- Prompt:
+  - »Wer ist die Hauptfigur in Kleists Theaterstück "Prinz Friedrich von Homburg" im deutschen Dramenkorpus? Beschreibe die Rolle dieser Figur im Netzwerk.«
+
+--
+
+#### Antwort von Claude mit Verbindung zum DraCor-MCP-Server
+
+![pic](images/dracor-mcp-example-kleist-homburg.png)<!-- .element width="360px"; -->
 
 ---
 
