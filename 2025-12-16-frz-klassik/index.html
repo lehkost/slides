@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Digitale Dramenanalyse mit DraCor (French Drama Corpus) (16. Dezember 2025)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+### Digitale Dramenanalyse mit DraCor <br />(French Drama Corpus)
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element width="120px"; style="box-shadow:none;"; -->
+
+Prof. Dr. Frank Fischer <br />(Freie Universität Berlin)
+<!-- .element: style="font-size:0.7em;" -->
+
+Web: [lehkost.github.io](https://lehkost.github.io/) <br />Bluesky: [@umblaetterer.bsky.social](https://bsky.app/profile/umblaetterer.bsky.social)
+<!-- .element: style="font-size:0.45em;" -->
+
+<br />Folien: **[lehkost.github.io/slides/2025-12-16-frz-klassik/](https://lehkost.github.io/slides/2025-12-16-frz-klassik/index.html)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[Proseminar “Die Tragödie der französischen Klassik. Corneille und Racine”](https://web.archive.org/web/20251009114246/https://www.fu-berlin.de/vv/de/lv/1025586) &nbsp;·&nbsp; FU Berlin &nbsp;·&nbsp; Di, 16. Dezember 2025, 10:15 Uhr &nbsp;·&nbsp; K29/204
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+## Kapitel
+
+<br />
+
+1. [Programmable Corpora](#/1)
+2. [Jenseits der Volltextanalyse](#/2)
+3. [Ausgewählte Analyse-Tools](#/3) (Praxisteil)
+
+---
+
+# Kapitel 1.
+
+<br />
+
+## Programmable Corpora
+
+--
+
+### Konzept ›Programmable Corpora‹
+
+<br />
+
+Vgl. Frank Fischer et al.: **Programmable Corpora: Introducing <br />DraCor, an Infrastructure for the Research on European Drama.** <br />Proceedings of DH2019: “Complexities”, Utrecht, [doi:10.5281/zenodo.4284002](https://doi.org/10.5281/zenodo.4284002).
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+- (Drama-)Korpora als vergleichbare Objekte, die verschiedene Extraktions- und Analysefunktionen bieten und mit anderen Datenquellen verknüpfbar sind
+
+--
+
+### Das DraCor-Projekt
+
+![DraCor frontpage)](images/dracor-frontpage-2024-10-05.png)
+
+Die **[dracor.org](https://dracor.org/)**-Frontpage am 5. Oktober 2024.
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Wachsende Liste von Korpora aus der Community
+
+<div id="left">
+
+- FreDraCor
+- GerDraCor
+- EngDraCor
+- RusDraCor
+- CalDraCor
+- DutchDraCor
+- ItaDraCor
+- HunDraCor
+- SweDraCor
+- UDraCor
+- GreekDraCor
+- AmDraCor
+
+</div>
+
+<div id="right">
+
+- RoDraCor
+- GerShDraCor
+- ShakeDraCor
+- RomDraCor
+- PolDraCor
+- AlsDraCor
+- SpanDraCor
+- YiDraCor
+- ArDraCor
+- TatDraCor
+- BashDraCor
+- im Entstehen: CzeDraCor, HeDraCor, GeorgDraCor, NeoLatDraCor
+
+</div>
+
+<br clear="all" />
+
+(Sortiert nach Anzahl der Stücke pro Korpus. Siehe die [DraCor Corpus Registry](https://dracor.org/doc/corpora).)
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### Voraussetzung: TEI-Kodierungsstandard (1/2)
+
+![La Mort de César (Snippet))](images/mort-de-cesar-snippet.png)<!-- .element height="450px;" -->
+
+Voltaire: *La Mort de César. Tragédie.* Seconde édition revue, corrigée et <br />augmentée par l’auteur. Amsterdam: Ledet 1736, p. 7. ([via Gallica](http://gallica.bnf.fr/ark:/12148/bpt6k311874h))
+<!-- .element: style="font-size:0.75em;" -->
+
+--
+
+### Voraussetzung: TEI-Kodierungsstandard (2/2)
+
+```
+<sp who="#antoine">
+  <speaker>ANTOINE.</speaker>
+  <l part="I">Brutus ! il se pourroit.....</l>
+</sp>
+<sp who="#cesar">
+  <speaker>CÉSAR.</speaker>
+  <l part="F">Ne m’en crois pas. Tiens, lis.</l>
+</sp>
+<sp who="#antoine">
+  <speaker>ANTOINE.</speaker>
+  <l>Dieux ! La Sœur de Caton ! La fière Servilie !</l>
+</sp>
+<sp who="#cesar">
+<speaker>CÉSAR.</speaker>
+  <l>Par un hymen secret, elle me fut unie.</l>
+  <l>Ce farouche Caton dans nos premiers débats,</l>
+  <l>La fit presqu’à mes yeux, passer en d’autres bras :</l>
+  <l>Mais le jour qui forma ce second hyménée,</l>
+  <l>De son nouvel Époux trancha la destinée.</l>
+  <l>Sous le nom de Brutus mon fils fut élevé.</l>
+  <l>Pour me haïr, ô Ciel ! étoit-il réservé !</l>
+  <l>Mais lis, tu sauras tout par cet Écrit funeste.</l>
+</sp>
+```
+
+Dialog aus Voltaires Tragödie “La Mort de César”, kodiert in TEI (**T**ext **E**ncoding **I**nitiative). <br />Derzeit sind 588 verschiedene Elemente im Standard definiert ([Stand September 2025](https://tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html)).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### FreDraCor Frontpage
+
+![FreDraCor frontpage)](images/fredracor.png)<!-- .element height="510px;" -->
+
+https://dracor.org/fre
+
+--
+
+### Molière: “L’Avare” (1669)
+
+![Molière: L’Avare in DraCor)](images/avare-network.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/fre000996
+
+--
+
+### Speech Distribution
+
+![Speech distribution in L’Avare)](images/avare-speech-distribution.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/fre000996#speech
+
+--
+
+### DraCor Downloads Tab
+
+![Downloads tab for L’Avare](images/avare-downloads-tab.png)<!-- .element height="510px;" -->
+
+https://dracor.org/id/fre000996#downloads
+
+--
+
+### DraCor Tools Tab (*neu 2025!*)
+
+![Tools tab for L’Avare](images/avare-tools-tab.png)<!-- .element height="460px;" -->
+
+https://dracor.org/id/fre000996#tools
+
+---
+
+# Kapitel 2.
+
+<br />
+
+## Jenseits der Volltextanalyse
+
+--
+
+### Qu’est-ce qu’une API ?
+
+<br />
+
+- API: Application Programming Interface (Programmierschnittstelle)
+- standardisierter Informationsaustausch zugunsten modularer, vereinfachter Programmierung
+- Daten werden strukturiert nach einer definierten Syntax übertragen
+
+--
+
+### Funktionen der DraCor-API
+
+![DraCor API)](images/dracor-api.png)
+
+https://dracor.org/doc/api
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### DraCor API: Beispielabfragen
+
+https://dracor.org/api/v1/corpora/fre/plays/moliere-avare/spoken-text?gender=FEMALE<!-- .element: style="font-size:0.7em;" -->
+
+<small>Redetext aller weiblichen Figuren in Molières “L’Avare”.</small>
+
+https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gender=MALE&relation=parent_of_passive<!-- .element: style="font-size:0.7em;" -->
+
+<small>Redetext aller Sohnfiguren in Friedrich Schillers “The Robbers” (German corpus).</small>
+
+https://dracor.org/api/v1/corpora/fre/plays/racine-britannicus/metrics<!-- .element: style="font-size:0.7em;" -->
+
+<small>Netzwerkdaten aus Jean Racines “Britannicus” (im JSON-Format).</small>
+
+https://dracor.org/api/v1/corpora/fre/plays/hugo-hernani/stage-directions<!-- .element: style="font-size:0.7em;" -->
+
+<small>Alle Regieanweisungen aus Victor Hugos “Hernani”.</small>
+
+https://dracor.org/api/v1/corpora/fre/metadata/csv<!-- .element: style="font-size:0.7em;" -->
+
+<small>Metadaten für alle Stücke im französischen Korpus (in JSON oder CSV).</small>
+
+--
+
+### Metadaten
+
+![Metadata of FreDraCor)](images/metadata-fredracor.png)<!-- .element height="510px;" -->
+
+Download von Metadaten für FreDraCor über die DraCor-API.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Metadata
+
+![Metadata of FreDraCor in LibreOffice Calc)](images/metadata-fredracor-libreoffice-calc.png)<!-- .element height="510px;" -->
+
+Metadaten in LibreOffice Calc.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Einfache Visualisierung von Strukturdaten
+#### Anzahl der Figuren pro Stück in chronologischer Reihenfolge (1/2)
+
+<br />
+
+```R
+library(data.table)
+library(ggplot2)
+fredracor <- fread("https://dracor.org/api/v1/corpora/fre/metadata/csv")
+ggplot(fredracor[], aes(x = yearNormalized, y = numOfSpeakers)) + geom_point()
+```
+
+<br />
+
+Beispiel eines einfachen R-Skripts, das Daten über die API bezieht.
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### Anzahl der Figuren pro Stück in chronologischer Reihenfolge (2/2)
+
+![Number of characters per play](images/num-of-speakers-fredracor.png)
+
+Ausgabe in RStudio.
+<!-- .element: style="font-size:0.6em;" -->
+
+(Punkt ganz links: “Le Jeu d’Adam”, liturgisches Drama aus dem 12. Jahrhundert.)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### API-Wrapper
+
+<br />
+
+= weitere Vereinfachung: <br />API-Funktionen erhalten eigene Befehle
+
+<br />
+
+- für R: rdracor
+- für Python: pydracor
+
+--
+
+#### Beispiel (rdracor):
+
+```R
+library(rdracor)
+library(igraph)
+avare <- get_net_cooccur_igraph(play="moliere-avare", corpus = "fre")
+plot(avare)
+```
+#### Ergebnis:
+
+![L’Avare, netowrk graph generated with rdracor](images/avare-rdracor-graph.png)<!-- .element height="400px;" -->
+
+--
+
+### Gamification: “Battle of the Plays” (2024)
+
+![Battle of the Plays, card](images/battle-of-the-plays_sophocles-antigone.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_back.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_mitford-rienzi.jpg)
+
+Frank Fischer, Mark Schwindt: **[Battle of the Plays. A Gamification Approach to Literary Network Analysis.](https://sukultur.de/produkt/battle-of-the-plays-a-gamification-approach-to-literary-network-analysis/)** Berlin: **SUKULTUR** 2024. – 32+1 Karten inkl. Etui, Farbdruck. ISBN: 978-3-95566-182-3. €15.00. – <br />Spielregeln: https://battle-of-the-plays.github.io/
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DraCor-basierte Forschung
+
+<br />
+
+- seit Anfang 2024 wurden über 70 DraCor-basierte Forschungsarbeiten veröffentlicht (inkl. Monografien)
+- siehe [dracor.org/doc/research](https://dev.dracor.org/doc/research)
+
+---
+
+# Kapitel 3.
+
+<br />
+
+### Ausgewählte Analyse-Tools
+
+--
+
+### Empfohlene Beispiele
+
+<br />
+
+- Corneille/Racine
+  - [Pierre Corneille: Rodogune, Princesse des Parthes. Tragédie](https://dracor.org/id/fre000347#text) (1644)
+  - [Jean Racine: Bérénice. Tragédie](https://dracor.org/id/fre001190#text) (1670)
+- Andere
+  - [Molière: L’Avare](https://dracor.org/id/fre000996#text) (1669)
+  - [Carlo Goldoni: Il servitore di due padroni](https://dracor.org/id/ita000080#text) (1746)
+  - [Friedrich Schiller: Die Jungfrau von Orleans](https://dracor.org/id/ger000227#text) (1801)
+  - or another of the &#62; 4,000 plays on [dracor.org](https://dracor.org/)
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Kapitel 2.1: Volltextdaten
+
+<br />
+
+### Voyant
+
+--
+
+### Aufgabe
+
+<br />
+
+- Öffne Voyant in einem anderen Browser-Tab (https://voyant-tools.org/).
+- Wähle ein DraCor-Stück und gehe zum Download-Tab. (Beispiel: [Bérénice](https://dracor.org/id/fre001190#downloads))
+- Downloade den ›Spoken text‹ → ›Plain (no markup)‹ → TXT.
+- Du kannst auch die URL kopieren.
+- Dann kannst du den Text oder die URL einfügen oder die Datei zu Voyant hochladen.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Kapitel 2.2: Tabellarische Daten
+
+<br />
+
+### RAWGraphs
+
+--
+
+### Aufgabe
+
+<br />
+
+- Öffne RAWGraphs in einem anderen Browser-Tab (https://www.rawgraphs.io/).
+- Wähle ein DraCor-Stück und gehe zum Download-Tab. (Beispiel: [Bérénice](https://dracor.org/id/fre001190#downloads))
+- Downloade die ›List of characters‹ → ›Including precalculated data‹ → CSV.
+- Du kannst auch die URL kopieren.
+- Dann kannst du den Text oder die URL einfügen oder die Datei zu RAWGraphs hochladen.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Kapitel 2.3: Tabellarische Daten
+
+<br />
+
+### Datawrapper
+
+--
+
+### Aufgabe
+
+<br />
+
+- Öffne Datawrapper in einem anderen Browser-Tab (https://www.datawrapper.de/).
+- Wähle ein DraCor-Stück und gehe zum Download-Tab. (Beispiel: [Bérénice](https://dracor.org/id/fre001190#downloads))
+- Downloade die ›List of characters‹ (Figurenliste) → ›Including precalculated data‹ → CSV.
+- Du kannst auch die URL kopieren.
+- Dann kannst du den Text oder die URL einfügen oder die Datei zu Datawrapper hochladen.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Kapitel 2.4: Netzwerkdaten
+
+<br />
+
+### Gephi Lite
+
+--
+
+### Aufgabe
+
+<br />
+
+- Öffne Gephi Lite in einem anderen Browser-Tab (https://gephi.org/gephi-lite/).
+- Wähle ein DraCor-Stück und gehe zum Download-Tab. (Beispiel: [Bérénice](https://dracor.org/id/fre001190#downloads))
+- Downloade die ›Network data‹ → ›Co-occurrence network‹ → GEXF.
+- Du kannst auch die URL kopieren.
+- Dann kannst du die Datei zu Gephi Lite hochladen.
+
+---
+
+## Vielen Dank!
+
+<br />
+
+![DraCor-Logo](images/dracor-hexagon.png)<!-- .element width="100px"; style="box-shadow:none;"; -->
+
+<br />
+
+## Fragen?
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
