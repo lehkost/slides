@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung in die künstliche Intelligenz (KI) (Seminar 13. April 2026)</title>
+
+    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+Seminar ([LV 17145](https://www.fu-berlin.de/vv/de/lv/1069411))
+<!-- .element: style="font-size:0.6em;" -->
+
+#### **»Einführung in die künstliche Intelligenz (KI)«**
+
+(13. April – 13. Juli 2026)
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+Erste Sitzung (13. April 2026)
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Diese Präsentation: <br />**[lehkost.github.io/slides/2026-04-13-einf-ki/](https://lehkost.github.io/slides/2026-04-13-einf-ki/index.html)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+![pluribus-made-by-humans-disclaimer](images/pluribus-made-by-humans.webp)
+
+(Bildquelle: [ca.news.yahoo.com](https://ca.news.yahoo.com/pluribus-includes-made-humans-disclaimer-033249050.html))
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Bitte notieren Sie …
+
+<br />
+
+1. … in einem Satz, was Ihrer Meinung nach KI ist, <br />ganz neutral. (Minimaldefinition)
+2. … einen ausgewählten positiven Aspekt von KI.
+3. … einen ausgewählten negativen Aspekt von KI.
+
+<br />(Schreiben Sie Ihren Namen, ein Kürzel oder einen Spitznamen dazu.)
+
+--
+
+### Zum Einstieg
+
+<br />
+
+Chris Anderson: **The End of Theory**: The Data Deluge Makes the Scientific Method Obsolete. In: Wired 16 (**2008**), S. 108–109. (URL: [wired.com/2008/06/pb-theory/](https://www.wired.com/2008/06/pb-theory/))
+<!-- .element: style="font-size:0.9em; text-align:left;" -->
+
+<br />
+
+»Sixty years ago, digital computers made information readable. Twenty years ago, the Internet made it reachable. Ten years ago, the first search engine crawlers made it a single database. Now Google and like-minded companies are sifting through the most measured age in history, treating this **massive corpus** as a **laboratory of the human condition**. They are the children of the Petabyte Age.«
+<!-- .element: style="font-size:0.7em; text-align:left;" -->
+
+»Who knows why people do what they do? The point is they do it, and we can track and measure it with unprecedented fidelity. **With enough data, the numbers speak for themselves.**&laquo;
+<!-- .element: style="font-size:0.7em; text-align:left;" -->
+
+»We can stop looking for models. We can analyze the data without hypotheses about what it might show. We can throw the numbers into the biggest computing clusters the world has ever seen and **let statistical algorithms find patterns** where science cannot.«
+<!-- .element: style="font-size:0.7em; text-align:left;" -->
+
+--
+
+### Slido
+
+--
+
+#### Wiederholung
+
+<br />
+
+### Wofür steht GPT?
+
+<br />
+
+**G**enerative **P**re-trained **T**ransformer
+<!-- .element: class="fragment" -->
+
+<br />
+
+<small>(dt. generatives, vortrainiertes Transformationsmodell)<!-- .element: class="fragment" -->
+
+- generative: basierend auf erlernten Mustern können neue Inhalte generiert werden<!-- .element: class="fragment" -->
+- pre-trained: das Modell wurde auf großen Datensätzen trainiert, um ein allgemeines Verständnis (von Sprache) zu entwickeln<!-- .element: class="fragment" -->
+- transformer: Computermodell, das vor allem für die Verarbeitung von Text verwendet wird<!-- .element: class="fragment" -->
+
+</small>
+
+--
+
+### Lernziele
+
+<br />
+
+1. Sie können die Geschichte der KI von ihren konzeptuellen Anfängen bis zu den heutigen LLMs in wesentlichen Etappen nachzeichnen und zentrale Akteur\*innen, Institutionen und Wendepunkte benennen.
+2. Sie können in Grundzügen erklären, wie Deep Learning funktioniert, was ein Transformer ist, was unter Parametern, Open Weight und anderen Grundbegriffen zu verstehen ist.
+3. Sie können Vor- und Nachteile verschiedener KI-Systeme (kommerzielle vs. offene, cloudbasierte vs. lokale usw.) einschätzen.
+4. Sie können die materiellen Voraussetzungen generativer KI als Formen von Extraktivismus beschreiben und in postkoloniale und ökologische Diskurse einordnen.
+5. Sie können Policytexte aus dem KI-Umfeld einordnen, ihre impliziten Annahmen und ihre ideologischen Rahmungen identifizieren.
+6. Sie können beurteilen, wie generative KI den Textbegriff, den Autor\*innenschaftsbegriff und ästhetische Kategorien herausfordert.
+
+<!-- .element: style="font-size:0.9em; text-align:left;" -->
+
+--
+
+### Künstliche Intelligenz 101
+
+<br />
+
+* Chris Ferrie: [Künstliche Intelligenz für Babys.](https://www.loewe-verlag.de/baby-universitaet-kuenstliche-intelligenz-fuer-babys/39919) \[Artificial intelligence for babies.\] Bindlach: Loewe 2025.
+
+--
+
+### Verteilung der Referate
+
+--
+
+### Last Week in AI
+
+<br />
+
+(Platzhalter)
+
+--
+
+### Verteilung der <br />»Last Week in AI«-Intros
+
+<br />
+
+(KW 15–KW 29; je 5–10 Min.)
+
+--
+
+### Ausblicke auf nächste Woche
+
+<br />
+
+(nächste Folien)
+
+--
+
+![caption](https://img.santiagoramonycajal.org/w_1920/cajal/Santiago-Ramon-y-Cajal-Neurona-piramidal-de-la-corteza-cerebral-1904_qwky9k.jpg)<!-- .element height="570px;" -->
+
+(Bildquelle: [santiagoramonycajal.org](https://img.santiagoramonycajal.org/w_1920/cajal/Santiago-Ramon-y-Cajal-Neurona-piramidal-de-la-corteza-cerebral-1904_qwky9k.jpg))
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+![caption](images/Deep-Learning-KI.jpg)
+
+--
+
+Bis nächste Woche.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
