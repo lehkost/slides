@@ -88,17 +88,31 @@ Diese Präsentation: <br />**[tinyurl.com/dh11526](https://tinyurl.com/dh11526)*
 
 ---
 
-### Literatur
+## Literatur
 
 <br />
 
-* Matthew L. Jockers: Kapitel »Theme«. In: ders.: *Macroanalysis. Digital Methods and Literary History.* University of Illinois Press 2013, S. 118–153. (https://www.jstor.org/stable/10.5406/j.ctt2jcc3m)
-* Jan Horstmann: [Topic Modeling.](https://fortext.net/routinen/methoden/topic-modeling) In: forText, 15. Januar 2018.
+* Matthew L. Jockers: **Kapitel »Theme«.** In: ders.: *Macroanalysis. Digital Methods and Literary History.* University of Illinois Press 2013, S. 118–153. (https://www.jstor.org/stable/10.5406/j.ctt2jcc3m)
+* Jan Horstmann: **[Topic Modeling.](https://fortext.net/routinen/methoden/topic-modeling)** In: forText, 15. Januar 2018.
+* Christof Schöch: **Topic Modeling Genre: An Exploration of French Classical and Enlightenment Drama.** In: Digital Humanities Quarterly. Vol. 11, No. 2 (2017). ([doi:10.63744/qa2r7vpsu35k](https://doi.org/10.63744/qa2r7vpsu35k))
 
 --
 
-### Auftakt mit Wordle
+### Zur Schreibung
 
+<br />
+
+- topic mode**l**ing (AE), topic mode**ll**ing (BE)
+
+---
+
+## Wiederholung: Word Clouds
+
+--
+
+### Wordle
+
+- ⚠️ hier ist nicht das 2021 veröffentlichte Online-Buchstabenspiel gemeint
 - Software zur Erstellung von Wortwolken: wordle.net (historisch relevant, mittlerweile down)
 - Beispiel aus [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Nube_de_etiquetas_-_Don_Quijote_de_la_Mancha.png) ([erstes Kapitel von »Don Quijote«](https://www.cervantesvirtual.com/obra-visor/el-ingenioso-hidalgo-don-quijote-de-la-mancha-6/html/05f86699-4b53-4d9b-8ab8-b40ab63fb0b3_2.html#I_5_)):
 
@@ -106,11 +120,11 @@ Diese Präsentation: <br />**[tinyurl.com/dh11526](https://tinyurl.com/dh11526)*
 
 --
 
-### Wortwolken mit [Voyant Tools](https://voyant-tools.org/)
+### Wortwolken erstellen mit [Voyant Tools](https://voyant-tools.org/)
 
 ![Voyant Cirrus](images/voyant-cirrus-buechner-lenz.png)<!-- .element width="520px;" -->
 
-- Eingabebeispiel: Georg Büchners Erzählung »Lenz« (https://www.projekt-gutenberg.org/buechner/lenz/lenz.html)
+- Eingabebeispiel: Georg Büchners Erzählung »Lenz« (https://projekt-gutenberg.org/authors/georg-buechner/books/lenz/)
 - ⚠️ [Stoppwörter](https://de.wikipedia.org/wiki/Stoppwort) einschalten!
 
 --
@@ -135,11 +149,11 @@ Adam Hammond: Literature in the Digital Age: An Introduction. Cambridge Universi
 
 https://www.bewitched.com/demo/anti/
 
-<br />
-
-(derzeit down, siehe [Archivkopie](https://web.archive.org/web/20250326092607/https://www.bewitched.com/demo/anti/))
-
 ---
+
+## Topic Modeling (Definition)
+
+--
 
 ### tl;dr (1/2)
 
@@ -234,7 +248,7 @@ Link: https://signsat40.signsjournal.org/topic-model/
 <br />
 
 - derzeit populärstes Topic Model, eingeführt von David M. Blei et al. (2003)
-- sehr einflussreicher Artikel ([PDF hier](https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)), Google Scholar verzeichnet bisher [57.223 Zitationen](https://scholar.google.com/scholar?cites=17756175773309118945)
+- sehr einflussreicher Artikel ([PDF hier](https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)), Google Scholar verzeichnet bisher [62.106 Zitationen](https://scholar.google.com/scholar?cites=17756175773309118945)
 - LDA = »a generative probabilistic model for collections of discrete data such as text corpora«
 - baut auf der [Dirichlet-Verteilung](https://de.wikipedia.org/wiki/Dirichlet-Verteilung) auf (Aussprache: [diʀiˈkleː] oder [diʀiˈʃleː])
 - besonders nützlich für die automatische Textklassifizierung in größeren Korpora und zum Auffinden bisher unbekannter Texte mit ähnlichen Topics
@@ -434,7 +448,80 @@ Ben Schmidt: [»Typical TV episodes: visualizing topics in screen time«](http:/
 
 ---
 
-### Praxis
+## Topic Modeling von <br />Martha Ballards Tagebuch
+
+<br />
+
+Cameron Blevins: *Topic Modeling Martha Ballard’s Diary.* <br />In: cblevins.github.io, 1. April 2010. ([URL](https://cblevins.github.io/posts/topic-modeling-martha-ballards-diary/))
+
+--
+
+### Wer war Martha Ballard?
+
+<br />
+
+- Hebamme in Hallowell, Maine
+- führte zwischen 1785 und 1812 ein Tagebuch mit insgesamt fast 10.000 Einträgen
+- darunter Aufzeichnungen zu vielen hunderten Geburten, Krankheiten, zur Haus- und Gartenarbeit, Familienleben, Nachbarschaftskonflikten
+- typischer Eintrag im Originalduktus, vom 9. Februar 1808 (via [dohistory.org](https://dohistory.org/diary/1808/02/18080201_txt.html)):
+
+<br />
+
+> »Snowd. I have done the most of my hous work and knit Some.«
+<!-- .element: style="font-size:0.85em;" -->
+
+--
+
+### Hintergrund
+
+<br />
+
+- Laurel Thatcher Ulrich: **A Midwife’s Tale. The Life of Martha Ballard, Based on Her Diary, 1785–1812.** New York: Knopf 1990.
+- Pulitzer Prize for History 1991
+
+--
+
+### Cameron Blevins’ Blogpost (2010)
+
+<br />
+
+- damals Doktorand an der Stanford University (PhD in American History)
+- ins Topic Modeling eingeführt durch Matthew Jockers
+- Software: MALLET
+- Korpus: 9.965 Tagebucheinträge
+- *K* = 30 Topics
+
+--
+
+### Beispiel-Topic: »Gardening«
+
+<br />
+
+- Orthografie für Topic Modeling kein Hindernis (Bag-of-Words!)
+- saisonale Verteilung des Topics zeigt den Jahresrhythmus eines Hausgartens im 18. Jahrhundert
+
+<br /><pre style="font-size:0.75em;">
+gardin sett worked clear beens corn warm planted matters
+cucumbers gatherd potatoes plants ou sowd door squash wed seeds
+</pre>
+
+![saisonale Verteilung des Topics "Gardening"; Quelle: Cameron Blevins](images/gardening-by-day.png)<!-- .element width="400px;" -->
+<!-- Screenshot ggf. aus Blevins’ Blogpost übernehmen -->
+
+--
+
+### Methodologischer Beitrag
+
+<br />
+
+Blevins ([rückblickend, 2015](https://cblevins.github.io/posts/perpetual-sunrise-methodology/)):
+
+> »It is, without a doubt, the single most widely read piece of historical writing I have ever produced. But guess what? Outside of the method, there isn’t anything new or revelatory in it. <br /><br />People seized on this blog post not because of its historical contributions, but because of its methodological contributions. It was like a magic trick, showing how topic modeling could ingest ten thousand diary entries and, in a matter of seconds, tell you what the major themes were in those entries and track them over time, all without knowing the meaning of a single word. The post made people excited for what topic modeling **could** do, not necessarily what it **did** do; the methodology’s potential, not its results.«
+<!-- .element: style="font-size:0.75em; text-align:left;" -->
+
+---
+
+## Praxis
 
 --
 
@@ -465,6 +552,22 @@ https://dariah-de.github.io/TopicsExplorer/
 - Vorschlag eines [Topic Model Interpretation Protocol](https://we1s.ucsb.edu/research/we1s-methods/topic-model-interpretation-protocol/)
 
 <!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Topic Modeling in der LLM-Ära
+
+<br />
+
+Was bleibt von Topic Modeling, wenn man ein Korpus einfach Claude oder GPT vorlegen und Themen extrahieren kann?
+
+<br />
+
+- LLMs: semantisch tiefer, kontextsensitiv, mehrsprachig, Zero-Shot
+- klassisches Topic Modeling: reproduzierbar, transparent, mathematisch, skaliert, korpuszentriert
+- hybride Lösungen (Topic Modeling auf Embeddings statt auf Bag-of-Words):
+  - Top2Vec ([Angelov 2020](https://doi.org/10.48550/arXiv.2008.09470))
+  - BERTopic ([Grootendorst 2022](https://doi.org/10.48550/arXiv.2203.05794))
 
 ---
 
