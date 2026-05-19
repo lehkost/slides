@@ -608,9 +608,9 @@ Darwins erste Skizze des Evolutionsbaums, 1837. – Bildquelle: [Wikimedia Commo
 
 <br />
 
-- Code-Generierung: LLMs schreiben Visualisierungscode (matplotlib, ggplot2, D3, Vega-Lite)
-- Integration in Tools »AI assistants« schlagen Charttypen vor, bereinigen Daten bereinigen, formulieren Beschriftungen
-- Ende-zu-Ende: KI-Chatbots liefern fertige Charts plus Interpretation zu hochgeladenen Daten und entsprechenden Prompts
+- Code-Generierung: LLMs schreiben Visualisierungscode (unter Zuhilfenahme von matplotlib, ggplot2, D3 usw.)
+- Integration in Tools: KI-Assistenten schlagen Diagrammtypen vor, formulieren Beschriftungen
+- Ende-zu-Ende: KI-Chatbots liefern fertige Diagramme plus Interpretation zu hochgeladenen Daten und entsprechenden Prompts
 
 --
 
@@ -619,9 +619,9 @@ Darwins erste Skizze des Evolutionsbaums, 1837. – Bildquelle: [Wikimedia Commo
 <br />
 
 - Prompt: »Visualisiere die Erscheinungsjahre in dieser CSV-Datei als gestapeltes Balkendiagramm in ggplot2, gruppiert nach Genre.«
-- LLM liefert: lauffähigen R-Code plus Kommentaren und Achsenbeschriftungen
+- LLM liefert lauffähigen, kommentierten R-Code und Achsenbeschriftungen
 - schnelles Prototyping, kann eine Brücke sein bei fehlender R-/Python-Erfahrung
-- Faustregel: je verbreiteter die Bibliothek (matplotlib, ggplot2, D3), desto verlässlicher der Output
+- Faustregel: je verbreiteter die genutzte Softwarebibliothek (matplotlib, ggplot2, D3), desto verlässlicher der Output
 
 --
 
@@ -631,7 +631,7 @@ Darwins erste Skizze des Evolutionsbaums, 1837. – Bildquelle: [Wikimedia Commo
 
 - erfundene Funktionsnamen, veraltete APIs (besonders bei Nischenbibliotheken)
 - erfundene Datenpunkte, wenn das Modell den Datensatz nicht direkt vor Augen hat
-- Default-Entscheidungen ohne kritische Reflexion: doppelte Y-Achsen, Tortendiagramme für alles, kontextlose Heatmaps
+- Default-Entscheidungen ohne kritische Reflexion: Tortendiagramme zu dafür nicht geeigneten Daten, kontextlose Heatmaps
 - generische, nichtssagende oder irreführende KI-Visualisierungen (analog zum allgemeinen »AI slop«)
 
 --
@@ -640,11 +640,11 @@ Darwins erste Skizze des Evolutionsbaums, 1837. – Bildquelle: [Wikimedia Commo
 
 <br />
 
-- Fragestellung (Limas »Start with a Question«)
-- Datenkenntnis (welche Variablen tragen Bedeutung, wo lauern Bias und Lücken?)
-- Kontextualisierung (Titel, Beschriftung, narrative Einbettung)
+- Fragestellung (Manuel Limas Prinzip »Start with a Question«)
+- Datenkenntnis (welche Variablen tragen Bedeutung, wo lauern Bias und Lücken)
+- Kontextualisierung (Titel; Entscheidung über Beschriftungen, auch wenn diese von der KI vorgeschlagen werden; interpretative Einbettung)
 - kritische Beurteilung: Tuftes Prinzipien gelten unverändert
-- vgl. auch Prinzip Nr. 6 in D’Ignazio/Klein: *Data Feminism* (2020): »**Consider context.** Data feminism asserts that data are not neutral or objective. They are the products of unequal social relations, and this context is essential for conducting accurate, ethical analysis.« (S. 149)
+- vgl. auch Prinzip Nr. 6 in D’Ignazio/Klein: *Data Feminism* (2020): »**Consider context.** Data feminism asserts that data are not neutral or objective. They are the products of unequal social relations, and this context is essential for conducting accurate, ethical analysis.« (S. 149)
 
 --
 
@@ -652,9 +652,9 @@ Darwins erste Skizze des Evolutionsbaums, 1837. – Bildquelle: [Wikimedia Commo
 
 <br />
 
-- LLM nicht als Visualisierungs-Generator einsetzen, sondern als Visualisierungsassistent
+- LLM nicht als Visualisierungsgenerator einsetzen, sondern als Visualisierungsassistent
 - erst die Frage formulieren, dann die Daten verstehen, dann den Prompt formulieren
-- Output immer prüfen: stimmen die Achsen? stimmt der Charttyp? stimmen die Zahlen und Beschriftungen?
+- Output immer prüfen: stimmen die Achsen? stimmt der Diagrammtyp? stimmen die Zahlen und Beschriftungen?
 - Reproduzierbarkeit: den generierten Code speichern und versionieren, nicht nur das fertige Bild
 - KI verschiebt die Wertschöpfung von der Ausführung zur Beurteilung
 
