@@ -1,6 +1,41 @@
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerif.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerifBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerifItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerifBoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: block;
+}
+
+:root {
+  --r-main-font: "Embedded FreeSerif", serif;
+  --r-heading-font: "Embedded FreeSerif", serif;
+  --r-main-font-size: 30px;
+}
+
 .reveal section img {
   border: none;
-}
-.reveal {
-  font-size: 30px;
 }
