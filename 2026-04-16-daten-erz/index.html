@@ -2,24 +2,24 @@
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Daten erzählen (Seminar 16. April 2026)</title>
 
-    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
-    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
-    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
 
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/monokai.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
 <script type="text/template">
 
 Seminar ([LV 16480](https://www.fu-berlin.de/vv/de/lv/1069409))
@@ -82,9 +82,9 @@ Diese Präsentation: <br />**[lehkost.github.io/slides/2026-04-16-daten-erz/](ht
 
 <br />
 
-![no info](images/data-types.gif)
+![Beispiele für diskrete und kontinuierliche Daten](images/data-types.gif)
 
-Quelle: https://www.mathsisfun.com/data/data.html (diskret ≙ zählen; kontinuierlich ≙ messen)
+Quelle: [www.mathsisfun.com/data/data.html](https://www.mathsisfun.com/data/data.html) (diskret ≙ zählen; kontinuierlich ≙ messen)
 <!-- .element: style="font-size:0.65em;" -->
 
 --
@@ -100,18 +100,27 @@ Quelle: https://www.mathsisfun.com/data/data.html (diskret ≙ zählen; kontinui
 
 --
 
-### Daten-/Dateiformate
-
-<br />
-BMP – JPEG/JPG – PNG – TIF/TIFF – GIF
-
-<font color="blue">PPT</font>/PPTX – <font color="blue">XLS</font>/XLSX – <font color="blue">DOC</font>/DOCX – RTF – ODT
-
-TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
+### Dateiformate: Offenheit und Nachnutzbarkeit
 
 <br />
 
-<font color="blue">proprietär</font> ⚡ offen
+**Bilder:** BMP – JPEG/JPG – PNG – TIFF – GIF
+
+**Office-Dokumente:** DOC / XLS / PPT – DOCX / XLSX / PPTX – ODT
+
+**Text und strukturierte Daten:** TXT – CSV – HTML – XML – TEI
+
+**Darstellungs- und Austauschformate:** PDF
+
+<br />
+
+| Kategorie | Beispiel | Für maschinelle Nachnutzung |
+|:-|:-|:-|
+| Proprietäre ältere Binärformate | DOC, XLS, PPT | eher ungünstig |
+| Standardisierte Office-Formate | DOCX, XLSX, PPTX, ODT | bedingt geeignet |
+| Strukturierte offene Formate | CSV, XML, TEI | meist gut geeignet |
+| Darstellungsformat | PDF | häufig ungünstig |
+<!-- .element: style="font-size:0.7em;" -->
 
 --
 
@@ -119,7 +128,7 @@ TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
 
 <br />
 
-- »eine digitale, selektiv erzeugte, maschinell verarbeitbare Abstraktion, die ausgesuchte Facetten eines bestimmten geisteswissenschaftlichen Untersuchungsgegenstands darstellt« ([Schöch 2013](http://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/))
+- »eine digitale, selektiv erzeugte, maschinell verarbeitbare Abstraktion, die ausgesuchte Facetten eines bestimmten geisteswissenschaftlichen Untersuchungsgegenstands darstellt« ([Schöch 2013](https://journalofdigitalhumanities.org/2-3/big-smart-clean-messy-data-in-the-humanities/))
 - Big Data vs. Smart Data
 
 --
@@ -140,7 +149,7 @@ TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
 
 <br />
 
-- Google Ngram Viewer: https://books.google.com/ngrams
+- Google Ngram Viewer: [books.google.com/ngrams](https://books.google.com/ngrams)
 - veröffentlicht 2010
 - Erez Aiden, Jean-Baptiste Michel: *Uncharted: Big Data as a Lens on Human Culture*. Riverhead Books 2013.
 
@@ -164,13 +173,13 @@ TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
 
 <br />
 
-- Maximilian Schich et al.: A network framework of cultural history. *Science*, Vol. 345, Issue 6196, S. 558–562. ([doi:10.1126/science.1240064](https://doi.org/10.1126/science.1240064))
+- Maximilian Schich et al.: A Network Framework of Cultural History. In: *Science*. Vol. 345, Issue 6196 (2014), S. 558–562. ([doi:10.1126/science.1240064](https://doi.org/10.1126/science.1240064))
 - »Schich, an art historian at the University of Texas at Dallas, and his colleagues used the Google-owned [and now extinct] knowledge base, [Freebase](https://en.wikipedia.org/wiki/Freebase_(database)), to find 120,000 individuals who were notable enough in their life-times that the dates and locations of their births and deaths were recorded.«
 - … und was haben sie mit den Daten gemacht?
 
 --
 
-<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U?vq=hd720&amp;rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+<iframe data-src="https://www.youtube-nocookie.com/embed/4gIhRkCcD4U" title="Charting Culture: Visualisierung von Geburts- und Sterbeorten" width="853" height="480" style="border: 0;" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; fullscreen"></iframe>
 
 *Charting culture*, YouTube (Kanal »nature video«), 31. Juli 2014 <br />(blau: Geburtsdaten; rot: Sterbedaten)
 <!-- .element: style="font-size:0.65em;" -->
@@ -187,7 +196,7 @@ TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
 - Balken, Karten und Zeitachsen tun oft so, als seien ihre Kategorien stabil, eindeutig und beobachterunabhängig
 - Konsequenz: Visualisierungen sollten Ambiguität, Unsicherheit, Kontext und Perspektivität sichtbar machen, nicht nur scheinbare Eindeutigkeit
 
-<br />Johanna Drucker: Humanities Approaches to Graphical Display. In: Digital Humanities Quarterly (DHQ). Vol. 5 (2001), Nr. 1. ([doi:10.63744/r4ysrh7ae534](https://doi.org/10.63744/r4ysrh7ae534))
+<br />Johanna Drucker: Humanities Approaches to Graphical Display. In: Digital Humanities Quarterly (DHQ). Vol. 5 (2011), Nr. 1. ([doi:10.63744/r4ysrh7ae534](https://doi.org/10.63744/r4ysrh7ae534))
 <!-- .element: style="font-size:0.5em;" -->
 
 ---
@@ -204,7 +213,9 @@ TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
 
 --
 
-### Übersicht über die QUADRIGA-Fallstudien / OERs
+<!-- .slide: class="list08" -->
+
+### Übersicht über die <br />QUADRIGA-Fallstudien / OERs
 
 <br />
 
@@ -218,25 +229,28 @@ TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
 - Bewegtes Bild 2: [Studentische Filme an der Filmuniversität Babelsberg zur Wendezeit (1985–1999)](https://quadriga-dk.github.io/Bewegtes-Bild-Fallstudie-2/intro.html)
 - Bewegtes Bild 3: [Anreicherung und Publikation von Annotationsdatensets auf Repositorien](https://quadriga-dk.github.io/Bewegtes-Bild-Fallstudie-3/intro.html)
 
-<!-- .element: style="font-size:0.8em;" -->
-
 --
 
 ### Was Sie erwartet (2/2)
 
 <br />
 
-- Umgang mit (inter)nationalen Standards und Prinzipien (FAIR, CARE)
+- Umgang mit internationalen Standards und Prinzipien
   - FAIR: Findable, Accessible, Interoperable, and Reusable
-  - CARE: Collective Benefit, Authority to Control, Responsibility, Ethics
-- Was ist eine OER? – Open Educational Resource, ein interaktives Lehrbuch
+  - CARE Principles for Indigenous Data Governance:
+    Collective Benefit, Authority to Control, Responsibility, Ethics
+  - CARE ergänzt FAIR um Fragen von Rechten, Kontrolle, Verantwortung und ethischer Datennutzung
+- Was sind OER? – Open Educational Resources:
+  - Lehr-, Lern- und Forschungsmaterialien unter offener Lizenz
+  - frei zugänglich, nachnutzbar, bearbeitbar und weiterverbreitbar
+  - können z. B. interaktive Lehrbücher, Notebooks, Videos oder komplette Kurse sein
 - Kontext: Open Source, Open Science
 
 --
 
 <!-- .slide: data-background-color="black" -->
 
-![caption](images/jupiter-wm-commons.jpg)<!-- .element height="570px;" -->
+![Jupiter](images/jupiter-wm-commons.jpg)<!-- .element: style="height:570px;" -->
 
 (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Jupiter_OPAL_2024_(cropped).png))
 <!-- .element: style="font-size:0.65em;" -->
@@ -281,6 +295,8 @@ TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
 
 --
 
+<!-- .slide: class="list08" -->
+
 ### Seminarplan
 
 <br />
@@ -295,11 +311,9 @@ TXT – CSV – HTML – XML – TEI – <font color="blue">PDF</font> – …
 8. Do, 11.06.2026, 14:00–16:00: Fallstudie Kap. 6, Teil 2
 9. Do, 18.06.2026, 14:00–16:00 (nicht in Präsenz)
 10. Do, 25.06.2026, 14:00–16:00 (nicht in Präsenz)
-11. Do, 02.07.2026, 14:00–16:00: Quant. Analysis \[[JBM10](https://doi.org/10.1126/science.1199644)\] + Fallstudie Kap. 7, Teil 1
+11. Do, 02.07.2026, 14:00–16:00: Quantitative Analysis \[[JBM10](https://doi.org/10.1126/science.1199644)\] + Fallstudie Kap. 7, Teil 1
 12. Do, 09.07.2026, 14:00–16:00: Fallstudie Kap. 7, Teil 2
 13. Do, 16.07.2026, 14:00–16:00: Abschluss und Reflexion
-
-<!-- .element: style="font-size:0.85em;" -->
 
 ---
 
@@ -309,13 +323,15 @@ Bis nächste Woche.
         </section>
       </div>
     </div>
-    <script src="../revealjs5/dist/reveal.js"></script>
-    <script src="../revealjs5/plugin/notes/notes.js"></script>
-    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
-    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
     <script>
       Reveal.initialize({
         hash: true,
+        transition: 'fade',
+        backgroundTransition: 'fade',
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
       });
     </script>
