@@ -7,3 +7,6 @@
 [submodule "revealjs5"]
 	path = revealjs5
 	url = https://github.com/hakimel/reveal.js
+[submodule "revealjs6"]
+	path = revealjs6
+	url = https://github.com/hakimel/reveal.js
