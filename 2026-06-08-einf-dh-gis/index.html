@@ -266,27 +266,6 @@ Via [Wikipedia](https://en.wikipedia.org/wiki/Lee_conformal_world_in_a_tetrahedr
 
 Vgl. Wikipedia: [Liste von Kartennetzentwürfen](https://de.wikipedia.org/wiki/Liste_von_Kartennetzentw%C3%BCrfen).
 
---
-
-### Geografie ohne Karten denken
-
---
-
-### Befreiungsdenkmal (Wien, Schwarzenbergplatz)
-
-![image](images/wien-schwarzenbergplatz.jpg)<!-- .element height="480px;" -->
-
-Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Schwarzenbergplatz_Heldendenkmal.jpg) (Mai 2015)
-<!-- .element: style="font-size:0.6em;" -->
-
---
-
-### Kulturelle Geografie:
-
-<br />
-
-Ist dieser Raum sowjetisch/russisch? Ist er österreichisch? <br />Die Antwort darauf erfordert keine Karte.
-
 ---
 
 ### Was ist ein GIS?
@@ -439,6 +418,25 @@ Quelle: [blog.vellut.com](https://blog.vellut.com/2008/05/tutorial-thematic-mapp
 
 --
 
+### Georeferenzierung historischer Karten
+
+<br />
+
+- eine gescannte Altkarte (Raster) wird über Passpunkte an reale Koordinaten angeheftet und über eine moderne Karte gelegt
+- Altkarten werden räumlich analysierbar und im Zeitvergleich lesbar
+
+--
+
+### Allmaps
+
+<br />
+
+- [allmaps.org](https://allmaps.org/) – Georeferenzierung im Browser, auf Basis von [IIIF](https://de.wikipedia.org/wiki/International_Image_Interoperability_Framework)
+- offene, nachnutzbare Daten (CC0)
+- spielerischer Einstieg ins Georeferenzieren: [Allmaps Arcade](https://arcade.allmaps.org/) – historische Karten an die richtige Stelle auf der Weltkarte ziehen
+
+--
+
 ### Choroplethenkarten
 
 <br />
@@ -492,6 +490,15 @@ Ein proprietäres, aber relativ offenes Geoformat, das von der Firma ESRI (ArcGI
 
 --
 
+### GeoPackage (GPKG)
+
+<br />
+
+- offener OGC-Standard, Vektor und Raster in einem SQLite-File
+- moderner Nachfolger des Shapefiles ohne dessen technische Altlasten
+
+--
+
 ### Keyhole Markup Language (KML)
 
 <br />
@@ -507,6 +514,7 @@ Open-Source-Sprache, die für die Verwendung in Google Earth entwickelt wurde. D
 Beliebte Open-Source-Sprache. Wird sehr häufig im Internet verwendet.
 
 --
+
 ### TopoJSON
 
 <br />
@@ -514,6 +522,17 @@ Beliebte Open-Source-Sprache. Wird sehr häufig im Internet verwendet.
 <small>Erweiterung von GeoJSON (verwendet statt Längen- und Breitengraden ein eigenes Koordinatensystem; <br />gemeinsam genutzte Liniensegmente – Arcs – werden zusammengefügt).</small>
 
 ![image](https://upload.wikimedia.org/wikipedia/commons/1/18/Topojson_shapes-en.svg)
+
+--
+
+### OpenStreetMap (OSM)
+
+<br />
+
+- freie, von einer Community erstellte Weltkarte (»Wikipedia der Karten«, seit 2004)
+- offene Daten ([ODbL](https://en.wikipedia.org/wiki/Open_Database_License)); Grundlage von QGIS, Leaflet, MapLibre, DARIAH-Geo-Browser etc.
+- Massenabfragen über die [Overpass-API](https://overpass-turbo.eu/)
+- [uMap](https://umap.openstreetmap.fr/): eigene Karten ohne Code (freie Alternative zu Google My Maps)
 
 ---
 
@@ -525,19 +544,15 @@ Beliebte Open-Source-Sprache. Wird sehr häufig im Internet verwendet.
 
 ### [arcgis.com](https://www.arcgis.com/)
 
-<br />
+(Marktführer, proprietär)
 
 Vorteile:
-- sehr mächtig
-- Open-Source-Karten kostenlos online stellen
-- einfache Benutzbarkeit
-
-<br />
+- sehr mächtig, umfassende Analyse- und Publikationswerkzeuge
+- ausgereifte Cloud-Plattform (ArcGIS Online)
 
 Nachteile:
-- kommerzielle Version ist teuer
-- kostenlose Version hat eingeschränkte Funktionen
-- nicht flexibel
+- kostenpflichtig (Lizenz/Abo), nicht quelloffen
+- weniger anpassbar als freie Alternativen
 
 --
 
@@ -615,29 +630,19 @@ Nachteile:
 
 --
 
-### Fusion Tables
-
-<br />
-
-- Webdienst zur Datenvisualisierung (Diagramme, Zeitleisten, Netzwerkdaten, geografische Karten)
-- leicht zu benutzen
-- eigenständige Geocodierung
-- großartig für Heat Maps
-- 2019 eingestellt
-
---
-
 ### [GeoJSON.io](https://geojson.io/)
 
-<br />
+(interaktiver GeoJSON-Editor in Form einer Webanwendung)
 
 Vorteile:
 - einfaches Erstellen und Speichern von Vektorkarten
 
-<br />
-
 Nachteile:
 - das ist auch schon alles
+
+--
+
+### Mapping-Übung mit uMap
 
 --
 
@@ -645,9 +650,64 @@ Nachteile:
 
 <br />
 
-CARTO (früher CartoDB): [carto.com](https://carto.com)
+CARTO (früher CartoDB): [carto.com](https://carto.com/) – Software-as-a-Service-Plattform (SaaS) für GIS-Anwendungen
 
-Mapbox: [mapbox.com](https://mapbox.com)
+Mapbox: [mapbox.com](https://www.mapbox.com/) – Anbieter maßgeschneiderter Online-Karten für Websites und Anwendungen, seit 2020 proprietär
+
+**MapLibre GL** (freier Fork davon): [maplibre.org](https://maplibre.org/)
+
+Leaflet: [leafletjs.com](https://leafletjs.com/) – freie JavaScript-Bibliothek zur Erstellung von WebGIS-Anwendungen
+
+--
+
+### Organic Maps
+
+<br />
+
+- freie Offline-Karten- und Navigations-App (Android/iOS), auf Basis von OpenStreetMap
+- 100% offline: Karten, Suche und Navigation ohne Internetverbindung
+- datenschutzfreundlich: keine Werbung, kein Tracking, keine Datensammlung
+- Open Source, 2020 als Fork von Maps.me entstanden
+- enthält einen einfachen OSM-Editor zum Mitbearbeiten der Karte
+- [organicmaps.app](https://organicmaps.app/)
+- 2025 wegen Streit um die Projekt-Governance wiederum zu [CoMaps](https://www.comaps.app/) geforkt
+
+--
+
+### Orte als Linked Open Data
+
+<br />
+
+- ein **Gazetteer** (Ortsverzeichnis) vergibt stabile IDs (URIs) für Orte und verknüpft so Daten aus verschiedenen Quellen
+  - [GeoNames](https://www.geonames.org/) – global, aktuell, mehrere Millionen Orte
+  - [Pleiades](https://pleiades.stoa.org/) – Antike (Mittelmeerraum)
+  - [World Historical Gazetteer](https://whgazetteer.org/) – historische Orte über Zeit und Sprachen hinweg
+  - [Wikidata](https://www.wikidata.org/) – Koordinaten + Normdaten (GND, VIAF usw.) → nächste Woche
+
+--
+
+### Geoparsing: Orte aus Texten gewinnen
+
+<br />
+
+1. Erkennen: Ortsnamen im Text finden (Named Entity Recognition)
+2. Auflösen: jeden Namen einem Gazetteer-Eintrag zuordnen (Georesolution)
+3. Kartieren: die aufgelösten Koordinaten darstellen
+
+<br /><br />
+
+»Weimar« (Thüringen) ≠ »Weimar« (Texas): erst die Auflösung macht aus dem Wort einen Ort.
+
+--
+
+### Recogito
+
+<br />
+
+- [recogito.pelagios.org](https://recogito.pelagios.org/) (Pelagios Network): semantische Ortsannotation in Texten und Bildern bzw. Karten
+- erkennt Ortsnamen automatisch (NER) und schlägt Gazetteer-Einträge vor
+- NER u. a. für Deutsch, Englisch, Französisch, Spanisch
+- Import auch direkt per IIIF-Manifest; Open Source
 
 ---
 
@@ -656,6 +716,25 @@ Mapbox: [mapbox.com](https://mapbox.com)
 <br />
 
 ### Warum?
+
+--
+
+### »Mapping the Republic of Letters«
+
+![Mapping the Republic of Letters (Screenshot)](https://www.neh.gov/sites/default/files/2019-10/republic-of-lettters.jpg)<!-- .element height="300px;" -->
+
+- Korrespondenznetze der Aufklärung, Pionierprojekt der digitalen Geschichte ([CESTA, Stanford](http://republicofletters.stanford.edu/); seit 2008)
+- nicht die Briefinhalte zählen, sondern Absender, Empfänger, Orte und Zeit
+- bestand die »Gelehrtenrepublik« aus einem großen Netzwerk oder waren es viele kleine?
+
+--
+
+### ORBIS
+
+![image](images/orbis-augusta-treverorum-roma.png)<!-- .element height="300px;" -->
+
+- »The Stanford Geospatial Network Model of the Roman World« (Scheidel/Meeks, 2012): berechnet Reisezeit und -kosten im Römischen Reich um 200 n. Chr., über Straßen, Flüsse und Seerouten, je nach Verkehrsmittel und Jahreszeit
+- [orbis.stanford.edu](https://orbis.stanford.edu/)
 
 --
 
@@ -701,20 +780,6 @@ Mapbox: [mapbox.com](https://mapbox.com)
 - [Handlungsorte](https://einakter.dracor.org/) (Datenbank deutschsprachiger Einakter 1740–1850)
 
 ---
-
-### Abschließende Überlegungen
-
-<br />
-
-- GIS ist oft eher Hilfsmittel als zentrales Werkzeug
-- am wichtigsten ist es vor dem Einsatz, den konkreten Zweck zu klären
-- Wer ist die Zielgruppe?
-- Wird mein Werkzeug auch für andere nützlich sein?
-- Wie viele Daten?
-- Wie viel Arbeit wäre nötig für die perfekte Lösung?
-- Meist besser, die beste verfügbare Option zu verwenden.
-
---
 
 Bis nächste Woche.
 
