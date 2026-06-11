@@ -2,32 +2,29 @@
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Pecha Kucha: #autoChirp-Night bei der #vDHd2021 (12. Mai 2021)</title>
 
-    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
-    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
-    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
 
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
-
-    <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
-<script type="text/template">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<textarea data-template>
 
-#### PechaKucha
+#### Pecha Kucha
 
 ## TiwoliChirp
 
 (Tiwoli = **T**oday **I**n **WO**rld **LI**terature)
-<!-- .element: style="color: grey; font-size:0.7em;" -->
+<!-- .element: style="color:grey; font-size:0.7em;" -->
 
 <br />🌱 &nbsp; 🌞 &nbsp; 🍂 &nbsp; ❄️<!-- .element: style="font-size:1.4em;" -->
 
@@ -35,30 +32,30 @@
 
 Frank Fischer
 
-Higher School of Economics, Moskau<br />
-DARIAH-EU 🇪🇺 (Board of Directors)<!-- .element: style="font-size:0.7em;" -->
+DARIAH-EU 🇪🇺 (Board of Directors), Paris<!-- .element: style="font-size:0.7em;" -->
 
-Website: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io](https://lehkost.github.io/)** · Twitter: **[@umblaetterer](https://twitter.com/umblaetterer)**
+<br />Website: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io](https://lehkost.github.io/)** · **@umblaetterer**
 
-<br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/tiwochi](https://bit.ly/tiwochi)**
+<br />URL dieser Präsentation: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io/slides/2021-05-12-vdhd-tiwolichirp/](https://lehkost.github.io/slides/2021-05-12-vdhd-tiwolichirp/index.html)**
 
 [#autoChirp-Night auf der #vDHd2021](https://texperimentales.hypotheses.org/4531) &nbsp;·&nbsp; 12. Mai 2021, ab 17:45 Uhr
 <!-- .element: style="font-size:0.8em;" -->
 
---
+---
 
-!["Järven lounaispää kesällä 1974" (Wikimedia Commons)](images/finland-summer-1974.jpg)<!-- .element height="300px" -->
+!["Järven lounaispää kesällä 1974" (Wikimedia Commons)](images/finland-summer-1974.jpg)<!-- .element: style="height:300px;" -->
 
 „Die meisten finnischen Romane <br />spielen im Sommer.“
 
-<small>(Stefan Moster, *Im Gespräch*, <br />Deutschlandradio Kultur, 8. 10. 2014)</small>
+(Stefan Moster, *Im Gespräch*, <br />Deutschlandradio Kultur, 8. 10. 2014)
+<!-- .element: style="font-size:0.65em;" -->
 
 <br />
 
-(Bild: Sommer 1974 in Westfinnland. Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kalajaisj%C3%A4rvi,_Ilmajoki,_Finland,_summer_1974.jpg). CC BY-SA 4.0.)
+(Bildquelle: Sommer 1974 in Westfinnland. Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kalajaisj%C3%A4rvi,_Ilmajoki,_Finland,_summer_1974.jpg). CC BY-SA 4.0.)
 <!-- .element: style="font-size:0.5em;" -->
 
---
+---
 
 ### Fünf Beispieltage der <br />deutschsprachigen Literatur
 
@@ -70,15 +67,15 @@ Website: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io](https
 * Theodor Fontane: *Effi Briest* (3. Oktober)
 * J. W. Goethe: *Die Leiden des jungen Werthers* (21.&nbsp;Dezember)
 
---
+---
 
 ### Korpus: Projekt Gutenberg-DE
 
 ![Logo von Gutenberg-DE](images/gutenberg-de-logo.jpg)
 
-https://www.projekt-gutenberg.org/
+[projekt-gutenberg.org](https://projekt-gutenberg.org/)
 
---
+---
 
 ### Arbeitskorpus
 
@@ -89,45 +86,49 @@ https://www.projekt-gutenberg.org/
 * 891 MB reiner Text
 * Download: Corpus of German-Language Fiction (txt) ([doi:10.6084/m9.figshare.4524680](https://doi.org/10.6084/m9.figshare.4524680))
 
---
+---
 
 ## Workflow
 
 ![UIMA-Pipeline](images/uima-pipeline.png)
 
-<small>Hauptwerkzeug zur Extraktion temporaler Angaben: [HeidelTime](https://dbs.ifi.uni-heidelberg.de/research/heideltime/).</small>
+UIMA: Architektur zur Verarbeitung unstrukturierter Informationen. <br />Hauptwerkzeug zur Extraktion temporaler Angaben: **[HeidelTime](https://ds.ifi.uni-heidelberg.de/research/heideltime/)**. HeidelTime erkennt nicht nur explizite <br />Datumsangaben, sondern auch Zeitangaben wie „gestern“, „im Mai 2021“ oder „nächste Woche“.
+<!-- .element: style="font-size:0.65em;" -->
 
---
+---
 
 ### Ergebnisse fürs Gesamtkorpus
 
-![Ergebnisse für Gesamtkorpus](images/gesamtkorpus-dt.png)<!-- .element width="800px;" -->
+![Ergebnisse für Gesamtkorpus](images/gesamtkorpus-dt.png)<!-- .element: style="width:800px;" -->
 
-<small>Datums- (rot) &amp; Monatsnennungen (grau).</small>
+Datums- (rot) &amp; Monatsnennungen (grau).
+<!-- .element: style="font-size:0.65em;" -->
 
---
+---
 
 ### Tage wie dieser
 
 ![Heatmap](images/heatmap-all-days.png)
 
-<small>In grün: Tage, die 50+ Mal im Korpus erwähnt werden.</small>
+In grün: Tage, die 50+ Mal im Korpus erwähnt werden.
+<!-- .element: style="font-size:0.65em;" -->
 
---
+---
 
-![DHd2014 in Passau](images/dhd2014-passau.jpg)<!-- .element width="700px;" -->
+![DHd2014 in Passau](images/dhd2014-passau.jpg)<!-- .element: style="width:700px;" -->
 
 #DHd2014 in Passau
 
-(Bild: https://www.dhd2014.uni-passau.de/feedback/fotos/)
+(Bildquelle: [www.dhd2014.uni-passau.de/feedback/fotos/](https://www.dhd2014.uni-passau.de/feedback/fotos/))
 <!-- .element: style="font-size:0.5em;" -->
 
---
+---
 
 „Das Datum […] ist in der Fiktion ebenso fiktiv wie Haus und Straße, Feld und Wald, wie <br />die Städte Mannheim und Köln, [...]. Denn sobald Zeit und Ort das Erlebnisfeld <br />fiktiver Personen […] abgeben, ist es um ihre ’Wirklichkeit‘ getan“.
 <!-- .element: style="font-size:0.8em;" -->
 
-<small><br />Käte Hamburger: *Die Logik der Dichtung*, Stuttgart 1957, S. 57</small>
+<br />Käte Hamburger: *Die Logik der Dichtung*, Stuttgart 1957, S. 57
+<!-- .element: style="font-size:0.65em;" -->
 
 <br />
 <br />
@@ -135,31 +136,37 @@ https://www.projekt-gutenberg.org/
 
 (Is it, though?)
 
---
+---
 
 ### Zweitverwertung der Ergebnisse
 
-Apps [für iOS](https://apps.apple.com/de/app/tiwoli/id1162600098) und Android
+Apps für iOS und Android
 
-![TIWOLI-App auf Android](images/tiwoli-de-01-20-buechner-lenz.png)<!-- .element height="330px" -->
-![TIWOLI-App auf Android](images/tiwoli-de-04-04-schnitzler-gustl.png)<!-- .element height="330px" -->
-![TIWOLI-App auf Android](images/tiwoli-de-07-27-zweig-schachnovelle.png)<!-- .element height="330px" -->
-![TIWOLI-App auf Android](images/tiwoli-de-10-03-fontane-effi.png)<!-- .element height="330px" -->
-![TIWOLI-App auf Android](images/tiwoli-de-12-21-goethe-werther.png)<!-- .element height="330px" -->
+![TIWOLI-App auf Android](images/tiwoli-de-01-20-buechner-lenz.png)<!-- .element: style="height:330px;" -->
+![TIWOLI-App auf Android](images/tiwoli-de-04-04-schnitzler-gustl.png)<!-- .element: style="height:330px;" -->
+![TIWOLI-App auf Android](images/tiwoli-de-07-27-zweig-schachnovelle.png)<!-- .element: style="height:330px;" -->
+![TIWOLI-App auf Android](images/tiwoli-de-10-03-fontane-effi.png)<!-- .element: style="height:330px;" -->
+![TIWOLI-App auf Android](images/tiwoli-de-12-21-goethe-werther.png)<!-- .element: style="height:330px;" -->
 
---
+(Update 2026: Beide Apps werden nicht mehr aktualisiert.)
+<!-- .element: style="font-size:0.65em;" -->
+
+---
 
 ### Zweitverwertung der Ergebnisse
 
-Apps [für iOS](https://apps.apple.com/de/app/tiwoli/id1162600098) und Android
+Apps für iOS und Android
 
-![TIWOLI-App auf Android](images/tiwoli-de-12-23-berend-babette.png)<!-- .element height="330px" -->
-![TIWOLI-App auf Android](images/tiwoli-de-12-24-droste-huelshoff-judenbuche.png)<!-- .element height="330px" -->
-![TIWOLI-App auf Android](images/tiwoli-en-01-15-bronte-jane-eyre.png)<!-- .element height="330px" -->
-![TIWOLI-App auf Android](images/tiwoli-en-03-20-bronte-heights.png)<!-- .element height="330px" -->
-![TIWOLI-App auf Android](images/tiwoli-en-05-07-shelley-frankenstein.png)<!-- .element height="330px" -->
+![TIWOLI-App auf Android](images/tiwoli-de-12-23-berend-babette.png)<!-- .element: style="height:330px;" -->
+![TIWOLI-App auf Android](images/tiwoli-de-12-24-droste-huelshoff-judenbuche.png)<!-- .element: style="height:330px;" -->
+![TIWOLI-App auf Android](images/tiwoli-en-01-15-bronte-jane-eyre.png)<!-- .element: style="height:330px;" -->
+![TIWOLI-App auf Android](images/tiwoli-en-03-20-bronte-heights.png)<!-- .element: style="height:330px;" -->
+![TIWOLI-App auf Android](images/tiwoli-en-05-07-shelley-frankenstein.png)<!-- .element: style="height:330px;" -->
 
---
+(Update 2026: Beide Apps werden nicht mehr aktualisiert.)
+<!-- .element: style="font-size:0.65em;" -->
+
+---
 
 Tiwoli
 
@@ -169,44 +176,46 @@ autoChirp
 
 =<!-- .element: style="font-size:3em;" -->
 
-[@TiwoliChirp](https://twitter.com/tiwolichirp)
+@TiwoliChirp
 
---
+---
 
 ## Tiwoli-Web-App
 
-![Tiwoli-Web-App](images/lasswitz-12-april.png)<!-- .element height="400px" -->
+![Tiwoli-Web-App](images/lasswitz-12-april.png)<!-- .element: style="height:400px;" -->
 
-<small>https://tiwoli.spinfo.uni-koeln.de/view?id=243</small>
+https://tiwoli.spinfo.uni-koeln.de/view?id=243
+<!-- .element: style="font-size:0.65em;" -->
 
---
+---
 
 ## TiwoliChirp
 
-![Tiwoli-Web-App](images/lasswitz-12-april-twitter.png)<!-- .element height="450px" -->
+![Screenshot von TiwoliChirp](images/lasswitz-12-april-twitter.png)<!-- .element: style="height:450px;" -->
 
-<small>https://twitter.com/TiwoliChirp/status/1381514687154696192</small>
+(Update 2026: Der Bot wurde für Twitter entwickelt, wurde mittlerweile [zu Mastodon](https://fedihum.org/@tiwoli) umgezogen.)
+<!-- .element: style="font-size:0.65em;" -->
 
---
+---
 
 ## Backend
 
 ![Tiwoli](images/screenshot-tiwolij-backend-1.png)
 
---
+---
 
 ## Backend
 
 ![Tiwoli](images/screenshot-tiwolij-backend-2.png)
 
---
+---
 
 Das TiwoliChirp-Team (alphabetisch), teils <br />mit nurmehr historischen Affiliationen:
 
 <br />
 
 * Dennis **Demmer** (Universität zu Köln)
-* Frank **Fischer** (Higher School of Economics, Moskau)
+* Frank **Fischer** (DARIAH-EU, Paris)
 * Alena **Geduldig** (Universität zu Köln)
 * Jürgen **Hermes** (Universität zu Köln)
 * Farimah **Karimi** (Universität zu Köln)
@@ -214,13 +223,14 @@ Das TiwoliChirp-Team (alphabetisch), teils <br />mit nurmehr historischen Affili
 * Jannik **Strötgen** (Ruprecht-Karls-Universität Heidelberg)
 * Thomas **Weßling** (Bögel) (Ruprecht-Karls-Universität Heidelberg)
 
---
+---
 
-![TiwoliChirp-Header](images/tiwolichirp-header.png)<!-- .element height="400px" -->
+![TiwoliChirp-Header](images/tiwolichirp-header.png)<!-- .element: style="height:400px;" -->
 
-https://twitter.com/tiwolichirp
+(Update 2026: Der Bot wurde für Twitter entwickelt, wurde mittlerweile [zu Mastodon](https://fedihum.org/@tiwoli) umgezogen.)
+<!-- .element: style="font-size:0.65em;" -->
 
---
+---
 
 Vielen Dank.
 
@@ -230,23 +240,21 @@ Vielen Dank.
 
 <br />
 
-(URL dieser Präsentation: <!-- .element: style="font-size:0.7em;" --> **[bit.ly/tiwochi](https://bit.ly/tiwochi)**)
+(URL dieser Präsentation: <!-- .element: style="font-size:0.7em;" --> **[lehkost.github.io/slides/2021-05-12-vdhd-tiwolichirp/](https://lehkost.github.io/slides/2021-05-12-vdhd-tiwolichirp/index.html)**)
 
-</script>
+</textarea>
         </section>
       </div>
     </div>
-    <script src="../revealjs4/dist/reveal.js"></script>
-    <script src="../revealjs4/plugin/notes/notes.js"></script>
-    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
-    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
     <script>
       Reveal.initialize({
         hash: true,
         autoSlide: 20000,
         transition: 'fade',
         slideNumber: true,
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        plugins: [ RevealMarkdown ]
       });
     </script>
   </body>
