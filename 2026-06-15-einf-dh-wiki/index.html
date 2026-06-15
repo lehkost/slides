@@ -480,7 +480,7 @@ https://lehkost.github.io/slides/2019-06-14-potsdam-fontane/#/1/2
 
 --
 
-### [»Wikipedia, Wikidata, and World Literature«](https://culturalanalytics.org/issue/7259)
+### [»Wikipedia, Wikidata, and World Literature«](https://culturalanalytics.org/issue/20/info/)
 
 <br />
 
@@ -489,6 +489,83 @@ https://lehkost.github.io/slides/2019-06-14-potsdam-fontane/#/1/2
 <br />
 
 (= Sonderheft des »Journal of Cultural Analytics«, 2023)
+
+---
+
+## Wikipedia, Wikidata und <br />Künstliche Intelligenz
+
+<br />
+
+(Brücke zur nächsten Sitzung: »KI &amp; Maschinelles Lernen«)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Wikipedia als Trainingsgrundlage
+
+<br />
+
+- nahezu alle großen Sprachmodelle (LLMs) wurden u. a. mit Wikipedia trainiert
+- Beispiel GPT-3 (2020): Wikipedia macht nur 3 % des Datenmixes aus, aber mit dem höchsten Gewicht
+- kleiner Anteil, aber als besonders verlässlich hochgewichtet
+
+<br />(vgl. Brown et al.: *Language Models are Few-Shot Learners*, 2020, Tab. 2.2, [arXiv:2005.14165](https://arxiv.org/abs/2005.14165))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Warum Wikipedia?
+
+<br />
+
+- redaktionell geprüft, strukturiert, mit Belegen und Quellenangaben
+- mehrsprachig und unter freier Lizenz (CC BY-SA)
+- Qualitätsanker unter ansonsten verrauschten Web-Korpora (Common Crawl u. a.)
+- die Online-Enzyklopädie als Trainingsbestandteil gilt als »standard practice«
+
+--
+
+### Kehrseite: Verzerrungen wandern mit
+
+<br />
+
+- Bias in den Trainingsdaten wird im Modell reproduziert, mitunter verstärkt
+- vgl. die zuvor erwähnte fehlende Diversität unter den Editor\*innen
+- Abdeckungs- und Gender-Lücken in Wikipedia heißt dann auch finden sich dann auch im Modell wieder
+
+--
+
+### Wikidata als Faktenanker
+
+<br />
+
+- strukturierte, maschinenlesbare Tripel statt Fließtext
+- ideal zum Grounding von Sprachmodellen
+- Wikidata (und DBpedia) als ground truth, um Halluzinationen zu erkennen und zu reduzieren
+
+--
+
+### Infrastruktur unter Druck: KI-Crawler
+
+<br />
+
+- seit Januar 2024: +50 % Bandbreite für Multimedia, nicht durch Menschen, sondern durch KI-Scraper
+- 65 % des teuersten Datenverkehrs stammen von Bots, die aber nur 35 % der Seitenaufrufe ausmachen
+- betroffen v. a. Wikimedia Commons (144 Mio. frei lizenzierte Dateien)
+
+<br />(vgl. Wikimedia Foundation: How crawlers impact the operations of the Wikimedia projects, 1. April 2025, [diff.wikimedia.org](https://diff.wikimedia.org/2025/04/01/how-crawlers-impact-the-operations-of-the-wikimedia-projects/))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Die Schlange beißt sich in den Schwanz
+
+<br />
+
+- KI beantwortet Fragen mit Wikipedia-Wissen, ohne Nutzer\*innen zurückzuleiten
+- Folge: Rückgang der menschlichen Seitenaufrufe um rund 8 % (Okt. 2025), weniger Beitragende, weniger Spenden
+- Reaktionen: kostenpflichtige Wikimedia-Enterprise-API; Appell an KI-Firmen (Nov. 2025); Einschränkung KI-generierter Inhalte (2026)
+- offene Frage: Woher kommt künftiges Wissen, wenn die Quelle austrocknet? (Stichwort *model collapse*)
 
 ---
 
