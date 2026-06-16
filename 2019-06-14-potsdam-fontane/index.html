@@ -1,59 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Fontane im Wikiversum · Kongress "Fontanes Medien" · Potsdam · 14. Juni 2019</title>
 
-    <link rel="stylesheet" href="../reveal/css/reveal.css" />
-    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/simple.css" id="theme" />
 
-    <!-- adjustments for serif.css -->
+    <!-- adjustments for simple.css -->
     <link rel="stylesheet" href="custom.css" />
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/zenburn.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
-<textarea data-template>
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
 
 ### **Fontane im Wikiversum**
-#### Ein Beitrag zur digitalen Rezeptionsgeschichte
-
-<br /><br /><br />
-<!-- .element: style="font-size:0.7em;" -->[Frank Fischer](https://www.hse.ru/en/org/persons/182492735) ¹ ² &nbsp;·&nbsp; [Robert Jäschke](https://www.ibi.hu-berlin.de/de/ueber-uns/personen/jaeschke) ³
+#### Ein Beitrag zur digitalen <br />Rezeptionsgeschichte
 
 <br />
-<!-- .element: style="font-size:0.5em;" -->¹ Higher School of Economics, Moskau<br />
-² DARIAH-EU<br />
-³ Humboldt-Universität zu Berlin<br />
+
+[Frank Fischer](https://lehkost.github.io/) ¹ ² &nbsp;·&nbsp; [Robert Jäschke](https://www.ibi.hu-berlin.de/de/institut/personen/jaeschke) ³
+<!-- .element: style="font-size:0.7em;" -->
+
+¹ Higher School of Economics, Moskau<br />
+² DARIAH-EU, Paris<br />
+³ Humboldt-Universität zu Berlin
+<!-- .element: style="font-size:0.5em;" -->
 
 <br /><br /><br />
-<!-- .element: style="font-size:0.5em;" -->Diese Präsentation:
 
-<!-- .element: style="font-size:0.9em;" -->**bit.ly/2wShKUT**
+Diese Präsentation: <br />**[lehkost.github.io/slides/2019-06-14-potsdam-fontane/](https://lehkost.github.io/slides/2019-06-14-potsdam-fontane/index.html)**
+<!-- .element: style="font-size:0.65em;" -->
 
-<br /><br />
-<!-- .element: style="font-size:0.6em;" -->[Kongress „Fontanes Medien“](https://www.uni-potsdam.de/de/fontanekongress/kongress-programm/freitag-146.html) &nbsp;·&nbsp; Universität Potsdam &nbsp;·&nbsp; 14. Juni 2019
+<br />
+
+[Kongress „Fontanes Medien“](https://www.uni-potsdam.de/de/fontanekongress/kongress-programm/freitag-146.html) &nbsp;·&nbsp; Universität Potsdam &nbsp;·&nbsp; 14. Juni 2019
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
 ### Inhaltsverzeichnis
 
 <br />
+
 1. Hintergrund
 2. Wiki-Technologien
 3. Workflow
@@ -67,33 +64,37 @@
 # Kapitel 1.
 
 <br />
+
 ### Hintergrund
 
 --
 
 ### Weltliteratur in Wikipedia
 
-![Dramenquartett](images/world-literature-wikipedia-gephi-graph-influence-filter.png)<!-- .element height="450px;" -->
+![Netzwerkgraph](images/world-literature-wikipedia-gephi-graph-influence-filter.png)<!-- .element: style="height:450px;" -->
 
-<small>Christoph Hube, Frank Fischer, Robert Jäschke, Gerhard Lauer, Mads Rosendahl Thomsen: <br />**World Literature According to Wikipedia: Introduction to a DBpedia-Based Framework**. <br />*arXiv.org*, 4. Januar 2017. (https://arxiv.org/abs/1701.00991)</small>
+Christoph Hube, Frank Fischer, Robert Jäschke, Gerhard Lauer, Mads Rosendahl Thomsen: <br />**World Literature According to Wikipedia: Introduction to a DBpedia-Based Framework**. <br />*arXiv.org*, 4. Januar 2017. [arxiv.org/abs/1701.00991](https://arxiv.org/abs/1701.00991)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
-![Wikipedia logo](images/wikipedia-logo.png)<!-- .element height="200px;" -->
-![Wikipedia logo](images/theodor-fontane-commons.png)<!-- .element height="200px;" -->
+![Wikipedia-Logo](images/wikipedia-logo.png)<!-- .element: style="height:200px;" -->
+![Fontane-Konterfei](images/theodor-fontane-commons.png)<!-- .element: style="height:200px;" -->
 
 <br />
+
 - Momentan gibt es [294 aktive Wikipedia-Sprachversionen](https://en.wikipedia.org/wiki/List_of_Wikipedias). 50&nbsp;davon haben einen Eintrag zu Theodor Fontane.
 - Außerdem gibt es Wikipedia-Artikel zu [29 Werken](https://de.wikipedia.org/wiki/Kategorie:Werk_von_Theodor_Fontane) von Fontane, auch diese teilweise in anderen Sprachversionen.
 
-<br /><br /><br />
-<!-- .element: style="font-size:0.5em;" -->(Wikipedia-Logo: [Commons](https://commons.wikimedia.org/wiki/File:Wikipedia-logo-v2.svg); Fontane-Porträt: [Commons](https://commons.wikimedia.org/wiki/File:Theodor_Fontane.png), gecroppt)
+<br />(Wikipedia-Logo: [Commons](https://commons.wikimedia.org/wiki/File:Wikipedia-logo-v2.svg); Fontane-Porträt: [Commons](https://commons.wikimedia.org/wiki/File:Theodor_Fontane.png), gecroppt)
+<!-- .element: style="font-size:0.5em;" -->
 
 --
 
 ### Fragestellungen
 
 <br />
+
 - Wie ist Fontane in der Wikipedia repräsentiert (in allen Sprachversionen)?
 - Wie schneidet Fontane im Vergleich zu anderen zeitgenössischen Autoren ab?
 - Welche seiner 17 Romane und anderen Werke sind in welchen Sprachen präsent?
@@ -104,24 +105,28 @@
 # Kapitel 2.
 
 <br />
+
 ### Wiki-Technologien
 
 --
 
 ### Wikipedia-Denkmal in Słubice
 
-![Wikipedia-Denkmal](images/wikipedia-monument.jpg)<!-- .element height="500px;" -->
+![Wikipedia-Denkmal](images/wikipedia-monument.jpg)<!-- .element: style="height:500px;" -->
 
-<!-- .element: style="font-size:0.6em;" -->Enthüllt am 22. Oktober 2014 (Bildquelle: [Commons](https://commons.wikimedia.org/wiki/File:Wikipedia_Monument_3.JPG)).
+Enthüllt am 22. Oktober 2014 (Bildquelle: [Commons](https://commons.wikimedia.org/wiki/File:Wikipedia_Monument_3.JPG)).
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
 ## „Ein Wiki …
 
 <br />
+
 … (hawaiisch für ‚schnell‘) […] ist eine Website, deren Inhalte von den Besuchern nicht nur gelesen, sondern auch direkt im Webbrowser bearbeitet und geändert werden können (Web-2.0-Anwendung).“ ([Wikipedia](https://de.wikipedia.org/wiki/Wiki))
 
 <br />
+
 Wichtig zu wissen: Neben den freiwilligen Editorïnnen gibt es in der Wikipedia auch Bots (etwa für automatische Korrekturen oder automatische Übersetzungen in kleineren Wikipedias).<!-- .element: class="fragment" -->
 
 --
@@ -129,6 +134,7 @@ Wichtig zu wissen: Neben den freiwilligen Editorïnnen gibt es in der Wikipedia 
 ## Die Wikimedia-Familie
 
 <br />
+
 - Wikipedia
 - Wikisource
 - Wikimedia Commons
@@ -152,6 +158,7 @@ https://de.wikipedia.org/wiki/Theodor_Fontane
 ### Ein Artikel kann enthalten:
 
 <br />
+
 - Links zu anderen Artikeln
 - Geodaten
 - Bilder, Audiodateien, Filme
@@ -163,9 +170,10 @@ https://de.wikipedia.org/wiki/Theodor_Fontane
 
 --
 
-## Semantische Versionen von Wikipedia
+## Semantische Versionen <br />von Wikipedia
 
 <br />
+
 - Semantic MediaWiki
 - Wikidata
 - DBpedia
@@ -183,6 +191,7 @@ https://www.wikidata.org/wiki/Q76632
 # Kapitel 3.
 
 <br />
+
 ### Workflow
 
 --
@@ -190,33 +199,37 @@ https://www.wikidata.org/wiki/Q76632
 ### Tools
 
 <br />
+
 - [Pywikibot](https://www.mediawiki.org/wiki/Manual:Pywikibot/en), eine Python-Bibliothek zur Interaktion mit Wikipedia
 - [Wikidata Query Service](https://query.wikidata.org/)
-- vollständige Dokumentation: https://github.com/weltliteratur/fontane
+- vollständige Dokumentation: [github.com/weltliteratur/fontane](https://github.com/weltliteratur/fontane)
 
 --
 
 ### Wie kommentiert man Rankings?
 
 <br />
+
 Hoffentlich nicht so:
 
-![Goethe im Sinkflug](images/sinkflug.png)<!-- .element width="640px;" -->
+![Goethe im Sinkflug](images/sinkflug.png)<!-- .element: style="width:640px;" -->
 
-<small>(Quelle: https://www.spiegel.de/kultur/gesellschaft/debatte-goethe-im-sinkflug-a-274599.html)</small>
+(Quelle: [www.spiegel.de/kultur/gesellschaft/debatte-goethe-im-sinkflug-a-274599.html](https://www.spiegel.de/kultur/gesellschaft/debatte-goethe-im-sinkflug-a-274599.html))
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
 # Kapitel 4.
 
 <br />
+
 ### Ergebnisse I: <br />Fontane international
 
 --
 
 Artikellänge pro Sprachversion (Wiki-Markup)
 
-![Fontane interwiki article length](images/fontane_interwiki_textlen.svg)<!-- .element width="640px;" -->
+![Artikellänge pro Sprachversion](images/fontane_interwiki_textlen.svg)<!-- .element: style="width:640px;" -->
 
 1. de; 2. [**uk**](https://uk.wikipedia.org/wiki/Теодор_Фонтане); 3. it
 
@@ -224,7 +237,7 @@ Artikellänge pro Sprachversion (Wiki-Markup)
 
 Anzahl der Bearbeiter
 
-![Fontane interwiki number of contributors](images/fontane_interwiki_contributors.svg)<!-- .element width="640px;" -->
+![Anzahl der Bearbeiter](images/fontane_interwiki_contributors.svg)<!-- .element: style="width:640px;" -->
 
 1. de; 2. en; 3. fr
 
@@ -232,7 +245,7 @@ Anzahl der Bearbeiter
 
 Anzahl der Überarbeitungen pro Sprachversion
 
-![Fontane interwiki number of revisions](images/fontane_interwiki_revisions.svg)<!-- .element width="640px;" -->
+![Anzahl der Überarbeitungen pro Sprachversion](images/fontane_interwiki_revisions.svg)<!-- .element: style="width:640px;" -->
 
 1. de; 2. en; 3. fr
 
@@ -240,7 +253,7 @@ Anzahl der Überarbeitungen pro Sprachversion
 
 Anzahl der Backlinks pro Sprachversion
 
-![Fontane interwiki backlinks](images/fontane_interwiki_backlinks.svg)<!-- .element width="640px;" -->
+![Anzahl der Backlinks pro Sprachversion](images/fontane_interwiki_backlinks.svg)<!-- .element: style="width:640px;" -->
 
 1. de; 2. en; 3. it; 4. [ar](https://ar.wikipedia.org/w/index.php?title=خاص:ماذا_يصل_هنا/تيودور_فونتانه); 5. fr; 6. fa
 
@@ -248,126 +261,145 @@ Anzahl der Backlinks pro Sprachversion
 
 Datum der Artikelerstellung
 
-![Fontane interwiki date of creation](images/fontane_interwiki_firstrev.svg)<!-- .element width="640px;" -->
+![Datum der Artikelerstellung](images/fontane_interwiki_firstrev.svg)<!-- .element: style="width:640px;" -->
 
-<!-- .element: style="font-size:0.8em;" -->1. de; 2. [eo](https://eo.wikipedia.org/wiki/Theodor_Fontane); 3. en; 4. [ru](https://ru.wikipedia.org/wiki/Фонтане,_Теодор); 5. [he](https://he.wikipedia.org/wiki/תאודור_פונטאנה); 6. [ka](https://ka.wikipedia.org/wiki/თეოდორ_ფონტანე); … 48. [br](https://br.wikipedia.org/wiki/Theodor_Fontane); 49. [el](https://el.wikipedia.org/wiki/Τέοντορ_Φοντάνε) (1. Mai 2019); 50. [ie](https://ie.wikipedia.org/wiki/Theodor_Fontane)
+1. de; 2. [eo](https://eo.wikipedia.org/wiki/Theodor_Fontane); 3. en; 4. [ru](https://ru.wikipedia.org/wiki/Фонтане,_Теодор); 5. [he](https://he.wikipedia.org/wiki/תאודור_פונטאנה); 6. [ka](https://ka.wikipedia.org/wiki/თეოდორ_ფონტანე); … 48. [br](https://br.wikipedia.org/wiki/Theodor_Fontane); 49. [el](https://el.wikipedia.org/wiki/Τέοντορ_Φοντάνε) (1. Mai 2019); 50. [ie](https://ie.wikipedia.org/wiki/Theodor_Fontane)
+<!-- .element: style="font-size:0.8em;" -->
 
 ---
 
 # Kapitel 5.
 
 <br />
+
 ### Ergebnisse II: <br />Fontanes Werke
 
 --
 
 Anzahl Wikipedia-Versionen pro Werk
 
-![Fontane works number of WP versions](images/works_languages.svg)<!-- .element width="640px;" -->
+![Anzahl Wikipedia-Versionen pro Werk](images/works_languages.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Effi Briest (14); 2. Wanderungen (6); 3. Frau Jenny Treibel (4)</small>
+1. Effi Briest (14); 2. Wanderungen (6); 3. Frau Jenny Treibel (4)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Artikellänge in deutscher Wikipedia (Wiki-Markup)
 
-![Fontane works article length in German WP](images/works_textlen.svg)<!-- .element width="640px;" -->
+![Artikellänge in deutscher Wikipedia](images/works_textlen.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Effi Briest; 2. Wanderungen; 3. Stine</small>
+1. Effi Briest; 2. Wanderungen; 3. Stine
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Anzahl der Bearbeiter
 
-![Fontane works number of contributors](images/works_contributors.svg)<!-- .element width="640px;" -->
+![Anzahl der Bearbeiter](images/works_contributors.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Effi Briest; 2. John Maynard; 3. Irrungen, Wirrungen</small>
+1. Effi Briest; 2. John Maynard; 3. Irrungen, Wirrungen
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Anzahl der Überarbeitungen
 
-![Fontane works number of revisions](images/works_revisions.svg)<!-- .element width="640px;" -->
+![Anzahl der Überarbeitungen](images/works_revisions.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Effi Briest; 2. John Maynard; 3. Irrungen, Wirrungen</small>
+1. Effi Briest; 2. John Maynard; 3. Irrungen, Wirrungen
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Anzahl der Backlinks
 
-![Fontane works backlinks](images/works_backlinks.svg)<!-- .element width="640px;" -->
+![Anzahl der Backlinks](images/works_backlinks.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. [Wanderungen](https://de.wikipedia.org/wiki/Spezial:Linkliste/Wanderungen_durch_die_Mark_Brandenburg); 2. Effi Briest; 3. Frau Jenny Treibel</small>
+1. [Wanderungen](https://de.wikipedia.org/wiki/Spezial:Linkliste/Wanderungen_durch_die_Mark_Brandenburg); 2. Effi Briest; 3. Frau Jenny Treibel
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Datum der Artikelerstellung
 
-![Fontane works date of creation](images/works_firstrev.svg)<!-- .element width="640px;" -->
+![Datum der Artikelerstellung](images/works_firstrev.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Effi Briest (6. März 2004‎); 2. Frau Jenny Treibel; 3. Der Stechlin</small>
+1. Effi Briest (6. März 2004); 2. Frau Jenny Treibel; 3. Der Stechlin
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
 # Kapitel 6.
 
 <br />
+
 ### Ergebnisse III: <br />Fontane &amp; seine Zeitgenossen
 
-<br /><br /><br />
-<small>(„Zeitgenossen“: formalisiert als deutsche Autoren, <br />die zwischen 1800 und 1840 geboren wurden, <br />vgl. [die entsprechende Wikidata-Abfrage](https://w.wiki/48T))</small>
+<br />
+
+(„Zeitgenossen“: formalisiert als deutsche Autoren, <br />die zwischen 1800 und 1840 geboren wurden, <br />vgl. [die entsprechende Wikidata-Abfrage](https://w.wiki/48T))
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Anzahl Wikipedia-Versionen pro Autor
 
-![Contemporaries number of WP versions](images/contemporaries_languages.svg)<!-- .element width="640px;" -->
+![Anzahl Wikipedia-Versionen pro Autor](images/contemporaries_languages.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Friedrich Engels; 2. Paul Heyse; 3. Max Stirner; 4. Theodor Fontane; 5. Georg Büchner</small>
+1. Friedrich Engels; 2. Paul Heyse; 3. Max Stirner; 4. Theodor Fontane; 5. Georg Büchner
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Artikellänge in deutscher Wikipedia (Wiki-Markup)
 
-![Contemporaries article length](images/contemporaries_textlen.svg)<!-- .element width="640px;" -->
+![Artikellänge in deutscher Wikipedia](images/contemporaries_textlen.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Wilhelm Busch; 2. Friedrich Engels; 3. August Bebel; 4. Theodor Fontane; Paul Heyse</small>
+1. Wilhelm Busch; 2. Friedrich Engels; 3. August Bebel; 4. Theodor Fontane; Paul Heyse
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Anzahl der Bearbeiter
 
-![Contemporaries number of contributors](images/contemporaries_contributors.svg)<!-- .element width="640px;" -->
+![Anzahl der Bearbeiter](images/contemporaries_contributors.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Theodor Fontane; 2. Wilhelm Busch; 3. Theodor Storm; 4. Georg Büchner; 5. Eduard Mörike</small>
+1. Theodor Fontane; 2. Wilhelm Busch; 3. Theodor Storm; 4. Georg Büchner; 5. Eduard Mörike
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Anzahl der Überarbeitungen
 
-![Contemporaries number of revisions](images/contemporaries_revisions.svg)<!-- .element width="640px;" -->
+![Anzahl der Überarbeitungen](images/contemporaries_revisions.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Wilhelm Busch; 2. Theodor Fontane; 3. Theodor Storm</small>
+1. Wilhelm Busch; 2. Theodor Fontane; 3. Theodor Storm
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Anzahl der Backlinks
 
-![Contemporaries backlinks](images/contemporaries_backlinks.svg)<!-- .element width="640px;" -->
+![Anzahl der Backlinks](images/contemporaries_backlinks.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Theodor Fontane; 2. Friedrich Engels; 3. Georg Büchner</small>
+1. Theodor Fontane; 2. Friedrich Engels; 3. Georg Büchner
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Datum der Artikelerstellung
 
-![Contemporaries backlinks](images/contemporaries_firstrev.svg)<!-- .element width="640px;" -->
+![Datum der Artikelerstellung](images/contemporaries_firstrev.svg)<!-- .element: style="width:640px;" -->
 
-<small>1. Theodor Fontane (13. Mai 2002‎); 2. Konrad Duden; 3. Eduard Mörike</small>
+1. Theodor Fontane (13. Mai 2002); 2. Konrad Duden; 3. Eduard Mörike
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
 ## Zusammenfassung
+
+<br />
 
 - Fontane gehört – „according to Wikipedia“ – zur Weltliteratur
 - Artikel zu Fontane in 50 Sprachen (längere Artikel v.&nbsp;a. in den großen europäischen Sprachen)
@@ -380,30 +412,28 @@ Datum der Artikelerstellung
 
 ## Vielen Dank.
 
-<br /><br /><br /><br />
-Repository: <br />https://github.com/weltliteratur/fontane
+<br />
 
-<small><br />Stand 6. Juni 2019: <br />https://github.com/weltliteratur/fontane/tree/16ba4006c9094191d1f2b5acc9845fab40f3228e</small>
+Repository: <br />[github.com/weltliteratur/fontane](https://github.com/weltliteratur/fontane)
 
-</textarea>
+<br />
+
+Stand 6. Juni 2019: <br />[github.com/weltliteratur/fontane/tree/16ba4006c9094191d1f2b5acc9845fab40f3228e](https://github.com/weltliteratur/fontane/tree/16ba4006c9094191d1f2b5acc9845fab40f3228e)
+<!-- .element: style="font-size:0.65em;" -->
+
+</script>
         </section>
       </div>
     </div>
-    <script src="../reveal/lib/js/head.min.js"></script>
-    <script src="../reveal/js/reveal.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
     <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-      history: true,
-
-    // More info https://github.com/hakimel/reveal.js#dependencies
-      dependencies: [
-        { src: '../reveal/plugin/markdown/marked.js' },
-        { src: '../reveal/plugin/markdown/markdown.js' },
-        { src: '../reveal/plugin/notes/notes.js', async: true },
-        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-      ]
-    });
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
     </script>
   </body>
 </html>
