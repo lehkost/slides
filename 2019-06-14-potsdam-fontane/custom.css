@@ -34,6 +34,8 @@
   --r-main-font: "Embedded FreeSans", sans-serif;
   --r-heading-font: "Embedded FreeSans", sans-serif;
   --r-main-font-size: 30px;
+  /* do not display headings in all caps */
+  --r-heading-text-transform: none;
 }
 
 .reveal section img {

@@ -2,84 +2,86 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Introduction to DARIAH-EU · Växjö · 30 Oct 2018</title>
 
-    <link rel="stylesheet" href="../reveal/css/reveal.css" />
-    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/simple.css" id="theme" />
 
-    <!-- adjustments for serif.css -->
+    <!-- adjustments for simple.css -->
     <link rel="stylesheet" href="custom.css" />
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/zenburn.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
 <script type="text/template">
 
 ### A Social Marketplace for Services
 #### Introduction to DARIAH, the Pan-European <br />Research Infrastructure for the Arts and Humanities
 
-![Logo](images/dariah-logo.png)<!-- .element width="300px;" -->
+![DARIAH logo](images/dariah-logo.png)<!-- .element: style="width:300px;" -->
 
-Frank Fischer<!-- .element: style="font-size:0.7em;" -->
-<br />**@umblaetterer**<!-- .element: style="font-size:0.6em;" -->
+<br />Frank Fischer
+<!-- .element: style="font-size:0.7em;" -->
 
-<br />
-<!-- .element: style="font-size:0.6em;" -->Higher School of Economics &nbsp;·&nbsp; Moscow<br />
+Higher School of Economics &nbsp;·&nbsp; Moscow<br />
 DARIAH-EU &nbsp; 🇪🇺 &nbsp; Board of Directors<br />
+<!-- .element: style="font-size:0.6em;" -->
 
-<!-- .element: style="font-size:0.5em;" -->ffis&#99;her&#64;hse.ru &nbsp;·&nbsp; [homepage](https://www.hse.ru/en/org/persons/182492735)
+<p style="font-size:0.5em;display:flex;justify-content:center;align-items:center;gap:0.45em;margin:0;">
+  <a href="https://orcid.org/0000-0003-2419-6629"><img src="images/orcid-id-icon.svg" alt="ORCID iD" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+  <span>·</span>
+  <span>@umblaetterer</span>
+  <span>·</span>
+  <a href="https://lehkost.github.io/">homepage</a>
+</p>
 
-<br />
-<!-- .element: style="font-size:0.6em;" -->**This presentation:** [lehkost.github.io/slides/2018-vaxjo-dariah/](https://lehkost.github.io/slides/2018-vaxjo-dariah/)
+<br /><br />**This presentation:** [lehkost.github.io/slides/2018-vaxjo-dariah/](https://lehkost.github.io/slides/2018-vaxjo-dariah/)
+<!-- .element: style="font-size:0.6em;" -->
 
-<br />
-<!-- .element: style="font-size:0.6em;" -->[Digital Humanities Day](https://lnu.se/en/meet-linnaeus-university/current/events/2018/Digital-Humanities-Day/) &nbsp;·&nbsp; Linnéuniversitetet, Växjö &nbsp;🇸🇪 &nbsp;·&nbsp; 30 Oct 2018
+<br /><br />[Digital Humanities Day](https://www.lnu.se/en/meet-linnaeus-university/current/events/2018/Digital-Humanities-Day/) &nbsp;·&nbsp; Linnéuniversitetet, Växjö &nbsp;🇸🇪 &nbsp;·&nbsp; 30 Oct 2018
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
 ### Chapters
 
 <br />
+
 1. 'Research Infrastructure'
 2. DARIAH: History, Structure, Members
 3. DARIAH: Abstract Principles and Concrete Activities
 
 ---
 
-# Chapter 1.
+# Chapter 1
 
 <br />
+
 ### 'Research Infrastructure'
 
 --
 
 ### Mapping DH
 
-![Mapping DH (Patrick Sahle)](images/Patrick_Sahle_-_Mapping_DH_en.png)<!-- .element width="500px;" -->
+![Mapping DH (Patrick Sahle)](images/Patrick_Sahle_-_Mapping_DH_en.png)<!-- .element: style="width:500px;" -->
 
-<small>Chart by Patrick Sahle, University of Cologne. – DH are "radically interdisciplinary" (Stephen Ramsay 2011). </small>
+Chart by Patrick Sahle, University of Cologne. – DH are "radically interdisciplinary" (Stephen Ramsay 2011).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### The DH Community
 
 <br />
-- team work rather than solitary work
+
+- teamwork rather than solitary work
 - *projects* as basic units of research:
   - "a kind of scholarship that requires design, manage&shy;ment, negotiation, and collaboration" (Jeffrey Schnapp)
 - emphasis on building/crafting
@@ -96,57 +98,67 @@ DARIAH-EU &nbsp; 🇪🇺 &nbsp; Board of Directors<br />
 
 #### Here is an infrastructure:
 
-![A Library](images/historischer-bibliothekssaal.jpg)<!-- .element width="740px;" -->
+![A Library](images/historischer-bibliothekssaal.jpg)<!-- .element: style="width:740px;" -->
 
-<small>(Upper Lusatian Library of Sciences in Görlitz; img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Historischer_Bibliothekssaal.JPG), CC-BY-SA-3.0)</small>
+(Upper Lusatian Library of Sciences in Görlitz; img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Historischer_Bibliothekssaal.JPG), CC-BY-SA-3.0)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### The Very Origins of Research <br />Infrastructures (RIs) in the Humanities
 
-![Library of Alexandria](images/library-of-alexandria.jpg)<!-- .element width="440px;" -->
+![Library of Alexandria](images/library-of-alexandria.jpg)<!-- .element: style="width:440px;" -->
 
-<small>(Library of Alexandria; img source: [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Ancientlibraryalex.jpg))</small>
+(Library of Alexandria; img source: [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Ancientlibraryalex.jpg))
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Libraries and Data
 
 <br />
-![German National Library, pic from Wikimedia Commons](images/dnb-german-library-leipzig-2008.jpg)<!-- .element width="900px;" -->
-<small>German National Library in Leipzig (img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_%28German_Library%29_2008-Feb.jpg))</small>
 
-- they publicly offer a [data set](http://www.dnb.de/DE/Service/DigitaleDienste/Datendienst/datendienst_node.html) with all their catalogue data (RDF format, > 21 GB)
+![German National Library, pic from Wikimedia Commons](images/dnb-german-library-leipzig-2008.jpg)<!-- .element: style="width:900px;" -->
+German National Library in Leipzig (img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_%28German_Library%29_2008-Feb.jpg))
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+- the library publicly offers a [dataset](http://www.dnb.de/DE/Service/DigitaleDienste/Datendienst/datendienst_node.html) with all their catalogue data <br />(RDF format, > 21 GB)
 
 --
 
 ## What do we mean by Research Infrastructures?
 
 <br />
+
 - national and international scale investments in shared research capability that go beyond what any single institution (or even nation) can support
 - dramatically increase scientific reach
-- address research questions of long duration
-requiring pooled effort
+- address research questions of long duration requiring pooled effort
 - promote collaboration, interdisciplinarity, interaction with industry
 
-<br />
-<small>Quoted from John Womersley's talk at [ICRI 2018](https://www.icri2018.at/) in Vienna, 12 Sep 2018.</small>
+<br />Quoted from John Womersley's talk at [ICRI 2018](https://web.archive.org/web/20181005002936/https://www.icri2018.at/) in Vienna, 12 Sep 2018.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Why the Humanities Need an RI
 
 <br />
+
 "All disciplines have infrastructural needs, for data, for specialist knowledge, for methodological support, for storage and processing power. The arts and humanities need shared research infrastructure as much as any other discipline."
 
 <br /><br />
-<small>([PARTHENOS’ leaflet to address policy makers](http://www.parthenos-project.eu/why-humanities-need-a-research-infrastructure/))</small>
+
+([PARTHENOS’ leaflet to address policy makers](http://www.parthenos-project.eu/why-humanities-need-a-research-infrastructure/))
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
-# Chapter 2.
+# Chapter 2
 
 <br />
+
 ### DARIAH: History, Structure, Members
 
 --
@@ -154,9 +166,11 @@ requiring pooled effort
 ### DARIAH
 
 <br />
+
 <br />DigitAl Research Infrastructure <br />for the Arts and Humanities, …
 
 <br />
+
 … a pan-European community of researchers to <br />facilitate humanities research in the digital age.
 
 --
@@ -164,6 +178,7 @@ requiring pooled effort
 ### DARIAH History
 
 <br />
+
 * 2006: DARIAH appears on ESFRI Roadmap¹
 * 2008–2011: Preparatory Phase
 * 2011–2013: Transition Phase
@@ -171,9 +186,9 @@ requiring pooled effort
 * 2014–2018: Construction Phase
 * 2019–: Operational Phase
 
-<br />
-<small>¹ ESFRI: European Strategy Forum on Research Infrastructures (set up in 2002)<br />
-² ERIC: European Research Infrastructure Consortium</small>
+<br />¹ ESFRI: European Strategy Forum on Research Infrastructures (set up in 2002)<br />
+² ERIC: European Research Infrastructure Consortium
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -220,23 +235,27 @@ United Kingdom&nbsp;🇬🇧<!-- .element: style="font-size:0.8em;" -->
 
 ### Organisation Chart DARIAH-EU
 
-![Organigram](images/orga.png)<!-- .element width="600px;" -->
+![Organigram](images/orga.png)<!-- .element: style="width:600px;" -->
 
 --
 
 ### Stakeholders
 
 <br />
-![mindmap](images/mindmap_stakeholders.png)<!-- .element width="1072px;" -->
+
+![mindmap](images/mindmap_stakeholders.png)<!-- .element: style="width:1072px;" -->
 
 <br />
-<small>Mindmap created by Eliza Papaki and Arnaud Roi from our DCO (2018).</small>
+
+Mindmap created by Eliza Papaki and Arnaud Roi from our DARIAH Coordination Office (DCO), 2018.
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
-# Chapter 3.
+# Chapter 3
 
 <br />
+
 ### DARIAH: Abstract Principles <br />and Concrete Activities
 
 --
@@ -244,6 +263,7 @@ United Kingdom&nbsp;🇬🇧<!-- .element: style="font-size:0.8em;" -->
 ### Some of Our High-Level Principles
 
 <br />
+
 * community-driven (working groups)
 * inclusive (addressing the humanities as a whole, not the *digital* humanities in particular)
 * promoting openness (full-time Open Science Officer)
@@ -257,14 +277,15 @@ United Kingdom&nbsp;🇬🇧<!-- .element: style="font-size:0.8em;" -->
 ## DARIAH Does/Is Four Things
 
 <br />
-* Education and Training​
- * complement traditional training with corresponding material and alternative teaching methods (workshops, summer schools, hackathons, etc.)<!-- .element: style="font-size:0.8em;" -->
+
+* Education and Training
+  * complement traditional training with corresponding material and alternative teaching methods (workshops, summer schools, hackathons, etc.)<!-- .element: style="font-size:0.8em;" -->
 * The (future) Marketplace
- * enable access to research solutions (tools, services, data, workflows, know-how), also aiming at researchers who don't regard themselves as<!-- .element: style="font-size:0.8em;" --> *digital* humanists
+  * enable access to research solutions (tools, services, data, workflows, know-how), also aiming at researchers who don't regard themselves <!-- .element: style="font-size:0.8em;" -->as *digital* humanists
 * Foresight and Policy Work
- * making the voice of the A+H heard in research policy discussions, promote nascent policies to our communities<!-- .element: style="font-size:0.8em;" -->
+  * making the voice of the A+H heard in research policy discussions, promote nascent policies to our communities<!-- .element: style="font-size:0.8em;" -->
 * Working Groups
- * see next slide<!-- .element: style="font-size:0.8em;" -->
+  * see next slide<!-- .element: style="font-size:0.8em;" -->
 
 --
 
@@ -275,8 +296,7 @@ United Kingdom&nbsp;🇬🇧<!-- .element: style="font-size:0.8em;" -->
 - anyone can be part of a working group, chairs <br />preferably from DARIAH partner countries<!-- .element: style="font-size:0.75em;" -->
 - 21 working groups at the moment, among which:<!-- .element: style="font-size:0.75em;" -->
 
-<br />
-Text and Data Analytics –
+<br />Text and Data Analytics –
 Visual Media and Interactivity –
 GeoHumanities –
 Women Writers in History –
@@ -289,22 +309,26 @@ Image Science and Media Art Research –
 Medievalist’s Sources (MESO) –
 Guidelines and Standards (GiST) –
 Ethics and Legality in the Digital Arts and Humanities (ELDAH) –
-…<!-- .element: style="font-size:0.75em;" -->
+…
+<!-- .element: style="font-size:0.75em;" -->
 
-<br />
-Complete overview and details: <!-- .element: style="font-size:0.75em;" --><br />https://www.dariah.eu/activities/working-groups-list/
+<br />Complete overview and details: <br />[dariah.eu/activities/working-groups-list/](https://www.dariah.eu/activities/working-groups-list/)
+<!-- .element: style="font-size:0.75em;" -->
 
 --
 
 ### Working Groups Timeline
 
-![mindmap](images/working-groups-timeline.png)<!-- .element width="800px;" -->
+![mindmap](images/working-groups-timeline.png)<!-- .element: style="width:800px;" -->
 
-<small>Created by Francesca Morselli and Emil Bode from DANS/KNAW (June 2018, CC-BY).</small>
+Created by Francesca Morselli and Emil Bode from DANS/KNAW (June 2018, CC-BY).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### List of Benefits (Summary)
+
+<br />
 
 * research<!-- .element: style="font-size:0.8em;" --> <br /><small>(embed individual research projects in the <u>broader landscape</u>: working groups, proposals)</small>
 * teaching, conferences, workshops<!-- .element: style="font-size:0.8em;" --> <br /><small>(curricula, teaching material, access to international experts’ network)</small>
@@ -318,8 +342,10 @@ Complete overview and details: <!-- .element: style="font-size:0.75em;" --><br /
 
 ### Some DARIAH-Driven Services
 
+<br />
+
 * Single Sign-On
-* [DH Course Registry](https://registries.clarin-dariah.eu/courses/) – together with CLARIN
+* [DH Course Registry](https://dhcr.clarin-dariah.eu/) – together with CLARIN
 * [Open Archive HAL](https://hal.archives-ouvertes.fr/) – preprints and other scholarly documents
 * [Geo-Browser](https://geobrowser.de.dariah.eu/) – visualisation of spatio-temporal data
 * [TextGrid](https://textgrid.de/en/) – scholarly editing
@@ -331,17 +357,19 @@ Complete overview and details: <!-- .element: style="font-size:0.75em;" --><br /
 
 --
 
-Digital Humanities Course Registry
+### Digital Humanities Course Registry
 
-![DH Course Registry](images/dh-course-registry-screenshot.png)<!-- .element width="700px;" -->
+![DH Course Registry](images/dh-course-registry-screenshot.png)<!-- .element: style="width:700px;" -->
 
-<small>https://registries.clarin-dariah.eu/courses/ – joint effort between CLARIN and DARIAH</small>
+[dhcr.clarin-dariah.eu](https://dhcr.clarin-dariah.eu/) – joint effort between CLARIN and DARIAH
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### European Open Science Cloud (EOSC)
 
 <br />
+
 - general cloud for research data of all fields
 - EOSC Declaration (October 2017)
 - data culture, open access, data stewardship, FAIR principles, standards, data management plans, technical implementations, legal aspects
@@ -353,27 +381,21 @@ Tack så mycket.
 
 <br /><br /><br />
 
-– https://www.dariah.eu/ –
+– [dariah.eu](https://www.dariah.eu/) –
 
 </script>
         </section>
       </div>
     </div>
-    <script src="../reveal/lib/js/head.min.js"></script>
-    <script src="../reveal/js/reveal.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
     <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-      history: true,
-
-    // More info https://github.com/hakimel/reveal.js#dependencies
-      dependencies: [
-        { src: '../reveal/plugin/markdown/marked.js' },
-        { src: '../reveal/plugin/markdown/markdown.js' },
-        { src: '../reveal/plugin/notes/notes.js', async: true },
-        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-      ]
-    });
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
     </script>
   </body>
 </html>

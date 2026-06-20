@@ -1,9 +1,43 @@
+@font-face {
+  font-family: "Embedded FreeSans";
+  src: url("../fonts/FreeSans.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Embedded FreeSans";
+  src: url("../fonts/FreeSansBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Embedded FreeSans";
+  src: url("../fonts/FreeSansItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Embedded FreeSans";
+  src: url("../fonts/FreeSansBoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: block;
+}
+
+:root {
+  --r-main-font: "Embedded FreeSans", sans-serif;
+  --r-heading-font: "Embedded FreeSans", sans-serif;
+  --r-main-font-size: 30px;
+  /* do not display headings in all caps */
+  --r-heading-text-transform: none;
+}
+
 .reveal section img {
   border: none;
-}
-.reveal {
-  font-size: 32px;
-}
-.reveal h2 {
-	font-size: 1.4em;
 }

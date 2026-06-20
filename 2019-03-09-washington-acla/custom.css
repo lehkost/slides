@@ -1,26 +1,42 @@
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerif.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
 
-.reveal {
-  font-size: 24px; }
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerifBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
 
-.reveal h1 {
-  font-size: 3.1em; }
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerifItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
 
-.reveal h2 {
-  font-size: 1.7em; }
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerifBoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: block;
+}
 
-.reveal h3 {
-  font-size: 1.2em; }
-
-.reveal h4 {
-  font-size: 1em; }
-
-.reveal a {
-  color: #2048a0; }
-
-.reveal a:hover {
-  color: #4068c0; }
+:root {
+  --r-main-font: "Embedded FreeSerif", serif;
+  --r-heading-font: "Embedded FreeSerif", serif;
+  --r-main-font-size: 30px;
+}
 
 .reveal section img {
-  border: 4px none #000;
+  border: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
