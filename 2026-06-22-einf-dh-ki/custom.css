@@ -39,3 +39,8 @@
 .reveal section img {
   border: none;
 }
+
+.reveal .list08 > ol,
+.reveal .list08 > ul {
+  font-size: 0.8em;
+}
