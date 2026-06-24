@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>COMUTE Applications in Literary Studies</title>
+
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <img src="images/comute-logo-web-color.svg" class="comute-logo" alt="COMUTE logo" />
+      <div class="slides">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
+
+<!-- .slide: data-state="no-logo" -->
+
+### COMUTE Applications in Literary Studies
+
+![COMUTE logo](images/comute-logo-web-color.svg)<!-- .element: style="width:192px; border:none; box-shadow:none;" -->
+
+Frank Fischer · Yashee Singh<!-- .element: style="font-size:0.9em;" -->
+
+<br />Freie Universität Berlin
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+Presentation URL: **[lehkost.github.io/slides/2026-06-25-comute-applications/](https://lehkost.github.io/slides/2026-06-25-comute-applications/index.html)**
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />[COMUTE Workshop](https://www.comute-project.de/news/2026-06-10-workshop.html) &nbsp;·&nbsp; FU Berlin &nbsp;·&nbsp; Thu, 25 June 2026, 16:15
+<!-- .element: style="font-size:0.85em;" -->
+
+---
+
+### What is COMUTE?
+
+<br />
+
+COMUTE (“Collation of Multilingual Text”) develops the first comprehensive digital environment for the systematic comparison of two or more **multilingual, non-literal, and structurally divergent** versions of a text.
+
+Conventional alignment assumes near-literal, sentence-level correspondence. COMUTE is built instead for **authorial revisions, adaptive translation, and diachronically stratified variants**.
+
+<!-- .element: class="fragment" -->
+
+It extends the **[LERA](https://lera.uzi.uni-halle.de/)** platform – originally conceived for collating monolingual variant traditions – to multilingual corpora.
+
+<!-- .element: class="fragment" -->
+
+--
+
+### A Continuum of Translatorial Practice
+
+<br />
+
+The scenarios that follow sample a spectrum rather than a set of categories:
+
+<br />
+
+- **omission**: what gets left out
+- **register shift**: how tone is attenuated or sharpened
+- **structural divergence**: merging, splitting, transposition
+- **adaptation**: scenes and names reshaped for a new audience
+
+<br />COMUTE lets us map where on this continuum <br />a translation sits and how its divergence manifests.
+<!-- .element: class="fragment" -->
+
+---
+
+## Scenarios
+
+--
+
+### Selective Translations
+
+<br />
+
+- Wilhelm Strüver’s 1927 German translation of Melville’s *Moby-Dick; or, The Whale* (1851) ignores roughly two-thirds of the source text
+- the phenomenon is well attested in the secondary literature (cf. [Vollmer 2021](https://www.frank-timme.de/de/programm/produkt/schwer_lesbar_gleich_texttreu), p. 55), but no systematic inventory of translated versus omitted passages had ever been compiled.
+<!-- .element: class="fragment" -->
+- COMUTE’s alignment visualises these lacunae and supports granular analysis through direct source–target juxtaposition
+<!-- .element: class="fragment" -->
+
+--
+
+![Alignment of Moby-Dick and its 1927 German translation in LERA, with omissions in the target text shown in the synopsis above](images/moby-dick.png)<!-- .element: style="width:980px;" -->
+
+Omissions in the target text (right) are visible at a glance <br />in the synopsis bars above the columns.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### One-to-One Translations
+
+<br />
+
+- Irene Muehlon’s 1954 translation of Salinger’s *The Catcher in the Rye* (1951) – *Der Mann im Roggen*, Diana Verlag – records no substantive omissions
+- as expected, source and target show near-complete sentence-level correspondence
+<!-- .element: class="fragment" -->
+- the methodological point still stands: even where completeness is presupposed, manual page-by-page collation is impracticable, empirical verification needs tooling
+<!-- .element: class="fragment" -->
+
+--
+
+### Completeness ≠ Fidelity
+
+<br />
+
+- Muehlon’s translation is known for attenuating register, profanities are replaced with toned-down wording, the F-word is rendered as a typographical dash
+- such features can be studied manually, or computationally, by querying aligned segments differentially annotated by text classifiers (e.&nbsp;g. toxic / non-toxic)
+<!-- .element: class="fragment" -->
+- parallel case: the first German translation of *Pippi Longstocking*, whose anti-authoritarian protagonist was systematically moderated for late-1940s/50s German readerships
+<!-- .element: class="fragment" -->
+
+--
+
+### Synchronic Comparison of Many Translations
+
+<br />
+
+- use-case scenario provided by Henrike Schmidt (Freie Universität Berlin)
+- COMUTE can display multiple contemporary translations of a canonical work side by side
+<!-- .element: class="fragment" -->
+- six German translations of Charlotte Brontë’s *Jane Eyre* (1847), published between 1953 and 2015, all shown alongside the source
+<!-- .element: class="fragment" -->
+- just under three decades ago, a dissertation on 21 German *Jane Eyre* translations still required “cutting out and pasting many, many scraps of paper.” (Hohn 1998, Preface, p. \[5\], our trans.)
+<!-- .element: class="fragment" -->
+
+--
+
+![Alignment of Charlotte Brontë’s Jane Eyre (left column) alongside six different German translations](images/jane-eyre.png)<!-- .element: style="width:980px;" -->
+
+The source (left) and six German renderings, aligned segment by segment, <br />a collation workflow that once meant scissors and paper.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Robustness: Scripts and Segmentation
+
+<br />
+
+- use-case scenario provided by Bart Soethaert (Aristotle University of Thessaloniki)
+- different editions of the German translations of *Zorba the Greek* (Kazantzakis, 1946)
+<!-- .element: class="fragment" -->
+- the source materials carried considerable OCR noise, yet alignment stayed robust
+<!-- .element: class="fragment" -->
+- the tool was especially good at flagging sentence merger and segmentation divergence
+<!-- .element: class="fragment" -->
+- building on this non-Latin-script case, we also aligned Arundhati Roy’s *The God of Small Things* (English) with its Hindi translation, extending our reach beyond Latin-script corpora
+<!-- .element: class="fragment" -->
+
+--
+
+### Translations of Dramatic Texts (1/2)
+
+<br />
+
+- drama adds genre-specific structure that breaks naïve sentence segmentation, speaker designations preceding speech acts being the obvious culprit
+- our own case study: Elizabeth Inchbald’s 1798 play *Lovers’ Vows*, her translation/adaptation of [August von Kotzebue’s *Das Kind der Liebe*](https://dracor.org/id/ger000700) (1790), famous through its role in Jane Austen’s *Mansfield Park* (1814)
+<!-- .element: class="fragment" -->
+
+--
+
+### Translations of Dramatic Texts (2/2)
+
+<br />
+
+- Inchbald omitted and added scenes (as she states in her preface) and anglicised character names: *Wilhelmine* becomes *Agatha*, etc.
+- the principal alignment obstacle was not the historical orthography of the German source, it was the structural convention of dramatic discourse
+<!-- .element: class="fragment" -->
+- solution: disaggregate spoken text from speaker labels, made feasible by the TEI markup of the dramatic texts, which lets us extract speech acts and stage directions while excluding the problematic speaker designations
+<!-- .element: class="fragment" -->
+
+--
+
+### Machine Translations
+
+<br />
+
+- use-case scenario provided by Svenja Guhr (UC Berkeley, School of Information) and Yuri Bizzoni (Aarhus University)
+- examines translations of American romance novels into German: historical human translations vs. contemporary machine translation systems / LLM-based systems (DeepL, Gemini)
+<!-- .element: class="fragment" -->
+- COMUTE as a verification mechanism for automated assessment of translational completeness, deviation from the source, and the analysis of censorship of explicit content
+<!-- .element: class="fragment" -->
+
+---
+
+## Extending the Script Horizon
+
+--
+
+### Script Configurations
+
+<br />
+
+| **Latin ↔ Latin** | **Latin ↔ Non-Latin** | **Non-Latin ↔ Non-Latin** |
+|:--:|:--:|:--:|
+| baseline | primary scope | extended scope |
+| *Moby-Dick*<br />(English – German) | *The God of Small Things*<br />(English – Hindi)<br /><br />*Katha Upanishad*<br />(English – Hindi)<br />(Sanskrit – English) | *Panchatantra*<br />(Sanskrit – Hindi)<br /><br />*Katha Upanishad*<br />(Hindi – Sanskrit) |
+<!-- .element: style="font-size:0.8em;" -->
+
+<br />All non-Latin texts use the **Devanagari** writing system (Sanskrit: classical; Hindi: modern).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+<!-- .slide: class="list08" -->
+
+### What South Asian Corpora Reveal <br />About the Pipeline
+
+<br />
+
+- **segmentation precedes alignment**: misalignments in *The God of Small Things* (EN–HI) trace not to the alignment algorithm but to inconsistent use of the Hindi viram (।) as a sentence delimiter in the source corpus. Script-aware segmentation is a necessary preceding step
+- **genre and script get tangled together**: every Sanskrit source is written in shlokas (verses), which don’t line up with sentences marked by punctuation. So when these pairs misalign, we can’t tell whether the script or the verse form is to blame
+<!-- .element: class="fragment" -->
+- **shared script can look like a match when it isn’t**: Sanskrit and Hindi (*Panchatantra*, *Katha Upanishad* HI–SA) share the Devanagari script and a layer of borrowed *tatsama* words. That makes the two texts look very similar on the surface, which is real, but the pipeline has to keep it separate from texts that actually correspond
+<!-- .element: class="fragment" -->
+
+---
+
+### Conclusion & Outlook (1/2)
+
+<br />
+
+- where earlier scholarship could only describe degrees of divergence impressionistically, COMUTE makes them systematically measurable and visible
+- it shows not just where a translation falls on the spectrum, but how the divergence works: omission, expansion, transposition, register shift
+<!-- .element: class="fragment" -->
+- the alignment algorithm performs reliably across diverse language pairs, scripts, and genres
+<!-- .element: class="fragment" -->
+
+--
+
+### Conclusion & Outlook (2/2)
+
+<br />
+
+- “complete” translations (Salinger, Brontë) still show consistent shifts in register
+- “free” adaptations (Strüver, Inchbald) nonetheless preserve clear structural correspondences
+<!-- .element: class="fragment" -->
+- translation is better understood as a graduated, multidimensional phenomenon than as a categorical one<!-- .element: class="fragment" -->
+- … and we’d love to hear about new use cases!
+<!-- .element: class="fragment" -->
+
+--
+
+<!-- .slide: data-state="no-logo" -->
+
+### Thank you.
+
+![COMUTE logo](images/comute-logo-web-color.svg)<!-- .element: style="width:192px; border:none; box-shadow:none;" -->
+
+#### [comute-project.de](https://www.comute-project.de/)
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        backgroundTransition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>

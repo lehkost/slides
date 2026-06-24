@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 780 780" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="COMUTE-Logo--color-" serif:id="COMUTE Logo (color)" transform="matrix(0.345343,0,0,0.345343,-425.775,-18.3549)">
+        <g transform="matrix(0.965374,0,0,1.03904,-1733.95,-403.908)">
+            <g id="Square-MLU" serif:id="Square MLU">
+                <clipPath id="_clip1">
+                    <path d="M4778.57,1457.39L4778.57,1979.62L3730.21,1979.62L3730.21,986.267L4282.25,986.267L4282.25,1457.39L4778.57,1457.39Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <path d="M4738.58,1065.09L4738.58,1690.29L4065.67,1690.29L4065.67,1065.09L4738.58,1065.09ZM4677.4,1121.92L4126.84,1121.92L4126.84,1633.45L4677.4,1633.45L4677.4,1121.92Z" style="fill:rgb(177,224,83);"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(0.965374,0,0,1.03904,-1887.49,-250.365)">
+            <g id="Square-UP" serif:id="Square UP">
+                <clipPath id="_clip2">
+                    <path d="M4937.63,1370.8L4937.63,1831.84L3889.26,1831.84L3889.26,838.493L4410.14,838.493L4410.14,1370.8L4937.63,1370.8Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip2)">
+                    <path d="M4738.58,1065.09L4738.58,1690.29L4065.67,1690.29L4065.67,1065.09L4738.58,1065.09ZM4677.4,1121.92L4126.84,1121.92L4126.84,1633.45L4677.4,1633.45L4677.4,1121.92Z" style="fill:rgb(129,134,168);"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(0.965374,0,0,1.03904,-2041.03,-96.8215)">
+            <g id="Square-FU" serif:id="Square FU">
+                <clipPath id="_clip3">
+                    <path d="M5096.68,1282.59L5096.68,1710.28L4048.31,1710.28L4048.31,690.718L4502.7,692.459L4502.7,1284.33L5096.68,1282.59Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip3)">
+                    <path d="M4738.58,1065.09L4738.58,1690.29L4065.67,1690.29L4065.67,1065.09L4738.58,1065.09ZM4677.4,1121.92L4126.84,1121.92L4126.84,1633.45L4677.4,1633.45L4677.4,1121.92Z"/>
+                </g>
+            </g>
+        </g>
+        <g id="Vectors">
+            <g transform="matrix(0.665414,0.275624,-0.275624,0.665414,1116.46,-256.851)">
+                <g transform="matrix(3.71439,-1.53855,1.53855,3.71439,314.075,335.782)">
+                    <path d="M545.982,291.808L614.215,296.657L569.396,348.333L545.982,291.808Z" style="fill:rgb(177,224,83);"/>
+                    <path d="M389.997,389.531C389.997,389.531 503.501,342.516 568.994,315.388" style="fill:none;stroke:rgb(177,224,83);stroke-width:20.39px;"/>
+                </g>
+            </g>
+            <g transform="matrix(0.811026,0,0,0.811026,446.572,221.965)">
+                <g transform="matrix(3.57038,-0,-0,3.57038,969.551,-208.151)">
+                    <path d="M518.343,217.922L583.237,196.29L561.606,261.185L518.343,217.922Z" style="fill:rgb(129,134,168);"/>
+                    <path d="M389.997,389.531C389.997,389.531 493.029,286.498 548.627,230.901" style="fill:none;stroke:rgb(129,134,168);stroke-width:20.39px;"/>
+                </g>
+            </g>
+            <g transform="matrix(0.581539,-0.240881,0.240881,0.581539,703.747,1062.32)">
+                <g transform="matrix(4.25012,1.76046,-1.76046,4.25012,1390.21,-1159.5)">
+                    <path d="M419.488,238.394L471.164,193.576L476.013,261.808L419.488,238.394Z"/>
+                    <path d="M389.997,389.531C389.997,389.531 428.462,296.668 452.433,238.796" style="fill:none;stroke:black;stroke-width:20.39px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
