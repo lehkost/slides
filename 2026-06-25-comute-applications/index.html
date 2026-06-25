@@ -207,10 +207,10 @@ The source (left) and six German renderings, aligned segment by segment, <br />a
 | **Latin ↔ Latin** | **Latin ↔ Non-Latin** | **Non-Latin ↔ Non-Latin** |
 |:--:|:--:|:--:|
 | baseline | primary scope | extended scope |
-| *Moby-Dick*<br />(English – German) | *The God of Small Things*<br />(English – Hindi)<br /><br />*Katha Upanishad*<br />(English – Hindi)<br />(Sanskrit – English) | *Panchatantra*<br />(Sanskrit – Hindi)<br /><br />*Katha Upanishad*<br />(Hindi – Sanskrit) |
+| *Moby-Dick*<br />(English – German) | *The God of Small Things*<br />(English – Hindi)<br /><br />*Katha Upanishad*<br />(Sanskrit – Hindi – English) | *Panchatantra*<br />(Sanskrit – Hindi)<br /><br />*Katha Upanishad*<br />(Sanskrit – Hindi) |
 <!-- .element: style="font-size:0.8em;" -->
 
-<br />All non-Latin texts use the **Devanagari** writing system (Sanskrit: classical; Hindi: modern).
+<br />All non-Latin texts use the Devanagari writing system (Sanskrit: classical; Hindi: modern).
 <!-- .element: style="font-size:0.65em;" -->
 
 --
@@ -221,10 +221,10 @@ The source (left) and six German renderings, aligned segment by segment, <br />a
 
 <br />
 
-- **segmentation precedes alignment**: misalignments in *The God of Small Things* (EN–HI) trace not to the alignment algorithm but to inconsistent use of the Hindi viram (।) as a sentence delimiter in the source corpus. Script-aware segmentation is a necessary preceding step
-- **genre and script get tangled together**: every Sanskrit source is written in shlokas (verses), which don’t line up with sentences marked by punctuation. So when these pairs misalign, we can’t tell whether the script or the verse form is to blame
+- **segmentation precedes alignment**: misalignments in *The God of Small Things* (EN–HI) trace not to the alignment algorithm but to inconsistent use of the Hindi viram (।) as a sentence delimiter in the source corpus, script-aware segmentation is a necessary preceding step
+- **genre and script get tangled together**: every Sanskrit source is written in shlokas (verses), which don’t line up with sentences marked by punctuation, so when these pairs misalign, we can’t tell whether the script or the verse form is to blame
 <!-- .element: class="fragment" -->
-- **shared script can look like a match when it isn’t**: Sanskrit and Hindi (*Panchatantra*, *Katha Upanishad* HI–SA) share the Devanagari script and a layer of borrowed *tatsama* words. That makes the two texts look very similar on the surface, which is real, but the pipeline has to keep it separate from texts that actually correspond
+- **shared script can look like a match when it isn’t**: Sanskrit and Hindi (*Panchatantra*, *Katha Upanishad* HI–SA) share the Devanagari script and a layer of borrowed *tatsama* words, that makes the two texts look very similar on the surface, which is real, but the pipeline has to keep it separate from texts that actually correspond
 <!-- .element: class="fragment" -->
 
 ---
