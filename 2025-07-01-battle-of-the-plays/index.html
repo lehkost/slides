@@ -2,24 +2,24 @@
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Battle of the Plays (1. Juli 2025)</title>
 
-    <link rel="stylesheet" href="../revealjs5/dist/reset.css" />
-    <link rel="stylesheet" href="../revealjs5/dist/reveal.css" />
-    <link rel="stylesheet" href="../revealjs5/dist/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
 
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="../revealjs5/plugin/highlight/monokai.css" id="highlight-theme" />
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/monokai.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
 <script type="text/template">
 
 ### **Battle of the Plays**
@@ -73,7 +73,7 @@ Diese Präsentation: <br />**[bit.ly/bat1725](https://bit.ly/bat1725)**
 
 <br>
 
-![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="350px;" -->
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element: style="width:350px;" -->
 
 <br>
 
@@ -108,7 +108,7 @@ Knoten: Personen; Kanten: gegenseitig akzeptierte Freundschaftsanfragen. <br />(
 
 ### Cluster (Communitys)
 
-![Graph, nodes, edges, communities](images/graph-nodes-edges-communities.png)<!-- .element width="425px;" -->
+![Graph, nodes, edges, communities](images/graph-nodes-edges-communities.png)<!-- .element: style="width:425px;" -->
 
 <br />
 
@@ -119,7 +119,7 @@ Knoten: Personen; Kanten: gegenseitig akzeptierte Freundschaftsanfragen. <br />(
 
 ### Soziale Netzwerke
 
-![Graph, nodes, edges, communities](images/jill-rettberg-annotated-social-network.png)<!-- .element width="400px;" -->
+![Graph, nodes, edges, communities](images/jill-rettberg-annotated-social-network.png)<!-- .element: style="width:400px;" -->
 
 Persönliches Facebook-Netzwerk mit annotierten Clustern/Communities. <br />(Quelle: [Jill Rettberg, 2013](http://jilltxt.net/?p=3447))
 <!-- .element: style="font-size:0.6em;" -->
@@ -128,7 +128,7 @@ Persönliches Facebook-Netzwerk mit annotierten Clustern/Communities. <br />(Que
 
 #### Beispiel für ein literarisches Netzwerk: <br />Goethes »Faust I«
 
-![Goethe, Faust I](images/goethe-faust-eine-tragoedie.png)<!-- .element width="480px;" -->
+![Goethe, Faust I](images/goethe-faust-eine-tragoedie.png)<!-- .element: style="width:480px;" -->
 
 Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/id/ger000243))
 <!-- .element: style="font-size:0.6em;" -->
@@ -143,7 +143,7 @@ Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/id/ger000243
 
 <br />
 
-![simple directed graph (from Wikimedia Commons)](images/directed-graph-from-wikimedia-commons.png)<!-- .element height="180px;" -->
+![simple directed graph (from Wikimedia Commons)](images/directed-graph-from-wikimedia-commons.png)<!-- .element: style="height:180px;" -->
 
 <br />
 
@@ -156,7 +156,7 @@ Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/id/ger000243
 
 <br />
 
-![simple weighted graph (from Wikimedia Commons)](images/weighted-graph-from-wikimedia-commons.png)<!-- .element height="227px;" -->
+![simple weighted graph (from Wikimedia Commons)](images/weighted-graph-from-wikimedia-commons.png)<!-- .element: style="height:227px;" -->
 
 <br />
 
@@ -186,7 +186,7 @@ Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/id/ger000243
 
 ### Eines der ersten Soziogramme
 
-![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element width="380px;" -->
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element: style="width:380px;" -->
 
 »Class structure, 4th grade«. Arbeit von Jacob L. Moreno (1889–1974).<br />(Veröffentlicht in der NYT, [3. April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Quelle für dieses PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)
 <!-- .element: style="font-size:0.6em;" -->
@@ -208,7 +208,7 @@ Ko-Okkurrenzgraph, 115 Knoten. (Quelle: [DraCor](https://dracor.org/id/ger000243
 
 ### Graph-bezogene Werte
 
-![four nodes](images/example_network_graph_four_nodes.svg)<!-- .element height="240px;" -->
+![four nodes](images/example_network_graph_four_nodes.svg)<!-- .element: style="height:240px;" -->
 
 | Kennzahl                            | Bedeutung                                                                                             | Wert                                        |
 | ------------------------------------| ----------------------------------------------------------------------------------------------------- | ------------------------------------------- |
@@ -286,10 +286,10 @@ Danke.
         </section>
       </div>
     </div>
-    <script src="../revealjs5/dist/reveal.js"></script>
-    <script src="../revealjs5/plugin/notes/notes.js"></script>
-    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
-    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
     <script>
       Reveal.initialize({
         hash: true,
