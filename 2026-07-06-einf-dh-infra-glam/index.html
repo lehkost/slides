@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Einführung in die digitalen Geisteswissenschaften (Vorlesung 6. Juli 2026)</title>
+
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
+
+Vorlesung ([LV 16799](https://www.fu-berlin.de/vv/de/lv/906756))
+<!-- .element: style="font-size:0.6em;" -->
+
+#### **»Einführung in die digitalen <br />Geisteswissenschaften«**
+
+(13. April – 13. Juli 2026)
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Prof. Dr. Frank Fischer
+<!-- .element: style="font-size:0.65em;" -->
+
+Homepage: [lehkost.github.io](https://lehkost.github.io/) <br />Mail: fr.fischer&#64;fu-berlin.de
+<!-- .element: style="font-size:0.45em;" -->
+
+·
+
+12. Vorlesung (6. Juli 2026):
+<!-- .element: style="font-size:0.65em;" -->
+
+#### **Infrastrukturen für die Digitalen Geisteswissenschaften, GLAM!**
+<!-- .element: style="font-size:0.85em;" -->
+
+Diese Präsentation: <br />**[lehkost.github.io/slides/2026-07-06-einf-dh-infra-glam/](https://lehkost.github.io/slides/2026-07-06-einf-dh-infra-glam/index.html)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Semesterüberblick
+
+<br />
+
+| Datum | Thema |
+|:-|:-|
+| 13.04.2026 | Thematische Rundumschau I |
+| 20.04.2026 | Thematische Rundumschau II |
+| 27.04.2026 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 04.05.2026 | Distant Reading I: Stilometrie |
+| 11.05.2026 | Distant Reading II: Topic Modeling |
+| 18.05.2026 | Visual Analytics: »Beautiful Evidence« |
+| 01.06.2026 | Netzwerkanalyse |
+| 08.06.2026 | Geografische Informationssysteme (GIS) |
+| 15.06.2026 | Wikipedia & Wikidata |
+| 22.06.2026 | KI &amp; Maschinelles Lernen |
+| 29.06.2026 | Showcase: Digitale Dramenanalyse |
+| **06.07.2026** | **Infrastrukturen für die Digitalen Geisteswissenschaften, GLAM!** |
+| 13.07.2026 | Letzte Sitzung |
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### DH-Seminare und -kolloquium im SoSe 2026
+
+<br />
+
+- [Seminar »Einführung in die künstliche Intelligenz (KI)«](https://www.fu-berlin.de/vv/de/lv/1069411)
+  - <!-- .element: style="font-size:0.7em;" -->Mo 14:00–16:00 c.t.
+- [Seminar »Daten erzählen: Digitale Fallstudien in den Geisteswissenschaften«](https://www.fu-berlin.de/vv/de/lv/1069409)
+  - <!-- .element: style="font-size:0.7em;" -->Do 14:00–16:00 c.t.
+- [Kolloquium »Phänomenologie der Digital Humanities«](https://www.fu-berlin.de/vv/de/lv/1069402)
+  - <!-- .element: style="font-size:0.7em;" -->Fr 10:00–12:00 c.t. (ab 08.05.2026, zweiwöchentlich)
+  - <!-- .element: style="font-size:0.7em;" -->Übersicht über alle Veranstaltungen: <a href="https://wikis.fu-berlin.de/pages/viewpage.action?pageId=1819445977">https://wikis.fu-berlin.de/display/phaenodh</a>
+
+--
+
+## Inhalt
+
+<br />
+
+1. Forschungsinfrastrukturen
+2. Regionale DH-Initiativen
+3. Nationale Strukturen
+4. Internationale Strukturen
+5. Berufsperspektiven
+6. Mögliche Anschlussveranstaltungen
+
+--
+
+# G.L.A.M.?
+
+<br />
+
+Galleries, Libraries, Archives, Museums
+<!-- .element: class="fragment" -->
+
+--
+
+<!-- .slide: class="list08" -->
+
+### Literatur
+
+<br />
+
+* Heike Neuroth: <b>Bibliothek, Archiv, Museum.</b> In: Fotis Jannidis, Hubertus Kohle, Malte Rehbein (Hg.): Digital Humanities: Eine Einführung. Stuttgart: Metzler 2017, S. 213–222. ([doi:10.1007/978-3-476-05446-3_15](https://doi.org/10.1007/978-3-476-05446-3_15))
+* Stefan Schmunk, Frank Fischer, Mirjam Blümm, Wolfram Horstmann: <b>Interoperabel und partizipativ. Digitale Forschungsinfrastrukturen in den Geisteswissenschaften am Beispiel von DARIAH-DE und DARIAH-EU.</b> In: Digitale Infrastrukturen für die germanistische Forschung. Berlin/Boston: De Gruyter 2018, S. 53–72. ([doi:10.1515/9783110538663-004](https://doi.org/10.1515/9783110538663-004))
+* Tibor Kálmán, Matej Ďurčo, Frank Fischer, Nicolas Larrousse, Claudio Leone, Karlheinz Mörth, Carsten Thiel: <b>A landscape of data – working with digital resources within and beyond DARIAH.</b> In: International Journal of Digital Humanities. Vol. 1, Issue 1 (April 2019). Springer 2019, S. 113–131. ([doi:10.1007/s42803-019-00008-6](https://doi.org/10.1007/s42803-019-00008-6))
+* Jennifer Edmond, Frank Fischer, Laurent Romary, Toma Tasovac: <b>Springing the Floor for a Different Kind of Dance: Building DARIAH as a Twenty-First-Century Research Infrastructure for the Arts and Humanities.</b> In: Jennifer Edmond (Hg.): Digital Technology and the Practices of Humanities Research. Cambridge, UK: Open Book Publishers 2020, S. 207–234. ([doi:10.11647/OBP.0192.09](https://doi.org/10.11647/OBP.0192.09))
+
+--
+
+### Drei-Sphären-Modell
+
+![Mapping DH (Patrick Sahle)](images/Patrick_Sahle_-_Mapping_DH_de.png)<!-- .element: style="width:500px;" -->
+
+Modell (zuerst veröffentlicht 2013, Stand 2021) von Patrick Sahle, Bergische Universität Wuppertal. – <br />DH sind »radically interdisciplinary« (Stephen Ramsay: *Reading Machines*, University of Illinois Press 2011, S. 83).
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Die DH-Community
+
+<br />
+
+- Arbeit im Team statt einzeln
+- Kooperation über Fachgrenzen hinweg
+- building/crafting
+- alternative Lehr-/Lernformate
+  - Hackathons, Workshops, Summer/Winter/Spring Schools
+  - z. B. [Coding da Vinci](https://codingdavinci.de/) (2014–2022), der »Kultur-Hackathon« für offene GLAM-Daten
+
+---
+
+## Forschungsinfrastrukturen
+
+--
+
+### Infrastruktur findet statt …
+
+<br />
+
+… »›unterhalb der Arbeitsebene‹, d.&nbsp;h. ohne dass genau spezifiziert würde, wie die Arbeit zu tun ist oder wie Informationen zu verarbeiten sind«.
+
+Paul N. Edwards et al.: *[Understanding Infrastructure](http://hdl.handle.net/2027.42/49353)* (2007)
+<!-- .element: style="font-size:0.65em;" -->
+
+<br />
+
+»Definieren könnte man Infrastruktur als all das Stabile, das nötig ist, um Fließendes zu ermöglichen.«
+
+Dirk van Laak (Universität Leipzig), [Deutschlandfunk Nova, Hörsaal, 19.10.2019](https://www.deutschlandfunknova.de/beitrag/infrastruktur-die-lebensader-unserer-gesellschaft)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### ›Infrastruktur‹ im Google Ngram Viewer
+
+<iframe data-src="https://books.google.com/ngrams/interactive_chart?content=Infrastruktur&year_start=1800&year_end=2008&corpus=20&smoothing=1&direct_url=t1%3B%2CInfrastruktur%3B%2Cc0" data-preload width="820" height="420" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" style="display:block;margin:0 auto;"></iframe>
+
+--
+
+### ›Forschungsinfrastrukturen‹ <br />im Google Ngram Viewer
+
+<iframe data-src="https://books.google.com/ngrams/interactive_chart?content=Forschungsinfrastrukturen&year_start=1940&year_end=2008&corpus=20&smoothing=1&direct_url=t1%3B%2CForschungsinfrastrukturen%3B%2Cc0" data-preload width="820" height="420" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" style="display:block;margin:0 auto;"></iframe>
+
+--
+
+### Benötigen die <br />Geisteswissenschaften überhaupt <br />Forschungsinfrastrukturen?
+
+--
+
+#### Hier ist eine Infrastruktur:
+
+![Eine random Bibliothek](images/historischer-bibliothekssaal.jpg)<!-- .element: style="width:740px;" -->
+
+(Oberlausitzische Bibliothek der Wissenschaften in Görlitz; Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Historischer_Bibliothekssaal.JPG), CC-BY-SA-3.0)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Der Ursprung der Research Infrastructures <br />in den Geisteswissenschaften
+
+![Library of Alexandria](images/library-of-alexandria.jpg)<!-- .element: style="width:440px;" -->
+
+(Bibliothek von Alexandria; Bildquelle: [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Ancientlibraryalex.jpg))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Bibliotheken und Daten
+
+<br />
+
+![German National Library, pic from Wikimedia Commons](images/dnb-german-library-leipzig-2008.jpg)<!-- .element: style="width:900px;" -->
+Deutsche Nationalbibliothek, Leipzig (Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Deutsche_Buecherei_%28German_Library%29_2008-Feb.jpg))
+<!-- .element: style="font-size:0.65em;" -->
+
+- Katalogdaten als frei verfügbare [Datensets](https://www.dnb.de/DE/Professionell/Metadatendienste/metadatendienste_node.html) (RDF- und andere Formate, mehrere Gigabyte, gepackt)
+
+--
+
+### Anwendungsfall: Romanumfänge
+
+<br />
+
+- Erforschung des Einflusses von Textlängen auf Rezeptions-, Interpretations- und Kanonisierungsprozesse
+- quantitative Beschreibung der literarischen Überlieferung
+- empirische Zuarbeit zu einer entstehenden Theorie des literarischen Textumfangs
+- mehr dazu:
+  - Frank Fischer, Robert Jäschke: *Ein Quantum Literatur. Empirische Daten zu einer Theorie des literarischen Textumfangs.* In: Fotis Jannidis (Hg.): *Digitale Literaturwissenschaft. Germanistische Symposien.* Stuttgart: Metzler 2022 [recte: 2023], S. 777–812. ([doi:10.1007/978-3-476-05886-7_32](https://doi.org/10.1007/978-3-476-05886-7_32))
+
+--
+
+### Entwicklung von Romanumfängen seit 1913
+
+![mittlere Seitenanzahl pro Jahr](images/issued_pages_1913_de.svg)<!-- .element: style="width:640px;" -->
+
+Entwicklung der mittleren Seitenanzahl pro Jahr seit 1913. – Scheint eine Vermutung von Helge Malchow zu bestätigen: »Mit dem Einzug des Computers in den Schreibprozess sind die Romane nach meinem Eindruck im Durchschnitt um zehn Prozent länger geworden.« ([*Die Zeit* 47/2012](http://www.zeit.de/2012/47/Buecher-Internet-Literatur-Verleger/komplettansicht))
+<!-- .element: style="font-size:0.55em;" -->
+
+--
+
+### Realitätsabgleich
+
+![Bücher pro Seitenanzahl](images/pages_200-400_de.svg)<!-- .element: style="width:620px;" -->
+
+Anzahl der Bücher pro Seitenanzahl im Umfangsbereich 200 bis 400 Seiten.
+<br/><br/>
+**Publikumsfrage:** Es gibt einen Peak aller 16 Seiten, weil …
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### GND Explorer
+
+![Deniz Ohde](images/deniz_ohde_gnd-explorer.png)<!-- .element: style="width:640px;" -->
+
+Neues Anzeige- und Recherchetool für die Gemeinsame Normdatei: [explore.gnd.network](https://explore.gnd.network/)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Weiteres Beispiel
+
+<br />
+
+- Lars Langer et al.: The rise and fall of biodiversity in literature: A comprehensive quantification of historical changes in the use of vernacular labels for biological taxa in Western creative literature. In: People and Nature, 3, 1093–1109. ([doi:10.1002/pan3.10256](https://doi.org/10.1002/pan3.10256))
+- Voraussetzungen:
+  - 240.000 englischsprachige biologische Taxonbezeichnungen via Wikidata und [Wikispecies](https://species.wikimedia.org/)
+  - Korpus: 16.000 Bücher von 4.000 Autor\*innen via [Project Gutenberg](https://www.gutenberg.org/)
+
+--
+
+![animals and plants declining](images/animals-and-plants-declining.jpg)
+
+--
+
+### [EcoHack2026](https://www.uni-potsdam.de/de/digital-humanities/aktivitaeten/environmental-digital-humanities-hackathon), Potsdam
+
+![Big Beautiful Network of Non-Human Life in Literature](images/EcoCor-de_EcoHack26_merge-network.jpg)<!-- .element: style="width:500px;" -->
+
+Peer Trilcke, Sören Barkey, Mareike Schumacher, Ingo Börner, Carsten Milling, Daniil Skorinkin, Henny Sluyter-Gäthje, Thomas Haider, Mark Schwindt, Anna Busch, Frank Fischer, Clara Funk, Luca Giovannini, Clara Helmig, Gesine Viebke, Tabeer Khilji: **EcoCor Network Posters.** EcoHack2026, Potsdam. ([doi:10.6084/m9.figshare.32129641](https://doi.org/10.6084/m9.figshare.32129641))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Was können Forschungsinfrastrukturen leisten?
+
+<br />
+
+- Investitionen (auf nationaler und internationaler Ebene) in gemeinsame Forschungskapazitäten, die über das hinausgehen, was einzelne Einrichtungen (oder gar ein Land) unterstützen können
+- drastische Erhöhung der wissenschaftlichen Reichweite
+- langfristige Forschungsfragen angehen, die gebündelte Anstrengungen erfordern
+- Förderung von Zusammenarbeit, Interdisziplinarität, aber auch der Interaktion mit der Industrie
+
+<br /><br />
+
+Vorgetragen von John Womersley auf der [ICRI 2018](https://web.archive.org/web/20180629012706/http://www.icri2018.at/) in Wien, 12. September 2018, Übersetzung von mir.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Forschungsinfrastrukturen für die Geisteswissenschaften?
+
+<br />
+
+»All disciplines have infrastructural needs, for data, for specialist knowledge, for methodological support, for storage and processing power. The arts and humanities need shared research infrastructure as much as any other discipline.«
+
+<br /><br />
+
+([aus einer PARTHENOS-Broschüre für politische Entscheidungsträger](https://web.archive.org/web/20190925061439/http://www.parthenos-project.eu/why-humanities-need-a-research-infrastructure/))
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+## Regionale DH-Initiativen
+
+--
+
+### Göttingen Centre for Digital Humanities (GCDH)
+
+![Heyne-Haus](images/heyne-haus.jpg)<!-- .element: style="width:700px;" -->
+
+(Bildquelle: [uni-goettingen.de](https://www.uni-goettingen.de/de/125323.html))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Die Rolle der DH-Zentren und -Netzwerke
+
+<br />
+
+- »Nicht zuletzt die Digital Humanities haben entscheidend dazu beigetragen, dass wir inzwischen wieder eine einheitlichere Sicht auf ›die Geisteswissenschaften‹ haben.« (Patrick Sahle, [DHdBlog, 18.03.2018](https://dhd-blog.org/?p=9547))
+- Übersetzungsleistung, Ansprechpartner, Integrator, Schlüsselrolle bei Projektfinanzierungen
+- nicht vorderhand an die *Digital* Humanities denken, sondern generell an die *Humanities*
+- Infrastruktur muss finanziert werden: ein DH-Netzwerk oder -Zentrum ist *kein* Projekt
+
+--
+
+### FU Berlin
+
+<br />
+
+- [Ada Lovelace Center for Digital Humanities](https://www.ada.fu-berlin.de/)
+- eingeweiht am 3. Juni 2022
+- benannt nach [Ada Lovelace](https://de.wikipedia.org/wiki/Ada_Lovelace) (1815–1852): »erste Programmiererin der Welt«
+
+---
+
+## Nationale Strukturen
+
+--
+
+### Nationale Forschungsdateninfrastruktur (NFDI)
+
+<br />
+
+»Die Nationale Forschungsdateninfrastruktur (NFDI) hat das Ziel, Daten von Wissenschaft und Forschung zur Verfügung zu stellen, zu vernetzen und somit langfristig nutzbar zu machen. An NFDI wirken Einrichtungen aus diversen Forschungsbereichen mit. Sie arbeiten an Services, Trainingsangeboten für Forschende und Standards für den Umgang mit Daten.« ([Wikipedia](https://de.wikipedia.org/w/index.php?title=Nationale_Forschungsdateninfrastruktur&oldid=266180268))
+<!-- .element: style="text-align:left;" -->
+
+--
+
+### NFDI: Zahlen und Förderung
+
+<br />
+
+- gegründet 2020 als eingetragener Verein (NFDI e.V.), Sitz Karlsruhe
+- Bund-Länder-Finanzierung: bis zu €90 Mio. pro Jahr bis 2028 <br />(90% Bund, 10% Länder)
+- drei Förderrunden: 2020 (9 Konsortien) → 2021 (+10) → 2023 (+8)
+- aktuell: 26 geförderte Konsortien + Base4NFDI (Verbund für gemeinsame Basisdienste)
+
+<br /><br />
+
+(Quellen: [nfdi.de/verein/](https://www.nfdi.de/verein/), [nfdi.de/konsortien/](https://www.nfdi.de/konsortien/))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Vier NFDIs für die <br />Geisteswissenschaften
+
+<br />
+
+- **NFDI4Culture**: materielle & immaterielle Kulturgüter (GLAM!)
+- **NFDI4Objects**: materielle Hinterlassenschaften der Menschheitsgeschichte (Archäologie, Vor-/Frühgeschichte)
+- **NFDI4Memory**: historisch arbeitende Geisteswissenschaften
+- **Text+**: Sprach- und textbasierte Forschungsdateninfrastruktur
+
+--
+
+![Text+-Logo](images/Textplus_logo_RGB.svg)<!-- .element: style="width:240px;" -->
+
+- [Text+](https://text-plus.org/) betreibt u. a. eine Registry für Sprach- und Textressourcen sowie das TextGrid-Repository
+- Anknüpfungspunkte für geisteswissenschaftliche Korpusinfrastrukturen
+  - Metadatenstandards (TEI, [CMDI](https://textplus.hypotheses.org/15401))
+  - persistente Identifikatoren, Normdaten-Verknüpfung über die [GND-Agentur Text+](https://text-plus.org/themen-dokumentation/standardisierung/gnd-agentur/)
+  - Ziel: Auffindbarkeit, Interoperabilität, Nachnutzbarkeit (FAIR-Prinzipien)
+
+--
+
+<!-- .slide: class="list08" -->
+
+![NFDI4Culture-Logo](images/NFDI4Culture_Logo.png)<!-- .element: style="width:420px;" -->
+
+- [nfdi4culture.de](https://nfdi4culture.de/): Forschungsdaten aus Musik, audiovisuellem Erbe, Bau- und Kunstgeschichte, Archäologie u.v.m.
+- Anknüpfungspunkte für Kulturerbe-Infrastrukturen allgemein
+  - [Culture Data Search](https://nfdi4culture.de/services/details/culture-data-search.html): zentraler Zugang zu multimodalen Datensets aus den NFDI4Culture-Forschungsfeldern
+  - [FAIR Check](https://nfdi4culture.de/de/dienste/details/fair-check.html): Qualitätsprüfung eigener Forschungsdaten
+  - Standards & Quality Assurance sowie Ontologies & Terminologies als eigene Serviceangebote
+- eingebunden sind Universitäten, Kunst- und Musikhochschulen, Museen, Archive, Bibliotheken und Einzelforschende
+
+--
+
+### Wie wird man Teil der NFDI?
+
+<br />
+
+- Community-Calls und Task Forces der einzelnen Konsortien
+- Trainingsangebote: NFDI4Culture Academy, DARIAH-Campus, [NFDI-Sections-Roadshows](https://www.nfdi.de/sections-roadshow/)
+- studentische/wissenschaftliche Hilfskraftstellen in Konsortien
+- Berufsbilder: Data Steward, RDM-Spezialist\*in, Research Software Engineer
+
+---
+
+## Internationale Strukturen
+
+--
+
+### DARIAH
+
+<br /><br />
+
+DigitAl Research Infrastructure <br />for the Arts and Humanities
+
+--
+
+### DARIAH-Timeline
+
+<br />
+
+* 2006: DARIAH erscheint auf der ESFRI-Roadmap¹
+* 2008–2011: Vorbereitungsphase
+* 2011–2013: Übergangsphase
+* 2014: DARIAH-ERIC²
+* 2014–2018: Construction-Phase
+* 2019–: Betriebsphase
+
+<br /><br />
+
+¹ ESFRI: Europäisches Strategieforum für Forschungsinfrastrukturen (gegründet 2002)<br />
+² ERIC: Europäisches Forschungsinfrastrukturkonsortium, derzeit gibt es [32 ERICs](https://research-and-innovation.ec.europa.eu/strategy/strategy-research-and-innovation/our-digital-future/european-research-infrastructures/eric/eric-landscape_en)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DARIAH: Mitgliedsstaaten und Kooperationspartner
+
+<br />
+
+**24 Vollmitglieder**
+
+Austria&nbsp;🇦🇹
+Belgium&nbsp;🇧🇪
+Bosnia and Herzegovina&nbsp;🇧🇦
+Bulgaria&nbsp;🇧🇬
+Croatia&nbsp;🇭🇷
+Cyprus&nbsp;🇨🇾
+Czech&nbsp;Republic&nbsp;🇨🇿
+Denmark&nbsp;🇩🇰
+France&nbsp;🇫🇷
+Germany&nbsp;🇩🇪
+Greece&nbsp;🇬🇷
+Ireland&nbsp;🇮🇪
+Italy&nbsp;🇮🇹
+Luxembourg&nbsp;🇱🇺
+Malta&nbsp;🇲🇹
+Netherlands&nbsp;🇳🇱
+Poland&nbsp;🇵🇱
+Portugal&nbsp;🇵🇹
+Serbia&nbsp;🇷🇸
+Slovakia&nbsp;🇸🇰
+Slovenia&nbsp;🇸🇮
+Spain&nbsp;🇪🇸
+Sweden&nbsp;🇸🇪
+Switzerland&nbsp;🇨🇭
+<!-- .element: style="font-size:0.8em;" -->
+
+<br />
+
+**Institutionen aus (noch) nicht-mitgliedstaatlichen Ländern**
+
+Egypt&nbsp;🇪🇬
+Finland&nbsp;🇫🇮
+Hungary&nbsp;🇭🇺
+Iceland&nbsp;🇮🇸
+Latvia&nbsp;🇱🇻
+Lithuania&nbsp;🇱🇹
+Norway&nbsp;🇳🇴
+Romania&nbsp;🇷🇴
+United&nbsp;Kingdom&nbsp;🇬🇧
+United States&nbsp;🇺🇸
+<!-- .element: style="font-size:0.8em;" -->
+
+<br />
+
+(Quelle: [dariah.eu/network/members-and-partners/](https://www.dariah.eu/network/members-and-partners/) · zuletzt trat [im Februar 2026](https://www.dariah.eu/2026/03/04/slovakia-joins-dariah-as-full-member/) die Slowakei bei)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### DARIAH leistet vier Dinge
+
+<br />
+
+* Education and Training
+  * complement traditional training with corresponding material and alternative teaching methods (workshops, summer schools, hackathons, etc.)<!-- .element: style="font-size:0.8em;" -->
+* Foresight and Policy Work
+  * making the voice of the A+H heard in research policy discussions, promote nascent policies to our communities<!-- .element: style="font-size:0.8em;" -->
+* Working Groups
+  * see next slide<!-- .element: style="font-size:0.8em;" -->
+* Social Sciences & Humanities Open Marketplace
+  * enable access to research solutions (tools, services, data, workflows, know-how), also aiming at researchers who don’t regard themselves as<!-- .element: style="font-size:0.8em;" --> *digital* humanists
+
+--
+
+### Derzeit 18 aktive Working Groups
+
+<br />
+
+Library –
+DHwiki –
+ARChitectural HEritage Thesaurus through Integrated digital Procedures and Open data (ARCHETIPO) –
+Multilingual DH –
+Ethics and Legality in the Digital Arts and Humanities (ELDAH) –
+Digital Practices for the Study of Urban Heritage (UDigiSH) –
+Bibliographical Data (BiblioData) –
+Theatralia –
+Research Data Management –
+Artificial Intelligence and Music (AIM) –
+#dariahTeach –
+Digital Numismatics –
+DH Course Registry –
+Visual Media and Interactivity –
+Thesaurus Maintenance –
+Sustainable publishing of (meta)data –
+Women Writers in History –
+Community Engagement
+
+<br />
+
+Komplettübersicht: <br />[dariah.eu/activities/working-groups-list/](https://www.dariah.eu/activities/working-groups-list/)
+
+--
+
+### Einige DARIAH-Services
+
+<br />
+
+* Single Sign-On
+* [DH Course Registry](https://dhcr.clarin-dariah.eu/)
+* [DARIAH-Campus](https://campus.dariah.eu/)
+* [Open Archive HAL](https://hal.archives-ouvertes.fr/)
+* [Geo-Browser](https://geobrowser.de.dariah.eu/)
+* [TextGrid](https://textgrid.de/en/)
+* [Hypotheses](http://hypotheses.org/about-hypotheses)
+* &#35;dariahTeach – [Lehr- und Lern-Plattform](https://teach.dariah.eu/) plus [YouTube-Kanal](https://www.youtube.com/channel/UCScSbG7XjiXbZVgilEp0Pkw)
+* [DARIAH-DE Repository](https://de.dariah.eu/repository) – Geisteswissenschaftliche Forschungsdaten
+* [»Doing Digital Humanities«](https://www.zotero.org/groups/113737/doing_digital_humanities_-_a_dariah_bibliography) – kuratierte DH-Bibliography mit derzeit 1.157 Artikeln
+
+--
+
+Digital Humanities Course Registry
+
+![DH Course Registry](images/dh-course-registry-screenshot.png)<!-- .element: style="width:700px;" -->
+
+[dhcr.clarin-dariah.eu](https://dhcr.clarin-dariah.eu/) – gemeinsames Projekt von CLARIN und DARIAH
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+<!-- .slide: class="list06" -->
+
+### DH-Aktivitäten (TaDiRAH)
+
+![TaDiRAH Browser](images/tadirah-browser.png)<!-- .element: style="width:500px;" -->
+
+- TaDiRAH = Taxonomy of Digital Research Activities in the Humanities ([vocabs.dariah.eu/tadirah/](https://vocabs.dariah.eu/tadirah/))
+- Visualisierung via [tadirah.info](https://tadirah.info/pages/Browser.html) (Luise Borek, Canan Hastik et al.)
+
+--
+
+### Discovery Platforms für digitale Werkzeuge
+
+<br />
+
+- einerseits: [»Directory Paradox«](https://dhdebates.gc.cuny.edu/read/people-practice-power/section/ca87ec4c-23a0-452d-8595-7cfd7e8d6f0c) ([Quinn Daedal](https://quinndaedal.com/about/))
+
+- andererseits:
+  - <s>DiRT Directory</s>
+  - <s>TERESAH</s>
+  - <s>TAPoR</s>
+  - SSH Open Marketplace
+
+--
+
+### SSH Open Marketplace (1/3)
+
+![SSH Open Marketplace](images/ssh-open-marketplace.png)
+
+https://marketplace.sshopencloud.eu/
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### SSH Open Marketplace (2/3)
+
+<br />
+
+- Discovery-Portal für SSH-Ressourcen
+  - Tools & Services (&#62; 2.800)
+  - Trainingsmaterialien (&#62; 900)
+  - Workflows (107)
+  - Datensets (&#62; 1.700)
+  - Publikationen
+
+- Zentrale Konzepte:
+  - Kontextualisierung
+  - Kuratierung
+  - Community
+
+--
+
+### SSH Open Marketplace (3/3)
+
+<br />
+
+- TaDiRAH ist eingebunden
+  - Beispiel-Aktivitäten: [Annotating](https://vocabs.dariah.eu/tadirah/annotating) und [Stylistic Analysis](https://vocabs.dariah.eu/tadirah/stylisticAnalysis)
+  - im Marketplace:
+    - [marketplace.sshopencloud.eu/search?f.activity=Annotating](https://marketplace.sshopencloud.eu/search?f.activity=Annotating)
+    - [marketplace.sshopencloud.eu/search?f.activity=Stylistic+Analysis](https://marketplace.sshopencloud.eu/search?f.activity=Stylistic+Analysis)
+
+---
+
+## Weitere internationale Projekte
+
+--
+
+### Europeana
+
+<br />
+
+- EU-Projekt: [europeana.eu](https://www.europeana.eu/)
+- Webportal mit digitalisierten Sammlungen des Kulturerbes von mehr als 3.000 Institutionen in ganz Europa
+- über 50 Millionen kulturelle und wissenschaftliche Artefakte
+
+--
+
+### Archivportal Europa
+
+<br />
+
+- [archivesportaleurope.net](https://www.archivesportaleurope.net/)
+
+--
+
+### Kunstmuseen/-galerien
+
+<br />
+
+- [»Operation Nachtwache«](https://www.rijksmuseum.nl/en/stories/operation-night-watch) des Rijksmuseums Amsterdam (Digitalisat mit 717&nbsp;Gigapixeln, Größe: 5,6 TB)
+- Waltraud von Pippich: [»Rot rechnen«](http://dx.doi.org/10.17175/sb001_016)
+- 3D-Modellierung von Gebäuden und ganzen Museen (z.&nbsp;B. der [Dresdner Gemäldegalerie Alter Meister in Second Life](https://commons.wikimedia.org/wiki/File:Dresden_-_Zwinger_-_Second_Life.jpg))
+- …
+
+--
+
+### European Open Science Cloud (EOSC)
+
+<br />
+
+- föderiertes, europaweites Ökosystem für Forschungsdaten aus allen Disziplinen
+- kein zentraler Datenspeicher, sondern ein Verbund bestehender Infrastrukturen
+- Ziel: Forschungsdaten, -software und -werkzeuge grenz- und fachübergreifend auffindbar, zugänglich und nachnutzbar machen
+- Governance: dreiseitig zwischen Europäischer Kommission, EOSC Steering Board (Mitgliedsstaaten) und EOSC Association (seit 2020, Forschungscommunity)
+- Meilensteine: EOSC-Erklärung (2017) → EOSC Governance (2018) → EOSC Association (2020) → EOSC EU Node (2024, erstes Produktivsystem von EOSC)
+- Stichwörter: Datenkultur, Open Access, FAIR-Prinzipien, Standards, Datenmanagementpläne, technische Implementierungen, rechtliche Aspekte
+
+<br />(Quellen: [eosc.eu](https://eosc.eu/), [open-science-cloud.ec.europa.eu](https://open-science-cloud.ec.europa.eu/), [digital-strategy.ec.europa.eu/en/policies/open-science-cloud](https://digital-strategy.ec.europa.eu/en/policies/open-science-cloud))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+# G.L.A.M.!
+
+---
+
+## Berufsperspektiven
+
+<br />
+
+- »Digital Humanities: ›Sehr gute Berufschancen‹«: Interview mit Christof Schöch (Prof. für Digital Humanities an der Uni Trier)
+  - »Die Kompetenzen der Digital Humanities sind auf dem Arbeitsmarkt gefragt, […].« ([wila-arbeitsmarkt.de](https://web.archive.org/web/20190717211332/https://www.wila-arbeitsmarkt.de/blog/2019/07/02/digital-humanities-berufschancen/))
+- aktuelle Studie: [»Emerging Job Profiles for DH Graduates«](https://doi.org/10.5281/zenodo.13981098) (CLARIN/DARIAH 2024)
+- DH-Expert\*innen prädestiniert für Altac (Alternative Academic) Careers
+  - [»The Marriage of the Digital Humanities and Alt-Ac Positions«](https://jitp.commons.gc.cuny.edu/the-marriage-of-the-digital-humanities-and-alt-ac-positions/) (cuny.edu)
+- Patrick Sahle: »Digital Humanities als Beruf – Wie wird man ein ›Digital Humanist‹, und was macht man dann eigentlich?« ([badw.de](https://badw.de/fileadmin/pub/akademieAktuell/2016/56/0116_18_Sahle_V04.pdf))
+
+---
+
+### Mögliche Anschlussveranstaltungen: <br />DH-Seminare und -kolloquium im WiSe 2026/27
+
+<br />
+
+- Vorlesung »Einführung in die digitalen Geisteswissenschaften«
+  - <!-- .element: style="font-size:0.7em;" -->Mo 12:00–14:00 c.t.
+- Seminar »Einführung in die künstliche Intelligenz (KI)«
+  - <!-- .element: style="font-size:0.7em;" -->Mo 14:00–16:00 c.t.
+- Seminar »Sappho im Drama: Intertextualität und digitale Methoden« <br />(mit Laura Untner)
+  - <!-- .element: style="font-size:0.7em;" -->Do 10:00–12:00 c.t.
+- Seminar »Die besten Bücher aller Zeiten: Kanonbildung im 21. Jahrhundert«
+  - <!-- .element: style="font-size:0.7em;" -->Do 14:00–16:00 c.t.
+- [Kolloquium »Phänomenologie der Digital Humanities«](https://wikis.fu-berlin.de/display/phaenodh)
+  - <!-- .element: style="font-size:0.7em;" -->Fr 10:00–12:00 c.t. (zweiwöchentlich)
+
+--
+
+Vielen Dank und viel Glück beim Test nächste Woche.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
