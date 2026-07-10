@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1024 1024"
+     width="1024" height="1024"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Digitale Konstellationen literaturwissenschaftlichen Wissens</title>
+  <desc id="desc">Minimalistisches Schwarz-Weiß-Icon: Ein offenes Buch geht in ein semantisches Netzwerk aus Knoten und Verbindungen über.</desc>
+
+  <g fill="none" stroke="#000" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Open book: literary texts / library knowledge -->
+    <path d="M512 824
+             C444 774 356 750 244 750
+             L244 498
+             C356 498 444 524 512 580
+             Z"/>
+    <path d="M512 824
+             C580 774 668 750 780 750
+             L780 498
+             C668 498 580 524 512 580
+             Z"/>
+    <path d="M512 580 L512 824"/>
+
+    <!-- Data spine from book into the semantic network -->
+    <path d="M512 580 L512 424"/>
+
+    <!-- Semantic / linked-data constellation -->
+    <path d="M512 424 L380 338"/>
+    <path d="M512 424 L644 338"/>
+    <path d="M512 424 L512 254"/>
+    <path d="M380 338 L270 246"/>
+    <path d="M380 338 L304 414"/>
+    <path d="M644 338 L754 246"/>
+    <path d="M644 338 L720 414"/>
+    <path d="M512 254 L420 168"/>
+    <path d="M512 254 L604 168"/>
+    <path d="M270 246 L420 168"/>
+    <path d="M754 246 L604 168"/>
+  </g>
+
+  <!-- Nodes: repositories, authority files, corpora, Wikidata broker -->
+  <g stroke="#000" stroke-width="22">
+    <circle cx="512" cy="424" r="46" fill="#fff"/>
+    <rect x="484" y="396" width="56" height="56" rx="8" fill="#000"/>
+
+    <circle cx="380" cy="338" r="25" fill="#fff"/>
+    <circle cx="644" cy="338" r="25" fill="#fff"/>
+    <circle cx="512" cy="254" r="25" fill="#fff"/>
+    <circle cx="270" cy="246" r="25" fill="#fff"/>
+    <circle cx="304" cy="414" r="25" fill="#fff"/>
+    <circle cx="754" cy="246" r="25" fill="#fff"/>
+    <circle cx="720" cy="414" r="25" fill="#fff"/>
+    <circle cx="420" cy="168" r="25" fill="#fff"/>
+    <circle cx="604" cy="168" r="25" fill="#fff"/>
+  </g>
+</svg>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ein literaturwissenschaftliches Semantic Web? Digitale Konstellationen literaturwissenschaftlichen Wissens (FU Berlin, 17. Juli 2026)</title>
+
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
+
+### Ein literaturwissenschaftliches Semantic Web?
+#### Digitale Konstellationen <br />literaturwissenschaftlichen Wissens
+
+![Icon](images/digitale-konstellationen-icon.svg)<!-- .element: style="height:100px;" -->
+
+Laura Untner · Frank Fischer
+<!-- .element: style="font-size:0.85em;" -->
+
+<br />Freie Universität Berlin
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+Presentation URL: **[lehkost.github.io/slides/2026-07-14-dh-koll/](https://lehkost.github.io/slides/2026-07-14-dh-koll/index.html)**
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />**[DH-Kolloquium](https://wikis.fu-berlin.de/display/phaenodh)** &nbsp;·&nbsp; FU Berlin &nbsp;·&nbsp; Di, 14. Juli 2026, 16:15
+<!-- .element: style="font-size:0.85em;" -->
+
+--
+
+### Inhaltsverzeichnis
+
+<br />
+
+1. Metadata Turn in der Literaturwissenschaft
+2. Konzeptueller Rahmen: Ein Fluss mit Ufern
+3. Wikidata als Broker
+4. Das Semantic Literary Web am Beispiel Sappho
+5. Ausblick und didaktisches Mandat
+6. Diskussionsimpulse
+
+--
+
+Der Witz des Semantic Web sind föderierte Querys.
+
+<br />
+
+Diese kommen allerdings in der Literaturwissenschaft <br />[bis auf Ausnahmen](https://mimotext.github.io/lod-lithist/federated-queries.html) kaum für Forschungszwecke zum Einsatz.
+
+<!-- .element: class="fragment" -->
+
+<br />
+
+Über digitale Konstellationen literaturwissenschaftlichen Wissens …
+
+<!-- .element: class="fragment" -->
+
+---
+
+### 1. Metadata Turn in der Literaturwissenschaft
+
+--
+
+»When Franco Moretti first coined the term ›distant reading‹ in 2000, he used it with a meaning reminiscent of the compilatory origins of the concept, similar to ›second-hand reading‹: using research literature, <u>metadata or other short-cuts like titles and subtitles</u> instead of reading the full text.« ([Schöch, Eder et al. 2020](https://dh2020.adho.org/wp-content/uploads/2020/07/521_FoundationsofDistantReadingHistoricalRootsConceptualDevelopmentandTheoreticalAssumptionsaroundComputationalApproachestoLiteraryTexts.html))
+
+--
+
+Metadata turn in der Praxis: die Korpusbalancierung in ELTeC.
+
+<br />
+
+Die literaturhistorische Aussage hängt davon ab, wie multilinguale, transkulturelle Korpora beschrieben, balanciert und vergleichbar <br />gemacht werden. ([Schöch, Patras et al. 2021](https://doi.org/10.3828/mlo.v0i0.364))
+
+--
+
+»data-rich literary history« ([Bode 2017](https://doi.org/10.1215/00267929-3699787))
+
+<br />
+
+Literarische Systeme werden nur unzureichend verstanden, wenn man die Komplexität des dokumentarischen Records und der digitalen Wissensinfrastruktur vernachlässigt; Bode schlägt die *scholarly edition* als neues wissenschaftliches Objekt vor.
+
+<br />
+
+Betonung der Rolle von TEI und besonders des `<teiHeader>`.
+
+--
+
+FAIR-Prinzipien: setzen reichhaltige, strukturierte Metadaten voraus.
+
+--
+
+Eine vielfach praktisch erprobte Strategie: vorhandene Metadaten zu Korpora werden angereichert und semantisch verankert mithilfe von Metadaten-Brokern wie Wikidata ([Rohrbacher, Schrittesser 2026](https://doi.org/10.5334/johd.483)).
+
+--
+
+#### (Drei) Typen der literaturwissenschaftlichen Arbeit mit Metadaten
+
+<br />
+
+1. large-scale Rückgriff auf maschinenlesbare bibliografische Daten: im buchwissenschaftlich-literatursoziologischen Kontext: Häntzschel, Hummel, Zedler 2009; »Bibliographic Data Science« (Lahti et al. 2019), mit genuin literaturwissenschaftlichem Hintergrund: Bode 2012
+2. literaturwissenschaftlich relevante extrahierte Daten, die nicht Teil klassischer bibliografischer Daten sind: Fischer/Jäschke 2017/2023, iberz.org, Handlungsorte in der Einakterdatenbank, Sappho Digital, generell Wikibase-Instanzen wie FactGrid oder [ALMEDA (African Literary Metadata)](https://almedaresearch.org/)
+<!-- .element: class="fragment" -->
+3. errechnete Metadaten, die mit einer reproduzierbaren Methode »in die Welt« kommen: errechnete Topics und Sentimentdiagramme in MiMoTextBase, Netzwerkwerte in DraCor; darauf zielt auch das Konzept der Programmable Corpora; diese Daten haben vor allem auch komparatistisches Potenzial, da sie sprachunabhängig Vergleichbarkeiten herstellen, vgl. auch »Battle of the Plays«
+<!-- .element: class="fragment" -->
+
+--
+
+#### Praxis der semantischen Modellierung von Metadaten
+
+<br />
+
+- Ontologien wie INTRO oder GOLEM, Speicherung in Triplestores als Linked Open Data
+- Broker-Rolle von Wikidata, das pro Item Statements <u>und Identifiers</u> sammelt, letztere sind die derzeit wichtigste Metadatenbrücke, vgl. [Zhao 2022](https://doi.org/10.1093/llc/fqac083))
+
+--
+
+#### Zwischenfazit
+
+<br />
+
+literaturwissenscahftlicher Metadata Turn 🤝 Semantic-Web-Technologien
+
+---
+
+### 2. Konzeptueller Rahmen: Ein Fluss mit Ufern
+
+--
+
+### Semantic Web
+
+<br />
+
+- web of data ↔ web of documents
+- RDF: Tripel (Subjekt – Prädikat – Objekt) → Graphen
+- Kohärenz durch geteilte Praktiken, nicht durch ›Wahrheit‹
+- ›Linked (Open) Data‹ statt »Giant Global Graph«
+
+--
+
+<!-- .slide: data-background-color="white" -->
+
+![LOD cup](images/lod-cup.jpg)
+
+<br />
+
+(Bildquelle: https://www.w3.org/DesignIssues/LinkedData.html)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Metadata turn trifft Semantic Web
+
+<br />
+
+- Linked Data in den DH: GLAM und in Digital Scholarly Editions
+- Metadaten bisher primär bibliothekarisch-katalogisierend
+- neu: Konvergenz mit Semantic Web-Technologien → epistemisch aufgeladene, interoperable Strukturen
+
+--
+
+### Ein Fluss mit Ufern
+
+<br />
+
+- Volltexte und ML/LLMs = Strömung
+- formale Metadaten = Ufer
+- Ergänzung, nicht Ersatz von Interpretation und/oder distant reading
+- Modellierung als epistemische Praxis
+
+---
+
+### 3. Wikidata als Broker
+
+--
+
+Angesichts der fragmentierten Infrastruktur hat sich Wikidata als pragmatischer Anker erwiesen (vgl. die Nutzungsszenarien in [Zhao 2022](https://doi.org/10.1093/llc/fqac083)).
+
+--
+
+Wikidata unterstützt von vornherein Multilingualität, <br />die Modellierung ist im Fluss.
+
+<br />
+
+Insofern wichtig, weil die von uns an dieser Stelle genannten Beispiele vor allem aus Kontexten des globalen Nordens stammen, literaturwissenschaftliche Daten aus dem globalen Süden werden etwa in der Wikibase-Instanz von [ALMEDA](https://almedaresearch.org/) gesammelt. Das unterstreicht die Rolle von Wikibase bzw. [Wikibase.Cloud](https://www.wikibase.cloud/) (»Your own Wikibase in five minutes: Simple & Secure«).
+
+<br />
+
+Trotzdem hat Wikidata Grenzen: kann keine literaturtheoretisch fundierte Ontologie bieten, ist uneinheitlich modelliert, Kanon-Bias.
+
+--
+
+### Beispiele für Anreicherung via Wikidata
+
+<br />
+
+- DraCor (zur Illustration: Lebensdaten & P18, aber auch für Sitelinks und als Anker für historische und mythologische Figuren)
+- Canon Shelf (Listen von »best novels/books of all time«), Adaption des Konzepts »Collections as Data« aus dem Cultural-Heritage-Sektor
+- [Carl-Maria-von-Weber-Gesamtausgabe (WeGA)](https://weber-gesamtausgabe.de/)
+- [Korrespondenzen der Frühromantik](https://briefe-der-romantik.de/)
+- Anreicherung hilfreich für Wikipedia-spezifische Metriken: Sitelinks und QRank (vgl. [Fischer et al. 2023](https://doi.org/10.22148/001c.74598), Poggel et al. 2026)
+
+---
+
+### 4. Das Semantic Literary Web <br />am Beispiel Sappho
+
+--
+
+### Sappho (Q17892): reiche Daten, fragiles Wissen
+
+<br />
+
+- 10 Geburtsdaten an 3 Orten, 5 Sterbedaten
+- Suizid-Legende (Ursprung: attische Komödie)
+- Ehemann Kerkylas von Andros (Parodie)
+- Wikidata-Item als Dokument der Rezeptionsgeschichte
+
+--
+
+### Traversal von der QID aus
+
+<br />
+
+- BNF: frz. Kontext Literaturgeschichte
+- DBpedia: Interwiki-Hub
+- MiMoTextBase: leer
+- Getty: kunsthistorische Verortung
+- Sappho Digital: dt. Rezeption
+- DraCor: REST-API statt SPARQL
+
+--
+
+### Fazit
+
+<br />
+
+- eine QID → mehrere epistemische Register
+- Wikidata = Broker
+- verteilte, navigierbare Konstellation
+
+--
+
+### Literarische Werke
+
+<br />
+
+- ausgehend von der Werk-Q-ID: welche Informationen sind in verlinkten Projekten zu erwarten?
+- WEMI-Modellierung: ›Werke‹ sind in den verschiedenen Projekten nicht alle auf derselben Ebene angesiedelt (ist das ein Problem?)
+
+--
+
+(Placeholder)
+
+---
+
+### 5. Ausblick und didaktisches Mandat
+
+--
+
+### Keine Revolution, sondern Neuausrichtung
+
+<br />
+
+- visionäre Verheißung (voll maschinenverstehbares Web) nicht eingelöst
+- stattdessen: pragmatische Ökologie aus Linked Data, Vokabularien, Ontologien
+- metadata turn: isolierte Korpora → Relationen; Schemata → Identifikatoren; implizit → explizit
+
+--
+
+### Verteilte Ökologie
+
+<br />
+
+- verteilte, geschichtete Ökologie partieller Modelle
+- Ontologien formalisieren Perspektiven, spiegeln keine Realität
+- Überlappung/Widerspruch = Pluralität, nicht Scheitern
+- Voraussetzung: geteilte Identifikatoren, Alignment
+
+--
+
+### TEI als Vergleich
+
+<br />
+
+- De-facto-Standard, aber Idiosynkrasien
+- Interoperabilität = Verhandlung, nicht Uniformität
+
+--
+
+### Fragilität und semantic literacy
+
+<br />
+
+- Ufer brauchen Pflege: institutionelle Verantwortung, Stewardship
+- semantic literacy als wissenschaftliche Kompetenz
+- formale Modelle lesen/bewerten wie Texte
+
+---
+
+### 6. Diskussionsimpulse
+
+--
+
+### Begrifflichkeit
+
+<br />
+
+- die hier versuchte Lagebeschreibung mündet nicht in einen neuen praxeologischen Begriff (wie Distant Reading) oder eine Subdisziplin (wie Computational Literary Studies)
+- literaturwissenschaftliche [»Landscape of Data«](https://doi.org/10.1007/s42803-019-00008-6), »constellating literary studies«
+- »literary-studies archipelago«: um die Land-Gewässer-Metaphorik aufzugreifen bietet sich ein Rekurs auf den Archipel-Begriff bei Édouard Glissant an (»Poétique de la Relation«, 1990)
+- der Begriff ist dort postkolonialistisch motiviert: die Inseln des Archipels sind voneinander getrennt, gleichzeitig aber durch das Meer verbunden, bei Glissant eine Metapher für Koexistenz, Kooperation und Vielfalt ohne Machtzentrum
+
+--
+
+### Fragen
+
+<br />
+
+- infrastrukturelle Fragen: Wer soll sich für die Ufer zuständig fühlen? Projekte, Bibliotheken, Einzelpersonen?
+- wie vermeidet man, dass die Infrastruktur verwaist (vgl. [Froehlich 2026](https://doi.org/10.1080/24701475.2026.2696719), die dies für den Bereich cultural heritage eindrücklich beschreibt)
+- gibt es überhaupt eine kritische Masse, um von einem metadata turn in der Literaturwissenschaft zu sprechen?
+- daran anschließend, gibt es eine kritische Masse für die hier skizzierte literaturwissenschaftliche Datenlandschaft?
+
+---
+
+### Vielen Dank.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        backgroundTransition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
