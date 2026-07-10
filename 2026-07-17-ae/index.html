@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Entwicklung und Nutzung der Programmierschnittstelle (API) der Hannah-Arendt-Edition (FU Berlin, 17. Juli 2026)</title>
+
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
+
+### Entwicklung und Nutzung der Programmierschnittstelle (API) <br />der Hannah-Arendt-Edition
+
+<br />
+
+Marc Altmann · Frank Fischer<!-- .element: style="font-size:0.85em;" -->
+
+<br />Freie Universität Berlin
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />
+
+Presentation URL: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.github.io/slides/2026-07-17-ae/index.html)**
+<!-- .element: style="font-size:0.7em;" -->
+
+<br />**[Arendt-Edition](https://www.arendt-research-center.de/)** &nbsp;·&nbsp; FU Berlin &nbsp;·&nbsp; Fr, 17. Juli 2026, 14:15
+<!-- .element: style="font-size:0.85em;" -->
+
+--
+
+### Inhalt
+
+<br />
+
+1. [Einführung](#1)
+2. [Die API der Arendt-Edition](#2)
+3. [Perspektiven: »Programmable Corpora«](#3)
+4. [What’s next](#4)
+
+---
+
+## 1
+### Einführung
+
+--
+
+- Unsere Rolle im Projekt?
+- Drei Teilaspekte unseres Arbeitspakets
+
+---
+
+## 2
+### Die API der Arendt-Edition
+
+--
+
+- TEI-XML, darin sind Annotationen (Beispielsatz zeigen)
+- Was sind Normdaten? (GND, Wikidata)
+- Beispiel: https://hannah-arendt-edition.net/index/persons/person?id=ae3807426&lang=de
+- Was ist eine API?
+- die API der AE
+  - seit letzter Woche Beta-Version (V0.1.0)
+  - die Endpoints sind vorerst auf die Abfrage von Daten zu Personen und Textressourcen beschränkt
+  - für Textressourcen ist jetzt die Rückgabe der TEI-XML-Quelle und die Extraktion von Plain Text implementiert
+  - https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html
+
+--
+
+### Swagger-Interface der API
+
+![API der AE](images/api-ae.png)
+
+([Zugang zur API 0.1.0](https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html), nur über Uni-VPN.)
+
+--
+
+### Stand der API-Entwicklung
+
+<br />
+
+- zu Demonstrationszwecken sind derzeit Endpunkte zu erwähnten Personen und den TEI-kodierten Texten angelegt
+- weitere Funktionen mit interessanten Forschungsperspektiven müssen wir gemeinsam entwickeln
+- auf den folgenden Folien finden sich zwei beispielhafte Visualisierungen, die demontrieren, wir wir dank Normdatenmapping von Entitäten wie Personen, Orten und Werken Informationen nutzen können, die von der AE selbst gar nicht ausgezeichnet werden
+
+--
+
+### Visualisierungsdemo 1
+
+![edition mentions birth place map](images/edition-mentions-birth-place-map.svg)<!-- .element: style="height:480px;" -->
+
+(Geburtsorte aller Personen, über die derzeit Informationen im API-Output vorliegen. Vgl. auch Maximilian Schich et al.: A Network Framework of Cultural History. In: *Science*. Vol. 345, Issue 6196 (2014), S. 558–562. ([doi:10.1126/science.1240064](https://doi.org/10.1126/science.1240064)))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Visualisierungsdemo 2
+
+![edition mentions gender](images/edition-mentions-gender.svg)<!-- .element: style="height:480px;" -->
+
+(Genderangaben laut Wikidata.)
+<!-- .element: style="font-size:0.65em;" -->
+
+---
+
+## 3
+### Perspektiven: »Programmable Corpora«
+
+--
+
+- Bsp. DraCor, Einfluss einer API auf die Forschungsaktivität
+
+--
+
+### DraCor-basierte Forschung
+
+<br />
+
+- seit Anfang 2024 wurden über 100 DraCor-basierte Forschungsarbeiten veröffentlicht (inkl. Monografien)
+- siehe [dracor.org/doc/research](https://dev.dracor.org/doc/research)
+
+--
+
+- Nutzung von APIs in DSE
+  - Bleier, Roman and Klug, Helmut W. (2018). Discussing Interfaces in Digital Scholarly Editing. In: Digital Scholarly Editions as Interfaces, V-XV. Norderstedt: BoD. ISBN 978-3-7481-0925-9 [Open Access] – https://kups.ub.uni-koeln.de/9094/
+  - Nutzung der API-Funktionen über die Präsentationsschicht hinaus
+  - wer hat das Primat bei DSE: GUI oder API?
+  - API von DSE bisher nur selten über die GUI hinaus, für Forschungsfragen, genutzt
+
+---
+
+## 4
+### What’s next
+
+--
+
+- es geht nicht um Quantifizierungen (vgl. Zitat von Tomashevsky)
+- kann sich die Perspektive des Lesens durch API-Zugänge ändern?
+- Was wären interessante Fragestellungen, für die die API entsprechende Daten herausgeben könnte?
+- Jupyter Notebooks, Open Educational Resource, die mit der API vertraut macht, um eigene digitale Forschungsszenarien zu entwickeln
+- [Beispiel eines Jupyter Notebooks](https://quadriga-dk.github.io/Text-Fallstudie-1/ocr/ocr_jupyter_intro.html) innerhalb einer OER
+
+---
+
+Vielen Dank.
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        backgroundTransition: 'fade',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
