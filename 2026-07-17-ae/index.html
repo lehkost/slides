@@ -36,7 +36,7 @@ Marc Altmann · Frank Fischer<!-- .element: style="font-size:0.85em;" -->
 Präsentation: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.github.io/slides/2026-07-17-ae/index.html)**
 <!-- .element: style="font-size:0.7em;" -->
 
-<br />**[Arendt-Edition](https://www.arendt-research-center.de/)** &nbsp;·&nbsp; FU Berlin &nbsp;·&nbsp; Fr, 17. Juli 2026, 14:15
+<br />**[Arendt-Edition](https://www.arendt-research-center.de/)** &nbsp;·&nbsp; FU Berlin &nbsp;·&nbsp; Fr, 17. Juli 2026, 14:15 Uhr
 <!-- .element: style="font-size:0.85em;" -->
 
 --
@@ -57,8 +57,61 @@ Präsentation: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.githu
 
 --
 
-- Unsere Rolle im Projekt?
-- Drei Teilaspekte unseres Arbeitspakets
+### Unsere Aufgabe innerhalb der dritten Förderphase (2026–2029)
+
+<br />
+
+Das Arbeitspaket XIII (Datenschnittstellen für die Digital Humanities) ermöglicht die konkrete Nachnutzung der semantisch ausgezeichneten <br />Daten der Arendt-Edition über eine gut dokumentierte Schnittstelle.
+
+--
+
+### Drei Teilaspekte des Arbeitspakets XIII
+
+<br />
+
+1. Entwicklung eines interaktiven Tutorials zur Nutzung der externen Datenschnittstelle (API), die im Arbeitspaket XII bereits technisch dokumentiert wird;
+2. Umsetzung konkreter Analysen in Jupyter Notebooks (»papers with code«), mit einem Fokus auf erläuternden Kommentaren, sodass der verwendete Programmcode leicht angepasst und für individuelle Anwendungen eingesetzt werden kann;
+<!-- .element: class="fragment" -->
+3. Erstellung einer Fallstudie als OER (Open Educational Resource), die sich am Kompetenzframework des Berlin-Brandenburgischen Datenkompetenzzentrums [QUADRIGA](https://www.quadriga-dk.de/).
+<!-- .element: class="fragment" -->
+
+--
+
+<!-- .slide: data-background-color="black" -->
+
+![Jupiter](images/jupiter-wm-commons.jpg)<!-- .element: style="height:570px;" -->
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Jupiter_OPAL_2024_(cropped).png))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Was sind Jupyter Notebooks?
+
+<br />
+
+- interaktive Notebooks, in deren Fließtext direkt Code ausgeführt werden kann
+  - Beispiel: [Kapitel 4.3](https://quadriga-dk.github.io/Text-Fallstudie-1/ocr/ocr_jupyter_intro.html) der QUADRIGA-Fallstudie »Quantitative Analyse der Medienwellen der Spanischen Grippe (1918/19)«
+
+--
+
+### Jupyter Notebooks als Zukunft <br />wissenschaftlichen Publizierens
+
+<br />
+
+* James Somers: The Scientific Paper Is Obsolete. Here’s what’s next. In: The Atlantic, 5. April 2018. (**[URL](https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/)**)
+
+--
+
+### Eine Vorbemerkung zum »epistemischen <br />Ding« der Digital Humanities
+
+<br />
+
+- Forschung richtet sich nie auf ›natürliche Objekte‹, sondern auf ›epistemische Dinge‹
+- das sind »Dinge, denen die Anstrengung des Wissens gilt« ([Rheinberger 2001](https://www.wallstein-verlag.de/9783892444541-experimentalsysteme-und-epistemische-dinge.html), S. 24)
+- sie entstehen erst in einem spezifischen Repräsentationsraum, eingebettet in einen Kontext aus Praktiken, Standards und Werkzeugen
+- die API als Teil des Repräsentationsraums entscheidet mit darüber, was überhaupt zum epistemischen Ding werden und wie es befragt werden kann; jede Modellierung ist zugleich Ermöglichung und Ausschluss
+- die Jupyter Notebooks machen den Übergang vom Text zum Datum sicht- und nachvollziehbar, damit auch kritisierbar (vgl. [Trilcke/Fischer 2018](https://doi.org/10.17175/sb003_003))
 
 ---
 
@@ -69,90 +122,100 @@ Präsentation: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.githu
 
 ### Was ist TEI-XML?
 
+<br />
+
 - [Text Encoding Initiative](https://tei-c.org/) (seit 1987): Kodierung von Texten inkl. struktureller und semantischer Informationen
 - XML-Standard (seit 1998): lesbar von Menschen und Computern, Metastandard für verschiedene Formate und Auszeichnungssprachen
-- Es können individuelle Schemas definiert werden: z.B. für
-Bücher, Gedichte, Theaterstücke, Wörterbücher
-- Bei Hannah Arendt die Grundlage für die Webapplikation und die API der Digitalen Edition
-
-<br />
-<br />
+- es können individuelle Schemas definiert werden: z.&nbsp;B. für Bücher, Gedichte, Theaterstücke, Wörterbücher
+- beim Arendt-Projekt die Grundlage für die Webapplikation und die API der digitalen Edition
 
 --
 
-### Ausschnitt TEI-XML Varnhagen-Text
+### Ausschnitt der TEI-XML-Kodierung <br />des Varnhagen-Texts
 
-
-    <div type="chapter" n="Hinein in die Welt">
-        <head type="mainHeading">
-            Hinein in die Welt
-            <lb>1795-1799
+```xml
+<div type="chapter" n="Hinein in die Welt">
+    <head type="mainHeading">
+        Hinein in die Welt
+        <lb>1795-1799
+    </head>
+    <div type="subChapter" n="I. Durch Heirat">
+        <head type="subHeading">
+            I. Durch Heirat
         </head>
-        <div type="subChapter" n="I. Durch Heirat">
-            <head type="subHeading">
-                I. Durch Heirat
-            </head>
-            <p>
-                Im Winter des Jahres 1795 sieht
-                <name ref="#ae3807426" type="person">Rahel</name>
-                aus ihrer Theaterloge den Grafen
-                <name ref="#ae7149345" type="person">Karl von Finckenstein</name>.
-                ...
-            </p>
+        <p>
+            Im Winter des Jahres 1795 sieht
+            <name ref="#ae3807426" type="person">Rahel</name>
+            aus ihrer Theaterloge den Grafen
+            <name ref="#ae7149345" type="person">Karl von Finckenstein</name>.
             ...
-        </div>
+        </p>
         ...
     </div>
+    ...
+</div>
+```
 
+<br />
 
-Hierarchische Struktur, Kodierung von strukturellen und semantischen Informationen
+Hierarchische Struktur, Kodierung von strukturellen und semantischen Informationen.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
-### Darstellung Digitale Edition
+### Darstellung in der digitalen Edition
+
+<br />
 
 ![Text Digitale Edition](images/varnhagen-ausschnitt.png)
 
+<br />
+
 Mit TEI-XML werden die Kapitelüberschriften und der Text formatiert.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
-### Personenregister Digitale Edition
+### Personenregister der digitalen Edition
 
-![Personenregister Digitale Edition](images/personenregister.png)
+![Personenregister der digitalen Edition](images/personenregister.png)<!-- .element: style="height:480px;" -->
 
-Mit TEI-XML wird das Personenregister generiert.
+Auf Basis des TEI-XML wird das Personenregister generiert.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Was sind Normdaten?
 
+<br />
+
 - [Gemeinsame Normdatei (GND)](https://gnd.network/)
 - [Wikidata](https://www.wikidata.org/)
-- Beispiel: https://hannah-arendt-edition.net/index/persons/person?id=ae3807426&lang=de
+- Beispiel: [hannah-arendt-edition.net/index/persons/person?id=ae3807426&lang=de](https://hannah-arendt-edition.net/index/persons/person?id=ae3807426&lang=de)
 
 --
 
 ### Was ist eine API?
 
-- Die Benutzerschnittstelle (User Interface) einer Webanwendung
-hat Seiten, Text, Links, Tabellen, Formulare, Buttons usw.
+<br />
+
+- die Benutzerschnittstelle (User Interface) einer Webanwendung hat Seiten, Text, Links, Tabellen, Formulare, Buttons usw.
 - Sprache: HTML, Software: Webbrowser (Firefox, Chrome)
-- Eine API (wörtlich *Schnittstelle zur Programmierung von Anwendungen)*
-hat Endpunkte/URLs, Argumente, Rückgabewerte, Fehlercodes usw.
-- Sprache: JSON oder XML nach dem Prinzip Anfrage -> (Daten-)Antwort
-- Software: Python- oder R-Skripte, Juypter-Notebooks oder andere Server wie z.B.
-Metadaten-Aggregatoren
+- eine API (wörtlich *Schnittstelle zur Programmierung von Anwendungen)* hat Endpunkte/URLs, Argumente, Rückgabewerte, Fehlercodes usw.
+- Sprache: JSON oder XML nach dem Prinzip Anfrage → (Daten-)Antwort
+- Software: Python- oder R-Skripte, Juypter-Notebooks oder andere Server wie z.&nbsp;B. Metadaten-Aggregatoren
 - User: Entwickler und Digital Humanists
 
 --
 
 ### Die API der Arendt-Edition
 
-- seit letzter Woche Beta-Version (V0.1.0)
+<br />
+
+- seit letzter Woche Beta-Version (Version 0.1.0)
 - die Endpunkte sind vorerst auf die Abfrage von Daten zu Personen und Textressourcen beschränkt
 - für Textressourcen ist jetzt die Rückgabe der TEI-XML-Quelle und die Extraktion von Plain Text implementiert
-- https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html
+- [test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html](https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html)
 
 --
 
@@ -192,8 +255,7 @@ Geburtsorte aller Personen, über die derzeit Informationen im API-Output vorlie
 
 ![edition mentions gender](images/edition-mentions-gender.svg)<!-- .element: style="height:480px;" -->
 
-Genderangaben laut Wikidata. Für 20% der Personen („unknown“) haben wir im Moment noch keine
-Normdatenverknüpfungen.
+Genderangaben laut Wikidata. Für 20% der Personen (»unknown«) haben wir im Moment noch keine Normdatenverknüpfungen.
 <!-- .element: style="font-size:0.65em;" -->
 
 ---
