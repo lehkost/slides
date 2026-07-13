@@ -24,14 +24,20 @@
 
 ### Entwicklung und Nutzung der Programmierschnittstelle (API) <br />der Hannah-Arendt-Edition
 
-<br />
+<br /><br />
 
-Marc Altmann · Frank Fischer<!-- .element: style="font-size:0.85em;" -->
+<p style="display:flex;justify-content:center;align-items:center;gap:0.35em;font-size:0.85em;margin:0;">
+  <span>Marc Altmann</span>
+  <a href="https://orcid.org/0009-0007-3464-046X" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD Marc Altmann" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+  <span>&nbsp;·&nbsp;</span>
+  <span>Frank Fischer</span>
+  <a href="https://orcid.org/0000-0003-2419-6629" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD Frank Fischer" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+</p>
 
 <br />Freie Universität Berlin
 <!-- .element: style="font-size:0.7em;" -->
 
-<br />
+<br /><br />
 
 Präsentation: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.github.io/slides/2026-07-17-ae/index.html)**
 <!-- .element: style="font-size:0.7em;" -->
@@ -47,8 +53,8 @@ Präsentation: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.githu
 
 1. [Einführung](#1)
 2. [Die API der Arendt-Edition](#2)
-3. [Perspektiven: »Programmable Corpora«](#3)
-4. [What’s next](#4)
+3. [»Programmable Corpora«](#3)
+4. [Perspektiven](#4)
 
 ---
 
@@ -131,7 +137,9 @@ Das Arbeitspaket XIII (Datenschnittstellen für die Digital Humanities) ermögli
 
 --
 
-### Ausschnitt der TEI-XML-Kodierung <br />des Varnhagen-Texts
+#### Ausschnitt der TEI-XML-Kodierung des Varnhagen-Texts
+
+<br />
 
 ```xml
 <div type="chapter" n="Hinein in die Welt">
@@ -167,7 +175,7 @@ Hierarchische Struktur, Kodierung von strukturellen und semantischen Information
 
 <br />
 
-![Text Digitale Edition](images/varnhagen-ausschnitt.png)
+![Text Digitale Edition](images/varnhagen-ausschnitt.png)<!-- .element: style="height:320px;" -->
 
 <br />
 
@@ -215,20 +223,19 @@ Auf Basis des TEI-XML wird das Personenregister generiert.
 - seit letzter Woche Beta-Version (Version 0.1.0)
 - die Endpunkte sind vorerst auf die Abfrage von Daten zu Personen und Textressourcen beschränkt
 - für Textressourcen ist jetzt die Rückgabe der TEI-XML-Quelle und die Extraktion von Plain Text implementiert
-- [test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html](https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html)
 
 --
 
 ### Web-Interface der API
 
-![API der AE](images/api-ae.png)
+<br />
 
-([Zugang zur API 0.1.0](https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html), nur über Uni-VPN.)
+![API der AE](images/api-ae.png)<!-- .element: style="height:380px;" -->
+
+<br />
+
+[test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html](https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html) (derzeit nur über Uni-VPN) → **Live-Demo**
 <!-- .element: style="font-size:0.65em;" -->
-
---
-
-### Live-Demo
 
 --
 
@@ -238,64 +245,127 @@ Auf Basis des TEI-XML wird das Personenregister generiert.
 
 - zu Demonstrationszwecken sind derzeit Endpunkte zu erwähnten Personen und den TEI-kodierten Texten angelegt
 - weitere Funktionen mit interessanten Forschungsperspektiven müssen wir gemeinsam entwickeln
-- auf den folgenden Folien finden sich zwei beispielhafte Visualisierungen, die demonstrieren, wir wir dank Normdatenmapping von Entitäten wie Personen, Orten und Werken Informationen nutzen können, die von der AE selbst gar nicht ausgezeichnet werden
+- auf den folgenden Folien finden sich zwei beispielhafte Visualisierungen, die demonstrieren, wie wir dank Normdatenmapping von Entitäten wie Personen, Orten und Werken Informationen nutzen können, die von der AE selbst gar nicht ausgezeichnet werden
 
 --
 
 ### Visualisierungsdemo 1
 
-![edition mentions birth place map](images/edition-mentions-birth-place-map.svg)<!-- .element: style="height:480px;" -->
+![Geburtsorte aller erfassten Personen](images/edition-mentions-birth-place-map.svg)<!-- .element: style="height:420px;" -->
 
-Geburtsorte aller Personen, über die derzeit Informationen im API-Output vorliegen. Vgl. auch Maximilian Schich et al.: A Network Framework of Cultural History. In: *Science*. Vol. 345, Issue 6196 (2014), S. 558–562. ([doi:10.1126/science.1240064](https://doi.org/10.1126/science.1240064))
+Geburtsorte aller Personen, über die derzeit Informationen im API-Output vorliegen. <br />Vgl. auch Maximilian Schich et al.: A Network Framework of Cultural History. <br />In: *Science*. Vol. 345, Issue 6196 (2014), S. 558–562. ([doi:10.1126/science.1240064](https://doi.org/10.1126/science.1240064))
 <!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Visualisierungsdemo 2
 
-![edition mentions gender](images/edition-mentions-gender.svg)<!-- .element: style="height:480px;" -->
+![Genderangaben laut Wikidata](images/edition-mentions-gender.svg)<!-- .element: style="height:420px;" -->
 
-Genderangaben laut Wikidata. Für 20% der Personen (»unknown«) haben wir im Moment noch keine Normdatenverknüpfungen.
+Genderangaben laut Wikidata. Für 20% der Personen (»unknown«) <br />haben wir im Moment noch keine Normdatenverknüpfungen.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Quantifizierung nicht als Selbstzweck
+
+<br />
+
+»Man darf nicht vergessen, dass auch bei einer korrekt durchgeführten Zählung als Ergebnis eine Zahl entsteht, die nur die Gebräuchlichkeit beziehungsweise Häufigkeit des Phänomens kennzeichnet, keineswegs aber seine Qualität.«
+
+<br />
+
+Boris V. Tomaševskij: Problema stichotvornogo ritma. In: Literaturnaja mysl’. Kn. II. <br/>Petrograd: Mysl’ 1923, S. 124–140, hier [S. 140](https://viewer.rusneb.ru/ru/000199_000009_008476796?page=71). (Unsere Übersetzung.)
 <!-- .element: style="font-size:0.65em;" -->
 
 ---
 
 ## 3
-### Perspektiven: »Programmable Corpora«
+### »Programmable Corpora«
 
 --
 
-- Bsp. DraCor, Einfluss einer API auf die Forschungsaktivität
+### Am Beispiel von DraCor
+
+![DraCor-Frontpage am 26.06.2026](images/dracor-frontpage-2026-06-26.png)<!-- .element: style="width:980px;" -->
+
+[dracor.org](https://dracor.org/)
 
 --
 
-### DraCor-basierte Forschung
+### Was sind »Programmable Corpora«?
 
 <br />
 
-- seit Anfang 2024 wurden über 100 DraCor-basierte Forschungsarbeiten veröffentlicht (inkl. Monografien)
-- siehe [dracor.org/doc/research](https://dev.dracor.org/doc/research)
+- Begriff eingeführt in [Fischer et al. 2019](https://doi.org/10.5281/zenodo.4284002)
+- Korpora nicht nur als Volltextdownloads betrachten, sondern als Forschungsökosystem, das sich um eine API herum organisiert
+- abgefragt werden nicht Dateien, sondern maßgeschneiderte Ausschnitte extrahierter Daten
+- die Daten bleiben offen (TEI-XML auf GitHub, freie Lizenz), aber die API liefert zusätzlich das, was aus dem TEI abgeleitet werden kann: Metadaten, spezifische Textschichten, Netzwerkdaten, Volltexte
+- ergänzt um einen SPARQL-Endpunkt, der Entitäten wie Autor\*innen, Werke und Figuren an die Linked-Open-Data-Cloud anschließt
 
 --
 
-- Nutzung von APIs in DSE
-  - Bleier, Roman and Klug, Helmut W. (2018). Discussing Interfaces in Digital Scholarly Editing. In: Digital Scholarly Editions as Interfaces, V-XV. Norderstedt: BoD. ISBN 978-3-7481-0925-9 [Open Access] – https://kups.ub.uni-koeln.de/9094/
-  - Nutzung der API-Funktionen über die Präsentationsschicht hinaus
-  - wer hat das Primat bei DSE: GUI oder API?
-  - API von DSE bisher nur selten über die GUI hinaus, für Forschungsfragen, genutzt
+### Forschungsbeispiel
+
+#### Epifizierungstendenzen im deutschsprachigen Drama, <br />untersucht anhand von Regieanweisungen
+
+![Historische Verteilung bestimmter Wortarten in Regieanweisungen](images/stage-directions-historical-distribution-for-selected-pos.png)
+
+Peer Trilcke, Christopher Kittel, Nils Reiter, Daria Maximova, Frank Fischer: <br />**[Opening the Stage: A Quantitative Look at Stage Directions in German Drama.](https://dh2020.adho.org/wp-content/uploads/2020/07/337_OpeningtheStageAQuantitativeLookatStageDirectionsinGermanDrama.html)** <br />In: DH2020: »carrefours/intersections«. Book of Abstracts. University of Ottawa.
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+#### Beispiel (mit rdracor, dem DraCor-API-Wrapper für R)
+
+```R
+library(rdracor)
+library(igraph)
+hermann <- get_net_cooccur_igraph(corpus="ger", play="kleist-die-hermannsschlacht")
+plot(hermann)
+```
+… visualisiert für jedes beliebige Stück einen Ko-Okkurrenz-Graph …
+<!-- .element: style="font-size:0.6em; margin-top:2.5em;" -->
+
+![Hermannsschlacht, Netzwerkgraph mit rdracor](images/hermannsschlacht-rdracor-graph.png)<!-- .element: style="height:340px;" -->
+
+… und ermöglicht einen → [Vergleich im Distant-Reading-Modus](https://doi.org/10.6084/m9.figshare.31113820)
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Rolle der API in der Forschung
+
+<br />
+
+- die API bringt die Inhalte der Korpora näher an konkrete Forschung und macht diese reproduzierbar
+- seit Anfang 2024 wurden über 100 DraCor-basierte Forschungsarbeiten veröffentlicht (inkl. Monografien)
+- siehe [dracor.org/doc/research](https://dev.dracor.org/doc/research)
 
 ---
 
 ## 4
-### What’s next
+### Perspektiven
 
 --
 
-- es geht nicht um Quantifizierungen (vgl. Zitat von Tomashevsky)
-- kann sich die Perspektive des Lesens durch API-Zugänge ändern?
-- Was wären interessante Fragestellungen, für die die API entsprechende Daten herausgeben könnte?
-- Jupyter Notebooks, Open Educational Resource, die mit der API vertraut macht, um eigene digitale Forschungsszenarien zu entwickeln
-- [Beispiel eines Jupyter Notebooks](https://quadriga-dk.github.io/Text-Fallstudie-1/ocr/ocr_jupyter_intro.html) innerhalb einer OER
+### »Digital Scholarly Editions as Interfaces«
+
+<br />
+
+- [Open Access-Sammelband](https://www.i-d-e.de/publikationen/schriften/bd-12-interfaces/) (2018)
+- das Primat liegt nicht bei GUI oder API, sondern beim Datenmodell, das beide trägt ([Bleier/Klug 2018](http://nbn-resolving.de/urn:nbn:de:hbz:38-90942), [Cayless 2018](http://nbn-resolving.de/urn:nbn:de:hbz:38-91191))
+- die API ist kein Zusatzfeature, sondern die Bedingung dafür, dass eine Edition mehr als eine Lesart ihrer selbst zulässt ([Witt 2018](http://nbn-resolving.de/urn:nbn:de:hbz:38-91182))
+
+--
+
+### Ausblick
+
+<br />
+
+- Können sich durch die API neue Perspektiven des Lesens ergeben?
+- Was wären interessante Fragestellungen, für die geeignete Daten über die API ausgegeben werden können?
+- Die Entwicklung der API erfordert einen stetigen Austausch zwischen allen Arbeitspaketen der Edition und mit der internationalen Community.
 
 ---
 
