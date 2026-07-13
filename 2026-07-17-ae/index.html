@@ -67,24 +67,105 @@ Präsentation: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.githu
 
 --
 
-- TEI-XML, darin sind Annotationen (Beispielsatz zeigen)
-- Was sind Normdaten? (GND, Wikidata)
-- Beispiel: https://hannah-arendt-edition.net/index/persons/person?id=ae3807426&lang=de
-- Was ist eine API?
-- die API der AE
-  - seit letzter Woche Beta-Version (V0.1.0)
-  - die Endpoints sind vorerst auf die Abfrage von Daten zu Personen und Textressourcen beschränkt
-  - für Textressourcen ist jetzt die Rückgabe der TEI-XML-Quelle und die Extraktion von Plain Text implementiert
-  - https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html
+### Was ist TEI-XML?
+
+- [Text Encoding Initiative](https://tei-c.org/) (seit 1987): Kodierung von Texten inkl. struktureller und semantischer Informationen
+- XML-Standard (seit 1998): lesbar von Menschen und Computern, Metastandard für verschiedene Formate und Auszeichnungssprachen
+- Es können individuelle Schemas definiert werden: z.B. für
+Bücher, Gedichte, Theaterstücke, Wörterbücher
+- Bei Hannah Arendt die Grundlage für die Webapplikation und die API der Digitalen Edition
+
+<br />
+<br />
 
 --
 
-### Swagger-Interface der API
+### Ausschnitt TEI-XML Varnhagen-Text
+
+
+    <div type="chapter" n="Hinein in die Welt">
+        <head type="mainHeading">
+            Hinein in die Welt
+            <lb>1795-1799
+        </head>
+        <div type="subChapter" n="I. Durch Heirat">
+            <head type="subHeading">
+                I. Durch Heirat
+            </head>
+            <p>
+                Im Winter des Jahres 1795 sieht
+                <name ref="#ae3807426" type="person">Rahel</name>
+                aus ihrer Theaterloge den Grafen
+                <name ref="#ae7149345" type="person">Karl von Finckenstein</name>.
+                ...
+            </p>
+            ...
+        </div>
+        ...
+    </div>
+
+
+Hierarchische Struktur, Kodierung von strukturellen und semantischen Informationen
+
+--
+
+### Darstellung Digitale Edition
+
+![Text Digitale Edition](images/varnhagen-ausschnitt.png)
+
+Mit TEI-XML werden die Kapitelüberschriften und der Text formatiert.
+
+--
+
+### Personenregister Digitale Edition
+
+![Personenregister Digitale Edition](images/personenregister.png)
+
+Mit TEI-XML wird das Personenregister generiert.
+
+--
+
+### Was sind Normdaten?
+
+- [Gemeinsame Normdatei (GND)](https://gnd.network/)
+- [Wikidata](https://www.wikidata.org/)
+- Beispiel: https://hannah-arendt-edition.net/index/persons/person?id=ae3807426&lang=de
+
+--
+
+### Was ist eine API?
+
+- Die Benutzerschnittstelle (User Interface) einer Webanwendung
+hat Seiten, Text, Links, Tabellen, Formulare, Buttons usw.
+- Sprache: HTML, Software: Webbrowser (Firefox, Chrome)
+- Eine API (wörtlich *Schnittstelle zur Programmierung von Anwendungen)*
+hat Endpunkte/URLs, Argumente, Rückgabewerte, Fehlercodes usw.
+- Sprache: JSON oder XML nach dem Prinzip Anfrage -> (Daten-)Antwort
+- Software: Python- oder R-Skripte, Juypter-Notebooks oder andere Server wie z.B.
+Metadaten-Aggregatoren
+- User: Entwickler und Digital Humanists
+
+--
+
+### Die API der Arendt-Edition
+
+- seit letzter Woche Beta-Version (V0.1.0)
+- die Endpunkte sind vorerst auf die Abfrage von Daten zu Personen und Textressourcen beschränkt
+- für Textressourcen ist jetzt die Rückgabe der TEI-XML-Quelle und die Extraktion von Plain Text implementiert
+- https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html
+
+--
+
+### Web-Interface der API
 
 ![API der AE](images/api-ae.png)
 
 ([Zugang zur API 0.1.0](https://test.hannah-arendt-edition.net/exist/apps/sade-Arendt/api.html), nur über Uni-VPN.)
 <!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Live-Demo
 
 --
 
@@ -94,7 +175,7 @@ Präsentation: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.githu
 
 - zu Demonstrationszwecken sind derzeit Endpunkte zu erwähnten Personen und den TEI-kodierten Texten angelegt
 - weitere Funktionen mit interessanten Forschungsperspektiven müssen wir gemeinsam entwickeln
-- auf den folgenden Folien finden sich zwei beispielhafte Visualisierungen, die demontrieren, wir wir dank Normdatenmapping von Entitäten wie Personen, Orten und Werken Informationen nutzen können, die von der AE selbst gar nicht ausgezeichnet werden
+- auf den folgenden Folien finden sich zwei beispielhafte Visualisierungen, die demonstrieren, wir wir dank Normdatenmapping von Entitäten wie Personen, Orten und Werken Informationen nutzen können, die von der AE selbst gar nicht ausgezeichnet werden
 
 --
 
@@ -102,7 +183,7 @@ Präsentation: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.githu
 
 ![edition mentions birth place map](images/edition-mentions-birth-place-map.svg)<!-- .element: style="height:480px;" -->
 
-(Geburtsorte aller Personen, über die derzeit Informationen im API-Output vorliegen. Vgl. auch Maximilian Schich et al.: A Network Framework of Cultural History. In: *Science*. Vol. 345, Issue 6196 (2014), S. 558–562. ([doi:10.1126/science.1240064](https://doi.org/10.1126/science.1240064)))
+Geburtsorte aller Personen, über die derzeit Informationen im API-Output vorliegen. Vgl. auch Maximilian Schich et al.: A Network Framework of Cultural History. In: *Science*. Vol. 345, Issue 6196 (2014), S. 558–562. ([doi:10.1126/science.1240064](https://doi.org/10.1126/science.1240064))
 <!-- .element: style="font-size:0.65em;" -->
 
 --
@@ -111,7 +192,8 @@ Präsentation: **[lehkost.github.io/slides/2026-07-17-ae/](https://lehkost.githu
 
 ![edition mentions gender](images/edition-mentions-gender.svg)<!-- .element: style="height:480px;" -->
 
-(Genderangaben laut Wikidata.)
+Genderangaben laut Wikidata. Für 20% der Personen („unknown“) haben wir im Moment noch keine
+Normdatenverknüpfungen.
 <!-- .element: style="font-size:0.65em;" -->
 
 ---
