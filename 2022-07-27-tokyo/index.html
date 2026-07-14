@@ -1,43 +1,54 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Patterns of Verb Usage in Immanuel Kant’s Critical Writings (DH2022, 27 July 2022)</title>
 
-    <link rel="stylesheet" href="../revealjs4/dist/reset.css" />
-    <link rel="stylesheet" href="../revealjs4/dist/reveal.css" />
-    <link rel="stylesheet" href="../revealjs4/dist/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
 
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="../revealjs4/plugin/highlight/monokai.css" id="highlight-theme" />
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/monokai.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
 <script type="text/template">
 
 ### Patterns of Verb Usage in <br />Immanuel Kant’s Critical Writings
 
-![Portrait of Immanuel Kant(via Wikimedia Commons)](images/kant-gemaelde.jpg)<!-- .element: style="width:100px;" -->
+![Portrait of Immanuel Kant (via Wikimedia Commons)](images/kant-gemaelde.jpg)<!-- .element: style="width:100px;" -->
 
-Stefan **Heßbrüggen-Walter** ¹ <br />Frank **Fischer** ² <br />Simon **Meier-Vieracker** ³
-<!-- .element: style="font-size:0.8em;" -->
+<div style="display:flex;flex-direction:column;align-items:center;gap:0.15em;font-size:0.8em;">
+  <p style="display:flex;align-items:center;gap:0.35em;margin:0;">
+    <span>Stefan <strong>Heßbrüggen-Walter</strong> ¹</span>
+    <a href="https://orcid.org/0000-0002-9383-026X" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD von Stefan Heßbrüggen-Walter" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+  </p>
+  <p style="display:flex;align-items:center;gap:0.35em;margin:0;">
+    <span>Frank <strong>Fischer</strong> ²</span>
+    <a href="https://orcid.org/0000-0003-2419-6629" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD von Frank Fischer" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+  </p>
+  <p style="display:flex;align-items:center;gap:0.35em;margin:0;">
+    <span>Simon <strong>Meier-Vieracker</strong> ³</span>
+    <a href="https://orcid.org/0000-0002-0141-9327" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD von Simon Meier-Vieracker" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+  </p>
+</div>
 
-<br />1 · University of **Trier** <br />2 · Free University of **Berlin** <br />3 · **Dresden** University of Technology
-<!-- .element: style="font-size:0.6em;" -->
+¹ University of **Trier** <br />² Freie Universität **Berlin** <br />³ **Dresden** University of Technology
+<!-- .element: style="font-size:0.6em; margin-top:2.5em;" -->
 
-<br />
-
-This presentation: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github.io/slides/2022-07-27-tokyo/](https://lehkost.github.io/slides/2022-07-27-tokyo/index.html)**
+This presentation: **[lehkost.github.io/slides/2022-07-27-tokyo/](https://lehkost.github.io/slides/2022-07-27-tokyo/index.html)**
+<!-- .element: style="font-size:0.6em; margin-top:3em;" -->
 
 [DH2022](https://dh2022.adho.org/) &nbsp;·&nbsp; Tokyo 🇯🇵 &nbsp;·&nbsp; 27 July 2022
-<!-- .element: style="font-size:0.8em;" -->
+<!-- .element: style="font-size:0.8em; margin-top:1em;" -->
 
 --
 
@@ -57,13 +68,12 @@ This presentation: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github
 
 | Assembled Subcorpora   | Works                                                                                                                             | N&nbsp;tokens |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------|---------------|
-| Theoretical Philosophy | - *Prolegomena to Any Future Metaphysics* <br />- *Metaphysical Foundations of Natural Science* <br />- *Critique of Pure Reason* |       311,137 |
-| Practical Philosophy   | - *Foundations of the Metaphysics of Morals* <br/>- *Critique of Practical Reason*<br />- *Metaphysics of Morals*                 |       206,471 |
-| Aesthetics/Telelogy    | - *Critique of Judgment*                                                                                                           |       127,939 |
+| Theoretical Philosophy | • *Prolegomena to Any Future Metaphysics* <br />• *Metaphysical Foundations of Natural Science* <br />• *Critique of Pure Reason* |       311,137 |
+| Practical Philosophy   | • *Foundations of the Metaphysics of Morals* <br />• *Critique of Practical Reason*<br />• *Metaphysics of Morals*                |       206,471 |
+| Aesthetics/Teleology   | • *Critique of Judgment*                                                                                                          |       127,939 |
 
-<br />
-
-<small>Tab. 1. Size of subcorpora and contained works. Full texts obtained from [Zeno.org](http://www.zeno.org/nid/20009187871).</small>
+Tab. 1. Size of subcorpora and contained works. Full texts obtained from [Zeno.org](http://www.zeno.org/nid/20009187871).
+<!-- .element: style="font-size:0.65em; margin-top:2.5em;" -->
 
 --
 
@@ -81,9 +91,9 @@ This presentation: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github
 
 <br />
 
-- In **theoretical philosophy**, high keyness values for verbs associated with theory of knowledge (»geben«, »anschauen«) and natural philosophy (»bewegen«, »anfangen«, »verändern«).
-- **Practical philosophy**: verbs from the sphere of law (»erwerben«, »verpflichten«).
-- **Aesthetics**: activities (»urteilen«, »beurteilen«), aesthetic responses (»gefallen«).
+- In **theoretical philosophy**, high keyness values for verbs associated with theory of knowledge (<span lang="de">“geben”, “anschauen”</span>) and natural philosophy (<span lang="de">“bewegen”, “anfangen”, “verändern”</span>).
+- **Practical philosophy**: verbs from the sphere of law (<span lang="de">“erwerben”, “verpflichten”</span>).
+- **Aesthetics**: activities (<span lang="de">“urteilen”, “beurteilen”</span>), aesthetic responses (<span lang="de">“gefallen”</span>).
 
 --
 
@@ -91,7 +101,7 @@ This presentation: <!-- .element: style="font-size:0.6em;" --> **[lehkost.github
 
 <br />
 
-Differences in verb usage across philosophical subdisciplines indicate that verbs make a non-negligible contribution to the semantics of philosophical texts. At least in Kant.
+Differences in verb usage across philosophical subdisciplines <br />indicate that verbs make a non-negligible contribution to <br />the semantics of philosophical texts. At least in Kant.
 
 --
 
@@ -99,28 +109,29 @@ Thanks for listening.
 
 <br /><br />
 
-Our abstract can be found here: <br />https://dh2022.dhii.asia/abstracts/202 
+Our abstract can be found here: <br />[dh2022.dhii.asia/abstracts/202](https://dh2022.dhii.asia/abstracts/202)
 
 <br /><br />
 
-Find us on Twitter:
+Find us on Mastodon:
 
-[@FrueheNeuzeit](https://twitter.com/FrueheNeuzeit) <br/>
-[@umblaetterer](https://twitter.com/umblaetterer) <br/>
-[@fussballinguist](https://twitter.com/fussballinguist)
+[@frueheneuzeit](https://fedihum.org/@stefan_hessbrueggen) <br />
+[@umblaetterer](https://chaos.social/@umblaetterer) <br />
+[@fussballinguist](https://mastodon.social/@fussballinguist)
 
 </script>
         </section>
       </div>
     </div>
-    <script src="../revealjs4/dist/reveal.js"></script>
-    <script src="../revealjs4/plugin/notes/notes.js"></script>
-    <script src="../revealjs4/plugin/markdown/markdown.js"></script>
-    <script src="../revealjs4/plugin/highlight/highlight.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
     <script>
       Reveal.initialize({
         hash: true,
         transition: 'fade',
+        backgroundTransition: 'fade',
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
       });
     </script>
