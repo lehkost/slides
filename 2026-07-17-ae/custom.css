@@ -46,3 +46,8 @@
 .reveal .list08 > ul {
   font-size: 0.8em;
 }
+
+.reveal table th,
+.reveal table td {
+  font-size: 0.85em;
+}
