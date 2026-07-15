@@ -78,7 +78,7 @@ Das Arbeitspaket XIII (Datenschnittstellen für die Digital Humanities) ermögli
 1. Entwicklung eines interaktiven Tutorials zur Nutzung der externen Datenschnittstelle (API), die im Arbeitspaket XII bereits technisch dokumentiert wird;
 2. Umsetzung konkreter Analysen in Jupyter Notebooks (»papers with code«), mit einem Fokus auf erläuternden Kommentaren, sodass der verwendete Programmcode leicht angepasst und für individuelle Anwendungen eingesetzt werden kann;
 <!-- .element: class="fragment" -->
-3. Erstellung einer Fallstudie als OER (Open Educational Resource), die sich am Kompetenzframework des Berlin-Brandenburgischen Datenkompetenzzentrums [QUADRIGA](https://www.quadriga-dk.de/).
+3. Erstellung einer Fallstudie als OER (Open Educational Resource), die sich am Kompetenzframework des Berlin-Brandenburgischen Datenkompetenzzentrums [QUADRIGA](https://www.quadriga-dk.de/) orientiert.
 <!-- .element: class="fragment" -->
 
 --
@@ -132,8 +132,8 @@ Das Arbeitspaket XIII (Datenschnittstellen für die Digital Humanities) ermögli
 
 - [Text Encoding Initiative](https://tei-c.org/) (seit 1987): Kodierung von Texten inkl. struktureller und semantischer Informationen
 - XML-Standard (seit 1998): lesbar von Menschen und Computern, Metastandard für verschiedene Formate und Auszeichnungssprachen
-- es können individuelle Schemas definiert werden: z.&nbsp;B. für Bücher, Gedichte, Theaterstücke, Wörterbücher
-- beim Arendt-Projekt die Grundlage für die Webapplikation und die API der digitalen Edition
+- Es können individuelle Schemas definiert werden: z.&nbsp;B. für Bücher, Gedichte, Theaterstücke, Wörterbücher
+- Beim Arendt-Projekt ist TEI-XML die Grundlage für die Webapplikation und die API
 
 --
 
@@ -171,7 +171,7 @@ Hierarchische Struktur, Kodierung von strukturellen und semantischen Information
 
 --
 
-### Darstellung in der digitalen Edition
+#### Darstellung in der digitalen Edition
 
 <br />
 
@@ -184,7 +184,7 @@ Mit TEI-XML werden die Kapitelüberschriften und der Text formatiert.
 
 --
 
-### Personenregister der digitalen Edition
+#### Personenregister der digitalen Edition
 
 ![Personenregister der digitalen Edition](images/personenregister.png)<!-- .element: style="height:480px;" -->
 
@@ -197,22 +197,58 @@ Auf Basis des TEI-XML wird das Personenregister generiert.
 
 <br />
 
-- [Gemeinsame Normdatei (GND)](https://gnd.network/)
-- [Wikidata](https://www.wikidata.org/)
-- Beispiel: [hannah-arendt-edition.net/index/persons/person?id=ae3807426&lang=de](https://hannah-arendt-edition.net/index/persons/person?id=ae3807426&lang=de)
+- Freie Vergabe von Kategorien wie *Rahel Varnhagen* ist fehleranfällig (unterschiedliche Schreibweisen,
+Tippfehler, Ambiguitäten)
+- Eigene Identifikatoren wie *ae3807426* lösen diese Probleme innerhalb des eigenen Systems, haben
+außerhalb aber keine Bedeutung
+- Normdaten-Anbieter (Normdatei oder Authority file) stellen Identifikatoren zur Verfügung, auf die
+andere Systeme sich beziehen können
+- https://d-nb.info/gnd/118626175 (GND – Gemeinsame Normdatei)
+- https://www.wikidata.org/wiki/Q61793 (Wikidata)
+- viele weitere...
+
+--
+
+![Webseite des GND-Eintrags](images/gnd-webseite.png)<!-- .element: style="height:480px;" -->
+
+Webseite des GND-Eintrags für Rahel Varnhagen
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+- Normdaten-Anbieter verzeichnen weitere Information über ihre Einträge,
+z.B. Geburtsdatum, Geburtsort, Gender
+- Außerdem werden Beziehungen zu anderen Einträgen in einem Wissensgraphen
+(Knowledge Graph) festgehalten, z.B. Verknüpfungen zu anderen Personen
+als *mother, father, sibling, spouse*
+- Dadurch muss ich als Anbieter nicht alle Informationen in meinem eigenen
+System vorhalten.
+
+![GND-Daten](images/gnd-daten.png)<!-- .element: style="height:200px;" -->
+
+Die Arendt-Edition hält selbst nur wenige Informationen über Einträge im
+Personenregister vor.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Was ist eine API?
 
+API: wörtlich *Schnittstelle zur Programmierung von Anwendungen*
+
 <br />
 
-- die Benutzerschnittstelle (User Interface) einer Webanwendung hat Seiten, Text, Links, Tabellen, Formulare, Buttons usw.
-- Sprache: HTML, Software: Webbrowser (Firefox, Chrome)
-- eine API (wörtlich *Schnittstelle zur Programmierung von Anwendungen)* hat Endpunkte/URLs, Argumente, Rückgabewerte, Fehlercodes usw.
-- Sprache: JSON oder XML nach dem Prinzip Anfrage → (Daten-)Antwort
-- Software: Python- oder R-Skripte, Juypter-Notebooks oder andere Server wie z.&nbsp;B. Metadaten-Aggregatoren
-- User: Entwickler und Digital Humanists
+|               | Webanwendung                                      | Web-API                                               |
+|---------------|---------------------------------------------------|-------------------------------------------------------|
+| Schnittstelle | Seiten, Text, Links, Tabellen, Formulare, Buttons | Endpunkte/URLs, Argumente, Rückgabewerte, Fehlercodes |
+| Sprache       | HTML                                              | XML, JSON                                             |
+| Software      | Webbrowser (Firefox, Chrome, Safari)              | Python-Skripte, Jupyter-Notebooks, andere Server      |
+| Benutzer      | Jeder                                             | Digital Humanists, Entwickler                         |
+
+<br />
+
+„An API is a web interface for software“ (Arnaud Lauret, The Design of Web APIs)
+<!-- .element: style="font-size:0.875em;" -->
 
 --
 
@@ -220,9 +256,10 @@ Auf Basis des TEI-XML wird das Personenregister generiert.
 
 <br />
 
-- seit letzter Woche Beta-Version (Version 0.1.0)
+- seit Anfang Juli Beta-Version (Version 0.1.0)
 - die Endpunkte sind vorerst auf die Abfrage von Daten zu Personen und Textressourcen beschränkt
-- für Textressourcen ist jetzt die Rückgabe der TEI-XML-Quelle und die Extraktion von Plain Text implementiert
+- für Textressourcen ist bis jetzt die Rückgabe der TEI-XML-Quelle und die Extraktion von Plain Text
+(einfacher Text ohne Auszeichnungen) implementiert
 
 --
 
@@ -251,7 +288,7 @@ Auf Basis des TEI-XML wird das Personenregister generiert.
 
 ### Visualisierungsdemo 1
 
-![Geburtsorte aller erfassten Personen](images/edition-mentions-birth-place-map.svg)<!-- .element: style="height:420px;" -->
+![Geburtsorte aller erfassten Personen](images/birthplace-map-new.svg)<!-- .element: style="height:420px;" -->
 
 Geburtsorte aller Personen, über die derzeit Informationen im API-Output vorliegen. <br />Vgl. auch Maximilian Schich et al.: A Network Framework of Cultural History. <br />In: *Science*. Vol. 345, Issue 6196 (2014), S. 558–562. ([doi:10.1126/science.1240064](https://doi.org/10.1126/science.1240064))
 <!-- .element: style="font-size:0.65em;" -->
@@ -260,9 +297,9 @@ Geburtsorte aller Personen, über die derzeit Informationen im API-Output vorlie
 
 ### Visualisierungsdemo 2
 
-![Genderangaben laut Wikidata](images/edition-mentions-gender.svg)<!-- .element: style="height:420px;" -->
+![Genderangaben laut Wikidata](images/gender-pie.svg)<!-- .element: style="height:420px;" -->
 
-Genderangaben laut Wikidata. Für 20% der Personen (»unknown«) <br />haben wir im Moment noch keine Normdatenverknüpfungen.
+Genderangaben laut Wikidata. Für 13% der Personen (»unknown«) <br />haben wir im Moment noch keine Normdatenverknüpfungen.
 <!-- .element: style="font-size:0.65em;" -->
 
 --
