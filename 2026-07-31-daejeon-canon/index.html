@@ -46,10 +46,6 @@ Presentation URL: **[lehkost.github.io/slides/2026-07-31-daejeon-canon/](https:/
 
 ---
 
-## Beginnings
-
-<br />
-
 On 9 January 1886, John Lubbock, an English banker, Liberal politician, and polymath, delivered a lecture at the Working Men’s College in London <br />entitled _On the Pleasure of Reading_.
 
 In the lecture, he recommended a selection of one hundred books <br />that he considered especially worth reading.
@@ -262,10 +258,6 @@ geographic information and gender data
 
 ## Data Model
 
---
-
-### Overview
-
 ![overview.png](images/overview.png)<!-- .element: style="height:440px;" -->
 
 Subactivities Pattern: [https://doi.org/10.1007/978-3-031-79450-6](https://doi.org/10.1007/978-3-031-79450-6) <br/>Distributed Provenance Model: [https://doi.org/10.1038/s41597-022-01537-6](https://doi.org/10.1038/s41597-022-01537-6)
@@ -292,14 +284,15 @@ Place Ontology Design Pattern: [http://www.ontologydesignpatterns.org/cp/owl/pla
 
 ![query.svg](images/query.svg)<!-- .element: style="height:440px;" -->
 
---
+---
 
 ## Exemplary Analysis
 
-![Spiegel canon list](images/spiegel_canon.png)<!-- .element: style="height:440px;" -->
+<a href="https://www.spiegel.de/kultur/literatur/literatur-die-besten-buecher-der-welt-zwischen-1925-und-2025-der-spiegel-literaturkanon-a-e138f11e-1302-48d2-8476-56840777d4dd">
 
-Source: [https://www.spiegel.de/kultur/literatur/literatur-die-besten-buecher-der-welt-zwischen-1925-und-2025-der-spiegel-literaturkanon-a-e138f11e-1302-48d2-8476-56840777d4dd](https://www.spiegel.de/kultur/literatur/literatur-die-besten-buecher-der-welt-zwischen-1925-und-2025-der-spiegel-literaturkanon-a-e138f11e-1302-48d2-8476-56840777d4dd)
-<!-- .element: style="font-size:0.65em;" -->
+![Screenshot of ‘SPIEGEL-Literaturkanon International: Die besten Bücher der Welt’](images/spiegel-international-web.png)<!-- .element: style="height:540px;" -->
+
+</a>
 
 --
 
@@ -307,7 +300,7 @@ Source: [https://www.spiegel.de/kultur/literatur/literatur-die-besten-buecher-de
 
 ![example1.png](images/example1.png)<!-- .element: style="height:400px;" -->
 
-Sitelink counts are shown on a log10 scale, and the OLS line was fitted on log1p-transformed y values. <br/><br/>Weak negative correlation.
+Sitelink counts are shown on a log<sub>10</sub> scale, and the OLS line was fitted on log1p-transformed y values. <br/><br/>Weak negative correlation.
 <!-- .element: style="font-size:0.65em;" -->
 
 --
@@ -316,7 +309,7 @@ Sitelink counts are shown on a log10 scale, and the OLS line was fitted on log1p
 
 ![example2.png](images/example2.png)<!-- .element: style="height:440px;" -->
 
-Both axes are plotted on a log10 scale, while the OLS line was fitted on log1p-transformed values. <br/><br/>Cf. Normal People vs. Finnegans Wake.
+Both axes are plotted on a log<sub>10</sub> scale, while the OLS line was fitted on log1p-transformed values. <br/><br/>Cf. Normal People vs. Finnegans Wake.
 <!-- .element: style="font-size:0.65em;" -->
 
 --
@@ -331,8 +324,10 @@ Analogous to the first example. Bubble sizes are relative to the number of Goodr
 
 ### Exemplary Research Questions
 
+<br />
+
 - How diverse is a canon, really?
-- Non-Europe/US works: included despite low indicators — or must they outperform?
+- Non-Europe/US works: included despite low indicators – or must they outperform?
 - What counts as European? Country of origin vs. author’s birthplace
 - Which genders are represented?
 
@@ -344,13 +339,9 @@ Analogous to the first example. Bubble sizes are relative to the number of Goodr
 
 Output from a sample query for subproperties of geolocation.<!-- .element: style="font-size:0.65em;" -->
 
---
+---
 
-## Conclusion and Outlook
-
---
-
-### Conclusion
+## Conclusion
 
 Canon Shelf and Canon Curator place canon lists within digital encyclopedic and reading communities, enabling analysis of circulation, visibility, and authority-building across platforms.
 
@@ -362,140 +353,6 @@ Canon Shelf and Canon Curator place canon lists within digital encyclopedic and 
 - Web interface
 - API
 - SPARQL endpoint
-
----
-
-### Mapping and Contextualisation
-
-<br />
-
-1. Making lists machine-readable in a standard format (CSV/TSV, JSON, or other);
-2. enriching authors and works with identifiers of authority files and reading-community projects like
-  - Wikidata,
-  - GND (and other national libraries),
-  - Goodreads,
-  - LibraryThing,
-  - [Perlentaucher](https://perlentaucher.de/), [Book Marks](https://bookmarks.reviews/) (for recent books),
-  - etc.;
-3. pulling in external (and mostly time-sensitive) data on authors and works.
-
---
-
-### Contribution to the Digital Deconstruction <br />of Canons through …
-
-<br />
-
-- … the analysis of metadata (publication periods, linguistic and geographical diversity),
-- … the correlation with other markers of canonicity,
-- … the comparison between canons, measure overlaps, biases, overall development.
-
---
-
-### Markers of Canonicity: Sitelinks
-
-![overview over the sitelinks for Middlemarch](images/middlemarch-sitelinks.png)<!-- .element: style="height:320px;" -->
-
-- Wikipedia sitelinks as part of the “Metrics of World Literature” (Robinson 2017), as “a simple measure of canonicity” (Kukkonen 2020)
-- George Eliot: *Middlemarch* (26 sitelinks)
-- Tolkien: *The Hobbit*; Carroll: *Alice’s Adventures in Wonderland*; Orwell: *Animal Farm* (all 98 sitelinks to date)
-
---
-
-### Markers of Canonicity: QRank
-
-![typing Middlemarch into the Wikipedia searchbox](images/middlemarch-wikipedia-searchbox.png)<!-- .element: style="height:300px;" -->
-
-- page views of a Wikidata item (i.&nbsp;e. from Wikipedia, Wikivoyage, Wikibooks, etc.) are aggregated into a QRank score (https://qrank.wmcloud.org/), used for ranking search results
-- usually dating 12 months back, generated occasionally with no clear timestamp
-- *Middlemarch*’s rank is 449,328; *Nineteen Eighty-Four*’s is 5,547,853 (bigger number = more popular)
-
---
-
-### “Best Novel” Effect: Middlemarch <br />(English Wikipedia)
-
-![pageview analysis of the Middlemarch article on Wikipedia](images/middlemarch-pageviews-analysis.png)<!-- .element: style="height:440px;" -->
-
-(source: [pageviews.wmcloud.org](https://pageviews.wmcloud.org/?project=en.wikipedia.org&platform=all-access&agent=user&redirects=0&start=2026-05-01&end=2026-05-31&pages=Middlemarch) – QRank will eventually be influenced, <br />but unclear when a new QRank version is published; sitelinks not affected)
-<!-- .element: style="font-size:0.65em;" -->
-
---
-
-### Other Popularity Measures: Goodreads
-
-![Goodreads Listopia project of the Guardian 2026 list](images/goodreads.png)<!-- .element: style="height:340px;" -->
-
-- Listopia lists: reading challenges<!-- .element: style="font-size:0.65em;" -->
-- ⚠️ Goodreads is not a neutral source: founded in 2007, acquired by Amazon in 2013, no new public API keys issued since 2020; overwhelmingly Anglophone and contemporary-skewed; depends on books having English editions/ISBNs<!-- .element: style="font-size:0.65em;" -->
-- <!-- .element: style="font-size:0.65em;" -->see also Hu et al.: Who decides what is read on Goodreads? Uncovering sponsorship and its implications for scholarly research. In: Big Data and Society. Vol. 12, issue 3 (2025). (doi:10.1177/20539517251359229)
-- platform data are not direct proxies for cultural behaviour!<!-- .element: style="font-size:0.65em;" -->
-
----
-
-## Some Sitelink Correlations
-
---
-
-### Number of Sitelinks vs Publication Date
-
-![correlation: Wikipedia sitelinks vs publication date (novels published past 1800, 98 of 100)](images/guardian_pubdate_vs_sitelinks_past_1800.png)<!-- .element: style="height:440px;" -->
-
-<u>*The Guardian*’s 2026 list (all works post-1800 = 98 of the initial top 100 novels; data retrieved on 19 May 2026)</u> <br/>Weak downward trend: recent works enter the list but stay sitelink-poor (consistent with Bourdieu’s consecration-as-duration, although age alone could produce the same trend).
-<!-- .element: style="text-align:left; font-size:0.65em;" -->
-
---
-
-### Number of Sitelinks vs QRank
-
-![correlation: Wikipedia sitelinks vs QRank (100 novels)](images/guardian_qrank_vs_sitelinks.png)<!-- .element: style="height:440px;" -->
-
-<u>*The Guardian*’s 2026 list (initial top 100 novels; data retrieved on 19 May 2026)</u> <br/>Unsurprisingly, QRank and sitelinks are tightly coupled; the interesting cases are off the diagonal. Above the line: broad multilingual coverage that is little read. Below the line: heavily‑viewed articles existing in few languages (typically the large ones, English above all).
-<!-- .element: style="text-align:left; font-size:0.65em;" -->
-
---
-
-### No. of Sitelinks vs No. of Goodreads Ratings
-
-![correlation: Wikipedia sitelinks vs number of Goodreads ratings (100 novels)](images/guardian_ratings_vs_sitelinks.png)<!-- .element: style="height:440px;" -->
-
-<u>*The Guardian*’s 2026 list (initial top 100 novels; data retrieved on 19 May 2026)</u> <br/>Above the line: “more honoured than read”, broadly translated and catalogued, max. literary capital, min. popular-reading volume (Bourdieu’s autonomous pole; Casanova’s consecrated centre). Below the line: recent-to-mid-20th-century Anglophone works, central to the US/UK canon, assigned in schools/universities, boosted by adaptations and book-club circulation, yet comparatively under-translated into other-language Wikipedias. But Goodreads' Anglophone, ISBN-gated reach inflates this split.
-<!-- .element: style="text-align:left; font-size:0.6em;" -->
-
----
-
-## Lists, Lists, Lists
-
-<br />
-
-- Shane Sherman’s *The Greatest Books of All Time* collected 759 book lists so far ([thegreatestbooks.org](https://thegreatestbooks.org/))
-- main goal is to create a meta-canon, a ranked “greatest books” list by aggregating many existing “best books” lists and weighting them by perceived quality/influence
-- the ranking algorithm is open source ([github.com/ssherman/weighted_list_rank](https://github.com/ssherman/weighted_list_rank))
-- using site-internal numeric IDs for lists, authors, books, but neither ready nor meant for scholarly purposes
-
---
-
-## Canon Shelf
-
-<br />
-
-- use cases beyond “best books”: reading lists, mentions in literary histories, bestsellers, exhaustive lists of genres (i.&nbsp;e. German-language [one-act plays](https://einakter.dracor.org/), [bourgeois tragedies](https://github.com/lehkost/bgltr), and [novellas](https://github.com/julianschroeter/19CproseCorpus); [100-page books](https://www.umblaetterer.de/100-seiten/), [1,000-page books](https://www.umblaetterer.de/2014/10/21/tausendseiter/), etc.)
-- not only books/novels, but all kinds of artistic works (music, paintings, etc.)
-- enriched with identifiers of authority files and other projects that can be used as canon proxies, with Wikidata as the main broker
-- provides data for the Canon Curator (see next slide)
-- mid-term plan to establish a platform hosting all kinds of lists to support digital canon research
-
---
-
-## Canon Curator
-
-<br />
-
-- automatised enrichments from various sources (with a focus on canon proxies)
-- referencing sources and using timestamps, given that most of the values develop dynamically
-- data model: JSON-LD and Turtle output builds on a number of ontologies and vocabularies: CANON, PROV and PAV, Basic Geo, Dublin Core Terms
-
-<br />* <br /><br />Come to our talk at DH2026 in Daejeon 🇰🇷, Friday, 31 July 2026, 14:30 (KST): <br /><br />“Canons of World Literature Contextualised: <br />Introducing Canon Shelf and Canon Curator”
-
-<!-- .element: class="fragment" -->
 
 --
 
