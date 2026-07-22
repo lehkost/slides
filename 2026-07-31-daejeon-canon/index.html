@@ -36,7 +36,7 @@ Lisa Poggel¹ · Laura Untner² · Viktor J. Illmer² <br />Jonas Rohe² · Fran
 <!-- .element: style="font-size:0.85em; line-height:1.5;" -->
 
 <br />¹ TIB – Leibniz Information Centre for Science and Technology and University Library
-<br />² Freie Universität Berlin 
+<br />² Freie Universität Berlin
 
 <!-- .element: style="font-size:0.7em; line-height:1.6;" -->
 
@@ -259,7 +259,7 @@ Modular, provenance-aware pipeline for enriching these lists with <br />populari
 
 ---
 
-## Competency Questions 
+## Competency Questions
 
 <br />
 
@@ -271,7 +271,7 @@ Modular, provenance-aware pipeline for enriching these lists with <br />populari
 
 <br />More questions: [github.com/temporal-communities/canon-curator/wiki/Competency-questions-for-the-data-model](https://github.com/temporal-communities/canon-curator/wiki/Competency-questions-for-the-data-model)
 
-<br /> Use of Competency Questions in Ontology Engineering: [doi:10.1007/978-3-031-47262-6_3](https://doi.org/10.1007/978-3-031-47262-6_3)
+<br />Use of Competency Questions in Ontology Engineering: [doi:10.1007/978-3-031-47262-6_3](https://doi.org/10.1007/978-3-031-47262-6_3)
 <!-- .element: style="font-size: 0.65em;" -->
 
 --
@@ -297,7 +297,7 @@ Modular, provenance-aware pipeline for enriching these lists with <br />populari
 
 <div class="fragment">
 
-* Many data models inaccurately represent gender ([GND](https://gnd.network/Webs/gnd/EN/Home/home_node.html): “male”, “female”, “unknown”)
+* Many data models inaccurately represent gender ([GND](https://gnd.network/Webs/gnd/EN/Home/home_node.html): “male”, “female”, “not known”)
 * Sources are often unclear, nonexistent or hidden in PDF documentation with insufficient granularity
 * Querying statement-level provenance is complicated and requires knowledge of the provenance representation
 * May change over time (author changes gender identity, publishes in new country or language; new works appear)
@@ -306,7 +306,7 @@ Modular, provenance-aware pipeline for enriching these lists with <br />populari
 
 <div class="fragment">
 
-<br />To interpret this data, users have to know: 
+<br />To interpret this data, users have to know:
 * How and when was it retrieved? (workflow-level provenance)
 * How did the database from where it was derived define gender?
 * Which primary source is it based on? (statement-level provenance)
@@ -326,9 +326,9 @@ Modular, provenance-aware pipeline for enriching these lists with <br />populari
     </ul>
 * Queries over the Turtle / JSON-LD output should return “**provenance by default**”, even when it is not directly queried
 <!-- .element: class="fragment" -->
-* Provenance should be tracked both on the workflow and statement levels 
+* Provenance should be tracked both on the workflow and statement levels
 <!-- .element: class="fragment" -->
-* Enrichment pipeline should be **modular** to allow users to select enrichment sources relevant to their questions 
+* Enrichment pipeline should be **modular** to allow users to select enrichment sources relevant to their questions
 <!-- .element: class="fragment" -->
 * Enrichment pipeline should be **reusable**, adaptable and extensible by researchers with limited coding experience
 <!-- .element: class="fragment" -->
@@ -392,7 +392,7 @@ Viewer not loading? View [static version](#/vowl-fallback).
 
 ![subactivities-pattern.svg](images/subactivities-pattern.svg)<!-- .element: style="max-height:480px; max-width:80%; box-shadow: none; border: none; border-radius: 0;" -->
 
-Subactivities Pattern: [doi:10.1007/978-3-031-79450-6](https://doi.org/10.1007/978-3-031-79450-6) 
+Subactivities Pattern: [doi:10.1007/978-3-031-79450-6](https://doi.org/10.1007/978-3-031-79450-6)
 <!-- .element: style="font-size:0.65em;" -->
 
 --
@@ -401,21 +401,61 @@ Subactivities Pattern: [doi:10.1007/978-3-031-79450-6](https://doi.org/10.1007/9
 
 ![place-odp.png](images/place-odp.png)<!-- .element: style="max-height:480px; max-width:80%; box-shadow: none; border: none; border-radius: 0;" -->
 
-Place Ontology Design Pattern: [www.ontologydesignpatterns.org/cp/owl/place.owl#](http://www.ontologydesignpatterns.org/cp/owl/place.owl#)
-<br />ODP Property Specialization Strategies: [doi:10.1007/978-3-319-13704-9_13](https://doi.org/10.1007/978-3-319-13704-9_13)
+Place Ontology Design Pattern: [www.ontologydesignpatterns.org/cp/owl/place.owl#](http://www.ontologydesignpatterns.org/cp/owl/place.owl#) <br />ODP Property Specialization Strategies: [doi:10.1007/978-3-319-13704-9_13](https://doi.org/10.1007/978-3-319-13704-9_13)
 <!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Gender
 
-![gender.png](images/gender.png)<!-- .element: style="height:220px;" -->
+![gender-prov.png](images/gender-prov.png)<!-- .element: style="max-height:520px; max-width:80%; box-shadow: none; border: none; border-radius: 0;" -->
 
 --
 
+<!-- .slide: id="sparql-slide" -->
+
 ### SPARQL Query Example
 
-![query.svg](images/query.svg)<!-- .element: style="height:440px;" -->
+<style>
+#sparql-slide pre,
+#sparql-slide pre code {
+  font-size: 0.7em;
+  line-height: 1.25;
+  max-height: none;
+}
+</style>
+
+```sparql [1-2,7,9-13,26]
+PREFIX canon: <https://github.com/temporal-communities/canon-curator/ontology/>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov:  <http://www.w3.org/ns/prov#>
+PREFIX pav:   <http://purl.org/pav/>
+
+SELECT ?work ?p ?location 
+       ?sourceDatabase ?primarySource ?sourceContext ?requestUrl ?agent ?retrievedAt
+WHERE {
+
+?work a canon:Work .
+?p rdfs:subPropertyOf canon:geolocation .
+?work ?p ?location .
+
+<< ?work ?p ?location >> canon:hasEnrichment ?rec .
+
+OPTIONAL { ?rec prov:generatedAtTime   ?retrievedAt }
+OPTIONAL { ?rec prov:wasDerivedFrom    ?sourceDatabase }
+OPTIONAL { ?rec prov:hadPrimarySource  ?primarySource }
+OPTIONAL { ?rec pav:sourceAccessedAt   ?sourceContext }
+OPTIONAL { ?rec pav:importedFrom       ?requestUrl }
+
+OPTIONAL {
+    ?rec prov:wasGeneratedBy ?act .
+    ?act prov:wasAssociatedWith ?agent .
+}
+}
+```
+
+Parts highlighted are required.
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
