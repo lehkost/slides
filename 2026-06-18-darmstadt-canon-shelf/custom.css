@@ -37,5 +37,7 @@
 }
 
 .reveal section img {
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
 }

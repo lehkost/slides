@@ -22,19 +22,23 @@
         <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
 <script type="text/template">
 
-###  Canons of World Literature Contextualised
-#### Introducing Canon Shelf and Canon Curator
+## Canons of World Literature Contextualised
+<!-- .element: style="font-size:1.65em;" -->
+
+### Introducing Canon Shelf and Canon Curator
+<!-- .element: style="font-size:1.25em;" -->
 
 <br />
 
 ## 📚
 
-Lisa Poggel¹ · Laura Untner² · Viktor J. Illmer² · Jonas Rohe² · Frank Fischer²<!-- .element: style="font-size:0.85em;" -->
+Lisa Poggel¹ · Laura Untner² · Viktor J. Illmer² <br />Jonas Rohe² · Frank Fischer²
+<!-- .element: style="font-size:0.85em; line-height:1.5;" -->
 
-<br />¹ TIB – Leibniz Information Centre for Science and Technology
+<br />¹ TIB – Leibniz Information Centre for Science and Technology and University Library
 <br />² Freie Universität Berlin 
 
-<!-- .element: style="font-size:0.7em;" -->
+<!-- .element: style="font-size:0.7em; line-height:1.6;" -->
 
 <br />
 
@@ -128,7 +132,7 @@ In 2005, _Time_ magazine published its _All-TIME 100 Novels_, a list of 100 Engl
 
 And then, in the past two years, this happened …
 
----
+--
 
 ![New York Times: The 100 Best Books of the 21st Century (2024)](images/2024-07-12_nyt-100-best-books-of-the-21st-century.png)<!-- .element: style="height:620px;" -->
 
@@ -154,20 +158,19 @@ And then, in the past two years, this happened …
 
 ---
 
-## _Canon Shelf_
+## Canon Shelf
 
 Repository for collecting and annotating canon lists
 
 <!-- [github.com/temporal-communities/canon-shelf](https://github.com/temporal-communities/canon-shelf) -->
 
-<br>
+<br />
 
 <div class="fragment">
 
-## _Canon Curator_
+## Canon Curator
 
-Modular pipeline for enriching these lists with popularity metrics,  
-geographic information and gender data
+Modular, provenance-aware pipeline for enriching these lists with <br />popularity metrics, geographic information and gender data
 
 </div>
 
@@ -256,20 +259,148 @@ geographic information and gender data
 
 ---
 
+## Competency Questions 
+
+<br />
+
+* Which is the most popular play by William Shakespeare?
+* Which are the 10 most popular works according to Goodreads?
+* How is the gender distribution of authors in the canon from 1930 to 1945?
+* Which is the most popular work from Chile?
+* How has the popularity of *Imperium* by Christian Kracht changed over time?
+
+<br />More questions: [github.com/temporal-communities/canon-curator/wiki/Competency-questions-for-the-data-model](https://github.com/temporal-communities/canon-curator/wiki/Competency-questions-for-the-data-model)
+<!-- .element: style="font-size: 0.65em;" -->
+
+--
+
+### Mapping questions to requirements
+
+<br />
+
+* R1: Assign persistent identifiers to authors, works and places, so the same entity is recognisable across canon lists
+* R2: Represent competing claims about the same entity; link all claims to their source and retrieval history
+* R3: Make gender directly queryable, _but be explicit about the basis on which it was claimed_
+* R4: Make geographic origin directly queryable, _but distinguish author-level from work-level origin_
+* R5: Represent popularity as canonicity metrics and provide each claim with a timestamp
+* ...
+
+--
+
+<!-- .slide: class="list08" -->
+
+### Infrastructural challenges regarding <br />gender data and geodata
+
+<br />
+
+<div class="fragment">
+
+* Many data models inaccurately represent gender ([GND](https://gnd.network/Webs/gnd/EN/Home/home_node.html): “male”, “female”, “unknown”)
+* Sources are often unclear, nonexistent or hidden in PDF documentation with insufficient granularity
+* Querying statement-level provenance is complicated and requires knowledge of the provenance representation
+* May change over time (author changes gender identity, publishes in new country or language; new works appear)
+
+</div>
+
+<div class="fragment">
+
+<br />To interpret this data, users have to know: 
+* How and when was it retrieved? (workflow-level provenance)
+* How did the database from where it was derived define gender?
+* Which primary source is it based on? (statement-level provenance)
+</div>
+
+--
+
+### More requirements
+
+<br />
+
+* Two output formats:
+  <!-- .element: class="fragment" -->
+    <ul>
+      <li>1. JSON Lines for quantitative analyses</li>
+      <li>2. Turtle / JSON-LD for qualitative enquiry</li>
+    </ul>
+* Queries over the Turtle / JSON-LD output should return “**provenance by default**”, even when it is not directly queried
+<!-- .element: class="fragment" -->
+* Provenance should be tracked both on the workflow and statement levels 
+<!-- .element: class="fragment" -->
+* Enrichment pipeline should be **modular** to allow users to select enrichment sources relevant to their questions 
+<!-- .element: class="fragment" -->
+* Enrichment pipeline should be **reusable**, adaptable and extensible by researchers with limited coding experience
+<!-- .element: class="fragment" -->
+* All components should be **open source** and require minimal infrastructure
+<!-- .element: class="fragment" -->
+
+--
+
+### Canon Curator
+
+![activity_diagram_annotated.png](images/activity_diagram_annotated.png)<!-- .element: style="max-height:520px; box-shadow: none; border: none; border-radius: 0;" -->
+
+Architectural Decision Records: [github.com/temporal-communities/canon-curator/tree/main/docs/adr](https://github.com/temporal-communities/canon-curator/tree/main/docs/adr)
+<!-- .element: style="font-size: 0.65em;" -->
+
+--
+
+<!-- .slide: class="list08" -->
+
+### Our approach
+
+<br />
+
+The Turtle / JSON-LD output is an interpretative aid for researchers, it is supposed <br />to represent the enrichment workflow and claims that were found during <br />an enrichment run in different source databases at a certain time.
+<!-- .element: style="font-size: 0.85em;" -->
+
+<br />
+
+<ul>
+  <li class="fragment" data-fragment-index="1">We can almost never assert “X’s gender is Y”, because the only authoritative source is X: we never know someone’s true gender unless they told us, recently</li>
+  <li class="fragment" data-fragment-index="1">Recording it unasserted (“gender of X is Y, according to Z”) makes querying tricky, one of our core requirements</li>
+  <li class="fragment" data-fragment-index="1">Asserting one claim forces us to pick a correct claim among competing claims with unreliable sources</li>
+  <li class="fragment" data-fragment-index="2">Assert selfIdentifiedGender, recordedGender, assumedGender
+    <ul>
+      <li>many assumptions and records of one’s gender can coexist</li>
+      <li>gender stays queryable and every query result carries a provenance signal by default</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Distributed Provenance Model: [doi:10.1038/s41597-022-01537-6](https://doi.org/10.1038/s41597-022-01537-6) -->
+
+---
+
 ## Data Model
 
-![overview.png](images/overview.png)<!-- .element: style="height:440px;" -->
+<iframe
+  class="r-stretch"
+  src="https://service.tib.eu/webvowl/#iri=https://raw.githubusercontent.com/temporal-communities/canon-curator/refs/heads/feat/refine-ontology/src/canon_curator/resources/ontology.ttl"
+  style="border: none; display: block; margin: auto; width: 70%;">
+</iframe>
 
-Subactivities Pattern: [https://doi.org/10.1007/978-3-031-79450-6](https://doi.org/10.1007/978-3-031-79450-6) <br/>Distributed Provenance Model: [https://doi.org/10.1038/s41597-022-01537-6](https://doi.org/10.1038/s41597-022-01537-6)
+Viewer not loading? View [static version](#/vowl-fallback).
+<!-- .element: style="font-size: 0.65em;" -->
+
+--
+
+<!-- .slide: id="subactivities-pattern" -->
+
+### Subactivities Pattern
+
+![subactivities-pattern.svg](images/subactivities-pattern.svg)<!-- .element: style="max-height:480px; max-width:80%; box-shadow: none; border: none; border-radius: 0;" -->
+
+Subactivities Pattern: [doi:10.1007/978-3-031-79450-6](https://doi.org/10.1007/978-3-031-79450-6) 
 <!-- .element: style="font-size:0.65em;" -->
 
 --
 
-### Place
+### Place Pattern
 
-![place.png](images/place.png)<!-- .element: style="height:440px;" -->
+![place-odp.png](images/place-odp.png)<!-- .element: style="max-height:480px; max-width:80%; box-shadow: none; border: none; border-radius: 0;" -->
 
-Place Ontology Design Pattern: [http://www.ontologydesignpatterns.org/cp/owl/place.owl#](http://www.ontologydesignpatterns.org/cp/owl/place.owl#)
+Place Ontology Design Pattern: [www.ontologydesignpatterns.org/cp/owl/place.owl#](http://www.ontologydesignpatterns.org/cp/owl/place.owl#)
+<br />ODP Property Specialization Strategies: [doi:10.1007/978-3-319-13704-9_13](https://doi.org/10.1007/978-3-319-13704-9_13)
 <!-- .element: style="font-size:0.65em;" -->
 
 --
@@ -309,16 +440,16 @@ Sitelink counts are shown on a log<sub>10</sub> scale, and the OLS line was fitt
 
 ![example2.png](images/example2.png)<!-- .element: style="height:440px;" -->
 
-Both axes are plotted on a log<sub>10</sub> scale, while the OLS line was fitted on log1p-transformed values. <br/><br/>Cf. Normal People vs. Finnegans Wake.
+Both axes are plotted on a log<sub>10</sub> scale, while the OLS line was fitted on log1p-transformed values. <br/><br/>Cf. *Normal People* vs. *Finnegans Wake*.
 <!-- .element: style="font-size:0.65em;" -->
 
 --
 
-### Publication Years, Wikipedia Sitelinks and Goodreads Ratings
+### Publication Years, Wikipedia Sitelinks <br />and Goodreads Ratings
 
 ![example3.png](images/example3.png)<!-- .element: style="height:400px;" -->
 
-Analogous to the first example. Bubble sizes are relative to the number of Goodreads ratings and colours are based on Goodreads average user ratings, which we labelled as low, medium and high based on their distance from the mean within the dataset (x̄ = 4.01, σ = 0.26).<!-- .element: style="font-size:0.65em;" -->
+Analogous to the first example. Bubble sizes are relative to the number of Goodreads ratings and colours <br />are based on Goodreads average user ratings, which we labelled as low, medium and high based <br />on their distance from the mean within the dataset (x̄ = 4.01, σ = 0.26).<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -335,19 +466,50 @@ Analogous to the first example. Bubble sizes are relative to the number of Goodr
 
 ### Geolocation Subproperties
 
-![output.png](images/output.png)<!-- .element: style="height:440px;" -->
+<br />
+
+<style>
+
+#table-slide-2 table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+#table-slide-2 td {
+  overflow-wrap: anywhere;
+}
+
+#table-slide-2 table {
+  font-size: 0.4em;
+}
+</style>
+
+| work                                                                                 | p                                                                                                                                                                      | location                                                                                                                             | sourceDatabase                                                                                             | primarySource                                                                            | sourceContext                                                                                                                                            | requestUrl                                                                                                           | agent                                                                                                            | retrievedAt                 |
+| :----------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- | :-------------------------- |
+| [http://www.wikidata.org/entity/Q774233](http://www.wikidata.org/entity/Q774233)     | [assumedGeolocation](https://github.com/temporal-communities/canon-curator/ontology/assumedGeolocation) | [http://www.wikidata.org/entity/Q142](http://www.wikidata.org/entity/Q142)                                                           | [http://www.wikidata.org/entity/Q2013](http://www.wikidata.org/entity/Q2013)                               |                                                                                          | [https://www.wikidata.org/wiki/Property:P495](https://www.wikidata.org/wiki/Property:P495)                                                               | [https://www.wikidata.org/wiki/Special:EntityData/Q774233](https://www.wikidata.org/wiki/Special:EntityData/Q774233)     | [https://github.com/temporal-communities/canon-curator/](https://github.com/temporal-communities/canon-curator/) | 2026-05-11T11:05:08.638491Z |
+| [http://www.wikidata.org/entity/Q752584](http://www.wikidata.org/entity/Q752584)     | [workOrigin](https://github.com/temporal-communities/canon-curator/ontology/workOrigin)                 | [http://www.wikidata.org/entity/Q145](http://www.wikidata.org/entity/Q145)                                                           | [http://www.wikidata.org/entity/Q2013](http://www.wikidata.org/entity/Q2013)                               | [https://www.wikidata.org/entity/Q328](https://www.wikidata.org/entity/Q328)             | [https://www.wikidata.org/wiki/Property:P495](https://www.wikidata.org/wiki/Property:P495)                                                               | [https://www.wikidata.org/wiki/Special:EntityData/Q752584](https://www.wikidata.org/wiki/Special:EntityData/Q752584)     | [https://github.com/temporal-communities/canon-curator/](https://github.com/temporal-communities/canon-curator/) | 2026-05-11T11:04:47.040939Z |
+| [http://www.wikidata.org/entity/Q752584](http://www.wikidata.org/entity/Q752584)     | [workOrigin](https://github.com/temporal-communities/canon-curator/ontology/workOrigin)                 | [http://www.wikidata.org/entity/Q145](http://www.wikidata.org/entity/Q145)                                                           | [http://www.wikidata.org/entity/Q2013](http://www.wikidata.org/entity/Q2013)                               | [https://www.wikidata.org/entity/Q130355694](https://www.wikidata.org/entity/Q130355694) | [https://www.wikidata.org/wiki/Property:P495](https://www.wikidata.org/wiki/Property:P495)                                                               | [https://www.wikidata.org/wiki/Special:EntityData/Q752584](https://www.wikidata.org/wiki/Special:EntityData/Q752584)     | [https://github.com/temporal-communities/canon-curator/](https://github.com/temporal-communities/canon-curator/) | 2026-05-11T11:04:47.040939Z |
+| [http://www.wikidata.org/entity/Q501351](http://www.wikidata.org/entity/Q501351)     | [workOrigin](https://github.com/temporal-communities/canon-curator/ontology/workOrigin)                 | [http://www.wikidata.org/entity/Q30](http://www.wikidata.org/entity/Q30)                                                             | [http://www.wikidata.org/entity/Q2013](http://www.wikidata.org/entity/Q2013)                               | [https://www.wikidata.org/entity/Q177837](https://www.wikidata.org/entity/Q177837)       | [https://www.wikidata.org/wiki/Property:P495](https://www.wikidata.org/wiki/Property:P495)                                                               | [https://www.wikidata.org/wiki/Special:EntityData/Q501351](https://www.wikidata.org/wiki/Special:EntityData/Q501351)     | [https://github.com/temporal-communities/canon-curator/](https://github.com/temporal-communities/canon-curator/) | 2026-05-11T11:04:52.951993Z |
+| [http://www.wikidata.org/entity/Q1393060](http://www.wikidata.org/entity/Q1393060)   | [assumedGeolocation](https://github.com/temporal-communities/canon-curator/ontology/assumedGeolocation) | [https://d-nb.info/standards/vocab/gnd/geographic-area-code#XA-UA](https://d-nb.info/standards/vocab/gnd/geographic-area-code#XA-UA) | [https://isil.staatsbibliothek-berlin.de/isil/DE-588](https://isil.staatsbibliothek-berlin.de/isil/DE-588) |                                                                                          | [https://wiki.dnb.de/download/attachments/90411323/laendercodeleitfaden.pdf](https://wiki.dnb.de/download/attachments/90411323/laendercodeleitfaden.pdf) | [https://lobid.org/gnd/4099120-9](https://lobid.org/gnd/4099120-9)                                                       | [https://github.com/temporal-communities/canon-curator/](https://github.com/temporal-communities/canon-curator/) | 2026-05-11T11:04:55.272745Z |
+
+<br />
 
 Output from a sample query for subproperties of geolocation.<!-- .element: style="font-size:0.65em;" -->
+ <!-- .slide: id="table-slide-2" -->
 
 ---
 
 ## Conclusion
 
-Canon Shelf and Canon Curator place canon lists within digital encyclopedic and reading communities, enabling analysis of circulation, visibility, and authority-building across platforms.
+<br />
+
+Canon Shelf and Canon Curator place canon lists within digital encyclopedic and reading communities, enabling analysis of circulation, visibility, <br />and authority-building across platforms.
 
 --
 
 ### Outlook
+
+<br />
 
 - More indicators/sources
 - Web interface
@@ -362,9 +524,22 @@ Canon Shelf and Canon Curator place canon lists within digital encyclopedic and 
 
 <br />Repositories:
 
-https://github.com/temporal-communities/canon-shelf
+[github.com/temporal-communities/canon-shelf](https://github.com/temporal-communities/canon-shelf)
 
-https://github.com/temporal-communities/canon-curator
+[github.com/temporal-communities/canon-curator](https://github.com/temporal-communities/canon-curator)
+
+---
+
+(Fallback Slide)
+
+--
+
+<!-- .slide: id="vowl-fallback" data-visibility="uncounted"-->
+
+![data_model.svg](images/data_model.svg)<!-- .element: style="max-height:640px; max-width:80%; box-shadow: none; border: none; border-radius: 0;" -->
+
+[Back to presentation.](#/subactivities-pattern)
+<!-- .element: style="font-size: 0.45em;" -->
 
 </script>
         </section>

@@ -34,6 +34,23 @@
   --r-main-font: "Embedded FreeSerif", serif;
   --r-heading-font: "Embedded FreeSerif", serif;
   --r-main-font-size: 30px;
+  --r-heading1-size: 3.4em; /* Default: 3.77em */
+  --r-heading2-size: 1.9em; /* Default: 2.11em */
+  --r-heading3-size: 1.4em; /* Default: 1.55em */
+}
+
+/* reduce top-level lists, even when wrapped in a fragment div */
+.reveal .list08 ul,
+.reveal .list08 ol {
+  font-size: 0.8em;
+}
+
+/* but keep nested lists the same size as their parent (no compounding) */
+.reveal .list08 ul ul,
+.reveal .list08 ul ol,
+.reveal .list08 ol ul,
+.reveal .list08 ol ol {
+  font-size: 1em;
 }
 
 .reveal section img {
