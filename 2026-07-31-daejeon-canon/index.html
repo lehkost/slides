@@ -318,22 +318,19 @@ Modular, provenance-aware pipeline for enriching these lists with <br />populari
 
 <br />
 
-* Two output formats:
-  <!-- .element: class="fragment" -->
+<ul>
+  <li class="fragment">Two output formats:
     <ul>
       <li>JSON Lines for quantitative analyses</li>
       <li>Turtle / JSON-LD for qualitative enquiry</li>
     </ul>
-* Queries over the Turtle / JSON-LD output should return “**provenance by default**”, even when it is not directly queried
-<!-- .element: class="fragment" -->
-* Provenance should be tracked both on the workflow and statement levels
-<!-- .element: class="fragment" -->
-* Enrichment pipeline should be **modular** to allow users to select enrichment sources relevant to their questions
-<!-- .element: class="fragment" -->
-* Enrichment pipeline should be **reusable**, adaptable and extensible by researchers with limited coding experience
-<!-- .element: class="fragment" -->
-* All components should be **open source** and require minimal infrastructure
-<!-- .element: class="fragment" -->
+  </li>
+  <li class="fragment">Queries over the Turtle / JSON-LD output should return “<strong>provenance by default</strong>”, even when it is not directly queried</li>
+  <li class="fragment">Provenance should be tracked both on the workflow and statement levels</li>
+  <li class="fragment">Enrichment pipeline should be <strong>modular</strong> to allow users to select enrichment sources relevant to their questions</li>
+  <li class="fragment">Enrichment pipeline should be <strong>reusable</strong>, adaptable and extensible by researchers with limited coding experience</li>
+  <li class="fragment">All components should be <strong>open source</strong> and require minimal infrastructure</li>
+</ul>
 
 --
 
@@ -428,7 +425,7 @@ Place Ontology Design Pattern: [www.ontologydesignpatterns.org/cp/owl/place.owl#
 }
 </style>
 
-```sparql [1-2,7,9-13,26]
+```sparql [1-2,6,8,10-12,26|]
 PREFIX canon: <https://github.com/temporal-communities/canon-curator/ontology/>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX prov:  <http://www.w3.org/ns/prov#>
