@@ -50,13 +50,11 @@ Presentation URL: **[lehkost.github.io/slides/2026-07-31-daejeon-canon/](https:/
 
 ---
 
-On 9 January 1886, John Lubbock, an English banker, Liberal politician, and polymath, delivered a lecture at the Working Men’s College in London <br />entitled _On the Pleasure of Reading_.
+1886, John Lubbock  
+_On the Pleasure of Reading_
 
-In the lecture, he recommended a selection of one hundred books <br />that he considered especially worth reading.
-
-<!-- .element: class="fragment" -->
-
-Two days later, _The Pall Mall Gazette_ reported on the lecture and helped popularise Lubbock’s selection as a list of the _Best Hundred Books_.
+Reported in the _The Pall Mall Gazette_  
+as the _Best Hundred Books_
 
 <!-- .element: class="fragment" -->
 
@@ -70,71 +68,50 @@ Two days later, _The Pall Mall Gazette_ reported on the lecture and helped popul
 
 --
 
-In 1891, Jenkin Lloyd Jones, a prominent American Unitarian minister, published a small brochure entitled _Ten Great Novels_. The list was based on a survey conducted in 1884 and therefore predates Lubbock’s “best books.”
-
-It received seventy responses, naming 147 different novels, including works originally written in languages other than English.
-
-<!-- .element: class="fragment" -->
-
-Ranked by number of votes, the winning titles were …
-
-<!-- .element: class="fragment" -->
+1891, Jenkin Lloyd Jones  
+_Ten Great Novels_
 
 --
 
 ![page from Jenkin Lloyd Jones: Ten Great Novels (1891)](images/1891_ten-great-novels.png)<!-- .element: style="height:540px;" -->
 
-(image source: [Google Books](https://books.google.com/books?id=a5xPAQAAMAAJ&pg=PA3))
+([Google Books](https://books.google.com/books?id=a5xPAQAAMAAJ&pg=PA3))
 
 <!-- .element: style="font-size:0.65em;" -->
 
 --
 
-In 1898, Clement K. Shorter published his list <br />_A Hundred Books for a Village Library._
+1898, Clement K. Shorter  
+_A Hundred Books for a Village Library_
 
-In 1899, _The Daily Telegraph_ published <br />a list of the _100 Best Novels in the World._
-
-<!-- .element: class="fragment" -->
-
-In 1916, John Cowper Powys published <br />_One Hundred Best Books._
+1899, _The Daily Telegraph_  
+_100 Best Novels in the World_
 
 <!-- .element: class="fragment" -->
 
---
-
-Between 1978 and 1980, German weekly _Die Zeit_ <br />published _Die ZEIT-Bibliothek der 100 Bücher._
-
-In 1991, the Swedish literary magazine _Tidningen Boken_ published _Världsbiblioteket_, a list of the 100 best books in world literature.
-
-<!-- .element: class="fragment" -->
-
-At the end of the twentieth century, <br />“books of the century” lists proliferated …
+1916, John Cowper Powys  
+_One Hundred Best Books_
 
 <!-- .element: class="fragment" -->
 
 --
 
-In 1998, the _Modern Library_ listed the _100 Best Novels_, produced <br />with the “assistance of a distinguished Board made up of celebrated <br />authors, historians, critics, and publishing luminaries.”
+1978–1980, _Die Zeit_  
+_Die ZEIT-Bibliothek der 100 Bücher_
 
-In 1999, _Le Monde_ published _Les cent livres du siècle_, based <br />on a poll in which approximately 17,000 participants took part.
-
-<!-- .element: class="fragment" -->
-
-In 2001, the Spanish daily _El Mundo_ published <br />_Las 100 mejores novelas en castellano del siglo XX._
+1991, _Tidningen Boken_  
+_Världsbiblioteket_
 
 <!-- .element: class="fragment" -->
 
-In 2005, _Time_ magazine published its _All-TIME 100 Novels_, a list of 100 English-language novels published since 1923 and selected by two _Time_ critics.
+At the end of the twentieth century,  
+“books of the century” lists proliferated
 
 <!-- .element: class="fragment" -->
 
 --
 
 And then, in the past two years, this happened …
-
---
-
-![New York Times: The 100 Best Books of the 21st Century (2024)](images/2024-07-12_nyt-100-best-books-of-the-21st-century.png)<!-- .element: style="height:620px;" -->
 
 --
 
@@ -166,11 +143,11 @@ Repository for collecting and annotating canon lists
 
 <br />
 
-<div class="fragment">
+<div class="fragment" style="text-wrap: balance;">
 
 ## Canon Curator
 
-Modular, provenance-aware pipeline for enriching these lists with <br />popularity metrics, geographic information and gender data
+Modular, provenance-aware pipeline for enriching these lists with popularity metrics, geographic information and gender data
 
 </div>
 
@@ -431,7 +408,7 @@ PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX prov:  <http://www.w3.org/ns/prov#>
 PREFIX pav:   <http://purl.org/pav/>
 
-SELECT ?work ?p ?location 
+SELECT ?work ?p ?location
        ?sourceDatabase ?primarySource ?sourceContext ?requestUrl ?agent ?retrievedAt
 WHERE {
 
