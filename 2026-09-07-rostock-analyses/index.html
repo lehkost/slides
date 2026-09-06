@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Analyses with DraCor Data (Women Playwrights in Digital Corpora: a DraCor Hackathon, Rostock, 7 September 2026)</title>
+
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/white.css" id="theme" />
+
+    <!-- adjustments for white.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/zenburn.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
+
+#### Beginners’ Training Session II
+
+<br />
+
+## Analyses with DraCor Data
+
+![DraCor logo](images/dracor-hexagon.png)<!-- .element: style="width:100px;" -->
+
+<p style="display:flex;justify-content:center;align-items:center;gap:0.35em;font-size:0.85em;margin:0;">
+  <span>Frank Fischer</span>
+  <a href="https://orcid.org/0000-0003-2419-6629" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD Frank Fischer" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+  <span>&nbsp;·&nbsp;</span>
+  <span>Antonio Rojas Castro</span>
+  <a href="https://orcid.org/0000-0002-8916-4997" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD Antonio Rojas Castro" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+</p>
+
+<br />Freie Universität Berlin
+<!-- .element: style="font-size:0.7em;" -->
+
+<br /><br />This presentation: **[lehkost.github.io/slides/2026-09-07-rostock-analyses/](https://lehkost.github.io/slides/2026-09-07-rostock-analyses/index.html)**
+<!-- .element: style="font-size:0.6em;" -->
+
+<br />[Women Playwrights in Digital Corpora: a DraCor Hackathon](https://www.germanistik.uni-rostock.de/en/forschung/digital-humanities/rosdh/events/detail-view/n/women-playwrights-in-digital-corpora-a-dracor-hackathon-283694/) &nbsp; · &nbsp; University of Rostock &nbsp; <a href="https://commons.wikimedia.org/wiki/File:Siegel_Universit%C3%A4t_Rostock_1419.svg"><img src="images/siegel_uni_rostock.svg" alt="Seal of the University of Rostock" height="50" style="vertical-align:middle;"/></a> &nbsp; · &nbsp; 7 Sep 2026, 15:15–16:45
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Why this workshop?
+
+<br />
+
+* Digital drama analysis is demanding:
+  * You need the right data (the more the better).
+  * You need the right tools to search for interesting patterns in the data.
+  * You have to »get from numbers to meaning« (Heuser/Le-Khac 2012).
+  * It would be best practice if this process followed the [FAIR principles](https://en.wikipedia.org/wiki/FAIR_data).
+* DraCor is meant to make all this easier.
+
+--
+
+### For this workshop you need:
+
+<br />
+
+* A laptop and browser (we will need many <br />browser tabs).
+* We recommend creating a new folder for <br />downloading the data during the workshop.
+* We will be working with ready-made tools and <br />customised data from DraCor.
+
+--
+
+### Chapters
+
+<br />
+
+- 1. **DraCor and Its API**
+- 2. **Selected Third-Party Analysis Tools**
+  - 2.1 Voyant
+  - 2.2 RAWGraphs
+  - 2.3 Datawrapper
+  - 2.4 Gephi Lite
+- 3. **The DraCor Tools Tab**
+- 4. **Outlook**
+  - 4.1 AntConc
+  - 4.2 stylo
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 1
+
+<br />
+
+### DraCor and Its API
+
+--
+
+### [dracor.org](https://dracor.org/) Frontpage (as of 26 June 2026)
+
+![DraCor frontpage on 26 June 2026](images/dracor-frontpage-2026-06-26.png)
+
+overview over DraCor corpora: [dracor.org/doc/corpora](https://dracor.org/doc/corpora)
+
+--
+
+### DraCor Download Tab
+
+![DraCor Download tab](images/lasker-schueler-wupper-download-tab.png)<!-- .element: style="width:700px;" -->
+
+[dracor.org/id/ger000468#downloads](https://dracor.org/id/ger000468#downloads)
+
+--
+
+### Functions of the DraCor API
+
+![DraCor API](images/dracor-api.png)<!-- .element: style="width:600px;" -->
+
+[dracor.org/doc/api](https://dracor.org/doc/api)
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2
+
+<br />
+
+### Selected Third-Party Analysis Tools
+
+--
+
+### Recommended Examples
+
+<br />
+
+- Luise Adelgunde Victorie Gottsched: [Die Pietisterey im Fischbein-Rocke oder Die Doctormäßige Frau](https://dracor.org/id/ger000462#text) (1736)
+- Charlotte Birch-Pfeiffer: [Mutter und Tochter](https://dracor.org/id/ger000674#text) (1844)
+- Else Lasker-Schüler: [Die Wupper](https://dracor.org/id/ger000468#text) (1909)
+- or another of the &#62; 4,000 plays on [dracor.org](https://dracor.org/)
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2.1: Full-Text Data
+
+<br />
+
+### Voyant
+
+--
+
+### Task
+
+<br />
+
+- Open Voyant in another browser tab ([voyant-tools.org](https://voyant-tools.org/)).
+- Choose a DraCor play and go to the Download tab. (example: [L.&nbsp;A.&nbsp;V. Gottsched](https://dracor.org/id/ger000462))
+- Download the ›Spoken text‹ → ›Plain (no markup)‹ → TXT.
+- You can also copy the URL.
+- Then you can paste the text, paste the URL or upload the file to Voyant.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2.2: Tabular Data
+
+<br />
+
+### RAWGraphs
+
+--
+
+### Task
+
+<br />
+
+- Open RAWGraphs in another browser tab ([rawgraphs.io](https://www.rawgraphs.io/)).
+- Choose a DraCor play and go to the Download tab. (example: [L.&nbsp;A.&nbsp;V. Gottsched](https://dracor.org/id/ger000462))
+- Download the ›List of characters‹ → ›Including precalculated data‹ → CSV.
+- You can also copy the URL.
+- Then you can paste the URL or upload the file to RAWGraphs.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2.3: Tabular Data
+
+<br />
+
+### Datawrapper
+
+--
+
+### Task
+
+<br />
+
+- Open Datawrapper in another browser tab ([datawrapper.de](https://www.datawrapper.de/)).
+- Choose a DraCor play and go to the Download tab. (example: [L.&nbsp;A.&nbsp;V. Gottsched](https://dracor.org/id/ger000462))
+- Download the ›List of characters‹ → ›Including precalculated data‹ → CSV.
+- You can also copy the URL.
+- Then you can paste the URL or upload the file to Datawrapper.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 2.4: Network Data
+
+<br />
+
+### Gephi Lite
+
+--
+
+### Task
+
+<br />
+
+- Open Gephi Lite in another browser tab ([gephi.org/gephi-lite/](https://gephi.org/gephi-lite/)).
+- Choose a DraCor play and go to the Download tab. (example: [L.&nbsp;A.&nbsp;V. Gottsched](https://dracor.org/id/ger000462))
+- Download the ›Network data‹ → ›Co-occurrence network‹ → GEXF.
+- You can also copy the URL.
+- Then you can paste the URL or upload the file to Gephi Lite.
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 3
+
+<br />
+
+### The DraCor Tools Tab
+
+--
+
+### Task
+
+<br />
+
+- For any play, click on the recently introduced Tools tab. (example: [L.&nbsp;A.&nbsp;V. Gottsched](https://dracor.org/id/ger000462))
+
+---
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 4
+
+<br />
+
+### Outlook
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 4.1: Corpus Analysis
+
+<br />
+
+### AntConc
+
+--
+
+### Task
+
+<br />
+
+- Download and install AntConc ([laurenceanthony.net/software/antconc/](https://www.laurenceanthony.net/software/antconc/)).
+- Download data from the DraCor Download tab or via the DraCor API.
+- Open files in AntConc to build your working corpus.
+
+--
+
+<!-- .slide: data-background-color="lightblue" -->
+
+## Chapter 4.2: Stylometry
+
+<br />
+
+### stylo
+
+--
+
+### Task
+
+<br />
+
+- Download and install stylo ([github.com/computationalstylistics/stylo](https://github.com/computationalstylistics/stylo)), preferably with RStudio already installed.
+- Download data from the DraCor Download tab or via the DraCor API. They can be full texts or slices of texts.
+- Use a function like `stylo()` or `oppose()` to do your analysis.
+
+---
+
+🙏 &nbsp; 👋<!-- .element: style="font-size:3em;" -->
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
