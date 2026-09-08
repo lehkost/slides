@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Battle of the Plays (Women Playwrights in Digital Corpora: a DraCor Hackathon, Rostock, 8 September 2026)</title>
+
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
+
+### **Battle of the Plays**
+
+#### 4th World Championship 2026
+
+![Card](images/battle-of-the-plays_back.jpg)<!-- .element: style="width:60px;" -->
+![Card](images/battle-of-the-plays_sophocles-antigone.jpg)<!-- .element: style="width:60px;" -->
+![Card](images/battle-of-the-plays_mitford-rienzi.jpg)<!-- .element: style="width:60px;" -->
+
+<p style="display:flex;justify-content:center;align-items:center;gap:0.35em;font-size:0.85em;margin:0;">
+  <span>Moderated by</span> <span>&nbsp;·&nbsp;</span> <span>Frank Fischer</span>
+  <a href="https://orcid.org/0000-0003-2419-6629" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD Frank Fischer" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+  <span>&nbsp;·&nbsp;</span>
+  <span>Antonio Rojas Castro</span>
+  <a href="https://orcid.org/0000-0002-8916-4997" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD Antonio Rojas Castro" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+</p>
+
+<br />Freie Universität Berlin
+<!-- .element: style="font-size:0.7em;" -->
+
+·
+
+This presentation: <br />**[lehkost.github.io/slides/2026-09-08-rostock-battle/](https://lehkost.github.io/slides/2026-09-08-rostock-battle/index.html)**
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+[Women Playwrights in Digital Corpora: a DraCor Hackathon](https://www.germanistik.uni-rostock.de/en/forschung/digital-humanities/rosdh/events/detail-view/n/women-playwrights-in-digital-corpora-a-dracor-hackathon-283694/) &nbsp; · &nbsp; University of Rostock &nbsp; <a href="https://commons.wikimedia.org/wiki/File:Siegel_Universit%C3%A4t_Rostock_1419.svg"><img src="images/siegel_uni_rostock.svg" alt="Seal of the University of Rostock" height="50" style="vertical-align:middle;"/></a> &nbsp; · &nbsp; 8 Sep 2026, 15:30–17:00
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### History of <br />»Battle of the Plays« <br />Championships
+
+<br />
+
+- [Potsdam, 10 December 2019](https://x.com/peertrilcke/status/1204410193812971522) (winner: [Joanna Byszuk](https://x.com/jbyszuk/status/1204415618339885070))
+- [Vienna, 12 June 2024](https://web.archive.org/web/20240612135449/https://twitter.com/DH_Potsdam/status/1800889495501553978) (winner: [Marie-Christine Boucher](https://x.com/DH_Potsdam/status/1800894501822796084))
+- [Berlin, 4 September 2025](https://summit.dracor.org/barcamp) (winner: [Tabeer Khilji](https://bsky.app/profile/dhpotsdam.bsky.social/post/3lxzaoee5b22p))
+
+--
+
+### Programme
+
+<br />
+
+- 15:30 – Basics of network analysis (interactive talk)
+- 15:55 – Rules of play and the draw
+- 16:00 – 4 rounds of 7 minutes each (last 16, quarter-finals, semi-finals, final)
+- 16:45 – Prize-giving, feedback, round-up
+
+---
+
+### Network theory …
+
+<br>
+
+… looks at how things are connected to one another, and shows those connections as points and lines in a network.
+
+--
+
+#### An example of a network graph with <br />8 nodes (also called vertices) and 10 edges:
+
+<br>
+
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element: style="width:350px;" -->
+
+<br>
+
+(Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+If a set of data can sensibly be described using nodes and edges, <br />then what we have is network data.
+
+--
+
+### Examples of networks
+
+<br />
+
+- Railways (stations and the track between them)
+- Air travel (airports and flight routes)
+- The internet (devices and the connections between them)
+- Social networks<!-- .element: class="fragment" -->
+
+--
+
+### Facebook friendships, visualised
+
+![FB network 2010](images/fb-network-2010.jpg)
+
+Nodes: people; edges: friend requests accepted by both sides. <br />(Source: [Paul Butler, 2010](https://engineering.fb.com/2010/12/13/core-data/visualizing-friendships/))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Clusters (communities)
+
+![Graph, nodes, edges, communities](images/graph-nodes-edges-communities.png)<!-- .element: style="width:425px;" -->
+
+<br />
+
+(Image source: [doi:10.3390/a9010008](https://doi.org/10.3390/a9010008))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Social networks
+
+![Annotated social network](images/jill-rettberg-annotated-social-network.png)<!-- .element: style="width:400px;" -->
+
+A personal Facebook network with the clusters (communities) labelled. <br />(Source: [Jill Rettberg, 2013](http://jilltxt.net/?p=3447))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+#### An example of a literary network: <br />Goethe’s »Faust I«
+
+![Goethe, Faust I](images/goethe-faust-eine-tragoedie.png)<!-- .element: style="width:480px;" -->
+
+Co-occurrence graph, 115 nodes. (Source: [DraCor](https://dracor.org/id/ger000243))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+## Directed and weighted graphs
+
+--
+
+### A directed graph
+
+<br />
+
+![Simple directed graph (from Wikimedia Commons)](images/directed-graph-from-wikimedia-commons.png)<!-- .element: style="height:180px;" -->
+
+<br />
+
+(Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Directed.svg))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### A weighted graph
+
+<br />
+
+![Simple weighted graph (from Wikimedia Commons)](images/weighted-graph-from-wikimedia-commons.png)<!-- .element: style="height:227px;" -->
+
+<br />
+
+(Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Weighted_network.svg))
+<!-- .element: style="font-size:0.6em;" -->
+
+--
+
+### Examples of weighted graphs
+
+<br />
+
+- Navigation software (Google Maps, for instance)
+- Railway apps
+- Underground apps (public transport apps in general)
+- …
+
+--
+
+### Social network analysis (SNA) …
+
+<br />
+
+… is a way of studying how people or groups are connected to one another. It uses network theory to help us make better sense of those connections.
+
+--
+
+### One of the first sociograms
+
+![Jacob L. Moreno, Sociogram](images/moreno-emotions-mapped.png)<!-- .element: style="width:380px;" -->
+
+»Class structure, 4th grade«. Work by Jacob L. Moreno (1889–1974).<br />(Published in the New York Times, [3 April 1933](http://connectedness.blogspot.de/2005/05/stanley-wasserman-and-visible-path.html). Source of this PNG: [martingrandjean.ch](http://www.martingrandjean.ch/social-network-analysis-visualization-morenos-sociograms-revisited/).)
+<!-- .element: style="font-size:0.6em;" -->
+
+---
+
+### Network analysis of dramatic texts <br />as a classic use case <br />for the Digital Humanities
+
+--
+
+## Formalisation
+
+<br />
+
+- Social network data = **interactions** between social entities
+- In dramatic texts, for example: »Two characters interact with one another if they both speak within the same section of a play (usually a ›scene‹).« (following an idea by Solomon Marcus, »Poetica matematică«, 1970)
+
+---
+
+### Measures that describe a graph
+
+![Four nodes](images/example_network_graph_four_nodes.svg)<!-- .element: style="height:240px;" -->
+
+| Measure                       | What it means                                                                                    | Value                                       |
+| ----------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------- |
+| **(a) Network size**          | The number of nodes<!-- .element: class="fragment" -->                                           | **4**<!-- .element: class="fragment" -->    |
+| **(b) Network diameter**      | The longest of all the shortest paths between any two nodes<!-- .element: class="fragment" -->   | **2**<!-- .element: class="fragment" -->    |
+| **(c) Network density**       | How many of the possible edges actually exist<!-- .element: class="fragment" -->                 | **0.67**<!-- .element: class="fragment" --> |
+| **(d) Clustering coefficient**| The average local clustering coefficient across all nodes<!-- .element: class="fragment" -->     | **0.58**<!-- .element: class="fragment" --> |
+| **(e) Average path length**   | The average of all shortest paths between every pair of nodes<!-- .element: class="fragment" --> | **1.33**<!-- .element: class="fragment" --> |
+| **(f) Maximum degree**        | The largest number of edges meeting at a single node<!-- .element: class="fragment" -->          | **3**<!-- .element: class="fragment" -->    |
+
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+(NB. The **clustering coefficient** tells you how closely the <br />neighbours of a node are connected to each other.)
+
+--
+
+### Comparing structures, the playful way: <br />»Battle of the Plays«
+
+![Battle of the Plays, card](images/battle-of-the-plays_sophocles-antigone.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_back.jpg)
+![Battle of the Plays, card](images/battle-of-the-plays_mitford-rienzi.jpg)
+
+Frank Fischer, Mark Schwindt: **[Battle of the Plays. A Gamification Approach to Literary Network Analysis.](https://sukultur.de/produkt/battle-of-the-plays-a-gamification-approach-to-literary-network-analysis/)** Berlin: **SUKULTUR** 2024. – 32+1 cards including case, colour print. ISBN: 978-3-95566-182-3. €15.00. – Rules of play: https://battle-of-the-plays.github.io/
+<!-- .element: style="font-size:0.7em;" -->
+
+--
+
+### Where does the network data come from?
+
+![DraCor front page, 18 January 2025](images/dracor_frontpage_2025-01-18.png)
+
+DraCor ([dracor.org](https://dracor.org/)) is a free and open online platform holding the full texts of, and data on, more than 4,000 plays in over 20 languages. It supports digital research into European drama from antiquity onwards.
+
+--
+
+## The cards
+
+<br />
+
+…
+
+--
+
+### Rules of play
+
+<br />
+
+1. The game follows the [Top Trumps](https://en.wikipedia.org/wiki/Top_Trumps) principle.
+2. Every match is one against one.
+3. The younger player goes first.
+4. If the two values called are the same, another value on the current pair of cards is called instead.
+5. The game ends as soon as one player has won every card (32:0).
+6. Otherwise it ends after 7 minutes, and the cards are counted.
+7. If the score is level (16:16), the moderators name one value on the current pair of cards to settle the match.
+
+--
+
+### The draw
+
+<br />
+
+[auslosungstool.de](https://www.auslosungstool.de/)
+
+---
+
+Thank you.
+
+<br />
+
+## 👋
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
