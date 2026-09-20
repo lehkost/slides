@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerif.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerifBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerifItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Embedded FreeSerif";
+  src: url("../fonts/FreeSerifBoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: block;
+}
+
+:root {
+  --r-main-font: "Embedded FreeSerif", serif;
+  --r-heading-font: "Embedded FreeSerif", serif;
+  --r-main-font-size: 30px;
+  --r-heading1-size: 3.4em; /* Default: 3.77em */
+  --r-heading2-size: 1.9em; /* Default: 2.11em */
+  --r-heading3-size: 1.4em; /* Default: 1.55em */
+}
+
+/* reduce top-level lists, even when wrapped in a fragment div */
+.reveal .list08 ul,
+.reveal .list08 ol {
+  font-size: 0.8em;
+}
+
+/* but keep nested lists the same size as their parent (no compounding) */
+.reveal .list08 ul ul,
+.reveal .list08 ul ol,
+.reveal .list08 ol ul,
+.reveal .list08 ol ol {
+  font-size: 1em;
+}
+
+.reveal section img {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+#left {
+  margin:10px 0 15px 20px;
+  text-align:left;
+  float:left;
+  width:48%;
+  font-size:0.8em;
+  line-height:1.5;
+}
+
+#right {
+  margin:10px 0 15px 0;
+  float:right;
+  text-align:left;
+  width:48%;
+  font-size:0.8em;
+  line-height:1.5;
+}
+
+.reveal table th,
+.reveal table td {
+  font-size: 0.55em;
+}
