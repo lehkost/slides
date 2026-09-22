@@ -24,7 +24,7 @@
 
 ### DraCor as Part of the Digital Ecosystem on <br />Drama and Performance Studies
 
-![DraCor logo](images/dracor-hexagon.png)<!-- .element: style="width:120px; box-shadow:none;" -->
+![DraCor logo](images/dracor-hexagon.png)<!-- .element: style="width:120px; border:0; border-radius:0; box-shadow:none;" -->
 
 Frank Fischer <br />(Freie Universität Berlin)<!-- .element: style="font-size:0.7em;" -->
 
@@ -44,9 +44,9 @@ Frank Fischer <br />(Freie Universität Berlin)<!-- .element: style="font-size:0
 
 --
 
-![DraCor frontpage on 26 June 2026](images/dracor-frontpage-2026-06-26.png)
+![DraCor homepage on 26 June 2026](images/dracor-frontpage-2026-06-26.png)
 
-https://dracor.org/
+[dracor.org](https://dracor.org/)
 
 --
 
@@ -127,12 +127,14 @@ Excerpt from Shakespeare’s Macbeth in GerShDraCor, encoded in TEI. <br />Curre
 - FreDraCor
 - GerDraCor
 - **EngDraCor**
+- DutchDraCor
 - RusDraCor
 - CalDraCor
-- DutchDraCor
 - ItaDraCor
+- RoDraCor
 - HunDraCor
 - SweDraCor
+- PolDraCor
 - UDraCor
 - GreekDraCor
 - AmDraCor
@@ -141,18 +143,17 @@ Excerpt from Shakespeare’s Macbeth in GerShDraCor, encoded in TEI. <br />Curre
 
 <div id="right">
 
-- RoDraCor
 - **GerShDraCor**
 - **ShakeDraCor** (Folger Shakespeare Library)
+- IbsDraCor
 - RomDraCor
-- PolDraCor
 - AlsDraCor
 - SpanDraCor
-- YiDraCor
 - ArDraCor
+- YiDraCor
 - TatDraCor
 - BashDraCor
-- in development: CzeDraCor, HeDraCor, GeorgDraCor, NeoLatDraCor
+- in development: CzeDraCor, EstDraCor, GeorgDraCor, HeDraCor, IndiEDraCor, LacyDraCor, NeoLatDraCor
 
 </div>
 
@@ -163,11 +164,11 @@ Excerpt from Shakespeare’s Macbeth in GerShDraCor, encoded in TEI. <br />Curre
 
 --
 
-### Frontpage GerShDraCor
+### GerShDraCor Homepage
 
 ![GerShDraCor](images/dracor-gershdracor.png)<!-- .element: style="height:510px;" -->
 
-https://dracor.org/gersh
+[dracor.org/gersh](https://dracor.org/gersh)
 
 --
 
@@ -175,7 +176,7 @@ https://dracor.org/gersh
 
 ![GerShDraCor: Macbeth, network tab](images/dracor-macbeth-network.png)<!-- .element: style="height:510px;" -->
 
-https://dracor.org/id/gersh000028
+[dracor.org/id/gersh000028](https://dracor.org/id/gersh000028)
 
 --
 
@@ -183,7 +184,7 @@ https://dracor.org/id/gersh000028
 
 ![GerShDraCor: Macbeth, speech distribution tab](images/dracor-macbeth-speech-distribution.png)<!-- .element: style="height:510px;" -->
 
-https://dracor.org/id/gersh000028#speech
+[dracor.org/id/gersh000028#speech](https://dracor.org/id/gersh000028#speech)
 
 --
 
@@ -191,7 +192,7 @@ https://dracor.org/id/gersh000028#speech
 
 ![DraCor-Download-Tab](images/dracor-macbeth-download-tab.png)<!-- .element: style="height:510px;" -->
 
-https://dracor.org/id/gersh000028#downloads
+[dracor.org/id/gersh000028#downloads](https://dracor.org/id/gersh000028#downloads)
 
 ---
 
@@ -221,14 +222,14 @@ API: Application Programming Interface
 
 ### Functions of the DraCor API
 
-![DraCor-API)](images/dracor-api.png)
+![DraCor API](images/dracor-api.png)
 
-https://dracor.org/doc/api
+[dracor.org/doc/api](https://dracor.org/doc/api)
 <!-- .element: style="font-size:0.6em;" -->
 
 --
 
-### DraCor-API: Example Queries
+### DraCor API: Example Queries
 
 https://dracor.org/api/v1/corpora/gersh/plays/hamlet-prinz-von-daenemark/spoken-text?sex=FEMALE<!-- .element: style="font-size:0.7em;" -->
 
@@ -240,7 +241,7 @@ https://dracor.org/api/v1/corpora/ger/plays/schiller-die-raeuber/spoken-text?gen
 
 https://dracor.org/api/v1/corpora/shake/plays/hamlet/metrics<!-- .element: style="font-size:0.7em;" -->
 
-<small>Network data extracted from Shakespeare’s “Hamlet” (in JSON format).</small>
+<small>Network metrics for Shakespeare’s “Hamlet” (in JSON format).</small>
 
 https://dracor.org/api/v1/corpora/eng/plays/jonson-volpone/stage-directions<!-- .element: style="font-size:0.7em;" -->
 
@@ -273,7 +274,7 @@ Example of a simple R script that obtains data via the API.
 
 #### Number of characters per play in chronological order (2/2)
 
-![Anzahl Figuren](images/num-of-speakers-shakedracor.png)<!-- .element: style="height:400px;" -->
+![Number of characters](images/num-of-speakers-shakedracor.png)<!-- .element: style="height:400px;" -->
 
 Output in RStudio.
 <!-- .element: style="font-size:0.6em;" -->
@@ -284,7 +285,7 @@ Output in RStudio.
 
 <br />
 
-= further simplification: <br />API endpoints are exposed as functions
+= further simplification: <br />API wrappers expose endpoints as R and Python functions
 
 <br />
 
@@ -303,7 +304,7 @@ plot(macbeth)
 ```
 #### Result:
 
-![Macbeth, Netzwerkgraph mit rdracor](images/macbeth-rdracor-graph.png)<!-- .element: style="height:360px;" -->
+![Macbeth, network graph with rdracor](images/macbeth-rdracor-graph.png)<!-- .element: style="height:360px;" -->
 
 ---
 
@@ -333,12 +334,12 @@ plot(macbeth)
 
 ![DraCor Technology Stack](images/dracor-drawio.svg)
 
-All repos (code, data) are open source: https://github.com/dracor-org
+All repos (code, data) are open source: [github.com/dracor-org](https://github.com/dracor-org)
 <!-- .element: style="font-size:0.6em;" -->
 
 --
 
-### Dynamic graph of “The Merchant of Venice”
+### Dynamic Graph of “The Merchant of Venice”
 
 <video data-autoplay src="images/der-kaufmann-von-venedig_dynamic-graph.mp4" style="height:520px;"></video>
 
@@ -423,9 +424,9 @@ Generated using the [**ndtv**](https://cran.r-project.org/web/packages/ndtv/inde
 
 Thanks.
 
-![DraCor logo](images/dracor-hexagon.png)<!-- .element: style="width:200px; box-shadow:none;" -->
+![DraCor logo](images/dracor-hexagon.png)<!-- .element: style="width:200px; border:0; border-radius:0; box-shadow:none;" -->
 
-https://dracor.org/
+[dracor.org](https://dracor.org/)
 
 <br />
 
