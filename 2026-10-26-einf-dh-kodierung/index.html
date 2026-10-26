@@ -58,8 +58,8 @@ Diese Präsentation: <br />**[lehkost.github.io/slides/2026-10-26-einf-dh-kodier
 | Datum | Thema |
 |:-|:-|
 | 12.10.2026 | Thematische Rundumschau I |
-| **19.10.2026** | **Thematische Rundumschau II** |
-| 26.10.2026 | Kodierungsformate (XML, TEI), Digitale Editionen |
+| 19.10.2026 | Thematische Rundumschau II |
+| **26.10.2026** | **Kodierungsformate (XML, TEI), Digitale Editionen** |
 | 02.11.2026 | Distant Reading I: Stilometrie |
 | 09.11.2026 | Distant Reading II: Topic Modeling |
 | 16.11.2026 | Visual Analytics: »Beautiful Evidence« |
@@ -97,6 +97,8 @@ Diese Präsentation: <br />**[lehkost.github.io/slides/2026-10-26-einf-dh-kodier
 
 ### Plan für heute
 
+<br />**Leitfrage:** Was geht verloren, wenn wir einen Text digitalisieren, und was gewinnen wir durch seine Kodierung?
+
 <br />
 
 1. Zur Einleitung: Markup im Web
@@ -109,7 +111,7 @@ Diese Präsentation: <br />**[lehkost.github.io/slides/2026-10-26-einf-dh-kodier
 
 --
 
-## In welchen Sprachen sind Websites normalerweise programmiert?
+### In welchen Sprachen sind Websites normalerweise programmiert?
 
 ---
 
@@ -339,7 +341,6 @@ Die ersten sechs Zeilen aus Goethes »Faust« (1808) in TEI. (Bildquelle: [DTA](
 
 * … haben (idealerweise sprechende) Namen.
 * … können Text oder wieder andere Elemente umfassen.
-* Welche Elemente finden Sie in unserem Beispiel?
 
 <br />
 
@@ -358,7 +359,8 @@ Die ersten sechs Zeilen aus Goethes »Faust« (1808) in TEI. (Bildquelle: [DTA](
 
 <br />
 
-<small>```<sp>```: Figurenrede (**sp**eech), beinhaltet andere Elemente. <br />```<speaker>```: Name einer Figur. <br />```<l>```: Verszeile (**l**ine verse).</small><!-- .element: class="fragment" -->
+```<sp>```: Figurenrede (**sp**eech), beinhaltet andere Elemente. <br />```<speaker>```: Name einer Figur. <br />```<l>```: Verszeile (**l**ine verse).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -381,7 +383,8 @@ Die ersten sechs Zeilen aus Goethes »Faust« (1808) in TEI. (Bildquelle: [DTA](
 
 <br />
 
-<small>```@who```-Attribut: fakultative Vergabe einer Sprecher\*innen-ID. <br />```@n```-Attribut: mögliche **N**ummerierung eines Elements.</small><!-- .element: class="fragment" -->
+```@who```-Attribut: fakultative Vergabe einer Sprecher\*innen-ID. <br />```@n```-Attribut: mögliche **N**ummerierung eines Elements.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -461,11 +464,11 @@ Nach der *customisation* entsteht ein spezifisches Validierungsschema, das die k
 
 ## DraCor
 
-(**Dra**ma **Cor**pora project)
+(**Dra**ma **Cor**pora-Projekt)
 
 --
 
-![DraCor frontpage on 09.01.2021](images/dracor-frontpage-2021-09-12.png)
+![DraCor frontpage on 09.01.2021](images/dracor-frontpage-2026-06-26.png)
 
 [dracor.org](https://dracor.org/)
 
@@ -565,38 +568,39 @@ Frank Fischer, Mark Schwindt: **[Battle of the Plays. A Gamification Approach to
 
 ### Beispiel: Baudelaire
 
-(Wiederholung)
-
 ```xml
 <div type="sonnet">
  <lg type="quatrain">
-  <l>Les amoureux fervents et les savants austères</l>
-  <l>Aiment également, dans leur mûre saison,</l>
-  <l>Les chats puissants et doux, orgueil de la maison,</l>
-  <l>Qui comme eux sont frileux et comme eux sédentaires.</l>
+  <l>Souvent, pour s’amuser, les hommes d’équipage</l>
+  <l>Prennent des albatros, vastes oiseaux des mers,</l>
+  <l>Qui suivent, indolents compagnons de voyage,</l>
+  <l>Le navire glissant sur les gouffres amers.</l>
  </lg>
  <lg type="quatrain">
-  <l>Amis de la science et de la volupté</l>
-  <l>Ils cherchent le silence et l’horreur des ténèbres ;</l>
-  <l>L’Érèbe les eût pris pour ses coursiers funèbres,</l>
-  <l>S’ils pouvaient au servage incliner leur fierté.</l>
+  <l>À peine les ont-ils déposés sur les planches,</l>
+  <l>Que ces rois de l’azur, maladroits et honteux,</l>
+  <l>Laissent piteusement leurs grandes ailes blanches</l>
+  <l>Comme des avirons traîner à côté d’eux.</l>
  </lg>
- <lg type="tercet">
-  <l>Ils prennent en songeant les nobles attitudes</l>
-  <l>Des grands sphinx allongés au fond des solitudes,</l>
-  <l>Qui semblent s’endormir dans un rêve sans fin ;</l>
+ <lg type="quatrain">
+  <l>Ce voyageur ailé, comme il est gauche et veule !</l>
+  <l>Lui, naguère si beau, qu’il est comique et laid !</l>
+  <l>L’un agace son bec avec un brûle-gueule,</l>
+  <l>L’autre mime, en boitant, l’infirme qui volait !</l>
  </lg>
- <lg type="tercet">
-  <l>Leurs reins féconds sont pleins d’étincelles magiques,</l>
-  <l>Et des parcelles d’or, ainsi qu’un sable fin,</l>
-  <l>Étoilent vaguement leurs prunelles mystiques.</l>
+ <lg type="quatrain">
+  <l>Le Poète est semblable au prince des nuées</l>
+  <l>Qui hante la tempête et se rit de l’archer ;</l>
+  <l>Exilé sur le sol au milieu des huées,</l>
+  <l>Ses ailes de géant l’empêchent de marcher.</l>
  </lg>
 </div>
 ```
+<!-- .element: style="font-size:0.4em;" -->
 
 <br />
 
-Baudelaires Sonett « Les chats » im TEI-Format.
+Baudelaires Sonett « L’albatros » im TEI-Format.
 <!-- .element: style="font-size:0.65em;" -->
 
 --
