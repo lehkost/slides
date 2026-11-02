@@ -2,53 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Programmable Corpora: A New Concept · Princeton · 28 May 2019</title>
 
-    <link rel="stylesheet" href="../reveal/css/reveal.css" />
-    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/simple.css" id="theme" />
 
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/zenburn.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
-<textarea data-template>
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
 
 ![workshop logo cropped](images/workshop-logo-cropped.png)<!-- .element: style="width:140px;" -->
 
 ### Programmable Corpora
+
 A New Infrastructural Concept for <br />Digital Literary Studies
 
-<br />
-<!-- .element: style="font-size:0.7em;" -->[Frank Fischer](https://lehkost.github.io/) ¹ ² &nbsp;·&nbsp; [Boris Orekhov](http://nevmenandr.net/bo.php) ¹
+<br />[Frank Fischer](https://lehkost.github.io/) ¹ ² &nbsp;·&nbsp; [Boris Orekhov](http://nevmenandr.net/bo.php) ¹
+<!-- .element: style="font-size:0.7em;" -->
 
-<!-- .element: style="font-size:0.5em;" -->¹ Higher School of Economics, Moscow<br />
-² DARIAH-EU
+¹ Higher School of Economics, Moscow <br />² DARIAH-EU
+<!-- .element: style="font-size:0.5em;" -->
 
-<br /><br />
-<!-- .element: style="font-size:0.6em;" -->[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton University &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 10:45 a.m.–12:15 p.m.
+<br />[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton University &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 10:45 a.m.–12:15 p.m.
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
 ### TOC
 
 <br />
+
 1. TEI Corpus Work
 2. This is going to be APIc!
 3. Programmable Corpora
@@ -65,6 +59,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 ## In Light of Current Events
 
 <br />
+
 * Nan Z. Da: The Computational Case against Computational Literary Studies. *Critical Inquiry* 45:3 (Spring 2019), pp.&nbsp;601–639. DOI:[10.1086/702594](https://doi.org/10.1086/702594).
 * controversial debate to say the least; one bigger shortcoming is the total neglect of non-American scholarship in the field, cf. [statement of ADHO’s SIG-DLS](https://culturalanalytics.org/2019/05/response-by-the-special-interest-group-on-digital-literary-stylistics-to-nan-z-das-study/)
 * a point well made and generally accepted regards the replication crisis: „the process of requesting complete, runnable codes and quantitative results […] took me **nearly two years**“
@@ -75,6 +70,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 ### Drama Studies (2014–2018)
 
 <br />
+
 - objective: digital analysis of corpora of dramatic texts
 - Python super script [***dramavis***](https://github.com/lehkost/dramavis) (2014–2018)
   - all-in-one approach: maintenance costs too high
@@ -86,13 +82,15 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 
 ![Phèdre](images/phedre-it-works.png)<!-- .element: style="height:500px;" -->
 
-<small>https://twitter.com/christof77/status/772370040016568320</small>
+https://twitter.com/christof77/status/772370040016568320
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
 # Chapter 1.
 
 <br />
+
 ### TEI Corpus Work
 
 --
@@ -100,8 +98,9 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 ## **DraCor**
 
 <br />
+
 - sustainable research projects require (and generate) infrastructure
-- DraCor: Drama Corpora Platform (https://dracor.org/)
+- DraCor: Drama Corpora Platform ([dracor.org](https://dracor.org/))
 - two in-house corpora:
   - German Drama Corpus, GerDraCor (1730s–1930s)
   - Russian Drama Corpus, RusDraCor (1740s–1940s)
@@ -112,13 +111,15 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 
 ![DraCor-Frontpage)](images/dracor-frontpage.png)<!-- .element: style="width:840px;" -->
 
-<small>https://dracor.org/ (public beta!)</small>
+[dracor.org](https://dracor.org/) (public beta!)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ## GerDraCor + RusDraCor
 
 <br />
+
 - based on reliable sources (for Russian plays: lib.ru, rvb.ru, ilibrary.ru, …)
 - page numbers map to the scans of the corresponding pages of the used edition
 - converted to TEI-P5
@@ -131,6 +132,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 ## ShakeDraCor
 
 <br />
+
 - derived from [Shakespeare Folger Library](https://www.folgerdigitaltexts.org/)
 - simple XQuery script to adapt the corpus to the platform
 - example: [*Hamlet*](https://dracor.org/shake/hamlet)
@@ -140,6 +142,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 ## SpanDraCor
 
 <br />
+
 - „Biblioteca Electrónica Textual del Teatro en Español de 1868–1936“ (BETTE)
 - 25 plays by 8 authors
 - forked from their [GitHub repo](https://github.com/GHEDI/BETTE), minimal adaptations to connect to DraCor
@@ -151,6 +154,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 ## GreekDraCor
 
 <br />
+
 - derived from [Perseus Digital Library](http://www.perseus.tufts.edu/hopper/)
 - 39 plays of Greek antiquity downloaded from [their website](http://www.perseus.tufts.edu/hopper/opensource/download) (licenced under CC BY-SA 3.0)
 - convert Betacode to Unicode (using Python package [betacode 0.2](https://pypi.org/project/betacode/))
@@ -161,6 +165,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 ## Coming Soon
 
 <br />
+
 - IbsDraCor
 - HolDraCor (derived from the digital edition of [*Ludvig Holbergs skrifter*](http://holbergsskrifter.dk/holberg-public/view?docId=adm/HolbergsWritings.xml&sort=category))
 - SweDraCor (derived from [*Dramawebben*](https://litteraturbanken.se/dramawebben))
@@ -173,11 +178,13 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 # Chapter 2.
 
 <br />
+
 ## This is going to be APIc! ¹ ²
 
 <br /><br />
-<small>¹ API: Application Programming Interface<br /><br />
-² Peter Handke’s Law: [„One pun per text is permitted.“](https://www.welt.de/119569452)</small>
+
+¹ API: Application Programming Interface <br /><br />² Peter Handke’s Law: [„One pun per text is permitted.“](https://www.welt.de/119569452)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -185,21 +192,24 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 
 ![Anzahl Figuren](images/dracor-drawio.svg)
 
-<small>All repos are open source: https://github.com/dracor-org</small>
+All repos are open source: https://github.com/dracor-org
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ## DraCor API (1/2)
 
 <br />
+
 - provides metadata, bespoke excerpts and various metrics
-- live documentation via Swagger: https://dracor.org/documentation/api/
+- live documentation via Swagger: [dracor.org/doc/api](https://dracor.org/doc/api)
 
 --
 
 ## DraCor API (2/2)
 
 <br />
+
 - list of available corpora and their content (list of all plays)
 - metadata and network data for all plays in CSV or GEXF format
 - list of speaking characters per play (usually much more comprehensive than the *dramatis personae*!)
@@ -215,6 +225,7 @@ A New Infrastructural Concept for <br />Digital Literary Studies
 #### Number of characters per play in chronological order (1/2)
 
 <br />
+
 ```R
 library(data.table)
 library(ggplot2)
@@ -223,23 +234,29 @@ ggplot(rusdracor[], aes(x = year, y = numOfSpeakers)) + geom_point()
 ```
 
 <br />
-<small>Very simple R script.</small>
+
+Very simple R script.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 #### Number of characters per play in chronological order (2/2)
 
 <br />
+
 ![Anzahl Figuren](images/num-of-speakers-gerdracor.png)
 
 <br />
-<small>Output in RStudio.</small>
+
+Output in RStudio.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ## Little Hands-On with Metadata
 
 <br /><br />
+
 ```https://dracor.org/api/corpora/rus/metadata.csv```
 
 ---
@@ -247,6 +264,7 @@ ggplot(rusdracor[], aes(x = year, y = numOfSpeakers)) + geom_point()
 # Chapter 3.
 
 <br />
+
 ## Programmable Corpora
 
 --
@@ -254,6 +272,7 @@ ggplot(rusdracor[], aes(x = year, y = numOfSpeakers)) + geom_point()
 ## The Concept
 
 <br />
+
 - analogy to the IT news platform *ProgrammableWeb* (slogan: „APIs, Mashups and the Web as Platform“)
 - corpora as comparable objects that offer functions themselves and are linked to other data sources (via LOD)
 - FAIR principles, better reproducibility
@@ -265,8 +284,8 @@ ggplot(rusdracor[], aes(x = year, y = numOfSpeakers)) + geom_point()
 
 ![betweenness](images/betweenness-pushkin-boris-godunov.png)<!-- .element: style="width:720px;" -->
 
-<small>Label size correlates with betweenness centrality. Gavrila Pushkin – a side character – in the middle.<br /><br />(Data source: GEXF file from https://dracor.org/rus/pushkin-boris-godunov.)</small>
-
+Label size correlates with betweenness centrality. Gavrila Pushkin – a side character – in the middle. <br /><br />(Data source: GEXF file from https://dracor.org/rus/pushkin-boris-godunov.)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -274,7 +293,8 @@ ggplot(rusdracor[], aes(x = year, y = numOfSpeakers)) + geom_point()
 
 ![Boris Godunov (dynamic graph)](images/pushkin-boris-godunov.gif)
 
-<small>**Dynamic graph**, generated with [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html) package. Data coms directly from the **DraCor API**. <br />Script by Ivan Pozdniakov ([source code auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).</small>
+**Dynamic graph**, generated with [**ndtv**](https://cran.r-project.org/web/packages/ndtv/index.html) package. Data coms directly from the **DraCor API**. <br />Script by Ivan Pozdniakov ([source code auf RPubs.com](https://rpubs.com/Pozdniakov/godunov)).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -282,65 +302,71 @@ ggplot(rusdracor[], aes(x = year, y = numOfSpeakers)) + geom_point()
 
 ![Shiny App](images/shiny-kaethchen.png)<!-- .element: style="height:480px;" -->
 
-<small>https://shiny.dracor.org/ (by Ivan Pozdniakov).</small>
+[shiny.dracor.org](https://shiny.dracor.org/) (by Ivan Pozdniakov).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ## Boris Yarkho (1889–1942)
 
 <br />
+
 ![Boris Yarkho (cropped)](images/boris-yarkho.jpg)
 
-<small>(img source: http://urokiistorii.ru/article/52560)</small>
+(img source: http://urokiistorii.ru/article/52560)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 Boris Yarkho: ***Speech Distribution in Five-Act Tragedies (A Question of Classicism and Romanticism)*** (written 1935–1938).
 
 <br />
-Ed. by Frank Fischer, Marina Akimova and Boris Orekhov. <br />In: *Journal of Literary Theory* 13:1 ([*„**Moscow Formalism and Literary History**“*](https://www.degruyter.com/view/j/jlt.2019.13.issue-1/issue-files/jlt.2019.13.issue-1.xml)). De Gruyter 2019, pp. 13–76.
+
+Ed. by Frank Fischer, Marina Akimova and Boris Orekhov. <br />In: *Journal of Literary Theory* 13:1 ([*„**Moscow Formalism and Literary History**“*](https://www.degruyterbrill.com/de/journal/key/jlt/13/1/html)). De Gruyter 2019, pp. 13–76.
 
 <br />
+
 DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 --
 
-## Speech Distribution According to Yarkho
+## Speech Distribution <br />According to Yarkho
 
-<br />
 ![Shakespeare vs Romanticists 2, speech distribution in average](images/yarkho-shakespeare-vs-romanticists-2.png)
 
-<small>Shakespeare vs moderate romanticists (in average): „romantic drama is a return to Shakespeare“.</small>
+Shakespeare vs moderate romanticists (in average): „romantic drama is a return to Shakespeare“.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
-## Speech Distribution According to Yarkho
+## Speech Distribution <br />According to Yarkho
 
-<br />
 ![Dmitry Donskoy, speech distribution](images/speech-distribution-ozerov-dmitrij-donskoj.png)
 
-<br >
-<small>Implemented in **DraCor** (example: Ozerov’s *Dmitry Donskoy*): <br />https://dracor.org/rus/ozerov-dmitrij-donskoj#speech</small>
+Implemented in **DraCor** (example: Ozerov’s *Dmitry Donskoy*): <br />[dracor.org/rus/ozerov-dmitrij-donskoj#speech](https://dracor.org/rus/ozerov-dmitrij-donskoj#speech)
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
 # Chapter 4.
 
 <br />
+
 ## Linked Open Data
 
 --
 
 ![LOD cup](images/lod-cup.jpg)
 
-<br />
-<br /><small>(img source: https://www.w3.org/DesignIssues/LinkedData.html)</small>
+<br /><br />(img source: https://www.w3.org/DesignIssues/LinkedData.html)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Example for an RDF Representation
 
 <br />
+
 - taken from the website *The Programming Historian*:
   - Matthew Lincoln: [Using SPARQL to access Linked Open Data](https://programminghistorian.org/lessons/graph-databases-and-SPARQL) (publ. 2015, released under CC-BY 4.0)
 
@@ -350,7 +376,8 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 - Rembrandt: De Nachtwacht (The Nightwatch), 1642<!-- .element: class="fragment" -->
 
-<small>(img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn-De_Nachtwacht-1642.jpg))</small>
+(img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn-De_Nachtwacht-1642.jpg))
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -358,13 +385,15 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 - Vermeer: A Woman Holding a Balance, 1662/1663<!-- .element: class="fragment" -->
 
-<small>(img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Woman-with-a-balance-by-Vermeer.jpg))</small>
+(img source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Woman-with-a-balance-by-Vermeer.jpg))
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ![graph visualisation of RDF-encoded information](https://programminghistorian.org/images/graph-databases-and-SPARQL/sparql01.svg)<!-- .element: style="height:440px;" -->
 
-<small>graph visualisation of RDF-encoded information: <br />arrows indicate the direction of the predicate, *The Nightwatch* <br />was created by Rembrandt and not the other way around <br />(img source: [*The Programming Historian*](https://programminghistorian.org/lessons/graph-databases-and-SPARQL))</small>
+graph visualisation of RDF-encoded information: <br />arrows indicate the direction of the predicate, *The Nightwatch* <br />was created by Rembrandt and not the other way around <br />(img source: [*The Programming Historian*](https://programminghistorian.org/lessons/graph-databases-and-SPARQL))
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -384,7 +413,8 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ![ezlinavis screenshot](images/first-performances-overall.png)<!-- .element: style="height:450px;" -->
 
-<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) („location of first performance“).</small>
+Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) („location of first performance“).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -392,7 +422,8 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ![ezlinavis screenshot](images/first-performances-berlin.png)<!-- .element: style="height:450px;" -->
 
-<small>Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) („location of first performance“).</small>
+Via Wikidata:[P4647](https://www.wikidata.org/wiki/Property:P4647) („location of first performance“).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -414,13 +445,16 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 | Gogol: Marriage | 10 |
 
 <br />
-<small>The 10 most popular plays world-wide according to Wikipedia (RusDraCor currently includes 161 plays).
+
+The 10 most popular plays world-wide according to Wikipedia (RusDraCor currently includes 161 plays).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ## Little Hands-On with Metadata
 
 <br /><br />
+
 ```https://dracor.org/api/corpora/rus/metadata.csv```
 
 ---
@@ -428,6 +462,7 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 # Chapter 5.
 
 <br />
+
 ## Research
 
 --
@@ -436,15 +471,17 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element: style="width:680px;" -->
 
-<small>*Distant-Reading Showcase* (DHd2016, Leipzig 🏆).<br />Download via Figshare. DOI: [10.6084/m9.figshare.3101203.v2](https://dx.doi.org/10.6084/m9.figshare.3101203.v2).</small>
+*Distant-Reading Showcase* (DHd2016, Leipzig 🏆). <br />Download via Figshare. DOI: [10.6084/m9.figshare.3101203.v2](https://dx.doi.org/10.6084/m9.figshare.3101203.v2).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Small-World Phenomenon in Russian Drama
 
-![Small-World-Phänomen in russischen Dramen)](images/rusdracor-small-world-preview.png)
+![Small-World Phenomenon in Russian Drama)](images/rusdracor-small-world-preview.png)<!-- .element: style="width:700px;" -->
 
-<small>Work by Evgeniya Ustinova.</small>
+Work by Evgeniya Ustinova.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -452,7 +489,8 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ![Topics)](images/rusdracor-topics-per-author.png)<!-- .element: style="width:520px;" -->
 
-<small>Work by Irina Pavlova ([abstract](https://eadh2018.exordo.com/files/papers/158/final_draft/Pavlova___Fischer_-_Topic_Modeling_-_EADH_conference.pdf)).</small>
+Work by Irina Pavlova ([abstract](https://eadh2018.exordo.com/files/papers/158/final_draft/Pavlova___Fischer_-_Topic_Modeling_-_EADH_conference.pdf)).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -460,7 +498,8 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ![Regieanweisungen)](images/rusdracor-didascalie-all-pos.png)
 
-<small>Work by Daria Maximova ([abstract](https://eadh2018.exordo.com/files/papers/79/final_draft/Stage_Directions_for_EADH_Conference.pdf)).</small>
+Work by Daria Maximova ([abstract](https://eadh2018.exordo.com/files/papers/79/final_draft/Stage_Directions_for_EADH_Conference.pdf)).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -468,13 +507,15 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ![Female/Male Character Word Usage)](images/rusdracor-craigs-zeta.jpg)<!-- .element: style="width:480px;" -->
 
-<small>Work by Skorinkin/Fischer/Palchikov ([article](http://www.dialog-21.ru/media/4332/skorinkind.pdf)).</small>
+Work by Skorinkin/Fischer/Palchikov ([article](http://www.dialog-21.ru/media/4332/skorinkind.pdf)).
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
 # Chapter 6.
 
 <br />
+
 ## Didactics
 
 --
@@ -483,7 +524,8 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ![Dramenquartett](images/brecht-shakespeare.jpg)<!-- .element: style="height:470px;" -->
 
-<small>*Brecht Beats Shakespeare* (DHd2018, Cologne 🏆, and DH2018, México).<br />Download via Figshare. DOI: [10.6084/m9.figshare.5926363.v1](https://doi.org/10.6084/m9.figshare.6667424.v1).</small>
+*Brecht Beats Shakespeare* (DHd2018, Cologne 🏆, and DH2018, México). <br />Download via Figshare. DOI: [10.6084/m9.figshare.5926363.v1](https://doi.org/10.6084/m9.figshare.6667424.v1).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -491,13 +533,12 @@ DOI:[**10.1515/jlt-2019-0002**](https://doi.org/10.1515/jlt-2019-0002)
 
 ![card game](images/card-game-dh2018.jpg)<!-- .element: style="width:600px;" -->
 
-<small>„Brecht Beats Shakespeare“ (released 2018, img source: [@angelikah](https://twitter.com/angelikah/status/1012100869301702657)). <br />Full-res version here: https://doi.org/10.6084/m9.figshare.6667424.v1</small>
+„Brecht Beats Shakespeare“ (released 2018, img source: [@angelikah](https://twitter.com/angelikah/status/1012100869301702657)). <br />Full-res version here: https://doi.org/10.6084/m9.figshare.6667424.v1
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
-What to do in case of …<br />
-
-… a power outage at data-analysis bootcamp?
+What to do in case of … <br /><br />… a power outage at data-analysis bootcamp?
 
 ![card game](images/boot-camp-card-game.jpg)<!-- .element: style="width:600px;" -->
 
@@ -519,7 +560,8 @@ What to do in case of …<br />
 
 ![ezlinavis screenshot](images/ezlinavis-screenshot-tolstoy.png)<!-- .element: style="height:450px;" -->
 
-<small>**ezlinavis** in action: https://ezlinavis.dracor.org/</small>
+**ezlinavis** in action: [ezlinavis.dracor.org](https://ezlinavis.dracor.org/)
+<!-- .element: style="font-size:0.65em;" -->
 
 ---
 
@@ -538,31 +580,26 @@ What to do in case of …<br />
 Thanks.
 
 <br /><br />
-https://dracor.org/
+
+[dracor.org](https://dracor.org/)
 
 <br /><br />
 
 #ProgrammableCorpora
 
-</textarea>
+</script>
         </section>
       </div>
     </div>
-    <script src="../reveal/lib/js/head.min.js"></script>
-    <script src="../reveal/js/reveal.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
     <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-      history: true,
-
-    // More info https://github.com/hakimel/reveal.js#dependencies
-      dependencies: [
-        { src: '../reveal/plugin/markdown/marked.js' },
-        { src: '../reveal/plugin/markdown/markdown.js' },
-        { src: '../reveal/plugin/notes/notes.js', async: true },
-        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-      ]
-    });
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
     </script>
   </body>
 </html>

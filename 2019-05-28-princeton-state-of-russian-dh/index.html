@@ -2,53 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>The State of Digital Humanities in Russia · Princeton · 28 May 2019</title>
 
-    <link rel="stylesheet" href="../reveal/css/reveal.css" />
-    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/simple.css" id="theme" />
 
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/zenburn.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
-<textarea data-template>
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
 
-![workshop logo cropped](images/workshop-logo-cropped.png)<!-- .element: style="width:200px;" -->
+![workshop logo cropped](images/workshop-logo-cropped.png)<!-- .element: style="width:180px;" -->
 
-### The State of Digital Humanities in Russia
+### The State of <br />Digital Humanities <br />in Russia
 
-<br />
-<!-- .element: style="font-size:0.7em;" -->[Frank Fischer](https://lehkost.github.io/) ¹ ² &nbsp;·&nbsp; [Boris Orekhov](http://nevmenandr.net/bo.php) ¹
+<br />[Frank Fischer](https://lehkost.github.io/) ¹ ² &nbsp;·&nbsp; [Boris Orekhov](http://nevmenandr.net/bo.php) ¹
+<!-- .element: style="font-size:0.7em;" -->
 
-<!-- .element: style="font-size:0.5em;" -->¹ Higher School of Economics, Moscow<br />
-² DARIAH-EU
+¹ Higher School of Economics, Moscow <br />² DARIAH-EU
+<!-- .element: style="font-size:0.5em;" -->
 
-<br /><br /><br />
-<!-- .element: style="font-size:0.6em;" -->[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton University &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 9:30–10:30 a.m.
+<br />[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton University &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 9:30–10:30 a.m.
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
 ![HSE DH Centre](images/hse-dh-centre.png)<!-- .element: style="width:700px;" -->
 
-- https://hum.hse.ru/digital/
-- formally est. in 2017, director: [Anastasia Bonch-Osmolovskaya](https://www.hse.ru/en/org/persons/32878143)
+- [hum.hse.ru/digital/](https://hum.hse.ru/digital/)
+- formally est. in 2017, director: [Anastasia Bonch-Osmolovskaya](https://hse-ru.academia.edu/AnastasiaBonchOsmolovskaya)
 - DH contact point for the entire Faculty of Humanities
 - strong interdisciplinary orientation (philosophy, literature, cultural studies, history, linguistics, media, geography)
 - fostering cross-faculty collaboration
@@ -63,9 +55,10 @@
 - several DARIAH services, teaching and education, foresight and policy work, working groups<!-- .element: style="font-size:0.85em;" -->
 - 18 member states and many cooperating partners in other countries<!-- .element: style="font-size:0.85em;" -->
 - #DARIAHbeyondEurope (conferences in USA 2018, Australia 2019)<!-- .element: style="font-size:0.85em;" -->
-- https://www.dariah.eu/<!-- .element: style="font-size:0.85em;" -->
+- [dariah.eu](https://www.dariah.eu/)<!-- .element: style="font-size:0.85em;" -->
 
 <br />
+
 ‼️   Infrastructure is *not a project*.   ‼️
 
 --
@@ -73,6 +66,7 @@
 ### **Chapters**
 
 <br />
+
 1. DH Forerunners (20th Century)
 2. DH in Russia: Enthusiasm &amp; Infrastructure
 3. Teaching &amp; Learning
@@ -83,6 +77,7 @@
 Chapter 1.
 
 <br />
+
 ### DH Forerunners <br />(20th Century)
 
 --
@@ -91,13 +86,15 @@ The History And Context of the Digital Humanities In Russia
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/Ef5uQPa4svU?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-<small>Inna Kizhner at DH2018. <br /><br />Direct link to video: https://www.youtube.com/watch?v=Ef5uQPa4svU.</small>
+Inna Kizhner at DH2018. <br /><br />Direct link to video: [youtube.com/watch?v=Ef5uQPa4svU](https://www.youtube.com/watch?v=Ef5uQPa4svU).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ## Formalist Movement
 
 <br />
+
 - Andrei Bely’s collection of essays, „Symbolism“ (1910)
   - quantitative methods applied to the study of rhythm in poetry
   - a „formalist prior to the formalists in Russia“
@@ -110,6 +107,7 @@ The History And Context of the Digital Humanities In Russia
 ## Boris Yarkho (1889–1942)
 
 <br />
+
 - early data-driven formalism
 - describing literature as a system of proportions and relations between different features
 - development of these structures over time and across genres
@@ -120,7 +118,8 @@ The History And Context of the Digital Humanities In Russia
 
 ![Yarkho et alii](images/yarkho-et-al.jpg)
 
-<small>f.l.t.r: Grigorij Yarkho (Yarkho’s brother, philologist and translator from the French), Mariya <br />Vasiljevna Vakhterova (wife of classical philologist Fedor Petrovsky), **Boris Yarkho**. <br /><br />Image source: https://urokiistorii.ru/article/52560.</small>
+f.l.t.r: Grigorij Yarkho (Yarkho’s brother, philologist and translator from the French), Mariya <br />Vasiljevna Vakhterova (wife of classical philologist Fedor Petrovsky), **Boris Yarkho**. <br /><br />Image source: [urokiistorii.ru/article/52560](https://urokiistorii.ru/article/52560).
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -128,7 +127,8 @@ The History And Context of the Digital Humanities In Russia
 
 ![Moscow Formalism, cover](images/moscow-formalism-cover.jpg)<!-- .element: style="width:350px;" -->
 
-<small>https://www.degruyter.com/view/j/jlt.2019.13.issue-1/issue-files/jlt.2019.13.issue-1.xml</small>
+[degruyterbrill.com/de/journal/key/jlt/13/1/html](https://www.degruyterbrill.com/de/journal/key/jlt/13/1/html)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -136,13 +136,15 @@ The History And Context of the Digital Humanities In Russia
 
 ![Moscow Formalism, table of contents](images/moscow-formalism-volume-toc.png)<!-- .element: style="width:600px;" -->
 
-<small>https://www.degruyter.com/view/j/jlt.2019.13.issue-1/issue-files/jlt.2019.13.issue-1.xml</small>
+[degruyterbrill.com/de/journal/key/jlt/13/1/html](https://www.degruyterbrill.com/de/journal/key/jlt/13/1/html)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ## Kolmogorov &amp; Ershov
 
 <br />
+
 - Andrei Kolmogorov: Moscow seminar on quantitative methods and poetry studies (early 1960s)
 - Andrei Ershov: computerised corpus of Russian language (1978–2006)
 
@@ -151,9 +153,10 @@ The History And Context of the Digital Humanities In Russia
 ### „History &amp; Computers“ Association
 
 <br />
+
 ![HSE DH Centre](images/assotsiatsiya.png)
 
-- http://www.aik-sng.ru/
+- [aik-sng.ru](http://www.aik-sng.ru/)
 - celebrated their 25-year anniversary in 2017
 - but they don’t think they are doing DH 😊
 
@@ -162,6 +165,7 @@ The History And Context of the Digital Humanities In Russia
 Chapter 2.
 
 <br />
+
 ### DH in Russia: <br />Enthusiasm &amp; Infrastructure
 
 --
@@ -169,30 +173,33 @@ Chapter 2.
 ## Some Popular Corpora/Datasets in Russian DH
 
 <br />
-- НКРЯ (Russian National Corpus, 2000–2004): http://ruscorpora.ru/
-- Poetic Corpus: http://ruscorpora.ru/search-poetic.html
-- Other corpora: http://ruscorpora.ru/corpora-other.html
+
+- НКРЯ (Russian National Corpus, 2000–2004): [ruscorpora.ru](https://ruscorpora.ru/)
+- Poetic Corpus: [ruscorpora.ru/corpus/poetic](https://ruscorpora.ru/corpus/poetic)
+- Other corpora: [ruscorpora.ru/page/corpora-other/](https://ruscorpora.ru/page/corpora-other/)
 - Tolstoy Digital, [encoded in TEI](https://github.com/tolstoydigital/TEI) (Tolstoy Museum + HSE Moscow)
-- electronic library of Pushkinskiy Dom (classics): http://russian-literature.org/
+- electronic library of Pushkinskiy Dom (classics): [russian-literature.org](https://russian-literature.org/)
 
 --
 
-## Literary Corpora (Enthusiasts, Activists)
+## Literary Corpora <br />(Enthusiasts, Activists)
 
 <br />
-- Maksim Moshkov’s Library (1994–): http://lib.ru/
-- Internet Library of Aleksey Komarov (1996–): https://ilibrary.ru/
-- Russian Virtual Library (1999–): https://rvb.ru/
-- Fundamental Electronic Library (2002–): http://feb-web.ru/
-- SovLit: http://www.ruthenia.ru/sovlit/
+
+- Maksim Moshkov’s Library (1994–): [lib.ru](https://lib.ru/)
+- Internet Library of Aleksey Komarov (1996–): [ilibrary.ru](https://ilibrary.ru/)
+- Russian Virtual Library (1999–): [rvb.ru](https://rvb.ru/)
+- Fundamental Electronic Library (2002–): [feb-web.ru](https://feb-web.ru/)
+- SovLit: [ruthenia.ru/sovlit/](https://ruthenia.ru/sovlit/)
 - <a href="https://ru.wikisource.org/">Russian Wikisource</a>
-- https://wikilivres.org/
+- [wikilivres.org](https://wikilivres.org/)
 
 --
 
 ## GLAM Sector
 
 <br />
+
 * Inna Kizhner, Melissa Terras et al.: Accessing Russian culture online: The scope of digitization in museums across Russia. *Digital Scholarship in the Humanities* 34:2, June 2019, pp. 350–367, DOI:[10.1093/llc/fqy035](https://doi.org/10.1093/llc/fqy035).
 
 --
@@ -204,7 +211,7 @@ Chapter 2.
 - personal diaries from 18th to 21st century
 - „Не бывает неважных дневников.“
 - community of volunteers
-- http://prozhito.org/
+- [prozhito.org](https://prozhito.org/)
 
 --
 
@@ -212,14 +219,15 @@ Chapter 2.
 
 ![Russian DH association](images/russian-dh-association.png)<!-- .element: style="width:200px;" -->
 
-- http://dhrussia.ru/
-- conference in Krasnoyarsk in 2017: http://conf2.sfu-kras.ru/en/dhrussia2017
+- [dhrussia.ru](http://dhrussia.ru/)
+- conference in Krasnoyarsk in 2017: [conf2.sfu-kras.ru/en/dhrussia2017](http://conf2.sfu-kras.ru/en/dhrussia2017)
 
 ---
 
 Chapter 3.
 
 <br />
+
 ### Teaching &amp; Learning
 
 --
@@ -228,7 +236,8 @@ Chapter 3.
 
 ![DH Course Registry, screenshot](images/course-registry-screenshot-2019-05-22.png)<!-- .element: style="width:860px;" -->
 
-<small>https://registries.clarin-dariah.eu/courses/</small>
+[dhcr.clarin-dariah.eu](https://dhcr.clarin-dariah.eu/)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -236,7 +245,8 @@ Chapter 3.
 - run and maintained in a joint endeavour by CLARIN and DARIAH, the two big European DH infrastructures
 - national/regional moderators
 
-<br />
+<br /><br />
+
 ## DH Courses in Russia so Far
 
 - Krasnoyarsk
@@ -245,12 +255,13 @@ Chapter 3.
 
 --
 
-## Moscow-Tartu Digital Humanities School
+## Moscow-Tartu <br />Digital Humanities School
 
 <br />
+
 - three editions 2016, 2017, 2018
 - (60, 80, 80 participants)
-- 4th edition announced: https://hum.hse.ru/en/announcements/270033921.html (October 18–23, 2019)
+- 4th edition announced: [hum.hse.ru/en/announcements/270033921.html](https://hum.hse.ru/en/announcements/270033921.html) (October 18–23, 2019)
 - topics across all disciplines of the Humanities
 
 --
@@ -261,16 +272,17 @@ Chapter 3.
 
 - Системный Блокъ (Sistemnyj Blok”)
 - editor-in-chief: [Daniil Skorinkin](https://www.hse.ru/en/staff/skorinkin)
-- main outlet on VK: https://vk.com/sysblok
+- main outlet on VK: [vk.com/sysblok](https://vk.com/sysblok)
 - &gt; 55,500 users‼️
-- also on Telegram: https://t.me/sysblok (another 2,700 users)
-- website: https://sysblok.ru/
+- also on Telegram: [t.me/sysblok](https://t.me/sysblok) (another 2,700 users)
+- website: [sysblok.ru](https://sysblok.ru/)
 
 --
 
 ## Typical SysBlok Stories
 
 <br />
+
 - [„Why do we need humanities in the age of machine learning?“](https://sysblok.ru/society/zachem-nuzhny-gumanitarii-v-jepohu-mashinnogo-obuchenija/)
 - [analysis of stereotypic Women’s Day congratulations](https://sysblok.ru/society/smejtes-i-detej-rozhajte-iz-chego-sdelany-pozdravlenija-s-8-marta/) (via Yandex Wordstat)
 - [DH-enhanced obituary](https://vk.com/wall-168717779_2611)
@@ -281,6 +293,7 @@ Chapter 3.
 ## Summary
 
 <br />
+
 - DH Centre @ HSE
 - DH Forerunners in Russia
 - Enthusiasm, Projects, Infrastructure
@@ -291,28 +304,26 @@ Chapter 3.
 ### (Not) The End
 
 <br /><br />
-Next session: <br /><br />
+
+Next session:
+
+<br /><br />
+
 [Programmable Corpora: A New Infrastructural <br />Concept for Digital Literary Studies](https://lehkost.github.io/slides/2019-05-28-princeton-programmable-corpora/index.html)
 
-</textarea>
+</script>
         </section>
       </div>
     </div>
-    <script src="../reveal/lib/js/head.min.js"></script>
-    <script src="../reveal/js/reveal.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
     <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-      history: true,
-
-    // More info https://github.com/hakimel/reveal.js#dependencies
-      dependencies: [
-        { src: '../reveal/plugin/markdown/marked.js' },
-        { src: '../reveal/plugin/markdown/markdown.js' },
-        { src: '../reveal/plugin/notes/notes.js', async: true },
-        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-      ]
-    });
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
     </script>
   </body>
 </html>

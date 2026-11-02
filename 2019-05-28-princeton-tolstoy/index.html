@@ -2,53 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Tolstoy Everywhere · Princeton · 28 May 2019</title>
 
-    <link rel="stylesheet" href="../reveal/css/reveal.css" />
-    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/simple.css" id="theme" />
 
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/zenburn.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
-<textarea data-template>
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
 
 ![workshop logo cropped](images/workshop-logo-cropped.png)<!-- .element: style="width:140px;" -->
 
 ### Tolstoy Everywhere
+
 Unleashing the Information Hidden in the <br />90-Volume Collected Works
 
-<br />
-<!-- .element: style="font-size:0.7em;" -->[Boris Orekhov](http://nevmenandr.net/bo.php) ¹ &nbsp;·&nbsp; [Frank Fischer](https://lehkost.github.io/) ¹ ²
+<br />[Boris Orekhov](http://nevmenandr.net/bo.php) ¹ &nbsp;·&nbsp; [Frank Fischer](https://lehkost.github.io/) ¹ ²
+<!-- .element: style="font-size:0.7em;" -->
 
-<!-- .element: style="font-size:0.5em;" -->¹ Higher School of Economics, Moscow<br />
-² DARIAH-EU
+¹ Higher School of Economics, Moscow <br />² DARIAH-EU
+<!-- .element: style="font-size:0.5em;" -->
 
-<br /><br />
-<!-- .element: style="font-size:0.6em;" -->[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton University &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 1:30–3:00 p.m.
+<br />[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton University &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 1:30–3:00 p.m.
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
 ### **Chapters**
 
 <br />
+
 1. The Tolstoy Project
 2. The 91st Volume – An Exceptional Index
 3. The Web App
@@ -59,6 +53,7 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 # Chapter 1.
 
 <br />
+
 ### The Tolstoy Project
 
 --
@@ -66,6 +61,7 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Digital Edition
 
 <br />
+
 - digital edition of collected works in 90 volumes, published between 1928 and 1958: novels, short stories, plays, letters, diaries, … (~ 46,000 pages)
 - cooperation between [Tolstoy Museum](http://tolstoymuseum.ru/) and Higher School of Economics, Moscow
 
@@ -84,16 +80,18 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Digitising Tolstoy
 
 <br />
+
 - it started with [„All of Tolstoy in One Click“](http://tolstoy.ru/projects/tolstoy-in-one-click/): all volumes scanned and OCRed (supported by ABBYY)
 - corrections were crowdsourced
 - abundant media coverage: [New Yorker](https://www.newyorker.com/books/page-turner/crowdsourcing-tolstoy), [The Guardian](https://www.theguardian.com/books/2013/oct/16/all-leo-tolstoy-one-click-project-digitisation), etc.
-- texts available in PDF, EPUB, FB2, MOBI and XHTML (see http://tolstoy.ru/creativity/90-volume-collection-of-the-works/)
+- texts available in PDF, EPUB, FB2, MOBI and XHTML (see [tolstoy.ru/creativity/90-volume-collection-of-the-works/](https://tolstoy.ru/creativity/90-volume-collection-of-the-works/))
 
 --
 
 ### Our Contribution
 
 <br />
+
 - texts converted to [basic TEI](https://github.com/tolstoydigital/TEI)
 - [online search interface](http://search.effits.ru/)
 - richer markup
@@ -101,12 +99,12 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 - linked open data
 - where do we start? index!
 
-
 ---
 
 # Chapter 2.
 
 <br />
+
 ### The 91st Volume – An Exceptional Index
 
 --
@@ -114,6 +112,7 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Index
 
 <br />
+
 - indexes for a long time and not by chance accompany academic editions
 - book not as actual reading device, but as instrument (looking for references and quotes)
 - indexes make this work efficient
@@ -124,6 +123,7 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Proper Names
 
 <br />
+
 - draw attention (including capitalisation)
 - heavily loaded associatively
 - often have a special spelling (foreign names)
@@ -157,7 +157,8 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Next Step: Web App
 
 <br />
-- web app: http://index.tolstoy.ru/
+
+- web app: [index.tolstoy.ru](http://index.tolstoy.ru/)
 - target audience: specialists as well as enthusiasts
 - general question: even with digitised full texts at hand, how can we benefit from the structuring and registration efforts of the past?
 
@@ -166,19 +167,22 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 # Chapter 3.
 
 <br />
+
 ### The Web App
 
 --
 
 ![web app statistics](images/webapp-statistics.png)<!-- .element: style="width:800px;" -->
 
-<small>brown: number of references in the text – beige: number of mentions in the comments</small>
+brown: number of references in the text – beige: number of mentions in the comments
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Search for Entities
 
 <br />
+
 - original index functionality retained: mapping proper names to volumes and pages
 - one-click direct jumps to pages
 - added functionality:
@@ -190,6 +194,7 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Flexible Search
 
 <br />
+
 ![search](images/001.png)<!-- .element: style="width:400px;" -->
 
 --
@@ -203,6 +208,7 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Search With Tag
 
 <br />
+
 ![tag](images/003.png)<!-- .element: style="width:400px;" -->
 
 --
@@ -210,6 +216,7 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Alphabetical List
 
 <br />
+
 ![tag](images/002.png)<!-- .element: style="width:500px;" -->
 
 --
@@ -217,6 +224,7 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Co-Occurrence Calculator
 
 <br />
+
 ![calculator](images/008.png)<!-- .element: style="width:500px;" -->
 
 --
@@ -224,10 +232,13 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### Entities Network
 
 <br />
+
 ![Victor Hugo co-occurrence network](images/screenshot-victor-hugo.png)<!-- .element: style="width:500px;" -->
 
 <br />
-<small>word-cloud representation for entry ‘Victor Hugo’ showing co-occurring named entities – URL: http://index.tolstoy.ru/person/4079/</small>
+
+word-cloud representation for entry ‘Victor Hugo’ showing co-occurring named entities – URL: [index.tolstoy.ru/person/4079/](http://index.tolstoy.ru/person/4079/)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
@@ -241,16 +252,18 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 
 ![whole graph](images/general-graph.jpg)<!-- .element: style="width:720px;" -->
 
-<small>co-occurence graph for all 90 volumes – network is downloadable and can be customised – URL: http://index.tolstoy.ru/general/graph/</small>
+co-occurence graph for all 90 volumes – network is downloadable and can be customised – URL: [index.tolstoy.ru/general/graph/](http://index.tolstoy.ru/general/graph/)
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Studying Life and Works of Leo Tolstoy by Means of Network Analysis (2/3)
 
 <br />
+
 - studying co-occurrences of proper names in the same environment (in our case, on the same page) help to understand larger contexts
 - example:
-  - the Hindu scripture „Bhagavad Gita“ is found on 5 pages in Tolstoy’s Complete Works, see http://index.tolstoy.ru/person/2138/
+  - the Hindu scripture „Bhagavad Gita“ is found on 5 pages in Tolstoy’s Complete Works, see [index.tolstoy.ru/person/2138/](http://index.tolstoy.ru/person/2138/)
   - it shares these five pages with a total of 43 other names mentioned
 
 --
@@ -258,6 +271,7 @@ Unleashing the Information Hidden in the <br />90-Volume Collected Works
 ### More Examples
 
 <br />
+
 - the proximity of these mentionings is not accidental, in our case they form a kind of an „India cluster“ containing works like „Hitopadesha“, „Dhammapada“, „Vamana Purana“, or names like Sri Ramakrishna Paramahansa
 - for Tolstoy, these titles and names are part of a set of carriers of philosophical knowledge, and are associated with names like Xenophon, Montaigne, Montesquieu, Pascal, Skovoroda, Socrates
 - these networks provide great opportunities for understanding the whole range of Tolstoy’s interests and ideas
@@ -279,13 +293,15 @@ Nodes ranked by weighted degree in the fictional network (vols.&nbsp;1–45):<su
 9. Англия (938)<!-- .element: style="font-size:0.8em;" -->
 10. Германия (789)<!-- .element: style="font-size:0.8em;" -->
 
-<small><sup>* </sup>Many thanks to Daniil Skorinkin for providing this data.</small>
+<sup>* </sup>Many thanks to Daniil Skorinkin for providing this data.
+<!-- .element: style="font-size:0.65em;" -->
 
 --
 
 ### Exploring the Text Structure
 
 <br />
+
 ![heatmap](images/007.png)<!-- .element: style="width:800px;" -->
 
 ---
@@ -305,28 +321,19 @@ Nodes ranked by weighted degree in the fictional network (vols.&nbsp;1–45):<su
 
 Thanks.
 
-<br /><br /><br />
-– https://hum.hse.ru/digital/ –
-
-</textarea>
+</script>
         </section>
       </div>
     </div>
-    <script src="../reveal/lib/js/head.min.js"></script>
-    <script src="../reveal/js/reveal.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
     <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-      history: true,
-
-    // More info https://github.com/hakimel/reveal.js#dependencies
-      dependencies: [
-        { src: '../reveal/plugin/markdown/marked.js' },
-        { src: '../reveal/plugin/markdown/markdown.js' },
-        { src: '../reveal/plugin/notes/notes.js', async: true },
-        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-      ]
-    });
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
     </script>
   </body>
 </html>

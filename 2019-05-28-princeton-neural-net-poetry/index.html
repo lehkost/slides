@@ -2,56 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Neural Net Poetry Meets Distant Reading · Princeton · 28 May 2019</title>
 
-    <link rel="stylesheet" href="../reveal/css/reveal.css" />
-    <link rel="stylesheet" href="../reveal/css/theme/simple.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/simple.css" id="theme" />
 
     <!-- adjustments for serif.css -->
     <link rel="stylesheet" href="custom.css" />
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal/css/print/pdf.css' : '../reveal/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/zenburn.css" id="highlight-theme" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
-<textarea data-template>
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
 
 ![workshop logo cropped](images/workshop-logo-cropped.png)<!-- .element: style="width:140px;" -->
 
-### Neural Network Poetry Meets Distant Reading
+### Neural Network Poetry <br />Meets Distant Reading
+
 Analysing Computer-Generated Echoes <br />of Russian Literary History
 
-<br />
-<!-- .element: style="font-size:0.7em;" -->[Boris Orekhov](http://nevmenandr.net/bo.php) ¹ &nbsp;·&nbsp; [Frank Fischer](https://lehkost.github.io/) ¹ ²
+<br />[Boris Orekhov](http://nevmenandr.net/bo.php) ¹ &nbsp;·&nbsp; [Frank Fischer](https://lehkost.github.io/) ¹ ²
+<!-- .element: style="font-size:0.7em;" -->
 
-<!-- .element: style="font-size:0.5em;" -->¹ Higher School of Economics, Moscow<br />
-² DARIAH-EU
+¹ Higher School of Economics, Moscow <br />² DARIAH-EU
+<!-- .element: style="font-size:0.5em;" -->
 
-<br /><br />
-<!-- .element: style="font-size:0.6em;" -->[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton University &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 3:30–5:00 p.m.
+<br />[Slavic DH Workshop](https://cdh.princeton.edu/events/2019/05/slavic-dh-workshop-russian-literary-studies-digital-age/) &nbsp;·&nbsp; Princeton University &nbsp;🇺🇸 &nbsp;·&nbsp; 28 May 2019, 3:30–5:00 p.m.
+<!-- .element: style="font-size:0.6em;" -->
 
 --
 
 ## Motto
 
 <br />
+
 *[The machine] is accused of destroying aesthetics. <br />In fact, it destroys only aesthetic mysticism.*
 
 <br />
+
 — Leon Trotsky: Poetry, the Machine, and <br />the Poetry of the Machine (1901)<!-- .element: style="font-size:0.8em;" -->
 
 --
@@ -59,6 +54,7 @@ Analysing Computer-Generated Echoes <br />of Russian Literary History
 ### **Chapters**
 
 <br />
+
 1. Artificial Neural Networks and Poetry
 2. Computer Poetry Before the Era of Neural Networks
 3. Generating Russian Poetry with Neural Networks
@@ -69,6 +65,7 @@ Analysing Computer-Generated Echoes <br />of Russian Literary History
 # Chapter 1.
 
 <br />
+
 ### Artificial Neural Networks and Poetry
 
 --
@@ -76,6 +73,7 @@ Analysing Computer-Generated Echoes <br />of Russian Literary History
 ### Why?
 
 <br />
+
 - in recent years, artificial neural networks have evolved from a concept known only to specialists to a popular news item
 - the task of generating text is relevant in the context of chat bots:
   - Apple iOS (Siri, 2011)
@@ -89,6 +87,7 @@ Analysing Computer-Generated Echoes <br />of Russian Literary History
 ### Programmers’ Interest
 
 <br />
+
 - computer-generated texts attracted the attention of programmers interested in the development of future technologies
 - many of them decided to try out TensorFlow, Google’s publicly available free library for deep learning (November 2015), which simplified the task of creating neural networks and attracted many specialists
 
@@ -97,6 +96,7 @@ Analysing Computer-Generated Echoes <br />of Russian Literary History
 ### Programmers’ Interest
 
 <br />
+
 - some of the programmers who wanted to try it out, used poems as testbed for the new technology
 - on GitHub, we find dozens of examples of exercises in creating poetic texts
 - poems, especially popular and canonised ones, are freely available online, occupying a key position in the cultural hierarchy
@@ -106,6 +106,7 @@ Analysing Computer-Generated Echoes <br />of Russian Literary History
 ### NN Texts and Poetry
 
 <br />
+
 - poetic texts are often arranged as a chain of fairly self-contained statements and are not required to tell a holistic story
 - look at the textbook lines by Joseph Brodsky:
 
@@ -124,6 +125,7 @@ Man is more frightening than his skeleton.
 ### NN Texts and Poetry
 
 <br />
+
 - neural networks do not always succeed in generating grammatical and easily interpretable structures when it comes to replicas
 - 20th-century poetry is also replete with experimental texts that reduce grammatical rules and conventions of semantic connectivity
 - a non-professional view of poetry in general also suggests that poetry does not have to be „meaningful“, but **poetry „must be slightly stupid“**, as Pushkin famously wrote in a letter
@@ -133,6 +135,7 @@ Man is more frightening than his skeleton.
 ### Postulates of H.&nbsp;P. Grice
 
 <br />
+
 - both the poetic text and text generated by neural networks are similar in that most of the postulates of H. P. Grice are violated:
  - statements belonging to these categories provide less information than necessary
  - are not necessarily true
@@ -148,6 +151,7 @@ Man is more frightening than his skeleton.
 # Chapter 2.
 
 <br />
+
 ### Computer Poetry Before the Era of Neural Networks
 
 --
@@ -155,6 +159,7 @@ Man is more frightening than his skeleton.
 ### Prehistory
 
 <br />
+
 - the history of computer poetry began long before the current boom of neural networks
 - the first computers appeared in the early 1940s (German engineer Konrad Zuse and American Howard Aiken, „Z3“ and „Mark I“)
 - in the late 1950s poets began making use of them
@@ -164,10 +169,10 @@ Man is more frightening than his skeleton.
 ### First Opus
 
 <br />
+
 - in 1959, German mathematician Theo Lutz programmed a computer to randomly combine phrases from the 16 chapters of Kafka’s unfinished novel „The Castle“, he called the resulting texts „stochastic“:
 
-<p align="left">
-<!-- .element: style="font-size:0.8em; padding-left:10%;" -->[NICHT](https://netzliteratur.net/lutz_schule.htm) JEDER BLICK IST NAH. KEIN DORF IST SPAET.<br />
+[NICHT](https://netzliteratur.net/lutz_schule.htm) JEDER BLICK IST NAH. KEIN DORF IST SPAET.<br />
 EIN SCHLOSS IST FREI UND JEDER BAUER IST FERN.<br />
 JEDER FREMDE IST FERN. EIN TAG IST SPAET.<br />
 JEDES HAUS IST DUNKEL. EIN AUGE IST TIEF.<br />
@@ -175,13 +180,14 @@ NICHT JEDES SCHLOSS IST ALT. JEDER TAG IST ALT<br />
 NICHT JEDER GAST IST WUETEND. EINE KIRCHE IST SCHMAL<br />
 KEIN HAUS IST OFFEN UND NICHT JEDE KIRCHE IST STILL.<br />
 NICHT JEDES AUGE IST WUETEND. KEIN BLICK IST NEU.
-</p>
+<!-- .element: style="font-size:0.8em; text-align:left; padding-left:10%;" -->
 
 --
 
 ### 1960s
 
 <br />
+
 - during the 1960s, several more such poetic experiments were performed
 - Brion Gysin in 1960 makes the computer randomly swap words in the phrase „I AM THAT I AM“
 - in 1961, Nanni Balestrini creates the poem „Tape Mark I“ on the IBM 7070 computer, composed of parts of such works as the „Hiroshima Diary“ by Michihiko Hachiya and the „Tao Te Ching“:
@@ -218,6 +224,7 @@ ein Engel ist überall
 ### America and Europe
 
 <br />
+
 - if at the beginning of the 21st century North America is the centre of IT developments and the de-facto language of the industry is English, the primacy in cybernetic experiments with poetry half a century ago belonged to European artists
 
 --
@@ -225,6 +232,7 @@ ein Engel ist überall
 ### Two Basic Principles
 
 <br />
+
 - the first one suggested the recombination of words or phrases of an already existing text (at the dawn of computer poetry, such text was more often a work in prose)
 - the second is a random choice of words, the language and/or verse restrictions set by the programmer are imposed on the arrangement for the resulting text
 
@@ -233,6 +241,7 @@ ein Engel ist überall
 ### Randomness
 
 <br />
+
 - thus, the central category of this process becomes the category of **randomness**
 - one of the artists of that era, Marc Adrian, says this directly: „For me, the neutrality of the machine is very important. It makes it much easier for the reader to find their own meanings associated with words, since their choice, size, and composition are randomised.“
 - surprisingly, it is an accident, raised to an artistic absolute, although poets associate it with a computer, for a computer it is just a big technological problem
@@ -242,6 +251,7 @@ ein Engel ist überall
 ### Meanwhile in Russia
 
 <br />
+
 - known experiments with generating of poetic texts in Russian took place much later and date back to the time when personal computers started to spread
 - L. Kaganov, in his 1996 diploma, cites as an example of the previous developments the POET.EXE program (in other sources, „Stikhoplyuy“, the author is M.&nbsp;I. Grinchuk), which randomly composes a text in verse from the dictionary of accentologically marked words
 - the year of creation of the program, thus, is no later than 1996, perhaps, 1991
@@ -257,6 +267,7 @@ ein Engel ist überall
 ### Cyber Pushkin
 
 <br />
+
 - by 2002, the program „Cyber Pushkin“ appears
 - its author S. Teterin admits that „he taught him [Cyber-Pushkin] everything he needed: a poetic rhythm, rules of rhyming, the specifics of the poetic lexicon“, which, apparently, it used to build an algorithm on a random selection of lexical items from a given list
 
@@ -265,6 +276,7 @@ ein Engel ist überall
 ### Russian Poetic Conservatism
 
 <br />
+
 - it is well seen that all these early experiences in Russian material imply such a comparatively depleted concept of poetic, which requires an obligatory syllabic and strict rhyme
 - it is curious that the first poetic works created by computers in the late 1950s and early 1960s were the result of a freer understanding of poetry, not limited by the set of formal parameters reproduced by the culture of 19th century writing
 
@@ -273,6 +285,7 @@ ein Engel ist überall
 ### Permutational Art
 
 <br />
+
 - both these earlier and later experiments, which preceded the wide use of neural networks, are based on the idea of ​​combinatorics of predetermined elements (words or ready-made statements)
 - linking this idea to the philosophy of structuralism, Abraham Mole conceptualised it as „permutational art“
 - one that „decomposes the world into ‘atoms’, of which then arbitrary structures are constituted“
@@ -283,6 +296,7 @@ ein Engel ist überall
 # Chapter 3.
 
 <br />
+
 ### Generating Russian Poetry with Neural Networks
 
 --
@@ -296,6 +310,7 @@ ein Engel ist überall
 ### What Changed?
 
 <br />
+
 - artificial neural networks radically changed the subject field of computer poetry
 - accident in the process of generating text has faded into the background
 - there is no need for an algorithmic description of the complex rules of language and poetics, according to which the automatic work should be built
@@ -306,6 +321,7 @@ ein Engel ist überall
 ### Concentrated Form
 
 <br />
+
 - if Joseph Brodsky considered poetry to be a concentrated form of literature, the production of a neural network can be a concentrated form of representing poetry of a genre or period
 - an example generated by a two-layer neural network with 512 neurons, trained on a corpus of Russian translations of ancient hexameters (Homer, Hesiod, Ovid, Virgil, etc.) of 5.351.336 characters (106.321 poetic lines):
 
@@ -328,6 +344,7 @@ Króv’yu vkusíli dva dóch’. Na korábl’ on tvukhté tvoyey síly!
 </p>
 
 <br />
+
 <p align="left">
 <!-- .element: style="font-size:0.8em; padding-left:10%;" -->Power, to the dove the chiton is different, Giocleus the noble.<br />
 To the Lyceum, the amusement, a word spins the other,<br />
@@ -337,6 +354,7 @@ With blood tasted, two daughter. To the ship he tbay your strength!
 </p>
 
 <br />
+
 <p align="left">
 <!-- .element: style="font-size:0.8em; padding-left:10%;" -->(Our „translation“. 😉)
 </p>
@@ -346,6 +364,7 @@ With blood tasted, two daughter. To the ship he tbay your strength!
 ### Stylistic Features
 
 <br />
+
 - correct reproduction of the meter
 - the epithet „blagorodnyy“ („noble“) in postposition of a proper name as is common in translation of Greek hexameters
 - generated non-existent words („kruzhat’“, „tvukhta“), which from the point of view of the model are likely to exist
@@ -357,6 +376,7 @@ With blood tasted, two daughter. To the ship he tbay your strength!
 ## Modern Example: Original Poem by N. M. Azarova
 
 <br />
+
 <p align="left">
 <!-- .element: style="font-size:0.8em; padding-left:15%;" -->бор ёлки в воду бросил<br />
 сил держать верхушки нет<br />
@@ -373,6 +393,7 @@ With blood tasted, two daughter. To the ship he tbay your strength!
 ### The neural network spawned the following text:
 
 <br />
+
 <p align="left">
 <!-- .element: style="font-size:0.8em; padding-left:15%;" -->могу не озеро горизонта<br />
 синих глубок луг на бахли на стаю<br />
@@ -394,6 +415,7 @@ With blood tasted, two daughter. To the ship he tbay your strength!
 ### Vysotsky
 
 <br />
+
 - a less successful experiment was the the network trained on a corpus of singer-songwriter and poet Vladimir Vysotsky
 - since Vysotsky’s poetry usually does without „neo-futuristic“ linguistic irregularities and builds on narrative fragments, it is much more difficult to learn the original style here:
 
@@ -412,6 +434,7 @@ With blood tasted, two daughter. To the ship he tbay your strength!
 ### Style vs. Narrative
 
 <br />
+
 - texts generated with the help of artificial neural networks reproduce part of the stylistic features of the training sample
 - mainly those that are visible in small segments:
   - instrumentation
@@ -424,28 +447,19 @@ With blood tasted, two daughter. To the ship he tbay your strength!
 
 Thanks.
 
-<br /><br /><br />
-– https://hum.hse.ru/digital/ –
-
-</textarea>
+</script>
         </section>
       </div>
     </div>
-    <script src="../reveal/lib/js/head.min.js"></script>
-    <script src="../reveal/js/reveal.js"></script>
+    <script src="../revealjs6/dist/reveal.js"></script>
+    <script src="../revealjs6/dist/plugin/notes.js"></script>
+    <script src="../revealjs6/dist/plugin/markdown.js"></script>
+    <script src="../revealjs6/dist/plugin/highlight.js"></script>
     <script>
-    // More info https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-      history: true,
-
-    // More info https://github.com/hakimel/reveal.js#dependencies
-      dependencies: [
-        { src: '../reveal/plugin/markdown/marked.js' },
-        { src: '../reveal/plugin/markdown/markdown.js' },
-        { src: '../reveal/plugin/notes/notes.js', async: true },
-        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-      ]
-    });
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
     </script>
   </body>
 </html>
