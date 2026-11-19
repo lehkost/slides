@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Einführung in TEI (Seminar 19. November 2026)</title>
+
+    <link rel="stylesheet" href="../revealjs6/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs6/dist/theme/serif.css" id="theme" />
+
+    <!-- adjustments for serif.css -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs6/dist/plugin/highlight/monokai.css" id="highlight-theme" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="^\r?\n---\r?\n$" data-separator-vertical="^\r?\n--\r?\n$">
+<script type="text/template">
+
+Seminar ([LV 17430](https://www.fu-berlin.de/vv/de/lv/1110432))
+<!-- .element: style="font-size:0.6em;" -->
+
+#### **»Sappho im Drama: Intertextualität und digitale Methoden«**
+
+(15. Oktober 2026 – 11. Februar 2027)
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+<p style="display:flex;justify-content:center;align-items:center;gap:0.35em;font-size:0.85em;margin:0;">
+  <span>Laura Untner</span>
+  <a href="https://orcid.org/0000-0002-9649-0870" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD Laura Untner" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+  <span>&nbsp;·&nbsp;</span>
+  <span>Frank Fischer</span>
+  <a href="https://orcid.org/0000-0003-2419-6629" target="_blank" rel="noopener"><img src="images/orcid-id-icon.svg" alt="ORCID iD Frank Fischer" style="width:20px;height:20px;margin:0;border:0;box-shadow:none;display:block;"></a>
+</p>
+
+<br />Freie Universität Berlin
+<!-- .element: style="font-size:0.7em;" -->
+
+·
+
+Sechste Sitzung: Einführung in TEI (19. November 2026)
+<!-- .element: style="font-size:0.65em;" -->
+
+·
+
+Diese Präsentation: <br />**[lehkost.github.io/slides/2026-11-19-tei/](https://lehkost.github.io/slides/2026-11-19-tei/index.html)**
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Markup im Web
+
+<br />
+
+* Markup = Textauszeichnung (zur Informationsstrukturierung)
+
+--
+
+### HTML
+
+<br />
+
+(= HyperText Markup Language, eine Untermenge von XML)
+
+<br />
+
+```<h2>Beispiel für eine Überschrift</h2>```
+
+```<p>Beispiel für einen Absatz (engl. ```<b>```p```</b>```aragraph)</p>```
+
+--
+
+### XML
+
+<br />
+
+(= eXtensible Markup Language)
+
+<br />
+
+```<überschrift>Beispiel für Überschrift</überschrift>```
+
+```<absatz>Beispiel für Absatz</absatz>```
+
+--
+
+### Definition
+
+<br />
+
+- XML = eXtensible Markup Language
+- »eine Auszeichnungssprache zur Darstellung **hierarchisch** strukturierter Daten im Format einer Textdatei, die sowohl von Menschen als auch von Maschinen lesbar ist« ([Wikipedia](https://de.wikipedia.org/wiki/Extensible_Markup_Language))
+- einem Text werden semantische Auszeichnungen (Markup) hinzugefügt
+- die Struktur eines Textes wird so für Maschinen »verstehbar«
+- aber nicht nur Maschinen, auch Menschen können XML-Code leicht lesen
+
+--
+
+### Auszeichnung/Kodierung
+
+<br />
+
+* Auszeichnungen stehen in spitzen Klammern und können so vom Text unterschieden werden:
+  * ```<Markup>``` Text ```</Markup>```
+* Im Markup-Bereich werden Kodierungen, sogenannte Tags (oder: Elemente) hinterlegt. Es gibt immer ein Anfangstag (```<Tag>```) und ein Endtag (```</Tag>```).
+  * ```<Tag>``` Text ```</Tag>```
+
+--
+
+### XML-Struktur
+
+<br />
+
+* Die Schachtelung der Elemente erzeugt eine Struktur, die Baumstruktur genannt wird. Die Elemente werden Knoten (*nodes*) genannt.
+* Die Elemente sind hierarchisch geordnet und folgen einer sequentiellen Ordnung.
+* Elemente dürfen sich nicht überlappen.
+
+--
+
+### XML-Struktur
+
+<br />
+
+* XML-Elemente sind stets geschachtelt, jedes Element muss vollständig in einem anderen Element enthalten sein (wie bei einer Matroschka).
+
+![Matroschkas](images/matryoshka_from_hungary_wikimedia_commons.jpg)<!-- .element: style="width:560px;" -->
+
+(Bildquelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Matryoshka_from_Hungary.jpg))
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### XML-Struktur
+
+<br />
+
+* Alle Elemente eines XML-Dokuments sind in einem obersten Element enthalten, dem Wurzelelement (root).
+* Finden Sie das Wurzelelement in der XML-Datei zu Goethes »Faust«?
+
+➝ https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie/tei
+
+--
+
+* Wenn alle Regeln der XML eingehalten werden, ist ein Dokument wohlgeformt (**well-formed**).
+
+--
+
+![TEI-Logo](images/tei-logo.png)<!-- .element: style="width:180px;" -->
+
+(= eine Untermenge von XML)
+
+<br />
+
+```<persName>Arthur Schopenhauer</persName>```
+
+```<title>Die Welt als Wille und Vorstellung</title>```
+
+<small>
+
+<br />
+
+```<persName ref="https://d-nb.info/gnd/118610465">Arthur Schopenhauer</persName>```
+
+```<title ref="https://d-nb.info/gnd/4099344-9">Die Welt als Wille und Vorstellung</title>```
+
+</small>
+
+--
+
+## TEI bezeichnet …
+
+<br />
+
+* … ein Konsortium, die internationale Text Encoding Initiative (seit 1987)
+* … die Richtlinien zur Textkodierung (Guidelines for Electronic Text Encoding and Interchange) und das entsprechende Format (seit 1994)
+
+--
+
+### Software
+
+<br />
+
+* TEI ist XML-basiert und softwareunabhängig
+  * keine bestimmte (kommerzielle, proprietäre) Software notwendig, um TEI-Dokumente zu erstellen und zu bearbeiten
+  * XML-Editoren mit TEI-Funktion erleichtern die Textaufbereitung, z. B. der [Oxygen XML Editor](https://www.oxygenxml.com/) (den Sie auch über das Softwareportal der FU installieren können)
+  * empfehlenswert ist aber auch Visual Studio Code mit [›Scholarly XML‹-Extension](https://marketplace.visualstudio.com/items?itemName=raffazizzi.sxml)
+
+--
+
+### TEI-Guidelines
+
+<br />
+
+* aktuelle Version der Richtlinien und Empfehlungen der TEI:
+  * https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html
+
+--
+
+### Beispiel für eine Datei mit TEI-Markup
+
+![Faust](images/faust-anfang-erstausgabe-1808.jpg)<!-- .element: style="width:400px; box-shadow:none;" -->
+
+```xml
+<sp>
+  <speaker>Faust.</speaker>
+  <l>Habe nun, ach! Philosophie,</l>
+  <l>Juristerey und Medicin,</l>
+  <l>Und leider auch Theologie!</l>
+  <l>Durchaus studirt, mit heißem Bemühn.</l>
+  <l>Da steh’ ich nun, ich armer Thor!</l>
+  <l>Und bin so klug als wie zuvor;</l>
+  […]
+</sp>
+```
+
+Die ersten sechs Zeilen aus Goethes »Faust« (1808) in TEI. (Bildquelle: [DTA](https://www.deutschestextarchiv.de/book/view/goethe_faust01_1808?p=39).)
+<!-- .element: style="font-size:0.65em;" -->
+
+--
+
+### Elemente …
+
+<br />
+
+* … haben (idealerweise sprechende) Namen.
+* … können Text oder wieder andere Elemente umfassen.
+* Welche Elemente finden Sie in unserem Beispiel?
+
+<br />
+
+```xml
+<sp>
+  <speaker>Faust.</speaker>
+  <l>Habe nun, ach! Philosophie,</l>
+  <l>Juristerey und Medicin,</l>
+  <l>Und leider auch Theologie!</l>
+  <l>Durchaus studirt, mit heißem Bemühn.</l>
+  <l>Da steh’ ich nun, ich armer Thor!</l>
+  <l>Und bin so klug als wie zuvor;</l>
+  […]
+</sp>
+```
+
+<br />
+
+<small>```<sp>```: Figurenrede (**sp**eech), beinhaltet andere Elemente. <br />```<speaker>```: Name einer Figur. <br />```<l>```: Verszeile (**l**ine verse).</small><!-- .element: class="fragment" -->
+
+--
+
+### Elementen …
+
+* … können Attribute zugewiesen werden, z. B.: <text sprache="latein">
+
+```xml
+<sp who="#faust">
+  <speaker>F.</speaker>
+  <l n="1">Habe nun, ach! Philosophie,</l>
+  <l n="2">Juristerey und Medicin,</l>
+  <l n="3">Und leider auch Theologie!</l>
+  <l n="4">Durchaus studirt, mit heißem Bemühn.</l>
+  <l n="5">Da steh’ ich nun, ich armer Thor!</l>
+  <l n="6">Und bin so klug als wie zuvor;</l>
+  […]
+</sp>
+```
+
+<br />
+
+<small>```@who```-Attribut: fakultative Vergabe einer Sprecher\*innen-ID. <br />```@n```-Attribut: mögliche **N**ummerierung eines Elements.</small><!-- .element: class="fragment" -->
+
+--
+
+### TEI-Validierung
+
+<br />
+
+Das angegebene spezifische Validierungsschema regelt die korrekte Verwendung aller Elemente und Attribute. Wenn ein Dokument alle diese Regeln einhält, ist es gültig bzw. valide (*valid*).
+
+--
+
+### Bibliografie
+
+<br />
+
+* Susanne Kurz: TEI. In: Dies.: Digital Humanities. Grundlagen und Technologien für die Praxis. 1. Aufl. Wiesbaden: Springer 2015, S. 197–249. ([doi:10.1007/978-3-658-05793-0_5](https://doi.org/10.1007/978-3-658-05793-0_5))
+* Christof Schöch: Ein digitales Textformat für die Literaturwissenschaften. Die Richtlinien der Text Encoding Initiative und ihr Nutzen für Textedition und Textanalyse. In: Romanische Studien. Heft 4.1 (2016), S. 325–364. ([hal-05491468](https://hal.science/hal-05491468))
+* Georg Vogeler, Patrick Sahle: XML. In: F. Jannidis, H. Kohle, M. Rehbein (Hg.): Digital Humanities. Eine Einführung. Stuttgart: Metzler 2017, S. 128–146. ([doi:10.1007/978-3-476-05446-3_9](https://doi.org/10.1007/978-3-476-05446-3_9))
+
+</script>
+        </section>
+      </div>
+    </div>
+    <script src="../revealjs5/dist/reveal.js"></script>
+    <script src="../revealjs5/plugin/notes/notes.js"></script>
+    <script src="../revealjs5/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs5/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
